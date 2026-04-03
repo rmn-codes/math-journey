@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Mathematics of Chance — Math Journey</title>
+    <meta name="description" content="How gambling dens gave birth to one of mathematics&#x27; most important branches" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 6 · Chapter ?</p>
+        <h1>The Mathematics of Chance</h1>
+        <p class="hero-copy">How gambling dens gave birth to one of mathematics&#x27; most important branches</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>core</span>
+          
+          <span>1654 CE, France</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Define sample space and event</li><li>Compute probability of simple events</li><li>Apply the complement and addition rules</li><li>Distinguish theoretical and experimental probability</li><li>State the law of large numbers</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>It&#x27;s 1654, and in the salons and gambling dens of Paris, a curious aristocrat named the Chevalier de Méré is losing sleep—and money. He&#x27;s been betting friends that he&#x27;ll roll at least one six in four throws of a single die, and his pockets are lined with winnings. It&#x27;s beautiful. But then he tries a related bet: getting at least one double-six in twenty-four throws of two dice. He&#x27;s been confident, even arrogant, about this bet. After all, if the odds of one six in four rolls work out in his favor, shouldn&#x27;t two sixes in twenty-four rolls?</p>
+<p>He is losing badly.</p>
+<p>Desperate and humbled, he writes a letter to his friend Blaise Pascal, one of the era&#x27;s sharpest mathematical minds. Pascal is intrigued. He sits down at his desk and writes to another genius, Pierre de Fermat, miles away. For weeks they exchange letters, thinking through the Chevalier&#x27;s problem. By the time the correspondence ends, they have invented something entirely new: the mathematics of probability. Uncertainty, it turns out, can be quantified, measured, and understood.</p>
+<p>This is the story of how gambling gave birth to one of mathematics&#x27; most beautiful and practical domains.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Every person who has ever lived has faced uncertainty. Will it rain tomorrow? Will this medical treatment work? Will I get the job? Will a random inspection catch that defect? For centuries, humans answered these questions by guess, tradition, or prayer. But what if we could <em>measure</em> uncertainty?</p>
+<p>Probability is the language of chance. It lets us assign numbers to the unknown. A weather forecast of &quot;70% chance of rain&quot; is a probability statement. A doctor saying &quot;This treatment has an 85% success rate&quot; is offering a probability. When an engineer says &quot;This bridge has a 1 in 1,000,000 chance of catastrophic failure in a year,&quot; they&#x27;re communicating risk.</p>
+<p>Probability governs insurance, medicine, finance, quality control, climate science, and artificial intelligence. Without probability, we live in fog. With it, we navigate uncertainty with our eyes open.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Before 1654, probability did not really exist as mathematics. There were superstitions, yes. Philosophers wrote abstract thoughts about chance. But nobody had a systematic, numerical framework.</p>
+<p>The Chevalier de Méré changed that by asking a practical question in the language mathematicians understood: a problem about numbers and bets. Pascal and Fermat&#x27;s correspondence marked the birth of probability theory. Their work laid the foundation for the entire field.</p>
+<p>What they invented was radical: the idea that you could take something seemingly random and unpredictable and subject it to mathematical law. Over the next two centuries, mathematicians like Jacob Bernoulli, Abraham de Moivre, and Thomas Bayes expanded on Pascal and Fermat&#x27;s work, building the rich theory we use today.</p>
+<p>The Chevalier&#x27;s frustration became mathematics&#x27; gift to the world.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Sample Space</strong>: Imagine you roll one fair six-sided die. What are all the possible outcomes? They are: 1, 2, 3, 4, 5, 6. The set of <em>all</em> possible outcomes is called the <strong>sample space</strong>, written $S$. For one die, $S = \{1, 2, 3, 4, 5, 6\}$.</p>
+<p><strong>Event</strong>: Now imagine you care about rolling an even number. The outcomes that satisfy this condition are 2, 4, and 6. This subset of the sample space is called an <strong>event</strong>, often written $A$. So event $A$ = &quot;rolling an even number&quot; = $\{2, 4, 6\}$.</p>
+<p><strong>Probability</strong>: The probability of an event $A$ is the ratio of favorable outcomes to total outcomes (when all outcomes are equally likely):</p>
+<p>$$P(A) = \frac{\text{number of favorable outcomes}}{\text{total number of possible outcomes}}$$</p>
+<p>For rolling an even number on one die: $$P(\text{even}) = \frac{3}{6} = \frac{1}{2} = 0.5$$</p>
+<p>Probability is always between 0 and 1. A probability of 0 means impossible. A probability of 1 means certain. A probability of 0.5 means 50–50.</p>
+<p><strong>Complement</strong>: The complement of event $A$, written $A^c$, is &quot;everything in the sample space except $A$.&quot; If $A$ is rolling an even number, then $A^c$ is rolling an odd number. Notice that:</p>
+<p>$$P(A) + P(A^c) = 1$$</p>
+<p>Therefore: $$P(A^c) = 1 - P(A)$$</p>
+<p>This is incredibly useful. Sometimes it&#x27;s easier to compute the probability of the complement, then subtract from 1.</p>
+<p><strong>Union of Events</strong>: The union $A \cup B$ is &quot;$A$ or $B$ (or both).&quot; For example, if $A$ is &quot;rolling an even number&quot; and $B$ is &quot;rolling a number greater than 4,&quot; then $A \cup B$ is &quot;rolling 2, 4, 5, or 6.&quot;</p>
+<p>$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$</p>
+<p>We subtract $P(A \cap B)$ (the overlap) to avoid double-counting.</p>
+<p><strong>Mutually Exclusive Events</strong>: Two events are mutually exclusive if they cannot both happen. Rolling a 3 and rolling a 5 are mutually exclusive; you can&#x27;t do both with one die roll. If $A$ and $B$ are mutually exclusive, $P(A \cap B) = 0$, so:</p>
+<p>$$P(A \cup B) = P(A) + P(B)$$</p>
+<p><strong>Theoretical vs. Experimental Probability</strong>: Theoretical probability is what the mathematics predicts: rolling a fair die, the probability of a 3 is $\frac{1}{6}$. Experimental probability comes from actually doing the experiment. If you roll a die 60 times and get 12 threes, your experimental probability is $\frac{12}{60} = \frac{1}{5} = 0.2$. These won&#x27;t be exactly equal, but they get closer the more trials you do.</p>
+<p><strong>Law of Large Numbers</strong>: This is the bridge between theory and experiment. As you repeat a random experiment more and more times, the experimental probability gets closer and closer to the theoretical probability. Roll a die 10 times, and you might get 0 threes. Roll it 1,000 times, and you&#x27;ll get very close to 167 threes (one-sixth of 1,000). Roll it 1,000,000 times, and you&#x27;ll be even closer to $\frac{1,000,000}{6} \approx 166,667$ threes. The law of large numbers says that randomness, repeated, reveals order.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<ol><li><strong>Sample Space</strong> ($S$): The set of all possible outcomes of an experiment.</li><li><strong>Event</strong> ($A$, $B$, ...): Any subset of the sample space.</li><li><strong>Equally Likely Outcomes</strong>: Outcomes that have the same probability. On a fair die, all six faces are equally likely.</li><li><strong>Probability of an Event</strong> ($P(A)$): For equally likely outcomes, $P(A) = \frac{|A|}{|S|}$, where $|A|$ is the number of favorable outcomes and $|S|$ is the size of the sample space.</li><li><strong>Complement</strong> ($A^c$): All outcomes in $S$ that are not in $A$. Always: $P(A^c) = 1 - P(A)$.</li><li><strong>Union</strong> ($A \cup B$): Outcomes in $A$ or $B$ or both. General rule: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.</li><li><strong>Intersection</strong> ($A \cap B$): Outcomes in both $A$ and $B$.</li><li><strong>Mutually Exclusive</strong>: $A$ and $B$ cannot both occur. Then $P(A \cup B) = P(A) + P(B)$.</li><li><strong>Theoretical Probability</strong>: The true probability predicted by mathematics.</li><li><strong>Experimental Probability</strong>: The proportion of favorable outcomes in repeated trials.</li><li><strong>Law of Large Numbers</strong>: As trials increase, experimental probability approaches theoretical probability.</li></ol>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Single Die Roll</strong></p>
+<p>A fair die is rolled once. Find: (a) The probability of rolling a 5. (b) The probability of rolling an even number. (c) The probability of rolling a number greater than 3.</p>
+<p><em>Solution:</em></p>
+<p>Sample space: $S = \{1, 2, 3, 4, 5, 6\}$.</p>
+<p>(a) Event: rolling a 5. Favorable outcomes: 1. Total outcomes: 6. $$P(5) = \frac{1}{6}$$</p>
+<p>(b) Event: rolling an even number. Favorable outcomes: $\{2, 4, 6\}$, so 3 outcomes. $$P(\text{even}) = \frac{3}{6} = \frac{1}{2}$$</p>
+<p>(c) Event: rolling greater than 3. Favorable outcomes: $\{4, 5, 6\}$, so 3 outcomes. $$P(&gt;3) = \frac{3}{6} = \frac{1}{2}$$</p>
+<p><strong>Example 2: The Chevalier&#x27;s Problem (Simplified)</strong></p>
+<p>What is the probability of rolling <em>at least one</em> 6 in four rolls of a fair die?</p>
+<p>Using the complement is easiest: $$P(\text{at least one 6}) = 1 - P(\text{no sixes})$$</p>
+<p>For each roll, $P(\text{not a 6}) = \frac{5}{6}$.</p>
+<p>For four independent rolls: $$P(\text{no sixes in 4 rolls}) = \frac{5}{6} \times \frac{5}{6} \times \frac{5}{6} \times \frac{5}{6} = \left(\frac{5}{6}\right)^4 = \frac{625}{1296} \approx 0.482$$</p>
+<p>Therefore: $$P(\text{at least one 6 in 4 rolls}) = 1 - 0.482 = 0.518 \approx 51.8\%$$</p>
+<p>The Chevalier&#x27;s bet was slightly in his favor—hence his winnings!</p>
+<p><strong>Example 3: Union of Events</strong></p>
+<p>A card is drawn from a standard deck of 52 cards. Find the probability that it is a heart or a king.</p>
+<p>Let $A$ = &quot;heart&quot; and $B$ = &quot;king.&quot;</p>
+<p>$P(A) = \frac{13}{52} = \frac{1}{4}$ (13 hearts in the deck).</p>
+<p>$P(B) = \frac{4}{52} = \frac{1}{13}$ (4 kings in the deck).</p>
+<p>$P(A \cap B) = \frac{1}{52}$ (the king of hearts—one card).</p>
+<p>$$P(A \cup B) = \frac{13}{52} + \frac{4}{52} - \frac{1}{52} = \frac{16}{52} = \frac{4}{13} \approx 0.308$$</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>A spinner is divided into four equal sections colored red, blue, green, and yellow. You spin once. What is the probability of landing on blue?</li></ol>
+<ol><li>Two fair dice are rolled. What is the probability that the sum is 7?</li></ol>
+<ol><li>A bag contains 5 red marbles, 3 blue marbles, and 2 green marbles. You draw one marble at random. What is the probability that it is not red?</li></ol>
+<ol><li>What is the probability of flipping a fair coin four times and getting all heads?</li></ol>
+<ol><li>In a lottery, you must pick 1 number from 1 to 40 to match a winning number. Then you must pick a second number from 1 to 20. What is the probability of winning (matching both numbers)?</li></ol>
+<ol><li>A die is rolled. Find the probability of rolling a 2 or a 5.</li></ol>
+<ol><li>A deck of cards has 52 cards. What is the probability of drawing a card that is not a club?</li></ol>
+<ol><li>A coin is fair. You flip it three times. What is the probability of getting exactly two heads?</li></ol>
+<ol><li>A card deck has 52 cards (13 of each suit). You draw one card. What is the probability of drawing a spade or a face card (J, Q, K)?</li></ol>
+<ol><li>In the Chevalier&#x27;s original problem: what is the probability of rolling <em>at least one</em> double-six in 24 throws of two dice?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Birthday Paradox Setup</strong></p>
+<p>In a room of 23 people, what is the probability that at least two people share the same birthday (month and day)?</p>
+<p>Most people guess a small number—maybe 5% or 10%. The actual answer is about 50%. This is called the birthday paradox because the true answer surprises us.</p>
+<p>Here&#x27;s your task: Use the complement rule to explain why. (Hint: Start by computing the probability that <em>all</em> 23 people have <em>different</em> birthdays. Then use the complement.)</p>
+<p>What does this teach you about how human intuition can mislead us about probability?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Insurance and Risk</strong></p>
+<p>An insurance company insures fire damage to homes. Each year, approximately 1 in every 1,000 insured homes experiences a fire claim. When a fire occurs, the average payout is $150,000.</p>
+<p>If the company insures 10,000 homes, how many fire claims do they expect per year? What is the expected payout?</p>
+<p>If the company charges a premium of $200 per home per year, will they make money? (Remember: they have to pay employees, rent, and other overhead.)</p>
+<p>This is how insurance works. The company doesn&#x27;t know <em>which</em> homes will burn, but they know the long-run average. That average is their foundation.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Probability is the mathematics of uncertainty. It begins with three foundational ideas:</p>
+<ul><li><strong>Sample space</strong>: the set of all possible outcomes.</li><li><strong>Event</strong>: a subset of the sample space.</li><li><strong>Probability of an event</strong>: the ratio of favorable outcomes to total outcomes (for equally likely cases).</li></ul>
+<p>From there, we build rules. The <strong>complement rule</strong> says $P(A^c) = 1 - P(A)$. The <strong>addition rule</strong> for unions says $P(A \cup B) = P(A) + P(B) - P(A \cap B)$, and when events are mutually exclusive, we can drop the overlap term.</p>
+<p><strong>Theoretical probability</strong> is what the math predicts. <strong>Experimental probability</strong> comes from doing the experiment. The <strong>law of large numbers</strong> says they converge as we repeat more trials.</p>
+<p>These ideas, born from a gambler&#x27;s complaint in 1654, have become essential to modern life: medicine, engineering, finance, science, and policy all rest on probability. When a doctor interprets a test result, an engineer designs a bridge, or a government sets policy for rare events, they are using the mathematics the Chevalier&#x27;s problem inspired.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> You roll a fair six-sided die. What is the probability of rolling a number greater than 2?</p>
+<ul><li>$\frac{1}{6}$</li><li>$\frac{2}{6}$</li><li>$\frac{3}{6}$</li><li>$\frac{4}{6}$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\frac{4}{6}$</p>
+<p>Favorable outcomes: {3, 4, 5, 6} = 4 outcomes. Total outcomes: 6. $P(\text{greater than 2}) = \frac{4}{6} = \frac{2}{3}$.</p>
+</details>
+<p><strong>Question 2:</strong> What is the probability of the complement of rolling a 4 on a single fair die?</p>
+<ul><li>$\frac{1}{6}$</li><li>$\frac{2}{6}$</li><li>$\frac{4}{6}$</li><li>$\frac{5}{6}$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\frac{5}{6}$</p>
+<p>$P(4) = \frac{1}{6}$, so $P(\text{not a 4}) = 1 - \frac{1}{6} = \frac{5}{6}$.</p>
+</details>
+<p><strong>Question 3:</strong> A coin is flipped twice. What is the probability of getting at least one heads?</p>
+<ul><li>$\frac{1}{4}$</li><li>$\frac{1}{2}$</li><li>$\frac{3}{4}$</li><li>$\frac{1}{8}$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\frac{3}{4}$</p>
+<p>Using complement: $P(\text{at least one H}) = 1 - P(\text{no H}) = 1 - P(\text{TT}) = 1 - \frac{1}{4} = \frac{3}{4}$.</p>
+</details>
+<p><strong>Question 4:</strong> Two events $A$ and $B$ are mutually exclusive. $P(A) = 0.3$ and $P(B) = 0.2$. What is $P(A \cup B)$?</p>
+<ul><li>$0.5$</li><li>$0.06$</li><li>$0.44$</li><li>$0.6$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$0.5$</p>
+<p>When events are mutually exclusive, $P(A \cup B) = P(A) + P(B) = 0.3 + 0.2 = 0.5$.</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Blaise Pascal and Pierre de Fermat&#x27;s letters on probability (1654): https://en.wikipedia.org/wiki/Blaise_Pascal</li><li>&quot;Probability&quot; entry, historical development: https://en.wikipedia.org/wiki/Probability</li><li>Chevalier de Méré and the problem of points: https://en.wikipedia.org/wiki/Problem_of_points</li><li>Law of large numbers: https://en.wikipedia.org/wiki/Law_of_large_numbers</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-080-random-variables-and-expected-value/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Random Variables and Expected Value</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-089-complex-numbers/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Complex Numbers — The Imaginary Made Real</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

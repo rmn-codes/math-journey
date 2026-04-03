@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Graphs of Sine and Cosine — Math Journey</title>
+    <meta name="description" content="The wave that runs through sound, light, tides, and heartbeats" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 4 · Chapter 56</p>
+        <h1>Graphs of Sine and Cosine</h1>
+        <p class="hero-copy">The wave that runs through sound, light, tides, and heartbeats</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1700s–1800s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Identify amplitude, period, phase shift, and vertical shift from an equation</li><li>Graph transformations of sine and cosine</li><li>Write an equation from a graph</li><li>Interpret sine waves in real contexts</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#the-general-form">The General Form</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#properties-of-y-sin-x">Properties of $y = \sin x$</a></li><li class="toc-level-3"><a href="#properties-of-y-cos-x">Properties of $y = \cos x$</a></li><li class="toc-level-3"><a href="#transformations">Transformations</a></li><li class="toc-level-3"><a href="#key-ordered-pairs-for-y-sin-x">Key Ordered Pairs for $y = \sin x$</a></li><li class="toc-level-3"><a href="#key-ordered-pairs-for-y-cos-x">Key Ordered Pairs for $y = \cos x$</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>In 1822, a French mathematician named Joseph Fourier made a discovery so profound that it changed the course of science and engineering. He proved that any periodic signal — any repeating pattern, no matter how complicated — can be written as a sum of sine and cosine waves of different frequencies and amplitudes.</p>
+<p>This is Fourier&#x27;s Theorem, and it means that if you understand the graph of $y = \sin x$, you understand the mathematical skeleton of a heartbeat, a musical note, a radio wave, the motion of a pendulum, and the tides of the ocean. Every one of these phenomena is built from sines and cosines.</p>
+<p>Today, Fourier analysis powers the technology in your pocket. Every MP3 player uses it to compress music. Every MRI scanner uses it to reconstruct images from raw data. Every cell phone uses it to transmit signals. Understanding the graphs of sine and cosine is the first step to understanding the modern world.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>The sine and cosine graphs are perhaps the most important periodic curves in mathematics. A periodic function is one that repeats. The sine and cosine functions repeat forever, over and over, with perfect regularity.</p>
+<p>Once you master the graphs of $y = \sin x$ and $y = \cos x$, you can:</p>
+<ul><li>Model oscillating systems: springs, pendulums, waves in water</li><li>Understand AC electricity, which alternates sinusoidally</li><li>Compress and transmit audio and video signals</li><li>Analyze seismic waves from earthquakes</li><li>Track tides, sunspot cycles, and climate patterns</li><li>Design control systems in robotics and aircraft</li><li>Process signals in medical imaging</li></ul>
+<p>The ability to transform and interpret these graphs is essential in science and engineering.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The sine and cosine functions have ancient roots, but their graphs were not studied systematically until calculus developed in the 1600s and 1700s.</p>
+<p>Isaac Newton and Gottfried Leibniz, developing calculus independently in the late 1600s, showed that sine and cosine have beautiful properties under differentiation and integration: the derivative of $\sin x$ is $\cos x$, and vice versa (with a sign change). This made them realize that sine and cosine were more fundamental than anyone had suspected.</p>
+<p>Then, in the early 1800s, Joseph Fourier (1768–1830) made his revolutionary discovery: that any periodic function could be decomposed into a sum (or integral) of sines and cosines. This was controversial at first — Lagrange and Laplace were skeptical — but it turned out to be exactly right and became foundational to modern physics and engineering.</p>
+<p>By the late 1800s, the study of Fourier series had become central to mathematics, and the importance of the sine and cosine graphs was well established.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>The graph of $y = \sin x$ is a continuous wave that:</p>
+<ul><li>Oscillates between $-1$ and $1$ (its range)</li><li>Passes through the origin: $\sin(0) = 0$</li><li>Has period $2\pi$ (it repeats every $2\pi$ units)</li><li>Has zeros at $x = n\pi$ for any integer $n$</li></ul>
+<p>The graph of $y = \cos x$ is identical to $\sin x$ but shifted left by $\frac{\pi}{2}$ (or equivalently, it passes through $(0, 1)$ instead of the origin).</p>
+<p>When we transform these basic graphs using amplitude, period, phase shift, and vertical shift, we can create any periodic oscillation we observe in nature.</p>
+<h3 id="the-general-form">The General Form</h3>
+<p>$$y = a\sin(b(x - c)) + d$$</p>
+<p>where:</p>
+<ul><li>$|a|$ is the <strong>amplitude</strong> (half the distance between maximum and minimum)</li><li>$\frac{2\pi}{|b|}$ is the <strong>period</strong> (the distance for one complete cycle)</li><li>$c$ is the <strong>phase shift</strong> (horizontal shift; positive is right)</li><li>$d$ is the <strong>vertical shift</strong> (up if positive)</li></ul>
+<p>The same form applies to cosine: $y = a\cos(b(x - c)) + d$.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="properties-of-y-sin-x">Properties of $y = \sin x$</h3>
+<ul><li><strong>Domain</strong>: All real numbers</li><li><strong>Range</strong>: $[-1, 1]$</li><li><strong>Period</strong>: $2\pi$</li><li><strong>Amplitude</strong>: 1</li><li><strong>Zeros</strong>: $x = n\pi$ (all integer multiples of $\pi$)</li><li><strong>Maximums</strong>: $\sin x = 1$ at $x = \frac{\pi}{2} + 2\pi n$</li><li><strong>Minimums</strong>: $\sin x = -1$ at $x = -\frac{\pi}{2} + 2\pi n$ (or $\frac{3\pi}{2} + 2\pi n$)</li></ul>
+<h3 id="properties-of-y-cos-x">Properties of $y = \cos x$</h3>
+<ul><li><strong>Domain</strong>: All real numbers</li><li><strong>Range</strong>: $[-1, 1]$</li><li><strong>Period</strong>: $2\pi$</li><li><strong>Amplitude</strong>: 1</li><li><strong>Zeros</strong>: $x = \frac{\pi}{2} + n\pi$ (odd multiples of $\frac{\pi}{2}$)</li><li><strong>Maximums</strong>: $\cos x = 1$ at $x = 2\pi n$</li><li><strong>Minimums</strong>: $\cos x = -1$ at $x = \pi + 2\pi n$</li></ul>
+<h3 id="transformations">Transformations</h3>
+<p>For $y = a\sin(b(x - c)) + d$:</p>
+<p>| Parameter | Effect | |-----------|--------| | $a &gt; 1$ | Stretches vertically (amplitude increases) | | $0 &lt; a &lt; 1$ | Compresses vertically (amplitude decreases) | | $a &lt; 0$ | Reflects over the x-axis | | $b &gt; 1$ | Compresses horizontally (period decreases) | | $0 &lt; b &lt; 1$ | Stretches horizontally (period increases) | | $c &gt; 0$ | Shifts right | | $c &lt; 0$ | Shifts left | | $d &gt; 0$ | Shifts up | | $d &lt; 0$ | Shifts down |</p>
+<h3 id="key-ordered-pairs-for-y-sin-x">Key Ordered Pairs for $y = \sin x$</h3>
+<p>| $x$ | $0$ | $\frac{\pi}{2}$ | $\pi$ | $\frac{3\pi}{2}$ | $2\pi$ | |-----|-----|--------|---------|----------|--------| | $\sin x$ | $0$ | $1$ | $0$ | $-1$ | $0$ |</p>
+<h3 id="key-ordered-pairs-for-y-cos-x">Key Ordered Pairs for $y = \cos x$</h3>
+<p>| $x$ | $0$ | $\frac{\pi}{2}$ | $\pi$ | $\frac{3\pi}{2}$ | $2\pi$ | |-----|-----|--------|---------|----------|--------| | $\cos x$ | $1$ | $0$ | $-1$ | $0$ | $1$ |</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Graph $y = 2\sin x$.</strong></p>
+<p>Amplitude: $|2| = 2$. The graph oscillates between $-2$ and $2$ instead of $-1$ and $1$.</p>
+<p>Period: $\frac{2\pi}{1} = 2\pi$ (unchanged).</p>
+<p>The zeros remain at $x = n\pi$. The maximum is 2 (at $x = \frac{\pi}{2}$) and minimum is $-2$ (at $x = \frac{3\pi}{2}$).</p>
+<p><strong>Example 2: Graph $y = \sin(2x)$.</strong></p>
+<p>Amplitude: 1 (unchanged).</p>
+<p>Period: $\frac{2\pi}{2} = \pi$. The function completes one full cycle in $\pi$ units instead of $2\pi$. It compresses horizontally.</p>
+<p>Zeros: $2x = n\pi$, so $x = \frac{n\pi}{2}$. The zeros are closer together.</p>
+<p><strong>Example 3: Graph $y = \sin\left(x - \frac{\pi}{4}\right)$.</strong></p>
+<p>Amplitude: 1, Period: $2\pi$ (both unchanged).</p>
+<p>Phase shift: The graph shifts right by $\frac{\pi}{4}$.</p>
+<p>The zero at $x = 0$ moves to $x = \frac{\pi}{4}$. The maximum at $x = \frac{\pi}{2}$ moves to $x = \frac{\pi}{2} + \frac{\pi}{4} = \frac{3\pi}{4}$.</p>
+<p><strong>Example 4: Graph $y = \cos x + 2$.</strong></p>
+<p>Amplitude: 1, Period: $2\pi$ (both unchanged).</p>
+<p>Vertical shift: The entire graph shifts up by 2 units.</p>
+<p>The range becomes $[1, 3]$ instead of $[-1, 1]$. The maximum is 3 and minimum is 1.</p>
+<p><strong>Example 5: A buoy bobs up and down in the ocean. It rises and falls through a height of 6 feet with a period of 8 seconds. Write an equation for its vertical position as a function of time (in seconds), assuming it starts at the equilibrium position and moves upward.</strong></p>
+<p>Amplitude: $a = 3$ (half of 6 feet).</p>
+<p>Period: $8 = \frac{2\pi}{b}$, so $b = \frac{2\pi}{8} = \frac{\pi}{4}$.</p>
+<p>Starting at equilibrium and moving upward means we use cosine with a phase shift, or we can use sine: $y = 3\sin\left(\frac{\pi}{4}t\right)$.</p>
+<p>(Alternative: $y = 3\cos\left(\frac{\pi}{4}t - \frac{\pi}{2}\right) = 3\sin\left(\frac{\pi}{4}t\right)$.)</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Identify the amplitude and period of $y = 3\cos(4x)$.</li><li>Write the equation of a sine function with amplitude 2, period $\pi$, and no shifts.</li><li>Graph $y = -\sin x$ (on paper or describe it).</li><li>What is the phase shift of $y = \cos\left(x + \frac{\pi}{3}\right)$?</li><li>A spring oscillates vertically with equation $y = 0.5\cos(3t) + 2$. What are the maximum and minimum positions?</li><li>Write an equation for $y = \cos x$ shifted right by $\frac{\pi}{4}$ and down by 1.</li><li>Find the zeros of $y = \sin(2x)$ in $[0, 2\pi]$.</li><li>The function $y = \sin(bx)$ has period 4. Find $b$.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Fourier&#x27;s Theorem states that any periodic function can be written as a sum of sine and cosine functions.</strong> Explain what this means in practical terms. If a musician plays a complex chord (multiple notes at once), why would representing it as a sum of sines and cosines be useful? What information would each sine or cosine term carry?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>A heartbeat can be approximately modeled as a periodic function. A typical resting heart rate is 60 beats per minute, meaning one complete heartbeat cycle takes 1 second.</p>
+<p>Suppose the blood pressure oscillates between a minimum of 80 mmHg and a maximum of 120 mmHg. Write an equation for the blood pressure as a function of time $t$ (in seconds), assuming the pressure is at its minimum at $t = 0$ and increases from there.</p>
+<p><strong>Solution:</strong></p>
+<p>Amplitude: $a = \frac{120 - 80}{2} = 20$.</p>
+<p>Vertical shift: $d = \frac{120 + 80}{2} = 100$ (the midline).</p>
+<p>Period: 1 second $= \frac{2\pi}{b}$, so $b = 2\pi$.</p>
+<p>Starting at minimum means using cosine with a negative amplitude (or negative cosine):</p>
+<p>$$P(t) = 100 - 20\cos(2\pi t)$$</p>
+<p>or equivalently:</p>
+<p>$$P(t) = 100 + 20\cos(2\pi t + \pi)$$</p>
+<p>At $t = 0$: $P(0) = 100 - 20(1) = 80$ mmHg (minimum). ✓</p>
+<p>At $t = 0.5$: $P(0.5) = 100 - 20(-1) = 120$ mmHg (maximum). ✓</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>Sine graph</strong>: passes through origin, period $2\pi$, oscillates between $-1$ and $1$.</li><li><strong>Cosine graph</strong>: passes through $(0,1)$, same period and amplitude, phase-shifted by $\frac{\pi}{2}$.</li><li><strong>Amplitude</strong> $|a|$: controls the vertical stretch; <strong>Period</strong> $\frac{2\pi}{|b|}$: controls the horizontal stretch.</li><li><strong>Phase shift</strong> $c$: moves the graph left (negative) or right (positive).</li><li><strong>Vertical shift</strong> $d$: moves the graph up or down.</li><li>General form: $y = a\sin(b(x-c)) + d$ (or use cosine).</li><li>These graphs model all periodic phenomena: waves, oscillations, and cycles.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is the amplitude of $y = \frac{1}{2}\sin x$?</li></ol>
+<ul><li>$\frac{1}{2}$</li><li>$1$</li><li>$2$</li><li>$\frac{\pi}{2}$</li></ul>
+<ol><li>What is the period of $y = \sin(3x)$?</li></ol>
+<ul><li>$2\pi$</li><li>$\frac{2\pi}{3}$</li><li>$3$</li><li>$6\pi$</li></ul>
+<ol><li>The graph of $y = \cos(x - \frac{\pi}{2})$ is equivalent to which function?</li></ol>
+<ul><li>$y = \sin x$</li><li>$y = -\sin x$</li><li>$y = \cos x$</li><li>$y = -\cos x$</li></ul>
+<ol><li>If a periodic function has amplitude 4 and period 6, and is in the form $y = a\sin(bx)$, what are $a$ and $b$?</li></ol>
+<ul><li>$a = 4$, $b = \frac{\pi}{3}$</li><li>$a = 4$, $b = \frac{2\pi}{6}$</li><li>$a = 4$, $b = 6$</li><li>$a = 2$, $b = \frac{\pi}{3}$</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li><strong>$\frac{1}{2}$</strong> — The amplitude is the absolute value of the coefficient of sine: $\left|\frac{1}{2}\right| = \frac{1}{2}$.</li></ol>
+<ol><li><strong>$\frac{2\pi}{3}$</strong> — Period $= \frac{2\pi}{|b|} = \frac{2\pi}{3}$.</li></ol>
+<ol><li><strong>$y = \sin x$</strong> — We know that $\sin x = \cos\left(x - \frac{\pi}{2}\right)$ (cosine shifted right by $\frac{\pi}{2}$ equals sine).</li></ol>
+<ol><li><strong>$a = 4$, $b = \frac{\pi}{3}$</strong> — Amplitude $a = 4$. Period $6 = \frac{2\pi}{b}$, so $b = \frac{2\pi}{6} = \frac{\pi}{3}$.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Joseph_Fourier" target="_blank" rel="noopener">Joseph Fourier - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Fourier_series" target="_blank" rel="noopener">Fourier Series - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Sine_and_cosine" target="_blank" rel="noopener">Sine and Cosine - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Periodic_function" target="_blank" rel="noopener">Periodic Function - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/History_of_trigonometry" target="_blank" rel="noopener">History of Trigonometry - Wikipedia</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-055-six-trig-functions/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Six Trigonometric Functions</span></a><a class="pager-link pager-link--next" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-061-inverse-trig-functions/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Inverse Trigonometric Functions</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,297 @@
+---
+worldNumber: 6
+world: world-06-probability-statistics-and-uncertainty
+chapter: 79
+filename: ch-079-counting.mdx
+title: "Counting — Permutations and Combinations"
+subtitle: "How many ways? — the art of counting without listing everything"
+historicalPeriod: "Ancient–1600s"
+estimatedTimeMinutes: 35
+mainConcepts:
+  - fundamental counting principle
+  - factorial
+  - permutation
+  - combination
+  - Pascal's triangle
+  - binomial coefficient
+learningObjectives:
+  - Apply the fundamental counting principle
+  - Compute permutations and combinations
+  - Distinguish when order matters
+  - Use Pascal's triangle
+  - Apply combinatorics to probability problems
+---
+
+## Story Hook
+
+It's 1654, Pascal is working on probability and gambling. A friend asks him: "How many different five-card poker hands can be dealt from a standard 52-card deck?"
+
+If you tried to list them all, you would need a lifetime. There are 52 ways to choose the first card, 51 ways for the second, 50 for the third, 49 for the fourth, and 48 for the fifth. That's $52 \times 51 \times 50 \times 49 \times 48 = 311{,}875{,}200$ arrangements.
+
+But wait. In poker, the hand {King of hearts, seven of clubs, two of spades, ace of diamonds, queen of hearts} is the *same* hand as {ace of diamonds, King of hearts, two of spades, queen of hearts, seven of clubs}. Order doesn't matter. So we've overcounted by a lot.
+
+Pascal knew the answer. Using a formula for combinations, he calculated: there are exactly $\binom{52}{5} = 2{,}598{,}960$ distinct five-card poker hands.
+
+No listing needed. No lifetime wasted. Just a formula—born from counting, refined in Pascal's triangle, and essential to probability.
+
+## Why It Matters
+
+Counting seems simple until the numbers get large. Counting becomes essential the moment you ask: "How many ways can something happen?"
+
+- A PIN code is 4 digits. How many possible PINs exist? (Without counting every one, you can say: $10 \times 10 \times 10 \times 10 = 10{,}000$.)
+- A state license plate has 3 letters followed by 3 numbers. How many plates can exist? ($26^3 \times 10^3$.)
+- A lock has 40 positions and you choose 3 of them as your combination. How many combinations are there? (Much fewer than if order mattered!)
+- A lottery draws 6 numbers from 1 to 49. How many possible tickets? (Huge—but calculable without enumeration.)
+
+Once you can count all possibilities, you can compute probabilities. "I bought 1 lottery ticket. How many tickets were sold?" To find your winning probability, you need to know the total number of distinct tickets.
+
+Combinatorics—the mathematics of counting—is the silent foundation beneath probability.
+
+## Historical Context
+
+Counting problems appear throughout history. Chinese mathematicians knew versions of Pascal's triangle a thousand years before Pascal. Indian mathematicians like Bhaskara II worked on combinatorics in the 12th century. Persian mathematicians developed early versions of binomial expansions.
+
+But Pascal synthesized these ideas into a triangle that beautifully encodes all combinatorial values. He used it to solve the gambler's problem. From these origins, the mathematics of permutations and combinations developed.
+
+In the 17th and 18th centuries, mathematicians like Jacob Bernoulli formalized the notation and theory. Today, combinatorics is a vast field essential to computer science, cryptography, probability, and statistics.
+
+The ancient impulse to count systematically became the modern discipline of combinatorics.
+
+## Core Concept
+
+**Fundamental Counting Principle**: If one thing can happen in $m$ ways, and a second can happen independently in $n$ ways, then the two things together can happen in $m \times n$ ways.
+
+Example: You choose an outfit. 5 shirts, 3 pants, 2 shoes. Total outfits: $5 \times 3 \times 2 = 30$.
+
+This extends to any number of choices. If you choose a drink ($n_1$ ways), a sandwich ($n_2$ ways), and a dessert ($n_3$ ways), the total meals are $n_1 \times n_2 \times n_3$.
+
+**Factorial**: The factorial of a positive integer $n$, written $n!$, is the product of all positive integers from 1 to $n$:
+
+$$n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$$
+
+Examples:
+- $3! = 3 \times 2 \times 1 = 6$
+- $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$
+- $0! = 1$ (by definition)
+
+Factorials grow *explosively*. $10! = 3{,}628{,}800$. $20! \approx 2.4$ trillion.
+
+**Permutations**: A permutation is an arrangement of $n$ objects where *order matters*.
+
+If you have $n$ distinct objects and choose $r$ of them, the number of permutations is:
+
+$$P(n,r) = \frac{n!}{(n-r)!}$$
+
+Example: You have 5 runners and want to award gold, silver, and bronze medals. Order matters (1st place is different from 2nd). How many ways can medals be awarded?
+
+$$P(5,3) = \frac{5!}{(5-3)!} = \frac{5!}{2!} = \frac{120}{2} = 60$$
+
+**Combinations**: A combination is a selection of $n$ objects where *order doesn't matter*.
+
+If you have $n$ distinct objects and choose $r$ of them, the number of combinations is:
+
+$$C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$$
+
+This is called the binomial coefficient, read as "$n$ choose $r$."
+
+Example: A committee has 10 people. You need to choose 3 for a subcommittee. Order doesn't matter. How many subcommittees?
+
+$$C(10,3) = \binom{10}{3} = \frac{10!}{3! \times 7!} = \frac{10 \times 9 \times 8}{3 \times 2 \times 1} = \frac{720}{6} = 120$$
+
+**Pascal's Triangle**: Arrange binomial coefficients in a triangle:
+
+```
+                1
+              1   1
+            1   2   1
+          1   3   3   1
+        1   4   6   4   1
+      1   5  10  10   5   1
+    1   6  15  20  15   6   1
+```
+
+The $n$-th row contains the binomial coefficients $\binom{n}{0}, \binom{n}{1}, \ldots, \binom{n}{n}$. Each entry is the sum of the two above it. This triangle appears in expansions, probability, and combinatorics throughout mathematics.
+
+**Complement Counting**: Sometimes it's easier to count what you *don't* want and subtract from the total. How many 4-digit numbers contain at least one 5? It's easier to count how many *don't* contain a 5, then subtract from the total.
+
+## Definitions and Formal Lesson
+
+1. **Fundamental Counting Principle**: If task 1 can be done in $m$ ways and task 2 in $n$ ways, together they can be done in $m \times n$ ways.
+2. **Factorial** ($n!$): Product of integers from 1 to $n$. $n! = n \times (n-1) \times \cdots \times 1$. $0! = 1$.
+3. **Permutation** ($P(n,r)$): Ordered arrangements of $r$ items from $n$ distinct objects. $P(n,r) = \frac{n!}{(n-r)!}$.
+4. **Combination** ($C(n,r)$ or $\binom{n}{r}$): Unordered selections of $r$ items from $n$ distinct objects. $\binom{n}{r} = \frac{n!}{r!(n-r)!}$.
+5. **Binomial Coefficient**: Another name for $\binom{n}{r}$, the coefficient of $x^r$ in the expansion of $(x+y)^n$.
+6. **Pascal's Triangle**: Triangular array of binomial coefficients where row $n$ contains $\binom{n}{0}, \binom{n}{1}, \ldots, \binom{n}{n}$.
+7. **Complement Counting**: Count the complement (what you don't want) and subtract from the total.
+
+## Worked Examples
+
+**Example 1: Arranging Letters**
+
+How many ways can you arrange the letters in the word "CAT"?
+
+All three letters are distinct. You choose all 3 and order matters.
+
+$$P(3,3) = 3! = 6$$
+
+The arrangements are: CAT, CTA, ACT, ATC, TAC, TCA.
+
+**Example 2: Choosing a Committee**
+
+A club has 8 members. How many 3-member committees can be formed?
+
+Order doesn't matter (committee {Alice, Bob, Carol} is the same as {Carol, Alice, Bob}).
+
+$$C(8,3) = \binom{8}{3} = \frac{8!}{3! \times 5!} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = \frac{336}{6} = 56$$
+
+**Example 3: Poker Hands**
+
+How many 5-card poker hands can be dealt from a 52-card deck?
+
+Order doesn't matter (the hand {A♠, K♥, Q♦, J♣, 10♠} is the same regardless of order dealt).
+
+$$C(52,5) = \binom{52}{5} = \frac{52!}{5! \times 47!} = \frac{52 \times 51 \times 50 \times 49 \times 48}{5 \times 4 \times 3 \times 2 \times 1} = \frac{311{,}875{,}200}{120} = 2{,}598{,}960$$
+
+**Example 4: Passwords**
+
+How many 4-character passwords are possible if each character can be a letter (26 options) or a digit (10 options), so 36 total?
+
+Each position has 36 choices:
+$$36 \times 36 \times 36 \times 36 = 36^4 = 1{,}679{,}616$$
+
+**Example 5: Complement Counting**
+
+How many 3-digit numbers (from 100 to 999) do *not* contain the digit 5?
+
+- First digit: 1–9 except 5, so 8 choices.
+- Second digit: 0–9 except 5, so 9 choices.
+- Third digit: 0–9 except 5, so 9 choices.
+
+Total without a 5: $8 \times 9 \times 9 = 648$.
+
+Alternatively: Total 3-digit numbers = 900. Those containing at least one 5 is harder to count directly, so complement works well here.
+
+## Practice Set
+
+1. A restaurant offers 4 appetizers, 6 main courses, and 3 desserts. How many full meals (one of each) can be ordered?
+
+2. How many ways can 7 books be arranged on a shelf?
+
+3. From 12 students, how many ways can a president and vice-president be chosen? (Order matters—the roles are distinct.)
+
+4. How many 5-person teams can be formed from 20 people?
+
+5. A license plate has 3 letters followed by 3 digits. How many different plates are possible?
+
+6. How many ways can you choose 2 toppings from a menu of 8 pizza toppings?
+
+7. In Pascal's triangle, what is the entry in row 6, position 3? (Verify it equals $\binom{6}{3}$.)
+
+## Reasoning Task
+
+**The Birthday Paradox Revisited (Combinatorial Approach)**
+
+In a room of 23 people, what is the probability that at least two share the same birthday?
+
+Use combinatorial thinking. Consider:
+- Total ways to assign 23 people to 365 days: $365^{23}$ (each person can be born on any day).
+- Ways to assign 23 people to different days: $365 \times 364 \times 363 \times \cdots \times 343$ (first person, 365 choices; second, 364; etc.).
+
+The probability all have different birthdays is the ratio of these. The complement gives the probability of at least one match.
+
+Calculate (or estimate) this probability. Does the answer align with your intuition?
+
+## Application
+
+**Lottery Odds**
+
+A lottery game requires you to choose 6 different numbers from 1 to 49.
+
+How many possible tickets are there?
+
+If you buy 1 ticket, what is your probability of winning?
+
+A "smaller" prize is awarded for matching 5 of 6. How many ways can you choose 5 winning numbers and 1 non-winning number?
+
+Estimate the odds and discuss: why do people buy lottery tickets despite the tiny probability?
+
+## Recap
+
+Counting is the foundation of probability. When all outcomes are equally likely, probability is the ratio of favorable to total outcomes. But computing the total becomes impossible without systematic counting.
+
+The **fundamental counting principle** says that independent choices multiply. If you have $m$ options for choice 1 and $n$ for choice 2, you have $m \times n$ total combinations.
+
+**Factorials** count arrangements where all items are used and order matters. $n!$ is the number of ways to arrange $n$ distinct objects.
+
+**Permutations** and **combinations** extend this. A permutation counts ordered selections ($P(n,r) = \frac{n!}{(n-r)!}$). A combination counts unordered selections ($C(n,r) = \frac{n!}{r!(n-r)!}$). The difference: does order matter?
+
+**Pascal's triangle** encodes all binomial coefficients and appears throughout mathematics, from polynomial expansion to probability to combinatorics itself.
+
+These tools let us answer "How many ways?" without enumeration. A poker hand doesn't require listing all 2.5 million hands. A password doesn't require listing all possible codes. The formulas provide the count instantly.
+
+Counting, properly done, reveals the vast size of possibility space. It teaches humility: most events, when broken down into all possible cases, are rarer than intuition suggests. Combinatorics quantifies this lesson.
+
+## Unlock Quiz
+
+**Question 1:** How many ways can 4 distinct books be arranged on a shelf?
+
+- $4$
+- $16$
+- $24$
+- $12$
+
+<details>
+<summary>Answer</summary>
+$24$
+
+This is a permutation of all 4 books: $P(4,4) = 4! = 4 \times 3 \times 2 \times 1 = 24$.
+</details>
+
+**Question 2:** From 10 people, how many 3-person committees can be formed?
+
+- $P(10,3) = 720$
+- $C(10,3) = 120$
+- $C(10,3) = 10$
+- $P(10,3) = 100$
+
+<details>
+<summary>Answer</summary>
+$C(10,3) = 120$
+
+Order doesn't matter in a committee, so we use combinations: $\binom{10}{3} = \frac{10!}{3! \times 7!} = \frac{10 \times 9 \times 8}{6} = 120$.
+</details>
+
+**Question 3:** What is $\binom{5}{2}$?
+
+- $5$
+- $10$
+- $20$
+- $15$
+
+<details>
+<summary>Answer</summary>
+$10$
+
+$\binom{5}{2} = \frac{5!}{2! \times 3!} = \frac{5 \times 4}{2 \times 1} = \frac{20}{2} = 10$.
+</details>
+
+**Question 4:** A password uses 4 digits (0–9), each digit can repeat. How many passwords are possible?
+
+- $10^4 = 10{,}000$
+- $4! = 24$
+- $P(10,4) = 5{,}040$
+- $C(10,4) = 210$
+
+<details>
+<summary>Answer</summary>
+$10^4 = 10{,}000$
+
+Each of the 4 positions has 10 choices (0–9), and they're independent. By the fundamental counting principle: $10 \times 10 \times 10 \times 10 = 10{,}000$.
+</details>
+
+## Source Notes
+
+- Permutations and combinations: https://en.wikipedia.org/wiki/Permutation
+- Binomial coefficient: https://en.wikipedia.org/wiki/Binomial_coefficient
+- Pascal's triangle: https://en.wikipedia.org/wiki/Pascal%27s_triangle
+- Combinatorics: https://en.wikipedia.org/wiki/Combinatorics

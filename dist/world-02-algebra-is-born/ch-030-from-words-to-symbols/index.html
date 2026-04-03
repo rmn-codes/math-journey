@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>From Words to Symbols — Math Journey</title>
+    <meta name="description" content="How mathematics learned to speak in shorthand" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 2 · Chapter 30</p>
+        <h1>From Words to Symbols</h1>
+        <p class="hero-copy">How mathematics learned to speak in shorthand</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>foundational</span>
+          <span>Europe</span>
+          <span>1400 – 1700 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Understand why mathematical notation developed gradually over centuries</li><li>Recognize the contributions of Viète and Descartes to modern symbolic algebra</li><li>Read and write basic algebraic expressions using standard notation</li><li>Evaluate algebraic expressions by substituting values</li><li>Appreciate the power of notation for pattern recognition and communication</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#key-terms">Key Terms</a></li><li class="toc-level-3"><a href="#vi-te-s-notation-vs-descartes-notation">Viète&#x27;s Notation vs. Descartes&#x27; Notation</a></li><li class="toc-level-3"><a href="#reading-and-writing-expressions">Reading and Writing Expressions</a></li><li class="toc-level-3"><a href="#substitution-and-evaluation">Substitution and Evaluation</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-reading-symbolic-notation">Example 1: Reading Symbolic Notation</a></li><li class="toc-level-3"><a href="#example-2-evaluating-an-expression">Example 2: Evaluating an Expression</a></li><li class="toc-level-3"><a href="#example-3-writing-an-expression-from-words">Example 3: Writing an Expression from Words</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-3"><a href="#warm-up">Warm-Up</a></li><li class="toc-level-3"><a href="#core-practice">Core Practice</a></li><li class="toc-level-3"><a href="#stretch">Stretch</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>It is the year 1500. A mathematician in Italy sits at his desk with a problem that makes him want to tear out his hair. He must write down the following:</p>
+<p>&quot;Find the cube of the unknown, minus twice the unknown, plus seven, such that the result equals zero.&quot;</p>
+<p>He cannot use $x^3 - 2x + 7 = 0$. That notation does not exist yet. So he writes:</p>
+<p>&quot;Cubus aequalis duplo rebus plus 7.&quot;</p>
+<p>Cumbersome. Prone to error. When he must explain his solution, he uses 20 lines where 20 symbols would do.</p>
+<p>Centuries earlier, al-Khwarizmi had solved this problem. But he described <em>every step in words</em>. &quot;Multiply the unknown by itself. Then multiply by itself again. Take away twice the unknown. Add seven...&quot; The logic was sound, but the exposition was endless.</p>
+<p>Now, imagine it is 1590. A French mathematician named François Viète has an idea. Instead of writing &quot;the unknown,&quot; why not just write a letter? Just one letter?</p>
+<p>He writes: &quot;A cubed minus 2A plus 7 equals 0.&quot;</p>
+<p>Suddenly, the problem vanishes from paragraphs into a line. And more importantly: <em>patterns become visible</em>. You can see the structure. You can rearrange, combine, transform. The problem becomes almost visual.</p>
+<p>Then, in 1637, René Descartes improves even further. Instead of using capital vowels for unknowns, he uses $x$, $y$, $z$. And instead of writing &quot;times,&quot; he just puts symbols next to each other.</p>
+<p>$x^3 - 2x + 7 = 0$.</p>
+<p>Modern algebra is born. And mathematics will never be slow again.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Notation is not decoration. Notation is <em>thought</em>.</p>
+<p>When you write in words, your mind moves word by word. When you write in symbols, your mind can see <em>patterns, structure, and relationships</em> all at once. A picture is worth a thousand words—and a good symbol is worth a thousand pictures.</p>
+<p>Think of music. A song could be described in words: &quot;play a high note, then a lower note, then a note between them, in a rhythm of short-long-short.&quot; But sheet music shows all this in an instant. A musician can see patterns, recognize melodies, transpose to different keys, all because of notation.</p>
+<p>Mathematics is the same way. Before notation:</p>
+<ul><li>Every problem seemed unique</li><li>Solutions were hard to generalize</li><li>Patterns were invisible</li><li>Errors multiplied</li></ul>
+<p>After notation:</p>
+<ul><li>Problems became comparable</li><li>Solutions could be generalized</li><li>Patterns leaped out of the page</li><li>Errors were easy to spot</li></ul>
+<p>The development of notation is part of the development of human thinking itself.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The journey from words to symbols took three centuries and many contributors.</p>
+<p>In the Islamic Golden Age, al-Khwarizmi (9th century) described everything in words. Al-Khwarizmi was brilliant, but even his great mind expressed everything rhetorically: &quot;Multiply this by that. Add to that. You obtain...&quot; This worked, but it was slow.</p>
+<p>By the 12th century, mathematicians like al-Samaw&#x27;al used abbreviations—short forms like &quot;mal&quot; for &quot;the unknown squared&quot; and &quot;shay&quot; for &quot;the thing&quot; (the unknown itself). This was progress toward notation, but still not symbolic.</p>
+<p>In Renaissance Europe (1400–1600), mathematicians gradually introduced more symbols. The Italian Luca Pacioli (1445–1517) used abbreviations and some symbols. The German Michael Stifel (1486–1567) was among the first to use letters for unknowns systematically, though his notation was still clumsy by modern standards.</p>
+<p>The watershed moment came with <strong>François Viète</strong> (1540–1603), a French mathematician and cryptographer. Around 1590, Viète introduced the use of letters as <em>variables</em>—not just placeholders, but objects you could manipulate algebraically. He used vowels (A, E, I, O, U) for unknowns and consonants (B, C, D, etc.) for known quantities. This distinction was brilliant: it let the reader see at a glance which quantities were being solved for.</p>
+<p>But Viète&#x27;s system was not quite modern. He still wrote &quot;A in A&quot; for $A^2$, and &quot;A in B&quot; for $AB$.</p>
+<p>The final refinement came from <strong>René Descartes</strong> (1596–1650), the French philosopher and mathematician. In 1637, Descartes published &quot;The Geometry&quot; (La Géométrie), an appendix to his &quot;Discourse on Method.&quot; In it, he:</p>
+<ul><li>Used lowercase letters $a$, $b$, $c$ for known quantities and $x$, $y$, $z$ for unknowns</li><li>Used exponent notation: $x^2$, $x^3$, etc., instead of &quot;A in A&quot;</li><li>Simplified operators: $\times$ for multiplication, $/$ for division, $=$ for equality</li><li>Showed how algebra and geometry could be married (creating analytic geometry)</li></ul>
+<p>By 1700, Descartes&#x27; notation had largely won out across Europe. And it remains the standard today. When you write $x^2 - 5x + 6 = 0$, you are using notation that Descartes essentially invented.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Mathematical notation</strong> is a system of symbols and conventions that lets mathematicians express ideas compactly and precisely.</p>
+<p>A <strong>variable</strong> is a letter (usually $x$, $y$, $n$, etc.) that represents an unknown or changing quantity.</p>
+<p>A <strong>coefficient</strong> is a number that multiplies a variable. In the expression $5x$, the coefficient is 5.</p>
+<p>An <strong>expression</strong> is a combination of variables, numbers, and operators (like $+$, $-$, $\times$) that represents a quantity. Examples: $3x + 5$, $x^2 - 2x + 1$, $\frac{a}{b}$.</p>
+<p><strong>Symbolic algebra</strong> is the practice of using symbols and notation to solve problems with unknowns. It is the modern form of algebra.</p>
+<p>The power of symbols comes from <em>compression</em> and <em>visibility</em>:</p>
+<p><strong>Compression:</strong> The phrase &quot;a quantity times itself, increased by five times the quantity, decreased by six&quot; becomes $x^2 + 5x - 6$ in symbols. The idea is clearer in fewer characters.</p>
+<p><strong>Visibility:</strong> With symbolic notation, you can <em>see</em> patterns. Notice that $x^2 + 5x - 6 = (x + 6)(x - 1)$. This factorization is obvious once you see it written. In words, it might not be obvious at all.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="key-terms">Key Terms</h3>
+<p><strong>Notation</strong> A system of symbols for representing mathematical objects and operations.</p>
+<p><strong>Variable</strong> A letter representing an unknown or changing quantity. Common choices: $x$, $y$, $n$, $t$.</p>
+<p><strong>Coefficient</strong> A number that multiplies a variable. In $3x$, the coefficient is 3. In $x$, the coefficient is 1 (implied).</p>
+<p><strong>Exponent</strong> A number that indicates how many times a base is multiplied by itself. In $x^3$, the exponent is 3, meaning $x \times x \times x$.</p>
+<p><strong>Expression</strong> A combination of variables, numbers, and operators representing a quantity. Not an equation (no equals sign).</p>
+<p><strong>Equation</strong> A statement that two expressions are equal. Contains an equals sign.</p>
+<p><strong>Substitution</strong> Replacing a variable with a specific value to evaluate an expression.</p>
+<h3 id="vi-te-s-notation-vs-descartes-notation">Viète&#x27;s Notation vs. Descartes&#x27; Notation</h3>
+<p><strong>Viète (1590):</strong></p>
+<ul><li>$A$ cubed minus 2 $A$ plus 7 equals 0</li><li>Used words for operations</li><li>Used &quot;in&quot; for multiplication: &quot;A in A&quot; meant $A \times A$</li></ul>
+<p><strong>Descartes (1637):</strong></p>
+<ul><li>$x^3 - 2x + 7 = 0$</li><li>Used symbols for operations</li><li>Used exponent notation: $x^3$ instead of &quot;x in x in x&quot;</li><li>Used modern equals sign clearly</li></ul>
+<p><strong>Modern (today):</strong></p>
+<ul><li>$x^3 - 2x + 7 = 0$</li><li>We have adopted Descartes&#x27; system with minor refinements</li><li>Addition: $+$</li><li>Subtraction: $-$</li><li>Multiplication: $\times$ or $\cdot$ or implicit (write $3x$ for &quot;3 times x&quot;)</li><li>Division: $/$ or fraction bar</li><li>Equality: $=$</li></ul>
+<h3 id="reading-and-writing-expressions">Reading and Writing Expressions</h3>
+<p>| Expression | Meaning | |---|---| | $x$ | An unknown quantity | | $2x$ | Two times the unknown | | $x^2$ | The unknown squared | | $x^3$ | The unknown cubed | | $x^2 + 5x - 6$ | The unknown squared, plus five times the unknown, minus six | | $\frac{x}{3}$ | The unknown divided by 3 | | $(x + 2)^2$ | The quantity (the unknown plus 2), all squared | | $-3x$ | Negative three times the unknown |</p>
+<h3 id="substitution-and-evaluation">Substitution and Evaluation</h3>
+<p>To evaluate an expression, replace the variable with a specific number and simplify.</p>
+<p><strong>Example:</strong> Evaluate $3x^2 - 2x + 1$ when $x = 4$.</p>
+<p>Substitute 4 for every $x$: $$3(4)^2 - 2(4) + 1 = 3(16) - 8 + 1 = 48 - 8 + 1 = 41$$</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-reading-symbolic-notation">Example 1: Reading Symbolic Notation</h3>
+<p>The expression is: $x^2 + 3x - 10$. What does it mean?</p>
+<p><strong>Solution</strong></p>
+<ul><li>$x^2$ means &quot;the unknown squared&quot;</li><li>$+ 3x$ means &quot;plus 3 times the unknown&quot;</li><li>$- 10$ means &quot;minus 10&quot;</li></ul>
+<p>So the full meaning is: &quot;The unknown squared, plus 3 times the unknown, minus 10.&quot;</p>
+<p>In Viète&#x27;s notation, this might have been: &quot;A in A, plus 3 in A, minus 10.&quot;</p>
+<h3 id="example-2-evaluating-an-expression">Example 2: Evaluating an Expression</h3>
+<p>Evaluate $2x^2 - 5x + 3$ when $x = 3$.</p>
+<p><strong>Solution</strong></p>
+<p>Substitute 3 for every $x$: $$2(3)^2 - 5(3) + 3$$</p>
+<p>Simplify: $$2(9) - 15 + 3 = 18 - 15 + 3 = 6$$</p>
+<p>The expression equals 6 when $x = 3$.</p>
+<h3 id="example-3-writing-an-expression-from-words">Example 3: Writing an Expression from Words</h3>
+<p>A merchant sells items for $5 each. He also has a fixed cost of $20 (rent on his stall). His profit for selling $n$ items is his revenue minus costs. Write an expression for his profit.</p>
+<p><strong>Solution</strong></p>
+<p>Revenue = $5n$ (5 dollars per item, for $n$ items) Costs = $20$ Profit = Revenue − Costs = $5n - 20$</p>
+<p>The expression for profit is $5n - 20$.</p>
+<p>This compact notation shows the structure clearly. You can see that profit grows by 5 dollars for each additional item sold.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<h3 id="warm-up">Warm-Up</h3>
+<ol><li>Write in modern notation: &quot;x squared plus 4x minus 5&quot;</li><li>Read aloud in words: $3x^2 - 2x + 7$</li></ol>
+<h3 id="core-practice">Core Practice</h3>
+<ol><li>Evaluate $4x - 7$ when $x = 3$.</li><li>Evaluate $x^2 + 3x - 8$ when $x = -2$.</li><li>A baker makes cookies. Each batch requires $2 cups of flour. Write an expression for the amount of flour needed for $b$ batches.</li><li>Evaluate $(x + 3)^2$ when $x = 2$.</li></ol>
+<h3 id="stretch">Stretch</h3>
+<ol><li>A square has side length $s$. Its perimeter is $4s$ and its area is $s^2$. If $s = 5$, compute both the perimeter and area. Then, if we want the area to be 100, what must $s$ be?</li></ol>
+<details>
+<summary>Practice Answer Guide</summary>
+<ol><li>$x^2 + 4x - 5$</li><li>&quot;Three times x squared, minus two times x, plus 7&quot; or &quot;3x squared minus 2x plus 7&quot;</li><li>$4(3) - 7 = 12 - 7 = 5$</li><li>$(-2)^2 + 3(-2) - 8 = 4 - 6 - 8 = -10$</li><li>$2b$ cups of flour (or $2 \times b$)</li><li>$(2 + 3)^2 = 5^2 = 25$</li><li>Perimeter: $4(5) = 20$. Area: $5^2 = 25$. For area = 100, we need $s^2 = 100$, so $s = 10$ (taking the positive root).</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>An ancient mathematician (like al-Khwarizmi) works entirely in words. A modern mathematician uses notation. They both solve the same problem, and both get the right answer.</p>
+<p>The ancient mathematician argues: &quot;My method works. Why should I change? My students understand my words.&quot;</p>
+<p>Write 6–8 sentences responding to this. Address:</p>
+<ul><li>Why symbols let you see patterns and structure that words hide</li><li>How symbols make it easier to communicate across languages</li><li>Why symbols reduce the chance of errors</li><li>How symbols enable you to work faster and explore more ideas</li><li>Give a specific example of something that is hard to do in words but easy in symbols</li></ul>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>Modern notation is not just a convenience—it is the foundation of modern mathematics, science, and engineering.</p>
+<p><strong>Physics:</strong> The laws of motion, gravity, and electromagnetism are expressed in symbolic equations. $F = ma$ (force equals mass times acceleration) is a tiny formula that would take a paragraph to express in words. The equation form lets physicists manipulate and combine ideas fluidly.</p>
+<p><strong>Economics:</strong> Supply-and-demand curves, cost functions, and optimization problems are all expressed in notation. A business decision that depends on solving $C(x) = R(x)$ (cost equals revenue) is impossible to analyze without symbolic thinking.</p>
+<p><strong>Medicine:</strong> Dosage calculations, pharmacokinetics (how drugs move through the body), and epidemiological models all use algebraic notation. The clarity of symbols is essential when an error could harm someone.</p>
+<p><strong>Technology:</strong> Every algorithm in computer science rests on symbolic logic and notation. When you type a search into Google, the algorithm that finds results uses symbolic mathematics developed over centuries.</p>
+<p><strong>Communication:</strong> Notation lets scientists from different countries collaborate. A Chinese physicist and an American physicist can exchange a single equation and understand each other, even if they speak different languages. Words would fail. Symbols succeed.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>Mathematical notation</strong> is a system of symbols that expresses mathematical ideas compactly and precisely.</li><li><strong>François Viète</strong> (1590) introduced the use of letters as variables, a major step toward symbolic algebra.</li><li><strong>René Descartes</strong> (1637) refined notation by using $x$, $y$, $z$ for unknowns and introducing exponent notation ($x^2$, $x^3$, etc.).</li><li><strong>Variables</strong> are letters representing unknown or changing quantities.</li><li><strong>Coefficients</strong> are numbers that multiply variables.</li><li><strong>Expressions</strong> are combinations of variables, numbers, and operators.</li><li>Notation makes patterns visible, enables communication across languages, and reduces errors.</li><li>Modern algebra rests on the symbolic notation that Descartes established in the 17th century.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What did François Viète introduce around 1590?</li></ol>
+<ul><li>The use of letters as variables in algebra</li><li>The concept of negative numbers</li><li>Exponent notation</li><li>The phrase &quot;completing the square&quot;</li></ul>
+<ol><li>How did René Descartes improve upon Viète&#x27;s notation in 1637?</li></ol>
+<ul><li>He invented algebra from scratch</li><li>He used $x$, $y$, $z$ for unknowns and introduced exponent notation</li><li>He rejected all previous work</li><li>He wrote only in words</li></ul>
+<ol><li>Evaluate: $2x^2 - 3x + 1$ when $x = 2$.</li></ol>
+<ul><li>1</li><li>3</li><li>7</li><li>11</li></ul>
+<ol><li>Which of the following is an expression (not an equation)?</li></ol>
+<ul><li>$x^2 + 5x - 6 = 0$</li><li>$x^2 + 5x - 6$</li><li>$2x = 10$</li><li>$3y + 4 = 19$</li></ul>
+<ol><li>Why is symbolic notation more powerful than rhetorical (word-based) algebra?</li></ol>
+<ul><li>It uses fewer words</li><li>It makes patterns visible, allows rapid communication, and reduces errors</li><li>It is harder to understand</li><li>It was invented more recently</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>The use of letters as variables in algebra</li><li>He used $x$, $y$, $z$ for unknowns and introduced exponent notation</li><li>3</li><li>$x^2 + 5x - 6$</li><li>It makes patterns visible, allows rapid communication, and reduces errors</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/History_of_algebra" target="_blank" rel="noopener">History of algebra</a> — comprehensive treatment of notation development through Viète and Descartes</li><li><a href="https://en.wikipedia.org/wiki/Fran%C3%A7ois_Vi%C3%A8te" target="_blank" rel="noopener">François Viète</a> — biography and mathematical contributions</li><li><a href="https://en.wikipedia.org/wiki/René_Descartes" target="_blank" rel="noopener">René Descartes</a> — philosopher, mathematician, and originator of modern algebraic notation</li><li><a href="https://en.wikipedia.org/wiki/Mathematical_notation" target="_blank" rel="noopener">Mathematical notation</a> — history and conventions of mathematical symbols</li><li><a href="https://en.wikipedia.org/wiki/Algebra" target="_blank" rel="noopener">Algebra</a> — broad history including development of symbolic algebra</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-02-algebra-is-born/ch-029-al-khwarizmi-and-the-birth-of-algebra/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Al-Khwarizmi and the Birth of Algebra</span></a><a class="pager-link pager-link--next" href="../../world-02-algebra-is-born/ch-031-variables-and-expressions/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Variables and Expressions</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

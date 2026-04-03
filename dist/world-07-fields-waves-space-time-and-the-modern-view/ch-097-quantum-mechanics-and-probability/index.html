@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quantum Mechanics and Probability — Math Journey</title>
+    <meta name="description" content="The universe is not deterministic — it is fundamentally probabilistic" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 7 · Chapter 97</p>
+        <h1>Quantum Mechanics and Probability</h1>
+        <p class="hero-copy">The universe is not deterministic — it is fundamentally probabilistic</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1900–1935</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Describe the role of probability in quantum mechanics</li><li>State the uncertainty principle and its implications</li><li>Explain superposition and measurement</li><li>Distinguish quantum from classical probability</li><li>Connect quantum mechanics to real technology</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>December 1926. Albert Einstein sits in Copenhagen, Denmark, visiting Niels Bohr&#x27;s institute. The two greatest physicists of the age are locked in conversation about the most profound question science has ever faced: What is the nature of reality itself?</p>
+<p>Einstein has just received the latest papers from Werner Heisenberg and Schrödinger. Their mathematics describes the behavior of atoms and electrons perfectly—yet it says something that Einstein cannot accept.</p>
+<p>The theory says the universe is fundamentally probabilistic. A particle does not have a definite position and momentum at the same time. When you measure it, you collapse it from a cloud of possibilities into a single state. Before measurement, the electron is in <em>all possible positions at once</em>—and only becomes &quot;real&quot; when you look at it.</p>
+<p>Einstein cannot believe this. He argues passionately with Bohr for hours. In a moment of frustration, Einstein says: &quot;God does not play dice with the universe.&quot;</p>
+<p>Bohr, unmoved, replies: &quot;Einstein, stop telling God what to do.&quot;</p>
+<p>This debate—between Einstein&#x27;s determinism and Bohr&#x27;s probabilism—is the deepest disagreement in the history of science. And by all experiments since, Bohr was right.</p>
+<p>The universe, it turns out, <em>is</em> dice. And the mathematics of that dice-rolling is one of the greatest intellectual achievements of humankind.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Every transistor in your computer is a quantum device. Every laser, every MRI scanner, every smartphone camera, every solar panel relies on quantum mechanics. Quantum computers, currently being built in laboratories worldwide, promise to solve problems that classical computers cannot touch—like breaking encryption or discovering new medicines.</p>
+<p>But more than that: quantum mechanics revealed something fundamental about reality. The classical physics of Newton said the universe is a giant machine, fully determined, fully predictable. Quantum mechanics says that is false. At the smallest scales, nature is intrinsically random. And that randomness is the source of all complexity, all life, all thought.</p>
+<p>To understand the world, you must understand probability at its deepest level.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>In the late 1800s, physics seemed almost complete. Maxwell had unified electricity and magnetism. Thermodynamics explained heat and energy. Newton&#x27;s laws governed motion from apples to planets. The universe appeared to be a vast clockwork—given enough information, you could predict the future with certainty.</p>
+<p>Then came the cracks.</p>
+<p>In 1900, Max Planck discovered that light is not a continuous wave but comes in discrete packets called <em>quanta</em> (plural of quantum). Each packet carries energy proportional to its frequency. This simple observation would unravel everything.</p>
+<p>Einstein used Planck&#x27;s idea to explain the photoelectric effect. Schrödinger developed a wave equation for electrons. Heisenberg discovered that measuring one property of a particle (say, position) makes the other property (momentum) fuzzy. Dirac unified quantum mechanics with special relativity.</p>
+<p>By 1927, at the Solvay Conference in Brussels, the new quantum theory was crystallizing. But it was a strange theory—one that spoke not of what <em>is</em>, but of what <em>might be</em>.</p>
+<p>The debate between Einstein and Bohr became personal and philosophical. But there was no denying the mathematics worked. And it worked <em>perfectly</em>. Every prediction matched every experiment. The universe, it seemed, was stranger than anyone had imagined.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>The wave function</strong> $\Psi$ (psi) is the central object of quantum mechanics. It is a mathematical function that describes the quantum state of a particle. It is not a physical wave in space. Rather, it is a wave of <em>probability</em>.</p>
+<p>For a single particle in one dimension, the wave function $\Psi(x, t)$ assigns a complex number to each position $x$ at each time $t$.</p>
+<p>The <strong>Born rule</strong> (named after physicist Max Born) gives the physical meaning of the wave function:</p>
+<p>$$P(x) = |\Psi(x, t)|^2$$</p>
+<p>This quantity—the absolute value squared of the wave function—is the <em>probability density</em> of finding the particle at position $x$ when you measure it. It is not certainty. It is probability.</p>
+<p><strong>Superposition</strong> is the astonishing consequence: before measurement, the particle does not have a definite position. Instead, it exists in a superposition of many positions simultaneously, weighted by the probability density. An electron is &quot;smeared out&quot; across space as a cloud of probability.</p>
+<p><strong>Measurement collapses the superposition.</strong> When you measure the particle&#x27;s position, the probability cloud &quot;collapses&quot; instantaneously to a single location. After measurement, if you measure again immediately, you will find the particle at the same location. But before measurement, there was no definite location—only possibilities.</p>
+<p><strong>The Schrödinger equation</strong> governs how the wave function evolves over time:</p>
+<p>$$i\hbar\frac{\partial \Psi}{\partial t} = \hat{H}\Psi$$</p>
+<p>where $\hbar$ (h-bar) is a constant called the reduced Planck constant, $i$ is the imaginary unit, and $\hat{H}$ is the Hamiltonian operator (which encodes the energy of the system). This equation says: the rate of change of the wave function is determined by the energy. It is the quantum version of Newton&#x27;s second law.</p>
+<p><strong>Heisenberg&#x27;s uncertainty principle</strong> states:</p>
+<p>$$\Delta x \cdot \Delta p \geq \frac{\hbar}{2}$$</p>
+<p>where $\Delta x$ is the uncertainty in position and $\Delta p$ is the uncertainty in momentum. You cannot know both with arbitrary precision. The more precisely you pin down position, the more uncertain the momentum becomes, and vice versa. This is not a limitation of our instruments. It is built into the fabric of reality.</p>
+<p><strong>Quantum entanglement</strong>: Two particles can be created in such a way that they are entangled—their quantum states are connected, no matter how far apart they are. If you measure one, the result instantly constrains the other. Einstein called this &quot;spooky action at a distance.&quot; Yet experiments have confirmed it is real. Entanglement is now the foundation of quantum computing and quantum cryptography.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<ul><li><strong>Wave function:</strong> A function $\Psi(x, t)$ (or more generally $\Psi(\mathbf{r}, t)$ in 3D) assigning a complex number to each location and time, encoding the quantum state.</li><li><strong>Probability density:</strong> $|\Psi(x, t)|^2$, the probability per unit length of finding the particle at position $x$.</li><li><strong>Born rule:</strong> The probability of measuring the particle at position $x$ is $P(x) = |\Psi(x, t)|^2 dx$ (integrated over a small interval $dx$).</li><li><strong>Superposition:</strong> A quantum state that is a combination of multiple basis states simultaneously. The particle is not in one state or another—it is in all of them at once.</li><li><strong>Measurement (collapse):</strong> When observed, the superposition collapses to a single state with probability given by the Born rule.</li><li><strong>Schrödinger equation:</strong> The fundamental equation of quantum mechanics: $i\hbar\frac{\partial \Psi}{\partial t} = \hat{H}\Psi$.</li><li><strong>Uncertainty principle:</strong> The product of position and momentum uncertainty cannot be less than $\hbar/2$: $\Delta x \cdot \Delta p \geq \hbar/2$.</li><li><strong>Expectation value:</strong> The average outcome of a measurement, computed as $\langle \hat{O} \rangle = \int \Psi^* \hat{O} \Psi \, dx$.</li><li><strong>Entanglement:</strong> A quantum state of two or more particles that cannot be separated; measurement of one instantly affects the other.</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Interpreting the Wave Function</strong></p>
+<p>Suppose the wave function for a particle confined to a box is $\Psi(x) = A \sin(kx)$ (the simplest solution). The probability density is:</p>
+<p>$$|\Psi(x)|^2 = A^2 \sin^2(kx)$$</p>
+<p>This tells us: the particle is most likely to be found near the center of the box (where the sine wave is largest) and least likely to be found near the edges. If we measure the particle&#x27;s position, we will get a random result drawn from this probability distribution.</p>
+<p><strong>Example 2: Uncertainty Principle</strong></p>
+<p>The electron in a hydrogen atom is confined to a region of size roughly $\Delta x \approx 10^{-10}$ m (about the size of the atom). From the uncertainty principle:</p>
+<p>$$\Delta p \geq \frac{\hbar}{2\Delta x} \approx \frac{10^{-34}}{2 \times 10^{-10}} \approx 5 \times 10^{-25} \text{ kg·m/s}$$</p>
+<p>This huge uncertainty in momentum means the electron is moving very fast—but we cannot know the exact speed. This is why atoms do not collapse: the electron&#x27;s motion cannot be pinned down.</p>
+<p><strong>Example 3: Entanglement</strong></p>
+<p>Two photons are created together and move in opposite directions. Due to conservation of angular momentum, if one photon is measured to be right-handed circularly polarized, the other must be left-handed. Before measurement, neither photon has a definite polarization—they are in superposition. But measuring one instantaneously determines the other, even if they are light-years apart.</p>
+<p>This is not signaling (you cannot send a message this way), but it is spooky, as Einstein said.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>If a wave function $\Psi(x)$ is given, how do you compute the probability of finding the particle in the interval $[a, b]$?</li></ol>
+<ol><li>State Heisenberg&#x27;s uncertainty principle in words and symbols. What does it imply about the electron in an atom?</li></ol>
+<ol><li>What is meant by &quot;superposition&quot;? How is it different from saying &quot;we don&#x27;t know the state&quot;?</li></ol>
+<ol><li>Why does measuring a particle&#x27;s position change its momentum?</li></ol>
+<ol><li>Describe an example of quantum entanglement and explain why Einstein found it philosophically troubling.</li></ol>
+<ol><li>If two particles are entangled and you measure one, does that allow you to send information to the other particle faster than light? Why or why not?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Problem:</strong> An electron is confined to a 1D box of width $L = 10^{-10}$ m. Its wave function is approximately $\Psi(x) = A\sin(\pi x/L)$ for $0 &lt; x &lt; L$ and zero elsewhere. The electron&#x27;s position uncertainty is roughly $\Delta x \sim L/2$. Use the uncertainty principle to estimate the minimum uncertainty in momentum and the resulting kinetic energy.</p>
+<p><strong>Hint:</strong> Kinetic energy is $E = p^2/(2m)$. What is the minimum momentum (in terms of $\Delta p$)?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Quantum Computing:</strong> Classical computers process bits (0 or 1). Quantum computers process qubits (quantum bits), which can be in superposition of 0 <em>and</em> 1 simultaneously. Ten classical bits encode one of $2^{10} = 1024$ possible states. Ten qubits, in superposition, represent all 1024 states at once. Quantum algorithms exploit this parallelism to solve certain problems exponentially faster. But here is the catch: when you measure a qubit, it collapses to 0 or 1, and you lose the superposition. Quantum algorithms must be cleverly designed so that the right answer has high probability after measurement.</p>
+<p><strong>Real-world quantum technology:</strong> Transistors rely on quantum tunneling (particles passing through barriers they classically cannot). Lasers are fundamentally quantum—they amplify light via stimulated emission from excited atomic states. MRI scanners exploit the quantum spin of atomic nuclei in magnetic fields. Superconductors are quantum systems cooled to near absolute zero.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Quantum mechanics replaced certainty with probability. The wave function encodes a superposition of possibilities. Measurement collapses the superposition. The uncertainty principle forbids knowing both position and momentum simultaneously. Entanglement connects distant particles. These ideas seemed paradoxical—Einstein fought them—but experiments confirmed every prediction. Quantum mechanics is now the foundation of technology and our understanding of atomic phenomena. The universe is indeed a dice roller, and the mathematics of that randomness is elegant, predictive, and profoundly true.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is the physical meaning of $|\Psi(x)|^2$ in quantum mechanics?</li></ol>
+<ul><li>It is the kinetic energy of the particle</li><li>It is the probability density of finding the particle at position $x$</li><li>It is the momentum of the particle</li><li>It is the frequency of the quantum wave</li></ul>
+<ol><li>Before measurement, is an electron in a superposition?</li></ol>
+<ul><li>No, it always has a definite position; we just don&#x27;t know it</li><li>Yes, it is in a superposition of many positions weighted by the probability density</li><li>No, superposition is only a mathematical tool</li><li>Yes, but it collapses to one location as soon as it is created</li></ul>
+<ol><li>Heisenberg&#x27;s uncertainty principle states that...</li></ol>
+<ul><li>Particles are always moving too fast to measure</li><li>You cannot know both position and momentum with arbitrary precision simultaneously</li><li>Particles do not really exist until you measure them</li><li>Measurements always disturb the particle</li></ul>
+<ol><li>What does &quot;quantum entanglement&quot; mean?</li></ol>
+<ul><li>Two particles must always be at the same location</li><li>Two particles&#x27; quantum states are correlated such that measuring one constrains the other</li><li>Two particles cannot interact with each other</li><li>Entanglement is the same as quantum superposition</li></ul>
+<ol><li>A particle confined to a small region must have...</li></ol>
+<ul><li>High temperature</li><li>Low position uncertainty and low momentum uncertainty</li><li>Large momentum uncertainty (from the uncertainty principle)</li><li>No kinetic energy</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>It is the probability density of finding the particle at position $x$</li></ol>
+<ol><li>Yes, it is in a superposition of many positions weighted by the probability density</li></ol>
+<ol><li>You cannot know both position and momentum with arbitrary precision simultaneously</li></ol>
+<ol><li>Two particles&#x27; quantum states are correlated such that measuring one constrains the other</li></ol>
+<ol><li>Large momentum uncertainty (from the uncertainty principle)</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Heisenberg, W. (1927). &quot;Über den anschaulichen Inhalt der quantentheoretischen Kinematik und Mechanik.&quot; <a href="https://en.wikipedia.org/wiki/Uncertainty_principle" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Uncertainty_principle</a></li><li>Schrödinger, E. (1926). &quot;An Undulatory Theory of the Mechanics of Atoms and Molecules.&quot; <a href="https://en.wikipedia.org/wiki/Schrödinger_equation" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Schrödinger_equation</a></li><li>Born, M. (1926). Probability interpretation of the wave function. <a href="https://en.wikipedia.org/wiki/Born_rule" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Born_rule</a></li><li>Einstein-Bohr debates: <a href="https://en.wikipedia.org/wiki/Bohr%E2%80%93Einstein_debates" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Bohr%E2%80%93Einstein_debates</a></li><li>Quantum entanglement: <a href="https://en.wikipedia.org/wiki/Quantum_entanglement" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Quantum_entanglement</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-096-special-relativity/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Special Relativity — Space, Time, and the Speed of Light</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-098-godels-incompleteness/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Gödel&#x27;s Incompleteness — The Limits of Mathematics</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

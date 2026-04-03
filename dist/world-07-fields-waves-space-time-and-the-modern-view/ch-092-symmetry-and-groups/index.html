@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Mathematics of Symmetry — Groups — Math Journey</title>
+    <meta name="description" content="The abstract structure beneath every pattern — and the mathematics that unifies physics" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 7 · Chapter 92</p>
+        <h1>The Mathematics of Symmetry — Groups</h1>
+        <p class="hero-copy">The abstract structure beneath every pattern — and the mathematics that unifies physics</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1830s (Galois)</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Identify symmetry groups of geometric figures</li><li>Verify group axioms for simple examples</li><li>Distinguish Abelian and non-abelian groups</li><li>Explain Galois&#x27;s insight about polynomial equations</li><li>Connect symmetry to conservation laws in physics</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>The night before a duel he expected to lose, Évariste Galois sat at his desk and wrote frantically. He was 20 years old, a revolutionary and a brilliant mathematician, about to be killed in a dispute over a woman. With hours remaining, he scribbled down ideas that would take mathematicians 60 years to fully understand.</p>
+<p>Galois was trying to solve an ancient problem: Why do quadratic equations have a formula? Why do cubic and quartic equations have formulas, even though they are complicated? And why—this was the mystery—does there exist no formula for quintic (fifth-degree) equations?</p>
+<p>Paolo Ruffini had shown it was impossible in 1799. Niels Henrik Abel independently proved it again in 1824. But why? What was the deep reason?</p>
+<p>Galois found the answer by studying symmetry.</p>
+<p>He considered the symmetries of the roots of a polynomial. For a quadratic $x^2 + px + q = 0$ with roots $r$ and $s$, there is a symmetry: you can swap $r$ and $s$ and the equation looks the same. This symmetry structure, Galois realized, held the key.</p>
+<p>For a general polynomial of degree 5 or higher, the symmetries of the roots form a group that is too complicated. There is no way to &quot;unravel&quot; it into a formula. The abstract structure of symmetry determines whether a solution formula exists.</p>
+<p>Galois called these systems of symmetries <em>groups</em>. He barely published anything in his lifetime. After his death, mathematicians finally understood. Group theory became the language of symmetry.</p>
+<p>Today, group theory unifies physics. Physicists use group theory to understand the symmetries of particles. The Standard Model of particle physics is built on group theory. Every known particle, every known force, is a consequence of the symmetries of the quantum fields.</p>
+<p>The dying insight of a 20-year-old revolutionary turned out to describe the deepest laws of nature.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Symmetry is everywhere. A snowflake has six-fold rotational symmetry. A circle has infinitely many symmetries. A molecule&#x27;s chemical properties are determined by its symmetry. A crystal&#x27;s structure is encoded by its symmetry group.</p>
+<p>But symmetry is not just an aesthetic property. Emmy Noether proved in 1915 that <em>every symmetry corresponds to a conservation law</em>. If a physical system is symmetric under time translation (it works the same way tomorrow as today), then energy is conserved. If it is symmetric under spatial translation (it works the same way here as there), then momentum is conserved. If it is rotationally symmetric, then angular momentum is conserved.</p>
+<p>This means that the deepest laws of physics—conservation of energy, conservation of momentum, conservation of angular momentum—are not separate fundamental laws. They are consequences of symmetries. Physics is the study of symmetry.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The concept of symmetry goes back to ancient geometry. A square has eight symmetries: four rotations (including the identity) and four reflections. These can be composed (a rotation followed by a reflection), and each can be reversed.</p>
+<p>But for thousands of years, symmetry was a descriptive property. People noticed it and appreciated it. Only in the 19th century did mathematicians begin to study the structure of symmetries themselves.</p>
+<p>Carl Friedrich Gauss and others worked with permutations—rearrangements of a set. Joseph-Louis Lagrange, in the 1770s, noted that permutations of roots of polynomials had a special structure. Augustin-Louis Cauchy developed the theory of permutations further in the 1840s.</p>
+<p>But it was Galois who made the revolutionary leap. He showed that the <em>group of symmetries of a polynomial&#x27;s roots</em> determines whether the polynomial can be solved by radicals (by a formula). If the group has a certain structure (called &quot;solvable&quot;), then a formula exists. If not, no formula can exist—it is a mathematical fact, not a limitation of human cleverness.</p>
+<p>Galois&#x27;s ideas were published posthumously by Joseph Liouville in 1846. Over the next 30 years, mathematicians like Camille Jordan worked to understand and extend the theory. By the 1890s, group theory was established as a central tool in algebra.</p>
+<p>Then physicists discovered something stunning: the laws of nature exhibit symmetry. In 1905, Einstein used symmetry under Lorentz transformations to derive special relativity. In 1915, Emmy Noether proved that continuous symmetries correspond to conservation laws. In the 20th century, physicists realized that the interactions of particles are determined by gauge symmetries—abstract symmetries of quantum fields.</p>
+<p>Group theory became the language of physics.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>A symmetry</strong> is a transformation that leaves an object unchanged. For example:</p>
+<ul><li>Rotating a square by 90° is a symmetry.</li><li>Reflecting a square across a diagonal is a symmetry.</li><li>Rotating a circle by any amount is a symmetry.</li></ul>
+<p><strong>A group</strong> is a set $G$ with an operation $*$ (usually multiplication or composition) that satisfies four axioms:</p>
+<ol><li><strong>Closure:</strong> If $a, b \in G$, then $a * b \in G$.</li><li><strong>Associativity:</strong> $(a <em> b) </em> c = a <em> (b </em> c)$ for all $a, b, c \in G$.</li><li><strong>Identity:</strong> There exists an element $e \in G$ such that $e <em> a = a </em> e = a$ for all $a \in G$.</li><li><strong>Inverses:</strong> For each $a \in G$, there exists $a^{-1} \in G$ such that $a <em> a^{-1} = a^{-1} </em> a = e$.</li></ol>
+<p><strong>Example: The symmetries of a square.</strong> The square has 8 symmetries:</p>
+<ul><li>Four rotations: identity (0°), 90°, 180°, 270°.</li><li>Four reflections: across vertical, horizontal, and two diagonal axes.</li></ul>
+<p>These form a group called the dihedral group $D_4$. The operation is composition: apply one symmetry, then another. The identity is &quot;do nothing.&quot; The inverse of a 90° rotation is a 270° rotation. Closure holds: composing any two symmetries gives another symmetry.</p>
+<p><strong>Example: Integers under addition ($\mathbb{Z}, +$).</strong></p>
+<ul><li>Closure: $3 + 5 = 8 \in \mathbb{Z}$.</li><li>Associativity: $(1 + 2) + 3 = 1 + (2 + 3) = 6$.</li><li>Identity: $0$ (since $0 + a = a$).</li><li>Inverses: For $a \in \mathbb{Z}$, the inverse is $-a$ (since $a + (-a) = 0$).</li></ul>
+<p><strong>Cyclic groups:</strong> A cyclic group $\mathbb{Z}_n$ is the set $\{0, 1, 2, \ldots, n-1\}$ with addition modulo $n$. For example, $\mathbb{Z}_5 = \{0, 1, 2, 3, 4\}$ with addition mod 5. In $\mathbb{Z}_5$, we have $3 + 4 = 7 \equiv 2 \pmod{5}$.</p>
+<p><strong>Abelian vs. non-Abelian groups:</strong></p>
+<ul><li><strong>Abelian (commutative):</strong> $a <em> b = b </em> a$ for all $a, b \in G$. Example: $\mathbb{Z}$ under addition.</li><li><strong>Non-Abelian:</strong> There exist $a, b \in G$ such that $a <em> b \neq b </em> a$. Example: The symmetries of a square; a rotation followed by a reflection is different from a reflection followed by a rotation.</li></ul>
+<p><strong>Galois theory</strong> tells us why quintic equations have no general formula. The group of symmetries of a quintic polynomial&#x27;s roots is (generically) the full symmetric group $S_5$, which permutes 5 objects in all possible ways. This group is <em>not solvable</em>—it cannot be decomposed into a hierarchy of simple groups—and therefore no formula exists to solve the polynomial by radicals.</p>
+<p><strong>Noether&#x27;s theorem</strong> states: Every continuous symmetry of a physical system corresponds to a conservation law.</p>
+<p>Examples:</p>
+<ul><li>Time-translation symmetry $\implies$ conservation of energy.</li><li>Spatial-translation symmetry $\implies$ conservation of momentum.</li><li>Rotational symmetry $\implies$ conservation of angular momentum.</li><li>Gauge symmetry (internal symmetry) $\implies$ conservation of charge.</li></ul>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<ul><li><strong>Symmetry:</strong> A transformation that leaves an object or system unchanged.</li><li><strong>Group:</strong> A set with an operation satisfying closure, associativity, identity, and inverses.</li><li><strong>Closure:</strong> The set is closed under the operation; combining any two elements gives an element in the set.</li><li><strong>Associativity:</strong> The operation satisfies $(a <em> b) </em> c = a <em> (b </em> c)$.</li><li><strong>Identity element:</strong> The element $e$ such that $e <em> a = a </em> e = a$ for all $a$.</li><li><strong>Inverse element:</strong> For each $a$, an element $a^{-1}$ such that $a * a^{-1} = e$.</li><li><strong>Order of a group:</strong> The number of elements in the group.</li><li><strong>Abelian group:</strong> A group where $a <em> b = b </em> a$ (commutative).</li><li><strong>Non-Abelian group:</strong> A group where the operation is not commutative.</li><li><strong>Cyclic group $\mathbb{Z}_n$:</strong> The group of integers modulo $n$ under addition.</li><li><strong>Dihedral group $D_n$:</strong> The group of symmetries of a regular $n$-gon.</li><li><strong>Solvable group:</strong> A group that can be decomposed into a hierarchy of simple groups.</li><li><strong>Gauge symmetry:</strong> An internal symmetry of a quantum field that determines the interactions of particles.</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Verifying Group Axioms</strong> Show that $(\mathbb{Z}_4, +) = \{0, 1, 2, 3\}$ under addition modulo 4 is a group.</p>
+<p>Solution:</p>
+<ul><li><strong>Closure:</strong> For any $a, b \in \mathbb{Z}_4$, their sum mod 4 is in $\mathbb{Z}_4$. E.g., $3 + 2 = 5 \equiv 1 \pmod{4}$.</li><li><strong>Associativity:</strong> Addition is associative.</li><li><strong>Identity:</strong> $0$ is the identity: $0 + a = a$ for all $a$.</li><li><strong>Inverses:</strong> Each element has an inverse: $0^{-1} = 0$, $1^{-1} = 3$, $2^{-1} = 2$, $3^{-1} = 1$. (Check: $3 + 1 = 4 \equiv 0 \pmod{4}$.)</li></ul>
+<p>Therefore, $(\mathbb{Z}_4, +)$ is a group. It is cyclic (generated by 1) and Abelian.</p>
+<p><strong>Example 2: Symmetries of a Rectangle</strong> List all symmetries of a rectangle (not a square) and verify they form a group.</p>
+<p>Solution:</p>
+<ul><li>Identity: do nothing.</li><li>Rotation by 180°: swap opposite vertices.</li><li>Reflection across the vertical axis: flip left to right.</li><li>Reflection across the horizontal axis: flip top to bottom.</li></ul>
+<p>Total: 4 symmetries. These form the Klein four-group $V_4$.</p>
+<p>Check closure: Compose any two symmetries; the result is another symmetry.</p>
+<ul><li>Identity composed with anything gives that thing.</li><li>Rotation by 180° composed with itself is the identity.</li><li>The two reflections composed give the 180° rotation.</li><li>Reflection composed with 180° rotation gives the other reflection.</li></ul>
+<p>The group is Abelian and has order 4.</p>
+<p><strong>Example 3: Cyclic Group Generator</strong> In $\mathbb{Z}_5$ under addition mod 5, show that 1 is a generator (meaning powers of 1 generate all elements).</p>
+<p>Solution:</p>
+<ul><li>$1^0 = 0$ (identity)</li><li>$1^1 = 1$</li><li>$1^2 = 1 + 1 = 2$</li><li>$1^3 = 1 + 1 + 1 = 3$</li><li>$1^4 = 1 + 1 + 1 + 1 = 4$</li><li>$1^5 = 1 + 1 + 1 + 1 + 1 = 0$ (back to identity)</li></ul>
+<p>So the powers of 1 give all five elements. Therefore, 1 generates $\mathbb{Z}_5$, and $\mathbb{Z}_5$ is cyclic.</p>
+<p><strong>Example 4: Noether&#x27;s Theorem</strong> A system invariant under spatial translation has conserved momentum.</p>
+<p>Explanation:</p>
+<ul><li>Spatial translation: shifting the entire system by a distance $\delta x$ does not change the physics.</li><li>By Noether&#x27;s theorem, this symmetry implies the total momentum is conserved.</li><li>This is why an isolated object in space maintains constant velocity (Newton&#x27;s first law).</li></ul>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>List the four axioms of a group.</li></ol>
+<ol><li>Verify that $(\mathbb{Z}_3, +) = \{0, 1, 2\}$ under addition mod 3 is a group. Include verification of the identity and at least one inverse.</li></ol>
+<ol><li>Name the four symmetries of a rectangle and write their composition table.</li></ol>
+<ol><li>Is the set of all positive real numbers a group under multiplication? Why or why not?</li></ol>
+<ol><li>In $\mathbb{Z}_6$, find the inverse of 5.</li></ol>
+<ol><li>Explain the difference between an Abelian and a non-Abelian group with one example of each.</li></ol>
+<ol><li>What is a cyclic group? Give an example.</li></ol>
+<ol><li>State Noether&#x27;s theorem and give two examples of symmetries and their corresponding conservation laws.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Problem:</strong> Explain why the quintic equation $x^5 + x + 1 = 0$ cannot be solved by a formula involving only addition, subtraction, multiplication, division, and radicals (fifth roots, cube roots, etc.).</p>
+<p><strong>Hint:</strong> Consider the symmetry group of the roots. What is the structure of the symmetric group $S_5$? Why is it non-solvable?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Particle Physics:</strong> The Standard Model of particle physics is built on gauge symmetries. The electromagnetic force arises from a $U(1)$ symmetry. The weak and strong nuclear forces arise from $SU(2)$ and $SU(3)$ symmetries. Each symmetry determines the particles and their interactions. When physicists discovered the Higgs boson in 2012, they were confirming a prediction made by symmetry principles decades earlier.</p>
+<p><strong>Crystal Structure:</strong> The atomic arrangement in a crystal exhibits symmetry. There are exactly 230 distinct crystallographic space groups—symmetries that can be realized by atomic arrangements in 3D. The properties of a crystal (optical, electrical, mechanical) are determined by its symmetry group. X-ray crystallography uses symmetry to deduce crystal structures.</p>
+<p><strong>Quantum Mechanics:</strong> In quantum mechanics, the state of a particle is a vector in a Hilbert space, and symmetries act as unitary operators. The rotation group $SO(3)$ describes spatial rotations. Particles are classified by irreducible representations of symmetry groups. For instance, electrons have spin-1/2, which corresponds to a specific representation of the rotation group.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>We learned that a group is an abstract algebraic structure: a set with an operation satisfying closure, associativity, identity, and inverses. We studied examples like integers under addition, cyclic groups like $\mathbb{Z}_n$, and the dihedral groups describing symmetries of geometric figures. We distinguished Abelian groups (commutative) from non-Abelian groups (non-commutative). We learned Galois&#x27;s insight: the group of symmetries of a polynomial&#x27;s roots determines whether the polynomial can be solved by a formula. We learned Noether&#x27;s theorem: every continuous symmetry of a physical system corresponds to a conservation law. These principles unify mathematics and physics: the deepest laws of nature are consequences of symmetry.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>Which of the following is NOT an axiom of a group?</li></ol>
+<ul><li>Closure</li><li>Commutativity</li><li>Identity</li><li>Inverses</li></ul>
+<ol><li>The integers $\mathbb{Z}$ under addition form a group. What is the identity element?</li></ol>
+<ul><li>$1$</li><li>$0$</li><li>$-1$</li><li>There is no identity</li></ul>
+<ol><li>A cyclic group is...</li></ol>
+<ul><li>A group where every element can be expressed as a power of a single generator</li><li>A group where the operation is multiplication</li><li>A group with finitely many elements</li><li>A group with no symmetries</li></ul>
+<ol><li>The dihedral group $D_4$ represents...</li></ol>
+<ul><li>The symmetries of a square</li><li>The symmetries of a triangle</li><li>The symmetries of a circle</li><li>The integers modulo 4</li></ul>
+<ol><li>Noether&#x27;s theorem states that...</li></ol>
+<ul><li>Every group has an identity element</li><li>Continuous symmetries correspond to conservation laws</li><li>Polynomial equations are solvable by radicals</li><li>Quantum particles must have spin</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>Commutativity</li></ol>
+<ol><li>$0$</li></ol>
+<ol><li>A group where every element can be expressed as a power of a single generator</li></ol>
+<ol><li>The symmetries of a square</li></ol>
+<ol><li>Continuous symmetries correspond to conservation laws</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Évariste Galois and group theory: <a href="https://en.wikipedia.org/wiki/Évariste_Galois" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Évariste_Galois</a></li><li>Group theory: <a href="https://en.wikipedia.org/wiki/Group_theory" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Group_theory</a></li><li>Galois theory and solvability of polynomials: <a href="https://en.wikipedia.org/wiki/Galois_theory" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Galois_theory</a></li><li>Dihedral groups: <a href="https://en.wikipedia.org/wiki/Dihedral_group" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Dihedral_group</a></li><li>Emmy Noether and Noether&#x27;s theorem: <a href="https://en.wikipedia.org/wiki/Noether%27s_theorem" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Noether%27s_theorem</a></li><li>Gauge symmetry and the Standard Model: <a href="https://en.wikipedia.org/wiki/Gauge_symmetry" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Gauge_symmetry</a></li><li>Crystallographic groups: <a href="https://en.wikipedia.org/wiki/Crystallographic_space_group" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Crystallographic_space_group</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-091-non-euclidean-geometry/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Non-Euclidean Geometry — When Parallel Lines Meet</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-093-graph-theory-and-networks/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Graph Theory and Networks</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

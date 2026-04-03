@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What Statistics Opened Up — Math Journey</title>
+    <meta name="description" content="From gambling tables to the foundations of modern science — the reach of uncertainty" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 6 · Chapter 88</p>
+        <h1>What Statistics Opened Up</h1>
+        <p class="hero-copy">From gambling tables to the foundations of modern science — the reach of uncertainty</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>core</span>
+          
+          <span>1654–present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Reflect on the arc of World 06</li><li>Connect statistics to medicine, science, and AI</li><li>Discuss statistical pitfalls and ethical responsibilities</li><li>Preview how statistics meets modern science in World 07</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#the-future-of-statistics-causal-inference-and-machine-learning">The Future of Statistics: Causal Inference and Machine Learning</a></li><li class="toc-level-2"><a href="#reflection-the-role-of-statistics-in-society">Reflection: The Role of Statistics in Society</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>In 1964, Richard Doll and Austin Bradford Hill published the results of a study that would reshape medicine. They had followed 40,000 British doctors over a decade, meticulously tracking their smoking habits and health outcomes.</p>
+<p>Their conclusion: smoking causes lung cancer.</p>
+<p>But here is what makes this remarkable: they could not run a controlled experiment. They could not assign half the doctors to smoke for 30 years and compare them to non-smokers. That would be unethical.</p>
+<p>Instead, they used observational data—the doctors&#x27; own choices—combined with careful study design, statistical inference, and rigorous analysis. They accounted for confounding factors (age, other exposures, socioeconomic status) and used statistical methods to isolate the effect of smoking.</p>
+<p>Their work did not prove causation beyond philosophical doubt. It was statistical evidence. But it was compelling enough that medicine accepted it. Surgeon General warnings followed. Public health policy shifted. Millions of lives were saved.</p>
+<p>Statistics did not just describe the world. It gave us a new way to know the world.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>In the premodern era, knowledge came from authority, tradition, and anecdote. A doctor might treat patients for decades and say, &quot;In my experience, this remedy works.&quot; But experience is selective; we remember successes and forget failures.</p>
+<p>Statistics introduced something new: a systematic way to learn from collective experience. Instead of one doctor&#x27;s impression, gather data from thousands of patients. Instead of trusting intuition, use mathematics to extract truth from noise.</p>
+<p>This shift—from authority to evidence, from anecdote to data—is one of the defining intellectual moves of the modern age. It has remade medicine, science, public policy, and business.</p>
+<p>But statistics also opened the door to new errors and misuses. A study can appear rigorous while being deeply flawed. Numbers command authority that they do not always deserve. This chapter concludes World 06 by celebrating the power of statistics while soberly acknowledging its pitfalls.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The arc of statistics is a journey from chance to certainty—never quite reaching certainty, but getting closer.</p>
+<p>It began with gambling. In 1654, Blaise Pascal and Pierre de Fermat solved the &quot;problem of points,&quot; giving mathematical foundations to probability. For 250 years, probability was the mathematics of games.</p>
+<p>Then, in the 1800s, statisticians realized that natural phenomena—heights, errors in astronomy, social patterns—also followed probabilistic patterns. Carl Friedrich Gauss developed the normal distribution and least squares fitting. Adolphe Quetelet showed that human measurements were normal. This suggested that uncertainty was not just a game mechanic but a fundamental feature of reality.</p>
+<p>In the early 1900s, Karl Pearson and Ronald Fisher developed modern statistical methods: regression, correlation, significance testing. They were trying to solve real problems—breeding better crops, understanding heredity, improving manufacturing.</p>
+<p>The revolution came after World War II. Computers emerged, making it feasible to analyze large datasets. Clinical trials became the gold standard for testing drugs. Opinion polling became a political staple. Quality control became statistical.</p>
+<p>By the late 20th century, statistics was woven into every aspect of science and society. The internet era brought Big Data and machine learning—statistics applied at unprecedented scale.</p>
+<p>Today, statistics is not a separate discipline. It is the methodology of discovery itself.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>The Arc of World 06.</strong> We have traveled from basic chance (coin flips, dice) through conditional probability (how events relate), counting methods (combinations, permutations), expected value (what we predict), special distributions (binomial, normal, Poisson), data description (mean, median, spread), regression (finding patterns), sampling (learning from subsets), the Central Limit Theorem (why averages are normal), and Bayes&#x27; Theorem (updating beliefs).</p>
+<p>Each piece builds on the last. Together, they form a coherent toolkit for extracting signal from noise.</p>
+<p><strong>Statistics in Medicine.</strong> Modern medicine is built on randomized controlled trials. A new drug is proposed. Researchers recruit hundreds or thousands of patients, divide them randomly into treatment and placebo groups, and measure outcomes. Statistical tests determine whether the difference is real or due to chance.</p>
+<p>This approach—combining randomization (to control bias), large samples (to reduce variability), and statistical testing (to assess evidence)—has become the standard of evidence in medicine.</p>
+<p><strong>The Replication Crisis.</strong> But statistics can deceive. In the 2010s, psychologists and biomedical researchers began noticing a troubling pattern: many published findings could not be replicated. A study would report a striking result ($p = 0.04$, just barely significant), but when others tried to repeat it, they found nothing.</p>
+<p>Why? Several factors:</p>
+<ul><li><strong>p-hacking:</strong> Researchers test many hypotheses, then report only the ones that are significant. If you test 20 things, you expect about one false positive by chance. Publication bias then ensures that false positive gets published.</li><li><strong>Underpowered studies:</strong> With small sample sizes, real effects can be missed, and apparent effects are inflated.</li><li><strong>Publication bias:</strong> Journals preferentially publish exciting results. Null findings languish in file drawers.</li><li><strong>Researcher degrees of freedom:</strong> Many innocent choices (what variables to include, what outliers to remove) can nudge results toward significance.</li></ul>
+<p>The replication crisis has humbled statistics and inspired reforms: pre-registration of studies, larger sample sizes, open data, and meta-analyses (synthesizing results across studies).</p>
+<p><strong>Machine Learning and Big Data.</strong> In the 21st century, statistics met computing. Machine learning—algorithms that learn patterns from data—has become ubiquitous: recommendation systems, image recognition, natural language processing, self-driving cars.</p>
+<p>But machine learning is applied statistics. A neural network is a nonlinear regression. An algorithm&#x27;s &quot;learning&quot; is parameter estimation. The risk of overfitting (fitting noise, not signal) is a statistical problem. The need for large training datasets reflects the statistical principle that bigger samples are more reliable.</p>
+<p><strong>Ethics and Responsibility.</strong> With power comes responsibility. Statistics can illuminate or mislead. A graph with a misleading axis scale can exaggerate a tiny effect. A statistic can be technically correct yet contextually deceptive.</p>
+<p>Consider hiring. An algorithm learns from historical data, which reflects past discrimination. The algorithm perpetuates (and legitimizes) bias. Or consider lending: an algorithm might fairly predict defaults but deny loans to entire demographic groups, entrenching inequality.</p>
+<p>Statistics does not tell us what is right—only what is likely. It is a tool. The ethics lie with the humans wielding it.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Statistical inference:</strong> The process of using sample data to draw conclusions about a population. It includes point estimation (guessing the population parameter), interval estimation (confidence intervals), and hypothesis testing (assessing evidence for or against a claim).</p>
+<p><strong>Randomized controlled trial (RCT):</strong> The gold standard for causal inference in medicine. Participants are randomly assigned to treatment or control groups. Randomization balances unknown confounders. The random assignment creates quasi-experimental conditions.</p>
+<p><strong>P-value:</strong> The probability of observing data at least as extreme as what was observed, if the null hypothesis were true. A small p-value ($p &lt; 0.05$ is conventional) suggests the null hypothesis is false. But a p-value is <em>not</em> the probability the null is true; it is a frequentist measure of evidence, often misinterpreted.</p>
+<p><strong>Multiple comparisons problem:</strong> If you test many hypotheses, some will appear significant by chance. The more tests, the more false positives. Correction methods (Bonferroni, false discovery rate control) reduce this risk.</p>
+<p><strong>Confounding:</strong> A third variable that affects both the explanatory and response variables, creating a spurious association. Smoking is associated with low cancer awareness, but awareness does not cause or prevent cancer—low awareness and smoking are both caused by education level (the confounder).</p>
+<p><strong>Causation vs. association:</strong> Statistics can establish association (correlation, regression). Inferring causation requires either experimentation (with randomization) or extremely careful causal reasoning. Observational studies can be powerful if designed carefully (e.g., matching, propensity scores), but causation is always harder to infer than association.</p>
+<p><strong>Overfitting:</strong> A model fits the training data so closely it captures noise, not underlying patterns. The model performs poorly on new data. A key challenge in machine learning, it reflects a timeless statistical principle: simpler models often generalize better.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Interpreting a study.</strong></p>
+<p>A study reports: &quot;Coffee drinkers have 20% lower heart disease risk ($p = 0.02$).&quot; You read the abstract.</p>
+<p>Critical questions:</p>
+<ul><li>Is this a randomized trial or observational?</li><li>What is the sample size?</li><li>Were confounders (diet, exercise, socioeconomic status) controlled?</li><li>Is 20% the absolute risk reduction (if baseline risk is 5%, reduction is 1 percentage point) or relative risk reduction?</li><li>Have other studies replicated this?</li><li>Was this one of 20 hypotheses tested (multiple comparisons)?</li></ul>
+<p>Without answers, the result is tentative. A well-designed trial with adequate power, pre-registered hypothesis, and replication is credible. A small observational study with multiple comparisons is suspicious.</p>
+<p><strong>Example 2: The base rate in screening.</strong></p>
+<p>A new biomarker test claims to predict Alzheimer&#x27;s disease with 95% sensitivity and specificity. Should all 70-year-olds be screened?</p>
+<p>Alzheimer&#x27;s disease develops in about 10% of people by age 80. Before symptoms, perhaps 20% show pathological changes.</p>
+<p>If 1,000 asymptomatic 70-year-olds are screened:</p>
+<ul><li>True positives: $200 \times 0.95 = 190$ (will likely develop Alzheimer&#x27;s)</li><li>False positives: $800 \times 0.05 = 40$ (will not develop Alzheimer&#x27;s)</li></ul>
+<p>Of 230 positive tests, 40 are false alarms. About 17% false positive rate.</p>
+<p>Moreover, screening asymptomatic people without an effective intervention is ethically fraught. Worry, unnecessary medical care, and side effects can harm people who would never develop symptoms.</p>
+<p><strong>Example 3: Machine learning bias.</strong></p>
+<p>A company builds an algorithm to predict which candidates will be successful employees, trained on 10 years of hiring data.</p>
+<p>But 10 years of data reflects past hiring discrimination. The algorithm learns: women are less likely to be successful. Women&#x27;s resumes are scored lower. The algorithm perpetuates bias while appearing objective.</p>
+<p>Solution: acknowledge the bias in training data, use causal reasoning to identify and remove discriminatory patterns, regularly audit the algorithm for disparate impact across groups.</p>
+</section><section class="lesson-section lesson-section--generic"><h2 id="the-future-of-statistics-causal-inference-and-machine-learning">The Future of Statistics: Causal Inference and Machine Learning</h2>
+<p>As we move beyond World 06, the frontier of statistics increasingly focuses on two challenges: inferring causation and scaling to massive datasets.</p>
+<p><strong>Causal Inference.</strong> For decades, the maxim was: &quot;Correlation does not imply causation.&quot; Statisticians warned against inferring causal effects from observational data.</p>
+<p>But many real-world decisions rely on causal inference. A city cannot randomize whether to build a new school; it must infer the causal effect from observational comparisons. A company cannot randomize customer demographics; it must infer the causal effect of recommendation algorithms from observational logs.</p>
+<p>Recent advances—instrumental variables, propensity score matching, causal graphs, and formal causal models—have developed tools for causal inference without randomization. These are not perfect, but they extend the reach of statistical science to settings where experimentation is infeasible.</p>
+<p><strong>Machine Learning at Scale.</strong> Traditional statistics asked: given $n$ observations and $p$ features, what is the true relationship?</p>
+<p>Machine learning asks: given millions of observations and thousands of features, what patterns can we learn?</p>
+<p>This shift—from small $n$, small $p$ to large $n$, large $p$—has required new methods: regularization (penalizing complexity), cross-validation (assessing generalization), deep learning (flexible nonlinear patterns).</p>
+<p>But at its core, machine learning is still statistics: parameter estimation, uncertainty quantification, balancing bias and variance, avoiding overfitting.</p>
+<p>As data grows and models become more complex, the statistical principle of generalization—that what we learn from data must transfer to new data—becomes even more critical.</p>
+</section><section class="lesson-section lesson-section--generic"><h2 id="reflection-the-role-of-statistics-in-society">Reflection: The Role of Statistics in Society</h2>
+<p>Statistics is not just a tool for scientists and policymakers. It shapes how society understands itself.</p>
+<p>When public health officials announce that &quot;life expectancy has increased,&quot; that is a statistical claim. When economists say &quot;unemployment rose 0.5 percentage points,&quot; they are reporting a statistic. When a news outlet says &quot;53% of Americans approve of the president,&quot; it is relying on a poll—sampling and statistical inference.</p>
+<p>These statistics guide policy. They affect billions of dollars in spending, millions of lives in healthcare, and the mood of democracy itself.</p>
+<p>With that power comes responsibility. Statistics can clarify or mislead. A graph with a manipulated y-axis can exaggerate a trend. A study with publication bias can create false certainty about an effect that does not exist. An algorithm trained on biased data can perpetuate discrimination while appearing objective.</p>
+<p>The remedy is not to distrust statistics, but to understand it deeply enough to question claims critically. Ask: How was this measured? What assumptions were made? Could confounders explain the result? Has it been replicated? What are the margins of error?</p>
+<p>Statistical literacy—the ability to read claims skeptically, understand uncertainty, and think probabilistically—is essential for informed citizenship in the modern world.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>A study finds an association between hormone replacement therapy and breast cancer. Is this evidence of causation? What else would you want to know to assess causality?</li></ol>
+<ol><li>A researcher tests 30 different nutrients for cancer prevention. One shows statistical significance ($p = 0.03$). Should this be reported as a finding?</li></ol>
+<ol><li>Explain the difference between a p-value and a posterior probability (from Bayes&#x27; Theorem). Why does a p-value of 0.05 not mean there is only a 5% chance the null hypothesis is true?</li></ol>
+<ol><li>A machine learning model trained on loan data predicts loan defaults. It performs identically well on all demographic groups in the training set. Does this guarantee it is fair? Why or why not?</li></ol>
+<ol><li>A new therapy has 95% sensitivity and 80% specificity for a disease affecting 2% of the population. What is the positive predictive value? (Use Bayes&#x27; Theorem.)</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Replication Paradox.</strong> Suppose a researcher conducts a well-designed study and finds evidence for a real effect ($p = 0.04$). She publishes. Other researchers try to replicate but cannot ($p = 0.15$).</p>
+<p>Should the original researcher feel vindicated (sample variability), or should she doubt her findings? What does this tell us about the relationship between p-values and truth?</p>
+<p>(Hint: think about the distribution of p-values across repeated studies when a true effect exists. Not all p-values in replication studies will be small; some will be larger by random chance.)</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Evidence-based medicine in practice.</strong> A patient presents with chronic pain. The doctor reviews evidence: Which pain medications have the strongest trial evidence? What are side effects? What do guidelines recommend?</p>
+<p>The doctor and patient make a shared decision, informed by statistics. The treatment is not determined by authority or tradition but by aggregated evidence from thousands of patients.</p>
+<p>This shift—to evidence-based practice—has improved medicine, though it is imperfect. Good evidence is not always available. Studies can be flawed. But the relentless focus on evidence, combined with humility about limitations, has raised the standard of care.</p>
+<p><strong>Statistics in policy.</strong> Suppose a city considers a new public health intervention (e.g., subsidizing fresh food in food deserts). Policymakers want evidence it works.</p>
+<p>An ideal approach: randomized trial in some neighborhoods, track health outcomes, compare to control neighborhoods. But randomization is sometimes impossible or unethical (you cannot deny one community a beneficial program).</p>
+<p>Alternative: observational studies with careful causal reasoning, propensity score matching, instrumental variables. The goal is to approximate the causal effect, even without randomization.</p>
+<p>Statistical uncertainty always remains. Policy is made under uncertainty. The best we can do is use rigorous methods to narrow that uncertainty, then make transparent decisions about trade-offs and values.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Statistics began as the mathematics of chance and has become the methodology of discovery. It enables us to learn from collective experience, control for confounders, test causal hypotheses, and quantify uncertainty.</p>
+<p>The arc of World 06—from basic probability through sampling, the Central Limit Theorem, and Bayesian updating—reflects how statistics thinks: by separating signal from noise, quantifying variability, and updating beliefs as evidence accumulates.</p>
+<p>But statistics is not infallible. The replication crisis revealed how p-hacking, publication bias, and underpowered studies can create false certainty. Machine learning, powerful as it is, can perpetuate bias if trained on biased data.</p>
+<p>The remedy is not to abandon statistics but to practice it more rigorously: large sample sizes, pre-registered hypotheses, transparent analysis, replication, ethical consideration of downstream effects.</p>
+<p>Statistics gives us a language for truth-seeking. But like any language, it can be misused. The responsibility lies with its practitioners.</p>
+<p>As you move into World 07—where statistics meets physics, linear algebra, and the deep structure of nature—you will see that uncertainty is not a limitation. It is a feature. The universe is fundamentally probabilistic. Statistics is how we understand it.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>The 1964 Doll and Hill smoking study was powerful evidence for causation despite being observational because:</li></ol>
+<ul><li>It had a very large sample size</li><li>It carefully controlled confounding variables</li><li>The evidence was consistent across many other studies</li><li>All of the above</li></ul>
+<ol><li>The &quot;replication crisis&quot; refers to:</li></ol>
+<ul><li>Inability to replicate historical findings with modern methods</li><li>Publication of studies that cannot be replicated by others</li><li>Disputes between frequentist and Bayesian statisticians</li><li>Difficulty replicating laboratory conditions</li></ul>
+<ol><li>P-hacking or &quot;researcher degrees of freedom&quot; leads to:</li></ol>
+<ul><li>More accurate estimates of effect size</li><li>False positives and inflated effect sizes</li><li>Rejection of true null hypotheses</li><li>Better study design</li></ul>
+<ol><li>Why can a machine learning model trained fairly on biased historical data perpetuate discrimination?</li></ol>
+<ul><li>The algorithm cannot learn to ignore biased patterns</li><li>Bias in training data becomes part of the learned pattern</li><li>Historical discrimination reflects true differences in outcomes</li><li>All of the above</li></ul>
+<ol><li>The connection between statistics and causation is:</li></ol>
+<ul><li>Statistics alone proves causation</li><li>Randomization helps infer causation, but observational studies cannot</li><li>Careful study design and statistical methods can support causal inference, but never prove it with certainty</li><li>Causation is a philosophical question, not a statistical one</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li><strong>D — All of the above.</strong> The study had 40,000 participants (large sample), measured many potential confounders and controlled statistically, and findings were consistent with hundreds of subsequent studies. Together, this created overwhelming evidence for causation.</li></ol>
+<ol><li><strong>B — Publication of studies that cannot be replicated by others.</strong> Many published findings, especially in psychology and biomedics, fail to replicate when other researchers attempt them. This revealed flaws in research practices and publication incentives.</li></ol>
+<ol><li><strong>B — False positives and inflated effect sizes.</strong> Testing many hypotheses and reporting only significant results inflates false positive rate. Effect sizes are also inflated because underpowered studies only detect large effects by luck.</li></ol>
+<ol><li><strong>D — All of the above.</strong> If historical hiring data shows discrimination, the algorithm learns that discriminatory pattern. It cannot &quot;know&quot; the bias is unjust. The bias is encoded in the outcomes the algorithm is trained to predict.</li></ol>
+<ol><li><strong>C — Careful study design and statistical methods can support causal inference, but never prove it with certainty.</strong> Randomization strengthens causal inference, but association does not imply causation. Even with randomization, causal interpretation requires careful reasoning about mechanisms and scope.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><strong>Doll and Hill smoking study:</strong> <a href="https://en.wikipedia.org/wiki/Epidemiology_of_smoking" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Epidemiology_of_smoking</a></li><li><strong>Replication crisis:</strong> <a href="https://en.wikipedia.org/wiki/Replication_crisis" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Replication_crisis</a></li><li><strong>Randomized controlled trials:</strong> <a href="https://en.wikipedia.org/wiki/Randomized_controlled_trial" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Randomized_controlled_trial</a></li><li><strong>P-value misinterpretation:</strong> <a href="https://en.wikipedia.org/wiki/P-value" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/P-value</a></li><li><strong>Confounding variables:</strong> <a href="https://en.wikipedia.org/wiki/Confounding" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Confounding</a></li><li><strong>Machine learning bias:</strong> <a href="https://en.wikipedia.org/wiki/Algorithmic_bias" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Algorithmic_bias</a></li><li><strong>Statistics in medicine:</strong> <a href="https://en.wikipedia.org/wiki/Medical_statistics" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Medical_statistics</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-087-bayes-theorem/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Bayes&#x27; Theorem — Updating Beliefs with Evidence</span></a><a class="pager-link pager-link--next" href="../../world-06-probability-statistics-and-uncertainty/ch-078-conditional-probability/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Conditional Probability and Independence</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,208 @@
+---
+worldNumber: 7
+world: world-07-fields-waves-space-time-and-the-modern-view
+chapterNumber: 93
+title: Graph Theory and Networks
+subtitle: The bridges of Königsberg, the internet, and the mathematics of connection
+historicalPeriod: 1736 CE – present
+estimatedTimeMinutes: 35
+---
+
+## Story Hook
+
+Picture Königsberg in 1736 — a beautiful Prussian city built on both sides of the Pregel River, with seven bridges connecting its islands. On leisure walks, citizens pose a puzzle: **Can you walk across all seven bridges exactly once and return home?**
+
+No one can do it. Not because they're not clever enough, but because it's mathematically impossible.
+
+Enter Leonhard Euler, one of history's most prolific mathematicians. Instead of trying to cross the bridges, he does something radical: he **abstracts the problem**. He ignores the city's beauty, the river's flow, the trees. He draws just four dots (representing the four land regions) and seven lines (the bridges).
+
+From that simple drawing, using pure logic, Euler proves the walk is impossible. More importantly, he invents an entirely new language of mathematics: **graph theory** — the mathematics of networks, connections, and structure.
+
+Today, the same theorems that solved the Königsberg bridge problem describe how packets travel across the internet, how diseases spread through populations, how airline routes connect cities, and how proteins interact in your cells. Every network is a graph.
+
+## Why It Matters
+
+Graphs are everywhere:
+
+- **The internet**: Your laptop is a node. Every website is a node. Every connection between them is an edge. Packets find the shortest path using Euler and graph algorithms.
+- **Social networks**: You are a vertex. Your friends are vertices. The connections are edges. "Six degrees of separation" is a graph property.
+- **Epidemiology**: When a disease spreads, it travels along edges in the network of human contact. Understanding the graph structure helps predict and contain outbreaks.
+- **GPS and navigation**: Roads are edges. Intersections are vertices. Finding the fastest route home uses Dijkstra's algorithm — a graph algorithm.
+- **Biology**: Proteins interact with other proteins. The interaction network (a graph) reveals how life works at the molecular level.
+
+The beauty of graph theory is its abstraction. By stripping away details and focusing on **what connects to what**, we discover universal patterns that apply from cities to the brain to the cosmos.
+
+## Historical Context
+
+Leonhard Euler (1707–1783) was one of the most prolific mathematicians ever. He published over 800 papers — so many that after his death, the St. Petersburg Academy took decades just to print them all.
+
+In 1736, Euler received a letter from Carl Ehler, a Prussian mathematician, asking about the seven bridges of Königsberg. Euler didn't know the city, but he recognized the structure. In his response, he invented graph theory in a single stroke.
+
+For over a century, graph theory remained a mathematical curiosity. Then, in the late 1800s and 1900s, scientists realized that the same abstract patterns appeared everywhere: in chemistry (atoms and bonds), in electricity (circuits), in biology (food webs), in sociology (relationships).
+
+By the 20th century, graph theory became essential. The invention of computers made it practical: algorithms like Dijkstra's shortest path (1956) and more recent methods power every routing system on Earth.
+
+## Core Concept
+
+A **graph** is the simplest and most powerful abstraction:
+
+- **Vertices** (or nodes): Points, labeled or unlabeled.
+- **Edges** (or links): Connections between vertices.
+
+That's it. Everything else builds from there.
+
+A graph can be:
+- **Undirected**: Edges work both ways. Friendship is typically undirected.
+- **Directed**: Edges have arrows showing direction. "Follows on Twitter" is directed.
+- **Weighted**: Each edge has a number (distance, cost, strength). Road maps are weighted.
+
+Two key ideas:
+
+1. **Degree of a vertex**: How many edges connect to it. In the Königsberg bridge problem, each region has a certain degree. Euler proved that a walk crossing each edge exactly once exists **only if** every vertex has even degree, or exactly two have odd degree.
+
+2. **Trees**: A special graph with no cycles (loops). A tree with $n$ vertices always has exactly $n-1$ edges. Trees are everywhere: family trees, decision trees, the hierarchy of life.
+
+## Definitions and Formal Lesson
+
+**Graph**: A pair $G = (V, E)$ where $V$ is a set of vertices and $E$ is a set of edges (pairs of vertices).
+
+**Undirected edge**: Unordered pair $\{u, v\}$. Connection goes both ways.
+
+**Directed edge**: Ordered pair $(u, v)$. Arrow points from $u$ to $v$.
+
+**Degree** (undirected): $\deg(v)$ = number of edges touching $v$.
+
+**In-degree** and **out-degree** (directed): In-degree = edges coming in. Out-degree = edges going out.
+
+**Euler's Theorem**: An undirected graph has an **Eulerian circuit** (a walk that crosses every edge exactly once and returns to start) **if and only if** every vertex has even degree. An **Eulerian path** (walk crossing each edge exactly once, but not returning) exists iff exactly 0 or 2 vertices have odd degree.
+
+**Path**: A sequence of vertices where consecutive vertices are connected by edges. Length = number of edges.
+
+**Tree**: A connected graph with no cycles. Properties: $n$ vertices $\Rightarrow$ $n-1$ edges.
+
+**Complete graph** $K_n$: Every vertex connects to every other vertex. Has $\frac{n(n-1)}{2}$ edges.
+
+**Bipartite graph**: Vertices split into two groups; edges only connect across groups.
+
+## Worked Examples
+
+**Example 1: Königsberg Bridges**
+
+The four regions have degrees: 3, 3, 2, 2. Two regions have odd degree. By Euler's theorem, an Eulerian circuit does not exist (circuit requires all even). An Eulerian path exists (we need 0 or 2 odd; we have exactly 2). But you cannot start and end at the same place. The puzzle is impossible.
+
+**Example 2: Shortest Path with Dijkstra's Algorithm**
+
+You're in a city with intersections (vertices) and roads (weighted edges showing distance). To find the shortest route from home to work:
+
+1. Mark home with distance 0. All others are infinite.
+2. Visit the unvisited vertex closest to home. Mark your neighbors with updated distances.
+3. Repeat: always visit the closest unvisited vertex, updating neighbors.
+4. Stop when you reach work. Backtrack to find the route.
+
+This greedy approach guarantees the shortest path.
+
+**Example 3: Tree Structure**
+
+A family tree with 8 people (vertices) has exactly 7 parent-child edges. You cannot have cycles (your parent cannot also be your child). The structure is a tree.
+
+## Practice Set
+
+1. **Degrees and Euler**: Sketch a graph with 5 vertices where each has degree 2. Does an Eulerian circuit exist? Why or why not? What if you added one edge?
+
+2. **Complete Graph**: $K_4$ has 4 vertices. Each connects to all others. How many edges does it have? What is the degree of each vertex? Compute the total sum of all degrees and verify it equals twice the number of edges.
+
+3. **Tree Counting**: A tree has 20 vertices. How many edges? Can you add one edge without creating a cycle? What happens if you remove one edge from a tree?
+
+4. **Bipartite Graph**: Create a bipartite graph with two groups (3 people, 3 jobs). Draw edges showing which people can do which jobs. Can a person take multiple jobs? Is this bipartite structure realistic for job assignments?
+
+5. **Real Network**: Sketch a simplified social network of yourself and 6 friends. Who connects to whom? Is there a "bottleneck" person whose removal would disconnect the graph? How does this relate to network resilience?
+
+6. **Path Finding**: In a grid city (like Manhattan), vertices are intersections and edges are streets. Design a simple grid graph with 9 vertices (3×3). Find three different shortest paths from the top-left corner to the bottom-right corner. How many such shortest paths exist?
+
+## Reasoning Task
+
+**The Small-World Phenomenon**
+
+Your grandmother knows a friend who knows a doctor who knows someone in Japan. Studies show the average path between two random people on Earth is about 6 edges ("six degrees of separation").
+
+Why is the world "small" in a graph sense? Consider:
+
+- Graphs can be dense (many edges) or sparse (few edges).
+- Small-world networks have low average path length even with relatively few edges.
+- Social networks have clustering (your friends are also friends with each other).
+
+Discuss: Is a small-world network more like a complete graph or a tree? What real networks exhibit small-world properties?
+
+## Application
+
+**GPS Navigation and Routing**
+
+When you ask your phone for directions, it:
+
+1. Represents the road network as a weighted graph (vertices = intersections, edges = roads, weights = distance or estimated time).
+2. Runs Dijkstra's algorithm or a similar method to find the shortest path.
+3. Sends you turn-by-turn instructions.
+
+Graph algorithms also power:
+
+- **Internet routing**: Packets hop from router to router, finding paths to their destination.
+- **Delivery networks**: UPS and FedEx solve variants of the "traveling salesman problem" (find a short route visiting many destinations).
+- **Flight paths**: Airlines use graph algorithms to assign planes and crews efficiently.
+
+## Recap
+
+Graphs are abstract networks of vertices and edges. Euler proved that crossing each bridge exactly once is impossible if too many regions have odd degree. Today, graph theory powers the internet, social networks, navigation, and molecular biology. Key concepts include the degree of a vertex, Eulerian paths and circuits, trees, and shortest-path algorithms. A single idea — what connects to what — unifies the study of connections across science.
+
+Graph theory reveals hidden structure. A social network is not just people; it is a pattern of who influences whom. The internet is not just cables and routers; it is a topology that determines how robust and efficient routing can be. A protein interaction network is not just molecular chaos; it is a system of connections that explains how life maintains itself. Every such system can be modeled as a graph, analyzed with Euler's theorems, and optimized with algorithms developed since his time. The abstraction that Euler invented to solve a puzzle about bridges became the language of modern complexity.
+
+## Unlock Quiz
+
+1. In the Königsberg bridge problem, which of the following describes the four regions?
+   - They are vertices, and bridges are edges
+   - They are edges, and bridges are vertices
+   - They are weights on vertices
+   - They are directed connections
+
+2. Euler's theorem states that an Eulerian circuit exists if and only if:
+   - No cycles are present in the graph
+   - Every vertex has even degree
+   - The graph is bipartite
+   - Every vertex has degree at least 2
+
+3. A tree with 50 vertices has how many edges?
+   - 50
+   - 49
+   - 51
+   - 48
+
+4. Which real-world network is best modeled as a directed graph?
+   - Friendships on Facebook
+   - Twitter followers (who follows whom)
+   - Road networks with two-way streets
+   - Protein interactions
+
+5. Dijkstra's algorithm finds the _____ path between two vertices in a weighted graph.
+   - longest
+   - shortest
+   - cheapest
+   - most connected
+
+<details>
+<summary>Answers</summary>
+
+1. They are vertices, and bridges are edges
+2. Every vertex has even degree
+3. 49
+4. Twitter followers (who follows whom)
+5. shortest
+
+</details>
+
+## Source Notes
+
+- Euler, L. (1736). "Solutio problematis ad geometriam situs pertinentis." *Commentarii academiae scientiarum Petropolitanae*, 8, 128–140. The original paper solving the Königsberg bridge problem.
+- https://en.wikipedia.org/wiki/Graph_theory
+- https://en.wikipedia.org/wiki/Leonhard_Euler
+- https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+- https://en.wikipedia.org/wiki/Eulerian_path
+- https://en.wikipedia.org/wiki/Small-world_network

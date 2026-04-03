@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trigonometry and Ancient Astronomy — Math Journey</title>
+    <meta name="description" content="How the Greeks measured the sky — and the mathematics that let them" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 4 · Chapter ?</p>
+        <h1>Trigonometry and Ancient Astronomy</h1>
+        <p class="hero-copy">How the Greeks measured the sky — and the mathematics that let them</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>core</span>
+          
+          <span>300 BCE – 200 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Explain Eratosthenes&#x27; method for measuring Earth&#x27;s circumference</li><li>Apply angular measurement to estimate astronomical distances</li><li>Appreciate the role of trigonometry in ancient science</li><li>Apply indirect measurement using angles</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Around 240 BCE, an Egyptian librarian named <strong>Eratosthenes</strong> stood in the sun at midday in the city of Alexandria. He held a stick pointing straight up. No shadow. Meanwhile, 800 kilometers south in the city of Syene, at the exact same moment, a stick cast a shadow that made a 7° angle with the sun&#x27;s rays.</p>
+<p>Eratosthenes had never traveled south. He never climbed a mountain to see the curvature of the Earth. Yet from two sticks, two shadows, and the geometry of a circle, he calculated the circumference of the Earth. His answer: 250,000 stadia (about 46,000 kilometers). The true circumference is about 40,000 kilometers. He was off by less than 15%.</p>
+<p>This is the power of trigonometry applied to astronomy. You don&#x27;t need to visit distant places to measure them. You need angles, distances, and the mathematics to connect them.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>For most of human history, the cosmos seemed utterly beyond reach. The stars appeared as fixed lights on a dome. The Moon seemed close but unreachable. The Sun was beyond comprehension. Then mathematicians realized something revolutionary: you could measure things <em>indirectly</em>, using angles.</p>
+<p>If you measure the angle to an object from two different positions, you can calculate its distance—without ever reaching it. This principle, called <strong>parallax</strong>, let ancient astronomers do something extraordinary: they began to map the universe. They measured the circumference of the Earth, estimated the distance to the Moon and Sun, and began to understand that the universe had a structure and scale.</p>
+<p>This wasn&#x27;t just academic. Navigators used these measurements to cross oceans. Calendars depended on accurate knowledge of the Moon&#x27;s position. The foundations of modern science—the idea that the universe could be measured and understood—began here.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p><strong>Eratosthenes</strong> (c. 276–194 BCE) was the chief librarian of the great Library of Alexandria, one of the wonders of the ancient world. He was a polymath: poet, geographer, mathematician, astronomer. His measurement of Earth&#x27;s circumference used simple geometry and observations available to anyone.</p>
+<p>But the problem of measuring astronomical distances—to the Moon, to the Sun, to the planets—was harder. <strong>Aristarchus of Samos</strong> (c. 310–230 BCE), a contemporary of Eratosthenes, developed a method using lunar eclipses. During a lunar eclipse, the Moon passes through Earth&#x27;s shadow. By observing the rate at which the Moon crosses the shadow and how long it spends in darkness, Aristarchus could estimate the relative sizes of the Earth, Moon, and Sun. His method was sound; his calculations were off because his input measurements were imprecise. But conceptually, he was doing something astonishing: using the geometry of shadows to map the solar system.</p>
+<p><strong>Hipparchus</strong> (c. 190–120 BCE), perhaps the greatest astronomer of antiquity, built the first star catalogue with positions for 850 stars. He used trigonometry (in the form of chord tables, the ancient equivalent of sine tables) to convert observational data into a three-dimensional model of the sky. Every star got two angles—latitude and longitude on the celestial sphere—determined using trigonometry.</p>
+<p><strong>Ptolemy</strong> (c. 90–168 CE) synthesized all earlier work in his <em>Almagest</em>, a comprehensive treatise on planetary motion. It combined trigonometry, geometry, and observational data into the most sophisticated model of the cosmos yet. For nearly 1500 years, Ptolemy&#x27;s model was accepted as truth. It worked because the trigonometry was correct, even though the Earth-centered assumption was wrong.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Parallax</strong> is the apparent shift in position of an object when viewed from two different locations. It&#x27;s the key to indirect measurement.</p>
+<p>Hold your finger at arm&#x27;s length in front of your face. Close one eye, then the other. Your finger seems to jump. That&#x27;s parallax. The distance between your eyes is the <em>baseline</em>. The angle your finger moves through is the <em>parallax angle</em>. Combined, these let you judge the distance to your finger—something your brain does automatically.</p>
+<p>Astronomers use the same principle, but with the diameter of Earth&#x27;s orbit as the baseline. When they observe a star from Earth in January, then again in July (when Earth is on the opposite side of the Sun), the star appears to shift slightly against more distant background stars. The size of this shift (measured as an angle) lets them calculate the distance.</p>
+<p><strong>Eratosthenes&#x27; method</strong> is the simplest and most elegant application of trigonometry to astronomy.</p>
+<ol><li>The Sun is so far away that its rays are essentially parallel when they hit Earth.</li><li>At noon on the summer solstice in Alexandria, the sun is high but not directly overhead (the stick casts a shadow).</li><li>At the same moment in Syene (directly south), the sun is directly overhead (the stick casts no shadow).</li><li>The angle of the shadow in Alexandria is the same as the angle between the two cities as seen from Earth&#x27;s center.</li><li>If the angle is 7° and the distance between the cities is 800 km, then the arc length formula gives the circumference.</li></ol>
+<p><strong>The arc length formula:</strong> If an arc of angle $\theta$ (in degrees) spans a distance $d$ on a circle of radius $r$, then:</p>
+<p>$$\frac{\theta}{360°} = \frac{d}{2\pi r}$$</p>
+<p>Solving for $r$: $r = \frac{360° \cdot d}{2\pi \theta}$</p>
+<p>For Eratosthenes: $\theta = 7°$, $d = 800$ km.</p>
+<p>$$r = \frac{360 \times 800}{2\pi \times 7} \approx 6576 \text{ km}$$</p>
+<p>The circumference is $2\pi r \approx 41,300$ km. (The true value is about 40,075 km.)</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Parallax:</strong> The apparent shift in the position of a nearby object relative to distant background objects, caused by a change in the observer&#x27;s position.</p>
+<p><strong>Angular measurement:</strong> The angle subtended by an object as seen from the observer, typically measured in degrees or radians.</p>
+<p><strong>Baseline:</strong> The distance between two observation points; used to calculate distance to a distant object via parallax.</p>
+<p><strong>The parallax formula (for small angles):</strong></p>
+<p>If an object at distance $d$ has a parallax angle of $p$ (in arcseconds), then:</p>
+<p>$$d = \frac{1 \text{ parsec}}{p}$$</p>
+<p>(A parsec is the distance at which parallax is exactly 1 arcsecond—about 3.26 light-years.)</p>
+<p>For larger angles, use the Law of Sines directly. If the baseline is $b$ and the parallax angle is $p$, and you observe from a point such that the angle to one end of the baseline is 90°:</p>
+<p>$$d = \frac{b}{2\sin(p/2)}$$</p>
+<p><strong>Angular diameter:</strong> The angle subtended by the diameter of an object. If an object of actual diameter $D$ is at distance $d$, its angular diameter $\alpha$ (in radians) is approximately:</p>
+<p>$$\alpha \approx \frac{D}{d}$$ (for small angles)</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Eratosthenes&#x27; calculation (detailed)</strong></p>
+<p>Two cities are 800 km apart on a meridian (same longitude). At solar noon on the solstice, the sun is directly overhead in the southern city and casts a shadow making a 7° angle with the vertical in the northern city. Find Earth&#x27;s radius.</p>
+<p><em>Solution:</em></p>
+<p>The angle subtended at Earth&#x27;s center equals the shadow angle: 7°.</p>
+<p>Using the arc formula:</p>
+<p>$$\text{Circumference} = \frac{360°}{7°} \times 800 \text{ km} = 51.43 \times 800 \approx 41,143 \text{ km}$$</p>
+<p>$$\text{Radius} = \frac{41,143}{2\pi} \approx 6,550 \text{ km}$$</p>
+<p>(True value: 6,371 km. Error: about 3%.)</p>
+<p><strong>Example 2: Aristarchus&#x27; method (lunar eclipse)</strong></p>
+<p>During a lunar eclipse, the Moon takes 1 hour to cross Earth&#x27;s shadow. The Moon&#x27;s own diameter takes 0.25 hours to pass a fixed point. Find the ratio of Earth&#x27;s radius to the Moon&#x27;s radius.</p>
+<p><em>Solution:</em></p>
+<p>The Moon crosses Earth&#x27;s shadow in 1 hour, and the shadow&#x27;s width (at the Moon&#x27;s distance) is some angle $\phi$. The Moon itself subtends the same angle as its diameter, which takes 0.25 hours to pass:</p>
+<p>$$\frac{\text{Shadow angle}}{\text{Moon&#x27;s angle}} = \frac{1}{0.25} = 4$$</p>
+<p>So the shadow is 4 times the Moon&#x27;s diameter wide. The shadow is roughly 2.6 times Earth&#x27;s radius (accounting for light diffraction). Thus:</p>
+<p>$$2.6 \times R_E \approx 4 \times D_M = 4 \times 2R_M$$</p>
+<p>$$\frac{R_E}{R_M} \approx 2.7$$</p>
+<p>(True value: about 3.7. Aristarchus&#x27; measurements were imperfect, but the method was sound.)</p>
+<p><strong>Example 3: Distance using parallax</strong></p>
+<p>A star has a parallax of 0.5 arcseconds. How far away is it?</p>
+<p><em>Solution:</em></p>
+<p>Using the parallax formula:</p>
+<p>$$d = \frac{1 \text{ parsec}}{0.5} = 2 \text{ parsecs} \approx 6.5 \text{ light-years}$$</p>
+<p><strong>Example 4: Angular diameter</strong></p>
+<p>The Moon has a diameter of 3,474 km and is about 384,000 km away. What angle does it subtend in the sky?</p>
+<p><em>Solution:</em></p>
+<p>$$\alpha = \frac{D}{d} = \frac{3474}{384000} \approx 0.00905 \text{ radians}$$</p>
+<p>Converting to degrees: $0.00905 \times \frac{180°}{\pi} \approx 0.52°$ (about half a degree—which matches observation).</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Eratosthenes revisited:</strong> If two cities are 1000 km apart and the shadow angle is 5°, what is Earth&#x27;s circumference and radius?</li></ol>
+<ol><li><strong>Lunar eclipse observation:</strong> If the Moon takes 1.5 hours to cross Earth&#x27;s shadow and 0.5 hours for its own diameter to pass a point, estimate the ratio of Earth&#x27;s radius to the Moon&#x27;s radius.</li></ol>
+<ol><li><strong>Parallax distance:</strong> A star has a parallax of 0.1 arcseconds. How many parsecs away is it? How many light-years? (1 parsec ≈ 3.26 light-years)</li></ol>
+<ol><li><strong>Hipparchus&#x27; star catalogue:</strong> Two stars have angular separation of 2°. They are observed 12 hours apart (Earth rotates 180°). Explain why Earth&#x27;s rotation helps determine their three-dimensional positions.</li></ol>
+<ol><li><strong>Angular diameter problem:</strong> Jupiter has a diameter of 142,984 km and appears to subtend an angle of about 0.05° from Earth. Estimate Earth-Jupiter distance at that moment.</li></ol>
+<ol><li><strong>Combining methods:</strong> If you know Earth&#x27;s radius (6,371 km) and observe the Moon&#x27;s angular diameter (0.52°), find the Moon-Earth distance.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Challenge:</strong> Imagine you&#x27;re an ancient astronomer. You have no telescopes—only a stick, a shadow, and careful measurement.</p>
+<p>You observe that the Moon&#x27;s angular diameter equals the Sun&#x27;s angular diameter (which is why total solar eclipses are possible). You also observe that during a lunar eclipse, the Moon passes through Earth&#x27;s shadow in about 1 hour, while the Sun takes 12 hours to cross the sky (180° in 12 hours = 15° per hour).</p>
+<ol><li>What does it mean for the Moon and Sun to have the same angular diameter if they&#x27;re different sizes?</li><li>Estimate the ratio of the Sun&#x27;s actual diameter to the Moon&#x27;s.</li><li>Why can&#x27;t you use the parallax method easily for the Sun, but you can for the Moon?</li></ol>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Navigation and Mapmaking:</strong></p>
+<p>In the 15th and 16th centuries, explorers used triangulation (a consequence of parallax and angle measurement) to create accurate maps. A ship&#x27;s navigator could determine latitude by measuring the angle of the North Star above the horizon. Longitude was harder, but by combining angle measurements to known celestial objects with dead reckoning (tracking distance traveled), explorers could navigate with surprising accuracy.</p>
+<p><strong>Calendars and Time:</strong></p>
+<p>Accurate knowledge of the Moon&#x27;s motion—determined using the same trigonometric methods Hipparchus used—was essential for calendars. Many ancient and medieval calendars were lunar-based, tracking the phases of the Moon. Without trigonometry, these calendars would have drifted relative to the seasons.</p>
+<p><strong>Modern Astronomy:</strong></p>
+<p>Modern parallax measurements, refined from Hipparchus&#x27; and Aristarchus&#x27; techniques, let astronomers measure distances to nearby stars. NASA&#x27;s Gaia satellite measures parallax angles to billions of stars, creating a three-dimensional map of the galaxy. The principle is identical to what Eratosthenes did 2000 years ago: observe from two positions and measure the angle shift.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>Parallax</strong> is the apparent shift in position of an object when viewed from different locations. It&#x27;s the foundation of indirect distance measurement.</li><li><strong>Eratosthenes&#x27; method</strong> used the angle of shadows and the known distance between two cities to calculate Earth&#x27;s circumference—brilliantly simple and impressively accurate.</li><li><strong>Aristarchus</strong> used lunar eclipses and angular measurements to estimate distances to the Moon and ratios of sizes—the method was sound even when observations were imperfect.</li><li><strong>Hipparchus</strong> applied trigonometry systematically to create the first star catalogue, establishing astronomy as a quantitative science.</li><li><strong>Angular diameter</strong> lets you relate the size and distance of distant objects—a key concept linking observation to calculation.</li><li>These methods show that vast distances need not be traveled to be measured; angles and geometry suffice.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Q1: Eratosthenes&#x27; method for measuring Earth&#x27;s circumference relied on:</strong></p>
+<ul><li>Traveling to distant places and measuring distances directly</li><li>Observing shadows at different locations at the same time</li><li>Measuring the angle of the North Star from different latitudes</li><li>Observing parallax of nearby stars</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Observing shadows at different locations at the same time</p>
+</details>
+<p><strong>Q2: If a shadow makes a 10° angle with the vertical and the cities are 1000 km apart, approximately how large is Earth&#x27;s circumference?</strong></p>
+<ul><li>10,000 km</li><li>36,000 km</li><li>40,000 km</li><li>100,000 km</li></ul>
+<details>
+<summary>Answer</summary>
+<p>36,000 km</p>
+</details>
+<p><strong>Q3: Aristarchus used the following observation to estimate distances and sizes:</strong></p>
+<ul><li>The position of stars from two sides of Earth&#x27;s orbit</li><li>The time the Moon spends in Earth&#x27;s shadow during a lunar eclipse</li><li>The brightness of distant stars</li><li>The height of the North Star above the horizon</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The time the Moon spends in Earth&#x27;s shadow during a lunar eclipse</p>
+</details>
+<p><strong>Q4: The apparent shift in position of a nearby object relative to distant backgrounds when viewed from two positions is called:</strong></p>
+<ul><li>Refraction</li><li>Parallax</li><li>Aberration</li><li>Precession</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Parallax</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Eratosthenes and measurement of Earth: https://en.wikipedia.org/wiki/Eratosthenes</li><li>Aristarchus of Samos and distance estimates: https://en.wikipedia.org/wiki/Aristarchus_of_Samos</li><li>Hipparchus and the star catalogue: https://en.wikipedia.org/wiki/Hipparchus</li><li>Ptolemy&#x27;s Almagest: https://en.wikipedia.org/wiki/Almagest</li><li>Parallax in astronomy: https://en.wikipedia.org/wiki/Parallax</li><li>History of trigonometry: https://en.wikipedia.org/wiki/History_of_trigonometry</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-057-trigonometric-identities/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Trigonometric Identities</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-065-the-problem-of-instantaneous-change/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Problem of Instantaneous Change</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

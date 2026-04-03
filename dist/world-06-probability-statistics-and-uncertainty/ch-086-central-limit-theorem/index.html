@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Central Limit Theorem — Why Normality Appears Everywhere — Math Journey</title>
+    <meta name="description" content="The theorem that explains why the bell curve is everywhere — and why statistics works" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 6 · Chapter 86</p>
+        <h1>The Central Limit Theorem — Why Normality Appears Everywhere</h1>
+        <p class="hero-copy">The theorem that explains why the bell curve is everywhere — and why statistics works</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1810s–1900s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>State the Central Limit Theorem</li><li>Compute the mean and standard error of the sampling distribution</li><li>Apply CLT to find probabilities about sample means</li><li>Explain why CLT enables statistical inference</li><li>Understand the effect of sample size</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#the-normal-approximation-and-when-it-works">The Normal Approximation and When It Works</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#why-the-square-root-shows-up">Why the Square Root Shows Up</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Imagine a factory that makes bolts. Each bolt&#x27;s length varies slightly—some are 25.0 mm, others 25.3 mm, a few 24.8 mm. The distribution of individual bolt lengths is roughly uniform: any length in a certain range is equally likely. There is nothing normal (bell-curved) about it.</p>
+<p>Now suppose a quality inspector measures the length of 30 bolts, computes the average, and records it. He does this many times—drawing a new sample of 30, averaging, recording. He does this 1,000 times.</p>
+<p>When he plots the 1,000 averages, something remarkable happens: they form a bell curve. A perfect normal distribution.</p>
+<p>Yet the individual bolt lengths were not normal. How did averaging transform a non-normal distribution into a normal one?</p>
+<p>The answer is the Central Limit Theorem, perhaps the most important theorem in statistics.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>The normal distribution appears everywhere: heights of adult males, IQ scores, test scores, measurement errors in science. Yet not everything that is normally distributed has a reason to be normal. Why should nature follow a bell curve?</p>
+<p>The answer is averaging. Whenever you average many independent random quantities, the result is approximately normal—regardless of what distribution those individual quantities follow. This is the Central Limit Theorem.</p>
+<p>Why does this matter? Because sampling means are averages. A sample mean is the sum of individual values divided by the sample size. So sample means are normally distributed (when $n$ is large enough). And because sample means are normal, we can compute probabilities. We can build confidence intervals. We can perform hypothesis tests.</p>
+<p>In other words, the Central Limit Theorem is why statistical inference works.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The concept emerged gradually over a century. Pierre-Simon Laplace in the early 1800s noticed that errors in astronomical measurements seemed to follow a normal distribution. Carl Friedrich Gauss independently discovered the same pattern and proposed a theoretical explanation. Adolphe Quetelet in the 1830s and 1840s found the normal distribution in human measurements—heights, weights, arm spans.</p>
+<p>But the breakthrough came when statisticians proved the Central Limit Theorem rigorously. Laplace, later Pafnuty Chebyshev, and finally Aleksandr Lyapunov gave increasingly general proofs. By 1900, the theorem was firmly established.</p>
+<p>Interestingly, the name &quot;Central Limit Theorem&quot; came much later, popularized by George Pólya in the 1920s. Before that, it was sometimes called the &quot;law of errors.&quot;</p>
+<p>Today, the CLT is so fundamental that many statisticians call it the foundation of all statistical inference. Without it, polling, medical trials, quality control, and scientific measurement would be impossible to trust mathematically.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>The Central Limit Theorem (CLT):</strong> If $X_1, X_2, \ldots, X_n$ are independent random variables, each with the same mean $\mu$ and standard deviation $\sigma$, then for large $n$, the sample mean</p>
+<p>$$\bar{X} = \frac{X_1 + X_2 + \cdots + X_n}{n}$$</p>
+<p>is approximately normally distributed with mean $\mu$ and standard deviation $\frac{\sigma}{\sqrt{n}}$.</p>
+<p>In symbols: $$\bar{X} \approx N\left(\mu, \frac{\sigma^2}{n}\right)$$</p>
+<p><strong>Intuition.</strong> Imagine rolling a fair six-sided die (mean 3.5, quite non-normal). If you roll it once, you get a random result from 1 to 6—uniform, not normal. If you roll it twice and average, you get results like 1.5, 2, 3.5, etc.—still not obviously normal. But if you roll it 30 times and average? The average converges to a normal distribution centered at 3.5.</p>
+<p><strong>The sampling distribution.</strong> When we repeatedly draw samples of size $n$ and compute the sample mean $\bar{x}$ for each, those means themselves follow a distribution—the <strong>sampling distribution of the sample mean</strong>. By the CLT, this sampling distribution is (approximately) normal.</p>
+<p><strong>Standard error.</strong> The standard deviation of the sampling distribution is called the <strong>standard error</strong> and is denoted $SE$ or $\sigma_{\bar{x}}$:</p>
+<p>$$SE = \frac{\sigma}{\sqrt{n}}$$</p>
+<p>Note the crucial factor: $\sqrt{n}$ in the denominator. This means:</p>
+<ul><li>Larger $n$ makes $SE$ smaller. More data → more precise estimate.</li><li>The relationship is not linear. To cut $SE$ in half, we need to quadruple $n$.</li></ul>
+<p><strong>Important caveat.</strong> The CLT requires independence: each observation is unrelated to others. It also requires the original population to have a finite mean and standard deviation (satisfied by all practical distributions). For most &quot;reasonable&quot; distributions, $n \geq 30$ is sufficient for the normal approximation to work well. For very skewed distributions, a larger $n$ may be needed.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Sample mean:</strong> $\bar{X} = \frac{1}{n}\sum_{i=1}^{n} X_i$. The average of $n$ observations.</p>
+<p><strong>Sampling distribution:</strong> The probability distribution of a sample statistic (like $\bar{X}$) across all possible samples of size $n$ from the population.</p>
+<p><strong>Standard error:</strong> The standard deviation of the sampling distribution. For the sample mean: $$SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$$</p>
+<p>If $\sigma$ is unknown, we estimate it using the sample standard deviation $s$: $$SE_{\bar{x}} = \frac{s}{\sqrt{n}}$$</p>
+<p><strong>Standardizing:</strong> We can convert a sample mean to a standard normal (z-score) using: $$Z = \frac{\bar{X} - \mu}{SE} = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}}$$</p>
+<p>By the CLT, $Z \approx N(0, 1)$, allowing us to look up probabilities in the standard normal table.</p>
+<p><strong>Effect of sample size on precision:</strong></p>
+<ul><li>$n = 10$: $SE = \frac{\sigma}{\sqrt{10}} \approx 0.316\sigma$</li><li>$n = 100$: $SE = \frac{\sigma}{\sqrt{100}} = 0.1\sigma$</li><li>$n = 1000$: $SE = \frac{\sigma}{\sqrt{1000}} \approx 0.032\sigma$</li></ul>
+<p>Doubling $n$ divides $SE$ by $\sqrt{2} \approx 1.41$, a modest improvement. Increasing $n$ by a factor of 100 divides $SE$ by 10, a dramatic improvement. This is why statistical studies balance precision against cost.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Dice rolls.</strong></p>
+<p>A fair six-sided die has mean $\mu = 3.5$ and standard deviation $\sigma = \sqrt{35/12} \approx 1.71$.</p>
+<p>If we roll the die $n = 36$ times and compute the average, what is the standard error?</p>
+<p>$$SE = \frac{1.71}{\sqrt{36}} = \frac{1.71}{6} = 0.285$$</p>
+<p>The sampling distribution of the average has standard deviation 0.285.</p>
+<p>If we roll 36 times and get an average of 3.8, this is about $\frac{3.8 - 3.5}{0.285} \approx 1.05$ standard errors above the mean. Not unusual.</p>
+<p><strong>Example 2: Manufacturing bolts.</strong></p>
+<p>A bolt factory produces bolts with mean length $\mu = 25$ mm and standard deviation $\sigma = 0.4$ mm.</p>
+<p>(a) What is the standard error of the sample mean for $n = 100$ bolts?</p>
+<p>$$SE = \frac{0.4}{\sqrt{100}} = \frac{0.4}{10} = 0.04 \text{ mm}$$</p>
+<p>(b) What is the probability that the sample mean of 100 bolts is less than 24.94 mm?</p>
+<p>Standardize: $$Z = \frac{24.94 - 25}{0.04} = \frac{-0.06}{0.04} = -1.5$$</p>
+<p>From the standard normal table, $P(Z &lt; -1.5) \approx 0.067$, or about 6.7%.</p>
+<p>(c) What sample size would reduce $SE$ to 0.02 mm?</p>
+<p>$$0.02 = \frac{0.4}{\sqrt{n}} \implies \sqrt{n} = 20 \implies n = 400$$</p>
+<p>We would need to measure 400 bolts to cut the standard error in half.</p>
+<p><strong>Example 3: Polling proportions.</strong></p>
+<p>A political poll surveys $n = 1000$ voters and finds 55% support a candidate.</p>
+<p>The proportion $\hat{p} = 0.55$, with standard error $SE_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}} = \sqrt{\frac{0.55 \cdot 0.45}{1000}} = \sqrt{0.0002475} \approx 0.0157$.</p>
+<p>By the CLT (applicable to proportions too), the true population proportion is approximately normal around 55% with standard error 1.57 percentage points.</p>
+<p>A 95% confidence interval is $55\% \pm 1.96 \times 1.57\% \approx 55\% \pm 3.1\%$, or [51.9%, 58.1%].</p>
+</section><section class="lesson-section lesson-section--generic"><h2 id="the-normal-approximation-and-when-it-works">The Normal Approximation and When It Works</h2>
+<p>One key assumption underlies the Central Limit Theorem: the population has a finite mean and standard deviation. Most practical distributions satisfy this. But not all.</p>
+<p><strong>When CLT works well:</strong></p>
+<ul><li>Sample means from uniform distributions: Normal approximation is excellent even at $n = 30$.</li><li>Sample means from exponential distributions: Need larger $n$ (perhaps $n \geq 50$) for good approximation due to right skew.</li><li>Sample means from binomial distributions: Works when $np &gt; 5$ and $n(1-p) &gt; 5$.</li></ul>
+<p><strong>When CLT does not apply:</strong></p>
+<ul><li>Heavy-tailed distributions (like some financial data) can require enormous $n$ for normality.</li><li>Cauchy distribution has no mean, so CLT does not apply. The sample mean has the same distribution as individual observations—no improvement with $n$.</li></ul>
+<p><strong>Rule of thumb:</strong> For most practical purposes, $n \geq 30$ is sufficient. But skewed distributions benefit from larger $n$, and you should always visualize the sampling distribution (e.g., with simulation) to verify the approximation is reasonable.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>A population has mean $\mu = 100$ and standard deviation $\sigma = 20$. For each sample size, compute the standard error of the sample mean:</li></ol>
+<ul><li>a) $n = 25$</li><li>b) $n = 100$</li><li>c) $n = 400$</li></ul>
+<ol><li>Explain why the standard error decreases as $n$ increases, but not proportionally. Why does quadrupling $n$ (from 25 to 100) reduce $SE$ by half?</li></ol>
+<ol><li>A candy factory produces candies with mean weight $\mu = 5.0$ grams and standard deviation $\sigma = 0.3$ grams. A quality control inspector weighs a random sample of 50 candies.</li></ol>
+<ul><li>a) What is the standard error of the sample mean?</li><li>b) Find the probability that the sample mean weight is greater than 5.1 grams. (Hint: standardize and use the normal table.)</li></ul>
+<ol><li>A survey of 400 households finds that the sample mean household income is $\bar{x} = \$65,000$ with sample standard deviation $s = \$18,000$. Estimate the standard error of the sample mean.</li></ol>
+<ol><li>How does the Central Limit Theorem apply to test scores? If a standardized test has mean 100 and standard deviation 15, and you give it to 64 randomly selected students, what is the standard error of the average score?</li></ol>
+</section><section class="lesson-section lesson-section--generic"><h2 id="why-the-square-root-shows-up">Why the Square Root Shows Up</h2>
+<p>The formula $SE = \frac{\sigma}{\sqrt{n}}$ is deceptively simple, but the $\sqrt{n}$ in the denominator encodes deep intuition about averaging.</p>
+<p>When you add $n$ independent random variables, the variance adds: $\text{Var}(X_1 + X_2 + \cdots + X_n) = \sigma^2 + \sigma^2 + \cdots + \sigma^2 = n\sigma^2$.</p>
+<p>But the sample mean divides by $n$: $\bar{X} = \frac{X_1 + \cdots + X_n}{n}$. When you divide a sum by $n$, the variance is divided by $n^2$: $\text{Var}(\bar{X}) = \frac{n\sigma^2}{n^2} = \frac{\sigma^2}{n}$.</p>
+<p>Taking the square root (to get standard deviation): $SE = \sqrt{\frac{\sigma^2}{n}} = \frac{\sigma}{\sqrt{n}}$.</p>
+<p>The $\sqrt{n}$ appears because variance (which sums quadratically) is converted to standard deviation (a linear measure). This is why $SE$ shrinks as $\sqrt{n}$, not as $n$. Intuition: to cut the standard error in half, you need four times as much data, not twice as much.</p>
+<p>This fundamental relationship—rooted in how variances combine—explains why larger samples are always better but at diminishing returns.</p>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Lottery Paradox.</strong> A lottery game rolls three fair six-sided dice and you win if the sum is 18. You enter the game once and get a sum of 17.5 (impossible, but imagine fractional results for this thought experiment). You feel you almost won—you were 0.5 away from 18.</p>
+<p>But a friend plays the same game 100 times with three dice each time and averages 10.5 (the expected value is 10.5). Your friend&#x27;s average is always exactly on target.</p>
+<p>Why is it more &quot;surprising&quot; to be 0.5 away from 18 in a single roll than to be exactly at 10.5 on average across 100 rolls? (Hint: think about standard error and the CLT.)</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Quality control in manufacturing.</strong> A factory produces widgets. The process has a known mean weight of 50 grams and standard deviation of 2 grams. Every hour, a technician weighs 25 widgets and computes the average. If the average is more than 3 standard errors away from 50 grams—signaling a problem—the process is stopped for inspection.</p>
+<p>What is the probability of a false alarm (stopping when nothing is wrong)?</p>
+<p>Standard error: $SE = \frac{2}{\sqrt{25}} = 0.4$ grams.</p>
+<p>Three standard errors: $3 \times 0.4 = 1.2$ grams.</p>
+<p>We stop if $\bar{x} &lt; 48.8$ or $\bar{x} &gt; 51.2$ grams. Standardizing: $|Z| &gt; 3$.</p>
+<p>For a standard normal, $P(|Z| &gt; 3) \approx 0.0027$, or 0.27%. False alarms are rare—good.</p>
+<p><strong>Scientific measurement.</strong> In a physics experiment, a quantity has true value $\mu = 10$ units but each measurement has error (standard deviation $\sigma = 0.5$ units). A researcher takes 100 measurements and averages them.</p>
+<p>Standard error: $SE = \frac{0.5}{\sqrt{100}} = 0.05$ units.</p>
+<p>The average of 100 measurements is expected to be within 0.05 units of the true value (one standard error), or within 0.1 units (two standard errors) with 95% confidence.</p>
+<p>This is how scientists reduce the effect of random error: take many measurements and average.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>The <strong>Central Limit Theorem</strong> states that the average of many independent random quantities is approximately normally distributed, even if the individual quantities are not.</p>
+<p>The <strong>sampling distribution</strong> of the sample mean is centered at $\mu$ with standard deviation (standard error) $SE = \frac{\sigma}{\sqrt{n}}$.</p>
+<p>Larger sample sizes reduce standard error, making estimates more precise. But the improvement is by $\sqrt{n}$, so doubling precision requires quadrupling the sample size.</p>
+<p>This theorem is the mathematical foundation of statistical inference. It explains why sample means are normally distributed, allowing us to compute confidence intervals and p-values. It is why polling works, why medical trials work, why quality control works.</p>
+<p>The CLT is not just a theorem—it is the reason we can trust statistics at all.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>The Central Limit Theorem says that the sample mean is approximately normal if:</li></ol>
+<ul><li>The original population is normal</li><li>The sample size is large (usually $n \geq 30$)</li><li>The observations are independent and come from a distribution with finite mean and standard deviation</li><li>Both B and C</li></ul>
+<ol><li>A population has standard deviation $\sigma = 12$. If we draw samples of size $n = 9$, the standard error of the sample mean is:</li></ol>
+<ul><li>12</li><li>4</li><li>3</li><li>1.33</li></ul>
+<ol><li>To reduce the standard error to one-quarter its current value, we need to multiply the sample size by:</li></ol>
+<ul><li>2</li><li>4</li><li>8</li><li>16</li></ul>
+<ol><li>A factory produces parts with mean length 100 mm and standard deviation 5 mm. A quality control inspector samples 100 parts. The standard error is 0.5 mm. What is the probability that the sample mean is between 99 and 101 mm?</li></ol>
+<ul><li>About 68% (within 1 SE of the mean)</li><li>About 95% (within 2 SE of the mean)</li><li>About 99.7% (within 3 SE of the mean)</li><li>Cannot be determined without knowing the original distribution</li></ul>
+<ol><li>Why is the Central Limit Theorem more important than the normal distribution itself?</li></ol>
+<ul><li>It explains why normal distributions occur naturally</li><li>It allows statistical inference even when the population is not normal</li><li>It relates sample means to population means</li><li>All of the above</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li><strong>D — Both B and C.</strong> The CLT does not require the population to be normal. It requires independence, finite mean and standard deviation, and reasonably large $n$. The population can be uniform, exponential, or any shape.</li></ol>
+<ol><li><strong>B — 4.</strong> $SE = \frac{\sigma}{\sqrt{n}} = \frac{12}{\sqrt{9}} = \frac{12}{3} = 4$.</li></ol>
+<ol><li><strong>D — 16.</strong> If $SE = \frac{\sigma}{\sqrt{n}}$ and we want $SE_{\text{new}} = \frac{1}{4} SE_{\text{old}}$, we need $\frac{\sigma}{\sqrt{n_{\text{new}}}} = \frac{1}{4} \cdot \frac{\sigma}{\sqrt{n_{\text{old}}}}$, which gives $\sqrt{n_{\text{new}}} = 4\sqrt{n_{\text{old}}}$, so $n_{\text{new}} = 16 n_{\text{old}}$.</li></ol>
+<ol><li><strong>B — About 95%.</strong> From 99 to 101 mm is the range $[\mu - 2 \cdot SE, \mu + 2 \cdot SE] = [100 - 2(0.5), 100 + 2(0.5)] = [99, 101]$. This is within 2 standard errors, covering about 95% of the normal distribution.</li></ol>
+<ol><li><strong>D — All of the above.</strong> The CLT explains the ubiquity of normal distributions (they are sampling distributions), enables inference about non-normal populations, and connects sample statistics to population parameters.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><strong>Central Limit Theorem history:</strong> <a href="https://en.wikipedia.org/wiki/Central_limit_theorem" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Central_limit_theorem</a></li><li><strong>Pierre-Simon Laplace:</strong> <a href="https://en.wikipedia.org/wiki/Pierre-Simon_Laplace" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Pierre-Simon_Laplace</a></li><li><strong>Carl Friedrich Gauss:</strong> <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss</a></li><li><strong>Sampling distribution:</strong> <a href="https://en.wikipedia.org/wiki/Sampling_distribution" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Sampling_distribution</a></li><li><strong>Standard error:</strong> <a href="https://en.wikipedia.org/wiki/Standard_error" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Standard_error</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-085-sampling-and-inference/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Sampling and Statistical Inference</span></a><a class="pager-link pager-link--next" href="../../world-06-probability-statistics-and-uncertainty/ch-087-bayes-theorem/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Bayes&#x27; Theorem — Updating Beliefs with Evidence</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

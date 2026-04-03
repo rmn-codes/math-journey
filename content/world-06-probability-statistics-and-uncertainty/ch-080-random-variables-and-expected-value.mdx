@@ -1,0 +1,321 @@
+---
+worldNumber: 6
+world: world-06-probability-statistics-and-uncertainty
+chapter: 80
+filename: ch-080-random-variables-and-expected-value.mdx
+title: Random Variables and Expected Value
+subtitle: "Assigning numbers to chance — and the long-run average of any game"
+historicalPeriod: "1600s–1700s"
+estimatedTimeMinutes: 40
+mainConcepts:
+  - random variable
+  - probability distribution
+  - expected value
+  - variance
+  - standard deviation
+  - fair game
+learningObjectives:
+  - Define and use discrete random variables
+  - Construct probability distributions
+  - Compute expected value, variance, and standard deviation
+  - Interpret expected value in real contexts
+  - Determine if a game is fair
+---
+
+## Story Hook
+
+It's the 1700s. An insurance company is founded in London. The founder faces a fundamental problem: no house knows if it will catch fire. No insurer can predict the future. So how can the company set premiums without going bankrupt?
+
+The answer lies in a mathematical principle developed by Pascal, Fermat, and others: the expected value. The insurers begin gathering data. They discover that, on average, about 1 house in 1,000 experiences a fire loss each year. When a fire occurs, the average loss is $200,000. So the expected loss per house per year is:
+
+$$\text{Expected loss} = \frac{1}{1000} \times 200{,}000 = 200 \text{ dollars}$$
+
+If they charge a premium of $300 per year, they expect to profit $100 per house. With thousands of customers, those $100 profits add up. Some years fires exceed expectation; some years they fall short. But over decades, the law of large numbers kicks in. The actual average converges to the expected value. The company survives.
+
+Insurance is applied expected value. Without it, insurance would be impossible. With it, risk becomes manageable.
+
+## Why It Matters
+
+Expected value is the long-run average. When you play a game once, the result is random. But if you play 1,000 times, an average outcome emerges. That average is the expected value.
+
+This matters everywhere:
+
+- **Insurance**: Premiums are set based on expected claims.
+- **Gambling**: Casinos know that players lose money on average (negative expected value for players, positive for the house).
+- **Investing**: Expected returns guide portfolio decisions.
+- **Quality Control**: Manufacturers budget for defects based on expected failure rates.
+- **Medicine**: Clinical trials estimate expected effectiveness of treatments.
+- **Policy**: Governments estimate expected costs and benefits of regulations.
+
+Expected value is the machinery by which organizations make decisions under uncertainty. It transforms randomness into strategy.
+
+## Historical Context
+
+The concept of expected value emerged from the gambling disputes that birthed probability. Pascal and Fermat thought about the "value" of a bet—what a fair price would be. In the 1650s, this sparked formal mathematics.
+
+Christian Huygens, a Dutch mathematician, formalized the concept in 1657. He introduced the idea of expected value mathematically in his work on probability. Over the next century, mathematicians like Jacob Bernoulli extended the theory. They developed not just expected value, but variance and standard deviation—measures of how spread out outcomes are around the expected value.
+
+By the 18th century, expected value had become central to statistics, insurance, and decision theory. Today it remains foundational.
+
+## Core Concept
+
+**Random Variable**: A random variable $X$ is a function that assigns a numerical value to each outcome of an experiment.
+
+Example: Roll a die. Let $X$ = the number on the die. Then $X$ can be 1, 2, 3, 4, 5, or 6. These are the *values* of $X$, the *outcomes* of the experiment.
+
+Another example: Flip a coin. Let $X$ = 1 if heads, $X$ = 0 if tails. We've assigned numbers to outcomes.
+
+**Discrete vs. Continuous**: A discrete random variable takes on a finite or countable number of values (like the result of a die roll). A continuous random variable takes on any value in an interval (like the time until a light bulb fails).
+
+**Probability Distribution**: A probability distribution of a discrete random variable $X$ is a table (or formula) showing $P(X = x)$ for each possible value $x$.
+
+Example: Fair die roll.
+
+| $x$ | 1 | 2 | 3 | 4 | 5 | 6 |
+|-----|---|---|---|---|---|---|
+| $P(X=x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ |
+
+The probabilities must sum to 1.
+
+**Expected Value (Mean)**: The expected value $E(X)$ or $\mu$ is the weighted average of all possible values, weighted by their probabilities:
+
+$$E(X) = \sum_{x} x \cdot P(X=x)$$
+
+For the fair die:
+$$E(X) = 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} + 3 \cdot \frac{1}{6} + 4 \cdot \frac{1}{6} + 5 \cdot \frac{1}{6} + 6 \cdot \frac{1}{6} = \frac{21}{6} = 3.5$$
+
+Over many rolls, the average value is 3.5 (even though you can never roll 3.5 on a single roll).
+
+**Variance and Standard Deviation**: Variance measures spread. It is the expected value of squared deviations from the mean:
+
+$$\text{Var}(X) = E[(X - \mu)^2] = \sum_{x} (x - \mu)^2 \cdot P(X=x)$$
+
+Standard deviation is the square root of variance:
+$$\sigma = \sqrt{\text{Var}(X)}$$
+
+Both measure how spread out the outcomes are around the expected value. Large variance means outcomes scatter widely. Small variance means they cluster tightly.
+
+**Fair Game**: A game is fair if the expected value of winnings is zero. If you play a fair game many times, you expect to break even on average.
+
+Example: Flip a fair coin. Heads you win $1; tails you lose $1.
+
+$$E(\text{winnings}) = 1 \cdot \frac{1}{2} + (-1) \cdot \frac{1}{2} = 0$$
+
+The game is fair. (Most casino games are *unfair*—the expected value for the player is negative.)
+
+**Expected Value of a Sum**: If $X$ and $Y$ are random variables, then:
+
+$$E(X + Y) = E(X) + E(Y)$$
+
+This holds even if $X$ and $Y$ are dependent. This linearity is immensely powerful.
+
+## Definitions and Formal Lesson
+
+1. **Random Variable** ($X$): A function assigning a number to each outcome of an experiment.
+2. **Discrete Random Variable**: Takes on a finite or countable number of values.
+3. **Continuous Random Variable**: Takes on any value in an interval.
+4. **Probability Distribution**: A table, graph, or formula showing $P(X=x)$ for each value $x$. Probabilities sum to 1.
+5. **Expected Value** ($E(X)$ or $\mu$): The weighted average. $E(X) = \sum x \cdot P(X=x)$. Also called the mean.
+6. **Variance** ($\text{Var}(X)$ or $\sigma^2$): Measure of spread. $\text{Var}(X) = E[(X - \mu)^2] = \sum (x-\mu)^2 P(X=x)$.
+7. **Standard Deviation** ($\sigma$): The square root of variance. $\sigma = \sqrt{\text{Var}(X)}$.
+8. **Fair Game**: A game with expected value of zero (expected winnings = $0).
+9. **Unfair Game**: Expected value ≠ 0. Games of chance at casinos typically have negative expected value for players.
+10. **Linearity of Expectation**: $E(X + Y) = E(X) + E(Y)$ (always true).
+
+## Worked Examples
+
+**Example 1: Expected Value of a Die Roll**
+
+A fair six-sided die is rolled. Find the expected value.
+
+$$E(X) = 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} + 3 \cdot \frac{1}{6} + 4 \cdot \frac{1}{6} + 5 \cdot \frac{1}{6} + 6 \cdot \frac{1}{6}$$
+$$= \frac{1+2+3+4+5+6}{6} = \frac{21}{6} = 3.5$$
+
+**Example 2: Variance of a Die Roll**
+
+Using the expected value $\mu = 3.5$:
+
+$$\text{Var}(X) = (1-3.5)^2 \cdot \frac{1}{6} + (2-3.5)^2 \cdot \frac{1}{6} + \cdots + (6-3.5)^2 \cdot \frac{1}{6}$$
+$$= (-2.5)^2 \cdot \frac{1}{6} + (-1.5)^2 \cdot \frac{1}{6} + (-0.5)^2 \cdot \frac{1}{6} + (0.5)^2 \cdot \frac{1}{6} + (1.5)^2 \cdot \frac{1}{6} + (2.5)^2 \cdot \frac{1}{6}$$
+$$= \frac{6.25 + 2.25 + 0.25 + 0.25 + 2.25 + 6.25}{6} = \frac{17.5}{6} \approx 2.92$$
+
+Standard deviation: $\sigma = \sqrt{2.92} \approx 1.71$.
+
+**Example 3: Insurance Payoff**
+
+An insurance company insures homes against fire. The probability of a fire claim in a year is 0.001. When a fire occurs, the payout is $150,000. The premium charged is $250.
+
+Let $X$ = net gain to the insurer from one policy (positive gain = premium exceeds expected payout).
+
+$$P(X = 250) = 0.999 \text{ (no fire)}$$
+$$P(X = 250 - 150{,}000 = -149{,}750) = 0.001 \text{ (fire occurs)}$$
+
+Expected gain:
+$$E(X) = 250 \cdot 0.999 + (-149{,}750) \cdot 0.001 = 249.75 - 149.75 = 100$$
+
+The insurer expects to profit $100 per policy. With 10,000 customers, expected total profit is $1,000,000. This is how insurance is priced.
+
+**Example 4: Fair Game?**
+
+You play a game: roll a die. Win $5 if you roll a 6, win nothing otherwise.
+
+How much should you pay to play fairly?
+
+Let $X$ = winnings.
+
+$$P(X = 5) = \frac{1}{6}, \quad P(X = 0) = \frac{5}{6}$$
+
+$$E(X) = 5 \cdot \frac{1}{6} + 0 \cdot \frac{5}{6} = \frac{5}{6} \approx 0.833$$
+
+For a fair game, the fee should equal the expected winnings. So you should pay approximately $0.83 to play fairly.
+
+**Example 5: Sum of Random Variables**
+
+You roll two fair dice independently. Let $X$ = first die, $Y$ = second die.
+
+$E(X) = 3.5$, $E(Y) = 3.5$.
+
+What is $E(X + Y)$?
+
+$$E(X + Y) = E(X) + E(Y) = 3.5 + 3.5 = 7$$
+
+Indeed, the expected sum of two dice is 7 (which we can verify by counting: the sum ranges from 2 to 12, and 7 is the most common outcome).
+
+## Practice Set
+
+1. A discrete random variable $X$ has probability distribution:
+
+   | $x$ | 1 | 2 | 3 | 4 |
+   |-----|---|---|---|---|
+   | $P(X=x)$ | 0.2 | 0.3 | 0.3 | 0.2 |
+
+   Find $E(X)$.
+
+2. A lottery ticket costs $1. You win $100 with probability 0.01, and nothing with probability 0.99. What is the expected value of your winnings (minus the ticket cost)? Is this a fair bet?
+
+3. A game: flip a fair coin. Heads, you win $10; tails, you lose $10. What is the expected value? Is this fair?
+
+4. A random variable has $E(X) = 5$ and $E(Y) = 3$. What is $E(X + Y)$?
+
+5. Find the expected value of a random variable with distribution:
+
+   | $x$ | 0 | 1 | 2 |
+   |-----|---|---|---|
+   | $P(X=x)$ | 0.25 | 0.5 | 0.25 |
+
+   Also compute the variance and standard deviation.
+
+6. An archer hits the target with probability 0.7. Each hit scores 10 points; each miss scores 0. What is the expected score per shot?
+
+7. If $X$ is uniform on $\{1, 2, 3, 4, 5\}$ (each equally likely), what is $E(X)$? What is $E(2X)$?
+
+## Reasoning Task
+
+**The St. Petersburg Paradox**
+
+Imagine a game: flip a fair coin repeatedly until it lands heads. You win $2^k$ dollars, where $k$ is the number of flips.
+
+- If heads on flip 1: you win $2^1 = 2$ dollars.
+- If heads on flip 2: you win $2^2 = 4$ dollars.
+- If heads on flip 3: you win $2^3 = 8$ dollars.
+- And so on...
+
+Calculate the expected winnings. (Hint: $P(k \text{ flips}) = \frac{1}{2^k}$, so a contribution is $\frac{1}{2^k} \times 2^k = 1$.)
+
+What is the expected value? How much should you pay to play fairly?
+
+Now ask yourself: would you actually pay that amount to play? Why does expected value here feel disconnected from rational behavior?
+
+This is the St. Petersburg Paradox. It reveals the limits of expected value as a decision tool in extreme cases.
+
+## Application
+
+**Game Design: Casino Slot Machines**
+
+A simple slot machine has 3 reels. Each reel shows one of 10 symbols. A jackpot pays $1,000 when all 3 match. All other combinations pay nothing.
+
+Assume pulling the lever costs $1, and outcomes are independent with equal probability.
+
+1. What is the probability of winning the jackpot?
+2. What is the expected value of the machine for a player?
+3. If the casino wants to make 10% profit on each machine, how much should the jackpot be adjusted?
+
+## Recap
+
+A random variable assigns numbers to chance outcomes. Its probability distribution tells us the likelihood of each value. From the distribution, we can compute expected value—the long-run average.
+
+**Expected value** $E(X) = \sum x \cdot P(X=x)$ is the weighted average. Over many repetitions, outcomes cluster around this value due to the law of large numbers.
+
+**Variance** and **standard deviation** measure how spread outcomes are. A high variance means results scatter widely; a low variance means they're tightly clustered.
+
+Expected value is the foundation of decision-making under uncertainty. Insurance companies use it to set premiums. Investors use it to allocate funds. Casinos use it to ensure profit. When you see a "fair" game, it's one where expected winnings equal zero.
+
+The linearity of expectation—$E(X + Y) = E(X) + E(Y)$—is remarkably powerful. It lets us decompose complex random phenomena into simpler parts.
+
+These ideas, developed to solve gambling disputes 350 years ago, remain central to how organizations and individuals make rational choices in the face of uncertainty.
+
+## Unlock Quiz
+
+**Question 1:** A random variable $X$ has distribution: $P(X=1)=0.3$, $P(X=2)=0.5$, $P(X=3)=0.2$. What is $E(X)$?
+
+- $1.0$
+- $1.9$
+- $2.0$
+- $2.5$
+
+<details>
+<summary>Answer</summary>
+$1.9$
+
+$E(X) = 1(0.3) + 2(0.5) + 3(0.2) = 0.3 + 1.0 + 0.6 = 1.9$.
+</details>
+
+**Question 2:** You buy a lottery ticket for $5. You win $50 with probability 0.1, and $0 with probability 0.9. What is the expected net gain (winnings minus cost)?
+
+- $5$
+- $0$
+- $-$\$0$
+- $-$\$0
+
+<details>
+<summary>Answer</summary>
+$-$\$0$
+
+Expected winnings: $50(0.1) + 0(0.9) = 5$. Net gain: $5 - 5 = 0$.
+</details>
+
+**Question 3:** Two independent random variables have $E(X) = 4$ and $E(Y) = 6$. What is $E(X + Y)$?
+
+- $4$
+- $6$
+- $10$
+- $24$
+
+<details>
+<summary>Answer</summary>
+$10$
+
+By linearity: $E(X+Y) = E(X) + E(Y) = 4 + 6 = 10$.
+</details>
+
+**Question 4:** A game is fair if its expected value is:
+
+- Positive
+- Negative
+- Zero
+- Undefined
+
+<details>
+<summary>Answer</summary>
+Zero
+
+A fair game has expected winnings equal to the cost of playing, so $E(\text{winnings} - \text{cost}) = 0$.
+</details>
+
+## Source Notes
+
+- Expected value: https://en.wikipedia.org/wiki/Expected_value
+- Random variable: https://en.wikipedia.org/wiki/Random_variable
+- Variance and standard deviation: https://en.wikipedia.org/wiki/Variance
+- St. Petersburg Paradox: https://en.wikipedia.org/wiki/St._Petersburg_paradox
+- Insurance and actuarial science: https://en.wikipedia.org/wiki/Actuarial_science

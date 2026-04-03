@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Pythagorean Theorem — Math Journey</title>
+    <meta name="description" content="The most important relationship in geometry—and its surprising age" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 1 · Chapter 21</p>
+        <h1>The Pythagorean Theorem</h1>
+        <p class="hero-copy">The most important relationship in geometry—and its surprising age</p>
+        <div class="hero-meta">
+          <span>45 min</span>
+          <span>foundational</span>
+          <span>Babylon, Egypt, India, Greece</span>
+          <span>2000 BCE to 500 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>State the Pythagorean theorem precisely.</li><li>Understand why the theorem is true through visual proof.</li><li>Calculate the third side of a right triangle.</li><li>Recognize and use Pythagorean triples.</li><li>Apply the theorem to distance and real-world problems.</li><li>Appreciate the theorem&#x27;s ancient origins.</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#key-terms">Key Terms</a></li><li class="toc-level-3"><a href="#the-theorem">The Theorem</a></li><li class="toc-level-3"><a href="#why-the-pythagorean-theorem-is-true-a-visual-proof">Why the Pythagorean Theorem Is True: A Visual Proof</a></li><li class="toc-level-3"><a href="#finding-a-missing-side">Finding a Missing Side</a></li><li class="toc-level-3"><a href="#pythagorean-triples">Pythagorean Triples</a></li><li class="toc-level-3"><a href="#the-converse-of-the-pythagorean-theorem">The Converse of the Pythagorean Theorem</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-find-the-hypotenuse">Example 1: Find the Hypotenuse</a></li><li class="toc-level-3"><a href="#example-2-find-a-missing-leg">Example 2: Find a Missing Leg</a></li><li class="toc-level-3"><a href="#example-3-verify-a-pythagorean-triple">Example 3: Verify a Pythagorean Triple</a></li><li class="toc-level-3"><a href="#example-4-use-the-converse-to-check-for-a-right-angle">Example 4: Use the Converse to Check for a Right Angle</a></li><li class="toc-level-3"><a href="#example-5-real-world-distance">Example 5: Real-World Distance</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-3"><a href="#warm-up">Warm-Up</a></li><li class="toc-level-3"><a href="#core-practice">Core Practice</a></li><li class="toc-level-3"><a href="#stretch">Stretch</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Picture a rope with 12 evenly spaced knots. A builder holds the first and twelfth knots at opposite corners of a room. She stretches the rope tight at two intermediate knots—one 3 spaces along, one 4 spaces along—creating the corner of a square room.</p>
+<p>The three sides of rope form a 3-4-5 triangle, and the angle where the 3 and 4 meet is perfectly square. This is not a coincidence.</p>
+<p>Thousands of years before Pythagoras, builders, architects, and surveyors knew this simple fact: if you build a right angle with sides of lengths 3 and 4, the diagonal is always 5. Later, mathematicians proved that this is part of a deeper truth: in any right triangle, the square of the two shorter sides always equals the square of the longest side.</p>
+<p>This is the Pythagorean theorem. It is among the most powerful and celebrated ideas in mathematics.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>The Pythagorean theorem matters because it:</p>
+<ul><li>describes a universal relationship in all right triangles</li><li>allows you to find the third side of a right triangle if you know the other two</li><li>lets you check whether an angle is truly a right angle</li><li>enables calculation of distances, even when you cannot measure directly</li><li>connects geometry to algebra (areas of squares to side lengths)</li><li>appears in physics, engineering, navigation, and computer graphics</li></ul>
+<p>If you understand the Pythagorean theorem, you understand one of the deepest and most useful truths about geometry. It is a bridge between shape and number.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The Pythagorean theorem is named after Pythagoras, a Greek mathematician and philosopher who lived around 500 BCE. However, the theorem was known and used for more than 1000 years before his time.</p>
+<p>The oldest evidence appears on the Babylonian tablet Plimpton 322, dated to around 1800 BCE. This tablet contains a list of Pythagorean triples—sets of three numbers that satisfy the relationship a² + b² = c². The Babylonians used these triples in practical problems and understood the geometry behind them, even if they did not prove the theorem in the way Greeks later did.</p>
+<p>In India, the Sulba Sutras (800–200 BCE), ancient texts on rope measurements and construction, contain explicit statements of the theorem and its applications to building altars and structures. These texts show that the theorem was known across multiple civilizations.</p>
+<p>The Greeks, particularly Pythagoras and later Euclid, turned the theorem into a formal proof. Euclid&#x27;s proof, which appears in his Elements (circa 300 BCE), uses the area of squares and is considered one of the first major achievements of mathematical reasoning. Euclid&#x27;s proof is visually elegant: it shows that the two squares on the short sides of a right triangle, when combined, have exactly the same area as the square on the long side.</p>
+<p>The naming of the theorem after Pythagoras is likely a historical accident—later Greek mathematicians credited him, but he was probably not the first to discover it.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>right triangle</strong> is a triangle with one angle of exactly 90 degrees (a right angle).</p>
+<p>In a right triangle:</p>
+<ul><li>The two sides that form the right angle are called the <strong>legs</strong>.</li><li>The longest side, opposite the right angle, is called the <strong>hypotenuse</strong>.</li></ul>
+<p>The <strong>Pythagorean theorem</strong> states:</p>
+<p><strong>In a right triangle, the square of the hypotenuse equals the sum of the squares of the two legs.</strong></p>
+<p>If we call the legs _a_ and _b_, and the hypotenuse _c_, this becomes:</p>
+<p><strong>a² + b² = c²</strong></p>
+<p>This is perhaps the single most important formula in geometry. It says that three areas—the area of a square built on side _a_, plus the area of a square built on side _b_, equals the area of a square built on side _c_.</p>
+<p>Why does this matter? Because once you know any two sides of a right triangle, you can always find the third. You do not need a ruler. You do not need to measure the angle. Just apply the theorem.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="key-terms">Key Terms</h3>
+<p><strong>Right triangle</strong> A triangle that has one angle equal to 90 degrees (a right angle), typically marked with a small square at the corner.</p>
+<p><strong>Leg</strong> Either of the two sides of a right triangle that form the right angle.</p>
+<p><strong>Hypotenuse</strong> The longest side of a right triangle, always opposite the right angle.</p>
+<p><strong>Pythagorean theorem</strong> The relationship a² + b² = c² that holds in every right triangle, where _a_ and _b_ are the legs and _c_ is the hypotenuse.</p>
+<p><strong>Pythagorean triple</strong> A set of three positive integers (_a_, _b_, _c_) that satisfy a² + b² = c², such as (3, 4, 5) or (5, 12, 13).</p>
+<h3 id="the-theorem">The Theorem</h3>
+<p><strong>The Pythagorean Theorem</strong></p>
+<p>If a triangle has a right angle, and the two legs have lengths _a_ and _b_, and the hypotenuse has length _c_, then:</p>
+<p><strong>a² + b² = c²</strong></p>
+<h3 id="why-the-pythagorean-theorem-is-true-a-visual-proof">Why the Pythagorean Theorem Is True: A Visual Proof</h3>
+<p>Imagine three squares:</p>
+<ul><li>One square is built on the leg of length _a_. Its area is _a_².</li><li>Another square is built on the leg of length _b_. Its area is _b_².</li><li>A third square is built on the hypotenuse of length _c_. Its area is _c_².</li></ul>
+<p>The Pythagorean theorem claims that the first two squares, placed together, have exactly the same total area as the third square.</p>
+<p>One way to see this is to use the &quot;rearrangement proof&quot;:</p>
+<ol><li>Start with a square of side length (_a_ + _b_).</li><li>Inside, place a right triangle with legs _a_ and _b_ at one corner.</li><li>Rotate and place three more copies of the same triangle around the square, filling the space.</li><li>The unfilled region in the center is a square with side length _c_ (the hypotenuse).</li><li>Now rearrange the four triangles. Move them so that two smaller squares (one with side _a_, one with side _b_) fit in the interior.</li><li>The area that was empty is now filled by two smaller squares. Since we have not added or removed area, the two smaller squares must have the same combined area as the larger square that was there before.</li></ol>
+<p>Therefore: _a_² + _b_² = _c_²</p>
+<p>This proof is purely visual and requires no algebra. You can see the truth by rearranging.</p>
+<h3 id="finding-a-missing-side">Finding a Missing Side</h3>
+<p><strong>If you know two sides of a right triangle, you can find the third.</strong></p>
+<h4 id="case-1-you-know-the-two-legs-a-and-b-find-the-hypotenuse-c">Case 1: You know the two legs (_a_ and _b_). Find the hypotenuse (_c_).</h4>
+<p><strong>c = √(a² + b²)</strong></p>
+<p>Example: If _a_ = 3 and _b_ = 4, then: c = √(3² + 4²) = √(9 + 16) = √25 = 5</p>
+<h4 id="case-2-you-know-one-leg-and-the-hypotenuse-find-the-other-leg">Case 2: You know one leg and the hypotenuse. Find the other leg.</h4>
+<p>If you know _a_ and _c_, and need to find _b_:</p>
+<p><strong>b = √(c² − a²)</strong></p>
+<p>Example: If _c_ = 13 and _a_ = 5, then: b = √(13² − 5²) = √(169 − 25) = √144 = 12</p>
+<h3 id="pythagorean-triples">Pythagorean Triples</h3>
+<p>A <strong>Pythagorean triple</strong> is a set of three positive integers that satisfy the theorem. The smallest and most famous is (3, 4, 5):</p>
+<p>3² + 4² = 5² 9 + 16 = 25 ✓</p>
+<p>Other common Pythagorean triples include:</p>
+<ul><li>(5, 12, 13): because 5² + 12² = 25 + 144 = 169 = 13²</li><li>(8, 15, 17): because 8² + 15² = 64 + 225 = 289 = 17²</li><li>(7, 24, 25): because 7² + 24² = 49 + 576 = 625 = 25²</li><li>(20, 21, 29): because 20² + 21² = 400 + 441 = 841 = 29²</li></ul>
+<p>These triples were known to the Babylonians and appear in the Plimpton 322 tablet. They are useful because they avoid square roots—all three values are whole numbers, making calculation easy.</p>
+<h3 id="the-converse-of-the-pythagorean-theorem">The Converse of the Pythagorean Theorem</h3>
+<p>The converse (the reverse statement) is also true:</p>
+<p><strong>If a triangle has sides _a_, _b_, and _c_ such that a² + b² = c², then the triangle is a right triangle, and the right angle is opposite the side of length _c_.</strong></p>
+<p>This means you can use the Pythagorean relationship to test whether an angle is a right angle, even without a protractor. If the side lengths satisfy the theorem, the angle is 90 degrees.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-find-the-hypotenuse">Example 1: Find the Hypotenuse</h3>
+<p>A right triangle has legs of 6 cm and 8 cm. Find the hypotenuse.</p>
+<p><strong>Solution</strong></p>
+<p>Using the Pythagorean theorem: a = 6, b = 8</p>
+<p>c² = a² + b² c² = 6² + 8² c² = 36 + 64 c² = 100 c = √100 = 10 cm</p>
+<p>The hypotenuse is 10 cm. Notice that (6, 8, 10) is a multiple of the (3, 4, 5) triple.</p>
+<h3 id="example-2-find-a-missing-leg">Example 2: Find a Missing Leg</h3>
+<p>A right triangle has a hypotenuse of 15 cm and one leg of 9 cm. Find the other leg.</p>
+<p><strong>Solution</strong></p>
+<p>Using the rearranged formula: c = 15, a = 9, find b</p>
+<p>b² = c² − a² b² = 15² − 9² b² = 225 − 81 b² = 144 b = √144 = 12 cm</p>
+<p>The other leg is 12 cm. Notice that (9, 12, 15) is a multiple of the (3, 4, 5) triple.</p>
+<h3 id="example-3-verify-a-pythagorean-triple">Example 3: Verify a Pythagorean Triple</h3>
+<p>Is (5, 12, 13) a Pythagorean triple?</p>
+<p><strong>Solution</strong></p>
+<p>Check whether 5² + 12² = 13²:</p>
+<p>5² + 12² = 25 + 144 = 169 13² = 169</p>
+<p>Yes, 169 = 169, so (5, 12, 13) is a Pythagorean triple.</p>
+<h3 id="example-4-use-the-converse-to-check-for-a-right-angle">Example 4: Use the Converse to Check for a Right Angle</h3>
+<p>A triangle has sides of lengths 7, 24, and 25. Is it a right triangle?</p>
+<p><strong>Solution</strong></p>
+<p>Check whether 7² + 24² = 25²:</p>
+<p>7² + 24² = 49 + 576 = 625 25² = 625</p>
+<p>Yes, they are equal. Therefore, this triangle is a right triangle, and the right angle is opposite the side of length 25.</p>
+<h3 id="example-5-real-world-distance">Example 5: Real-World Distance</h3>
+<p>A ladder 13 feet long leans against a wall. The base of the ladder is 5 feet away from the wall. How far up the wall does the ladder reach?</p>
+<p><strong>Solution</strong></p>
+<p>The ladder, the wall, and the ground form a right triangle:</p>
+<ul><li>Hypotenuse (ladder) = 13 feet</li><li>One leg (distance from wall) = 5 feet</li><li>Other leg (height on wall) = ?</li></ul>
+<p>Using the Pythagorean theorem: a² + b² = c² 5² + b² = 13² 25 + b² = 169 b² = 144 b = 12 feet</p>
+<p>The ladder reaches 12 feet up the wall. Notice again the (5, 12, 13) triple.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<h3 id="warm-up">Warm-Up</h3>
+<ol><li>A right triangle has legs of 3 cm and 4 cm. What is the hypotenuse?</li><li>Is (8, 15, 17) a Pythagorean triple? Check by calculating.</li></ol>
+<h3 id="core-practice">Core Practice</h3>
+<ol><li>A right triangle has a hypotenuse of 20 m and one leg of 12 m. Find the other leg.</li><li>A rectangle has dimensions 9 inches by 12 inches. What is the length of its diagonal?</li><li>A triangle has sides 9, 40, and 41. Is it a right triangle? Show your work.</li><li>A ladder 25 feet long is placed so that its base is 7 feet from a building. How high does it reach?</li></ol>
+<h3 id="stretch">Stretch</h3>
+<ol><li>A town is 30 miles east of a river and 40 miles north of the river. What is the straight-line distance from the town to the nearest point on the river?</li></ol>
+<details>
+<summary>Practice Answer Guide</summary>
+<ol><li>c² = 3² + 4² = 9 + 16 = 25, so c = 5 cm</li><li>8² + 15² = 64 + 225 = 289 = 17². Yes, it is a Pythagorean triple.</li><li>a² + b² = c², so 12² + b² = 20², so 144 + b² = 400, so b² = 256, so b = 16 m</li><li>The diagonal of a rectangle is the hypotenuse of a right triangle with legs 9 and 12. d² = 9² + 12² = 81 + 144 = 225, so d = 15 inches</li><li>Check: 9² + 40² = 81 + 1600 = 1681 = 41². Yes, it is a right triangle.</li><li>7² + h² = 25², so 49 + h² = 625, so h² = 576, so h = 24 feet</li><li>The town is 30 miles from a point on the river (east) and 40 miles from the same or a different point (north). If we position the river as the origin, the town is at a point such that the nearest distance involves the Pythagorean theorem. The straight-line distance is √(30² + 40²) = √(900 + 1600) = √2500 = 50 miles.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>Explain, in your own words and using a diagram or description, why the Pythagorean theorem must be true. You may use the rearrangement proof (moving squares and triangles) or describe how areas relate to side lengths. Write 5 to 8 sentences that show you understand the logical reasoning, not just the formula.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>The Pythagorean theorem appears in countless real-world and scientific contexts:</p>
+<ul><li><strong>Construction and carpentry:</strong> Carpenters use the 3-4-5 triangle to ensure corners are square. Place marks 3 units and 4 units along two walls meeting at a corner. If the distance between the marks is exactly 5 units, the corner is a right angle.</li></ul>
+<ul><li><strong>Navigation and surveying:</strong> Surveyors and navigators calculate distances that cannot be measured directly by using right triangles formed by known distances.</li></ul>
+<ul><li><strong>Architecture:</strong> Architects use the theorem to ensure buildings are square and to calculate diagonal bracing and support.</li></ul>
+<ul><li><strong>Physics:</strong> The theorem appears in formulas for velocity (combining horizontal and vertical components), wave analysis, and many other fields.</li></ul>
+<ul><li><strong>Computer graphics:</strong> When rendering 3D objects on a 2D screen, the theorem is essential for calculating distances, lighting, and perspective.</li></ul>
+<ul><li><strong>Distance on maps:</strong> If a town is 3 km east and 4 km north of your starting point, the direct distance is √(3² + 4²) = 5 km.</li></ul>
+<p>The Pythagorean theorem is not just a school exercise. It is a universal principle embedded in the structure of space itself.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li>A <strong>right triangle</strong> has one 90-degree angle, with two <strong>legs</strong> and a <strong>hypotenuse</strong> (the longest side).</li><li>The <strong>Pythagorean theorem</strong> states: a² + b² = c², where _a_ and _b_ are legs and _c_ is the hypotenuse.</li><li>The theorem is ancient, known to Babylonians by 1800 BCE and used by builders and surveyors long before Pythagoras.</li><li>You can use the theorem to find the third side of a right triangle if you know the other two.</li><li><strong>Pythagorean triples</strong> are sets of whole numbers that satisfy the theorem, such as (3, 4, 5), (5, 12, 13), and (8, 15, 17).</li><li>The <strong>converse</strong> is also true: if a² + b² = c², then the triangle has a right angle opposite side _c_.</li><li>The theorem can be proven visually by rearranging areas of squares.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>In a right triangle, what is the hypotenuse?</li></ol>
+<ul><li>The shortest side</li><li>The side opposite the right angle</li><li>One of the sides that forms the right angle</li><li>The side parallel to the base</li></ul>
+<ol><li>Which relationship is expressed by the Pythagorean theorem?</li></ol>
+<ul><li>a + b = c</li><li>a × b = c</li><li>a² + b² = c²</li><li>a² + b² = c</li></ul>
+<ol><li>What is a Pythagorean triple?</li></ol>
+<ul><li>Any three numbers that can be sides of a triangle</li><li>Three numbers that satisfy a² + b² = c²</li><li>Three numbers that are all perfect squares</li><li>Three numbers in a specific ratio</li></ul>
+<ol><li>The Plimpton 322 tablet shows that:</li></ol>
+<ul><li>Pythagoras invented the theorem</li><li>Babylonians knew Pythagorean triples around 1800 BCE</li><li>The theorem was first proven in Egypt</li><li>Greeks named the theorem incorrectly</li></ul>
+<ol><li>If a triangle has sides 20, 21, and 29, and 20² + 21² = 29², what can you conclude?</li></ol>
+<ul><li>It is an equilateral triangle</li><li>It is a right triangle with the right angle opposite the side of length 29</li><li>It is not a valid triangle</li><li>Its area equals the sum of squares</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>The side opposite the right angle</li><li>a² + b² = c²</li><li>Three numbers that satisfy a² + b² = c²</li><li>Babylonians knew Pythagorean triples around 1800 BCE</li><li>It is a right triangle with the right angle opposite the side of length 29</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>The ancient history of the Pythagorean theorem, including Babylonian knowledge and the Plimpton 322 tablet, is documented in <a href="https://en.wikipedia.org/wiki/Pythagorean_theorem" target="_blank" rel="noopener">Pythagorean theorem</a> and <a href="https://en.wikipedia.org/wiki/History_of_mathematics" target="_blank" rel="noopener">History of mathematics</a> on Wikipedia.</li><li>The Babylonian mathematical knowledge and the Plimpton 322 tablet are discussed in detail in <a href="https://en.wikipedia.org/wiki/Babylonian_mathematics" target="_blank" rel="noopener">Babylonian mathematics</a>, which shows that Pythagorean triples were known around 1800 BCE.</li><li>The Indian Sulba Sutras and their geometric knowledge are covered in <a href="https://en.wikipedia.org/wiki/Sulbasutras" target="_blank" rel="noopener">Sulbasutras</a>, revealing independent knowledge of the theorem in ancient India.</li><li>Euclid&#x27;s geometric proof of the Pythagorean theorem is found in <a href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" target="_blank" rel="noopener">Euclid&#x27;s Elements</a>, which standardized mathematical proof in ancient Greece.</li><li>For a comprehensive overview of Pythagorean triples and their properties, see <a href="https://en.wikipedia.org/wiki/Pythagorean_triple" target="_blank" rel="noopener">Pythagorean triple</a> on Wikipedia.</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-01-shape-measure-greek-project/ch-020-area/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Area</span></a><a class="pager-link pager-link--next" href="../../world-01-shape-measure-greek-project/ch-022-circles-and-arcs/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Circles and Arcs</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

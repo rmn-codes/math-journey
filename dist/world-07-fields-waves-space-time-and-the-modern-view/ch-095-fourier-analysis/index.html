@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fourier Analysis — Decomposing Signals — Math Journey</title>
+    <meta name="description" content="Any wave is a sum of sine waves — the most powerful idea in applied mathematics" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 7 · Chapter 95</p>
+        <h1>Fourier Analysis — Decomposing Signals</h1>
+        <p class="hero-copy">Any wave is a sum of sine waves — the most powerful idea in applied mathematics</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1822 CE – present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Paris, 1822. Joseph Fourier, a French mathematician and physicist, publishes his theory of heat conduction. In a paper titled <em>&quot;Théorie analytique de la chaleur&quot;</em> (The Analytical Theory of Heat), he makes an extraordinary claim:</p>
+<p><strong>Any function — any wave, any signal, any shape — can be written as a sum of sine and cosine waves.</strong></p>
+<p>The leading mathematicians of the day are scandalized. Joseph-Louis Lagrange, one of the greatest minds alive, objects fiercely. A square wave, he argues, cannot possibly be written as an infinite sum of smooth sine curves. It&#x27;s absurd.</p>
+<p>Fourier is right. Lagrange is wrong. And in being right, Fourier unlocks perhaps the most powerful tool in all of applied mathematics.</p>
+<p>Today, the Fourier transform is absolutely everywhere. It&#x27;s in your phone (filtering sound). It&#x27;s in the hospital (MRI machines reconstruct images using it). It&#x27;s in your GPS, your WiFi, your computer&#x27;s processor. It&#x27;s in every piece of recorded music ever made. Every photo you take, every song you stream, every video you watch — Fourier&#x27;s mathematics is working invisibly underneath.</p>
+<p>The reason is simple: <strong>Fourier analysis lets you see signals in a different way.</strong></p>
+<p>Look at a sound wave and you see a complicated wiggly line. Apply Fourier analysis and you see its frequencies: &quot;This sound is 20% bass, 30% midrange, 50% treble.&quot; Suddenly the signal becomes clear. You can compress it, filter it, understand it, manipulate it. That&#x27;s the power of looking at the world through Fourier&#x27;s eyes.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Fourier analysis answers a fundamental question: <strong>What is inside a signal?</strong></p>
+<p>When you hear music, your ear receives sound waves — air vibrating at different frequencies. A pure note (a sine wave) has one frequency. Real music has many frequencies, mixed together.</p>
+<p>Fourier analysis separates them. It says: &quot;I can rewrite this complex signal as a sum of simple sine and cosine waves, each with a specific frequency and amplitude.&quot;</p>
+<p>Once you&#x27;ve decomposed a signal into frequencies, you can:</p>
+<ul><li><strong>Compress it</strong>: JPEG photos discard high frequencies your eye can&#x27;t see. MP3 songs use a psychoacoustic model to discard frequencies your ear can&#x27;t hear.</li><li><strong>Filter it</strong>: Remove unwanted frequencies (noise, hum from electrical wires).</li><li><strong>Enhance it</strong>: Boost certain frequencies to make music sound richer.</li><li><strong>Transmit it</strong>: Send only the important frequency components.</li><li><strong>Analyze it</strong>: Identify what&#x27;s in a signal (medical imaging, spectroscopy, radar).</li></ul>
+<p>Without Fourier analysis, there would be no:</p>
+<ul><li>JPEG, PNG (image compression)</li><li>MP3, FLAC (audio compression)</li><li>MRI machines (medical imaging)</li><li>WiFi and 5G (wireless communication)</li><li>Earthquake and tsunami detection</li><li>Analysis of how atoms vibrate in molecules</li></ul>
+<p>Fourier analysis moved from pure mathematics into <strong>the infrastructure of civilization</strong>.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Joseph Fourier (1768–1830) was not a pure mathematician. He was an engineer, a physicist, a man of practical affairs. As a young man, he joined the French Revolution. He was nearly executed during the Terror. He served in Napoleon&#x27;s army during the Egyptian campaign. He was a prefect (administrator) of a French region.</p>
+<p>In 1811, while serving as a prefect, Fourier posed a mathematical challenge: <strong>&quot;How does heat flow through a rod?&quot;</strong></p>
+<p>He knew the answer required calculus. He wrote down the differential equations. But to solve them, he invented his decomposition: any initial temperature distribution can be written as a sum of sine and cosine waves.</p>
+<p>The mathematical community resisted. The claim seemed too bold, too weird. But nature gave the answer: Fourier&#x27;s theory worked perfectly to predict how heat spreads.</p>
+<p>Over the next century, scientists realized Fourier&#x27;s idea was universal. Any periodic function — any repeating pattern — could be decomposed this way. By 1900, Fourier analysis was central to physics.</p>
+<p>Then computers arrived. In the 1960s, engineers discovered the <strong>Fast Fourier Transform (FFT)</strong> — an algorithm that computes Fourier analysis in $O(n \log n)$ time instead of $O(n^2)$. This was revolutionary. Suddenly, you could analyze signals in real time. FFT made Fourier practical.</p>
+<p>Today, FFT is one of the most used algorithms on Earth.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Fourier Analysis</strong> decomposes a signal into its frequency components — its &quot;building blocks.&quot;</p>
+<p>From earlier worlds, you remember that trigonometric functions are periodic. A sine wave oscillates. A cosine wave does too.</p>
+<p>Fourier&#x27;s insight: <strong>Any</strong> periodic function can be written as:</p>
+<p>$$f(x) = a_0 + \sum_{n=1}^{\infty}\left( a_n \cos(nx) + b_n \sin(nx) \right)$$</p>
+<p>Here:</p>
+<ul><li>$a_0$ is a constant (the average value).</li><li>$a_n$ and $b_n$ are <strong>coefficients</strong> that tell you the strength (amplitude) of each frequency.</li><li>Higher $n$ means higher frequency (more oscillations).</li></ul>
+<p>This is the <strong>Fourier series</strong>. Each term in the sum is one &quot;frequency component.&quot;</p>
+<p>For a non-periodic signal, you use the <strong>Fourier transform</strong>, which decomposes it into a continuum of frequencies.</p>
+<p>For digital data (which computers handle), you use the <strong>Discrete Fourier Transform (DFT)</strong>. And if you&#x27;re smart about computing it, you use the <strong>Fast Fourier Transform (FFT)</strong>, which does it in roughly $n \log n$ operations instead of $n^2$.</p>
+<p>The key insight: <strong>The same signal, viewed two ways.</strong></p>
+<ul><li><strong>Time domain</strong>: Sound as a function of time (amplitude vs. time).</li><li><strong>Frequency domain</strong>: The same sound as a function of frequency (how much bass, how much treble, etc.).</li></ul>
+<p>Both are the same signal. One view is sometimes more useful than the other.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Fourier Series</strong> (for a periodic function $f(x)$ with period $2\pi$): $$f(x) = a_0 + \sum_{n=1}^{\infty}\left( a_n \cos(nx) + b_n \sin(nx) \right)$$</p>
+<p><strong>Fourier Coefficients</strong>: $$a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos(nx) \, dx$$ $$b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin(nx) \, dx$$</p>
+<p>These integrals compute &quot;how much&quot; of each frequency is in the signal.</p>
+<p><strong>Fourier Transform</strong> (for non-periodic signals): $$\hat{f}(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} \, dt$$</p>
+<p>Here $\omega$ is angular frequency and $\hat{f}(\omega)$ tells you the amplitude at each frequency.</p>
+<p><strong>Inverse Fourier Transform</strong>: $$f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \hat{f}(\omega) e^{i\omega t} \, d\omega$$</p>
+<p><strong>Discrete Fourier Transform (DFT)</strong>: For a signal with $N$ samples: $$X_k = \sum_{n=0}^{N-1} x_n e^{-2\pi i kn/N}$$</p>
+<p>where $x_n$ is the $n$-th sample and $X_k$ is the amplitude at frequency $k$.</p>
+<p><strong>Fast Fourier Transform (FFT)</strong>: Computes DFT in $O(N \log N)$ operations instead of $O(N^2)$. Requires $N$ to be a power of 2.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Fourier Series of a Square Wave</strong></p>
+<p>A square wave alternates between +1 and -1. Its Fourier series is: $$f(x) = \frac{4}{\pi}\left( \sin(x) + \frac{1}{3}\sin(3x) + \frac{1}{5}\sin(5x) + \cdots \right)$$</p>
+<p>Notice: the square wave is built from odd-frequency sine waves, each with amplitude decreasing as $1/n$. If you sum the first few terms, you get a wiggly approximation. Sum more and it converges to a perfect square wave. This astonished mathematicians because a square wave has sharp corners, yet it&#x27;s made from smooth sine curves!</p>
+<p><strong>Example 2: JPEG Image Compression</strong></p>
+<p>JPEG doesn&#x27;t use sine waves; it uses cosines (the <strong>Discrete Cosine Transform</strong>, a variant of Fourier):</p>
+<ol><li>Divide the image into 8×8 pixel blocks.</li><li>Apply DCT to each block.</li><li>High-frequency components (fine detail) are typically small. Discard or reduce them.</li><li>Use entropy coding on the remaining coefficients.</li></ol>
+<p>Result: A 1 MB image compressed to 100 KB with minimal visible quality loss. You see fewer high frequencies, but your eye doesn&#x27;t miss them.</p>
+<p><strong>Example 3: Filtering Noise</strong></p>
+<p>A recorded voice contains speech (low frequencies) and electrical hum at 60 Hz (specific unwanted frequency).</p>
+<ol><li>Apply FFT to convert sound to frequency domain.</li><li>Identify and reduce the 60 Hz spike.</li><li>Apply inverse FFT to convert back to time domain.</li></ol>
+<p>Result: Clean audio without the hum. Much easier than filtering in the time domain.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Recognizing Frequencies</strong>: A signal contains three pure sine waves: 10 Hz, 50 Hz, and 100 Hz. If you apply the Fourier transform, what will you see? (Describe the frequency spectrum with spikes at specific locations.)</li></ol>
+<ol><li><strong>Fourier Coefficients</strong>: For a simple square wave, sketch the amplitude of the first few Fourier coefficients ($a_0, a_1, b_1, a_2, b_2$, etc.). What pattern do you notice? How does the amplitude fall off with frequency?</li></ol>
+<ol><li><strong>Time vs. Frequency</strong>: You have a sound wave in the time domain. Explain what the Fourier transform tells you that the time-domain view does not. Which domain is better for detecting if a specific note is present?</li></ol>
+<ol><li><strong>Compression Reasoning</strong>: Why can JPEG discard high-frequency components without significantly degrading an image? Why can MP3 discard frequencies your ear cannot hear? What would happen if you discarded low frequencies instead?</li></ol>
+<ol><li><strong>FFT Efficiency</strong>: The FFT computes the DFT in $O(N \log N)$ time. If $N = 1,000,000$, how many operations does FFT need versus naive DFT? (Rough estimate. What is the speedup factor?)</li></ol>
+<ol><li><strong>Practical Application</strong>: Your microphone records a 1-second audio clip at 44,100 Hz sampling rate. You want to remove 60 Hz hum (from electrical interference). Describe how you would use Fourier analysis to identify and remove it.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Why is the FFT So Revolutionary?</strong></p>
+<p>Before the Fast Fourier Transform (1960s), Fourier analysis was powerful in theory but impractical. Computing the DFT of a 1024-point signal took roughly $1024^2 = 1,048,576$ operations. Computing it for a 1-second audio sample (44,100 samples) took billions of operations.</p>
+<p>The FFT reduced this to $1024 \log_2(1024) \approx 10,240$ operations — 100 times faster.</p>
+<p>Discuss:</p>
+<ul><li>How did this speed-up make real-time audio processing possible?</li><li>Why couldn&#x27;t smartphones, medical devices, or WiFi exist without fast Fourier algorithms?</li><li>What modern applications still rely on FFT?</li></ul>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>MRI Medical Imaging</strong></p>
+<p>An MRI machine uses radio waves to excite hydrogen nuclei in your body. These nuclei emit signals as they relax. The raw signals are captured in &quot;k-space&quot; — essentially the frequency domain.</p>
+<p>To create an image:</p>
+<ol><li><strong>Data acquisition</strong>: Receive Fourier components of the spatial structure.</li><li><strong>Inverse Fourier Transform</strong>: Apply iFFT to convert from frequency domain to spatial domain.</li><li><strong>Reconstruction</strong>: The result is a detailed 3D image showing soft tissue, organs, and abnormalities.</li></ol>
+<p>Without Fourier analysis, MRI would not work. The transform is the bridge between the frequency data the machine measures and the anatomical images doctors see.</p>
+<p>Similarly, <strong>CT scans, X-ray analysis, ultrasound imaging, and radar</strong> all rely on Fourier principles.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Joseph Fourier showed that any periodic function can be decomposed into a sum of sine and cosine waves — the Fourier series. The Fourier transform generalizes this to non-periodic signals and reveals their frequency content. The Discrete Fourier Transform (DFT) applies to digital data. The Fast Fourier Transform (FFT) computes DFT efficiently in $O(n \log n)$ time, making real-time signal processing practical. Fourier analysis is the foundation of image compression (JPEG), audio compression (MP3), medical imaging (MRI), wireless communication (WiFi, 5G), and countless other technologies. By decomposing signals into frequencies, we can filter, compress, transmit, and understand the world&#x27;s signals.</p>
+<p>Fourier&#x27;s insight was that signals can be viewed from two perspectives: time and frequency. Neither is more &quot;real&quot; — they are two ways of seeing the same thing. The time-domain view shows how a signal evolves moment by moment. The frequency-domain view shows what frequencies compose the signal. For many problems, the frequency domain is where solutions naturally appear. Want to remove noise? Easy in the frequency domain — just zero out the noise frequencies. Want to compress an image? Discard imperceptible high frequencies, keep the visually important low frequencies. The Fourier transform is the bridge between these worlds, and the FFT makes crossing that bridge practical enough to do billions of times per second in modern devices.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>Fourier&#x27;s claim was that any periodic function can be written as:</li></ol>
+<ul><li>A polynomial</li><li>A sum of sine and cosine waves</li><li>A rational function</li><li>A power series with one term</li></ul>
+<ol><li>In the Fourier series, what does the coefficient $b_n$ represent?</li></ol>
+<ul><li>The average value of the function</li><li>The amplitude of the $n$-th sine component</li><li>The amplitude of the $n$-th cosine component</li><li>The frequency of oscillation</li></ul>
+<ol><li>Which of the following is a major advantage of the Fast Fourier Transform (FFT)?</li></ol>
+<ul><li>It works for all functions, not just periodic ones</li><li>It reduces computation from $O(n^2)$ to $O(n \log n)$</li><li>It eliminates the need for inverse transforms</li><li>It only works for real-valued signals</li></ul>
+<ol><li>JPEG image compression uses a variant of Fourier analysis called:</li></ol>
+<ul><li>The Laplace Transform</li><li>The Discrete Cosine Transform</li><li>The Discrete Sine Transform</li><li>The Fast Fourier Transform</li></ul>
+<ol><li>In MRI imaging, the inverse Fourier transform is used to:</li></ol>
+<ul><li>Generate the radio pulses</li><li>Convert frequency-domain data into spatial images</li><li>Reduce patient radiation exposure</li><li>Strengthen the magnetic field</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>A sum of sine and cosine waves</li><li>The amplitude of the $n$-th sine component</li><li>It reduces computation from $O(n^2)$ to $O(n \log n)$</li><li>The Discrete Cosine Transform</li><li>Convert frequency-domain data into spatial images</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Fourier, J. B. J. (1822). <em>Théorie analytique de la chaleur</em>. Firmin Didot. The foundational work on heat and Fourier series.</li><li>https://en.wikipedia.org/wiki/Fourier_series</li><li>https://en.wikipedia.org/wiki/Fourier_transform</li><li>https://en.wikipedia.org/wiki/Fast_Fourier_transform</li><li>https://en.wikipedia.org/wiki/Discrete_cosine_transform</li><li>https://en.wikipedia.org/wiki/Joseph_Fourier</li><li>https://en.wikipedia.org/wiki/Magnetic_resonance_imaging</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-094-information-theory/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Information Theory — The Mathematics of Communication</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-096-special-relativity/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Special Relativity — Space, Time, and the Speed of Light</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

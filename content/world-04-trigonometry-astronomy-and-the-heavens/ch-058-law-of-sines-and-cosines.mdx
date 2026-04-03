@@ -1,0 +1,267 @@
+---
+title: "The Law of Sines and the Law of Cosines"
+subtitle: "Solving any triangle — the tools that let navigators cross oceans"
+worldNumber: 4
+world: world-04-trigonometry-astronomy-and-the-heavens
+chapter: 58
+estimatedTimeMinutes: 40
+historicalPeriod: "150 BCE – 1200 CE"
+mainConcepts:
+  - "Law of Sines"
+  - "Law of Cosines"
+  - "Ambiguous case"
+  - "Triangle area formulas"
+learningObjectives:
+  - "Apply the Law of Sines to solve triangles in AAS, ASA, and SSA cases"
+  - "Apply the Law of Cosines in SAS and SSS cases"
+  - "Find triangle area using $\\frac{1}{2}ab\\sin C$"
+  - "Recognise when each law applies"
+---
+
+## Story Hook
+
+Imagine you're the navigator of a 15th-century ship, far from any shore. The stars are your only guides. You measure the angle to two bright stars and you know from tables the distance between them on the celestial sphere. But where are you?
+
+Using only these three pieces of information—two angles and the distance between them—a medieval navigator could triangulate her position. She wasn't solving an equation or using trigonometric tables directly. She was using a principle so elegant and powerful that it let ancient astronomers and medieval explorers do something that seems impossible: measure distances they could never reach.
+
+That principle is the **Law of Sines**, and its companion, the **Law of Cosines**. These two tools are the reason triangles became humanity's greatest tool for understanding the world.
+
+## Why It Matters
+
+In earlier chapters, you solved right triangles using simple ratios: sine, cosine, tangent. But the real world rarely gives you right angles. Surveyors measuring a plot of land, engineers designing roof trusses, astronomers locating stars—they all encounter *oblique triangles*, and they need a way to find unknown sides and angles.
+
+The Law of Sines and Law of Cosines are the answer. Together, they let you solve *any* triangle if you know enough information. More than that, they reveal something profound: the shape of a triangle is determined by just three pieces of information (the "angle-side" relationships), and trigonometry gives you formulas to find everything else.
+
+Modern GPS and satellite navigation rely on triangulation principles rooted in these ancient laws. Every time your phone knows where you are, these formulas are working in the background.
+
+## Historical Context
+
+The **Law of Sines** appears in the work of **Ptolemy** (c. 90–168 CE), the greatest astronomer of the classical world. But the first *explicit statement* came from **Al-Biruni** (973–1048 CE), the Persian mathematician and astronomer, who used it to measure the radius of the Earth—and got within a few percent of the correct value.
+
+The **Law of Cosines** is essentially a generalization of the Pythagorean theorem. It appears implicitly in **Euclid's Elements** (c. 300 BCE) as Proposition II.12, but the modern formulation came later. **Al-Khwarizmi** (c. 780–850 CE) and his successors worked with chord versions of these laws; **Nasir al-Din al-Tusi** (1201–1274 CE) gave explicit trigonometric versions.
+
+By the Renaissance, European mathematicians had absorbed these results. **François Viète** (1540–1603) published systematic treatments, and by the 1600s, these laws were standard tools for surveyors, navigators, and astronomers across Europe.
+
+The real revolution came with exploration. The **Age of Exploration** — the 15th and 16th centuries — depended entirely on accurate navigation. Ships needed to find their position thousands of miles from shore. The Laws of Sines and Cosines, combined with astronomical tables, made this possible. Without them, the great voyages of discovery would have been far more perilous or impossible.
+
+## Core Concept
+
+**The Law of Sines** states that in any triangle, the ratios of sides to the sines of opposite angles are equal:
+
+$$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$$
+
+Here, $a$, $b$, $c$ are the side lengths, and $A$, $B$, $C$ are the angles opposite those sides.
+
+Why does this work? Imagine any triangle. Drop a perpendicular from angle $C$ to side $c$. The height $h$ satisfies:
+
+$$h = a\sin B = b\sin A$$
+
+Rearranging: $\frac{a}{\sin A} = \frac{b}{\sin B}$. The same argument with other perpendiculars gives the full law.
+
+**When to use the Law of Sines:**
+- **AAS** (Angle-Angle-Side): You know two angles and a side not between them.
+- **ASA** (Angle-Side-Angle): You know two angles and the side between them.
+- **SSA** (Side-Side-Angle): You know two sides and an angle opposite one of them. *Warning:* This is ambiguous — there may be 0, 1, or 2 valid triangles.
+
+**The Law of Cosines** relates all three sides to one angle:
+
+$$c^2 = a^2 + b^2 - 2ab\cos C$$
+
+Notice: when $C = 90°$, we have $\cos 90° = 0$, so this becomes $c^2 = a^2 + b^2$ — the Pythagorean theorem! The Law of Cosines is a generalization.
+
+**When to use the Law of Cosines:**
+- **SAS** (Side-Angle-Side): You know two sides and the angle between them.
+- **SSS** (Side-Side-Side): You know all three sides (useful for checking if a triangle is valid, or finding angles).
+
+**The ambiguous case (SSA):** If you know two sides and an angle opposite one of them, you might get 0, 1, or 2 valid triangles, depending on the measurements. This is the trickiest case.
+
+## Definitions and Formal Lesson
+
+**Law of Sines (detailed):**
+
+In a triangle with sides $a$, $b$, $c$ opposite angles $A$, $B$, $C$ respectively:
+
+$$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = \frac{2R}{\text{circumradius}}$$
+
+The constant of proportionality is related to the circumradius (the radius of the circle passing through all three vertices).
+
+**Law of Cosines (three forms):**
+
+$$a^2 = b^2 + c^2 - 2bc\cos A$$
+$$b^2 = a^2 + c^2 - 2ac\cos B$$
+$$c^2 = a^2 + b^2 - 2ab\cos C$$
+
+Each form lets you find one side if you know the other two sides and the angle between them. Rearranged for an angle:
+
+$$\cos C = \frac{a^2 + b^2 - c^2}{2ab}$$
+
+**Area of a triangle:**
+
+If you know two sides and the included angle:
+
+$$\text{Area} = \frac{1}{2}ab\sin C$$
+
+This is a direct consequence of the definition: (base)(height)/2, where height = $a\sin C$.
+
+**The ambiguous case (SSA) resolved:**
+
+Given sides $a$ and $b$ and angle $A$ (opposite to side $a$), use the Law of Sines to find angle $B$:
+
+$$\sin B = \frac{b\sin A}{a}$$
+
+- If $\sin B > 1$: No triangle exists.
+- If $\sin B = 1$: One right triangle (angle $B = 90°$).
+- If $\sin B < 1$: There are two possible values for $B$ (one acute, one obtuse). Both may lead to valid triangles, or one might be rejected if the angle sum exceeds 180°.
+
+## Worked Examples
+
+**Example 1: AAS — Find the missing side**
+
+In triangle $ABC$, $A = 40°$, $B = 65°$, and $a = 10$ cm. Find side $b$.
+
+*Solution:* Use the Law of Sines:
+
+$$\frac{a}{\sin A} = \frac{b}{\sin B}$$
+$$\frac{10}{\sin 40°} = \frac{b}{\sin 65°}$$
+$$b = \frac{10 \sin 65°}{\sin 40°} = \frac{10 \times 0.906}{0.643} \approx 14.1 \text{ cm}$$
+
+**Example 2: SAS — Find the missing side**
+
+In triangle $ABC$, $a = 7$ cm, $b = 9$ cm, and $C = 50°$. Find side $c$.
+
+*Solution:* Use the Law of Cosines:
+
+$$c^2 = a^2 + b^2 - 2ab\cos C$$
+$$c^2 = 49 + 81 - 2(7)(9)\cos 50°$$
+$$c^2 = 130 - 126(0.643) = 130 - 81.0 = 49$$
+$$c = 7 \text{ cm}$$
+
+(This is an isosceles triangle!)
+
+**Example 3: SSS — Find an angle**
+
+In triangle $ABC$, $a = 5$, $b = 6$, $c = 8$. Find angle $C$.
+
+*Solution:* Use the Law of Cosines rearranged:
+
+$$\cos C = \frac{a^2 + b^2 - c^2}{2ab} = \frac{25 + 36 - 64}{2(5)(6)} = \frac{-3}{60} = -0.05$$
+
+$$C = \arccos(-0.05) \approx 92.9°$$
+
+The angle is slightly obtuse, as we'd expect (the longest side is opposite the largest angle).
+
+**Example 4: Area with known sides and included angle**
+
+Sides $a = 8$ m and $b = 10$ m meet at angle $C = 35°$. Find the area.
+
+*Solution:*
+
+$$\text{Area} = \frac{1}{2}ab\sin C = \frac{1}{2}(8)(10)\sin 35°$$
+$$= 40(0.574) \approx 22.9 \text{ m}^2$$
+
+## Practice Set
+
+1. **Solve triangle ABC:** $A = 30°$, $B = 70°$, $a = 5$ cm. Find $b$, $c$, and $C$.
+
+2. **Solve triangle ABC:** $a = 12$ ft, $b = 15$ ft, $C = 55°$. Find $c$, $A$, and $B$.
+
+3. **Ambiguous case:** $a = 4$, $b = 6$, $A = 30°$. How many triangles are possible? Explain.
+
+4. **Find the area:** A triangle has sides $p = 13$ m, $q = 14$ m, $r = 15$ m. Find its area using the Law of Cosines to find an angle, then use the area formula.
+
+5. **Navigation problem:** Two observation posts are 15 km apart. An aircraft is spotted from post A at an angle of 35° from the line joining the posts, and from post B at an angle of 50°. How far is the aircraft from post A?
+
+6. **Verify the Pythagorean theorem:** In a right triangle with legs 3 and 4 and hypotenuse 5, verify that the Law of Cosines with $C = 90°$ gives $c = 5$.
+
+## Reasoning Task
+
+**Challenge:** A surveyor needs to find the width of a river. She stands at point A on one bank and marks a point B directly across (the width she wants). She can't measure directly across the water, but she walks 50 meters along the bank to point C and measures:
+- Angle BAC = 90° (she walked perpendicular to the river)
+- Angle BCA = 65°
+
+Using only the Law of Sines, find the width of the river (distance AB).
+
+Then: Why can't she use the Law of Cosines directly here? What information would she need?
+
+## Application
+
+**Surveying and Land Measurement:**
+
+A surveyor needs to find the area of a triangular plot of land. She measures two sides: 120 m and 150 m, and the angle between them is 70°. Using the area formula:
+
+$$\text{Area} = \frac{1}{2}(120)(150)\sin 70° = 9000(0.94) \approx 8460 \text{ m}^2$$
+
+She can bill the landowner accurately, and the formula works even though the land isn't a right triangle.
+
+**Navigation and GPS:**
+
+A ship at point A receives signals from two lighthouses at B and C that are 12 km apart. The angle at the ship to the two lighthouses is 40°. The angle at lighthouse B to the ship and lighthouse C is 75°. Using the Law of Sines, she finds her distance to each lighthouse — and thus her exact position.
+
+**Astronomy:**
+
+Ancient astronomers used triangulation to estimate distances to the Moon and planets. They measured the angle to a celestial object from two positions on Earth separated by a known distance (the baseline). The smaller the angle, the farther away the object. Using the Law of Sines with these angles and the baseline, they computed distances — a technique still used today.
+
+## Recap
+
+- **The Law of Sines** relates sides and angles: $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$.
+- Use it for **AAS, ASA, and SSA** cases.
+- **The Law of Cosines** generalizes the Pythagorean theorem: $c^2 = a^2 + b^2 - 2ab\cos C$.
+- Use it for **SAS and SSS** cases.
+- **The area formula** $\text{Area} = \frac{1}{2}ab\sin C$ connects sides, angles, and area directly.
+- **The ambiguous case (SSA)** requires careful analysis: check whether 0, 1, or 2 triangles exist.
+- These laws are the foundation of surveying, navigation, and astronomy—connecting pure trigonometry to the real world.
+
+## Unlock Quiz
+
+**Q1: In a triangle, you know two angles and one side. Which law should you use?**
+- Law of Sines
+- Law of Cosines
+- Both equally well
+- Neither; you need more information
+
+<details>
+<summary>Answer</summary>
+Law of Sines
+</details>
+
+**Q2: The Law of Cosines reduces to the Pythagorean theorem when:**
+- One angle is 45°
+- One angle is 90°
+- One side equals zero
+- The triangle is isosceles
+
+<details>
+<summary>Answer</summary>
+One angle is 90°
+</details>
+
+**Q3: Which case represents the ambiguous case for triangle solving?**
+- AAS
+- ASA
+- SSA
+- SSS
+
+<details>
+<summary>Answer</summary>
+SSA
+</details>
+
+**Q4: The area formula** $\text{Area} = \frac{1}{2}ab\sin C$ **requires knowing:**
+- Two sides and the included angle
+- All three sides
+- All three angles
+- One side and two angles
+
+<details>
+<summary>Answer</summary>
+Two sides and the included angle
+</details>
+
+## Source Notes
+
+- Al-Biruni and measurement of Earth's radius: https://en.wikipedia.org/wiki/Al-Biruni
+- Ptolemy and ancient trigonometry: https://en.wikipedia.org/wiki/Ptolemy
+- Nasir al-Din al-Tusi and spherical trigonometry: https://en.wikipedia.org/wiki/Nasir_al-Din_al-Tusi
+- Law of Sines and Law of Cosines: https://en.wikipedia.org/wiki/Law_of_sines
+- Historical development of trigonometry: https://en.wikipedia.org/wiki/History_of_trigonometry
+- François Viète and trigonometric tables: https://en.wikipedia.org/wiki/Fran%C3%A7ois_Vi%C3%A8te

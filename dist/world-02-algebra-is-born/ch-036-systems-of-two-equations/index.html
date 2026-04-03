@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Systems of Two Equations — Math Journey</title>
+    <meta name="description" content="Two unknowns, two conditions — how to pin down both at once" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 2 · Chapter 36</p>
+        <h1>Systems of Two Equations</h1>
+        <p class="hero-copy">Two unknowns, two conditions — how to pin down both at once</p>
+        <div class="hero-meta">
+          <span>45 min</span>
+          <span>foundational</span>
+          <span>China, Islamic world, Europe</span>
+          <span>200 BCE – 1700 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Understand why one equation with two unknowns has infinitely many solutions</li><li>Solve systems of two linear equations using substitution</li><li>Solve systems using elimination (addition method)</li><li>Identify consistent, inconsistent, and dependent systems</li><li>Apply systems to real-world problems with two unknowns</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#why-one-equation-with-two-unknowns-isn-t-enough">Why One Equation with Two Unknowns Isn&#x27;t Enough</a></li><li class="toc-level-3"><a href="#the-three-cases">The Three Cases</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#method-1-substitution">Method 1: Substitution</a></li><li class="toc-level-3"><a href="#method-2-elimination-addition-method">Method 2: Elimination (Addition Method)</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-substitution-method">Example 1: Substitution Method</a></li><li class="toc-level-3"><a href="#example-2-elimination-method">Example 2: Elimination Method</a></li><li class="toc-level-3"><a href="#example-3-systems-needing-multiplication">Example 3: Systems Needing Multiplication</a></li><li class="toc-level-3"><a href="#example-4-real-world-application-two-prices">Example 4: Real-World Application (Two Prices)</a></li><li class="toc-level-3"><a href="#example-5-recognizing-an-inconsistent-system">Example 5: Recognizing an Inconsistent System</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Imagine a scribe in ancient China, around 200 BCE, consulting the &quot;Nine Chapters on the Mathematical Art&quot; — a mathematical masterpiece older than algebra as we know it. One problem: a farmer buys 2 roosters and 2 hens for 5 silver coins. Another farmer buys 1 rooster and 3 hens for 4 silver coins.</p>
+<p>How much does a rooster cost? How much does a hen?</p>
+<p>This is not one equation. This is <em>two</em> equations with <em>two</em> unknowns. And there&#x27;s only one pair of prices that satisfies <em>both</em> conditions at the same time. The Chinese mathematicians had methods for finding that pair — long before Europeans invented the symbolic algebra we use today.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Most interesting problems in the real world aren&#x27;t about <em>one</em> unknown. They&#x27;re about <em>two</em> or more.</p>
+<ul><li>A store carries two types of goods. Profit depends on how many of each to stock.</li><li>An engineer designs a structure with two forces acting on it.</li><li>A chemist mixes two solutions with different concentrations.</li><li>An economist studies supply and demand — two curves that must meet.</li></ul>
+<p>One equation can&#x27;t capture these situations. You need <em>two</em> equations to pin down <em>two</em> unknowns uniquely. And the methods for solving systems of equations are among the most powerful tools in mathematics and science.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The Chinese &quot;Nine Chapters on the Mathematical Art&quot; (成書 ~200 BCE) contains the oldest known systematic approach to systems of equations. Chinese mathematicians used a rectangular grid of numbers (a proto-matrix) to organize equations and solve them methodically.</p>
+<p>Islamic scholars like al-Khwarizmi and later al-Karaji refined methods for solving systems algebraically, using prose and poetic forms before symbolic notation existed.</p>
+<p>In medieval Europe, mathematicians like Cardano (1501–1576) and Vieta (1540–1603) developed systematic notations. By the 1600s, the substitution and elimination methods had become standard tools in every algebra text.</p>
+<p>The <em>graphical</em> interpretation—that the solution is where two lines intersect—emerged as symbolic and geometric approaches merged in the 1600s and 1700s.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<h3 id="why-one-equation-with-two-unknowns-isn-t-enough">Why One Equation with Two Unknowns Isn&#x27;t Enough</h3>
+<p>Consider: $x + y = 10$</p>
+<p>This has <em>infinitely many solutions</em>:</p>
+<ul><li>$(0, 10)$, $(1, 9)$, $(2, 8)$, $(3, 7)$, $(5, 5)$, $(10, 0)$, etc.</li></ul>
+<p>Graphically, this is a <em>line</em>. Any point on the line satisfies the equation.</p>
+<p>But if we add a <em>second</em> condition, say $x - y = 2$:</p>
+<p>Now we need <em>both</em> equations to be true. The solution is the point where the two lines <em>intersect</em>. For most pairs of lines, there&#x27;s exactly <em>one</em> such point.</p>
+<p>$$x + y = 10$$ $$x - y = 2$$</p>
+<p>Adding these: $2x = 12$, so $x = 6$. Then $y = 4$. Solution: $(6, 4)$.</p>
+<p>This is the core insight: <strong>Two equations with two unknowns typically give us one unique solution.</strong></p>
+<p>---</p>
+<h3 id="the-three-cases">The Three Cases</h3>
+<p><strong>Case 1: Consistent (Unique Solution)</strong></p>
+<p>The two lines intersect at exactly one point.</p>
+<p>Example: $$x + y = 10$$ $$x - y = 2$$</p>
+<p>Solution: $(6, 4)$.</p>
+<p><strong>Case 2: Inconsistent (No Solution)</strong></p>
+<p>The two lines are parallel (same slope, different y-intercepts). They never meet.</p>
+<p>Example: $$x + y = 10$$ $$x + y = 5$$</p>
+<p>These equations contradict each other. No solution exists.</p>
+<p><strong>Case 3: Dependent (Infinitely Many Solutions)</strong></p>
+<p>The two equations describe the <em>same line</em>. Every point on the line is a solution.</p>
+<p>Example: $$x + y = 10$$ $$2x + 2y = 20$$</p>
+<p>The second equation is just the first multiplied by 2. They&#x27;re the same line. Infinitely many solutions: every point $(x, y)$ on the line $x + y = 10$.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>System of Equations:</strong> Two or more equations involving the same variables. A solution must satisfy <em>all</em> equations simultaneously.</p>
+<p><strong>Solution of a System:</strong> Values for the variables that make every equation in the system true.</p>
+<p><strong>Consistent System:</strong> A system with at least one solution.</p>
+<p><strong>Inconsistent System:</strong> A system with no solution.</p>
+<p><strong>Dependent System:</strong> A consistent system with infinitely many solutions (the equations represent the same line/plane/object).</p>
+<p>---</p>
+<h3 id="method-1-substitution">Method 1: Substitution</h3>
+<p>Choose one equation and solve it for one variable. Substitute that expression into the other equation.</p>
+<p><strong>Steps:</strong></p>
+<ol><li>Solve one equation for one variable.</li><li>Substitute into the other equation.</li><li>Solve the resulting single-variable equation.</li><li>Back-substitute to find the other variable.</li></ol>
+<p>---</p>
+<h3 id="method-2-elimination-addition-method">Method 2: Elimination (Addition Method)</h3>
+<p>Multiply one or both equations by a constant so that one variable has opposite coefficients. Add the equations to eliminate that variable.</p>
+<p><strong>Steps:</strong></p>
+<ol><li>Arrange both equations in standard form.</li><li>Multiply one or both equations so a variable has opposite coefficients.</li><li>Add the equations to eliminate that variable.</li><li>Solve the resulting equation.</li><li>Substitute back to find the other variable.</li></ol>
+<p>---</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-substitution-method">Example 1: Substitution Method</h3>
+<p><strong>Problem:</strong> Solve the system: $$x + y = 7$$ $$2x - y = 5$$</p>
+<p><strong>Step 1: Solve the first equation for $y$</strong> $$y = 7 - x$$</p>
+<p><strong>Step 2: Substitute into the second equation</strong> $$2x - (7 - x) = 5$$</p>
+<p><strong>Step 3: Solve for $x$</strong> $$2x - 7 + x = 5$$ $$3x = 12$$ $$x = 4$$</p>
+<p><strong>Step 4: Find $y$</strong> $$y = 7 - 4 = 3$$</p>
+<p><strong>Check:</strong> $x + y = 4 + 3 = 7$ ✓ and $2x - y = 8 - 3 = 5$ ✓</p>
+<p><strong>Solution:</strong> $(4, 3)$</p>
+<p>---</p>
+<h3 id="example-2-elimination-method">Example 2: Elimination Method</h3>
+<p><strong>Problem:</strong> Solve the system: $$3x + 2y = 13$$ $$2x - 2y = 2$$</p>
+<p><strong>Step 1:</strong> Notice that $2y$ and $-2y$ are opposites. Add directly.</p>
+<p>$$3x + 2y + 2x - 2y = 13 + 2$$ $$5x = 15$$ $$x = 3$$</p>
+<p><strong>Step 2: Substitute to find $y$</strong></p>
+<p>From the second equation: $2(3) - 2y = 2$</p>
+<p>$$6 - 2y = 2$$ $$-2y = -4$$ $$y = 2$$</p>
+<p><strong>Check:</strong> $3(3) + 2(2) = 9 + 4 = 13$ ✓ and $2(3) - 2(2) = 6 - 4 = 2$ ✓</p>
+<p><strong>Solution:</strong> $(3, 2)$</p>
+<p>---</p>
+<h3 id="example-3-systems-needing-multiplication">Example 3: Systems Needing Multiplication</h3>
+<p><strong>Problem:</strong> Solve the system: $$2x + 3y = 11$$ $$3x + 2y = 14$$</p>
+<p><strong>Step 1:</strong> Multiply to create opposite coefficients. Multiply the first by 3 and the second by -2:</p>
+<p>$$6x + 9y = 33$$ $$-6x - 4y = -28$$</p>
+<p><strong>Step 2: Add</strong> $$5y = 5$$ $$y = 1$$</p>
+<p><strong>Step 3: Substitute into the first original equation</strong> $$2x + 3(1) = 11$$ $$2x = 8$$ $$x = 4$$</p>
+<p><strong>Check:</strong> $2(4) + 3(1) = 8 + 3 = 11$ ✓ and $3(4) + 2(1) = 12 + 2 = 14$ ✓</p>
+<p><strong>Solution:</strong> $(4, 1)$</p>
+<p>---</p>
+<h3 id="example-4-real-world-application-two-prices">Example 4: Real-World Application (Two Prices)</h3>
+<p><strong>Problem:</strong> A store sells pens and notebooks. 3 pens and 2 notebooks cost $8. 1 pen and 4 notebooks cost $10. Find the price of each.</p>
+<p><strong>Step 1: Define variables</strong></p>
+<ul><li>Let $p$ = price of a pen</li><li>Let $n$ = price of a notebook</li></ul>
+<p><strong>Step 2: Write equations</strong> $$3p + 2n = 8$$ $$p + 4n = 10$$</p>
+<p><strong>Step 3: Solve using substitution</strong></p>
+<p>From the second equation: $p = 10 - 4n$</p>
+<p>Substitute into the first: $$3(10 - 4n) + 2n = 8$$ $$30 - 12n + 2n = 8$$ $$-10n = -22$$ $$n = 2.2$$</p>
+<p>Then: $p = 10 - 4(2.2) = 10 - 8.8 = 1.2$</p>
+<p><strong>Check:</strong></p>
+<ul><li>$3(1.2) + 2(2.2) = 3.6 + 4.4 = 8$ ✓</li><li>$1.2 + 4(2.2) = 1.2 + 8.8 = 10$ ✓</li></ul>
+<p><strong>Answer:</strong> A pen costs $1.20; a notebook costs $2.20.</p>
+<p>---</p>
+<h3 id="example-5-recognizing-an-inconsistent-system">Example 5: Recognizing an Inconsistent System</h3>
+<p><strong>Problem:</strong> Solve the system: $$2x + y = 5$$ $$4x + 2y = 8$$</p>
+<p><strong>Step 1:</strong> Multiply the first equation by 2: $$4x + 2y = 10$$ $$4x + 2y = 8$$</p>
+<p><strong>Step 2:</strong> Subtract the second from the first: $$0 = 2$$</p>
+<p>This is a <em>contradiction</em>. No solution exists.</p>
+<p><strong>Reason:</strong> The first equation says $4x + 2y = 10$. The second says $4x + 2y = 8$. These can&#x27;t both be true.</p>
+<p>Graphically, these are parallel lines with the same slope but different y-intercepts.</p>
+<p><strong>Answer:</strong> No solution (inconsistent system).</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<p>Solve each system using either substitution or elimination. State whether the system is consistent (and give the solution) or inconsistent/dependent.</p>
+<p>$$x - y = 2$$</p>
+<ol><li>$$x + y = 8$$</li></ol>
+<p>$$x - y = 2$$</p>
+<ol><li>$$2x + y = 7$$</li></ol>
+<p>$$x + y = 4$$</p>
+<ol><li>$$3x - 2y = 5$$</li></ol>
+<p>$$4x + 6y = 12$$</p>
+<ol><li>$$2x + 3y = 6$$</li></ol>
+<p>$$x + 2y = 5$$</p>
+<ol><li>$$x + 2y = 10$$</li></ol>
+<p>$$2x - y = 5$$</p>
+<ol><li>$$3x + 4y = 24$$</li></ol>
+<p>---</p>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Problem:</strong> A company manufactures two types of chairs: standard and deluxe. A standard chair requires 4 hours of labor and 2 units of wood. A deluxe chair requires 6 hours of labor and 3 units of wood.</p>
+<p>The company has 60 labor hours and 24 units of wood available per day. Let $s$ = number of standard chairs and $d$ = number of deluxe chairs.</p>
+<p><strong>Your task:</strong></p>
+<ol><li>Write the system of equations for labor and wood constraints.</li><li>Solve the system.</li><li>Interpret: what does the solution tell the company?</li><li>Is the solution realistic? Why or why not?</li></ol>
+<p>---</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Scenario:</strong> Two recipes use different proportions of ingredients. A smoothie recipe calls for 2 cups of fruit and 1 cup of yogurt. A parfait recipe calls for 1 cup of fruit and 2 cups of yogurt. You have 14 cups of fruit and 11 cups of yogurt. How many smoothies and parfaits can you make if you use all ingredients?</p>
+<p>Set this up as a system and solve. Interpret your answer.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>When you have <em>two</em> unknowns and <em>two</em> conditions, a system of two equations lets you find a unique solution (or determine if no solution exists).</p>
+<p><strong>Key methods:</strong></p>
+<ul><li><strong>Substitution:</strong> Solve one for a variable; substitute into the other.</li><li><strong>Elimination:</strong> Multiply and add to eliminate one variable.</li></ul>
+<p><strong>Three cases:</strong></p>
+<ul><li><strong>Consistent:</strong> One solution (lines intersect at one point).</li><li><strong>Inconsistent:</strong> No solution (parallel lines).</li><li><strong>Dependent:</strong> Infinitely many solutions (same line).</li></ul>
+<p>Systems are everywhere in applied mathematics. Once you master solving them, you can tackle real-world problems involving multiple constraints and unknowns.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> In the system $x + y = 5$ and $x - y = 1$, which variable would be easiest to eliminate using the elimination method?</p>
+<ul><li>The variable $x$</li><li>The variable $y$</li><li>Either variable is equally easy</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The variable $y$</p>
+</details>
+<p>---</p>
+<p><strong>Question 2:</strong> If you multiply the first equation in a system by 2, does that change the solution?</p>
+<ul><li>Yes, it always gives a different solution</li><li>No, because multiplying both sides by the same number preserves the equation</li><li>Yes, but only if the number is negative</li></ul>
+<details>
+<summary>Answer</summary>
+<p>No, because multiplying both sides by the same number preserves the equation</p>
+</details>
+<p>---</p>
+<p><strong>Question 3:</strong> What does it mean when you get $0 = 0$ while solving a system?</p>
+<ul><li>The system is inconsistent (no solution)</li><li>The system is dependent (infinitely many solutions)</li><li>The system has exactly one solution</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The system is dependent (infinitely many solutions)</p>
+</details>
+<p>---</p>
+<p><strong>Question 4:</strong> Two lines are parallel. What can you say about the system formed by their equations?</p>
+<ul><li>It is consistent with one solution</li><li>It is inconsistent with no solution</li><li>It is dependent with infinitely many solutions</li></ul>
+<details>
+<summary>Answer</summary>
+<p>It is inconsistent with no solution</p>
+</details>
+<p>---</p>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/System_of_linear_equations" target="_blank" rel="noopener">System of linear equations - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/The_Nine_Chapters_on_the_Mathematical_Art" target="_blank" rel="noopener">Nine Chapters on the Mathematical Art - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Al-Khwarizmi" target="_blank" rel="noopener">Al-Khwarizmi - Wikipedia</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-02-algebra-is-born/ch-035-word-problems-and-modeling/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Word Problems and Mathematical Modeling</span></a><a class="pager-link pager-link--next" href="../../world-02-algebra-is-born/ch-037-quadratic-expressions-and-factoring/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Quadratic Expressions and Factoring</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

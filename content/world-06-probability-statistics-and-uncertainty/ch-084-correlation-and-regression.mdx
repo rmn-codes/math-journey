@@ -1,0 +1,393 @@
+---
+worldNumber: 6
+world: world-06-probability-statistics-and-uncertainty
+chapterNumber: 84
+title: "Correlation and Linear Regression"
+subtitle: "When two variables move together — and how to find the line that fits best"
+historicalPeriod: "1880s–1900s"
+estimatedTimeMinutes: 40
+mainConcepts:
+  - scatter plot
+  - correlation coefficient
+  - causation vs. correlation
+  - least-squares regression
+  - residuals
+  - r-squared
+learningObjectives:
+  - Describe association from a scatter plot
+  - Interpret the correlation coefficient r
+  - Fit and interpret a least-squares regression line
+  - Distinguish correlation from causation
+  - Compute and interpret residuals and r²
+---
+
+## Story Hook
+
+**Francis Galton** (1886) studies a curious pattern: tall parents tend to have tall children, but the children aren't *as tall* as the parents. Short parents tend to have short children, but not *as short*. There's an association between parent height and child height, but it's not perfect. The effect "regresses" toward the average height — hence the term **regression**.
+
+Galton quantifies this relationship and invents a tool: the **correlation coefficient**, measuring how strongly two variables move together.
+
+Soon after, his student **Karl Pearson** (1895–1896) formalises the mathematics. The **Pearson correlation** $r$ becomes standard in science. The **regression line** — a line that "fits best" through scattered data points — becomes a tool for prediction.
+
+Today, correlation and regression are everywhere: economists predict recessions, biologists model disease spread, machine learning systems predict from data. The story of two variables moving together, and how to find the line between them, is a story of modern prediction.
+
+## Why It Matters
+
+Every analyst faces questions like:
+- **Economics:** Does higher education spending correlate with higher student test scores? Can we predict future economic growth?
+- **Medicine:** Does smoking correlate with lung cancer? How much does exercise reduce heart disease risk?
+- **Meteorology:** How does ocean temperature correlate with hurricane intensity?
+- **Tech:** Do more features correlate with higher user engagement? Can we predict churn?
+- **Sports:** Does team payroll correlate with wins? Can we predict next season's performance?
+
+Correlation and regression let you:
+- Visualise relationships between two variables (scatter plots)
+- Quantify strength of association (correlation coefficient $r$)
+- Fit a predictive model (regression line $\hat{y} = a + bx$)
+- Assess goodness of fit (coefficient of determination $r^2$)
+- **Critically:** distinguish correlation from causation (the most common statistical mistake)
+
+## Historical Context
+
+**Francis Galton** (1822–1911) was a polymath — statistician, explorer, geographer. His work on heredity led him to study parent-child heights. He noticed regression to the mean and invented regression analysis.
+
+**Karl Pearson** (1857–1936) was Galton's intellectual successor. He formalised the mathematics of correlation and regression. He also invented goodness-of-fit testing and developed the chi-squared test.
+
+Their work was motivated by a dangerous ideology: **eugenics** (the false belief that inherited traits could be "improved" through selective breeding). While we rightfully reject eugenics today, Pearson and Galton's *statistical methods* — correlation and regression — are fundamental tools of modern science.
+
+**Least-squares regression** (finding the best-fit line) was developed earlier by **Carl Friedrich Gauss** (1809) and **Adrien-Marie Legendre** (1805) for astronomy. Their method minimises the sum of squared deviations (residuals) — hence "least squares."
+
+By the early 1900s, correlation and regression had become the language of quantitative analysis across all sciences.
+
+## Core Concept
+
+Imagine you measure two variables on a group of people: height (X) and weight (Y). You plot each person as a point: height on the horizontal axis, weight on the vertical axis. You get a **scatter plot**.
+
+Do the points form a pattern? Often yes:
+- **Positive association:** taller people tend to weigh more
+- **Negative association:** students who study more tend to score higher (wait, that's positive — less studying time leaves time to play video games)
+- **No association:** eye colour and height — no pattern
+
+The **correlation coefficient** $r$ quantifies this pattern. It ranges from $-1$ to $1$:
+- $r = 1$: perfect positive association (all points on a line with positive slope)
+- $r = -1$: perfect negative association (all points on a line with negative slope)
+- $r = 0$: no linear association (points scattered randomly)
+- $0 < r < 1$: positive association, strength depends on magnitude
+- $-1 < r < 0$: negative association, strength depends on magnitude
+
+Once you've identified a strong association, the next question is: *can I predict $Y$ from $X$?* The **regression line** $\hat{y} = a + bx$ gives the best linear prediction.
+
+### Association vs. Causation
+
+**Critical distinction:**
+
+**Correlation** ($r$) measures association: do two variables move together?
+
+**Causation** means: does one *cause* the other?
+
+Correlation *does not* imply causation. Classic examples:
+- **Ice cream sales and drowning deaths:** both increase in summer (confounding variable: temperature)
+- **Shoe size and reading ability in children:** both increase with age (age is the confounder)
+- **Coffee consumption and heart disease:** *possibly* confounded by stress, weight, smoking, or reverse causation
+
+Confounding variables (hidden factors) can create spurious correlations. Bad actors use this: "X and Y correlate, therefore X causes Y" — a common propaganda technique.
+
+## Definitions and Formal Lesson
+
+### Scatter Plot and Association
+
+A **scatter plot** displays two quantitative variables:
+- Horizontal axis: independent variable (X)
+- Vertical axis: dependent variable (Y)
+- Each point: one observation
+
+**Describing association:**
+- **Direction:** positive (upward trend) or negative (downward trend)
+- **Form:** linear (points cluster around a line) or non-linear (curved, etc.)
+- **Strength:** strong (tight cluster), moderate, or weak (scattered)
+- **Outliers:** unusual points far from the main pattern
+
+### Correlation Coefficient
+
+The **Pearson correlation coefficient** is:
+
+$$r = \frac{1}{n-1} \sum_{i=1}^{n} \left(\frac{x_i - \bar{x}}{s_x}\right)\left(\frac{y_i - \bar{y}}{s_y}\right)$$
+
+where $s_x$ and $s_y$ are standard deviations.
+
+**Key properties:**
+- $-1 \leq r \leq 1$
+- $r > 0$: positive association
+- $r < 0$: negative association
+- $|r|$ close to 1: strong linear association
+- $|r|$ close to 0: weak linear association
+- $r = 0$: no linear association (but could have non-linear association!)
+
+**Interpretation:**
+- $r = 0.9$: very strong positive association
+- $r = 0.5$: moderate positive association
+- $r = 0.2$: weak positive association
+- $r = 0$: no linear association
+- $r = -0.7$: strong negative association
+
+**Do not memorise the formula.** Use a calculator or software. Understand the interpretation.
+
+### Least-Squares Regression Line
+
+The **regression line** $\hat{y} = a + bx$ predicts $Y$ from $X$.
+
+The **slope** is:
+
+$$b = r \frac{s_y}{s_x}$$
+
+The **intercept** is:
+
+$$a = \bar{y} - b\bar{x}$$
+
+The line passes through the point $(\bar{x}, \bar{y})$ (the centre of mass of the scatter plot).
+
+**Interpretation:**
+- **Slope $b$:** for each unit increase in $X$, $Y$ increases (or decreases if $b < 0$) by $b$ units
+- **Intercept $a$:** predicted value of $Y$ when $X = 0$ (might not be meaningful if $X$ doesn't approach 0)
+
+**Example:** Heights and weights. Regression line: $\widehat{\text{Weight}} = 50 + 0.8 \times \text{Height}$ (in crude units).
+- Slope 0.8 means: each cm of additional height predicts 0.8 kg more weight
+- Intercept 50 means: a person 0 cm tall would weigh 50 kg (not meaningful — no one is 0 cm tall)
+
+### Residuals
+
+A **residual** is the difference between observed and predicted:
+
+$$e_i = y_i - \hat{y}_i$$
+
+Residuals measure how far each point is from the regression line. Small residuals = good fit. Large residuals = poor fit or outliers.
+
+**Least-squares principle:** the regression line minimises the sum of squared residuals $\sum e_i^2$. This makes it the "best" line in a specific mathematical sense.
+
+### Coefficient of Determination ($r^2$)
+
+$$r^2 = \text{(correlation coefficient)}^2$$
+
+$r^2$ is the **proportion of variance in $Y$ explained by $X$.**
+
+- $r^2 = 0.81$ means 81% of the variation in $Y$ is explained by $X$; 19% is unexplained (due to other factors, measurement error, randomness)
+- $r^2 = 0.25$ means only 25% is explained; the model leaves 75% unexplained
+- $r^2 = 0$ means $X$ explains none of the variation in $Y$
+- $r^2 = 1$ means $X$ perfectly explains $Y$ (all points exactly on the line)
+
+$r^2$ is more useful than $r$ because it directly quantifies explanatory power.
+
+## Worked Examples
+
+**Example 1: Interpreting Correlation**
+
+Data: study hours (X) and exam scores (Y) for 20 students.
+- Scatter plot shows a clear upward trend
+- Correlation: $r = 0.82$
+- $r^2 = 0.67$
+
+**Interpretation:** There's a strong positive association between study hours and exam scores ($r = 0.82$). Students who study more tend to score higher. The relationship explains 67% of the variation in exam scores ($r^2 = 0.67$). The remaining 33% is due to other factors (aptitude, sleep, nutrition, test anxiety, etc.).
+
+**Example 2: Regression Line and Prediction**
+
+Data: advertising spending (X, in thousands of dollars) and revenue (Y, in thousands of dollars) for 12 months.
+
+Regression line: $\hat{Y} = 50 + 8X$ with $r = 0.89$, $r^2 = 0.79$.
+
+**Predictions:**
+- If we spend $10,000 on ads: $\hat{Y} = 50 + 8(10) = 130$ thousand dollars revenue = $130,000
+- If we spend $20,000: $\hat{Y} = 50 + 8(20) = 210$ thousand dollars = $210,000
+
+**Interpretation:**
+- Each additional $1,000 in advertising is predicted to increase revenue by $8,000 (slope = 8)
+- Base revenue (with no advertising) is estimated at $50,000 (intercept = 50)
+- The model explains 79% of revenue variation ($r^2 = 0.79$)
+- We're reasonably confident in predictions *within the range of the data* (interpolation). Predicting outside (extrapolation) is risky
+
+**Example 3: Causation vs. Correlation**
+
+**Claim:** Ice cream sales and drowning deaths correlate ($r = 0.85$). Ice cream causes drowning!
+
+**Reality:** Both increase in summer (confounding variable: temperature). Heat drives ice cream sales and increases swimming (and drowning risk). Temperature causes both.
+
+**Correct conclusion:** There's a strong positive association, but temperature confounds the relationship. Ice cream doesn't cause drowning.
+
+## Practice Set
+
+1. **Scatter Plot Analysis:** You have data on plant height (X, cm) and seed production (Y, number of seeds) for 15 plants.
+   - Scatter plot shows points clustering around a line (height ≈ 20 cm, seeds ≈ 50; height ≈ 40 cm, seeds ≈ 150)
+   - Does the association appear positive, negative, or absent?
+   - Does it appear strong or weak?
+   - Would a linear regression be appropriate?
+
+2. **Interpreting Correlation:** A study finds $r = -0.65$ between exercise frequency and resting heart rate.
+   - Describe the direction and strength of association
+   - Compute $r^2$ and interpret
+   - Does this suggest that exercise *causes* lower heart rates? (Consider confounders.)
+
+3. **Regression Calculation:** Data: hours studied (X) and exam score (Y).
+   - $\bar{x} = 5$, $\bar{y} = 75$, $s_x = 2$, $s_y = 10$, $r = 0.8$
+   - Calculate the regression line $\hat{y} = a + bx$
+   - Predict the score for a student who studies 6 hours
+   - Predict the score for a student who studies 20 hours (comment on reliability)
+
+4. **Residuals:** A regression line is $\hat{y} = 10 + 3x$.
+   - A point has $x = 4$, actual $y = 23$, predicted $\hat{y} = 22$. What's the residual?
+   - Interpret the residual
+   - If many residuals are large, what does that suggest about the model?
+
+5. **$r^2$ Interpretation:** A model of house prices (Y) based on square footage (X) has $r^2 = 0.72$.
+   - What percentage of price variation is explained by square footage?
+   - What percentage is unexplained?
+   - List factors that might account for the unexplained variation
+
+## Reasoning Task
+
+**Simpson's Paradox and Confounding**
+
+A company finds that men, on average, receive higher salaries than women. The scatter plot shows a weak positive correlation between years of experience and salary ($r = 0.3$).
+
+But when they break down the data by *department*:
+- Engineering: men earn slightly less than women (confounding by experience)
+- Marketing: men earn slightly less than women
+- Sales: men earn slightly less than women
+
+How can men earn *more* overall but less in every department? The answer: **Simpson's Paradox**.
+
+**Your Task:**
+
+1. Propose a confounding variable that explains this paradox
+2. Draw two scatter plots: one combined (showing men earning more), one separated by department (showing women earning more)
+3. Explain how aggregation can reverse the direction of association
+
+This is why correlation analysis must account for confounding variables — a foundational principle of causal inference.
+
+## Application
+
+**Real-World Scenario: Climate Science**
+
+Researchers study the relationship between atmospheric CO₂ concentration (X, ppm) and global temperature anomaly (Y, °C relative to 1900s baseline).
+
+Data (simplified):
+- 1960: X = 317 ppm, Y = 0.03°C
+- 1980: X = 339 ppm, Y = 0.26°C
+- 2000: X = 369 ppm, Y = 0.43°C
+- 2020: X = 414 ppm, Y = 1.25°C
+
+Analysis:
+- Scatter plot shows a clear upward trend
+- Correlation: $r = 0.99$, $r^2 = 0.98$
+- Regression line: $\hat{Y} = -3.89 + 0.011X$
+
+**Questions:**
+
+1. Describe the association between CO₂ and temperature
+2. Interpret the slope: what does 0.011 mean in plain language?
+3. Interpret $r^2 = 0.98$: what does this say about the relationship?
+4. Predict the temperature anomaly if CO₂ reaches 500 ppm
+5. Does correlation prove causation here? What evidence would support causation (greenhouse gas physics, isotope analysis, timing, etc.)?
+
+This is a real example of how correlation and regression support causal inference in climate science.
+
+## Recap
+
+**Correlation and regression quantify relationships between two variables.**
+
+**Correlation coefficient $r$:**
+- Measures strength and direction of *linear* association
+- Ranges from $-1$ to $1$
+- $r = 0$ does *not* mean no association (could be non-linear!)
+
+**Causation vs. Correlation:**
+- Correlation means two variables move together
+- Causation means one causes the other
+- **Correlation does not imply causation** — confounding variables are common
+
+**Regression line $\hat{y} = a + bx$:**
+- Best linear prediction of $Y$ from $X$
+- Slope $b$: predicted change in $Y$ per unit change in $X$
+- Passes through $(\bar{x}, \bar{y})$
+- Use for prediction *within the range of observed data*
+
+**Coefficient of Determination $r^2$:**
+- Proportion of $Y$ variation explained by $X$
+- More interpretable than $r$
+- Remaining $(1 - r^2)$ is unexplained
+
+**Historical Significance:**
+- Developed 1880s–1900s by Galton, Pearson, and others
+- Foundation of quantitative science and modern prediction
+- Misuse of correlation (forgetting the causation problem) is common in media and politics
+
+The story of Galton and Pearson — finding patterns in inheritance data and inventing tools to quantify them — shows how correlation and regression reveal hidden structures in data. Master these tools, and you unlock the ability to predict, compare, and infer.
+
+## Unlock Quiz
+
+**Question 1:** Two variables have correlation $r = 0.5$. What does this indicate?
+
+- A perfect positive association
+- A moderate positive association
+- A weak negative association
+- No association
+
+<details>
+<summary>Answer</summary>
+$r = 0.5$ indicates a moderate positive association. The variables move together somewhat, but not strongly. The answer is "A moderate positive association".
+</details>
+
+**Question 2:** If $r = 0.7$, what is $r^2$?
+
+- 0.49
+- 0.7
+- 1.4
+- Cannot be determined
+
+<details>
+<summary>Answer</summary>
+$r^2 = (0.7)^2 = 0.49$. This means 49% of the variation in one variable is explained by the other. The answer is 0.49.
+</details>
+
+**Question 3:** A regression line is $\hat{y} = 10 + 2x$. What is the predicted $y$ when $x = 5$?
+
+- 10
+- 15
+- 20
+- 25
+
+<details>
+<summary>Answer</summary>
+$\hat{y} = 10 + 2(5) = 10 + 10 = 20$. The answer is 20.
+</details>
+
+**Question 4:** Which scenario demonstrates causation rather than just correlation?
+
+- Taller people play basketball more; therefore height causes basketball ability
+- In a randomised controlled trial, giving a drug reduces symptoms; therefore the drug causes symptom reduction
+- Students with more tutoring score higher; tutoring might correlate with prior ability
+- Countries with more television ownership have higher life expectancy; TV causes longer life
+
+<details>
+<summary>Answer</summary>
+Only the second option demonstrates causation. A randomised controlled trial (RCT) controls for confounding variables and isolates the effect of the drug. The other options show correlation that could be due to confounding. The answer is "In a randomised controlled trial, giving a drug reduces symptoms; therefore the drug causes symptom reduction".
+</details>
+
+**Question 5:** A scatter plot shows points scattered randomly with no pattern. What would you expect?
+
+- $r \approx 1$
+- $r \approx -1$
+- $r \approx 0$
+- $r^2 \approx 1$
+
+<details>
+<summary>Answer</summary>
+No pattern means no linear association, so $r \approx 0$. The answer is "$r \approx 0$".
+</details>
+
+## Source Notes
+
+- [Pearson correlation coefficient — Wikipedia](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
+- [Linear regression — Wikipedia](https://en.wikipedia.org/wiki/Linear_regression)
+- [Francis Galton — Wikipedia](https://en.wikipedia.org/wiki/Francis_Galton)
+- [Karl Pearson — Wikipedia](https://en.wikipedia.org/wiki/Karl_Pearson)
+- [Correlation does not imply causation — Wikipedia](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation)
+- [Confounding — Wikipedia](https://en.wikipedia.org/wiki/Confounding)

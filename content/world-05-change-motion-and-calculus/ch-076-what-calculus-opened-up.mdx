@@ -1,0 +1,306 @@
+---
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+chapterNumber: 76
+chapterTitle: What Calculus Opened Up
+subtitle: From Newton's apple to quantum mechanics — the science calculus made possible
+historicalPeriod: 1680s–present
+estimatedTimeMinutes: 35
+---
+
+## Story Hook
+
+October 1845. The British astronomer John Couch Adams sits at his desk and does something that seems impossible: he *predicts* the existence of a planet no one has ever seen. Not by pointing a telescope at the sky. By doing calculus.
+
+Here's what happened. Uranus, discovered in 1781, moved in a slightly wrong orbit. Something was tugging it gravitationally. Adams took Newton's laws — which are differential equations — and worked backward. *If* there were an eighth planet, *where* would it need to be to cause Uranus's orbital perturbations?
+
+Independently, the French astronomer Urbain Le Verrier did the same calculation.
+
+On September 23, 1846, astronomers pointed their telescopes to the position Adams and Le Verrier predicted. Within one degree — in a sky of 360 degrees — they found **Neptune**. A planet discovered not by observation, but by mathematics.
+
+This is what calculus opened up. The ability to predict the unseen. The ability to turn laws into predictions. The ability to understand a universe governed by differential equations.
+
+## Why It Matters
+
+Calculus is not a decorative part of mathematics. It's the language in which the physical laws are written. Without calculus:
+- You cannot design a bridge (structural mechanics is differential equations).
+- You cannot predict the weather (fluid dynamics is differential equations).
+- You cannot cure diseases (drug pharmacokinetics uses differential equations).
+- You cannot land on the Moon (orbital mechanics is calculus).
+- You cannot build modern electronics (Maxwell's equations are differential equations).
+- You cannot understand light, atoms, or the universe (quantum mechanics is differential equations).
+
+The calculus you've learned in World 05 is not an intellectual luxury. It's the foundational language of science and engineering.
+
+## Historical Context
+
+Newton developed calculus to solve problems in mechanics. He wrote the Principia Mathematica (1687) — a work so mathematically advanced that only a handful of people in Europe could understand it initially — to explain planetary motion, tides, and the shape of the Earth using calculus.
+
+Leibniz developed calculus independently and his notation was cleaner. For two centuries, the British and Continental mathematicians competed over who deserved credit. (Both did.)
+
+The 1700s saw calculus applied to everything: vibrating strings (the wave equation), heat flow (the heat equation), electricity and magnetism (Maxwell's equations in the 1860s). By the 1800s, calculus was the engine driving scientific progress.
+
+The 1900s brought new territory: quantum mechanics (Schrödinger, 1926), relativity (Einstein, 1915), and in recent decades, machine learning and artificial intelligence. All built on calculus.
+
+## Core Concept
+
+Calculus is the mathematics of **continuous change and accumulation**. It gives us tools to answer:
+- *How fast is something changing?* (Derivatives)
+- *What is the total accumulation?* (Integrals)
+- *If I know the rate of change, can I recover the original quantity?* (The Fundamental Theorem)
+
+These questions appear everywhere in the real world. By answering them, calculus makes science possible.
+
+### The Arc of World 05
+
+You've journeyed through the major landmarks of calculus:
+
+1. **Limits** (World 05 preview): The rigorous foundation. What does it mean for a function to approach a value?
+
+2. **Derivatives** (Chapters 63–65): The instantaneous rate of change. How fast is something changing *right now*?
+
+3. **Differentiation Rules** (Chapter 66–72): Techniques to compute derivatives. Power rule, product rule, chain rule, and applications to optimization and motion.
+
+4. **Integration** (Chapters 68–73): The inverse of differentiation. Finding the antiderivative. Techniques: substitution, by parts, standard forms.
+
+5. **The Fundamental Theorem** (Chapter 71): The crown jewel. Derivatives and integrals are inverse operations. $\frac{d}{dx} \int_a^x f(t) \, dt = f(x)$.
+
+6. **Differential Equations** (Chapter 74): Equations involving rates of change. Separable equations model growth, decay, cooling, and more.
+
+7. **Series and Infinite Sums** (Chapter 75): Functions as infinite power series. Computing to arbitrary precision.
+
+This is the architecture of calculus. Each piece builds on the previous. And all of it opens doors.
+
+### Calculus in Classical Mechanics
+
+Newton's Second Law is $F = ma$, but $a = \frac{d^2x}{dt^2}$. So:
+$$F = m \frac{d^2x}{dt^2}$$
+
+This is a differential equation. If you know the force (perhaps gravity, or springs, or friction), you can predict the motion. This is how we:
+- Calculate planetary orbits
+- Predict tides
+- Design roller coasters and bridges
+- Navigate spacecraft
+- Understand pendulums and oscillators
+
+The entire framework of classical mechanics is differential equations. Calculus is mechanism.
+
+### Maxwell's Equations
+
+In the 1860s, James Clerk Maxwell unified electricity and magnetism into a single framework using four differential equations (in differential form):
+
+$$\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}$$
+$$\nabla \cdot \mathbf{B} = 0$$
+$$\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}$$
+$$\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}$$
+
+(Don't worry about the notation. The point is: they are differential equations.)
+
+From these equations, you can *derive* that light is an electromagnetic wave traveling at a fixed speed. Maxwell predicted the speed of light *mathematically*, before it was precisely measured. His equations led to radio, television, and all wireless communication.
+
+### Quantum Mechanics: The Schrödinger Equation
+
+In 1926, Erwin Schrödinger wrote:
+$$i\hbar \frac{\partial \Psi}{\partial t} = H \Psi$$
+
+where $\Psi$ is the **wavefunction** (describing a particle), $H$ is the **Hamiltonian** (total energy), $\hbar$ is Planck's constant, and $i$ is the imaginary unit.
+
+This is a partial differential equation (the derivative is with respect to multiple variables). It governs all quantum phenomena. Atoms, electrons, photons, chemistry, materials — all described by Schrödinger's equation.
+
+Without calculus, quantum mechanics — and thus modern technology (semiconductors, lasers, nuclear energy) — would not exist.
+
+### General Relativity
+
+In 1915, Einstein showed that gravity is not a force, but the curvature of spacetime. The curvature is described by the **Riemann curvature tensor**, and it satisfies differential equations:
+$$G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$
+
+(Einstein's field equations. Again, don't parse the notation — the point is differential equations.)
+
+These equations predict black holes, gravitational waves, the expansion of the universe, and the Big Bang. All from differential equations.
+
+### Machine Learning and Gradient Descent
+
+Modern artificial intelligence — neural networks, large language models — relies on **gradient descent**. The gradient is the vector of partial derivatives. To train a network on billions of parameters, you compute:
+$$\mathbf{w}_{n+1} = \mathbf{w}_n - \alpha \nabla L(\mathbf{w}_n)$$
+
+where $\nabla L$ is the gradient of the loss function (first derivatives) and $\alpha$ is the learning rate.
+
+This is calculus applied to billions of variables simultaneously. Without derivatives, modern AI would be impossible.
+
+### Medicine and Pharmacokinetics
+
+How does a drug move through your body? It's absorbed, distributed to organs, metabolized, and excreted. The rate of each process follows differential equations:
+$$\frac{dC}{dt} = -k_e C$$
+
+(where $C$ is concentration and $k_e$ is elimination rate). Doctors use this to design dosing regimens: when to give the next dose, and how much, so the drug concentration stays in the therapeutic window.
+
+Without differential equations, drug dosing would be guesswork, and medicine would be dangerous.
+
+## Definitions and Formal Lesson
+
+**Calculus:** The mathematics of continuous change. Two main operations:
+- **Derivative:** Instantaneous rate of change; $\frac{d}{dx}$
+- **Integral:** Accumulation; $\int$
+
+**Fundamental Theorem of Calculus:** These operations are inverses of each other.
+
+**Differential equation:** An equation relating a function to its derivatives.
+
+**Partial derivative:** A derivative with respect to one variable while holding others fixed; $\frac{\partial}{\partial x}$
+
+**Vector calculus:** Calculus in multiple dimensions. Gradient ($\nabla$), divergence, curl.
+
+**Series:** Infinite sums of functions, enabling precise computation.
+
+These tools, together, form the language of quantitative science.
+
+## Worked Examples
+
+**Example 1: Projectile motion**
+
+A ball is thrown upward with initial velocity $v_0 = 20$ m/s. Using Newton's Second Law, $F = ma$, where the only force is gravity ($F = -mg$):
+$$m\frac{d^2y}{dt^2} = -mg$$
+$$\frac{d^2y}{dt^2} = -g$$
+
+Integrating twice with initial conditions $y(0) = 0$ and $\frac{dy}{dt}(0) = 20$:
+$$\frac{dy}{dt} = -gt + 20$$
+$$y(t) = -\frac{1}{2}gt^2 + 20t$$
+
+With $g = 10$ m/s², the ball reaches maximum height when $\frac{dy}{dt} = 0$:
+$$0 = -10t + 20 \Rightarrow t = 2 \text{ s}$$
+$$y(2) = -5(4) + 20(2) = 20 \text{ m}$$
+
+Calculus predicts the trajectory exactly.
+
+**Example 2: Exponential growth (bacteria)**
+
+A bacterial culture grows at a rate proportional to its size: $\frac{dP}{dt} = kP$ with $k = 0.3$ and $P(0) = 100$.
+
+The solution is $P(t) = 100 e^{0.3t}$.
+
+After 10 hours: $P(10) = 100 e^3 \approx 2000$ bacteria.
+
+Without calculus, you'd have no way to predict population growth.
+
+**Example 3: Wave equation**
+
+A vibrating string satisfies:
+$$\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$$
+
+(where $u$ is displacement, $t$ is time, $x$ is position, $c$ is wave speed). Solutions are standing waves, sines and cosines. This equation appears in acoustics, optics, seismology, and quantum mechanics.
+
+## Practice Set
+
+1. **Newton's Law:** A falling object experiences acceleration $a = g = 10$ m/s². If dropped from rest, find its position $y(t)$ and velocity $v(t)$.
+
+2. **Heat equation:** A rod cools according to $\frac{dT}{dt} = -k(T - T_s)$ with $T(0) = 100$ and $T_s = 20$. Find $T(t)$.
+
+3. **Loan amortization:** You borrow $D$ dollars at annual interest rate $r$ and make monthly payments $P$. The balance $B(t)$ satisfies:
+$$\frac{dB}{dt} = rB - 12P$$
+Write down this differential equation and describe what it means.
+
+4. **Light intensity:** Light passing through a medium is absorbed at a rate proportional to intensity: $\frac{dI}{dx} = -\alpha I$ (where $x$ is distance). If $I(0) = I_0$, find $I(x)$.
+
+5. **Review:** What is the relationship between limits (World 05 preview) and the definition of a derivative?
+
+## Reasoning Task
+
+**The Neptune Discovery:** Two independent astronomers (Adams and Le Verrier) predicted Neptune's location in 1845 using calculus.
+
+- How is this feat an example of the power of differential equations?
+- What assumptions did they need to make?
+- Could this prediction have been made without calculus?
+- Why is mathematical prediction powerful?
+
+(Reflect on how science moves from observation to theory to prediction — and how calculus enables that journey.)
+
+## Application
+
+**Climate Modeling:** Scientists model global temperature using energy balance equations (differential equations involving heat flow, radiation, and atmospheric circulation). These equations, solved numerically on supercomputers, underpin climate science and policy.
+
+A simplified version: the rate of temperature change depends on the balance between incoming solar energy and outgoing thermal radiation:
+$$\frac{dT}{dt} = \frac{S(1-a)}{4} - \sigma T^4$$
+
+(where $S$ is solar constant, $a$ is albedo, $\sigma$ is Stefan-Boltzmann constant). Solving this (or more realistic versions) tells us how temperature will change if $CO_2$ increases.
+
+Without calculus, climate science would be impossible. Without climate science, informed policy on a critical issue is impossible.
+
+## Recap
+
+- **Calculus is the mathematics of change.** Derivatives measure rates; integrals measure accumulation.
+- **The Fundamental Theorem** connects them: they're inverse operations.
+- **Classical mechanics** is Newton's laws expressed as differential equations.
+- **Electromagnetism** is Maxwell's four differential equations.
+- **Quantum mechanics** is the Schrödinger equation, a partial differential equation.
+- **General relativity** is Einstein's field equations, relating spacetime curvature to mass-energy.
+- **Machine learning** is optimization via gradient descent (calculus on billions of variables).
+- **Medicine, engineering, climate science, economics** — all rely on differential equations.
+
+Calculus opened the door to understanding a universe in motion. It revealed that laws of nature can be expressed precisely, predicted rigorously, and tested experimentally. It is the language of quantitative science itself.
+
+## Unlock Quiz
+
+**Question 1:** What is Newton's Second Law expressed as a differential equation?
+- $F = m a = m \frac{dv}{dt}$
+- $F = m a = m \frac{d^2x}{dt^2}$
+- $a = \frac{F}{m}$
+- All of the above
+
+<details>
+<summary>Answer</summary>
+All of the above
+</details>
+
+**Question 2:** Which of the following is a partial differential equation?
+- $\frac{dy}{dt} = ky$
+- $\frac{\partial u}{\partial t} = c^2 \frac{\partial^2 u}{\partial x^2}$ (wave equation)
+- $\frac{d^2y}{dx^2} + 2\frac{dy}{dx} = 0$
+- $\frac{dP}{dt} = rP(1 - P/K)$ (logistic)
+
+<details>
+<summary>Answer</summary>
+$\frac{\partial u}{\partial t} = c^2 \frac{\partial^2 u}{\partial x^2}$ (wave equation)
+</details>
+
+**Question 3:** In the context of calculus, what is a "gradient"?
+- A curve's slope
+- A vector of partial derivatives
+- The solution to a differential equation
+- An infinite series
+
+<details>
+<summary>Answer</summary>
+A vector of partial derivatives
+</details>
+
+**Question 4:** Which physicist first wrote down the equation governing all quantum mechanical systems?
+- Isaac Newton
+- James Clerk Maxwell
+- Erwin Schrödinger
+- Albert Einstein
+
+<details>
+<summary>Answer</summary>
+Erwin Schrödinger
+</details>
+
+**Question 5:** What is the Fundamental Theorem of Calculus (in essence)?
+- Derivatives and integrals are inverse operations
+- All functions can be expressed as series
+- Limits are the foundation of calculus
+- Continuous functions are differentiable
+
+<details>
+<summary>Answer</summary>
+Derivatives and integrals are inverse operations
+</details>
+
+## Source Notes
+
+- **Neptune discovery:** Adams and Le Verrier (1845–1846). [Wikipedia: Neptune](https://en.wikipedia.org/wiki/Neptune_(planet)#History)
+- **Newton's laws and calculus:** Newton (1687), Principia Mathematica. [Wikipedia: Newton's laws of motion](https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion)
+- **Maxwell's equations:** Maxwell (1865). [Wikipedia: Maxwell's equations](https://en.wikipedia.org/wiki/Maxwell%27s_equations)
+- **Schrödinger equation:** Schrödinger (1926). [Wikipedia: Schrödinger equation](https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation)
+- **Einstein's field equations:** Einstein (1915). [Wikipedia: Einstein field equations](https://en.wikipedia.org/wiki/Einstein_field_equations)
+- **Gradient descent in machine learning:** [Wikipedia: Gradient descent](https://en.wikipedia.org/wiki/Gradient_descent)
+- **Pharmacokinetics:** [Wikipedia: Pharmacokinetics](https://en.wikipedia.org/wiki/Pharmacokinetics)

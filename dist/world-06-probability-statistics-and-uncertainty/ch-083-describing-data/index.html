@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Describing Data — Centre, Spread, and Shape — Math Journey</title>
+    <meta name="description" content="How to summarise a thousand numbers in five — the art of statistics" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 6 · Chapter 83</p>
+        <h1>Describing Data — Centre, Spread, and Shape</h1>
+        <p class="hero-copy">How to summarise a thousand numbers in five — the art of statistics</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>core</span>
+          
+          <span>1800s–1900s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Compute mean, median, and mode</li><li>Calculate variance, standard deviation, and IQR</li><li>Construct and interpret box plots</li><li>Describe distribution shape</li><li>Identify outliers using IQR</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#types-of-data">Types of Data</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#measures-of-centre">Measures of Centre</a></li><li class="toc-level-3"><a href="#measures-of-spread">Measures of Spread</a></li><li class="toc-level-3"><a href="#five-number-summary">Five-Number Summary</a></li><li class="toc-level-3"><a href="#distribution-shape">Distribution Shape</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p><strong>Florence Nightingale</strong> (1854–1856) arrives at a hospital in Scutari, Turkey, during the Crimean War. Soldiers are dying — thousands of them — from disease, not battle wounds. The medical establishment ignores her concerns. Words aren&#x27;t enough.</p>
+<p>In 1857, Nightingale presents to the British Parliament a striking visualisation: a <strong>polar area chart</strong> (nicknamed &quot;coxcomb diagram&quot;), showing that the vast majority of deaths are from <em>preventable diseases</em> — cholera, dysentery, typhoid — not combat.</p>
+<p>Parliament is moved. The military hospital system is reformed. Conditions improve. Deaths plummet.</p>
+<p>Nightingale herself wrote: <em>&quot;Statistics are the most important science in the whole world.&quot;</em> Not because numbers are inherently interesting, but because they <em>reveal truth</em> and <em>compel action</em>.</p>
+<p>This chapter teaches you how to describe data the way Nightingale did: clearly, persuasively, and honestly. We&#x27;ll learn measures of centre, spread, and shape — the tools statisticians use to summarise vast datasets in simple, meaningful ways.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Every day, people face data:</p>
+<ul><li>A hospital tracks patient recovery times: how long, on average, until discharge?</li><li>A school analyses test scores: do students cluster around the middle or spread wide?</li><li>A company measures customer satisfaction: what&#x27;s typical, and how much do ratings vary?</li><li>A city tracks air quality: is pollution getting worse? How unusual is today&#x27;s reading?</li></ul>
+<p>Without statistical descriptions, you&#x27;re lost. A thousand numbers mean nothing. But a few numbers — the centre, the spread, the shape — tell you <em>everything you need to know</em>.</p>
+<p>Statistical literacy lets you:</p>
+<ul><li>Spot trends and anomalies in data</li><li>Identify unusual or concerning values (outliers)</li><li>Compare datasets (is this year&#x27;s performance better than last year&#x27;s?)</li><li>Communicate findings to others</li><li>Avoid manipulation (bad actors use misleading descriptions to deceive)</li></ul>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The 1800s saw an explosion of data collection. Governments measured crime, poverty, health, literacy. Statisticians needed language to describe these datasets.</p>
+<p><strong>Florence Nightingale</strong> (1820–1910) wasn&#x27;t primarily a mathematician — she was a nurse and social reformer. But she became a pioneer in data visualisation and descriptive statistics.</p>
+<p><strong>Francis Galton</strong> (1822–1911) and <strong>Karl Pearson</strong> (1857–1936) formalised measures of centre and spread. They invented concepts like variance, standard deviation, and correlation.</p>
+<p><strong>John Tukey</strong> (1915–2000) developed the <strong>five-number summary</strong> and <strong>box plot</strong> in the 1970s, making it easy to visualise distributions at a glance.</p>
+<p>By the 20th century, descriptive statistics had become a core language of science, medicine, engineering, economics, and public policy. It remains so today.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>Imagine you&#x27;re given 100 student test scores. You could list all 100 numbers, but that&#x27;s overwhelming. Instead, you <em>describe</em> them:</p>
+<ul><li>What&#x27;s the <em>typical</em> score? (Centre)</li><li>Do scores cluster tightly or spread wide? (Spread)</li><li>Are there unusual scores? (Outliers)</li><li>Is the distribution symmetric or skewed? (Shape)</li></ul>
+<p><strong>Centre</strong> answers: what&#x27;s a representative value? <strong>Spread</strong> answers: how much variation is there? <strong>Shape</strong> answers: how is the data distributed?</p>
+<p>These three aspects tell you almost everything about a dataset.</p>
+<h3 id="types-of-data">Types of Data</h3>
+<p>Before describing data, classify it:</p>
+<ul><li><strong>Categorical</strong> (qualitative): colours, categories, labels. E.g., blood type, gender, country</li><li><strong>Nominal:</strong> no natural order. E.g., colours</li><li><strong>Ordinal:</strong> natural order. E.g., education level (primary &lt; secondary &lt; tertiary)</li><li><strong>Quantitative</strong> (numerical): numbers measured on a scale</li><li><strong>Discrete:</strong> countable values. E.g., number of children, defects, errors</li><li><strong>Continuous:</strong> any value in a range. E.g., height, weight, time, temperature</li></ul>
+<p>Different types of data need different descriptions. For categorical data, you count frequencies. For quantitative data, you calculate centre and spread.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="measures-of-centre">Measures of Centre</h3>
+<h4 id="mean-average">Mean (Average)</h4>
+<p>$$\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} = \frac{x_1 + x_2 + \cdots + x_n}{n}$$</p>
+<p>Sum all values and divide by the count. Most familiar measure, but <em>sensitive to outliers</em>.</p>
+<p><strong>Example:</strong> Test scores: 60, 75, 80, 85, 90. Mean = $\frac{60+75+80+85+90}{5} = \frac{390}{5} = 78$.</p>
+<h4 id="median-middle-value">Median (Middle Value)</h4>
+<p>Arrange data in order. The median is the middle value (if $n$ is odd) or the average of the two middle values (if $n$ is even).</p>
+<p><strong>Example 1 (odd $n$):</strong> Scores: 60, 75, 80, 85, 90. Median = 80 (middle value).</p>
+<p><strong>Example 2 (even $n$):</strong> Scores: 60, 75, 80, 85. Median = $\frac{75 + 80}{2} = 77.5$.</p>
+<p>The median is <em>resistant to outliers</em>. If one score were 200 instead of 90, the mean would jump to $\frac{500}{5} = 100$, but the median stays at 80.</p>
+<h4 id="mode-most-frequent-value">Mode (Most Frequent Value)</h4>
+<p>The value that appears most often. A dataset can have one mode (unimodal), two modes (bimodal), or no mode.</p>
+<p><strong>Example:</strong> Scores: 75, 80, 80, 85, 85, 85, 90. Mode = 85 (appears three times).</p>
+<h3 id="measures-of-spread">Measures of Spread</h3>
+<h4 id="range">Range</h4>
+<p>$$\text{Range} = \max - \min$$</p>
+<p>Simplest measure, but influenced by outliers.</p>
+<p><strong>Example:</strong> Scores from 60 to 90. Range = 90 − 60 = 30.</p>
+<h4 id="variance">Variance</h4>
+<p>$$s^2 = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n-1}$$</p>
+<p>(Note: divide by $n-1$, not $n$, for a sample. This is called &quot;Bessel&#x27;s correction&quot; and makes the estimate unbiased.)</p>
+<p>Variance measures <em>average squared distance from the mean</em>. Units are squared (e.g., if measuring height in cm, variance is in cm²).</p>
+<p><strong>Example:</strong> Scores: 60, 75, 80, 85, 90. Mean = 78.</p>
+<ul><li>$(60 - 78)^2 = 324$</li><li>$(75 - 78)^2 = 9$</li><li>$(80 - 78)^2 = 4$</li><li>$(85 - 78)^2 = 49$</li><li>$(90 - 78)^2 = 144$</li></ul>
+<p>Sum = 530. Variance = $\frac{530}{4} = 132.5$.</p>
+<h4 id="standard-deviation">Standard Deviation</h4>
+<p>$$s = \sqrt{s^2}$$</p>
+<p>The square root of variance. More interpretable because it&#x27;s in the <em>same units</em> as the data. &quot;Typical deviation from the mean.&quot;</p>
+<p><strong>Example:</strong> $s = \sqrt{132.5} \approx 11.51$. Scores typically deviate by about 11.5 points from the mean.</p>
+<h4 id="interquartile-range-iqr">Interquartile Range (IQR)</h4>
+<p>First, define <strong>quartiles</strong>:</p>
+<ul><li><strong>Q1</strong> (first quartile): 25th percentile (25% of data below)</li><li><strong>Q2</strong> (second quartile): 50th percentile = median</li><li><strong>Q3</strong> (third quartile): 75th percentile (75% of data below)</li></ul>
+<p>$$\text{IQR} = Q3 - Q1$$</p>
+<p>The IQR is <em>resistant to outliers</em> (uses the middle 50% of data).</p>
+<h3 id="five-number-summary">Five-Number Summary</h3>
+<p>$$\text{Min}, \, Q1, \, \text{Median}, \, Q3, \, \text{Max}$$</p>
+<p>This gives a complete picture of the distribution in five numbers. Often visualised as a <strong>box plot</strong>.</p>
+<p><strong>Box Plot:</strong></p>
+<ul><li>A box spans from Q1 to Q3, with a line inside at the median</li><li>Whiskers extend from the box to the min and max (or to 1.5 × IQR beyond Q1/Q3 if there are outliers)</li><li>Outliers are plotted as individual points</li></ul>
+<p><strong>Identifying Outliers:</strong></p>
+<p>A value is an outlier if: $$x &lt; Q1 - 1.5 \times \text{IQR} \quad \text{or} \quad x &gt; Q3 + 1.5 \times \text{IQR}$$</p>
+<h3 id="distribution-shape">Distribution Shape</h3>
+<p>Examine a histogram or box plot to describe shape:</p>
+<ul><li><strong>Symmetric:</strong> Left and right sides mirror each other. Mean ≈ median.</li><li><strong>Skewed right:</strong> Long tail on the right. Mean &gt; median. (Examples: income, house prices)</li><li><strong>Skewed left:</strong> Long tail on the left. Mean &lt; median. (Examples: test scores with a ceiling)</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Comparing Two Datasets</strong></p>
+<p>Test scores for two classes:</p>
+<ul><li>Class A: 65, 72, 78, 82, 89 (Mean = 77.2, Median = 78, Std Dev ≈ 8.4)</li><li>Class B: 70, 75, 78, 80, 100 (Mean = 80.6, Median = 78, Std Dev ≈ 11.0)</li></ul>
+<p><strong>Interpretation:</strong> Class B has a higher mean (80.6 vs 77.2) — students performed better on average. But Class B also has higher standard deviation (11.0 vs 8.4) — scores are more spread out. The extreme score of 100 in Class B pulls up the mean but doesn&#x27;t affect the median. This suggests Class B has one standout student but otherwise similar performance to Class A.</p>
+<p><strong>Example 2: Five-Number Summary and Outliers</strong></p>
+<p>Salary data (in thousands): 35, 40, 42, 45, 48, 50, 52, 55, 58, 200</p>
+<p>Ordered: same.</p>
+<ul><li>Min = 35</li><li>Q1 = 42.5 (average of 42 and 43 — wait, 43 isn&#x27;t in the list. Q1 is the median of the lower half: 35, 40, 42, 45, 48. Q1 = 42.)</li><li>Median = (48 + 50) / 2 = 49</li><li>Q3 = 55 (median of upper half: 50, 52, 55, 58, 200. Q3 = 55.)</li><li>Max = 200</li></ul>
+<p>IQR = 55 − 42 = 13.</p>
+<p>Outlier threshold: $Q3 + 1.5 \times \text{IQR} = 55 + 1.5 \times 13 = 55 + 19.5 = 74.5$.</p>
+<p>The value 200 exceeds 74.5, so it&#x27;s an outlier — likely a CEO or high earner in a dataset of regular employees.</p>
+<p><strong>Example 3: Shape and Distribution</strong></p>
+<ul><li>Test scores (most students cluster in the 70s–80s, few score very low): symmetric or slightly skewed left (ceiling effect)</li><li>Income distribution (most people earn $30k–$60k, some earn $100k+): skewed right (right tail)</li><li>Grades (if the professor curves to A = 90+, B = 80+, etc.): skewed left (clustered at the ceiling)</li></ul>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Computing Descriptive Statistics:</strong> Data: 12, 15, 18, 22, 25, 28, 30.</li></ol>
+<ul><li>Find the mean, median, and mode.</li><li>Calculate the variance and standard deviation. (Hint: mean = 21.43.)</li><li>Find Q1, Q3, and IQR.</li></ul>
+<ol><li><strong>Identifying Outliers:</strong> Dataset: 100, 105, 110, 112, 115, 120, 125, 130, 500.</li></ol>
+<ul><li>Calculate the five-number summary.</li><li>Identify any outliers using the IQR method.</li><li>How does the presence of 500 affect the mean? The median?</li></ul>
+<ol><li><strong>Distribution Shape:</strong> A histogram shows test scores. The median is 75, but the mean is 82. Is the distribution skewed left or right? Why?</li></ol>
+<ol><li><strong>Box Plot Interpretation:</strong> Two box plots show delivery times (in days) for two shipping companies.</li></ol>
+<ul><li>Company A: Box from 2 to 4, median at 3, whiskers at 1 and 5.</li><li>Company B: Box from 3 to 7, median at 5, whiskers at 2 and 10.</li><li>Which company is more consistent? Which is faster? Explain.</li></ul>
+<ol><li><strong>Real Data:</strong> Heights of 10 students (cm): 160, 162, 165, 168, 170, 172, 175, 178, 180, 185.</li></ol>
+<ul><li>Compute mean, median, std dev.</li><li>Create a five-number summary.</li><li>Sketch a box plot.</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Misleading Statistics</strong></p>
+<p>Scenario: A politician claims that &quot;the average household income in the city is $95,000, proving that our policies work!&quot;</p>
+<p>But the distribution is:</p>
+<ul><li>80% of households earn $30,000–$60,000</li><li>15% earn $60,000–$100,000</li><li>5% earn $500,000+ (wealthy CEOs, entrepreneurs)</li></ul>
+<p><strong>Your Task:</strong></p>
+<ol><li>Calculate the mean income. Is the claim accurate?</li><li>What&#x27;s a better measure of &quot;typical&quot; income — mean or median? Why?</li><li>Why might the politician use the mean instead of the median?</li><li>What do the five-number summary and quartiles reveal about income inequality?</li></ol>
+<p>This is how statistics are misused in politics and marketing. Understanding centre, spread, and shape lets you see through the deception.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Real-World Scenario: Hospital Performance Evaluation</strong></p>
+<p>A hospital tracks patient wait times (minutes) in the emergency department. Over a month, 200 patients are treated:</p>
+<p>Data summary:</p>
+<ul><li>Mean = 47 minutes</li><li>Median = 35 minutes</li><li>Std Dev = 28 minutes</li><li>Min = 5, Q1 = 20, Q3 = 65, Max = 180</li></ul>
+<p><strong>Questions:</strong></p>
+<ol><li>Is the distribution symmetric or skewed? What does this tell you?</li><li>The hospital&#x27;s target is &quot;50% of patients seen within 45 minutes.&quot; Are they meeting this target? (Hint: what does Q2 tell you?)</li><li>Identify and describe the outliers (patients waiting 2+ hours).</li><li>Should the hospital report the mean or median to the public? Which is more representative of patient experience?</li><li>What operational changes (more staff, triage, etc.) might reduce wait times?</li></ol>
+<p>This scenario reflects real-world healthcare data. Hospitals use these statistics to identify bottlenecks and improve service.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p><strong>Describing data requires three perspectives:</strong></p>
+<p><strong>Centre (Location):</strong></p>
+<ul><li>Mean: sensitive to outliers, most familiar</li><li>Median: resistant to outliers, best for skewed data</li><li>Mode: useful for categorical data, identifies peaks</li></ul>
+<p><strong>Spread (Variability):</strong></p>
+<ul><li>Range: simple but influenced by outliers</li><li>Variance: average squared deviation from mean</li><li>Standard deviation: typical deviation from mean (same units as data)</li><li>IQR: resistant to outliers, captures middle 50%</li></ul>
+<p><strong>Shape (Distribution):</strong></p>
+<ul><li>Symmetric: mean ≈ median</li><li>Skewed right: mean &gt; median</li><li>Skewed left: mean &lt; median</li><li>Five-number summary and box plots visualise shape</li></ul>
+<p><strong>Why it Matters:</strong></p>
+<ul><li>Describes large datasets in simple, meaningful terms</li><li>Identifies outliers and unusual patterns</li><li>Enables comparison between groups</li><li>Reveals truth that raw data hides</li></ul>
+<p>Florence Nightingale proved that good data descriptions compel action and save lives. Today, statistics underpin medicine, engineering, business, public policy, and science. Master these tools, and you can understand the world.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> For the dataset 5, 7, 9, 11, 13, what is the mean?</p>
+<ul><li>8</li><li>9</li><li>10</li><li>11</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Mean = $\frac{5 + 7 + 9 + 11 + 13}{5} = \frac{45}{5} = 9$. The answer is 9.</p>
+</details>
+<p><strong>Question 2:</strong> For the dataset 10, 20, 30, 40, 50, 60, what is the median?</p>
+<ul><li>35</li><li>40</li><li>45</li><li>30</li></ul>
+<details>
+<summary>Answer</summary>
+<p>With 6 values (even), the median is the average of the 3rd and 4th values: $\frac{30 + 40}{2} = 35$. The answer is 35.</p>
+</details>
+<p><strong>Question 3:</strong> A dataset has Q1 = 20 and Q3 = 40. What is the IQR?</p>
+<ul><li>20</li><li>30</li><li>40</li><li>60</li></ul>
+<details>
+<summary>Answer</summary>
+<p>IQR = Q3 − Q1 = 40 − 20 = 20. The answer is 20.</p>
+</details>
+<p><strong>Question 4:</strong> A value is considered an outlier if it falls outside which range?</p>
+<ul><li>$Q1 - \text{IQR}$ to $Q3 + \text{IQR}$</li><li>$Q1 - 1.5 \times \text{IQR}$ to $Q3 + 1.5 \times \text{IQR}$</li><li>$\text{Min}$ to $\text{Max}$</li><li>$\mu - 3\sigma$ to $\mu + 3\sigma$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Values below $Q1 - 1.5 \times \text{IQR}$ or above $Q3 + 1.5 \times \text{IQR}$ are considered outliers. The answer is the second option.</p>
+</details>
+<p><strong>Question 5:</strong> A test score distribution has mean 70 and median 75. Is the distribution skewed left or right?</p>
+<ul><li>Skewed left (mean &lt; median)</li><li>Skewed right (mean &gt; median)</li><li>Symmetric (mean ≈ median)</li><li>Cannot determine</li></ul>
+<details>
+<summary>Answer</summary>
+<p>When mean &lt; median, the distribution is skewed left (a long tail pulls the mean down). The answer is &quot;Skewed left (mean &lt; median)&quot;.</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Descriptive_statistics" target="_blank" rel="noopener">Descriptive statistics — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Florence_Nightingale" target="_blank" rel="noopener">Florence Nightingale — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Box_plot" target="_blank" rel="noopener">Box plot — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Standard_deviation" target="_blank" rel="noopener">Standard deviation — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Quartile" target="_blank" rel="noopener">Quartile — Wikipedia</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-082-the-normal-distribution/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Normal Distribution</span></a><a class="pager-link pager-link--next" href="../../world-06-probability-statistics-and-uncertainty/ch-084-correlation-and-regression/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Correlation and Linear Regression</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

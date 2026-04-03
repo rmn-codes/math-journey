@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Six Trigonometric Functions — Math Journey</title>
+    <meta name="description" content="Tangent, secant, and the ratios that solve every triangle" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 4 · Chapter 55</p>
+        <h1>The Six Trigonometric Functions</h1>
+        <p class="hero-copy">Tangent, secant, and the ratios that solve every triangle</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>200 BCE – 1600 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Define all six trig functions using right triangles</li><li>Use SOH-CAH-TOA to solve right triangles</li><li>Find all six trig values given one</li><li>Apply angles of elevation and depression</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#angle-of-elevation-and-depression">Angle of Elevation and Depression</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#the-six-trigonometric-functions-right-triangle-form">The Six Trigonometric Functions (Right Triangle Form)</a></li><li class="toc-level-3"><a href="#reciprocal-relationships">Reciprocal Relationships</a></li><li class="toc-level-3"><a href="#unit-circle-form">Unit Circle Form</a></li><li class="toc-level-3"><a href="#finding-all-six-values-from-one">Finding All Six Values From One</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>In 9th century Baghdad, the mathematician al-Battani faced a challenge. The Greeks had developed sine and cosine by thinking about chords in circles. But al-Battani was surveying territory and measuring heights of mountains and buildings. For these practical problems, what mattered was not the vertical and horizontal coordinates of a point on a circle — what mattered was the <strong>slope</strong> of the line from the observer&#x27;s eye to the peak.</p>
+<p>That slope is what we now call the tangent function, and al-Battani&#x27;s introduction of it transformed trigonometry from a tool for astronomy into a tool for the entire world. When a surveyor sights up to a peak at an angle of 30 degrees, it&#x27;s the tangent of 30 degrees that tells the surveyor how high that peak is compared to its distance away.</p>
+<p>Today, we use six trigonometric functions, not just two. And they solve nearly every problem that involves angles, heights, distances, and slopes.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>The six trigonometric functions are the keys to solving triangles. Any time you have a triangle with one angle and one side known, you can find the rest. This applies to:</p>
+<ul><li>Surveyors measuring heights and distances</li><li>Engineers designing bridges and buildings</li><li>Pilots calculating headings and altitudes</li><li>Mapmakers projecting the curved Earth onto flat paper</li><li>Navigation systems in aircraft and ships</li><li>Video game programmers calculating where objects are and how they move</li></ul>
+<p>The six functions arise because a right triangle has three sides. Any pair of sides gives us a ratio, and those ratios — sine, cosine, tangent, and their reciprocals — are the six functions.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Al-Battani (c. 858–929 CE), working in the Islamic Golden Age, is credited with introducing the tangent function. He was an astronomer and mathematician, but his work was driven by the practical needs of surveying, navigation, and determining the direction of prayer toward Mecca, which requires precise angle and distance calculations.</p>
+<p>The Persian mathematician Abu al-Wafa (940–998 CE) further developed trigonometric tables and introduced all six functions, though not quite in the form we know today. He used the name &quot;tangent&quot; (meaning &quot;touching&quot;) because the tangent line touches the unit circle.</p>
+<p>By the 1600s, European mathematicians like Edmund Gunter had standardized notation and developed tables for all six functions. These tables were essential before calculators — sailors, surveyors, and engineers carried them everywhere.</p>
+<p>The memory device <strong>SOH-CAH-TOA</strong> is modern (20th century), but the mathematical relationships it encodes go back a thousand years.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>In a right triangle with an acute angle $\theta$:</p>
+<ul><li><strong>Opposite</strong> ($\text{opp}$): the side across from $\theta$</li><li><strong>Adjacent</strong> ($\text{adj}$): the side next to $\theta$ (but not the hypotenuse)</li><li><strong>Hypotenuse</strong> ($\text{hyp}$): the longest side, across from the right angle</li></ul>
+<p>The six trigonometric functions are ratios of these sides:</p>
+<p>$$\sin\theta = \frac{\text{opp}}{\text{hyp}}, \quad \cos\theta = \frac{\text{adj}}{\text{hyp}}, \quad \tan\theta = \frac{\text{opp}}{\text{adj}}$$</p>
+<p>$$\csc\theta = \frac{\text{hyp}}{\text{opp}}, \quad \sec\theta = \frac{\text{hyp}}{\text{adj}}, \quad \cot\theta = \frac{\text{adj}}{\text{opp}}$$</p>
+<p>Notice that the last three are reciprocals of the first three: $\csc\theta = \frac{1}{\sin\theta}$, and so on.</p>
+<p><strong>SOH-CAH-TOA</strong> is the mnemonic:</p>
+<ul><li><strong>S</strong>ine = <strong>O</strong>pposite/<strong>H</strong>ypotenuse</li><li><strong>C</strong>osine = <strong>A</strong>djacent/<strong>H</strong>ypotenuse</li><li><strong>T</strong>angent = <strong>O</strong>pposite/<strong>A</strong>djacent</li></ul>
+<h3 id="angle-of-elevation-and-depression">Angle of Elevation and Depression</h3>
+<p><strong>Angle of elevation</strong> is the angle above the horizontal when looking up at an object.</p>
+<p><strong>Angle of depression</strong> is the angle below the horizontal when looking down at an object.</p>
+<p>These angles are equal by alternate interior angles if you imagine the horizontal line from the observer and the line of sight forming angles with a horizontal line at the distant object.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="the-six-trigonometric-functions-right-triangle-form">The Six Trigonometric Functions (Right Triangle Form)</h3>
+<p>For an acute angle $\theta$ in a right triangle:</p>
+<p>| Function | Ratio | |----------|-------| | $\sin\theta$ | $\frac{\text{opposite}}{\text{hypotenuse}}$ | | $\cos\theta$ | $\frac{\text{adjacent}}{\text{hypotenuse}}$ | | $\tan\theta$ | $\frac{\text{opposite}}{\text{adjacent}}$ | | $\csc\theta$ | $\frac{\text{hypotenuse}}{\text{opposite}}$ | | $\sec\theta$ | $\frac{\text{hypotenuse}}{\text{adjacent}}$ | | $\cot\theta$ | $\frac{\text{adjacent}}{\text{opposite}}$ |</p>
+<h3 id="reciprocal-relationships">Reciprocal Relationships</h3>
+<p>$$\csc\theta = \frac{1}{\sin\theta}, \quad \sec\theta = \frac{1}{\cos\theta}, \quad \cot\theta = \frac{1}{\tan\theta}$$</p>
+<h3 id="unit-circle-form">Unit Circle Form</h3>
+<p>Using the unit circle, for any angle $\theta$ (not just acute angles):</p>
+<p>$$\sin\theta = y\text{-coordinate}, \quad \cos\theta = x\text{-coordinate}, \quad \tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{y}{x}$$</p>
+<p>(when $\cos\theta \neq 0$)</p>
+<h3 id="finding-all-six-values-from-one">Finding All Six Values From One</h3>
+<p>If you know one trig function value and the quadrant, you can find all six. Use the Pythagorean identity and reciprocal relationships.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: In a right triangle, the side opposite $\theta$ is 5 and the hypotenuse is 13. Find all six trig values.</strong></p>
+<p>First, find the adjacent side using the Pythagorean theorem: $$\text{adj}^2 + 5^2 = 13^2$$ $$\text{adj}^2 = 169 - 25 = 144$$ $$\text{adj} = 12$$</p>
+<p>Now find each ratio: $$\sin\theta = \frac{5}{13}, \quad \cos\theta = \frac{12}{13}, \quad \tan\theta = \frac{5}{12}$$ $$\csc\theta = \frac{13}{5}, \quad \sec\theta = \frac{13}{12}, \quad \cot\theta = \frac{12}{5}$$</p>
+<p><strong>Example 2: A ladder leans against a wall. The ladder is 20 feet long and makes a $60°$ angle with the ground. How high up the wall does the ladder reach?</strong></p>
+<p>The ladder is the hypotenuse (20 feet). The angle with the ground is $60°$. The height is the opposite side.</p>
+<p>$$\sin 60° = \frac{\text{height}}{20}$$ $$\frac{\sqrt{3}}{2} = \frac{\text{height}}{20}$$ $$\text{height} = 10\sqrt{3} \approx 17.3 \text{ feet}$$</p>
+<p><strong>Example 3: From a point on level ground 30 meters from the base of a building, the angle of elevation to the top is $55°$. How tall is the building?</strong></p>
+<p>The adjacent side (horizontal distance) is 30 meters. The angle of elevation is $55°$. We want the opposite side (height).</p>
+<p>$$\tan 55° = \frac{\text{height}}{30}$$ $$\text{height} = 30 \tan 55° \approx 30 \times 1.428 \approx 42.8 \text{ meters}$$</p>
+<p><strong>Example 4: If $\sin\theta = \frac{2}{3}$ and $\theta$ is acute, find the other five trig values.</strong></p>
+<p>Use the Pythagorean identity to find $\cos\theta$: $$\cos^2\theta = 1 - \sin^2\theta = 1 - \frac{4}{9} = \frac{5}{9}$$ $$\cos\theta = \frac{\sqrt{5}}{3}$$ (positive since $\theta$ is acute)</p>
+<p>Now find the others: $$\tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{2/3}{\sqrt{5}/3} = \frac{2}{\sqrt{5}} = \frac{2\sqrt{5}}{5}$$ $$\csc\theta = \frac{1}{\sin\theta} = \frac{3}{2}, \quad \sec\theta = \frac{1}{\cos\theta} = \frac{3}{\sqrt{5}} = \frac{3\sqrt{5}}{5}, \quad \cot\theta = \frac{1}{\tan\theta} = \frac{\sqrt{5}}{2}$$</p>
+<p><strong>Example 5: Solve the right triangle: one leg is 7, the hypotenuse is 12. Find the other leg and both acute angles.</strong></p>
+<p>$$\text{leg}^2 + 7^2 = 12^2$$ $$\text{leg}^2 = 144 - 49 = 95$$ $$\text{leg} = \sqrt{95} \approx 9.75$$</p>
+<p>For one angle $\theta$: $$\sin\theta = \frac{7}{12}$$ $$\theta = \arcsin\left(\frac{7}{12}\right) \approx 35.7°$$</p>
+<p>The other acute angle is $90° - 35.7° = 54.3°$.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>In a right triangle, the opposite side is 8 and the hypotenuse is 17. Find $\sin\theta$, $\cos\theta$, and $\tan\theta$.</li><li>If $\sin\theta = \frac{3}{5}$ and $\theta$ is acute, find the other five trig values.</li><li>A ramp rises 5 feet vertically over a horizontal distance of 12 feet. What is the angle of the ramp?</li><li>From a point 50 feet from the base of a tree, the angle of elevation to the top is $35°$. How tall is the tree?</li><li>Find $\csc 45°$ and $\sec 60°$.</li><li>In a right triangle, one leg is 6 and the hypotenuse is 10. Find both acute angles.</li><li>Verify that $\tan\theta = \frac{\sin\theta}{\cos\theta}$ for $\theta = 30°$.</li><li>A ship&#x27;s navigator sees a lighthouse at an angle of depression of $20°$. The lighthouse is 100 feet tall. How far away is the ship?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Explain why tangent can be thought of as a slope.</strong> In a right triangle, tangent is $\text{opposite}/\text{adjacent}$. How is this the same as &quot;rise over run&quot;? What does the steepness of a line have to do with a trigonometric function?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>A surveyor is measuring the height of a cliff. She stands at a point 80 meters from the base of the cliff and measures the angle of elevation to the top as $42°$. What is the height of the cliff?</p>
+<p><strong>Solution:</strong> The adjacent side (horizontal distance) is 80 meters. The angle is $42°$. The opposite side (height) is what we want.</p>
+<p>$$\tan 42° = \frac{\text{height}}{80}$$ $$\text{height} = 80 \tan 42°$$ $$\text{height} \approx 80 \times 0.900 \approx 72 \text{ meters}$$</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>SOH-CAH-TOA</strong>: $\sin = \frac{\text{opp}}{\text{hyp}}$, $\cos = \frac{\text{adj}}{\text{hyp}}$, $\tan = \frac{\text{opp}}{\text{adj}}$</li><li><strong>Reciprocals</strong>: $\csc = \frac{1}{\sin}$, $\sec = \frac{1}{\cos}$, $\cot = \frac{1}{\tan}$</li><li><strong>Tangent as slope</strong>: $\tan\theta = \text{rise/run} = \frac{\sin\theta}{\cos\theta}$</li><li><strong>Solving right triangles</strong>: Use trig functions and the Pythagorean theorem to find missing sides and angles.</li><li><strong>Angles of elevation and depression</strong>: Equal by alternate interior angles.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>In a right triangle, $\sin\theta = \frac{7}{25}$. What is $\cos\theta$?</li></ol>
+<ul><li>$\frac{7}{24}$</li><li>$\frac{24}{25}$</li><li>$\frac{25}{24}$</li><li>$\frac{7}{25}$</li></ul>
+<ol><li>A ladder is 15 feet long and leans at a $50°$ angle with the ground. How high does it reach?</li></ol>
+<ul><li>$15 \sin 50°$</li><li>$15 \cos 50°$</li><li>$15 \tan 50°$</li><li>$\frac{15}{\sin 50°}$</li></ul>
+<ol><li>What is $\tan 60°$?</li></ol>
+<ul><li>$\frac{1}{2}$</li><li>$\frac{\sqrt{3}}{2}$</li><li>$\sqrt{3}$</li><li>$\frac{2}{\sqrt{3}}$</li></ul>
+<ol><li>If the angle of elevation from an observer to an object is $30°$, what is the angle of depression from the object to the observer?</li></ol>
+<ul><li>$30°$</li><li>$60°$</li><li>$90°$</li><li>$150°$</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li><strong>$\frac{24}{25}$</strong> — Use Pythagorean identity: $\cos^2\theta = 1 - \sin^2\theta = 1 - \frac{49}{625} = \frac{576}{625}$, so $\cos\theta = \frac{24}{25}$ (positive in Quadrant I).</li></ol>
+<ol><li><strong>$15 \sin 50°$</strong> — The height is the opposite side, and $\sin 50° = \frac{\text{opposite}}{15}$, so height $= 15\sin 50°$.</li></ol>
+<ol><li><strong>$\sqrt{3}$</strong> — $\tan 60° = \frac{\sin 60°}{\cos 60°} = \frac{\sqrt{3}/2}{1/2} = \sqrt{3}$.</li></ol>
+<ol><li><strong>$30°$</strong> — Angle of depression equals angle of elevation by alternate interior angles.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Al-Battani" target="_blank" rel="noopener">Al-Battani - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Trigonometric_functions" target="_blank" rel="noopener">Trigonometric Functions - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Mnemonics_in_mathematics#Trigonometry" target="_blank" rel="noopener">SOH-CAH-TOA - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Right_triangle" target="_blank" rel="noopener">Right Triangle - Wikipedia</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-054-the-unit-circle/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Unit Circle — Sine and Cosine</span></a><a class="pager-link pager-link--next" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-056-graphs-of-sine-and-cosine/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Graphs of Sine and Cosine</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

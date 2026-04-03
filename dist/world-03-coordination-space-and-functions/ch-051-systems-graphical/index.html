@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Systems of Equations — A Graphical View — Math Journey</title>
+    <meta name="description" content="Where two lines meet — and what it means when they don&#x27;t" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 3 · Chapter 51</p>
+        <h1>Systems of Equations — A Graphical View</h1>
+        <p class="hero-copy">Where two lines meet — and what it means when they don&#x27;t</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>core</span>
+          
+          <span>1800s, Europe</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Solve systems graphically by finding intersection points</li><li>Identify consistent, inconsistent, and dependent systems</li><li>Apply substitution and elimination</li><li>Model real situations with systems</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Two trains leave from different cities, traveling toward each other at different speeds. One leaves City A at 60 mph heading east. The other leaves City B at 50 mph heading west. The cities are 220 miles apart.</p>
+<p>When will they meet? Where?</p>
+<p>This is a system of equations—two constraints, one question. The graphical answer is crystal clear: where the two distance-time lines cross. At that point, both trains are at the same location at the same time.</p>
+<p>Systems of equations appear everywhere: business (break-even analysis), physics (collisions), economics (supply and demand), and engineering. This chapter teaches you to visualize and solve them.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Systems of equations let you:</p>
+<ul><li><strong>Solve real constraints together:</strong> Business must satisfy cost AND profit goals. You can&#x27;t ignore one.</li><li><strong>Find breaking points:</strong> Where does cost equal revenue (break-even)? Where do supply and demand balance?</li><li><strong>Model complex situations:</strong> A single equation often isn&#x27;t enough. Multiple equations capture the full picture.</li><li><strong>Verify solutions:</strong> If your answer doesn&#x27;t satisfy both equations, it&#x27;s wrong. The graph shows this immediately.</li></ul>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The graphical method of solving systems emerged in the 1600s with the development of coordinate geometry by Descartes and Fermat. But it was the 1800s—the industrial age—that gave systems of equations their practical power. Engineers and economists used systems to optimize production, manage resources, and plan transportation networks. Today, systems of equations are solved by computers in real time: traffic lights adjust based on flow (a system), airlines optimize routes (a massive system), and climate models involve millions of interacting equations.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>system of linear equations</strong> is a collection of two or more linear equations. The solution is a set of values that satisfies every equation simultaneously.</p>
+<p>Consider a system of two equations with two unknowns: $$\begin{cases} 2x + y = 5 \\ x - y = 1 \end{cases}$$</p>
+<p><strong>Graphically:</strong> Each equation represents a line. The solution is the point where the lines intersect.</p>
+<p><strong>Three possible outcomes:</strong></p>
+<ol><li><strong>One solution:</strong> The lines cross at exactly one point (consistent and independent). The system has a unique solution.</li></ol>
+<ol><li><strong>No solution:</strong> The lines are parallel and never meet (inconsistent). There&#x27;s no value of $x$ and $y$ that satisfies both equations.</li></ol>
+<ol><li><strong>Infinitely many solutions:</strong> The lines are identical—the same line written two ways (consistent and dependent). Every point on the line is a solution.</li></ol>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>System of linear equations:</strong> Two or more linear equations involving the same variables.</p>
+<p><strong>Solution of a system:</strong> A set of values for the variables that makes every equation true simultaneously.</p>
+<p><strong>Consistent system:</strong> A system with at least one solution.</p>
+<p><strong>Inconsistent system:</strong> A system with no solution (parallel lines).</p>
+<p><strong>Independent equations:</strong> Equations that are not scalar multiples of each other. They represent different lines.</p>
+<p><strong>Dependent equations:</strong> Equations that are scalar multiples of each other. They represent the same line.</p>
+<p><strong>Graphical solution:</strong> Plot both lines on a coordinate plane. The solution is the intersection point (if it exists).</p>
+<p><strong>Algebraic solution by substitution:</strong></p>
+<ol><li>Solve one equation for one variable.</li><li>Substitute that expression into the other equation.</li><li>Solve for the remaining variable.</li><li>Back-substitute to find the other variable.</li></ol>
+<p><strong>Algebraic solution by elimination:</strong></p>
+<ol><li>Multiply one or both equations by constants so that one variable has the same coefficient (with opposite signs).</li><li>Add or subtract the equations to eliminate that variable.</li><li>Solve for the remaining variable.</li><li>Back-substitute to find the other variable.</li></ol>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Graphical solution</strong></p>
+<p>Solve the system graphically: $$\begin{cases} y = 2x - 1 \\ y = -x + 2 \end{cases}$$</p>
+<p>Plot the first line: $y = 2x - 1$ has slope 2 and $y$-intercept $-1$. Plot the second line: $y = -x + 2$ has slope $-1$ and $y$-intercept $2$.</p>
+<p>The lines intersect at the point $(1, 1)$.</p>
+<p><strong>Verify:</strong> $y = 2(1) - 1 = 1$ ✓ and $y = -(1) + 2 = 1$ ✓</p>
+<p>So the solution is $(x, y) = (1, 1)$.</p>
+<p><strong>Example 2: Substitution method</strong></p>
+<p>Solve the system: $$\begin{cases} 3x + y = 7 \\ 2x - y = 3 \end{cases}$$</p>
+<p>From the first equation, solve for $y$: $$y = 7 - 3x$$</p>
+<p>Substitute into the second equation: $$2x - (7 - 3x) = 3$$ $$2x - 7 + 3x = 3$$ $$5x = 10$$ $$x = 2$$</p>
+<p>Back-substitute to find $y$: $$y = 7 - 3(2) = 7 - 6 = 1$$</p>
+<p>The solution is $(x, y) = (2, 1)$.</p>
+<p><strong>Example 3: Elimination method</strong></p>
+<p>Solve the system: $$\begin{cases} 2x + 3y = 12 \\ 3x + 2y = 13 \end{cases}$$</p>
+<p>Multiply the first equation by 3: $6x + 9y = 36$. Multiply the second equation by $-2$: $-6x - 4y = -26$.</p>
+<p>Add the equations: $$(6x + 9y) + (-6x - 4y) = 36 - 26$$ $$5y = 10$$ $$y = 2$$</p>
+<p>Substitute back into the first equation: $$2x + 3(2) = 12$$ $$2x + 6 = 12$$ $$2x = 6$$ $$x = 3$$</p>
+<p>The solution is $(x, y) = (3, 2)$.</p>
+<p><strong>Example 4: No solution (parallel lines)</strong></p>
+<p>Solve the system: $$\begin{cases} y = 2x + 1 \\ y = 2x - 3 \end{cases}$$</p>
+<p>Both lines have slope 2 but different $y$-intercepts. They are parallel and never meet. There is no solution.</p>
+<p><strong>Example 5: Infinitely many solutions (dependent equations)</strong></p>
+<p>Solve the system: $$\begin{cases} 2x + y = 4 \\ 4x + 2y = 8 \end{cases}$$</p>
+<p>Notice the second equation is exactly 2 times the first. They represent the same line. Any point on the line $2x + y = 4$ is a solution. There are infinitely many solutions.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<p>Solve each system using any method (graphical, substitution, or elimination). Always verify your solution in both equations.</p>
+<ol><li>$\begin{cases} x + y = 5 \\ 2x - y = 4 \end{cases}$</li></ol>
+<ul><li>Try elimination by adding the equations.</li><li>Check your solution: does $(x, y)$ satisfy both?</li></ul>
+<ol><li>$\begin{cases} y = 3x - 2 \\ y = -x + 6 \end{cases}$</li></ol>
+<ul><li>These are already solved for $y$. What does this tell you?</li><li>Use substitution or recognize these are lines in slope-intercept form.</li></ul>
+<ol><li>$\begin{cases} 2x + 3y = 6 \\ 4x - 3y = 12 \end{cases}$</li></ol>
+<ul><li>Notice the $y$ terms: $+3y$ and $-3y$. Elimination is quick.</li><li>Solve, then back-substitute.</li></ul>
+<ol><li>$\begin{cases} x - 2y = 3 \\ 3x - 6y = 9 \end{cases}$</li></ol>
+<ul><li>Multiply the first equation by 3. What do you get?</li><li>What type of system is this? (Consistent and dependent? Inconsistent?)</li></ul>
+<ol><li>$\begin{cases} y = x + 1 \\ y = x - 2 \end{cases}$</li></ol>
+<ul><li>Compare the equations carefully.</li><li>What is the relationship between the lines? What type of system is this?</li></ul>
+<ol><li><strong>Challenge:</strong> $\begin{cases} 3x + 2y = 11 \\ x - y = 2 \end{cases}$</li></ol>
+<ul><li>Solve using substitution: from the second equation, express $x$ in terms of $y$.</li><li>Substitute into the first and solve.</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Coffee Shop Problem:</strong></p>
+<p>Two coffee shops open on the same street. Shop A charges $3 per coffee with a $200 daily overhead cost. Shop B charges $2.50 per coffee with a $100 daily overhead cost. Their daily revenue functions are:</p>
+<ul><li>Shop A: $R_A(x) = 3x - 200$ (where $x$ is cups sold)</li><li>Shop B: $R_B(x) = 2.5x - 100$</li></ul>
+<p>At what point (if ever) do the two shops have equal daily revenue? Interpret your answer. If you were an investor, which shop would you choose, and why?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Real-world example: Break-even analysis</strong></p>
+<p>A small publisher wants to print a new book. The fixed costs (design, setup) are $5,000. Each book costs $8 to print. They sell each book for $20.</p>
+<p><strong>Cost function:</strong> $C(x) = 5000 + 8x$ (fixed + variable cost) <strong>Revenue function:</strong> $R(x) = 20x$ (price × quantity)</p>
+<p>Solve the system: $$\begin{cases} y = 5000 + 8x \\ y = 20x \end{cases}$$</p>
+<p>Subtract: $0 = 5000 + 8x - 20x = 5000 - 12x$</p>
+<p>So $x = \frac{5000}{12} \approx 417$ books.</p>
+<p>The break-even point is at 417 books. Below this, they lose money. Above this, they profit. This single insight—the intersection—determines the business strategy.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Systems of equations capture multiple constraints simultaneously. The graphical method shows the answer visually: it&#x27;s where the lines meet. Algebraically, substitution and elimination are systematic tools for finding that intersection. Three outcomes exist: one solution (consistent, independent), no solution (inconsistent), or infinitely many (consistent, dependent). Understanding systems is essential for modeling real-world situations where multiple conditions must be satisfied at once.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> What does the solution to a system of two linear equations represent graphically?</p>
+<ul><li>The $x$-intercept of one line</li><li>The point where the two lines intersect</li><li>The slope of the average line</li><li>The area between the two lines</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The point where the two lines intersect</p>
+</details>
+<p><strong>Question 2:</strong> A system has two parallel lines with different $y$-intercepts. Which statement is true?</p>
+<ul><li>The system is consistent and independent</li><li>The system is consistent and dependent</li><li>The system is inconsistent</li><li>The system has infinitely many solutions</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The system is inconsistent</p>
+</details>
+<p><strong>Question 3:</strong> Using elimination, solve: $\begin{cases} 2x + y = 7 \\ x - y = 2 \end{cases}$</p>
+<ul><li>$(x, y) = (3, 1)$</li><li>$(x, y) = (1, 5)$</li><li>$(x, y) = (2, 3)$</li><li>$(x, y) = (4, -1)$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$(x, y) = (3, 1)$</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Khan Academy: &quot;Systems of Equations&quot; — https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations</li><li>Wikipedia: &quot;System of Linear Equations&quot; — https://en.wikipedia.org/wiki/System_of_linear_equations</li><li>OpenStax: &quot;Algebra&quot; Chapter 4 — https://openstax.org/books/algebra-and-trigonometry/pages/4-1-systems-of-linear-equations-two-variables</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-03-coordination-space-and-functions/ch-050-inverse-functions/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Inverse Functions</span></a><a class="pager-link pager-link--next" href="../../world-03-coordination-space-and-functions/ch-052-modeling-with-functions/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Modeling with Functions</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

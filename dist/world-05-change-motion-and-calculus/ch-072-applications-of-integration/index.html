@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Applications of Integration — Math Journey</title>
+    <meta name="description" content="Area between curves, accumulated distance, and the volume of a solid" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 5 · Chapter ?</p>
+        <h1>Applications of Integration</h1>
+        <p class="hero-copy">Area between curves, accumulated distance, and the volume of a solid</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1700s–present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Find area between two curves</li><li>Distinguish net displacement from total distance</li><li>Compute work done by a variable force</li><li>Apply integration to accumulation problems</li><li>Introduce volume of revolution</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>In the 1960s, engineers at NASA face a puzzle. The Saturn V rocket that will carry astronauts to the Moon has a fuel tank with curved walls. The tank does not have a simple geometric shape — neither a cylinder nor a cone nor a sphere.</p>
+<p>They must know the volume to the litre. Too little fuel, and the rocket doesn&#x27;t reach the Moon. Too much, and the rocket cannot accelerate fast enough.</p>
+<p>How do you find the volume of a curved tank?</p>
+<p>Integration.</p>
+<p>If you know the cross-sectional area at each height, you can integrate those areas along the height to get the total volume. The method is exactly the same as finding area under a curve, extended to three dimensions.</p>
+<p>Without this technique, the Saturn V could not have been designed. Without integration, humans would not have walked on the Moon.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Integration is not just for finding areas. It measures any quantity that accumulates from a changing rate.</p>
+<p>When a doctor needs the total dose of a drug that accumulates in a patient&#x27;s bloodstream, integration computes it. When an engineer designs a bridge and needs to know the total weight of a non-uniform beam, integration gives the answer. When an economist calculates consumer surplus — the total benefit consumers receive beyond what they pay — integration is the tool.</p>
+<p>Every time something accumulates at a non-constant rate, integration is there.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Early calculus textbooks focused on abstract problems: find the area under $y = x^2$ from 0 to 1. But as engineers and scientists began applying calculus in the 1700s and 1800s, they found that the real world demanded more.</p>
+<p>Volumes of revolution were studied by Pappus in ancient times using geometry. But with integration, Euler and others showed that these volumes could be computed using integrals — a much more systematic approach. Work, a fundamental concept in physics, was formalised using integration by scientists studying mechanics. Applications multiplied as calculus became the language of science and engineering.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Area Between Two Curves:</strong></p>
+<p>If two functions $f(x) \geq g(x)$ on an interval $[a, b]$, the area between them is: $$A = \int_a^b [f(x) - g(x)]\,dx$$</p>
+<p>First, find where the curves intersect by solving $f(x) = g(x)$. Then split the integration into regions where one curve is consistently above the other.</p>
+<p><strong>Net Displacement vs. Total Distance:</strong></p>
+<p>If an object moves with velocity $v(t)$, the <strong>net displacement</strong> is: $$s = \int_a^b v(t)\,dt$$</p>
+<p>This is positive or negative depending on direction. The <strong>total distance</strong> is: $$d = \int_a^b |v(t)|\,dt$$</p>
+<p>For example, a car that goes 10 km north, then 10 km south has zero net displacement but 20 km of total distance.</p>
+<p><strong>Work:</strong></p>
+<p>When a variable force $F(x)$ acts on an object, moving it from $x = a$ to $x = b$, the work done is: $$W = \int_a^b F(x)\,dx$$</p>
+<p>If the force is in Newtons and position is in metres, work is in joules.</p>
+<p><strong>Volume of Revolution (Introduction):</strong></p>
+<p>When a region is rotated around an axis, it sweeps out a solid. The volume can be found using the <strong>disk method</strong>: slice the solid perpendicular to the axis of rotation, each slice being a disk of radius $r(x)$ and thickness $dx$. The volume is: $$V = \pi \int_a^b [r(x)]^2\,dx$$</p>
+<p><strong>Accumulation:</strong></p>
+<p>When a quantity has a rate of change $r(t)$, the total accumulated quantity from $t = a$ to $t = b$ is: $$Q = \int_a^b r(t)\,dt$$</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Area Between Curves:</strong> The integral of the difference between two functions, where the upper function minus the lower function is integrated across the interval where both are defined.</p>
+<p><strong>Net Displacement:</strong> The integral of velocity, accounting for direction. Positive velocity adds to displacement; negative velocity subtracts.</p>
+<p><strong>Total Distance:</strong> The integral of the absolute value of velocity, always non-negative, measuring total path length regardless of direction.</p>
+<p><strong>Work:</strong> The integral of force with respect to position, measuring the energy transferred when a force acts over a distance.</p>
+<p><strong>Disk Method:</strong> A technique for finding volumes of revolution by integrating the areas of cross-sectional disks perpendicular to the axis of rotation.</p>
+<p><strong>Consumer Surplus:</strong> The difference between what consumers are willing to pay and what they actually pay; equals $\int_0^{q^<em>} [D(q) - p^</em>]\,dq$ where $D(q)$ is demand, $q^<em>$ is equilibrium quantity, and $p^</em>$ is equilibrium price.</p>
+<p><strong>Producer Surplus:</strong> The difference between what producers receive and their minimum willingness to sell; equals $\int_0^{q^<em>} [p^</em> - S(q)]\,dq$ where $S(q)$ is supply.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Area Between Two Curves</strong></p>
+<p>Find the area between $f(x) = 4 - x^2$ and $g(x) = x + 2$ from $x = -2$ to $x = 2$.</p>
+<p>First, determine which is on top. At $x = 0$: $f(0) = 4$ and $g(0) = 2$, so $f(x) &gt; g(x)$.</p>
+<p>Check intersection: $4 - x^2 = x + 2 \Rightarrow x^2 + x - 2 = 0 \Rightarrow (x+2)(x-1) = 0$.</p>
+<p>So they intersect at $x = -2$ and $x = 1$.</p>
+<p>On $[-2, 1]$: $f(x) \geq g(x)$. On $[1, 2]$: $g(x) &gt; f(x)$.</p>
+<p>$$A = \int_{-2}^1 [(4-x^2) - (x+2)]\,dx + \int_1^2 [(x+2) - (4-x^2)]\,dx$$</p>
+<p>$$= \int_{-2}^1 (2 - x - x^2)\,dx + \int_1^2 (x^2 + x - 2)\,dx$$</p>
+<p>$$= \left[2x - \frac{x^2}{2} - \frac{x^3}{3}\right]_{-2}^1 + \left[\frac{x^3}{3} + \frac{x^2}{2} - 2x\right]_1^2$$</p>
+<p>At $x = 1$: $2 - \frac{1}{2} - \frac{1}{3} = \frac{7}{6}$. At $x = -2$: $-4 - 2 + \frac{8}{3} = \frac{-2}{3}$. First integral: $\frac{7}{6} - \left(\frac{-2}{3}\right) = \frac{11}{6}$.</p>
+<p>At $x = 2$: $\frac{8}{3} + 2 - 4 = \frac{2}{3}$. At $x = 1$: $\frac{1}{3} + \frac{1}{2} - 2 = \frac{-7}{6}$. Second integral: $\frac{2}{3} - \left(\frac{-7}{6}\right) = \frac{11}{6}$.</p>
+<p>Total area: $\frac{11}{6} + \frac{11}{6} = \frac{11}{3}$.</p>
+<p><strong>Example 2: Net Displacement vs. Total Distance</strong></p>
+<p>A particle&#x27;s velocity is $v(t) = t^2 - 4$ m/s for $0 \leq t \leq 3$.</p>
+<p>Velocity is zero at $t = 2$.</p>
+<ul><li>For $0 \leq t &lt; 2$: $v(t) &lt; 0$ (moving backward).</li><li>For $2 &lt; t \leq 3$: $v(t) &gt; 0$ (moving forward).</li></ul>
+<p>Net displacement: $$s = \int_0^3 (t^2 - 4)\,dt = \left[\frac{t^3}{3} - 4t\right]_0^3 = 9 - 12 = -3 \text{ m}$$</p>
+<p>Total distance (split at $t = 2$): $$d = \int_0^2 |t^2 - 4|\,dt + \int_2^3 |t^2 - 4|\,dt = \int_0^2 (4 - t^2)\,dt + \int_2^3 (t^2 - 4)\,dt$$</p>
+<p>$$= \left[4t - \frac{t^3}{3}\right]_0^2 + \left[\frac{t^3}{3} - 4t\right]_2^3 = \left(8 - \frac{8}{3}\right) + \left(9 - 12 - \frac{8}{3} + 8\right)$$</p>
+<p>$$= \frac{16}{3} + \frac{5}{3} = 7 \text{ m}$$</p>
+<p>The particle ends 3 metres behind where it started but travels a total of 7 metres.</p>
+<p><strong>Example 3: Work Done by a Variable Force</strong></p>
+<p>A spring requires force $F(x) = 3x$ Newtons to stretch it $x$ metres from its natural length. How much work is done to stretch the spring from $x = 0$ to $x = 2$ metres?</p>
+<p>$$W = \int_0^2 3x\,dx = \left[\frac{3x^2}{2}\right]_0^2 = 6 \text{ joules}$$</p>
+<p><strong>Example 4: Volume of a Cone (Disk Method)</strong></p>
+<p>A cone has height $h = 5$ and base radius $r = 3$. Find its volume using integration.</p>
+<p>At height $x$ from the tip, the radius is proportional to height: $r(x) = \frac{3x}{5}$.</p>
+<p>$$V = \pi \int_0^5 \left(\frac{3x}{5}\right)^2 dx = \pi \int_0^5 \frac{9x^2}{25}\,dx = \frac{9\pi}{25} \left[\frac{x^3}{3}\right]_0^5 = \frac{9\pi}{25} \cdot \frac{125}{3} = 15\pi$$</p>
+<p>This matches the geometric formula $V = \frac{1}{3}\pi r^2 h = \frac{1}{3}\pi(3)^2(5) = 15\pi$. ✓</p>
+<p><strong>Example 5: Total Distance with Multiple Sign Changes</strong></p>
+<p>A particle&#x27;s velocity is $v(t) = \sin(t)$ m/s for $0 \leq t \leq 2\pi$.</p>
+<p>The velocity is zero at $t = 0, \pi, 2\pi$.</p>
+<p>Net displacement: $$s = \int_0^{2\pi} \sin(t)\,dt = [-\cos(t)]_0^{2\pi} = [-\cos(2\pi)] - [-\cos(0)] = -1 + 1 = 0$$</p>
+<p>The particle returns to its starting position.</p>
+<p>Total distance: $$d = \int_0^{\pi} \sin(t)\,dt + \int_{\pi}^{2\pi} |\sin(t)|\,dt = \int_0^{\pi} \sin(t)\,dt + \int_{\pi}^{2\pi} (-\sin(t))\,dt$$</p>
+<p>$$= [-\cos(t)]_0^{\pi} + [\cos(t)]_{\pi}^{2\pi} = [1 - (-1)] + [(-1) - 1] = 2 + (-2) = 4 \text{ m}$$</p>
+<p>Wait, let me recalculate: $\int_{\pi}^{2\pi} (-\sin t)\,dt = [\cos t]_{\pi}^{2\pi} = 1 - (-1) = 2$.</p>
+<p>Total: $2 + 2 = 4$ m.</p>
+<p><strong>Example 6: Applied Problem — Revenue and Profit</strong></p>
+<p>A company&#x27;s marginal revenue is $MR(x) = 200 - 2x$ dollars per unit, where $x$ is the number of units sold.</p>
+<p>The total revenue from selling $x$ units (starting from 0 sales) is: $$R(x) = \int_0^x (200 - 2t)\,dt = [200t - t^2]_0^x = 200x - x^2$$</p>
+<p>At $x = 100$ units: $$R(100) = 200(100) - 100^2 = 20,000 - 10,000 = \$10,000$$</p>
+<p>This integral converts the rate of change (marginal revenue) into the total quantity (total revenue).</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Find the area between $y = x$ and $y = x^2$ from $x = 0$ to $x = 1$.</li></ol>
+<ul><li>$\frac{1}{6}$</li><li>$\frac{1}{3}$</li><li>$\frac{1}{2}$</li><li>$1$</li></ul>
+<ol><li>A car&#x27;s velocity is $v(t) = 3 - t$ m/s for $0 \leq t \leq 4$. What is its net displacement?</li></ol>
+<ul><li>4 m</li><li>2 m</li><li>-4 m</li><li>6 m</li></ul>
+<ol><li>Which integral correctly represents the total distance travelled for the car in question 2?</li></ol>
+<ul><li>$\int_0^4 (3-t)\,dt$</li><li>$\int_0^4 |3-t|\,dt$</li><li>$\int_0^3 (3-t)\,dt + \int_3^4 (t-3)\,dt$</li><li>Both (b) and (c)</li></ul>
+<ol><li>A force of $F(x) = 2x + 1$ Newtons moves an object from $x = 0$ to $x = 3$ metres. What is the work done?</li></ol>
+<ul><li>6 J</li><li>12 J</li><li>15 J</li><li>18 J</li></ul>
+<ol><li>When finding volume by the disk method, the term $\pi [r(x)]^2$ represents?</li></ol>
+<ul><li>The volume of a single disk</li><li>The area of the circular cross-section at position $x$</li><li>The radius of the solid at position $x$</li><li>The circumference of the disk</li></ul>
+<ol><li>For a function that oscillates both above and below the $x$-axis on $[a, b]$, $\int_a^b f(x)\,dx$ is?</li></ol>
+<ul><li>Always the total area</li><li>The net area (positive and negative areas can cancel)</li><li>Always positive</li><li>Undefined</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>Water flows into a rectangular tank at a rate of $r(t) = 5 + 0.2t$ litres per minute.</p>
+<ol><li>How much water is in the tank after 10 minutes (starting from empty)?</li><li>If the tank has capacity 100 litres, when does it overflow?</li><li>Set up (but do not solve) the integral that would give the average flow rate over the first 10 minutes.</li></ol>
+<p><strong>Hint:</strong> Average value of a function is $\frac{1}{b-a}\int_a^b f(t)\,dt$.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>In medicine, pharmacokinetics uses integration to model drug concentration in the bloodstream. The rate at which a drug is metabolised depends on the current concentration, so doctors integrate this rate to predict when the drug level reaches therapeutic levels or dangerous thresholds.</p>
+<p>In economics, consumer and producer surplus — key measures of market efficiency — are defined as areas between curves. Policymakers use these integrals to evaluate the impact of price controls or subsidies.</p>
+<p>In physics, calculating the work done by friction, gravity, or elastic forces requires integrating non-constant forces. Engineers use these calculations to design systems that can withstand the forces they experience.</p>
+<p>In environmental science, computing total pollution accumulated over time requires integrating the emission rate. Policymakers use these calculations to plan remediation efforts.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Integration extends from finding areas under curves to measuring all forms of accumulation. The area between two curves is the integral of the upper function minus the lower. Net displacement and total distance are distinguished by whether we integrate velocity or its absolute value. Work is the integral of force across a distance. Volumes of solid objects formed by rotating a curve can be found using the disk method. Accumulation problems — from drug levels to fuel volume to consumer surplus — all follow the pattern: integrate the rate to find the total. The Fundamental Theorem of Calculus connects all of these applications: compute an antiderivative, evaluate at endpoints, subtract.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is the correct formula for area between curves $f(x) \geq g(x)$ on $[a,b]$?</li></ol>
+<ul><li>$\int_a^b f(x)\,dx - \int_a^b g(x)\,dx$</li><li>$\int_a^b [f(x) - g(x)]\,dx$</li><li>$\int_a^b f(x)g(x)\,dx$</li><li>Both (a) and (b)</li></ul>
+<ol><li>When is net displacement not equal to total distance?</li></ol>
+<ul><li>When velocity is always positive</li><li>When velocity changes sign during the interval</li><li>When the object starts at the origin</li><li>They are always equal</li></ul>
+<ol><li>In the disk method for volumes, what does $[r(x)]^2$ represent?</li></ol>
+<ul><li>The radius of each disk</li><li>The area of each cross-sectional disk</li><li>The height of each disk</li><li>The volume of each disk</li></ul>
+<ol><li>Consumer surplus is the integral of?</li></ol>
+<ul><li>The demand curve alone</li><li>The supply curve minus demand</li><li>The demand curve minus equilibrium price</li><li>Price times quantity</li></ul>
+<ol><li>For a conical water tank filled at a constant rate, the depth increases?</li></ol>
+<ul><li>Linearly with time</li><li>At a decreasing rate</li><li>At an increasing rate</li><li>According to a cubic function</li></ul>
+<ol><li>Which scenario involves integrating a force function?</li></ol>
+<ul><li>Finding instantaneous velocity</li><li>Computing work done by a variable force</li><li>Determining the maximum speed of an object</li><li>Measuring the acceleration of a particle</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>Both (a) and (b)</li><li>When velocity changes sign during the interval</li><li>The area of each cross-sectional disk</li><li>The demand curve minus equilibrium price</li><li>At a decreasing rate</li><li>Computing work done by a variable force</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Applications of integration: https://en.wikipedia.org/wiki/Applications_of_integration</li><li>Volume of revolution: https://en.wikipedia.org/wiki/Solid_of_revolution</li><li>Work (physics): https://en.wikipedia.org/wiki/Work_(physics)</li><li>Consumer surplus: https://en.wikipedia.org/wiki/Consumer_surplus</li><li>Saturn V and rocket design: https://en.wikipedia.org/wiki/Saturn_V</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-069-applications-of-derivatives/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Applications of Derivatives</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-071-fundamental-theorem-of-calculus/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Fundamental Theorem of Calculus</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

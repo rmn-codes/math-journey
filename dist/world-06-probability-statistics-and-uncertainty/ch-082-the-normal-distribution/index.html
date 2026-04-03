@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Normal Distribution — Math Journey</title>
+    <meta name="description" content="The bell curve — why so many things in nature cluster around the middle" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 6 · Chapter 82</p>
+        <h1>The Normal Distribution</h1>
+        <p class="hero-copy">The bell curve — why so many things in nature cluster around the middle</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1730s–1800s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Describe properties of the normal distribution</li><li>Apply the 68-95-99.7 rule</li><li>Standardise values using z-scores</li><li>Use z-tables to find probabilities and values</li><li>Apply the normal distribution to real data</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#the-68-95-99-7-rule-empirical-rule">The 68-95-99.7 Rule (Empirical Rule)</a></li><li class="toc-level-3"><a href="#standard-normal-distribution">Standard Normal Distribution</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#normal-distribution-pdf-and-cdf">Normal Distribution PDF and CDF</a></li><li class="toc-level-3"><a href="#using-z-tables">Using Z-Tables</a></li><li class="toc-level-3"><a href="#finding-values-from-probabilities-inverse-normal">Finding Values from Probabilities (Inverse Normal)</a></li><li class="toc-level-3"><a href="#normal-approximation-to-the-binomial">Normal Approximation to the Binomial</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p><strong>Abraham de Moivre</strong> (1733) is fascinated by a pattern. He flips coins thousands of times, counting heads. As he increases the number of flips, a remarkable shape emerges: a bell curve. Symmetric, smooth, centred.</p>
+<p>Nearly a century later, <strong>Carl Friedrich Gauss</strong> (1809) measures astronomical observation errors. What shape do the errors follow? A bell curve — the same one de Moivre found.</p>
+<p><strong>Adolphe Quetelet</strong> (1840s) takes a different approach. He measures the chest circumference of 5,738 Scottish soldiers. The data spreads across a range — but the bulk cluster around the middle. Plot it: a bell curve.</p>
+<p>Height. Test scores. Birth weight. Measurement errors. Reaction times. The normal distribution appears <em>everywhere</em> in nature. Why?</p>
+<p>The answer is profound: <strong>The Central Limit Theorem</strong> states that when you average many independent random things, the result follows a normal distribution. Measure one soldier&#x27;s chest? Variable. Measure 100 soldiers and average their chests? Bell curve. This universal pattern is why the normal distribution is the most important distribution in statistics.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>The normal distribution appears everywhere:</p>
+<ul><li><strong>Health:</strong> Heights, weights, blood pressure, cholesterol levels follow the normal distribution</li><li><strong>Education:</strong> Test scores are designed to be approximately normal</li><li><strong>Manufacturing:</strong> Process outputs, part dimensions, measurement errors are (usually) normal</li><li><strong>Finance:</strong> Stock returns, portfolio performance approximate normal distributions</li><li><strong>Nature:</strong> Rainfall, plant growth, animal populations often follow normal patterns</li></ul>
+<p>It matters because:</p>
+<ul><li>You can predict how many people will fall in any range (e.g., &quot;What fraction of 18-year-old women are taller than 170 cm?&quot;)</li><li>You can identify outliers (unusual observations)</li><li>It allows hypothesis testing and quality control</li><li>It underpins <em>most</em> of modern statistics and machine learning</li><li>The 68-95-99.7 rule gives quick, practical predictions without detailed calculations</li></ul>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p><strong>Abraham de Moivre</strong> (1667–1754) was a French mathematician who fled religious persecution in France. Working in England, he discovered the &quot;de Moivre curve&quot; — the bell shape — while studying the binomial distribution. He didn&#x27;t publish widely, so the credit went elsewhere.</p>
+<p><strong>Carl Friedrich Gauss</strong> (1777–1855) derived the normal distribution curve while studying measurement errors in astronomy. He called it the &quot;normal&quot; distribution because errors <em>normally</em> followed it. His work was published (1809) and widely accepted. Today it&#x27;s sometimes called the Gaussian distribution in his honour.</p>
+<p><strong>Adolphe Quetelet</strong> (1796–1874) was a Belgian statistician who collected vast amounts of human data. His insight: natural human variation (height, intelligence, athletic ability) follows a bell curve. He coined the term &quot;average man&quot; — not a specific person, but the mathematical mean of a distribution.</p>
+<p>By the 1870s–1880s, <strong>Francis Galton</strong> and <strong>Karl Pearson</strong> built on this foundation to develop correlation and regression, cementing the normal distribution&#x27;s central role in statistics.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>Imagine a large population: the heights of all adult women in a country. Most cluster around the average (say, 163 cm). Fewer are very short (140 cm) or very tall (186 cm). The distribution is symmetric — left tail mirrors the right. This is the <strong>normal distribution</strong>.</p>
+<p>The <strong>normal distribution</strong> is characterised by:</p>
+<ol><li><strong>Bell shape:</strong> Symmetric, single peak, smooth curves</li><li><strong>Centre:</strong> Determined by the mean $\mu$ (mu)</li><li><strong>Spread:</strong> Determined by the standard deviation $\sigma$ (sigma)</li><li><strong>Tails:</strong> Approach but never touch zero (mathematical property)</li></ol>
+<p>We write: $X \sim N(\mu, \sigma^2)$ meaning &quot;$X$ is normally distributed with mean $\mu$ and variance $\sigma^2$.&quot;</p>
+<p><em>Why $\sigma^2$ (variance) and not $\sigma$ (standard deviation)? Historical convention. Don&#x27;t worry about it — you&#x27;ll work with both.</em></p>
+<h3 id="the-68-95-99-7-rule-empirical-rule">The 68-95-99.7 Rule (Empirical Rule)</h3>
+<p>For any normal distribution:</p>
+<ul><li><strong>68%</strong> of data falls within 1 standard deviation of the mean: $[\mu - \sigma, \mu + \sigma]$</li><li><strong>95%</strong> of data falls within 2 standard deviations: $[\mu - 2\sigma, \mu + 2\sigma]$</li><li><strong>99.7%</strong> of data falls within 3 standard deviations: $[\mu - 3\sigma, \mu + 3\sigma]$</li></ul>
+<p>This rule is <em>remarkably useful</em> for quick estimates.</p>
+<p><strong>Example:</strong> Heights of adult women have $\mu = 163$ cm and $\sigma = 7$ cm. Then:</p>
+<ul><li>68% of women are between 156 and 170 cm</li><li>95% are between 149 and 177 cm</li><li>99.7% are between 142 and 184 cm</li></ul>
+<p>So if a woman is 180 cm tall, she&#x27;s in the upper tail — taller than about 97–98% of women (just outside the 2-sigma band).</p>
+<h3 id="standard-normal-distribution">Standard Normal Distribution</h3>
+<p>To compare different normal distributions (e.g., heights vs. weights), we <strong>standardise</strong> — convert any normal distribution to the <strong>standard normal</strong> distribution.</p>
+<p>The <strong>standard normal distribution</strong> is $Z \sim N(0, 1)$: mean 0, standard deviation 1. Denoted $Z$.</p>
+<p><strong>Standardising formula:</strong></p>
+<p>$$Z = \frac{X - \mu}{\sigma}$$</p>
+<p>This converts any value $X$ to a <strong>z-score</strong>: how many standard deviations $X$ is above or below the mean.</p>
+<p><strong>Example:</strong> Women&#x27;s heights, $\mu = 163$, $\sigma = 7$. A woman who is 170 cm tall:</p>
+<p>$$Z = \frac{170 - 163}{7} = \frac{7}{7} = 1$$</p>
+<p>Her z-score is 1 — she&#x27;s 1 standard deviation above the mean. By the 68-95-99.7 rule, she&#x27;s taller than about 84% of women.</p>
+<p>If another woman is 150 cm tall:</p>
+<p>$$Z = \frac{150 - 163}{7} = \frac{-13}{7} \approx -1.86$$</p>
+<p>She&#x27;s about 1.86 standard deviations <em>below</em> the mean — quite short, but not exceptionally rare.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="normal-distribution-pdf-and-cdf">Normal Distribution PDF and CDF</h3>
+<p>The <strong>probability density function</strong> (PDF) of the normal distribution is:</p>
+<p>$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$</p>
+<p>This looks scary — don&#x27;t memorise it. The important parts:</p>
+<ul><li>The exponent has $\left(\frac{x - \mu}{\sigma}\right)^2$, which is the z-score squared</li><li>The constant $\frac{1}{\sigma\sqrt{2\pi}}$ is a normalisation factor (makes the total area under the curve equal 1)</li></ul>
+<p>We don&#x27;t use this formula by hand. Instead, we use <strong>z-tables</strong> or calculators.</p>
+<h3 id="using-z-tables">Using Z-Tables</h3>
+<p>A <strong>z-table</strong> gives $P(Z \leq z)$ for the standard normal distribution. For example:</p>
+<ul><li>$P(Z \leq 0) = 0.5$ (half the distribution is below the mean)</li><li>$P(Z \leq 1) \approx 0.8413$ (84.13% of data is below 1 standard deviation)</li><li>$P(Z \leq 2) \approx 0.9772$ (97.72% of data is below 2 standard deviations)</li><li>$P(Z \leq -1) \approx 0.1587$ (15.87% of data is below -1 standard deviation)</li></ul>
+<p>To find probabilities for any normal distribution:</p>
+<ol><li>Standardise: $z = \frac{x - \mu}{\sigma}$</li><li>Use z-table: $P(X \leq x) = P(Z \leq z)$</li></ol>
+<p><strong>Example:</strong> Women&#x27;s heights: $\mu = 163$, $\sigma = 7$. What&#x27;s $P(X \leq 170)$?</p>
+<p>$$z = \frac{170 - 163}{7} = 1$$</p>
+<p>$$P(X \leq 170) = P(Z \leq 1) \approx 0.8413$$</p>
+<p>So about 84.13% of women are 170 cm or shorter.</p>
+<h3 id="finding-values-from-probabilities-inverse-normal">Finding Values from Probabilities (Inverse Normal)</h3>
+<p>Sometimes we know a probability and want the corresponding value.</p>
+<p><strong>Example:</strong> What height is the 90th percentile (taller than 90% of women)?</p>
+<ol><li>Find z such that $P(Z \leq z) = 0.90$</li><li>From z-table (or calculator): $z \approx 1.28$</li><li>Convert back: $x = \mu + z \sigma = 163 + 1.28 \times 7 \approx 171.96$ cm</li></ol>
+<p>So a woman who is about 172 cm tall is taller than 90% of women.</p>
+<h3 id="normal-approximation-to-the-binomial">Normal Approximation to the Binomial</h3>
+<p>Here&#x27;s a beautiful connection: when $n$ is large and $p$ is not too close to 0 or 1, the binomial distribution approximates a normal distribution!</p>
+<p>If $X \sim \text{Binomial}(n, p)$ and $n$ is large, then:</p>
+<p>$$X \approx N(\mu = np, \sigma^2 = np(1-p))$$</p>
+<p><strong>Rule of thumb:</strong> Use this approximation if $np \geq 10$ and $n(1-p) \geq 10$.</p>
+<p>This connects everything: the binomial counts successes; the normal describes the distribution of that count when $n$ is large. De Moivre discovered this connection in 1733!</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Identifying Outliers</strong></p>
+<p>A standardised test has scores that are normally distributed: $\mu = 100$, $\sigma = 15$.</p>
+<ul><li>A score of 130: $z = \frac{130 - 100}{15} = 2$. This is 2 standard deviations above the mean — within the 95% range. Not unusual.</li><li>A score of 160: $z = \frac{160 - 100}{15} = 4$. This is 4 standard deviations above the mean — beyond the 99.7% range. Exceptional.</li></ul>
+<p>By the rare event rule (probability &lt; 0.3%), a score of 160 would be considered an outlier or exceptional.</p>
+<p><strong>Example 2: Finding a Probability</strong></p>
+<p>Birth weights of newborns are approximately $N(3500, 500^2)$ grams (mean 3500 g, std dev 500 g). What fraction of babies weigh between 3000 and 4000 grams?</p>
+<p>For $x = 3000$: $z = \frac{3000 - 3500}{500} = -1$. So $P(X \leq 3000) = P(Z \leq -1) \approx 0.1587$.</p>
+<p>For $x = 4000$: $z = \frac{4000 - 3500}{500} = 1$. So $P(X \leq 4000) = P(Z \leq 1) \approx 0.8413$.</p>
+<p>$$P(3000 \leq X \leq 4000) = 0.8413 - 0.1587 = 0.6826 \approx 68.3\%$$</p>
+<p>This matches the 68-95-99.7 rule! About 68% of babies weigh within 1 standard deviation of the mean.</p>
+<p><strong>Example 3: Normal Approximation to Binomial</strong></p>
+<p>Suppose 500 people are surveyed and 60% say they&#x27;d buy a new product ($p = 0.6$). Let $X$ = number who say yes. Use the normal approximation to find $P(X \geq 320)$.</p>
+<p>Mean and std dev: $$\mu = np = 500 \times 0.6 = 300$$ $$\sigma = \sqrt{np(1-p)} = \sqrt{500 \times 0.6 \times 0.4} = \sqrt{120} \approx 10.95$$</p>
+<p>Check: $np = 300 \geq 10$ and $n(1-p) = 200 \geq 10$. ✓ Approximation is valid.</p>
+<p>Standardise: $$z = \frac{320 - 300}{10.95} \approx 1.83$$</p>
+<p>From z-table: $P(Z \leq 1.83) \approx 0.9664$</p>
+<p>$$P(X \geq 320) = 1 - 0.9664 = 0.0336 \approx 3.4\%$$</p>
+<p>So about 3.4% chance of 320 or more &quot;yes&quot; responses. Quite rare.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Grading on a Curve:</strong> Test scores are $N(75, 8^2)$ (mean 75, std dev 8).</li></ol>
+<ul><li>Find the probability that a student scores between 67 and 83 (within 1 $\sigma$).</li><li>Find $P(\text{score} &gt; 91)$ (more than 2 $\sigma$ above the mean).</li><li>What score is at the 99th percentile?</li></ul>
+<ol><li><strong>Quality Control:</strong> A machine fills bottles with liquid. The amount is approximately $N(500, 5^2)$ ml (mean 500 ml, std dev 5 ml).</li></ol>
+<ul><li>What fraction of bottles contain between 495 and 505 ml?</li><li>Bottles with less than 490 ml are rejected. What percentage are rejected?</li></ul>
+<ol><li><strong>Body Mass Index (BMI):</strong> In a large population, BMI is approximately $N(26, 4^2)$.</li></ol>
+<ul><li>Find $P(20 &lt; \text{BMI} &lt; 30)$.</li><li>What BMI is at the 25th percentile? (Hint: find $z$ such that $P(Z \leq z) = 0.25$, then solve for BMI.)</li></ul>
+<ol><li><strong>Manufacturing Tolerance:</strong> A part is made to specifications of $100 \pm 2$ mm. The actual dimension is $N(100, 0.5^2)$ mm. What fraction of parts are within spec?</li></ol>
+<ol><li><strong>Binomial to Normal:</strong> 1000 people are surveyed about a yes-no question. The true population proportion is $p = 0.55$.</li></ol>
+<ul><li>Use the normal approximation to find the probability that at least 560 say &quot;yes.&quot;</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Central Limit Theorem (Conceptual)</strong></p>
+<p>Take a very non-normal distribution: a fair die roll. Each outcome (1–6) is equally likely — a uniform distribution, not a bell curve.</p>
+<p>Now take the <em>mean</em> of two die rolls: $\frac{X_1 + X_2}{2}$. Plot this distribution. It&#x27;s no longer uniform — it peaks at 3.5.</p>
+<p>Take the mean of 10 die rolls. Plot it. Even more bell-shaped.</p>
+<p>Take the mean of 100 die rolls. It&#x27;s almost perfectly normal, centred at 3.5.</p>
+<p><strong>Your Task:</strong></p>
+<p>Explain why this happens. Why does averaging many random things produce a normal distribution, even when the original things aren&#x27;t normal? Consider:</p>
+<ul><li>What happens to the extremes (very low or very high averages) as you add more rolls?</li><li>Why is the middle (average near 3.5) most likely?</li></ul>
+<p>This is the intuition behind the Central Limit Theorem — one of the most powerful ideas in statistics.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Real-World Scenario: Hospital Quality Control</strong></p>
+<p>A hospital measures patient recovery times after a common surgery. Previous data shows recovery time is approximately $N(14, 3^2)$ days (mean 14 days, std dev 3 days).</p>
+<p>A new surgical technique is introduced. Surgeons track 50 patients and find the average recovery time is 12.8 days.</p>
+<p><strong>Questions:</strong></p>
+<ol><li>If the new technique <em>doesn&#x27;t actually change anything</em>, what&#x27;s the probability that the average of 50 patients would be 12.8 days or lower?</li></ol>
+<ul><li><em>Hint:</em> If $n = 50$ and the population is $N(14, 3^2)$, the average follows $N\left(14, \frac{3^2}{50}\right)$. This is the <strong>sampling distribution</strong>.</li><li>Standardise and use z-table.</li></ul>
+<ol><li>Should the hospital consider this evidence of improvement? Why or why not?</li></ol>
+<ol><li>What if the average were 15 days instead? Would that suggest the new technique is <em>worse</em>?</li></ol>
+<p>This reasoning is the foundation of hypothesis testing in medical research.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>The <strong>normal distribution</strong> (bell curve) is the most important distribution in statistics.</p>
+<p><strong>Key Properties:</strong></p>
+<ul><li>Symmetric, bell-shaped, centred at mean $\mu$</li><li>Spread characterised by standard deviation $\sigma$</li><li>68-95-99.7 rule: quick estimates</li><li>Notation: $X \sim N(\mu, \sigma^2)$</li></ul>
+<p><strong>Key Techniques:</strong></p>
+<ul><li><strong>Standardising:</strong> $Z = \frac{X - \mu}{\sigma}$ converts to standard normal</li><li><strong>Z-tables:</strong> Use to find probabilities from z-scores (or vice versa)</li><li><strong>Normal approximation:</strong> Binomial approximates normal when $n$ is large</li></ul>
+<p><strong>Why It&#x27;s Universal:</strong></p>
+<ul><li>Central Limit Theorem: averaging many things produces a normal distribution</li><li>Appears in nature: heights, weights, test scores, errors, measurements</li><li>Enables statistical inference, hypothesis testing, quality control</li></ul>
+<p><strong>Historical Insight:</strong> The normal distribution was discovered almost by accident (de Moivre, Gauss). Over two centuries, it became central to science, medicine, engineering, and economics. Today, understanding it is essential.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> If $X \sim N(50, 10^2)$ (mean 50, std dev 10), what is $P(30 &lt; X &lt; 70)$?</p>
+<ul><li>Approximately 68%</li><li>Approximately 95%</li><li>Approximately 99.7%</li><li>Approximately 99%</li></ul>
+<details>
+<summary>Answer</summary>
+<p>30 is 2 standard deviations below 50 (z = -2), and 70 is 2 standard deviations above 50 (z = 2). By the 68-95-99.7 rule, approximately 95% of data falls within 2 standard deviations of the mean. The answer is &quot;Approximately 95%&quot;.</p>
+</details>
+<p><strong>Question 2:</strong> A student scores 85 on a test where $\mu = 75$ and $\sigma = 5$. What is the student&#x27;s z-score?</p>
+<ul><li>1</li><li>2</li><li>10</li><li>0.5</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$z = \frac{85 - 75}{5} = \frac{10}{5} = 2$. The answer is 2.</p>
+</details>
+<p><strong>Question 3:</strong> For the standard normal distribution, what is $P(Z &gt; 0)$?</p>
+<ul><li>0.5</li><li>0.6827</li><li>0.9545</li><li>0.3173</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The standard normal distribution has mean 0 and is symmetric. Exactly half the distribution is above 0 and half below 0. So $P(Z &gt; 0) = 0.5$.</p>
+</details>
+<p><strong>Question 4:</strong> A manufacturing process produces parts with diameter $N(10.0, 0.1^2)$ cm. A part is acceptable if its diameter is between 9.85 and 10.15 cm. Which range does this span?</p>
+<ul><li>Within 1 standard deviation</li><li>Within 1.5 standard deviations</li><li>Within 2 standard deviations</li><li>Within 3 standard deviations</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The range 9.85 to 10.15 cm is exactly 10.0 ± 0.15 cm. Since $\sigma = 0.1$, this is $\pm 1.5 \times 0.1 = \pm 1.5\sigma$. The answer is &quot;Within 1.5 standard deviations&quot;.</p>
+</details>
+<p><strong>Question 5:</strong> A height distribution is $N(170, 8^2)$ cm (mean 170, std dev 8). What height corresponds to the 75th percentile?</p>
+<ul><li>175.4 cm</li><li>178.4 cm</li><li>165.6 cm</li><li>174.6 cm</li></ul>
+<details>
+<summary>Answer</summary>
+<p>At the 75th percentile, $P(Z \leq z) = 0.75$. From z-table, $z \approx 0.674$. Then $x = \mu + z\sigma = 170 + 0.674 \times 8 = 170 + 5.39 = 175.39 \approx 175.4$ cm. The answer is 175.4 cm.</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Normal_distribution" target="_blank" rel="noopener">Normal distribution — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Central_limit_theorem" target="_blank" rel="noopener">Central Limit Theorem — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss" target="_blank" rel="noopener">Carl Friedrich Gauss — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Abraham_de_Moivre" target="_blank" rel="noopener">Abraham de Moivre — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Standard_score" target="_blank" rel="noopener">Standard score — Wikipedia</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-081-the-binomial-distribution/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Binomial Distribution</span></a><a class="pager-link pager-link--next" href="../../world-06-probability-statistics-and-uncertainty/ch-083-describing-data/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Describing Data — Centre, Spread, and Shape</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,366 @@
+---
+worldNumber: 6
+world: world-06-probability-statistics-and-uncertainty
+chapterNumber: 82
+title: "The Normal Distribution"
+subtitle: "The bell curve — why so many things in nature cluster around the middle"
+historicalPeriod: "1730s–1800s"
+estimatedTimeMinutes: 40
+mainConcepts:
+  - normal distribution
+  - bell curve
+  - empirical rule
+  - z-score
+  - standard normal distribution
+  - standardising
+learningObjectives:
+  - Describe properties of the normal distribution
+  - Apply the 68-95-99.7 rule
+  - Standardise values using z-scores
+  - Use z-tables to find probabilities and values
+  - Apply the normal distribution to real data
+---
+
+## Story Hook
+
+**Abraham de Moivre** (1733) is fascinated by a pattern. He flips coins thousands of times, counting heads. As he increases the number of flips, a remarkable shape emerges: a bell curve. Symmetric, smooth, centred.
+
+Nearly a century later, **Carl Friedrich Gauss** (1809) measures astronomical observation errors. What shape do the errors follow? A bell curve — the same one de Moivre found.
+
+**Adolphe Quetelet** (1840s) takes a different approach. He measures the chest circumference of 5,738 Scottish soldiers. The data spreads across a range — but the bulk cluster around the middle. Plot it: a bell curve.
+
+Height. Test scores. Birth weight. Measurement errors. Reaction times. The normal distribution appears *everywhere* in nature. Why?
+
+The answer is profound: **The Central Limit Theorem** states that when you average many independent random things, the result follows a normal distribution. Measure one soldier's chest? Variable. Measure 100 soldiers and average their chests? Bell curve. This universal pattern is why the normal distribution is the most important distribution in statistics.
+
+## Why It Matters
+
+The normal distribution appears everywhere:
+- **Health:** Heights, weights, blood pressure, cholesterol levels follow the normal distribution
+- **Education:** Test scores are designed to be approximately normal
+- **Manufacturing:** Process outputs, part dimensions, measurement errors are (usually) normal
+- **Finance:** Stock returns, portfolio performance approximate normal distributions
+- **Nature:** Rainfall, plant growth, animal populations often follow normal patterns
+
+It matters because:
+- You can predict how many people will fall in any range (e.g., "What fraction of 18-year-old women are taller than 170 cm?")
+- You can identify outliers (unusual observations)
+- It allows hypothesis testing and quality control
+- It underpins *most* of modern statistics and machine learning
+- The 68-95-99.7 rule gives quick, practical predictions without detailed calculations
+
+## Historical Context
+
+**Abraham de Moivre** (1667–1754) was a French mathematician who fled religious persecution in France. Working in England, he discovered the "de Moivre curve" — the bell shape — while studying the binomial distribution. He didn't publish widely, so the credit went elsewhere.
+
+**Carl Friedrich Gauss** (1777–1855) derived the normal distribution curve while studying measurement errors in astronomy. He called it the "normal" distribution because errors *normally* followed it. His work was published (1809) and widely accepted. Today it's sometimes called the Gaussian distribution in his honour.
+
+**Adolphe Quetelet** (1796–1874) was a Belgian statistician who collected vast amounts of human data. His insight: natural human variation (height, intelligence, athletic ability) follows a bell curve. He coined the term "average man" — not a specific person, but the mathematical mean of a distribution.
+
+By the 1870s–1880s, **Francis Galton** and **Karl Pearson** built on this foundation to develop correlation and regression, cementing the normal distribution's central role in statistics.
+
+## Core Concept
+
+Imagine a large population: the heights of all adult women in a country. Most cluster around the average (say, 163 cm). Fewer are very short (140 cm) or very tall (186 cm). The distribution is symmetric — left tail mirrors the right. This is the **normal distribution**.
+
+The **normal distribution** is characterised by:
+1. **Bell shape:** Symmetric, single peak, smooth curves
+2. **Centre:** Determined by the mean $\mu$ (mu)
+3. **Spread:** Determined by the standard deviation $\sigma$ (sigma)
+4. **Tails:** Approach but never touch zero (mathematical property)
+
+We write: $X \sim N(\mu, \sigma^2)$ meaning "$X$ is normally distributed with mean $\mu$ and variance $\sigma^2$."
+
+*Why $\sigma^2$ (variance) and not $\sigma$ (standard deviation)? Historical convention. Don't worry about it — you'll work with both.*
+
+### The 68-95-99.7 Rule (Empirical Rule)
+
+For any normal distribution:
+- **68%** of data falls within 1 standard deviation of the mean: $[\mu - \sigma, \mu + \sigma]$
+- **95%** of data falls within 2 standard deviations: $[\mu - 2\sigma, \mu + 2\sigma]$
+- **99.7%** of data falls within 3 standard deviations: $[\mu - 3\sigma, \mu + 3\sigma]$
+
+This rule is *remarkably useful* for quick estimates.
+
+**Example:** Heights of adult women have $\mu = 163$ cm and $\sigma = 7$ cm. Then:
+- 68% of women are between 156 and 170 cm
+- 95% are between 149 and 177 cm
+- 99.7% are between 142 and 184 cm
+
+So if a woman is 180 cm tall, she's in the upper tail — taller than about 97–98% of women (just outside the 2-sigma band).
+
+### Standard Normal Distribution
+
+To compare different normal distributions (e.g., heights vs. weights), we **standardise** — convert any normal distribution to the **standard normal** distribution.
+
+The **standard normal distribution** is $Z \sim N(0, 1)$: mean 0, standard deviation 1. Denoted $Z$.
+
+**Standardising formula:**
+
+$$Z = \frac{X - \mu}{\sigma}$$
+
+This converts any value $X$ to a **z-score**: how many standard deviations $X$ is above or below the mean.
+
+**Example:** Women's heights, $\mu = 163$, $\sigma = 7$. A woman who is 170 cm tall:
+
+$$Z = \frac{170 - 163}{7} = \frac{7}{7} = 1$$
+
+Her z-score is 1 — she's 1 standard deviation above the mean. By the 68-95-99.7 rule, she's taller than about 84% of women.
+
+If another woman is 150 cm tall:
+
+$$Z = \frac{150 - 163}{7} = \frac{-13}{7} \approx -1.86$$
+
+She's about 1.86 standard deviations *below* the mean — quite short, but not exceptionally rare.
+
+## Definitions and Formal Lesson
+
+### Normal Distribution PDF and CDF
+
+The **probability density function** (PDF) of the normal distribution is:
+
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$
+
+This looks scary — don't memorise it. The important parts:
+- The exponent has $\left(\frac{x - \mu}{\sigma}\right)^2$, which is the z-score squared
+- The constant $\frac{1}{\sigma\sqrt{2\pi}}$ is a normalisation factor (makes the total area under the curve equal 1)
+
+We don't use this formula by hand. Instead, we use **z-tables** or calculators.
+
+### Using Z-Tables
+
+A **z-table** gives $P(Z \leq z)$ for the standard normal distribution. For example:
+- $P(Z \leq 0) = 0.5$ (half the distribution is below the mean)
+- $P(Z \leq 1) \approx 0.8413$ (84.13% of data is below 1 standard deviation)
+- $P(Z \leq 2) \approx 0.9772$ (97.72% of data is below 2 standard deviations)
+- $P(Z \leq -1) \approx 0.1587$ (15.87% of data is below -1 standard deviation)
+
+To find probabilities for any normal distribution:
+1. Standardise: $z = \frac{x - \mu}{\sigma}$
+2. Use z-table: $P(X \leq x) = P(Z \leq z)$
+
+**Example:** Women's heights: $\mu = 163$, $\sigma = 7$. What's $P(X \leq 170)$?
+
+$$z = \frac{170 - 163}{7} = 1$$
+
+$$P(X \leq 170) = P(Z \leq 1) \approx 0.8413$$
+
+So about 84.13% of women are 170 cm or shorter.
+
+### Finding Values from Probabilities (Inverse Normal)
+
+Sometimes we know a probability and want the corresponding value.
+
+**Example:** What height is the 90th percentile (taller than 90% of women)?
+
+1. Find z such that $P(Z \leq z) = 0.90$
+2. From z-table (or calculator): $z \approx 1.28$
+3. Convert back: $x = \mu + z \sigma = 163 + 1.28 \times 7 \approx 171.96$ cm
+
+So a woman who is about 172 cm tall is taller than 90% of women.
+
+### Normal Approximation to the Binomial
+
+Here's a beautiful connection: when $n$ is large and $p$ is not too close to 0 or 1, the binomial distribution approximates a normal distribution!
+
+If $X \sim \text{Binomial}(n, p)$ and $n$ is large, then:
+
+$$X \approx N(\mu = np, \sigma^2 = np(1-p))$$
+
+**Rule of thumb:** Use this approximation if $np \geq 10$ and $n(1-p) \geq 10$.
+
+This connects everything: the binomial counts successes; the normal describes the distribution of that count when $n$ is large. De Moivre discovered this connection in 1733!
+
+## Worked Examples
+
+**Example 1: Identifying Outliers**
+
+A standardised test has scores that are normally distributed: $\mu = 100$, $\sigma = 15$.
+- A score of 130: $z = \frac{130 - 100}{15} = 2$. This is 2 standard deviations above the mean — within the 95% range. Not unusual.
+- A score of 160: $z = \frac{160 - 100}{15} = 4$. This is 4 standard deviations above the mean — beyond the 99.7% range. Exceptional.
+
+By the rare event rule (probability < 0.3%), a score of 160 would be considered an outlier or exceptional.
+
+**Example 2: Finding a Probability**
+
+Birth weights of newborns are approximately $N(3500, 500^2)$ grams (mean 3500 g, std dev 500 g). What fraction of babies weigh between 3000 and 4000 grams?
+
+For $x = 3000$: $z = \frac{3000 - 3500}{500} = -1$. So $P(X \leq 3000) = P(Z \leq -1) \approx 0.1587$.
+
+For $x = 4000$: $z = \frac{4000 - 3500}{500} = 1$. So $P(X \leq 4000) = P(Z \leq 1) \approx 0.8413$.
+
+$$P(3000 \leq X \leq 4000) = 0.8413 - 0.1587 = 0.6826 \approx 68.3\%$$
+
+This matches the 68-95-99.7 rule! About 68% of babies weigh within 1 standard deviation of the mean.
+
+**Example 3: Normal Approximation to Binomial**
+
+Suppose 500 people are surveyed and 60% say they'd buy a new product ($p = 0.6$). Let $X$ = number who say yes. Use the normal approximation to find $P(X \geq 320)$.
+
+Mean and std dev:
+$$\mu = np = 500 \times 0.6 = 300$$
+$$\sigma = \sqrt{np(1-p)} = \sqrt{500 \times 0.6 \times 0.4} = \sqrt{120} \approx 10.95$$
+
+Check: $np = 300 \geq 10$ and $n(1-p) = 200 \geq 10$. ✓ Approximation is valid.
+
+Standardise:
+$$z = \frac{320 - 300}{10.95} \approx 1.83$$
+
+From z-table: $P(Z \leq 1.83) \approx 0.9664$
+
+$$P(X \geq 320) = 1 - 0.9664 = 0.0336 \approx 3.4\%$$
+
+So about 3.4% chance of 320 or more "yes" responses. Quite rare.
+
+## Practice Set
+
+1. **Grading on a Curve:** Test scores are $N(75, 8^2)$ (mean 75, std dev 8).
+   - Find the probability that a student scores between 67 and 83 (within 1 $\sigma$).
+   - Find $P(\text{score} > 91)$ (more than 2 $\sigma$ above the mean).
+   - What score is at the 99th percentile?
+
+2. **Quality Control:** A machine fills bottles with liquid. The amount is approximately $N(500, 5^2)$ ml (mean 500 ml, std dev 5 ml).
+   - What fraction of bottles contain between 495 and 505 ml?
+   - Bottles with less than 490 ml are rejected. What percentage are rejected?
+
+3. **Body Mass Index (BMI):** In a large population, BMI is approximately $N(26, 4^2)$.
+   - Find $P(20 < \text{BMI} < 30)$.
+   - What BMI is at the 25th percentile? (Hint: find $z$ such that $P(Z \leq z) = 0.25$, then solve for BMI.)
+
+4. **Manufacturing Tolerance:** A part is made to specifications of $100 \pm 2$ mm. The actual dimension is $N(100, 0.5^2)$ mm. What fraction of parts are within spec?
+
+5. **Binomial to Normal:** 1000 people are surveyed about a yes-no question. The true population proportion is $p = 0.55$.
+   - Use the normal approximation to find the probability that at least 560 say "yes."
+
+## Reasoning Task
+
+**The Central Limit Theorem (Conceptual)**
+
+Take a very non-normal distribution: a fair die roll. Each outcome (1–6) is equally likely — a uniform distribution, not a bell curve.
+
+Now take the *mean* of two die rolls: $\frac{X_1 + X_2}{2}$. Plot this distribution. It's no longer uniform — it peaks at 3.5.
+
+Take the mean of 10 die rolls. Plot it. Even more bell-shaped.
+
+Take the mean of 100 die rolls. It's almost perfectly normal, centred at 3.5.
+
+**Your Task:**
+
+Explain why this happens. Why does averaging many random things produce a normal distribution, even when the original things aren't normal? Consider:
+- What happens to the extremes (very low or very high averages) as you add more rolls?
+- Why is the middle (average near 3.5) most likely?
+
+This is the intuition behind the Central Limit Theorem — one of the most powerful ideas in statistics.
+
+## Application
+
+**Real-World Scenario: Hospital Quality Control**
+
+A hospital measures patient recovery times after a common surgery. Previous data shows recovery time is approximately $N(14, 3^2)$ days (mean 14 days, std dev 3 days).
+
+A new surgical technique is introduced. Surgeons track 50 patients and find the average recovery time is 12.8 days.
+
+**Questions:**
+
+1. If the new technique *doesn't actually change anything*, what's the probability that the average of 50 patients would be 12.8 days or lower?
+   - *Hint:* If $n = 50$ and the population is $N(14, 3^2)$, the average follows $N\left(14, \frac{3^2}{50}\right)$. This is the **sampling distribution**.
+   - Standardise and use z-table.
+
+2. Should the hospital consider this evidence of improvement? Why or why not?
+
+3. What if the average were 15 days instead? Would that suggest the new technique is *worse*?
+
+This reasoning is the foundation of hypothesis testing in medical research.
+
+## Recap
+
+The **normal distribution** (bell curve) is the most important distribution in statistics.
+
+**Key Properties:**
+- Symmetric, bell-shaped, centred at mean $\mu$
+- Spread characterised by standard deviation $\sigma$
+- 68-95-99.7 rule: quick estimates
+- Notation: $X \sim N(\mu, \sigma^2)$
+
+**Key Techniques:**
+- **Standardising:** $Z = \frac{X - \mu}{\sigma}$ converts to standard normal
+- **Z-tables:** Use to find probabilities from z-scores (or vice versa)
+- **Normal approximation:** Binomial approximates normal when $n$ is large
+
+**Why It's Universal:**
+- Central Limit Theorem: averaging many things produces a normal distribution
+- Appears in nature: heights, weights, test scores, errors, measurements
+- Enables statistical inference, hypothesis testing, quality control
+
+**Historical Insight:**
+The normal distribution was discovered almost by accident (de Moivre, Gauss). Over two centuries, it became central to science, medicine, engineering, and economics. Today, understanding it is essential.
+
+## Unlock Quiz
+
+**Question 1:** If $X \sim N(50, 10^2)$ (mean 50, std dev 10), what is $P(30 < X < 70)$?
+
+- Approximately 68%
+- Approximately 95%
+- Approximately 99.7%
+- Approximately 99%
+
+<details>
+<summary>Answer</summary>
+30 is 2 standard deviations below 50 (z = -2), and 70 is 2 standard deviations above 50 (z = 2). By the 68-95-99.7 rule, approximately 95% of data falls within 2 standard deviations of the mean. The answer is "Approximately 95%".
+</details>
+
+**Question 2:** A student scores 85 on a test where $\mu = 75$ and $\sigma = 5$. What is the student's z-score?
+
+- 1
+- 2
+- 10
+- 0.5
+
+<details>
+<summary>Answer</summary>
+$z = \frac{85 - 75}{5} = \frac{10}{5} = 2$. The answer is 2.
+</details>
+
+**Question 3:** For the standard normal distribution, what is $P(Z > 0)$?
+
+- 0.5
+- 0.6827
+- 0.9545
+- 0.3173
+
+<details>
+<summary>Answer</summary>
+The standard normal distribution has mean 0 and is symmetric. Exactly half the distribution is above 0 and half below 0. So $P(Z > 0) = 0.5$.
+</details>
+
+**Question 4:** A manufacturing process produces parts with diameter $N(10.0, 0.1^2)$ cm. A part is acceptable if its diameter is between 9.85 and 10.15 cm. Which range does this span?
+
+- Within 1 standard deviation
+- Within 1.5 standard deviations
+- Within 2 standard deviations
+- Within 3 standard deviations
+
+<details>
+<summary>Answer</summary>
+The range 9.85 to 10.15 cm is exactly 10.0 ± 0.15 cm. Since $\sigma = 0.1$, this is $\pm 1.5 \times 0.1 = \pm 1.5\sigma$. The answer is "Within 1.5 standard deviations".
+</details>
+
+**Question 5:** A height distribution is $N(170, 8^2)$ cm (mean 170, std dev 8). What height corresponds to the 75th percentile?
+
+- 175.4 cm
+- 178.4 cm
+- 165.6 cm
+- 174.6 cm
+
+<details>
+<summary>Answer</summary>
+At the 75th percentile, $P(Z \leq z) = 0.75$. From z-table, $z \approx 0.674$. Then $x = \mu + z\sigma = 170 + 0.674 \times 8 = 170 + 5.39 = 175.39 \approx 175.4$ cm. The answer is 175.4 cm.
+</details>
+
+## Source Notes
+
+- [Normal distribution — Wikipedia](https://en.wikipedia.org/wiki/Normal_distribution)
+- [Central Limit Theorem — Wikipedia](https://en.wikipedia.org/wiki/Central_limit_theorem)
+- [Carl Friedrich Gauss — Wikipedia](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss)
+- [Abraham de Moivre — Wikipedia](https://en.wikipedia.org/wiki/Abraham_de_Moivre)
+- [Standard score — Wikipedia](https://en.wikipedia.org/wiki/Standard_score)

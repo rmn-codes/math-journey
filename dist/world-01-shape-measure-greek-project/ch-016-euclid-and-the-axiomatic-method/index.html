@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Euclid and the Axiomatic Method — Math Journey</title>
+    <meta name="description" content="How one book shaped 2,000 years of mathematics, science, and logic" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 1 · Chapter 16</p>
+        <h1>Euclid and the Axiomatic Method</h1>
+        <p class="hero-copy">How one book shaped 2,000 years of mathematics, science, and logic</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>foundational</span>
+          <span>Alexandria, Egypt</span>
+          <span>300 BCE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Understand Euclid&#x27;s five postulates and why they are foundational</li><li>Recognize the axiomatic method as a way to build knowledge from simple axioms</li><li>Appreciate Euclid&#x27;s Elements as a model for rigorous mathematics</li><li>See how axioms, definitions, and proofs connect</li><li>Understand that alternatives to Euclidean geometry are possible</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#key-terms">Key Terms</a></li><li class="toc-level-3"><a href="#how-euclid-defined-and-organized-concepts">How Euclid Defined and Organized Concepts</a></li><li class="toc-level-3"><a href="#the-five-euclidean-postulates-explained">The Five Euclidean Postulates Explained</a></li><li class="toc-level-3"><a href="#building-from-axioms-a-simple-example">Building from Axioms: A Simple Example</a></li><li class="toc-level-3"><a href="#why-the-axiomatic-method-is-powerful">Why the Axiomatic Method Is Powerful</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-a-theorem-from-euclid-s-elements-proposition-1">Example 1: A Theorem from Euclid&#x27;s Elements (Proposition 1)</a></li><li class="toc-level-3"><a href="#example-2-using-postulate-5-the-parallel-postulate">Example 2: Using Postulate 5 (The Parallel Postulate)</a></li><li class="toc-level-3"><a href="#example-3-why-postulate-5-is-independent">Example 3: Why Postulate 5 Is Independent</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-3"><a href="#warm-up">Warm-Up</a></li><li class="toc-level-3"><a href="#core-practice">Core Practice</a></li><li class="toc-level-3"><a href="#stretch">Stretch</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Imagine the largest library in the ancient world: Alexandria, Egypt, around 300 BCE. Scholars gather from across the Mediterranean world, bringing texts, questions, and competing ideas. A mathematician named Euclid faces a challenge: geometry is scattered across many discoveries. Right angles, areas, circles, and triangles are understood separately. But is there a way to show that <em>all</em> of geometry grows from a few simple, undeniable truths?</p>
+<p>Euclid took on this project. He did not invent all the theorems himself—many came from earlier mathematicians. What he did was radical: he organized everything into a <em>system</em>. He chose five basic axioms, defined all his terms carefully, and then proved theorem after theorem, each one depending on earlier ones in a vast, interconnected web.</p>
+<p>The result was the <em>Elements</em>, a book that would be copied, translated, and studied for over 2,000 years. It became more than a math textbook. It became a model for how knowledge itself could be organized—not as scattered facts, but as a logical structure with a foundation, rules, and conclusions that follow with certainty.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Euclid matters because he showed that:</p>
+<ul><li>mathematics can be built from a small set of axioms through pure logic</li><li>organizing knowledge axiomatically creates clarity, power, and reliability</li><li>a single framework can unite diverse ideas under one logical roof</li><li>the Elements became the template for scientific reasoning across all fields</li><li>alternatives to Euclid&#x27;s axioms are possible, leading to entirely different geometries</li></ul>
+<p>Understanding Euclid is understanding not just a historical figure but a <em>method</em>. That method—the axiomatic method—is the foundation of all modern mathematics, physics, and computer science. When a scientist states basic principles and derives conclusions from them, they are using Euclid&#x27;s approach.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Euclid lived and worked in Alexandria during the reign of Ptolemy I, around 300 BCE. Alexandria was a new city, deliberately built as a center of learning. The library (and later the Museum, an institution of advanced study) attracted the best scholars from across the Greek world and beyond.</p>
+<p>Before Euclid, Greek mathematicians—including Thales, Pythagoras, and Plato&#x27;s Academy—had proven many theorems. But there was no unified system. Different authors used different starting points, made different assumptions, and did not always justify every step. Some theorems were proven multiple ways. Some foundations were shaky.</p>
+<p>Euclid&#x27;s innovation was organization and rigor. He gathered centuries of geometric knowledge and rewrote it as a logical sequence. The <em>Elements</em> begins with definitions and axioms, then builds theorem by theorem, each proof depending on earlier results. Later mathematicians added to it, but the foundational structure was Euclid&#x27;s.</p>
+<p>The <em>Elements</em> survives in over 1,000 ancient and medieval manuscripts. It was translated from Greek to Arabic to Latin to every modern language. For 2,000 years it was <em>the</em> geometry textbook. Even today, many geometry courses follow Euclid&#x27;s structure, though with modern notation and sometimes different starting points.</p>
+<p>Euclid&#x27;s only known work is the <em>Elements</em>. Almost nothing else was written by him or about his life. This is ironic: the mathematician who shaped intellectual history for two millennia is barely known as a person.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>The <strong>axiomatic method</strong> is a way of organizing knowledge:</p>
+<ol><li>Start with a small set of undefined terms (like &quot;point,&quot; &quot;line,&quot; &quot;plane&quot;).</li><li>Provide <strong>definitions</strong> that explain other concepts using these terms.</li><li>State <strong>axioms</strong> (or <strong>postulates</strong>) that are accepted as true without proof.</li><li>Use logical reasoning to <strong>prove</strong> theorems from the axioms and definitions.</li><li>Use proven theorems to prove more theorems, building a structure of increasing complexity.</li></ol>
+<p>Euclid&#x27;s genius was showing that geometry—the science of shape, space, and measurement—could be built this way. Nearly all of it flows from five postulates.</p>
+<p>The <strong>five Euclidean postulates</strong> are:</p>
+<p><strong>Postulate 1:</strong> A straight line can be drawn between any two points.</p>
+<p><strong>Postulate 2:</strong> A finite straight line can be extended indefinitely in both directions.</p>
+<p><strong>Postulate 3:</strong> A circle can be drawn with any center and any radius.</p>
+<p><strong>Postulate 4:</strong> All right angles are equal to one another.</p>
+<p><strong>Postulate 5 (the Parallel Postulate):</strong> Given a line and a point not on that line, exactly one line parallel to the given line can be drawn through the point.</p>
+<p>From these five simple statements, Euclid built the entire structure of Euclidean geometry. Over 2,000 years, mathematicians questioned whether Postulate 5 was necessary or could be derived from the others. The answer, discovered in the 19th century, was surprising: <em>no</em>. If you replace Postulate 5 with a different assumption, you get a completely different but equally logical geometry.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="key-terms">Key Terms</h3>
+<p><strong>Axiom (or Postulate)</strong> A basic statement accepted as true without proof, used as a starting point for reasoning.</p>
+<p><strong>Definition</strong> A statement that explains what a term means using other, previously understood terms.</p>
+<p><strong>Theorem</strong> A statement proven to be true using axioms, definitions, and previously proven theorems.</p>
+<p><strong>Proof</strong> A step-by-step logical argument showing why a theorem must be true.</p>
+<p><strong>Euclidean geometry</strong> The geometry built from Euclid&#x27;s five postulates, which matches our everyday experience of space.</p>
+<p><strong>Axiomatic method</strong> A way of organizing knowledge by starting from axioms and using logic to derive theorems.</p>
+<h3 id="how-euclid-defined-and-organized-concepts">How Euclid Defined and Organized Concepts</h3>
+<p>Euclid&#x27;s <em>Elements</em> opens with a list of definitions. Here are examples (adapted to modern language):</p>
+<p><strong>Definition:</strong> A point is that which has no part. (A point is dimensionless, the most basic unit of geometry.)</p>
+<p><strong>Definition:</strong> A line is length without breadth. (A line has one dimension: length.)</p>
+<p><strong>Definition:</strong> A straight line is a line that lies evenly between its endpoints. (A straight line does not curve or bend.)</p>
+<p>These definitions are not perfect by modern standards—they use undefined concepts like &quot;no part&quot; and &quot;length&quot;—but they clarify what Euclid meant by his terms.</p>
+<p>After definitions come the postulates (axioms). Postulate 1 says: &quot;A straight line can be drawn between any two points.&quot; This is not proven. It is accepted as obvious from experience. But everything else is built on it.</p>
+<h3 id="the-five-euclidean-postulates-explained">The Five Euclidean Postulates Explained</h3>
+<p><strong>Postulate 1:</strong> A straight line can be drawn between any two points.</p>
+<p>This postulate asserts that geometry is not fragmented. Any two points determine a unique straight line connecting them.</p>
+<p><strong>Postulate 2:</strong> A finite straight line can be extended indefinitely in both directions.</p>
+<p>Given a line segment, you can always extend it further. Space does not have a boundary.</p>
+<p><strong>Postulate 3:</strong> A circle can be drawn with any center and any radius.</p>
+<p>Given a point and a distance, you can draw a circle. This postulate is important for construction.</p>
+<p><strong>Postulate 4:</strong> All right angles are equal to one another.</p>
+<p>A 90-degree angle is the same everywhere. This might seem obvious, but it encodes the uniformity of space.</p>
+<p><strong>Postulate 5 (the Parallel Postulate):</strong> Given a line and a point not on that line, exactly one line parallel to the given line can be drawn through the point.</p>
+<p>This is the most controversial postulate. For centuries, mathematicians tried to prove it from the other four. They failed. In the 1800s, it was discovered that this postulate cannot be derived from the others. It is independent. And if you replace it with a different assumption, you get non-Euclidean geometry.</p>
+<h3 id="building-from-axioms-a-simple-example">Building from Axioms: A Simple Example</h3>
+<p><strong>Given:</strong> Postulate 1 (a line can be drawn between any two points) and Postulate 2 (a line can be extended indefinitely).</p>
+<p><strong>Theorem:</strong> Two distinct lines can intersect in at most one point.</p>
+<p><strong>Proof:</strong> Suppose two distinct lines intersected at two different points, say A and B. But by Postulate 1, exactly one line can be drawn between A and B. So the two lines must be the same line, contradicting the assumption that they are distinct. Therefore, two distinct lines can intersect in at most one point. ✓</p>
+<p>Notice how the proof rests on the postulate. It does not ask &quot;does this seem true?&quot; It asks &quot;what <em>must</em> be true given the postulate?&quot;</p>
+<h3 id="why-the-axiomatic-method-is-powerful">Why the Axiomatic Method Is Powerful</h3>
+<ol><li><strong>Clarity:</strong> Everything rests on a clear foundation. You know what you are assuming.</li></ol>
+<ol><li><strong>Completeness:</strong> Once the axioms are set, the consequences are determined. There is no mystery about what is true in the system.</li></ol>
+<ol><li><strong>Necessity:</strong> A theorem is not an opinion or an approximate rule. It <em>must</em> be true if the axioms are true.</li></ol>
+<ol><li><strong>Extension:</strong> Once a theorem is proven, it becomes a tool for proving more theorems. Knowledge builds.</li></ol>
+<ol><li><strong>Alternatives:</strong> If you change the axioms, you change the whole system. This is how non-Euclidean geometry was discovered—by keeping the first four postulates but replacing the fifth.</li></ol>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-a-theorem-from-euclid-s-elements-proposition-1">Example 1: A Theorem from Euclid&#x27;s Elements (Proposition 1)</h3>
+<p><strong>Theorem:</strong> Given a line segment, an equilateral triangle can be constructed on it.</p>
+<p><strong>Setup:</strong> You have a line segment AB. You want to construct an equilateral triangle with AB as one side.</p>
+<p><strong>Construction (sketch):</strong></p>
+<ol><li>By Postulate 3, draw a circle with center A and radius equal to the length of AB.</li><li>By Postulate 3, draw a circle with center B and radius equal to the length of AB.</li><li>These circles intersect at a point C (assuming they do—this requires some care).</li><li>By Postulate 1, draw line segments from A to C and from B to C.</li><li>Triangle ABC has all three sides equal to AB, so it is equilateral. ✓</li></ol>
+<p><strong>Why this matters:</strong> This is Euclid&#x27;s very first proposition. It shows that from the postulates, you can <em>construct</em> objects, not just describe them. It demonstrates the power of starting from axioms.</p>
+<h3 id="example-2-using-postulate-5-the-parallel-postulate">Example 2: Using Postulate 5 (The Parallel Postulate)</h3>
+<p><strong>Theorem:</strong> If two lines are parallel to a third line, they are parallel to each other.</p>
+<p><strong>Proof sketch:</strong> Suppose lines $\ell_1$ and $\ell_2$ are both parallel to line $\ell_3$.</p>
+<p>Assume for contradiction that $\ell_1$ and $\ell_2$ intersect at a point P.</p>
+<p>By Postulate 5, exactly one line through P is parallel to $\ell_3$. But we said both $\ell_1$ and $\ell_2$ are parallel to $\ell_3$ and pass through P. This is a contradiction.</p>
+<p>Therefore, $\ell_1$ and $\ell_2$ cannot intersect, so they are parallel to each other. ✓</p>
+<p>(This proof is simplified but captures the logical structure.)</p>
+<h3 id="example-3-why-postulate-5-is-independent">Example 3: Why Postulate 5 Is Independent</h3>
+<p><strong>The Question:</strong> Can you prove Postulate 5 from Postulates 1-4 alone?</p>
+<p><strong>The Answer (discovered in the 1800s):</strong> No.</p>
+<p><strong>Why:</strong> It is possible to construct a consistent, logical geometry that satisfies Postulates 1-4 but not Postulate 5. In such geometries (called hyperbolic geometry), <em>multiple</em> lines through a point can be parallel to a given line.</p>
+<p>This shows that Postulate 5 is independent. It is not a consequence of the others. It is a genuine choice that defines the kind of space you are studying.</p>
+<p>If you remove Postulate 5 and replace it with &quot;multiple parallels exist,&quot; you get hyperbolic geometry. If you replace it with &quot;no parallel exists,&quot; you get spherical geometry. All three are internally consistent and useful.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<h3 id="warm-up">Warm-Up</h3>
+<ol><li>What is the difference between an axiom and a theorem?</li><li>In your own words, explain what &quot;axiomatic method&quot; means.</li></ol>
+<h3 id="core-practice">Core Practice</h3>
+<ol><li>State the first two Euclidean postulates and explain why both are necessary (i.e., what would break if you removed one?).</li><li>Given Postulate 1 (a line can be drawn between any two points), can you explain why two different lines cannot pass through the same two points? Write 2–3 sentences.</li><li>Postulate 4 says &quot;All right angles are equal to one another.&quot; Why might ancient mathematicians have accepted this without proof?</li><li>The Parallel Postulate has been questioned for centuries. Why might mathematicians doubt it compared to the other four postulates?</li></ol>
+<h3 id="stretch">Stretch</h3>
+<ol><li>Imagine a geometry where Postulate 5 is replaced with: &quot;No line parallel to a given line can be drawn through an external point.&quot; What would change about geometry? (Hint: Think about the angles in a triangle.)</li></ol>
+<details>
+<summary>Practice Answer Guide</summary>
+<ol><li>An axiom is a basic statement accepted without proof. A theorem is a statement proven from axioms or other theorems.</li><li>The axiomatic method is a way of organizing knowledge by starting with fundamental axioms and using logic to derive all other truths in the system.</li><li>Postulate 1: &quot;A straight line can be drawn between any two points.&quot; Postulate 2: &quot;A finite straight line can be extended indefinitely in both directions.&quot; Postulate 1 establishes that lines exist and are unique between points. Postulate 2 ensures lines are not bounded—space is infinite. Removing Postulate 1 would make geometry disconnected; removing Postulate 2 would create &quot;bounded lines,&quot; which contradicts our intuition about straight lines.</li><li>If two different lines could pass through the same two points, they would have to be identical (by Postulate 1, there is only one line through any two points). So two different lines cannot share two points.</li><li>All right angles are equal because space is uniform. A right angle created in one location is the same as a right angle created elsewhere. This reflects our experience and seems self-evident.</li><li>The Parallel Postulate is more complex than the others. It is a negative statement (you cannot draw a parallel), which is harder to verify empirically. Also, it involves infinity (parallel lines extend forever without meeting). For these reasons, mathematicians wondered if it could be derived from the other postulates—which turned out to be impossible.</li><li>If no line parallel to a given line could be drawn through an external point, then on a &quot;sphere&quot; or similar curved space, the sum of angles in a triangle would exceed 180 degrees. In fact, this describes spherical geometry, used to model the Earth&#x27;s surface.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>A student says, &quot;Euclid&#x27;s axioms are just common sense. Why spend time on them? Why not just use axioms that work?&quot;</p>
+<p>Write 4–6 sentences responding to this. Your answer should:</p>
+<ul><li>explain why explicitly stating axioms is important, even if they seem obvious</li><li>give an example of how stating axioms led to a discovery (like non-Euclidean geometry)</li><li>address the difference between &quot;seems true&quot; and &quot;actually foundation of a logical system&quot;</li></ul>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>The axiomatic method is not just historical. It is the foundation of modern mathematics, physics, and computer science.</p>
+<p>In physics, Newton&#x27;s laws are axioms from which nearly all of classical mechanics can be derived. In geometry, Euclid&#x27;s axioms are still taught (though sometimes reformulated with modern language). In computer science, formal systems—like the axioms of logic—are used to verify that algorithms are correct.</p>
+<p>Even in less mathematical fields, the axiomatic approach is influential. When architects and engineers design a building, they start with basic principles (axioms) about materials, forces, and safety. When a lawyer argues a case, they start from established principles (axioms) of law and derive conclusions.</p>
+<p>Euclid showed that if you are clear about your starting points and careful about your logic, you can build knowledge that is unshakeable. That insight shaped not just mathematics, but human reasoning itself.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>Euclid</strong> systematized Greek geometry in the <em>Elements</em> around 300 BCE.</li><li>The <strong>axiomatic method</strong> builds knowledge from axioms using logical proofs.</li><li>Euclid&#x27;s <strong>five postulates</strong> are the foundation of Euclidean geometry.</li><li><strong>Postulate 1</strong> states a line can be drawn between any two points.</li><li><strong>Postulate 2</strong> states lines can be extended indefinitely.</li><li><strong>Postulate 3</strong> states circles can be drawn with any center and radius.</li><li><strong>Postulate 4</strong> states all right angles are equal.</li><li><strong>Postulate 5 (the Parallel Postulate)</strong> states exactly one line parallel to a given line can be drawn through an external point.</li><li>The Parallel Postulate is independent and cannot be derived from the others.</li><li>Replacing the Parallel Postulate creates non-Euclidean geometry.</li><li>The <em>Elements</em> influenced mathematics, logic, and science for over 2,000 years.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What was Euclid&#x27;s main contribution to mathematics?</li></ol>
+<ul><li>He invented new geometric theorems</li><li>He organized geometry into an axiomatic system starting from five postulates</li><li>He proved the Pythagorean theorem</li><li>He developed trigonometry</li></ul>
+<ol><li>What is an axiom in Euclid&#x27;s system?</li></ol>
+<ul><li>A conjecture to be tested</li><li>A proven theorem</li><li>A basic statement accepted as true without proof</li><li>A geometric tool</li></ul>
+<ol><li>Which of the following best describes the Parallel Postulate?</li></ol>
+<ul><li>Given a line and an external point, exactly one line parallel to the given line can be drawn through the point</li><li>Two parallel lines eventually intersect</li><li>Parallel lines do not exist</li><li>Every line has a parallel</li></ul>
+<ol><li>What happens if you replace Euclid&#x27;s Postulate 5 with &quot;no parallel lines exist&quot;?</li></ol>
+<ul><li>You get invalid mathematics</li><li>You get a different but consistent geometry (spherical geometry)</li><li>Geometry becomes impossible</li><li>You contradict the other postulates</li></ul>
+<ol><li>Why is the axiomatic method powerful for building knowledge?</li></ol>
+<ul><li>It makes mathematics easier to memorize</li><li>It clearly states foundations, ensures logical necessity, and allows extension to new theorems</li><li>It eliminates the need for proof</li><li>It is faster than other methods</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>He organized geometry into an axiomatic system starting from five postulates</li><li>A basic statement accepted as true without proof</li><li>Given a line and an external point, exactly one line parallel to the given line can be drawn through the point</li><li>You get a different but consistent geometry (spherical geometry)</li><li>It clearly states foundations, ensures logical necessity, and allows extension to new theorems</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Euclid" target="_blank" rel="noopener">Euclid</a> — biography and overview of Euclid&#x27;s life and his foundational work</li><li><a href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" target="_blank" rel="noopener">Euclid&#x27;s Elements</a> — detailed history and structure of the <em>Elements</em>, the most influential mathematics text ever written</li><li><a href="https://en.wikipedia.org/wiki/Euclidean_geometry" target="_blank" rel="noopener">Euclidean geometry</a> — comprehensive overview of geometry based on Euclid&#x27;s postulates</li><li><a href="https://en.wikipedia.org/wiki/Parallel_postulate" target="_blank" rel="noopener">Parallel postulate</a> — the history and debate surrounding Euclid&#x27;s fifth postulate, and the discovery of non-Euclidean geometry</li><li><a href="https://en.wikipedia.org/wiki/Axiomatic_system" target="_blank" rel="noopener">Axiomatic system</a> — formal explanation of the axiomatic method and how it is used in modern mathematics</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-01-shape-measure-greek-project/ch-015-the-greek-turn-toward-proof/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Greek Turn Toward Proof</span></a><a class="pager-link pager-link--next" href="../../world-01-shape-measure-greek-project/ch-017-points-lines-and-angles/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Points, Lines, and Angles</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

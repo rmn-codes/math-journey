@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Graphing Linear Equations — Math Journey</title>
+    <meta name="description" content="Every straight line hides an equation — and every equation draws a line" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 3 · Chapter 42</p>
+        <h1>Graphing Linear Equations</h1>
+        <p class="hero-copy">Every straight line hides an equation — and every equation draws a line</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>foundational</span>
+          <span>Europe</span>
+          <span>1600s–1800s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Graph a linear equation using a table of values</li><li>Identify x- and y-intercepts and use them to graph</li><li>Recognize horizontal and vertical lines</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#making-a-table-of-values">Making a Table of Values</a></li><li class="toc-level-3"><a href="#using-intercepts">Using Intercepts</a></li><li class="toc-level-3"><a href="#special-cases-horizontal-and-vertical-lines">Special Cases: Horizontal and Vertical Lines</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>It is 1750, somewhere in rural France. A civil engineer named Marguerite stands at the edge of a vast, muddy plot of land. Her task: build a perfectly straight road through forest and field to connect two towns.</p>
+<p>No GPS. No laser level. But she has her notebook and a surveying instrument.</p>
+<p>Marguerite picks a starting point and begins to measure. &quot;From this post,&quot; she calls to her assistant, &quot;if we go one kilometer east, we must go two kilometers north.&quot; She plants a stake. &quot;From here, one kilometer east, two kilometers north again.&quot; Another stake.</p>
+<p>By the time she has ten stakes planted, the pattern is unmistakable. The stakes form a perfect line.</p>
+<p>Later, back in her office, Marguerite writes this rule: &quot;For every kilometer east, rise two kilometers north.&quot; In modern notation, this is an equation: $y = 2x$.</p>
+<p>She realizes something profound: <em>The equation is the line. The line is the equation. Draw one and you have the other.</em></p>
+<p>This is the great discovery of this chapter. An equation in two variables is not just an algebraic puzzle. It is a picture.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Most relationships in the real world involve more than one quantity. A company&#x27;s profit depends on how many items it sells. The distance you&#x27;ve traveled depends on how long you&#x27;ve been driving. The temperature of soup depends on how long it&#x27;s been cooling.</p>
+<p>These relationships often follow rules that, when plotted, form straight lines. Linear relationships are everywhere: in business, science, medicine, engineering.</p>
+<p>When you can turn an equation into a graph, you gain intuition. You can see where a line crosses the axes. You can estimate values that aren&#x27;t explicitly calculated. You can compare two different linear relationships at a glance.</p>
+<p>The ability to graph an equation is not a mere arithmetic skill. It is a way of thinking. It is how mathematicians, engineers, and data scientists understand the world.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The coordinate plane was Descartes&#x27;s gift, but the practical art of graphing equations developed slowly over the 18th and 19th centuries. As scientists and engineers used mathematics to model reality — to predict planetary motion, design machines, manage agriculture — graphing became essential.</p>
+<p>The terms &quot;x-intercept&quot; and &quot;y-intercept&quot; gained currency in the 1800s, particularly in the work of French and German mathematicians who were systematizing algebra and geometry. The idea of setting a variable to zero to find an intercept was so elegant and useful that it became standard practice.</p>
+<p>By the early 1900s, graphing was taught in schools as a fundamental mathematical skill. Today, graphing technology (from pencil and paper to computer software) remains one of the most powerful tools for understanding data and relationships.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>linear equation in two variables</strong> is an equation of the form:</p>
+<p>$$ax + by = c$$</p>
+<p>where $a$, $b$, and $c$ are numbers (and $a$ and $b$ are not both zero).</p>
+<p>When you solve this equation for $y$, you often get:</p>
+<p>$$y = mx + b$$</p>
+<p>where $m$ and $b$ are numbers. (We&#x27;ll explore this form more in the next chapter; for now, think of it as a way to find $y$ given $x$.)</p>
+<p>An equation like $y = 2x + 1$ or $2x + 3y = 12$ is a <em>relationship</em> between $x$ and $y$. Every ordered pair $(x, y)$ that satisfies the equation is a <em>solution</em> to that equation.</p>
+<p>The graph of a linear equation is the set of all points $(x, y)$ that satisfy it. And this graph is always a straight line.</p>
+<h3 id="making-a-table-of-values">Making a Table of Values</h3>
+<p>To graph an equation, one reliable method is to:</p>
+<ol><li><strong>Choose several values for $x$</strong> (any values you like; zero is often convenient).</li><li><strong>Substitute each $x$-value into the equation</strong> to find the corresponding $y$-value.</li><li><strong>Write the $(x, y)$ pairs as ordered pairs.</strong></li><li><strong>Plot these points on a coordinate plane.</strong></li><li><strong>Draw a straight line through the points.</strong></li></ol>
+<h3 id="using-intercepts">Using Intercepts</h3>
+<p>A quicker method is to find the points where the line crosses the axes.</p>
+<p>The <strong>x-intercept</strong> is the point where the line crosses the x-axis. At this point, $y = 0$. To find it, set $y = 0$ in the equation and solve for $x$.</p>
+<p>The <strong>y-intercept</strong> is the point where the line crosses the y-axis. At this point, $x = 0$. To find it, set $x = 0$ in the equation and solve for $y$.</p>
+<p>Two points are enough to draw a line, so if you find both intercepts, you can sketch the graph immediately.</p>
+<h3 id="special-cases-horizontal-and-vertical-lines">Special Cases: Horizontal and Vertical Lines</h3>
+<p>A <strong>horizontal line</strong> has the form $y = k$ for some constant $k$. Every point on this line has the same $y$-coordinate.</p>
+<ul><li>The equation $y = 3$ represents a horizontal line 3 units above the x-axis.</li><li>The equation $y = 0$ is the x-axis itself.</li></ul>
+<p>A <strong>vertical line</strong> has the form $x = h$ for some constant $h$. Every point on this line has the same $x$-coordinate.</p>
+<ul><li>The equation $x = -2$ represents a vertical line 2 units to the left of the y-axis.</li><li>The equation $x = 0$ is the y-axis itself.</li></ul>
+<p>Vertical lines are tricky because they don&#x27;t represent functions (more on that later), and they don&#x27;t have a y-intercept unless they are the y-axis itself.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Linear Equation in Two Variables:</strong> An equation of the form $ax + by = c$, where $a$, $b$, and $c$ are real numbers and $a$ and $b$ are not both zero.</p>
+<p><strong>Solution of an Equation:</strong> An ordered pair $(x, y)$ that makes the equation true when the values are substituted.</p>
+<p><strong>Table of Values:</strong> A systematic list of input (x) and output (y) values for an equation, used to identify points on the graph.</p>
+<p><strong>x-Intercept:</strong> The point where a line crosses the x-axis; found by setting $y = 0$ and solving for $x$. The ordered pair has the form $(a, 0)$.</p>
+<p><strong>y-Intercept:</strong> The point where a line crosses the y-axis; found by setting $x = 0$ and solving for $y$. The ordered pair has the form $(0, b)$.</p>
+<p><strong>Horizontal Line:</strong> A line parallel to the x-axis, represented by the equation $y = k$ for some constant $k$.</p>
+<p><strong>Vertical Line:</strong> A line parallel to the y-axis, represented by the equation $x = h$ for some constant $h$.</p>
+<p><strong>Graph of an Equation:</strong> The set of all points in the coordinate plane whose coordinates satisfy the equation.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Graphing Using a Table of Values</strong></p>
+<p>Graph the equation $y = 2x - 1$.</p>
+<p><em>Solution:</em></p>
+<p>Choose $x$-values: $-1, 0, 1, 2, 3$.</p>
+<p>Substitute into $y = 2x - 1$:</p>
+<p>| $x$ | $y = 2x - 1$ | $(x, y)$ | |-----|-------------|----------| | $-1$ | $-3$ | $(-1, -3)$ | | $0$ | $-1$ | $(0, -1)$ | | $1$ | $1$ | $(1, 1)$ | | $2$ | $3$ | $(2, 3)$ | | $3$ | $5$ | $(3, 5)$ |</p>
+<p>Plot these points and draw a straight line through them. The line passes through all points satisfying the equation.</p>
+<p><strong>Example 2: Graphing Using Intercepts</strong></p>
+<p>Graph the equation $2x + 3y = 6$.</p>
+<p><em>Solution:</em></p>
+<p><strong>x-intercept:</strong> Set $y = 0$: $2x + 3(0) = 6 \Rightarrow 2x = 6 \Rightarrow x = 3$. The x-intercept is $(3, 0)$.</p>
+<p><strong>y-intercept:</strong> Set $x = 0$: $2(0) + 3y = 6 \Rightarrow 3y = 6 \Rightarrow y = 2$. The y-intercept is $(0, 2)$.</p>
+<p>Plot these two points and draw the line. This line completely represents the equation $2x + 3y = 6$.</p>
+<p><strong>Example 3: Horizontal Line</strong></p>
+<p>Graph $y = 4$.</p>
+<p><em>Solution:</em></p>
+<p>This equation says: $y$ is always 4, no matter what $x$ is. So $(-5, 4)$, $(0, 4)$, $(3, 4)$, and $(100, 4)$ are all solutions.</p>
+<p>The graph is a horizontal line 4 units above the x-axis. It never crosses the x-axis, so there is no x-intercept. The y-intercept is $(0, 4)$.</p>
+<p><strong>Example 4: Vertical Line</strong></p>
+<p>Graph $x = -3$.</p>
+<p><em>Solution:</em></p>
+<p>This equation says: $x$ is always $-3$, no matter what $y$ is. So $(-3, -10)$, $(-3, 0)$, $(-3, 5)$, and all other points with $x = -3$ are solutions.</p>
+<p>The graph is a vertical line 3 units to the left of the y-axis. It never crosses the y-axis (so no y-intercept) unless the line is the y-axis itself. The x-intercept is $(-3, 0)$.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Use a table of values to graph $y = -x + 2$. Use at least four values of $x$.</li></ol>
+<ol><li>Graph $y = 3x$ by plotting at least three points and drawing the line.</li></ol>
+<ol><li>Find the x- and y-intercepts of $3x + 4y = 12$, then sketch the line.</li></ol>
+<ol><li>Graph the equation $x + 2y = 8$ using the intercept method.</li></ol>
+<ol><li>Is the point $(2, 5)$ on the line $y = 2x + 1$? Show your work.</li></ol>
+<ol><li>Is the point $(-1, 3)$ on the line $3x + 2y = 3$? Show your work.</li></ol>
+<ol><li>Graph the horizontal line $y = -2$.</li></ol>
+<ol><li>Graph the vertical line $x = 5$.</li></ol>
+<ol><li>For the equation $2x - 5y = 10$, find both intercepts without graphing.</li></ol>
+<ol><li>If a line passes through $(0, 4)$ and $(2, 0)$, write the equation in the form $ax + by = c$.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Road Revisited</strong></p>
+<p>Recall Marguerite&#x27;s road: for every kilometer east, rise two kilometers north.</p>
+<p>If we place the origin at her starting point, the equation is $y = 2x$ (where $y$ is kilometers north and $x$ is kilometers east).</p>
+<ol><li>What is the y-intercept of this equation? What does it mean in the context of the road?</li></ol>
+<ol><li>Does this equation have an x-intercept (other than the origin)? Why or why not?</li></ol>
+<ol><li>If Marguerite wants to extend the road into the opposite direction (west and south), does the equation $y = 2x$ still apply? Which quadrants would the road pass through?</li></ol>
+<ol><li>Suppose a second engineer builds a road with the rule &quot;for every kilometer east, rise one kilometer north&quot; (equation $y = x$). Sketch both roads on the same coordinate plane. Which road is steeper?</li></ol>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Tree Growth</strong></p>
+<p>A young oak tree is planted in a garden. A botanist measures its height each year:</p>
+<p>| Year | Height (meters) | |------|---| | 0 | 2 | | 1 | 2.5 | | 2 | 3 | | 3 | 3.5 |</p>
+<p>The height follows a linear pattern. If $x$ is the number of years and $y$ is the height in meters:</p>
+<ol><li>What is the equation relating $x$ and $y$?</li><li>How tall will the tree be after 5 years?</li><li>How many years until the tree reaches 5 meters?</li></ol>
+<p><em>Solution:</em></p>
+<p>The tree grows 0.5 meters per year. At year 0, the height is 2 meters. So:</p>
+<p>$$y = 0.5x + 2$$</p>
+<p>or equivalently</p>
+<p>$$y = \frac{1}{2}x + 2$$</p>
+<p>For year 5: $y = 0.5(5) + 2 = 2.5 + 2 = 4.5$ meters.</p>
+<p>For height 5 meters: $5 = 0.5x + 2 \Rightarrow 3 = 0.5x \Rightarrow x = 6$ years.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>A linear equation in two variables describes a relationship between two quantities. By creating a table of values or finding the x- and y-intercepts, we can plot points and sketch the graph, which is always a straight line.</p>
+<p>The intercept method is often the quickest: set one variable to zero, find the other, plot the point, and repeat. Two points determine a line.</p>
+<p>Horizontal lines have the form $y = k$; vertical lines have the form $x = h$. These special cases help us recognize when an equation represents a function and when it doesn&#x27;t.</p>
+<p>Graphing is the bridge between algebra and geometry, between equation and picture. Master it, and you can understand any linear relationship.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is the y-intercept of the equation $y = 3x + 5$?</li></ol>
+<ul><li>$(0, 5)$</li><li>$(5, 0)$</li><li>$(3, 0)$</li><li>$(0, 3)$</li></ul>
+<ol><li>To find the x-intercept of a line, which variable should you set to zero?</li></ol>
+<ul><li>Set $x = 0$</li><li>Set $y = 0$</li><li>Set both equal to zero</li><li>The choice doesn&#x27;t matter</li></ul>
+<ol><li>Which ordered pair is a solution to $2x + y = 7$?</li></ol>
+<ul><li>$(1, 5)$</li><li>$(2, 3)$</li><li>$(3, 1)$</li><li>$(0, 0)$</li></ul>
+<ol><li>What is the y-intercept of $3x + 2y = 6$?</li></ol>
+<ul><li>$(2, 0)$</li><li>$(0, 3)$</li><li>$(0, 2)$</li><li>$(6, 0)$</li></ul>
+<ol><li>The equation $y = 4$ represents which kind of line?</li></ol>
+<ul><li>A line with positive slope</li><li>A line with negative slope</li><li>A horizontal line</li><li>A vertical line</li></ul>
+<ol><li>How many points do you need to plot to accurately draw a straight line?</li></ol>
+<ul><li>One</li><li>Two</li><li>Three</li><li>Four</li></ul>
+<details>
+<summary>Answer Key</summary>
+<ol><li>$(0, 5)$</li></ol>
+<ol><li>Set $y = 0$</li></ol>
+<ol><li>$(1, 5)$</li></ol>
+<ol><li>$(0, 3)$</li></ol>
+<ol><li>A horizontal line</li></ol>
+<ol><li>Two</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<p>https://en.wikipedia.org/wiki/Linear_equation</p>
+<ul><li>Linear equations and graphing:</li></ul>
+<p>https://en.wikipedia.org/wiki/Cartesian_coordinate_system</p>
+<ul><li>History of mathematical graphing and the coordinate system:</li></ul>
+<p>https://en.wikipedia.org/wiki/Intercept</p>
+<ul><li>X-intercept and y-intercept definitions and applications:</li></ul>
+<p>https://en.wikipedia.org/wiki/Surveying</p>
+<ul><li>Civil engineering and road design methods:</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-03-coordination-space-and-functions/ch-041-the-coordinate-plane/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Coordinate Plane</span></a><a class="pager-link pager-link--next" href="../../world-03-coordination-space-and-functions/ch-043-slope/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Slope — The Measure of Steepness</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

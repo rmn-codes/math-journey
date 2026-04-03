@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modeling with Functions — Math Journey</title>
+    <meta name="description" content="Choosing the right mathematical tool — and reading what the model tells you" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 3 · Chapter 52</p>
+        <h1>Modeling with Functions</h1>
+        <p class="hero-copy">Choosing the right mathematical tool — and reading what the model tells you</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1800s–present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Choose an appropriate function type to model data</li><li>Build linear, quadratic, and exponential models</li><li>Interpret model parameters in context</li><li>Recognize limitations of mathematical models</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p><strong>November 1854, Scutari Hospital, Ottoman Empire.</strong></p>
+<p>The Crimean War rages, but Florence Nightingale sees a crisis within the crisis: more soldiers die from disease than from battle wounds. Diseases like typhus and cholera, spread by poor sanitation, kill more than bullets.</p>
+<p>Nightingale doesn&#x27;t just count deaths. She plots them over time, creating what she calls a &quot;rose diagram&quot;—a visual model. The data tells a story: deaths spike during months when sanitation is poorest. She uses mathematics to argue for reform, and thousands of soldiers live because Nightingale chose the right model and read it carefully.</p>
+<p>This chapter is about doing what Nightingale did: collecting data, choosing a function type, building a model, and interpreting its meaning to make real decisions.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Mathematical modeling lets you:</p>
+<ul><li><strong>Make predictions:</strong> Will the population reach 10 million? When will the epidemic peak?</li><li><strong>Understand patterns:</strong> Why does growth slow? Where is the turning point?</li><li><strong>Test theories:</strong> If my hypothesis is correct, the data should follow this model.</li><li><strong>Support decisions:</strong> Nightingale convinced the military to reform using data-driven models, not emotion.</li><li><strong>Plan interventions:</strong> Engineers use models to know where to invest, when to act, how much to prepare.</li></ul>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Florence Nightingale pioneered data visualization in 1858. By the early 1900s, statisticians and mathematicians had formalized the art of model selection: choosing whether your data follows a linear, quadratic, exponential, or other pattern. Karl Pearson developed correlation to measure how well a model fits data. In the 20th century, computers made it possible to test thousands of models instantly. Today, &quot;data science&quot; is largely the art of choosing, building, and interpreting mathematical models. Climate scientists, economists, epidemiologists, and engineers all use the same basic process Nightingale pioneered.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>mathematical model</strong> is a function (or system of functions) that describes real-world data. The general process is:</p>
+<ol><li><strong>Collect data</strong> from observation or experiment.</li><li><strong>Choose a model type:</strong> Is it linear (constant rate of change)? Quadratic (turning point)? Exponential (percentage growth)?</li><li><strong>Fit the model:</strong> Find the function that best matches your data.</li><li><strong>Interpret:</strong> What do the parameters mean in the real world? What does the model predict?</li><li><strong>Validate:</strong> Does the model work? Where does it fail? What are its limitations?</li></ol>
+<p><strong>Linear models</strong> describe situations with constant rate of change: $f(x) = mx + b$.</p>
+<ul><li>Signal: data points roughly form a straight line.</li><li>Example: Distance traveled at constant speed.</li></ul>
+<p><strong>Quadratic models</strong> describe situations with a turning point: $f(x) = ax^2 + bx + c$.</p>
+<ul><li>Signal: data has a peak or valley.</li><li>Example: Height of a ball thrown in the air; profit as a function of production volume.</li></ul>
+<p><strong>Exponential models</strong> describe situations with percentage growth or decay: $f(x) = a \cdot b^x$ or $f(x) = a \cdot e^{kx}$.</p>
+<ul><li>Signal: data grows or shrinks increasingly fast, or increasingly slow.</li><li>Example: Population growth, radioactive decay, viral spread, investment returns.</li></ul>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Mathematical model:</strong> A function or system of functions representing real data or a real system.</p>
+<p><strong>Linear regression:</strong> A method to fit a line $y = mx + b$ to data by minimizing the sum of squared distances (residuals) between the line and data points.</p>
+<p><strong>Quadratic regression:</strong> A method to fit a parabola $y = ax^2 + bx + c$ to data.</p>
+<p><strong>Exponential regression:</strong> A method to fit an exponential function to data. If growth is exponential, plot $\ln(y)$ vs. $x$; if the result is linear, then $y = a e^{kx}$.</p>
+<p><strong>Residual:</strong> The difference between a data point and the model&#x27;s prediction at that point: residual $= y_{\text{data}} - y_{\text{model}}$.</p>
+<p><strong>Interpolation:</strong> Using a model to predict a value within the range of observed data.</p>
+<p><strong>Extrapolation:</strong> Using a model to predict a value outside the range of observed data. This is risky because patterns may not hold beyond the data.</p>
+<p><strong>Coefficient of determination ($R^2$):</strong> A measure of how well a model fits data, ranging from 0 to 1. $R^2 = 1$ means perfect fit; $R^2 = 0$ means no fit.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Linear model — Distance and time</strong></p>
+<p>A car travels on a highway. Here&#x27;s the distance from home over time:</p>
+<p>| Time (hours) | Distance (miles) | |---|---| | 0 | 0 | | 1 | 55 | | 2 | 110 | | 3 | 165 | | 4 | 220 |</p>
+<p>The data points are collinear (form a straight line). This is a linear model: $d(t) = 55t$.</p>
+<p><strong>Interpretation:</strong> The car travels at a constant 55 mph.</p>
+<p><strong>Prediction (interpolation):</strong> At 2.5 hours, the distance is $d(2.5) = 55(2.5) = 137.5$ miles.</p>
+<p><strong>Prediction (extrapolation):</strong> If the car continues at 55 mph, after 5 hours it will be $d(5) = 275$ miles from home.</p>
+<p>(Note: Extrapolation assumes the car continues at the same speed, which may not be true. Real roads have traffic, rest stops, speed limits.)</p>
+<p><strong>Example 2: Quadratic model — Projectile motion</strong></p>
+<p>A baseball is thrown upward. Its height above the ground (in feet) as a function of time (in seconds) is recorded:</p>
+<p>| Time (s) | Height (ft) | |---|---| | 0 | 6 | | 0.5 | 20 | | 1 | 30 | | 1.5 | 36 | | 2 | 38 | | 2.5 | 36 | | 3 | 30 |</p>
+<p>A quadratic model fits this data: $h(t) = -16t^2 + 48t + 6$.</p>
+<p><strong>Interpretation:</strong></p>
+<ul><li>The $-16$ coefficient reflects gravity&#x27;s acceleration.</li><li>The $+48$ is the initial upward velocity.</li><li>The $+6$ is the initial height (6 feet, released from shoulder height).</li></ul>
+<p><strong>Finding the maximum:</strong> The vertex is at $t = -\frac{b}{2a} = -\frac{48}{2(-16)} = 1.5$ seconds, with height $h(1.5) = 38$ feet.</p>
+<p>The ball reaches its peak (38 feet) at 1.5 seconds.</p>
+<p><strong>Example 3: Exponential model — Population growth</strong></p>
+<p>A colony of bacteria grows. The population (in thousands) over days is:</p>
+<p>| Day | Population (thousands) | |---|---| | 0 | 1 | | 1 | 2 | | 2 | 4 | | 3 | 8 | | 4 | 16 |</p>
+<p>The population doubles each day. This is exponential: $P(t) = 1 \cdot 2^t = 2^t$.</p>
+<p><strong>Interpretation:</strong> The growth factor is 2 (doubling). The growth rate is 100% per day.</p>
+<p><strong>Prediction:</strong> On day 5, $P(5) = 2^5 = 32$ thousand bacteria.</p>
+<p><strong>Reality check:</strong> In reality, exponential growth can&#x27;t continue forever. Bacteria would run out of food, space, or oxygen. Models have limits.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Linear model:</strong> A phone plan costs $35 per month plus $0.10 per text message. Write a linear model for the cost $C$ as a function of texts $t$. If you send 200 texts, what&#x27;s your bill?</li></ol>
+<ul><li>Identify the fixed cost and variable cost.</li><li>Use the form $C(t) = $ (fixed) $+$ (rate) $\cdot t$.</li></ul>
+<ol><li><strong>Quadratic model:</strong> A rocket is launched from ground level with initial upward velocity 100 m/s. Its height is $h(t) = -4.9t^2 + 100t$. When does it reach maximum height? What is that height?</li></ol>
+<ul><li>Find the vertex using $t = -\frac{b}{2a}$.</li><li>Substitute back to find the maximum height.</li></ul>
+<ol><li><strong>Exponential model:</strong> An investment grows at 5% per year. If you invest \$1,000, the value after $t$ years is $V(t) = 1000 \cdot 1.05^t$. How much is your investment worth after 10 years?</li></ol>
+<ul><li>What is the initial investment (at $t = 0$)?</li><li>Evaluate at $t = 10$.</li></ul>
+<ol><li><strong>Choosing a model:</strong> Which model type (linear, quadratic, or exponential) best fits each scenario?</li></ol>
+<ul><li>Temperature over a 24-hour day</li><li>Credit card debt with compound interest</li><li>Distance traveled at constant speed</li><li>Population with limited resources (growth slows over time)</li></ul>
+<ol><li><strong>Limitations:</strong> An exponential model predicts that a rapidly growing tech company&#x27;s revenue doubles every year. What real-world factors might eventually slow this growth?</li></ol>
+<ul><li>Market saturation</li><li>Competition</li><li>Resource constraints</li><li>Regulatory limits</li></ul>
+<ol><li><strong>Interpolation vs. Extrapolation:</strong> A dataset shows housing prices from 2015 to 2024. You fit a linear model. Would you be more confident using the model to estimate the price in 2020 or in 2035? Explain.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Epidemic Model:</strong></p>
+<p>A new disease starts with 10 cases. Due to rapid transmission, cases double every week. After 8 weeks, the data shows:</p>
+<p>| Week | Cases | |---|---| | 0 | 10 | | 1 | 20 | | 2 | 40 | | 4 | 160 | | 6 | 640 | | 8 | 2,560 |</p>
+<p>The exponential model is $C(t) = 10 \cdot 2^t$.</p>
+<p>Now, a vaccine program begins in week 8. Vaccinations reduce the growth rate. By week 10, there are 3,500 cases (not 10,240).</p>
+<ul><li>At what point does the model fail (when the data deviates significantly from the exponential prediction)?</li><li>What does this tell you about the vaccine&#x27;s effectiveness?</li><li>How might you adjust your model to account for vaccinations?</li></ul>
+<p>(This mirrors what happened with COVID-19: exponential models helped predict early spread, but interventions changed the growth rate.)</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Real-world example: Nightingale&#x27;s sanitation reform</strong></p>
+<p>Florence Nightingale collected monthly death data from Scutari Hospital. Before sanitation reforms, the death rate was about 43.2 per 1,000 patients. This could be modeled as roughly constant—not because deaths are good, but because without intervention, the rate doesn&#x27;t change.</p>
+<p>By implementing basic hygiene: clean water, ventilation, clean bedding—the death rate plummeted. By plotting this data and showing the sharp decline after the reforms, Nightingale proved that sanitation matters. Her visual model (her famous rose diagram) convinced the British military to reform hospital practices. Thousands of soldiers lived because Nightingale chose the right model and read it correctly.</p>
+<p>Similarly, today&#x27;s epidemiologists build models of disease transmission to show how vaccines, social distancing, or masks reduce spread. The model predicts two futures: without intervention (exponential growth), and with it (reduced growth). These models guide policy.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Mathematical modeling is the art of choosing the right function to describe data, understanding what the model reveals, and recognizing its limits.</p>
+<ul><li><strong>Linear models:</strong> Constant rate of change.</li><li><strong>Quadratic models:</strong> Turning points and extremes.</li><li><strong>Exponential models:</strong> Percentage growth or decay.</li></ul>
+<p>The process: collect data, choose a type, fit the model, interpret, validate. Interpolation (within data range) is safer than extrapolation (beyond data range). Models are tools, not truth. They simplify reality to help us understand patterns and make decisions. Nightingale knew this: her model wasn&#x27;t perfect, but it was compelling enough to save lives.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> Which function type best models a bacteria population that triples every 3 hours?</p>
+<ul><li>Linear: $f(t) = 3t$</li><li>Quadratic: $f(t) = 3t^2$</li><li>Exponential: $f(t) = a \cdot b^t$ where $b = 3$</li><li>Absolute value: $f(t) = 3|t|$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Exponential: $f(t) = a \cdot b^t$ where $b = 3$</p>
+</details>
+<p><strong>Question 2:</strong> A model predicts that profit increases linearly with production volume. What real-world factor might violate this assumption as production grows very large?</p>
+<ul><li>Constant raw material costs</li><li>Fixed overhead costs</li><li>Equipment breaks down; labor becomes less efficient; market becomes saturated</li><li>The model must be correct because it&#x27;s mathematical</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Equipment breaks down; labor becomes less efficient; market becomes saturated</p>
+</details>
+<p><strong>Question 3:</strong> A model fits your data perfectly for the observed range (2024–2025) but you want to predict for 2030. This is an example of:</p>
+<ul><li>Interpolation</li><li>Extrapolation</li><li>Residual analysis</li><li>Coefficient of determination</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Extrapolation</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Wikipedia: &quot;Mathematical Model&quot; — https://en.wikipedia.org/wiki/Mathematical_model</li><li>Wikipedia: &quot;Florence Nightingale&quot; — https://en.wikipedia.org/wiki/Florence_Nightingale</li><li>Khan Academy: &quot;Fitting Quadratic and Exponential Functions to Data&quot; — https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:mod-exp</li><li>OpenStax: &quot;Precalculus&quot; Chapter 2.5 — https://openstax.org/books/precalculus/pages/2-5-modeling-with-linear-functions</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-03-coordination-space-and-functions/ch-051-systems-graphical/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Systems of Equations — A Graphical View</span></a><a class="pager-link pager-link--next" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-053-angles-and-measurement/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Angles and the Language of Turning</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

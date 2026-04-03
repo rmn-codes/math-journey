@@ -1,0 +1,300 @@
+---
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+chapterNumber: 74
+chapterTitle: Differential Equations — The Mathematics of Change
+subtitle: Equations that describe how things change — and the laws they reveal
+historicalPeriod: 1680s–1800s
+estimatedTimeMinutes: 40
+---
+
+## Story Hook
+
+Isaac Newton sits in an apple orchard, and an apple falls. He asks: *What is the force that pulled it down?* He knows that force, mass, and acceleration are related, and he writes it as $F = ma$. But acceleration is the second derivative of position with respect to time. So Newton's Second Law isn't really an equation about position, velocity, and force. It's an equation about derivatives. It's a **differential equation**.
+
+Every physical law is a differential equation. Why does your coffee cool? Why do populations grow and shrink? Why do electrical circuits oscillate? Why do pandemic models predict surges and plateaus? All of these are differential equations. Newton didn't just invent calculus to solve them — calculus was invented *because* differential equations are so important.
+
+This chapter introduces you to the language and solving techniques for differential equations. You'll see why they matter, how to recognize them, and how to solve the simplest class: separable equations.
+
+## Why It Matters
+
+The world is not static. Everything changes: populations, temperatures, concentrations, velocities, wealth, diseases. And change is governed by laws. Those laws are written as differential equations. Without differential equations, we couldn't:
+- Predict planetary orbits
+- Design bridges or buildings
+- Model disease spread
+- Build electrical circuits
+- Understand chemical reactions
+- Forecast weather
+- Design drug doses
+
+Every serious science and engineering discipline relies on differential equations. The mathematics of change is the mathematics of the real world.
+
+## Historical Context
+
+Newton developed calculus (1665–1666, during the plague) specifically to work with differential equations. His Second Law, $F = ma$, is a differential equation. So is his Law of Gravitation. The most important equations in all of physics are differential equations.
+
+In the 1700s, Euler and the Bernoullis solved differential equations for vibrating strings, fluid flow, and wave propagation. Laplace used them to model heat flow and gravitational potential. By the 1800s, differential equations were the central tool in mathematical physics.
+
+Newton's Law of Cooling (formulated by Newton in 1701) is a classic example: the rate at which an object loses heat is proportional to its temperature difference from the surroundings. This simple idea, expressed as a differential equation, allows us to predict cooling curves exactly.
+
+## Core Concept
+
+A **differential equation** is an equation that relates a function to its derivatives.
+
+The simplest form is:
+$$\frac{dy}{dx} = f(x, y)$$
+
+This says: the rate of change of $y$ with respect to $x$ depends on both $x$ and $y$ in some way.
+
+### Order and Degree
+
+The **order** of a differential equation is the order of the highest derivative. For example:
+- $\frac{dy}{dx} = 2x$ is first-order (only $\frac{dy}{dx}$ appears)
+- $\frac{d^2y}{dx^2} + 3\frac{dy}{dx} + 2y = 0$ is second-order (has $\frac{d^2y}{dx^2}$)
+
+The **degree** is the power of the highest derivative (we usually work with degree 1).
+
+### Separable Differential Equations
+
+The simplest class to solve is **separable equations**. These can be written in the form:
+$$\frac{dy}{dx} = g(x) h(y)$$
+
+To solve, separate variables:
+$$\frac{dy}{h(y)} = g(x) \, dx$$
+
+Then integrate both sides:
+$$\int \frac{dy}{h(y)} = \int g(x) \, dx$$
+
+Solve for $y$ to get the general solution (which includes an arbitrary constant $C$).
+
+### Exponential Growth and Decay
+
+The equation:
+$$\frac{dy}{dt} = ky$$
+
+where $k$ is a constant, is separable:
+$$\frac{dy}{y} = k \, dt$$
+$$\int \frac{dy}{y} = \int k \, dt$$
+$$\ln|y| = kt + C$$
+$$y = Ae^{kt}$$
+
+where $A = e^C$ is an arbitrary constant. This is the equation for:
+- **Exponential growth** if $k > 0$ (population, compound interest, nuclear chain reactions)
+- **Exponential decay** if $k < 0$ (radioactive decay, medication clearance, cooling)
+
+### Newton's Law of Cooling
+
+The rate at which an object cools is proportional to the difference between its temperature and the ambient temperature:
+$$\frac{dT}{dt} = k(T - T_s)$$
+
+where $T$ is temperature at time $t$, $T_s$ is the ambient (surrounding) temperature, and $k < 0$ is a constant.
+
+This is separable:
+$$\frac{dT}{T - T_s} = k \, dt$$
+$$\ln|T - T_s| = kt + C$$
+$$T - T_s = Ae^{kt}$$
+$$T(t) = T_s + Ae^{kt}$$
+
+If we know an initial condition — say, the object's temperature at $t = 0$ is $T_0$ — we can find $A$:
+$$T_0 = T_s + A$$
+$$A = T_0 - T_s$$
+
+So the **particular solution** is:
+$$T(t) = T_s + (T_0 - T_s)e^{kt}$$
+
+This tells us exactly how the temperature changes over time.
+
+### Logistic Growth (Conceptual)
+
+Real populations don't grow exponentially forever — resources run out. A better model is:
+$$\frac{dP}{dt} = rP\left(1 - \frac{P}{K}\right)$$
+
+where $r$ is the growth rate and $K$ is the **carrying capacity** (maximum sustainable population). When $P$ is small, the equation approximates exponential growth. As $P$ approaches $K$, growth slows, then stops. This is more realistic than pure exponential growth.
+
+### Initial Value Problems
+
+A differential equation has infinitely many solutions (the general solution with varying $C$). To find a *specific* solution, you need an **initial condition**: the value of $y$ at some point, like $y(0) = y_0$.
+
+An **initial value problem** is a differential equation plus an initial condition:
+$$\frac{dy}{dt} = ky, \quad y(0) = 100$$
+
+Solving the equation gives $y = Ae^{kt}$. The initial condition tells us $100 = A$, so the particular solution is $y = 100e^{kt}$.
+
+### Slope Fields (Direction Fields)
+
+Not all differential equations have closed-form solutions. But you can visualize the solutions using a **slope field** (or **direction field**). At each point $(x, y)$ in the plane, plot a small line segment with slope $f(x, y)$. The solutions are curves that follow these little slopes everywhere.
+
+A slope field shows *qualitatively* how solutions behave, even if you can't write them down explicitly.
+
+## Definitions and Formal Lesson
+
+**Differential equation:** An equation involving a function and its derivatives.
+
+**Order:** The order of the highest derivative in the equation.
+
+**Separable equation:** An equation of the form $\frac{dy}{dx} = g(x) h(y)$, solvable by separation of variables.
+
+**General solution:** A family of solutions containing an arbitrary constant $C$.
+
+**Particular solution:** A single solution obtained by specifying $C$ via an initial condition.
+
+**Initial value problem:** A differential equation plus initial condition(s).
+
+**Slope field:** A graphical representation of solutions via directional line segments.
+
+**Exponential growth/decay:** Solutions to $\frac{dy}{dt} = ky$ are $y = Ae^{kt}$.
+
+**Newton's Law of Cooling:** $\frac{dT}{dt} = k(T - T_s)$ with solution $T(t) = T_s + (T_0 - T_s)e^{kt}$.
+
+## Worked Examples
+
+**Example 1: Exponential decay**
+
+Radioactive iodine-131 decays at a rate proportional to the amount present. If you start with 100 mg and half of it remains after 8 days, find the amount remaining after 20 days.
+
+*Solution:* The equation is $\frac{dN}{dt} = kN$ with general solution $N(t) = Ae^{kt}$.
+
+From the initial condition: $N(0) = 100 = A$.
+
+From the half-life: $N(8) = 50 = 100 e^{8k}$, so $e^{8k} = 0.5$, giving $k = \frac{\ln(0.5)}{8} \approx -0.0866$.
+
+After 20 days: $N(20) = 100 e^{20 \cdot (-0.0866)} = 100 e^{-1.732} \approx 17.7$ mg.
+
+**Example 2: Newton's Law of Cooling**
+
+Hot tea at 95°C is placed in a room at 20°C. After 5 minutes, the tea is 75°C. How long until it cools to 45°C?
+
+*Solution:* $T(t) = T_s + (T_0 - T_s)e^{kt} = 20 + 75e^{kt}$.
+
+From $T(5) = 75$: $75 = 20 + 75e^{5k}$, so $55 = 75e^{5k}$, giving $e^{5k} = \frac{55}{75} = \frac{11}{15}$.
+
+Thus $k = \frac{1}{5}\ln\left(\frac{11}{15}\right) \approx -0.0631$.
+
+For $T(t) = 45$: $45 = 20 + 75e^{kt}$, so $25 = 75e^{kt}$, giving $e^{kt} = \frac{1}{3}$.
+
+Thus $t = \frac{\ln(1/3)}{k} = \frac{-\ln 3}{-0.0631} \approx 17.4$ minutes.
+
+**Example 3: Separable equation**
+
+Solve $\frac{dy}{dx} = 3xy$ with initial condition $y(0) = 2$.
+
+*Solution:* Separate: $\frac{dy}{y} = 3x \, dx$. Integrate: $\ln|y| = \frac{3x^2}{2} + C$.
+
+Exponentiate: $y = Ae^{3x^2/2}$.
+
+From $y(0) = 2$: $2 = A$, so $y = 2e^{3x^2/2}$.
+
+**Example 4: Logistic growth (conceptual)**
+
+A bacterial colony grows according to $\frac{dP}{dt} = 0.3P(1 - P/1000)$ where $P$ is population and carrying capacity is 1000. Describe the long-term behavior.
+
+*Solution:* As $t \to \infty$, $P$ approaches 1000. When $P$ is small, growth is roughly exponential. As $P$ nears 1000, growth slows. The population levels off at the carrying capacity.
+
+## Practice Set
+
+1. Solve the separable equation $\frac{dy}{dx} = \frac{x}{y}$ with $y(0) = 2$.
+
+2. A radioactive sample has half-life of 12 years. If you start with 200 grams, how much remains after 30 years?
+
+3. Hot pizza at 200°F cools to 150°F in 10 minutes in a 70°F room. When will it cool to 100°F?
+
+4. Solve $\frac{dN}{dt} = -2N$ with $N(0) = 50$.
+
+5. Sketch a slope field for $\frac{dy}{dx} = y$ and describe the solutions you see.
+
+## Reasoning Task
+
+**Population Puzzle:** A lake with carrying capacity 5000 fish initially contains 100 fish. After one year, there are 200 fish.
+
+- Write a logistic growth equation that models this population.
+- Estimate the growth rate $r$.
+- What is the population at $t = 10$ years?
+- In what year will the population first exceed 4000?
+
+(This requires solving a logistic differential equation, which is more complex than separable equations — but worth thinking about.)
+
+## Application
+
+**Drug Dosing:** A doctor prescribes a medication. The body absorbs it, and the kidneys eliminate it at a rate proportional to the amount in the bloodstream. The concentration in blood obeys:
+$$\frac{dC}{dt} = -kC$$
+
+where $k > 0$ is the elimination rate constant. If a single dose of 200 mg is given and the half-life is 6 hours, then after 24 hours, the concentration is:
+$$C(24) = 200 \cdot \left(\frac{1}{2}\right)^{24/6} = 200 \cdot (0.5)^4 = 12.5 \text{ mg}$$
+
+For repeated doses, doctors use this knowledge to decide when and how much to give next. Without differential equations, dosing would be guesswork.
+
+## Recap
+
+- **Differential equations** describe how quantities change. They relate a function to its derivatives.
+- **Separable equations** can be solved by rearranging so all $y$ terms are on one side, all $x$ terms on the other, then integrating both sides.
+- **Exponential growth/decay** follows $y = Ae^{kt}$ and models radioactive decay, population growth, cooling, and more.
+- **Newton's Law of Cooling** is $\frac{dT}{dt} = k(T - T_s)$, solved using separation of variables and integration.
+- **Initial conditions** pin down a particular solution from the infinite family of general solutions.
+- **Slope fields** visualize solutions when closed forms are hard to find.
+- Differential equations are the language of science and engineering. Learning to solve them is learning to understand the world.
+
+## Unlock Quiz
+
+**Question 1:** What is the order of the differential equation $\frac{d^2y}{dx^2} + 2\frac{dy}{dx} = 0$?
+- First-order
+- Second-order
+- Zeroth-order
+- Third-order
+
+<details>
+<summary>Answer</summary>
+Second-order
+</details>
+
+**Question 2:** For the separable equation $\frac{dy}{dx} = g(x)h(y)$, what is the first step in solving?
+- Integrate both sides
+- Separate variables: $\frac{dy}{h(y)} = g(x) dx$
+- Differentiate both sides
+- Substitute $u = xy$
+
+<details>
+<summary>Answer</summary>
+Separate variables: $\frac{dy}{h(y)} = g(x) dx$
+</details>
+
+**Question 3:** What is the general solution to $\frac{dy}{dt} = 5y$?
+- $y = t^5 + C$
+- $y = 5t + C$
+- $y = Ae^{5t}$
+- $y = A\sin(5t) + B\cos(5t)$
+
+<details>
+<summary>Answer</summary>
+$y = Ae^{5t}$
+</details>
+
+**Question 4:** In Newton's Law of Cooling, $\frac{dT}{dt} = k(T - T_s)$, what does $T_s$ represent?
+- The initial temperature
+- The surrounding (ambient) temperature
+- The final temperature
+- The temperature of the heat source
+
+<details>
+<summary>Answer</summary>
+The surrounding (ambient) temperature
+</details>
+
+**Question 5:** A bacteria culture has population $P$ that satisfies $\frac{dP}{dt} = 0.2P$ with $P(0) = 100$. What is $P(t)$?
+- $P(t) = 100 + 0.2t$
+- $P(t) = 100e^{0.2t}$
+- $P(t) = 100 \sin(0.2t)$
+- $P(t) = 0.2t^2 + 100$
+
+<details>
+<summary>Answer</summary>
+$P(t) = 100e^{0.2t}$
+</details>
+
+## Source Notes
+
+- **Differential equations overview:** [Wikipedia: Differential equation](https://en.wikipedia.org/wiki/Differential_equation)
+- **Separable equations:** [Wikipedia: Separation of variables](https://en.wikipedia.org/wiki/Separation_of_variables)
+- **Newton's Law of Cooling:** Newton (1701). [Wikipedia: Newton's law of cooling](https://en.wikipedia.org/wiki/Newton%27s_law_of_cooling)
+- **Exponential growth and decay:** [Wikipedia: Exponential decay](https://en.wikipedia.org/wiki/Exponential_decay)
+- **Logistic growth model:** [Wikipedia: Logistic function](https://en.wikipedia.org/wiki/Logistic_function)
+- **Slope fields:** [Wikipedia: Slope field](https://en.wikipedia.org/wiki/Slope_field)

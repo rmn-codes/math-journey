@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Fundamental Theorem of Calculus — Math Journey</title>
+    <meta name="description" content="The theorem that unites differentiation and integration — the heart of calculus" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 5 · Chapter ?</p>
+        <h1>The Fundamental Theorem of Calculus</h1>
+        <p class="hero-copy">The theorem that unites differentiation and integration — the heart of calculus</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1660s–1700s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>State both parts of the Fundamental Theorem of Calculus</li><li>Find antiderivatives using basic rules</li><li>Evaluate definite integrals using FTC Part 2</li><li>Understand that differentiation and integration are inverse operations</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Isaac Newton and Gottfried Leibniz did not invent the derivative and the integral by accident. They discovered something so profound that it changed mathematics forever: the two operations are <em>inverses</em> of each other.</p>
+<p>Imagine a mathematician in 1660, before Newton and Leibniz. She knows how to find tangent lines — the slope at a point. She knows how to find areas under curves — the method of exhaustion. But are these two problems connected? They seem completely different.</p>
+<p>Then the insight comes: if you know how to find areas, you can find slopes, and vice versa.</p>
+<p>If you want the area under a curve from $a$ to $b$, just find a function whose derivative equals the curve, and subtract: $F(b) - F(a)$. This is so unexpected, so powerful, so beautiful that mathematicians call it the <strong>Fundamental Theorem of Calculus</strong> — the most important result in analysis.</p>
+<p>With this one theorem, integration stopped being an exhausting geometric procedure and became almost mechanical.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Before the Fundamental Theorem, computing an area required pages of geometric reasoning. After, a student with an antiderivative formula could compute it in seconds.</p>
+<p>This speed was revolutionary. Engineers could predict projectile paths. Physicists could solve planetary orbits. Economists could model growth. The Theorem unlocked the entire universe of applications that we depend on today.</p>
+<p>Moreover, it reveals a deep truth: that accumulation and rate-of-change are two sides of the same coin. This principle extends far beyond calculus, appearing in physics, thermodynamics, quantum mechanics, and information theory.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>By the 1660s, mathematicians had developed techniques for finding tangent lines (Descartes, Fermat) and techniques for finding areas (Archimedes, Cavalieri, Wallis). But no one saw the connection.</p>
+<p>Newton, working in Cambridge during the Great Plague of 1665–1666, spent his time thinking about these problems. He realised that if you integrate a function&#x27;s derivative, you get back the original function. Leibniz, working independently in Germany, discovered the same connection and, importantly, invented the notation $\int$ (the elongated &#x27;s&#x27; for sum) that we still use today.</p>
+<p>The Fundamental Theorem appeared in Newton&#x27;s unpublished manuscripts and in Leibniz&#x27;s published work. It was the beating heart of their calculus.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Part 1 of the Fundamental Theorem of Calculus:</strong></p>
+<p>If $f$ is continuous on $[a, b]$ and $F(x) = \int_a^x f(t)\,dt$ (the area under $f$ from $a$ to $x$), then: $$F&#x27;(x) = f(x)$$</p>
+<p>In words: the derivative of the accumulated area equals the height of the curve.</p>
+<p><strong>Part 2 of the Fundamental Theorem of Calculus:</strong></p>
+<p>If $f$ is continuous on $[a, b]$ and $F$ is <em>any</em> antiderivative of $f$ (meaning $F&#x27;(x) = f(x)$), then: $$\int_a^b f(x)\,dx = F(b) - F(a)$$</p>
+<p>In words: to compute the definite integral (area), find an antiderivative and evaluate it at the endpoints.</p>
+<p><strong>Antiderivative and Indefinite Integral:</strong></p>
+<p>An <strong>antiderivative</strong> of $f$ is a function $F$ such that $F&#x27;(x) = f(x)$. The set of all antiderivatives is written as the <strong>indefinite integral</strong>: $$\int f(x)\,dx = F(x) + C$$</p>
+<p>The $+ C$ (constant of integration) accounts for the fact that $F(x)$, $F(x) + 1$, $F(x) + 100$ all have the same derivative.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Antiderivative:</strong> A function $F$ is an antiderivative of $f$ if $F&#x27;(x) = f(x)$ for all $x$ in the domain.</p>
+<p><strong>Indefinite Integral:</strong> The set of all antiderivatives: $\int f(x)\,dx = F(x) + C$.</p>
+<p><strong>Constant of Integration:</strong> The arbitrary constant $C$ in the indefinite integral, accounting for infinitely many antiderivatives.</p>
+<p><strong>Basic Antiderivative Rules:</strong></p>
+<ol><li><strong>Power Rule:</strong> $\int x^n\,dx = \frac{x^{n+1}}{n+1} + C$ for $n \neq -1$.</li></ol>
+<ol><li><strong>Reciprocal Rule:</strong> $\int \frac{1}{x}\,dx = \ln|x| + C$.</li></ol>
+<ol><li><strong>Exponential Rule:</strong> $\int e^x\,dx = e^x + C$.</li></ol>
+<ol><li><strong>Cosine Rule:</strong> $\int \cos(x)\,dx = \sin(x) + C$.</li></ol>
+<ol><li><strong>Sine Rule:</strong> $\int \sin(x)\,dx = -\cos(x) + C$.</li></ol>
+<ol><li><strong>Linearity:</strong> $\int [cf(x) + g(x)]\,dx = c\int f(x)\,dx + \int g(x)\,dx$.</li></ol>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Finding an Antiderivative</strong></p>
+<p>Find $\int (3x^2 - 2x + 5)\,dx$.</p>
+<p>Using linearity and the power rule: $$\int 3x^2\,dx = 3 \cdot \frac{x^3}{3} = x^3$$ $$\int (-2x)\,dx = -2 \cdot \frac{x^2}{2} = -x^2$$ $$\int 5\,dx = 5x$$</p>
+<p>Therefore: $$\int (3x^2 - 2x + 5)\,dx = x^3 - x^2 + 5x + C$$</p>
+<p>To verify: $\frac{d}{dx}(x^3 - x^2 + 5x + C) = 3x^2 - 2x + 5$. ✓</p>
+<p><strong>Example 2: Evaluating a Definite Integral Using FTC Part 2</strong></p>
+<p>Compute $\int_1^4 (2x + 3)\,dx$.</p>
+<p>First, find an antiderivative: $$F(x) = \int (2x + 3)\,dx = x^2 + 3x + C$$</p>
+<p>Using FTC Part 2: $$\int_1^4 (2x + 3)\,dx = F(4) - F(1) = [16 + 12] - [1 + 3] = 28 - 4 = 24$$</p>
+<p>Note: The constant $C$ cancels when we subtract $F(b) - F(a)$, so we can choose $C = 0$.</p>
+<p><strong>Example 3: Trigonometric Integral</strong></p>
+<p>Compute $\int_0^{\pi/2} \cos(x)\,dx$.</p>
+<p>Antiderivative: $F(x) = \sin(x)$.</p>
+<p>Using FTC Part 2: $$\int_0^{\pi/2} \cos(x)\,dx = \sin\left(\frac{\pi}{2}\right) - \sin(0) = 1 - 0 = 1$$</p>
+<p><strong>Example 4: Connecting Rate to Accumulation (FTC Part 1)</strong></p>
+<p>If a tank contains water and the outflow rate is $f(t) = 5 - 0.1t$ litres per minute, the total water that has flowed out by time $t$ is: $$F(t) = \int_0^t (5 - 0.1s)\,ds = 5t - 0.05t^2$$</p>
+<p>By FTC Part 1: $$F&#x27;(t) = 5 - 0.1t = f(t)$$</p>
+<p>The rate of outflow at time $t$ is the derivative of the cumulative outflow — the core relationship between differentiation and integration.</p>
+<p><strong>Example 5: Finding Antiderivatives of Mixed Functions</strong></p>
+<p>Find $\int (4x^3 + 2\sin x - e^x)\,dx$.</p>
+<p>Using linearity: $$\int 4x^3\,dx = 4 \cdot \frac{x^4}{4} = x^4$$ $$\int 2\sin x\,dx = 2 \cdot (-\cos x) = -2\cos x$$ $$\int (-e^x)\,dx = -e^x$$</p>
+<p>Therefore: $$\int (4x^3 + 2\sin x - e^x)\,dx = x^4 - 2\cos x - e^x + C$$</p>
+<p>Verify by differentiating: $\frac{d}{dx}(x^4 - 2\cos x - e^x + C) = 4x^3 + 2\sin x - e^x$. ✓</p>
+<p><strong>Example 6: Computing Definite Integral with Careful Limits</strong></p>
+<p>Evaluate $\int_{\pi/4}^{\pi/2} (2\cos x - 1)\,dx$.</p>
+<p>Antiderivative: $F(x) = 2\sin x - x$.</p>
+<p>$$\int_{\pi/4}^{\pi/2} (2\cos x - 1)\,dx = [2\sin x - x]_{\pi/4}^{\pi/2}$$</p>
+<p>At $x = \frac{\pi}{2}$: $2\sin\frac{\pi}{2} - \frac{\pi}{2} = 2(1) - \frac{\pi}{2} = 2 - \frac{\pi}{2}$.</p>
+<p>At $x = \frac{\pi}{4}$: $2\sin\frac{\pi}{4} - \frac{\pi}{4} = 2 \cdot \frac{\sqrt{2}}{2} - \frac{\pi}{4} = \sqrt{2} - \frac{\pi}{4}$.</p>
+<p>$$\text{Result} = \left(2 - \frac{\pi}{2}\right) - \left(\sqrt{2} - \frac{\pi}{4}\right) = 2 - \sqrt{2} - \frac{\pi}{2} + \frac{\pi}{4} = 2 - \sqrt{2} - \frac{\pi}{4}$$</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>What is $\int 6x^2\,dx$?</li></ol>
+<ul><li>$2x^3 + C$</li><li>$3x^3 + C$</li><li>$6x^3 + C$</li><li>$12x + C$</li></ul>
+<ol><li>Evaluate $\int_0^2 (x^3 + 1)\,dx$.</li></ol>
+<ul><li>2</li><li>4</li><li>6</li><li>10</li></ul>
+<ol><li>What is $\int \frac{1}{x}\,dx$?</li></ol>
+<ul><li>$-\frac{1}{x^2} + C$</li><li>$\ln(x) + C$</li><li>$\ln|x| + C$</li><li>$\frac{1}{x^2} + C$</li></ul>
+<ol><li>Which statement best describes the relationship between $F&#x27;(x) = f(x)$ and $\int f(x)\,dx = F(x) + C$?</li></ol>
+<ul><li>They are unrelated</li><li>Differentiation and integration are inverse operations</li><li>They always give the same numerical result</li><li>Integration is a special case of differentiation</li></ul>
+<ol><li>Find $\int (5e^x - 4\cos x)\,dx$.</li></ol>
+<ul><li>$5e^x - 4\sin x + C$</li><li>$5e^x + 4\sin x + C$</li><li>$e^x - \sin x + C$</li><li>$5e^x - \sin x + C$</li></ul>
+<ol><li>What is the constant of integration in the indefinite integral?</li></ol>
+<ul><li>It accounts for all antiderivatives of a function</li><li>It is always zero</li><li>It represents a specific point on the curve</li><li>It is the value of the function at $x = 0$</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>A car starts from rest and accelerates with acceleration $a(t) = 2t$ m/s² for the first 5 seconds.</p>
+<ol><li>Find the velocity function $v(t)$ by integrating the acceleration. (Hint: the initial velocity is 0.)</li><li>Find the position function $s(t)$ by integrating the velocity. (Hint: the initial position is 0.)</li><li>Verify your answer using FTC Part 1: take the derivative of $s(t)$ and confirm you get $v(t)$.</li></ol>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>Every science and engineering field uses the Fundamental Theorem. A structural engineer designs a beam by integrating a load distribution to find the total force. A pharmacologist predicts drug concentration in the bloodstream by integrating the metabolism rate. An economist models cumulative economic output by integrating a growth rate function. A climate scientist predicts temperature change by integrating a heat transfer equation.</p>
+<p>In the 1900s, differential equations became the language of nature — equations expressing rates of change. To solve them, scientists use the Fundamental Theorem: to go from rate to quantity, integrate.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>The Fundamental Theorem of Calculus unites the two central operations of calculus: differentiation (finding rates) and integration (finding accumulation). Part 1 says that the derivative of an accumulated quantity equals the rate at that instant. Part 2 says that a definite integral can be computed using any antiderivative: $\int_a^b f(x)\,dx = F(b) - F(a)$. This transforms integration from a geometric procedure into an algebraic calculation. Basic antiderivatives follow predictable rules: power rule, exponential rule, trigonometric rules, and linearity. The constant of integration $+ C$ appears in indefinite integrals because infinitely many functions share the same derivative.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>State FTC Part 2 in words.</li></ol>
+<ul><li>The derivative of an integral is the original function</li><li>To compute a definite integral, find an antiderivative and evaluate at the endpoints</li><li>Integration and differentiation are inverse operations</li><li>The integral of a derivative is always zero</li></ul>
+<ol><li>What is $\int \sin(x)\,dx$?</li></ol>
+<ul><li>$\cos(x) + C$</li><li>$-\cos(x) + C$</li><li>$\sin(x) + C$</li><li>$-\sin(x) + C$</li></ul>
+<ol><li>If $F(x) = x^4 - 2x^2$, what is $\int F&#x27;(x)\,dx$?</li></ol>
+<ul><li>$x^4 - 2x^2$</li><li>$x^4 - 2x^2 + C$</li><li>$4x^3 - 4x$</li><li>Cannot be determined</li></ul>
+<ol><li>Evaluate $\int_0^1 e^x\,dx$.</li></ol>
+<ul><li>$e - 1$</li><li>$1$</li><li>$e$</li><li>$\frac{1}{e}$</li></ul>
+<ol><li>For FTC Part 1, if $F(x) = \int_a^x f(t)\,dt$, then $F&#x27;(x)$ equals?</li></ol>
+<ul><li>$f(x)$</li><li>$f(a)$</li><li>$f(x) - f(a)$</li><li>The original function before integration</li></ul>
+<ol><li>Why is the constant $C$ unnecessary when evaluating $\int_a^b f(x)\,dx$ with FTC Part 2?</li></ol>
+<ul><li>The constant always equals zero</li><li>The constant cancels when we subtract $F(b) - F(a)$</li><li>There is no reason; $C$ should always be included</li><li>The constant is absorbed into the limits of integration</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>To compute a definite integral, find an antiderivative and evaluate at the endpoints</li><li>$-\cos(x) + C$</li><li>$x^4 - 2x^2 + C$</li><li>$e - 1$</li><li>$f(x)$</li><li>The constant cancels when we subtract $F(b) - F(a)$</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Fundamental Theorem of Calculus: https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus</li><li>Newton and Leibniz: https://en.wikipedia.org/wiki/Calculus</li><li>History of antiderivatives: https://en.wikipedia.org/wiki/Antiderivative</li><li>Applications of the Fundamental Theorem: https://en.wikipedia.org/wiki/Integral</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-072-applications-of-integration/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Applications of Integration</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-070-the-integral/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Integral — Measuring Accumulation</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

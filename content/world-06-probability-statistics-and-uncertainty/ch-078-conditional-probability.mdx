@@ -1,0 +1,305 @@
+---
+worldNumber: 6
+world: world-06-probability-statistics-and-uncertainty
+chapter: 78
+filename: ch-078-conditional-probability.mdx
+title: Conditional Probability and Independence
+subtitle: "How new information changes what we should believe"
+historicalPeriod: "1700s–present"
+estimatedTimeMinutes: 40
+mainConcepts:
+  - conditional probability
+  - independence
+  - multiplication rule
+  - tree diagram
+  - Bayes' Theorem
+  - false positive
+learningObjectives:
+  - Compute conditional probabilities
+  - Identify independent events
+  - Apply the multiplication rule
+  - Use tree diagrams
+  - Apply Bayes' Theorem to medical testing examples
+---
+
+## Story Hook
+
+A woman goes to her doctor. She is 40 years old, no symptoms. A mammogram screening test comes back positive—the machine says she has breast cancer. Her heart races. Should she begin treatment immediately?
+
+Here's the shocking truth: she probably doesn't have cancer.
+
+If only 1 in 100 women in her age group actually have the disease, and the test is 99% accurate, a positive result is much more likely to be wrong than right. Her actual probability of having cancer—*given that she tested positive*—is not 99%. It's closer to 50%.
+
+This is conditional probability. It answers the question: "What is the probability of event $A$ *given that event $B$ has occurred*?" In this case: "What is the probability she has cancer, given a positive test?" The answer depends critically on base rates—how common the disease actually is. This medical example has saved lives by teaching doctors (and patients) to interpret test results with mathematical clarity.
+
+The math that seemed abstract in a classroom becomes urgent in a doctor's office.
+
+## Why It Matters
+
+Conditional probability is the mathematics of information. Every time we learn something new, we should update our beliefs. A weather forecast begins with a base probability: "Rain is likely tomorrow." But when you check the radar and see a storm 50 kilometers away, moving toward you, that new information *changes* your probability estimate. Rain becomes much more likely.
+
+Conditional probability formalizes this intuition. It answers: "Given what we know now, what should we believe about what comes next?"
+
+In medicine, law, finance, and science, conditional probability is essential. A prosecutor argues: "The defendant's DNA matches the crime scene. What is the probability of innocence given this evidence?" A doctor decides: "The patient has these symptoms. What is the probability of diagnosis $X$ given these symptoms?" A trader asks: "Stock $A$ rose today. Given that, what is the probability that stock $B$ (which correlates with $A$) will rise tomorrow?"
+
+Conditional probability is how we learn and update our beliefs as information arrives.
+
+## Historical Context
+
+While Pascal and Fermat founded probability theory, they focused on events with equal likelihood and no prior information. But real life is messier. People have priors—background beliefs based on experience. Information arrives sequentially. As one piece of evidence comes in, we must update our estimate of what comes next.
+
+In the 1700s, Thomas Bayes—an English clergyman and mathematician—developed a formula for exactly this. Bayes' Theorem, published after his death, describes how to update probabilities as new evidence arrives. It lay dormant for decades, seemingly abstract.
+
+But in the 20th and 21st centuries, Bayes' Theorem became one of the most powerful tools in science and statistics. Machine learning relies on it. Medical diagnosis relies on it. Criminal investigation relies on it. It is the mathematical machinery behind how rational beings should incorporate evidence.
+
+What Bayes discovered as mathematics has become the language of how we make sense of an uncertain world.
+
+## Core Concept
+
+**Conditional Probability**: The probability of event $A$, given that event $B$ has occurred, is written $P(A|B)$ and is defined as:
+
+$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+
+In words: the probability of both $A$ and $B$ divided by the probability of $B$.
+
+Example: You roll two fair dice. Let $A$ be "the sum is 7" and $B$ be "the first die shows 4 or higher."
+
+Without knowing that $B$ occurred, $P(A) = \frac{6}{36} = \frac{1}{6}$.
+
+But if you are told the first die shows 4 or higher (event $B$ occurred), there are 18 possible outcomes: (4,1), (4,2), ..., (6,6). Of these, how many sum to 7? Only (4,3), (5,2), (6,1)—that is, 3 outcomes.
+
+So $P(A|B) = \frac{3}{18} = \frac{1}{6}$. Interestingly, learning that $B$ occurred didn't change the probability of $A$ in this case. That is a sign of independence.
+
+**The Multiplication Rule**: Rearranging the definition of conditional probability gives us:
+
+$$P(A \cap B) = P(A|B) \cdot P(B)$$
+
+This is the multiplication rule. To find the probability that both $A$ and $B$ occur, multiply the conditional probability of $A$ given $B$ by the probability of $B$.
+
+**Independence**: Two events $A$ and $B$ are independent if the occurrence of $B$ does not change the probability of $A$:
+
+$$P(A|B) = P(A)$$
+
+Equivalently:
+$$P(A \cap B) = P(A) \cdot P(B)$$
+
+For example, flipping a coin twice: the second flip is independent of the first. The probability of heads on the second flip is $\frac{1}{2}$, regardless of what happened on the first flip.
+
+**Tree Diagrams**: When multiple events occur in sequence, a tree diagram visually shows all branches and their probabilities. Each path represents one outcome; the probability of that path is the product of probabilities along the way.
+
+**Bayes' Theorem**: This elegant formula connects conditional probabilities:
+
+$$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$$
+
+Where:
+- $P(A|B)$ is the probability of $A$ given $B$ (what we want to find).
+- $P(B|A)$ is the probability of $B$ given $A$ (often known from data).
+- $P(A)$ is the prior probability of $A$ (the base rate).
+- $P(B)$ is the total probability of $B$ (summing over all ways $B$ can occur).
+
+**Medical Testing Example**: A test for disease $D$ has:
+- Sensitivity = $P(\text{positive} | \text{has disease})$ = 99% (true positive rate).
+- Specificity = $P(\text{negative} | \text{no disease})$ = 99% (true negative rate).
+
+If the base rate $P(\text{has disease})$ = 1%, and you test positive, what is $P(\text{has disease} | \text{positive})?$
+
+Using Bayes' Theorem:
+$$P(D|\text{+}) = \frac{P(\text{+}|D) \cdot P(D)}{P(\text{+})}$$
+
+This requires $P(\text{+})$, the total probability of testing positive:
+$$P(\text{+}) = P(\text{+}|D) \cdot P(D) + P(\text{+}|\neg D) \cdot P(\neg D)$$
+$$= 0.99 \times 0.01 + 0.01 \times 0.99 = 0.0099 + 0.0099 = 0.0198$$
+
+Therefore:
+$$P(D|\text{+}) = \frac{0.99 \times 0.01}{0.0198} = \frac{0.0099}{0.0198} = 0.5$$
+
+Even with a positive test, the probability of having the disease is only 50%, not 99%. This is the **false positive paradox**: when a disease is rare, most positive tests are false alarms.
+
+**The "At Least One" Rule with Independence**: If you want the probability of at least one success in $n$ independent trials, each with success probability $p$:
+
+$$P(\text{at least one}) = 1 - P(\text{none}) = 1 - (1-p)^n$$
+
+## Definitions and Formal Lesson
+
+1. **Conditional Probability** ($P(A|B)$): Probability of $A$ given that $B$ has occurred. Formula: $P(A|B) = \frac{P(A \cap B)}{P(B)}$.
+2. **Multiplication Rule**: $P(A \cap B) = P(A|B) \cdot P(B)$.
+3. **Independence**: Events $A$ and $B$ are independent if $P(A|B) = P(A)$, equivalently $P(A \cap B) = P(A) \cdot P(B)$.
+4. **Tree Diagram**: Visual representation of sequential events showing all branches and path probabilities.
+5. **Bayes' Theorem**: $P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$. Updates prior probability $P(A)$ to posterior probability $P(A|B)$ using evidence $B$.
+6. **Sensitivity**: $P(\text{positive} | \text{has disease})$. Probability of testing positive if the condition is present.
+7. **Specificity**: $P(\text{negative} | \text{no disease})$. Probability of testing negative if the condition is absent.
+8. **False Positive**: A positive test result when the condition is actually absent.
+9. **Base Rate**: The prior probability of an event in the population ($P(A)$).
+10. **Posterior Probability**: The updated probability after incorporating evidence ($P(A|B)$).
+
+## Worked Examples
+
+**Example 1: Drawing Cards Without Replacement**
+
+A standard deck has 52 cards: 13 spades, 13 hearts, 13 diamonds, 13 clubs.
+
+You draw one card, look at it, and don't return it. Then you draw a second. What is the probability that both are hearts?
+
+Let $A$ = first card is a heart, and $B$ = second card is a heart.
+
+$P(A) = \frac{13}{52} = \frac{1}{4}$.
+
+$P(B|A) = \frac{12}{51}$ (if the first was a heart, 12 hearts remain out of 51 cards).
+
+$P(A \cap B) = P(A) \cdot P(B|A) = \frac{1}{4} \times \frac{12}{51} = \frac{12}{204} = \frac{1}{17}$.
+
+**Example 2: The Mammogram Test**
+
+Suppose 1% of women at age 40 have breast cancer. A mammogram has 99% sensitivity and 99% specificity. A woman tests positive. What is the probability she has cancer?
+
+Let $D$ = has disease, $+$ = tests positive.
+
+$P(D) = 0.01$, $P(\neg D) = 0.99$.
+
+$P(+|D) = 0.99$, $P(+|\neg D) = 0.01$.
+
+$P(+) = P(+|D) \cdot P(D) + P(+|\neg D) \cdot P(\neg D) = 0.99(0.01) + 0.01(0.99) = 0.0198$.
+
+$$P(D|+) = \frac{P(+|D) \cdot P(D)}{P(+)} = \frac{0.99 \times 0.01}{0.0198} = \frac{0.0099}{0.0198} = 0.5$$
+
+**Example 3: Independent Events (Coin Flips)**
+
+A fair coin is flipped three times. What is the probability of all three being heads?
+
+Since flips are independent, each with $P(\text{H}) = 0.5$:
+
+$P(\text{HHH}) = P(\text{H}) \times P(\text{H}) \times P(\text{H}) = 0.5 \times 0.5 \times 0.5 = 0.125$.
+
+**Example 4: Tree Diagram Example**
+
+Suppose a factory makes widgets: 60% are Type A (good), 40% are Type B (defective). Type A widgets work with probability 95%; Type B with probability 20%. A widget is selected at random. What is the probability it works?
+
+- Path 1: Select Type A (prob 0.6), works (prob 0.95). Contribution: $0.6 \times 0.95 = 0.57$.
+- Path 2: Select Type B (prob 0.4), works (prob 0.20). Contribution: $0.4 \times 0.20 = 0.08$.
+
+$P(\text{works}) = 0.57 + 0.08 = 0.65$.
+
+## Practice Set
+
+1. A bag contains 5 red and 3 blue marbles. You draw one, don't replace it, and draw another. What is the probability both are red?
+
+2. Two fair dice are rolled. Given that the first die shows a 3, what is the probability that the sum of the two dice is 8?
+
+3. Are rolling a 3 on a die and rolling an odd number independent events? Explain.
+
+4. A test for a rare disease has 95% sensitivity and 98% specificity. The disease affects 0.5% of the population. If you test positive, what is the probability you have the disease?
+
+5. A factory makes light bulbs. 90% are standard (lifespan 1000 hours), 10% are premium (lifespan 2000 hours). A bulb is selected at random and lasts 1500 hours. Is it more likely to be standard or premium?
+
+6. Draw a tree diagram for: flip a coin, if heads roll a die; if tails flip again. Find the probability of each outcome path.
+
+7. In a family with two children, what is the probability that both are boys, given that at least one is a boy?
+
+## Reasoning Task
+
+**A Diagnostic Dilemma**
+
+You take a test for a genetic condition. The test has:
+- Sensitivity: 99% (if you have it, test catches it 99% of the time)
+- Specificity: 99% (if you don't have it, test correctly says you don't 99% of the time)
+
+You test positive. Should you panic?
+
+Here's the catch: the condition is extremely rare. Only 1 in 100,000 people have it.
+
+Calculate your actual probability of having the condition given a positive test. (Use Bayes' Theorem.)
+
+What does this reveal about the gap between test accuracy and actual probability of disease? Why do doctors need to understand conditional probability?
+
+## Application
+
+**Quality Control in Manufacturing**
+
+A factory manufactures computer chips. 98% of chips are good, 2% are defective. Before shipping, the company inspects every chip with a test that is 95% accurate at detecting defects (sensitivity) and 98% accurate at confirming good chips (specificity).
+
+A chip tests as defective. What is the probability it is actually defective?
+
+A chip tests as good. What is the probability it is actually good?
+
+Should the company adjust inspection policy based on these results?
+
+## Recap
+
+Conditional probability is the mathematics of learning. When new information arrives, we update our beliefs. The formula $P(A|B) = \frac{P(A \cap B)}{P(B)}$ quantifies this update.
+
+From conditional probability flow two essential ideas:
+
+**Independence**: If events are truly unrelated, then $P(A|B) = P(A)$, and $P(A \cap B) = P(A) \cdot P(B)$. Flipping a coin twice are independent; one flip tells us nothing about the other.
+
+**Bayes' Theorem**: $P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$ connects what we know (the base rate $P(A)$ and the likelihood $P(B|A)$) to what we want to discover (the posterior $P(A|B)$). It is the bridge between evidence and belief.
+
+The false positive paradox—that a positive test can still mean you probably don't have a disease—is not a contradiction. It is Bayes' Theorem in action. When a disease is rare, most positive tests are false alarms. Conditional probability reveals this mathematical truth that human intuition often misses.
+
+This is why the mammography example matters: it teaches us to be mathematically careful about interpreting evidence. A 99% accurate test does not mean 99% probability. Context—the base rate—matters profoundly.
+
+## Unlock Quiz
+
+**Question 1:** A card is drawn from a standard deck and is a heart. Without replacing it, a second card is drawn. What is the probability the second is also a heart?
+
+- $\frac{13}{52}$
+- $\frac{12}{51}$
+- $\frac{13}{51}$
+- $\frac{12}{52}$
+
+<details>
+<summary>Answer</summary>
+$\frac{12}{51}$
+
+Given that the first card is a heart, 12 hearts remain in a deck of 51 cards. So $P(\text{second heart} | \text{first heart}) = \frac{12}{51}$.
+</details>
+
+**Question 2:** Events $A$ and $B$ are independent. $P(A) = 0.4$ and $P(B) = 0.3$. What is $P(A \cap B)$?
+
+- $0.12$
+- $0.7$
+- $0.7$
+- $0.04$
+
+<details>
+<summary>Answer</summary>
+$0.12$
+
+If independent, $P(A \cap B) = P(A) \cdot P(B) = 0.4 \times 0.3 = 0.12$.
+</details>
+
+**Question 3:** A test has 90% sensitivity and 95% specificity. A condition affects 10% of the population. Someone tests positive. Approximately what is the probability they have the condition?
+
+- $90\%$
+- $95\%$
+- $67\%$
+- $10\%$
+
+<details>
+<summary>Answer</summary>
+$67\%$
+
+Using Bayes' theorem with $P(\text{disease}) = 0.1$, $P(+|\text{disease}) = 0.9$, $P(+|\text{no disease}) = 0.05$:
+$P(+) = 0.9(0.1) + 0.05(0.9) = 0.09 + 0.045 = 0.135$
+$P(\text{disease}|+) = \frac{0.9 \times 0.1}{0.135} = \frac{0.09}{0.135} \approx 0.67$.
+</details>
+
+**Question 4:** Two fair dice are rolled. Given that the first die shows 5, what is the probability that the sum is 10?
+
+- $\frac{1}{6}$
+- $\frac{1}{3}$
+- $\frac{1}{5}$
+- $\frac{5}{6}$
+
+<details>
+<summary>Answer</summary>
+$\frac{1}{6}$
+
+If the first die shows 5, the second must show 5 to sum to 10. There are 6 equally likely outcomes for the second die, so $P(\text{sum} = 10 | \text{first} = 5) = \frac{1}{6}$.
+</details>
+
+## Source Notes
+
+- Thomas Bayes and Bayes' Theorem: https://en.wikipedia.org/wiki/Bayes%27_theorem
+- Conditional probability: https://en.wikipedia.org/wiki/Conditional_probability
+- False positive paradox and medical testing: https://en.wikipedia.org/wiki/False_positive_paradox
+- Sensitivity and specificity: https://en.wikipedia.org/wiki/Sensitivity_and_specificity

@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Geometric Construction — Math Journey</title>
+    <meta name="description" content="What can be built with only compass and straightedge—and what cannot" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 1 · Chapter 25</p>
+        <h1>Geometric Construction</h1>
+        <p class="hero-copy">What can be built with only compass and straightedge—and what cannot</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>foundational</span>
+          <span>Greece, Europe</span>
+          <span>Ancient Greece, 19th century</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Perform basic compass-and-straightedge constructions.</li><li>Understand the rules and constraints of classical construction.</li><li>Know which constructions are possible and which are impossible.</li><li>Understand why certain classic problems (squaring the circle, trisecting an angle) cannot be solved with compass and straightedge alone.</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#the-tools">The Tools</a></li><li class="toc-level-3"><a href="#basic-construction-bisecting-a-segment">Basic Construction: Bisecting a Segment</a></li><li class="toc-level-3"><a href="#basic-construction-bisecting-an-angle">Basic Construction: Bisecting an Angle</a></li><li class="toc-level-3"><a href="#basic-construction-perpendicular-to-a-line">Basic Construction: Perpendicular to a Line</a></li><li class="toc-level-3"><a href="#basic-construction-regular-hexagon">Basic Construction: Regular Hexagon</a></li><li class="toc-level-3"><a href="#impossible-constructions">Impossible Constructions</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-bisect-a-line-segment-written-description">Example 1: Bisect a Line Segment (Written Description)</a></li><li class="toc-level-3"><a href="#example-2-bisect-an-angle-written-description">Example 2: Bisect an Angle (Written Description)</a></li><li class="toc-level-3"><a href="#example-3-why-you-cannot-trisect-all-angles">Example 3: Why You Cannot Trisect All Angles</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-3"><a href="#warm-up">Warm-Up</a></li><li class="toc-level-3"><a href="#core-practice">Core Practice</a></li><li class="toc-level-3"><a href="#stretch">Stretch</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Imagine a mathematician in ancient Athens with a compass and a straightedge—that is, a ruler with no markings. No measurements. No numbers written down. The straightedge cannot tell you distances; it only draws straight lines. The compass, when two legs are set, can draw a circle of that radius, but it cannot measure distances either.</p>
+<p>With only these two tools, could you bisect an angle? Yes. Could you construct a regular hexagon? Yes. Could you divide any angle into three equal parts? The Greeks could not, despite trying for centuries. Could you construct a square with the same area as a given circle? Impossible—though it took until the 19th century to prove why.</p>
+<p>This chapter is about the power and limits of pure geometric reasoning. It is also about how the Greeks saw mathematics: not as computation, but as construction. When you construct something with compass and straightedge, you create a proof. The act of building reveals why the thing exists.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Geometric construction matters because:</p>
+<ul><li>it reveals which geometric facts are logically possible and which are not</li><li>it separates what can be done by the rules from what cannot, showing the boundaries of geometry itself</li><li>Euclid used construction as proof—if you can construct it, it exists and you have shown why</li><li>the impossibility proofs took 2,000 years but ultimately proved profound truths about algebra and geometry</li><li>understanding limits is as important as understanding possibilities</li></ul>
+<p>When you learn what cannot be constructed, you learn something deep about the structure of space and number.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Euclid&#x27;s <em>Elements</em>, written around 300 BCE, begins not with numbers or formulas but with construction. Proposition 1 asks: Given a line segment, construct an equilateral triangle on it. Proposition 2: Copy a distance from one place to another. For Euclid, geometry meant construction.</p>
+<p>For nearly 2,000 years, mathematicians tried to solve three famous problems:</p>
+<ol><li><strong>Squaring the circle</strong>: Construct a square with area equal to a given circle.</li><li><strong>Trisecting an angle</strong>: Divide any angle into three equal parts.</li><li><strong>Doubling the cube</strong>: Construct a cube with twice the volume of a given cube.</li></ol>
+<p>All three are impossible with compass and straightedge alone. But it took until the 19th century to prove this rigorously. Carl Friedrich Gauss determined which regular polygons can be constructed (the number of sides must be of a specific form). Pierre Wantzel proved in 1837 that angle trisection and cube doubling are impossible. The transcendence of π was proved by Ferdinand von Lindemann in 1882, making the impossibility of squaring the circle complete.</p>
+<p>These proofs revealed a deep truth: geometry and algebra are intertwined. Some shapes cannot be constructed because the algebra required is impossible within the constraints of compass and straightedge.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>compass-and-straightedge construction</strong> is a geometric figure created using only these two tools, starting with a given line segment or angle. No measurements. No markings. Only the rules of geometry.</p>
+<p>A <strong>constructible figure</strong> is one that can be built this way. An <strong>impossible construction</strong> is one that cannot be built, no matter how cleverly you try.</p>
+<p>The key insight: if you can construct something, you have proved it exists. If no construction exists after 2,000 years of trying, it is probably impossible—and later mathematicians can prove why.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="the-tools">The Tools</h3>
+<p><strong>Straightedge</strong> A ruler with no markings. It can draw a straight line through two points, but it cannot measure distance.</p>
+<p><strong>Compass</strong> A tool with two legs. You can place one leg at a point and adjust the other leg until it touches another point, then draw a circle. The compass cannot measure distance in absolute terms, but it can copy a distance from one place to another.</p>
+<h3 id="basic-construction-bisecting-a-segment">Basic Construction: Bisecting a Segment</h3>
+<p><strong>Given</strong>: A line segment AB</p>
+<p><strong>To construct</strong>: The midpoint M of AB (the point that divides AB into two equal parts)</p>
+<p><strong>Steps</strong>:</p>
+<ol><li>Place the compass point at A. Open the compass to more than half the distance to B.</li><li>Draw a circle centered at A.</li><li>Without changing the compass width, place the compass point at B and draw another circle.</li><li>The two circles intersect at two points, one above and one below the segment AB.</li><li>Use the straightedge to draw a line through these two intersection points. This line is the perpendicular bisector of AB.</li><li>Mark the point where this line crosses AB. This is the midpoint M.</li></ol>
+<h3 id="basic-construction-bisecting-an-angle">Basic Construction: Bisecting an Angle</h3>
+<p><strong>Given</strong>: An angle with vertex O and two rays OA and OB</p>
+<p><strong>To construct</strong>: A ray OC that divides the angle into two equal parts</p>
+<p><strong>Steps</strong>:</p>
+<ol><li>Place the compass point at O. Draw a circle with any radius. Mark where it crosses ray OA (call this point P) and ray OB (call this point Q).</li><li>Place the compass point at P. Open the compass to more than half the distance from P to Q.</li><li>Draw a circle centered at P.</li><li>Without changing the compass width, place the compass point at Q and draw another circle.</li><li>The two circles intersect at a point. (Choose the intersection on the side of the angle you want to bisect.)</li><li>Use the straightedge to draw a line from O through this intersection point. This is the angle bisector.</li></ol>
+<h3 id="basic-construction-perpendicular-to-a-line">Basic Construction: Perpendicular to a Line</h3>
+<p><strong>Given</strong>: A line and a point on that line</p>
+<p><strong>To construct</strong>: A line perpendicular to the given line at the given point</p>
+<p><strong>Steps</strong>:</p>
+<ol><li>Place the compass point at the given point. Draw a circle with any radius to mark two points on the line, equidistant from the given point.</li><li>These two points define a segment. Now bisect this segment using the perpendicular bisector method (draw circles from each endpoint, find the intersection, draw the line through the intersections).</li><li>This perpendicular bisector is perpendicular to the original line.</li></ol>
+<h3 id="basic-construction-regular-hexagon">Basic Construction: Regular Hexagon</h3>
+<p><strong>Given</strong>: A line segment that will be one side of the hexagon</p>
+<p><strong>To construct</strong>: A regular hexagon with that side length</p>
+<p><strong>Steps</strong>:</p>
+<ol><li>Place the compass point at one endpoint of the segment. Open it to the length of the segment (copy the distance).</li><li>Draw two circles: one centered at each endpoint, both with radius equal to the segment length.</li><li>Mark where these circles intersect. These two points are vertices of the hexagon.</li><li>Continue this process: each vertex of a regular hexagon is separated from adjacent vertices by a distance equal to the side length, and the six vertices lie on a circle.</li><li>By drawing circles of this fixed radius centered at each new vertex, you can locate all six vertices.</li><li>Use the straightedge to connect them.</li></ol>
+<h3 id="impossible-constructions">Impossible Constructions</h3>
+<p><strong>Squaring the circle</strong> Construct a square with area equal to a given circle. This is impossible because π is transcendental—it cannot be expressed as a root of any polynomial equation with rational coefficients. The compass-and-straightedge method can only produce algebraic numbers.</p>
+<p><strong>Trisecting an arbitrary angle</strong> Divide any given angle into three equal parts. This is impossible (in general) because it requires solving a cubic equation that cannot be reduced to the quadratic equations that compass-and-straightedge constructions can handle. (You can trisect some special angles, like 90°, but not all angles.)</p>
+<p><strong>Doubling the cube</strong> Construct a cube with twice the volume of a given cube. This is impossible because it requires constructing the cube root of 2, which is not constructible with compass and straightedge.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-bisect-a-line-segment-written-description">Example 1: Bisect a Line Segment (Written Description)</h3>
+<p><strong>Given</strong>: A segment from point A to point B</p>
+<p><strong>Goal</strong>: Find the midpoint</p>
+<p><strong>Construction steps</strong>:</p>
+<ol><li>Open the compass to more than half the distance AB (you can guess—no measurement needed).</li><li>Place the compass point on A and draw an arc above the segment AB.</li><li>Place the compass point on B, keep the compass width the same, and draw another arc above AB. The two arcs intersect.</li><li>Place the compass point on A and draw an arc below AB.</li><li>Place the compass point on B and draw another arc below AB. The two arcs intersect below.</li><li>Use the straightedge to draw a line through the two intersection points (one above, one below).</li><li>This line crosses AB at the midpoint. Call this point M.</li></ol>
+<p><strong>Why it works</strong>: The two intersection points are equidistant from both A and B (they lie on circles of the same radius centered at A and B). A point equidistant from two points lies on the perpendicular bisector. Where this bisector crosses AB is the midpoint.</p>
+<h3 id="example-2-bisect-an-angle-written-description">Example 2: Bisect an Angle (Written Description)</h3>
+<p><strong>Given</strong>: An angle with vertex O, one ray pointing to A, one ray pointing to B</p>
+<p><strong>Goal</strong>: Construct a ray from O that divides the angle in half</p>
+<p><strong>Construction steps</strong>:</p>
+<ol><li>Place the compass point at O. Draw a circle with any convenient radius (the radius does not matter). This circle intersects ray OA at point P and ray OB at point Q.</li><li>Now the problem reduces to: bisect segment PQ (which lies in the interior of the angle).</li><li>Place the compass point at P. Open it to more than half the distance from P to Q.</li><li>Draw an arc in the interior of the angle.</li><li>Place the compass point at Q, keep the compass width, and draw another arc in the interior. The two arcs intersect at point R.</li><li>Use the straightedge to draw a line from O through R. This line is the angle bisector.</li></ol>
+<p><strong>Why it works</strong>: Since the two arcs have the same radius and are centered at P and Q (which are equidistant from O), the intersection point R is equidistant from P and Q. The line OR passes through the midpoint of arc PQ, dividing the angle symmetrically.</p>
+<h3 id="example-3-why-you-cannot-trisect-all-angles">Example 3: Why You Cannot Trisect All Angles</h3>
+<p>Some angles can be trisected. For example, 90° can be divided into three 30° angles using compass and straightedge. But a general angle cannot.</p>
+<p><strong>Why</strong>: Constructing a 30° angle from a 90° angle is possible. But constructing a 1° angle from a 3° angle (trisecting 3°) requires solving a cubic equation. Compass-and-straightedge constructions can only solve quadratic equations (equations where the highest power is 2). A cubic equation (highest power is 3) is beyond their reach, except in special cases.</p>
+<p>This was finally proved rigorously by Pierre Wantzel in 1837, but mathematicians had suspected it for 2,000 years.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<h3 id="warm-up">Warm-Up</h3>
+<ol><li>Name the two tools used in compass-and-straightedge construction. What is each tool allowed to do?</li><li>Is it possible to construct a regular hexagon with compass and straightedge? Answer yes or no and explain in one sentence.</li></ol>
+<h3 id="core-practice">Core Practice</h3>
+<ol><li>Describe the steps to bisect a given line segment using compass and straightedge.</li><li>Explain why a straightedge has no markings and cannot measure distance, yet is still useful in construction.</li><li>Name three famous impossible constructions and state why each is impossible.</li><li>Why does the impossibility of squaring the circle depend on the properties of the number π?</li></ol>
+<h3 id="stretch">Stretch</h3>
+<ol><li>Can you always trisect an angle with compass and straightedge? Explain your answer by distinguishing between special angles and arbitrary angles.</li></ol>
+<details>
+<summary>Practice Answer Guide</summary>
+<ol><li>Straightedge: draws a straight line through two points (no markings, no measurement). Compass: draws a circle or arc by setting one leg at a center and adjusting the other leg to a point on the circumference; can copy distances but not measure them absolutely.</li><li>Yes. A regular hexagon can be constructed because its vertices are separated by distances equal to the radius of the circumscribing circle. Six arcs of this radius, centered at consecutive vertices, locate all six vertices.</li><li>(1) Open compass to more than half AB. (2) Draw arcs from A and B (both above the segment). (3) Draw arcs from A and B (both below the segment). (4) Use straightedge to draw a line through the two intersection points. (5) This line crosses AB at its midpoint.</li><li>A straightedge with no markings cannot measure absolute distances, but it can connect two points with a straight line. In construction, we copy distances using the compass and use the straightedge only to draw lines. The power comes from the compass-straightedge combination.</li><li>(1) Squaring the circle—π is transcendental; (2) Trisecting an angle—requires solving a cubic equation, which compass-straightedge cannot do; (3) Doubling the cube—requires constructing the cube root of 2, which is not constructible.</li><li>π is transcendental (not a root of any polynomial with rational coefficients). A square with the same area as a circle of radius 1 would have side length √π. Since π is transcendental, √π is also transcendental. Compass-and-straightedge constructions can only produce algebraic numbers, not transcendental ones.</li><li>No. You can trisect some special angles (like 90° → 30°), but not an arbitrary angle. Trisecting a general angle requires solving a cubic equation, which is beyond compass-and-straightedge methods. The impossibility proof shows that no construction method will work for all angles.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>For 2,000 years, mathematicians tried to trisect an angle and square the circle without success. Write 5–7 sentences explaining:</p>
+<ul><li>Why failure for 2,000 years might have suggested impossibility</li><li>How you might try to prove that something is impossible (rather than just hard to find)</li><li>What the impossibility proofs revealed about the relationship between geometry and algebra</li></ul>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>Compass-and-straightedge construction may seem like an ancient curiosity, but the ideas behind it matter today:</p>
+<p><strong>In Computer Graphics</strong> When a computer constructs geometric figures, it follows rules similar to compass-and-straightedge. The concept of what is &quot;constructible&quot; applies to algorithmic geometry.</p>
+<p><strong>In Architecture and Design</strong> Architects sometimes use classical constructions because they are elegant and carry aesthetic weight. A regular hexagon constructed geometrically has a purity that approximations lack.</p>
+<p><strong>In Pure Mathematics</strong> The study of what is constructible led to Galois theory and modern algebra. Understanding why certain constructions are impossible opened entirely new branches of mathematics.</p>
+<p><strong>In Logic and Computer Science</strong> The question &quot;What can be computed?&quot; has roots in &quot;What can be constructed?&quot; Computability theory and complexity theory inherit the spirit of asking about limits.</p>
+<p><strong>Euclid&#x27;s Legacy</strong> Euclid believed that geometry meant construction—the act of building a figure <em>was</em> the proof of its existence. In a sense, modern computer science carries on this tradition. An algorithm is a construction. When we ask whether a problem is computable, we ask whether it can be constructed by a finite set of rules.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>Compass-and-straightedge construction</strong> uses only two tools: a straightedge (unmarked) and a compass.</li><li><strong>Basic constructions include</strong>: bisecting a segment, bisecting an angle, constructing perpendiculars, and constructing regular polygons like the hexagon.</li><li><strong>Impossible constructions</strong> (proven in the 19th century) include: squaring the circle, trisecting an arbitrary angle, and doubling the cube.</li><li>The impossibility of these constructions reveals deep truths about algebra and geometry.</li><li>A construction is a proof: if you can build it, it exists.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is a straightedge allowed to do in compass-and-straightedge construction?</li></ol>
+<ul><li>Measure distances</li><li>Draw a straight line through two points</li><li>Mark equal segments</li><li>Measure angles</li></ul>
+<ol><li>To bisect a line segment, which of the following is a correct first step?</li></ol>
+<ul><li>Draw arcs centered at the endpoints with radius more than half the segment length</li><li>Measure the segment length</li><li>Draw a circle centered at the midpoint</li><li>Fold the segment in half</li></ul>
+<ol><li>Which of the following is possible with compass and straightedge?</li></ol>
+<ul><li>Squaring the circle</li><li>Trisecting an arbitrary angle</li><li>Constructing a regular hexagon</li><li>Doubling the cube</li></ul>
+<ol><li>Why is trisecting an arbitrary angle impossible with compass and straightedge?</li></ol>
+<ul><li>It requires measuring angles</li><li>It requires solving a cubic equation, which compass-straightedge constructions cannot do</li><li>It is actually possible; mathematicians just never found it</li><li>The straightedge is too short</li></ul>
+<ol><li>What do we call a figure that can be drawn using compass-and-straightedge rules?</li></ol>
+<ul><li>Measurable</li><li>Constructible</li><li>Algebraic</li><li>Provable</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>Draw a straight line through two points</li><li>Draw arcs centered at the endpoints with radius more than half the segment length</li><li>Constructing a regular hexagon</li><li>It requires solving a cubic equation, which compass-straightedge constructions cannot do</li><li>Constructible</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Compass_and_straightedge" target="_blank" rel="noopener">Compass and straightedge</a> — overview of classical constructions and which problems are solvable and which are not</li><li><a href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" target="_blank" rel="noopener">Euclid&#x27;s Elements</a> — the foundational text that framed geometry as construction, with historical context</li><li><a href="https://en.wikipedia.org/wiki/Squaring_the_circle" target="_blank" rel="noopener">Squaring the circle</a> — the famous problem and the proof of its impossibility via the transcendence of π</li><li><a href="https://en.wikipedia.org/wiki/Angle_trisection" target="_blank" rel="noopener">Angle trisection</a> — the mathematical proof that arbitrary angle trisection is impossible, developed by Pierre Wantzel</li><li><a href="https://en.wikipedia.org/wiki/Constructible_number" target="_blank" rel="noopener">Constructible number</a> — detailed treatment of which numbers can be constructed and the algebraic conditions that define them</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-01-shape-measure-greek-project/ch-024-solids-and-volume/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Solids and Volume</span></a><a class="pager-link pager-link--next" href="../../world-01-shape-measure-greek-project/ch-026-what-proof-is/index.html"><span class="pager-dir">Next →</span><span class="pager-title">What Proof Is</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,479 @@
+---
+id: ch-037
+slug: quadratic-expressions-and-factoring
+title: Quadratic Expressions and Factoring
+subtitle: "When the unknown is squared — a new kind of equation appears"
+world: world-02-algebra-is-born
+worldNumber: 2
+chapterNumber: 37
+level: foundational
+estimatedTimeMinutes: 45
+core: true
+prerequisites: [ch-035, ch-036]
+historicalPeriod: "2000 BCE – 1600 CE"
+historicalRegions:
+  - Babylon
+  - Islamic world
+  - Europe
+mainConcepts:
+  - quadratic expression
+  - standard form
+  - expanding
+  - factoring
+  - GCF
+  - trinomial factoring
+  - difference of squares
+  - zero product property
+learningObjectives:
+  - Identify and write quadratic expressions in standard form $ax^2 + bx + c$
+  - Expand products of two binomials using FOIL/distribution
+  - Factor quadratic expressions by finding two binomials
+  - Apply the zero product property to solve quadratic equations
+  - Solve quadratic equations by factoring
+unlockCriteria:
+  quizMinScore: 0.8
+  practiceRequired: true
+status: draft
+tags:
+  - algebra
+  - polynomials
+  - factoring
+keyTerms:
+  - quadratic
+  - standard form
+  - FOIL
+  - factoring
+  - GCF
+  - trinomial
+  - difference of squares
+  - zero product property
+review:
+  mathChecked: false
+  historicalChecked: false
+  editorialChecked: false
+---
+
+## Story Hook
+
+A Babylonian clay tablet, YBC 6967, from about 1800 BCE, preserves a problem that sounds simple but isn't:
+
+"A field has an area of 60 square cubits. Its length exceeds its width by 7 cubits. What are the length and width?"
+
+Set up: Let $w$ = width. Then length $= w + 7$.
+
+Area: $w(w + 7) = 60$
+
+Expand: $w^2 + 7w = 60$
+
+Rearrange: $w^2 + 7w - 60 = 0$
+
+This is a *quadratic equation* — an equation where the highest power is 2. The Babylonian scribes had no symbols, no formula, but they had procedures. They could solve it. And their solution method, discovered on clay and written 4000 years ago, is *essentially the same* as what we're about to learn.
+
+---
+
+## Why It Matters
+
+Quadratic equations appear everywhere:
+
+- **Physics:** When an object is thrown upward, its height is $h(t) = -16t^2 + v_0 t + h_0$ (a quadratic in time).
+- **Engineering:** The strength of a bridge's arch follows a parabola.
+- **Business:** Profit often depends on quantity in a quadratic way.
+- **Medicine:** Drug dosage and effect follow nonlinear (often quadratic) relationships.
+
+Once you can *factor* a quadratic and solve the resulting equation, you unlock the ability to answer questions like: "When does the ball hit the ground?" or "At what quantity is profit maximized?"
+
+---
+
+## Historical Context
+
+The ancient Babylonians (1800–1600 BCE) solved quadratic problems using geometric procedures. They would draw rectangles and squares, rearrange them, and find numerical solutions—all without algebra as we know it.
+
+The Greeks (Euclid, ~300 BCE) solved quadratic equations purely by geometry, using compass and straightedge.
+
+Islamic mathematicians—especially al-Khwarizmi (~820 CE)—developed *algebraic* solutions. They classified quadratic equations into six types and gave procedures for each. The word "algebra" comes from *al-jabr*, which literally means "restoration"—referring to moving negative terms to the other side.
+
+By the 1500s–1600s, European mathematicians (Cardano, Vieta, Descartes) refined the methods and developed the quadratic *formula*—which we'll see in the next chapter. But *factoring*—breaking a quadratic into two simpler binomials—was known earlier and remains the most elegant method when it works.
+
+---
+
+## Core Concept
+
+### What Is a Quadratic Expression?
+
+A quadratic expression is a polynomial with a squared term as the highest power:
+
+$$ax^2 + bx + c$$
+
+where $a \neq 0$, and $a$, $b$, $c$ are constants.
+
+Examples:
+- $x^2 + 5x + 6$
+- $2x^2 - 8x + 3$
+- $x^2 - 9$ (here $b = 0$)
+
+This is the **standard form**.
+
+---
+
+### Expanding: From Binomials to Quadratics
+
+If you multiply two binomials, you get a quadratic. This is called **expanding** or **multiplying out**.
+
+**FOIL method** (First, Outer, Inner, Last):
+
+$$(x + 3)(x + 2)$$
+
+- **First:** $x \cdot x = x^2$
+- **Outer:** $x \cdot 2 = 2x$
+- **Inner:** $3 \cdot x = 3x$
+- **Last:** $3 \cdot 2 = 6$
+
+Sum: $x^2 + 2x + 3x + 6 = x^2 + 5x + 6$
+
+This is reversible: if you can recognize that $x^2 + 5x + 6 = (x + 3)(x + 2)$, you've **factored** the quadratic.
+
+---
+
+### Factoring: The Reverse Process
+
+**Factoring** means breaking a quadratic into a product of two binomials.
+
+$$x^2 + 5x + 6 = (x + 3)(x + 2)$$
+
+**Strategy for trinomials of the form $x^2 + bx + c$:**
+
+1. Look for two numbers that *multiply to $c$* and *add to $b$*.
+2. Use those numbers as constants in the binomials.
+
+**Example:** Factor $x^2 + 7x + 12$
+
+- Need two numbers that multiply to 12 and add to 7.
+- Pairs that multiply to 12: $(1, 12)$, $(2, 6)$, $(3, 4)$
+- Which pair adds to 7? $(3, 4)$: $3 + 4 = 7$ ✓
+
+Answer: $(x + 3)(x + 4)$
+
+---
+
+### Factoring Trinomials of the Form $ax^2 + bx + c$ (where $a \neq 1$)
+
+For $2x^2 + 7x + 3$:
+
+1. Multiply $a \cdot c = 2 \cdot 3 = 6$.
+2. Find two numbers that multiply to 6 and add to $b = 7$: $(1, 6)$ works.
+3. Rewrite the middle term: $2x^2 + 1x + 6x + 3$
+4. Group and factor:
+   - $(2x^2 + 1x) + (6x + 3)$
+   - $x(2x + 1) + 3(2x + 1)$
+   - $(x + 3)(2x + 1)$
+
+---
+
+### Greatest Common Factor (GCF)
+
+Before factoring a trinomial, always check if all terms share a common factor.
+
+**Example:** Factor $3x^2 + 9x + 6$
+
+- GCF of $3x^2$, $9x$, and $6$ is 3.
+- Factor out: $3(x^2 + 3x + 2)$
+- Now factor the trinomial: $3(x + 1)(x + 2)$
+
+---
+
+### Difference of Squares
+
+A special pattern: $a^2 - b^2 = (a + b)(a - b)$
+
+**Example:** Factor $x^2 - 9$
+
+- This is $x^2 - 3^2$.
+- Factors to: $(x + 3)(x - 3)$
+
+**Example:** Factor $4x^2 - 25$
+
+- This is $(2x)^2 - 5^2$.
+- Factors to: $(2x + 5)(2x - 5)$
+
+---
+
+### The Zero Product Property
+
+**If $AB = 0$, then $A = 0$ or $B = 0$ (or both).**
+
+This is the key to solving quadratic equations by factoring.
+
+If you can factor a quadratic into $(x + m)(x + n) = 0$, then either:
+- $x + m = 0 \Rightarrow x = -m$, or
+- $x + n = 0 \Rightarrow x = -n$
+
+---
+
+## Definitions and Formal Lesson
+
+**Quadratic Expression:** A polynomial of degree 2, written as $ax^2 + bx + c$ where $a \neq 0$.
+
+**Standard Form:** The expression $ax^2 + bx + c$.
+
+**Trinomial:** A polynomial with three terms.
+
+**Binomial:** A polynomial with two terms.
+
+**Factoring:** Writing a polynomial as a product of simpler polynomials.
+
+**GCF (Greatest Common Factor):** The largest polynomial that divides all terms.
+
+**Difference of Squares:** An expression of the form $a^2 - b^2 = (a+b)(a-b)$.
+
+**Zero Product Property:** If the product of factors equals zero, at least one factor must be zero.
+
+---
+
+## Worked Examples
+
+### Example 1: Simple Trinomial Factoring
+
+**Factor:** $x^2 + 8x + 15$
+
+**Solution:**
+- Need two numbers that multiply to 15 and add to 8.
+- Pairs: $(1, 15)$, $(3, 5)$
+- $(3, 5)$ adds to 8. ✓
+
+$$x^2 + 8x + 15 = (x + 3)(x + 5)$$
+
+**Check:** $(x + 3)(x + 5) = x^2 + 5x + 3x + 15 = x^2 + 8x + 15$ ✓
+
+---
+
+### Example 2: Trinomial with Negative Terms
+
+**Factor:** $x^2 - 7x + 12$
+
+**Solution:**
+- Need two numbers that multiply to 12 and add to $-7$.
+- Since the sum is negative and the product is positive, both numbers must be negative.
+- Pairs: $(-1, -12)$, $(-2, -6)$, $(-3, -4)$
+- $(-3, -4)$ adds to $-7$. ✓
+
+$$x^2 - 7x + 12 = (x - 3)(x - 4)$$
+
+---
+
+### Example 3: Difference of Squares
+
+**Factor:** $x^2 - 16$
+
+**Solution:**
+- Recognize as $x^2 - 4^2$.
+
+$$x^2 - 16 = (x + 4)(x - 4)$$
+
+---
+
+### Example 4: Factoring with GCF
+
+**Factor:** $2x^2 + 10x + 8$
+
+**Solution:**
+1. GCF of $2$, $10$, $8$ is 2.
+   $$2x^2 + 10x + 8 = 2(x^2 + 5x + 4)$$
+
+2. Factor the trinomial: find two numbers that multiply to 4 and add to 5.
+   - $(1, 4)$ works: $1 + 4 = 5$. ✓
+
+$$2(x^2 + 5x + 4) = 2(x + 1)(x + 4)$$
+
+---
+
+### Example 5: Solving by Factoring
+
+**Solve:** $x^2 + 6x + 8 = 0$
+
+**Solution:**
+1. Factor the left side.
+   - Need two numbers that multiply to 8 and add to 6: $(2, 4)$. ✓
+   $$(x + 2)(x + 4) = 0$$
+
+2. Apply the zero product property.
+   - $x + 2 = 0 \Rightarrow x = -2$
+   - $x + 4 = 0 \Rightarrow x = -4$
+
+**Solutions:** $x = -2$ or $x = -4$
+
+**Check:**
+- When $x = -2$: $(-2)^2 + 6(-2) + 8 = 4 - 12 + 8 = 0$ ✓
+- When $x = -4$: $(-4)^2 + 6(-4) + 8 = 16 - 24 + 8 = 0$ ✓
+
+---
+
+### Example 6: More Complex Trinomial
+
+**Factor:** $2x^2 + 7x + 3$
+
+**Solution:**
+1. Multiply $a \cdot c = 2 \cdot 3 = 6$.
+2. Find two numbers that multiply to 6 and add to 7: $(1, 6)$. ✓
+3. Rewrite: $2x^2 + 1x + 6x + 3$
+4. Group: $(2x^2 + 1x) + (6x + 3)$
+5. Factor each group: $x(2x + 1) + 3(2x + 1)$
+6. Factor out the common binomial: $(x + 3)(2x + 1)$
+
+$$2x^2 + 7x + 3 = (x + 3)(2x + 1)$$
+
+**Check:** $(x + 3)(2x + 1) = 2x^2 + x + 6x + 3 = 2x^2 + 7x + 3$ ✓
+
+---
+
+### Example 7: Application — Area Problem
+
+**Problem:** A rectangular garden has area 24 square meters. Its length is 5 meters more than its width. Find the dimensions.
+
+**Solution:**
+1. Let $w$ = width. Then length $= w + 5$.
+2. Area equation: $w(w + 5) = 24$
+3. Expand: $w^2 + 5w = 24$
+4. Rearrange: $w^2 + 5w - 24 = 0$
+5. Factor: Find two numbers that multiply to $-24$ and add to $5$.
+   - $(8, -3)$: $8 \cdot (-3) = -24$ and $8 + (-3) = 5$ ✓
+   $$(w + 8)(w - 3) = 0$$
+6. Solve: $w = -8$ or $w = 3$
+7. Interpret: Width must be positive, so $w = 3$ meters.
+   - Width = 3 m; Length = 8 m
+
+**Check:** Area $= 3 \times 8 = 24$ ✓
+
+---
+
+## Practice Set
+
+### Factoring Exercises
+
+1. Factor $x^2 + 9x + 20$
+
+2. Factor $x^2 - 10x + 24$
+
+3. Factor $x^2 - 36$
+
+4. Factor $3x^2 + 12x + 9$
+
+5. Factor $2x^2 + 11x + 5$
+
+### Solving by Factoring
+
+6. Solve $x^2 + 8x + 15 = 0$
+
+7. Solve $x^2 - 5x - 6 = 0$
+
+8. Solve $x^2 - 49 = 0$
+
+### Applications
+
+9. A rectangular field has area 60 square meters and length 7 meters more than width. Find the dimensions.
+
+---
+
+## Reasoning Task
+
+**Problem:** A quadratic equation $x^2 + bx + 12 = 0$ has solutions $x = -3$ and $x = -4$.
+
+**Your task:**
+1. Use the zero product property in reverse: what factored form has these solutions?
+2. From the factored form, expand to find $b$.
+3. Verify by solving $x^2 + 7x + 12 = 0$ using factoring.
+4. Explain why knowing the solutions lets you find $b$.
+
+---
+
+## Application
+
+**Real-world scenario:** A company manufactures rectangular boxes. Each box has a square base with side length $x$ cm and height 5 cm. The company wants the volume to be 320 cubic cm.
+
+Set up: Volume $= (\text{base area}) \times \text{height} = x^2 \cdot 5 = 320$
+
+1. Write the equation in standard form (equal to zero).
+2. Factor it.
+3. Solve for $x$.
+4. What is the side length of the square base?
+
+---
+
+## Recap
+
+Quadratic expressions are polynomials with a squared term. Factoring breaks them into binomials—the reverse of expanding using FOIL.
+
+**Key strategies:**
+- Always check for GCF first.
+- For $x^2 + bx + c$: find factors of $c$ that add to $b$.
+- For $ax^2 + bx + c$ (where $a \neq 1$): use the $ac$-method or grouping.
+- Difference of squares: $a^2 - b^2 = (a+b)(a-b)$
+
+**Solving:**
+- Factor the quadratic.
+- Apply the zero product property: if $AB = 0$, then $A = 0$ or $B = 0$.
+- Solve the resulting linear equations.
+
+Factoring is elegant and fast when it works. But not every quadratic factors over the integers—that's where the quadratic formula (next chapter) becomes essential.
+
+---
+
+## Unlock Quiz
+
+**Question 1:** What is the GCF of the expression $4x^2 + 8x + 4$?
+
+- $x$
+- $2$
+- $4$
+
+<details>
+<summary>Answer</summary>
+$4$
+</details>
+
+---
+
+**Question 2:** When factoring $x^2 + bx + c$, what property must two numbers satisfy?
+
+- They multiply to $b$ and add to $c$
+- They multiply to $c$ and add to $b$
+- They divide both $b$ and $c$ evenly
+
+<details>
+<summary>Answer</summary>
+They multiply to $c$ and add to $b$
+</details>
+
+---
+
+**Question 3:** What does the zero product property tell us?
+
+- If $AB = 0$, then $A = 0$ or $B = 0$
+- If $A + B = 0$, then $A = 0$ and $B = 0$
+- If $AB \neq 0$, then $A \neq 0$ and $B \neq 0$
+
+<details>
+<summary>Answer</summary>
+If $AB = 0$, then $A = 0$ or $B = 0$
+</details>
+
+---
+
+**Question 4:** Factor $x^2 - 25$.
+
+- $(x + 5)(x - 5)$
+- $(x - 5)(x - 5)$
+- $(x + 5)(x + 5)$
+
+<details>
+<summary>Answer</summary>
+$(x + 5)(x - 5)$
+</details>
+
+---
+
+## Source Notes
+
+- [Quadratic equation - Wikipedia](https://en.wikipedia.org/wiki/Quadratic_equation)
+- [Babylonian mathematics - Wikipedia](https://en.wikipedia.org/wiki/Babylonian_mathematics)
+- [Al-Khwarizmi - Wikipedia](https://en.wikipedia.org/wiki/Al-Khwarizmi)
+- [Polynomial factorization - Wikipedia](https://en.wikipedia.org/wiki/Factorization_of_polynomials)

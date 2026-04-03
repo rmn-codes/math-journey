@@ -1,0 +1,272 @@
+---
+worldNumber: 3
+world: world-03-coordination-space-and-functions
+chapterNumber: 52
+title: Modeling with Functions
+subtitle: Choosing the right mathematical tool — and reading what the model tells you
+historicalPeriod: 1800s–present
+estimatedTimeMinutes: 40
+mainConcepts:
+  - mathematical modeling
+  - linear model
+  - quadratic model
+  - exponential model
+  - interpolation
+  - extrapolation
+learningObjectives:
+  - Choose an appropriate function type to model data
+  - Build linear, quadratic, and exponential models
+  - Interpret model parameters in context
+  - Recognize limitations of mathematical models
+---
+
+## Story Hook
+
+**November 1854, Scutari Hospital, Ottoman Empire.**
+
+The Crimean War rages, but Florence Nightingale sees a crisis within the crisis: more soldiers die from disease than from battle wounds. Diseases like typhus and cholera, spread by poor sanitation, kill more than bullets.
+
+Nightingale doesn't just count deaths. She plots them over time, creating what she calls a "rose diagram"—a visual model. The data tells a story: deaths spike during months when sanitation is poorest. She uses mathematics to argue for reform, and thousands of soldiers live because Nightingale chose the right model and read it carefully.
+
+This chapter is about doing what Nightingale did: collecting data, choosing a function type, building a model, and interpreting its meaning to make real decisions.
+
+## Why It Matters
+
+Mathematical modeling lets you:
+
+- **Make predictions:** Will the population reach 10 million? When will the epidemic peak?
+- **Understand patterns:** Why does growth slow? Where is the turning point?
+- **Test theories:** If my hypothesis is correct, the data should follow this model.
+- **Support decisions:** Nightingale convinced the military to reform using data-driven models, not emotion.
+- **Plan interventions:** Engineers use models to know where to invest, when to act, how much to prepare.
+
+## Historical Context
+
+Florence Nightingale pioneered data visualization in 1858. By the early 1900s, statisticians and mathematicians had formalized the art of model selection: choosing whether your data follows a linear, quadratic, exponential, or other pattern. Karl Pearson developed correlation to measure how well a model fits data. In the 20th century, computers made it possible to test thousands of models instantly. Today, "data science" is largely the art of choosing, building, and interpreting mathematical models. Climate scientists, economists, epidemiologists, and engineers all use the same basic process Nightingale pioneered.
+
+## Core Concept
+
+A **mathematical model** is a function (or system of functions) that describes real-world data. The general process is:
+
+1. **Collect data** from observation or experiment.
+2. **Choose a model type:** Is it linear (constant rate of change)? Quadratic (turning point)? Exponential (percentage growth)?
+3. **Fit the model:** Find the function that best matches your data.
+4. **Interpret:** What do the parameters mean in the real world? What does the model predict?
+5. **Validate:** Does the model work? Where does it fail? What are its limitations?
+
+**Linear models** describe situations with constant rate of change: $f(x) = mx + b$.
+- Signal: data points roughly form a straight line.
+- Example: Distance traveled at constant speed.
+
+**Quadratic models** describe situations with a turning point: $f(x) = ax^2 + bx + c$.
+- Signal: data has a peak or valley.
+- Example: Height of a ball thrown in the air; profit as a function of production volume.
+
+**Exponential models** describe situations with percentage growth or decay: $f(x) = a \cdot b^x$ or $f(x) = a \cdot e^{kx}$.
+- Signal: data grows or shrinks increasingly fast, or increasingly slow.
+- Example: Population growth, radioactive decay, viral spread, investment returns.
+
+## Definitions and Formal Lesson
+
+**Mathematical model:** A function or system of functions representing real data or a real system.
+
+**Linear regression:** A method to fit a line $y = mx + b$ to data by minimizing the sum of squared distances (residuals) between the line and data points.
+
+**Quadratic regression:** A method to fit a parabola $y = ax^2 + bx + c$ to data.
+
+**Exponential regression:** A method to fit an exponential function to data. If growth is exponential, plot $\ln(y)$ vs. $x$; if the result is linear, then $y = a e^{kx}$.
+
+**Residual:** The difference between a data point and the model's prediction at that point: residual $= y_{\text{data}} - y_{\text{model}}$.
+
+**Interpolation:** Using a model to predict a value within the range of observed data.
+
+**Extrapolation:** Using a model to predict a value outside the range of observed data. This is risky because patterns may not hold beyond the data.
+
+**Coefficient of determination ($R^2$):** A measure of how well a model fits data, ranging from 0 to 1. $R^2 = 1$ means perfect fit; $R^2 = 0$ means no fit.
+
+## Worked Examples
+
+**Example 1: Linear model — Distance and time**
+
+A car travels on a highway. Here's the distance from home over time:
+
+| Time (hours) | Distance (miles) |
+|---|---|
+| 0 | 0 |
+| 1 | 55 |
+| 2 | 110 |
+| 3 | 165 |
+| 4 | 220 |
+
+The data points are collinear (form a straight line). This is a linear model: $d(t) = 55t$.
+
+**Interpretation:** The car travels at a constant 55 mph.
+
+**Prediction (interpolation):** At 2.5 hours, the distance is $d(2.5) = 55(2.5) = 137.5$ miles.
+
+**Prediction (extrapolation):** If the car continues at 55 mph, after 5 hours it will be $d(5) = 275$ miles from home.
+
+(Note: Extrapolation assumes the car continues at the same speed, which may not be true. Real roads have traffic, rest stops, speed limits.)
+
+**Example 2: Quadratic model — Projectile motion**
+
+A baseball is thrown upward. Its height above the ground (in feet) as a function of time (in seconds) is recorded:
+
+| Time (s) | Height (ft) |
+|---|---|
+| 0 | 6 |
+| 0.5 | 20 |
+| 1 | 30 |
+| 1.5 | 36 |
+| 2 | 38 |
+| 2.5 | 36 |
+| 3 | 30 |
+
+A quadratic model fits this data: $h(t) = -16t^2 + 48t + 6$.
+
+**Interpretation:**
+- The $-16$ coefficient reflects gravity's acceleration.
+- The $+48$ is the initial upward velocity.
+- The $+6$ is the initial height (6 feet, released from shoulder height).
+
+**Finding the maximum:** The vertex is at $t = -\frac{b}{2a} = -\frac{48}{2(-16)} = 1.5$ seconds, with height $h(1.5) = 38$ feet.
+
+The ball reaches its peak (38 feet) at 1.5 seconds.
+
+**Example 3: Exponential model — Population growth**
+
+A colony of bacteria grows. The population (in thousands) over days is:
+
+| Day | Population (thousands) |
+|---|---|
+| 0 | 1 |
+| 1 | 2 |
+| 2 | 4 |
+| 3 | 8 |
+| 4 | 16 |
+
+The population doubles each day. This is exponential: $P(t) = 1 \cdot 2^t = 2^t$.
+
+**Interpretation:** The growth factor is 2 (doubling). The growth rate is 100% per day.
+
+**Prediction:** On day 5, $P(5) = 2^5 = 32$ thousand bacteria.
+
+**Reality check:** In reality, exponential growth can't continue forever. Bacteria would run out of food, space, or oxygen. Models have limits.
+
+## Practice Set
+
+1. **Linear model:** A phone plan costs $35 per month plus $0.10 per text message. Write a linear model for the cost $C$ as a function of texts $t$. If you send 200 texts, what's your bill?
+   - Identify the fixed cost and variable cost.
+   - Use the form $C(t) = $ (fixed) $+$ (rate) $\cdot t$.
+
+2. **Quadratic model:** A rocket is launched from ground level with initial upward velocity 100 m/s. Its height is $h(t) = -4.9t^2 + 100t$. When does it reach maximum height? What is that height?
+   - Find the vertex using $t = -\frac{b}{2a}$.
+   - Substitute back to find the maximum height.
+
+3. **Exponential model:** An investment grows at 5% per year. If you invest \$1,000, the value after $t$ years is $V(t) = 1000 \cdot 1.05^t$. How much is your investment worth after 10 years?
+   - What is the initial investment (at $t = 0$)?
+   - Evaluate at $t = 10$.
+
+4. **Choosing a model:** Which model type (linear, quadratic, or exponential) best fits each scenario?
+   - Temperature over a 24-hour day
+   - Credit card debt with compound interest
+   - Distance traveled at constant speed
+   - Population with limited resources (growth slows over time)
+
+5. **Limitations:** An exponential model predicts that a rapidly growing tech company's revenue doubles every year. What real-world factors might eventually slow this growth?
+   - Market saturation
+   - Competition
+   - Resource constraints
+   - Regulatory limits
+
+6. **Interpolation vs. Extrapolation:** A dataset shows housing prices from 2015 to 2024. You fit a linear model. Would you be more confident using the model to estimate the price in 2020 or in 2035? Explain.
+
+## Reasoning Task
+
+**The Epidemic Model:**
+
+A new disease starts with 10 cases. Due to rapid transmission, cases double every week. After 8 weeks, the data shows:
+
+| Week | Cases |
+|---|---|
+| 0 | 10 |
+| 1 | 20 |
+| 2 | 40 |
+| 4 | 160 |
+| 6 | 640 |
+| 8 | 2,560 |
+
+The exponential model is $C(t) = 10 \cdot 2^t$.
+
+Now, a vaccine program begins in week 8. Vaccinations reduce the growth rate. By week 10, there are 3,500 cases (not 10,240).
+
+- At what point does the model fail (when the data deviates significantly from the exponential prediction)?
+- What does this tell you about the vaccine's effectiveness?
+- How might you adjust your model to account for vaccinations?
+
+(This mirrors what happened with COVID-19: exponential models helped predict early spread, but interventions changed the growth rate.)
+
+## Application
+
+**Real-world example: Nightingale's sanitation reform**
+
+Florence Nightingale collected monthly death data from Scutari Hospital. Before sanitation reforms, the death rate was about 43.2 per 1,000 patients. This could be modeled as roughly constant—not because deaths are good, but because without intervention, the rate doesn't change.
+
+By implementing basic hygiene: clean water, ventilation, clean bedding—the death rate plummeted. By plotting this data and showing the sharp decline after the reforms, Nightingale proved that sanitation matters. Her visual model (her famous rose diagram) convinced the British military to reform hospital practices. Thousands of soldiers lived because Nightingale chose the right model and read it correctly.
+
+Similarly, today's epidemiologists build models of disease transmission to show how vaccines, social distancing, or masks reduce spread. The model predicts two futures: without intervention (exponential growth), and with it (reduced growth). These models guide policy.
+
+## Recap
+
+Mathematical modeling is the art of choosing the right function to describe data, understanding what the model reveals, and recognizing its limits.
+
+- **Linear models:** Constant rate of change.
+- **Quadratic models:** Turning points and extremes.
+- **Exponential models:** Percentage growth or decay.
+
+The process: collect data, choose a type, fit the model, interpret, validate. Interpolation (within data range) is safer than extrapolation (beyond data range). Models are tools, not truth. They simplify reality to help us understand patterns and make decisions. Nightingale knew this: her model wasn't perfect, but it was compelling enough to save lives.
+
+## Unlock Quiz
+
+**Question 1:** Which function type best models a bacteria population that triples every 3 hours?
+
+- Linear: $f(t) = 3t$
+- Quadratic: $f(t) = 3t^2$
+- Exponential: $f(t) = a \cdot b^t$ where $b = 3$
+- Absolute value: $f(t) = 3|t|$
+
+<details>
+<summary>Answer</summary>
+Exponential: $f(t) = a \cdot b^t$ where $b = 3$
+</details>
+
+**Question 2:** A model predicts that profit increases linearly with production volume. What real-world factor might violate this assumption as production grows very large?
+
+- Constant raw material costs
+- Fixed overhead costs
+- Equipment breaks down; labor becomes less efficient; market becomes saturated
+- The model must be correct because it's mathematical
+
+<details>
+<summary>Answer</summary>
+Equipment breaks down; labor becomes less efficient; market becomes saturated
+</details>
+
+**Question 3:** A model fits your data perfectly for the observed range (2024–2025) but you want to predict for 2030. This is an example of:
+
+- Interpolation
+- Extrapolation
+- Residual analysis
+- Coefficient of determination
+
+<details>
+<summary>Answer</summary>
+Extrapolation
+</details>
+
+## Source Notes
+
+- Wikipedia: "Mathematical Model" — https://en.wikipedia.org/wiki/Mathematical_model
+- Wikipedia: "Florence Nightingale" — https://en.wikipedia.org/wiki/Florence_Nightingale
+- Khan Academy: "Fitting Quadratic and Exponential Functions to Data" — https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:mod-exp
+- OpenStax: "Precalculus" Chapter 2.5 — https://openstax.org/books/precalculus/pages/2-5-modeling-with-linear-functions

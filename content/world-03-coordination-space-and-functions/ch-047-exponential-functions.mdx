@@ -1,0 +1,307 @@
+---
+chapterNumber: 047
+worldNumber: 3
+world: world-03-coordination-space-and-functions
+title: "Exponential Functions — Growth and Decay"
+subtitle: "When things double and halve — the mathematics of pandemics, savings, and radioactivity"
+estimatedTimeMinutes: 40
+historicalPeriod: "1600s–present"
+mainConcepts:
+  - exponential function
+  - exponential growth
+  - exponential decay
+  - base e
+  - half-life
+  - compound interest
+learningObjectives:
+  - "Identify and evaluate exponential functions"
+  - "Distinguish growth from decay"
+  - "Apply compound interest and half-life formulas"
+  - "Graph exponential functions and identify key features"
+---
+
+## Story Hook
+
+There is a legend told in many lands, stretching back to ancient India. A clever inventor comes to the king with a board game — chess. The king is delighted and offers a reward.
+
+"I ask for grain," says the inventor. "One grain of rice on the first square of the chessboard. Two grains on the second square. Double the amount on each next square."
+
+The king laughs. "You ask for so little! Guards, bring him rice!"
+
+But the mathematician in the king's court goes pale. They whisper: "Sire, the last square alone requires $2^{63}$ grains. More rice than has ever been grown in all your kingdom. More than in all the world."
+
+The king had discovered the secret of exponential growth. What looks modest at first — just doubling — becomes unimaginably vast.
+
+This is the story told from India to Persia to medieval Europe. It contains a profound truth: *exponential functions grow (or shrink) faster than any other mathematical pattern in nature*.
+
+## Why It Matters
+
+The COVID-19 pandemic taught the world about exponential growth in weeks. A virus that doubles every few days moves from 100 infections to 1,000 to 10,000 to 1 million in just days. This is why "flattening the curve" mattered — it was about turning an exponential curve into something slower.
+
+But exponential functions are not just about catastrophe. A dollar in a retirement account earning 7% interest per year doesn't grow by 7 cents. It earns interest on the interest, compounding exponentially. Over 30 years, this turns thousands into millions. Exponential growth is also how life accumulates wealth and opportunity.
+
+Understanding exponential functions is understanding how the world accelerates, multiplies, and sometimes collapses.
+
+## Historical Context
+
+The word "exponential" emerged slowly from mathematics. What we now call exponential functions were studied by mathematicians like Michael Stifel in the 1500s, who noticed the patterns in powers. But the real revolution came with the number $e$.
+
+In the 1600s, Leonhard Euler discovered that many natural processes — population growth, radioactive decay, cooling of hot objects — all follow a special exponential curve: $f(t) = Pe^{rt}$, where $e \approx 2.71828...$
+
+The number $e$ is as fundamental to mathematics as $\pi$. It appears everywhere in nature, from the spiral of a nautilus shell to the decay of atomic nuclei. Euler's insight transformed calculus and science.
+
+## Core Concept
+
+An **exponential function** has the form:
+
+$$f(x) = a \cdot b^x$$
+
+where $a > 0$, $b > 0$, and $b \neq 1$.
+
+- $a$ is the initial value (the starting amount).
+- $b$ is the base (the growth or decay factor).
+- Each time $x$ increases by 1, the output is multiplied by $b$.
+
+**If $b > 1$:** The function grows exponentially. Examples: bacteria doubling, money earning interest, pandemic spread.
+
+**If $0 < b < 1$:** The function decays exponentially. Examples: radioactive materials losing mass, medicine leaving your bloodstream, light intensity decreasing with distance.
+
+**The Natural Base $e$:**
+
+The most important exponential base is $e \approx 2.71828...$, called Euler's number. The continuous growth formula is:
+
+$$A(t) = Pe^{rt}$$
+
+where:
+- $P$ is the initial amount
+- $r$ is the growth rate (or decay rate if negative)
+- $t$ is time
+
+This formula describes how nature actually behaves. A population does not grow in discrete jumps; it grows continuously.
+
+## Definitions and Formal Lesson
+
+**Exponential Growth and Decay:**
+
+General form: $f(x) = a \cdot b^x$
+
+For growth: $b > 1$ (base is larger than 1).
+
+For decay: $0 < b < 1$ (base is between 0 and 1).
+
+**Example of growth:** $f(x) = 100 \cdot (1.05)^x$ might represent an investment starting at \$100 growing at 5% per year.
+
+After 1 year: $f(1) = 100 \cdot 1.05 = 105$ dollars.
+
+After 2 years: $f(2) = 100 \cdot (1.05)^2 = 110.25$ dollars.
+
+After 10 years: $f(10) = 100 \cdot (1.05)^{10} \approx 162.89$ dollars.
+
+**Compound Interest:**
+
+Money invested at interest grows exponentially. The formula depends on how often interest compounds:
+
+$$A = P\left(1 + \frac{r}{n}\right)^{nt}$$
+
+where:
+- $P$ = principal (initial amount)
+- $r$ = annual interest rate (as a decimal)
+- $n$ = number of times interest compounds per year
+- $t$ = time in years
+- $A$ = final amount
+
+**Continuous Compounding:**
+
+$$A = Pe^{rt}$$
+
+**Half-Life:**
+
+The time it takes for a decaying quantity to reduce to half its original amount. If a substance has a half-life of $\tau$, then:
+
+$$A(t) = A_0 \left(\frac{1}{2}\right)^{t/\tau}$$
+
+**Doubling Time:**
+
+The time it takes for a growing quantity to double. For exponential growth with rate $r$:
+
+$$\text{Doubling time} \approx \frac{0.693}{r}$$
+
+(This is $\frac{\ln 2}{r}$, but we'll learn about logarithms next chapter.)
+
+## Worked Examples
+
+**Example 1: Evaluating an Exponential Function**
+
+The population of bacteria in a culture is $P(t) = 50 \cdot (2)^t$, where $t$ is hours. What is the population after 5 hours?
+
+$$P(5) = 50 \cdot 2^5 = 50 \cdot 32 = 1600 \text{ bacteria}$$
+
+**Example 2: Compound Interest**
+
+You invest \$5,000 in an account earning 6% annual interest, compounded quarterly. How much will you have after 3 years?
+
+$$A = P\left(1 + \frac{r}{n}\right)^{nt}$$
+
+$$A = 5000\left(1 + \frac{0.06}{4}\right)^{4 \cdot 3}$$
+
+$$A = 5000(1.015)^{12}$$
+
+$$A \approx 5000 \cdot 1.1956 \approx 5978 \text{ dollars}$$
+
+**Example 3: Half-Life Calculation**
+
+Carbon-14 has a half-life of 5,730 years. A fossil contains 25% of its original carbon-14. How old is it?
+
+Using $A(t) = A_0 \left(\frac{1}{2}\right)^{t/\tau}$:
+
+$$0.25 = 1 \cdot \left(\frac{1}{2}\right)^{t/5730}$$
+
+$$\left(\frac{1}{4}\right) = \left(\frac{1}{2}\right)^{t/5730}$$
+
+$$\left(\frac{1}{2}\right)^2 = \left(\frac{1}{2}\right)^{t/5730}$$
+
+$$2 = \frac{t}{5730}$$
+
+$$t = 11,460 \text{ years}$$
+
+**Example 4: Continuous Growth**
+
+A bacterial colony grows according to $A(t) = 1000e^{0.3t}$, where $t$ is in hours. What is the population after 4 hours?
+
+$$A(4) = 1000e^{0.3 \cdot 4} = 1000e^{1.2} \approx 1000 \cdot 3.32 \approx 3320 \text{ bacteria}$$
+
+## Practice Set
+
+1. **Evaluate $f(x) = 2 \cdot (3)^x$ at $x = 2$.**
+   - 6
+   - 12
+   - 18
+   - 9
+
+2. **Which function represents exponential decay?**
+   - $f(x) = 5 \cdot (2)^x$
+   - $f(x) = 100 \cdot (0.8)^x$
+   - $f(x) = 3x^2$
+   - $f(x) = 10 + 2x$
+
+3. **A savings account has \$2,000 earning 4% annual interest, compounded annually. How much is in the account after 5 years?**
+   - \$2,400
+   - \$2,433.31
+   - \$2,500
+   - \$2,832.43
+
+4. **Carbon-14 has a half-life of 5,730 years. If a sample starts with 100 grams, how much remains after 11,460 years?**
+   - 50 grams
+   - 25 grams
+   - 12.5 grams
+   - 5 grams
+
+5. **What is the initial value (at $x = 0$) for $f(x) = 200 \cdot (1.1)^x$?**
+   - 0
+   - 200
+   - 220
+   - 1.1
+
+## Reasoning Task
+
+The global population in 2026 is approximately 8 billion. Suppose it continues to grow at 0.9% per year. Using the exponential growth formula, estimate the global population in 2050 (24 years later). Then explain: at what time in the future, if this growth continues unchanged, would the population reach 10 billion?
+
+(Hint: For the second part, you will need logarithms, which we learn next chapter. But try to estimate using the exponential function.)
+
+## Application
+
+**The Spread of a Virus**
+
+A virus infects a small group initially. With each day, the number of infected people is multiplied by a factor (say, 1.3 — each infected person infects 1.3 others on average). The number of infected people is:
+
+$$I(t) = I_0 \cdot (1.3)^t$$
+
+If we start with 100 infected people:
+- After 5 days: $I(5) = 100 \cdot (1.3)^5 \approx 371$ infected
+- After 10 days: $I(10) = 100 \cdot (1.3)^{10} \approx 1,378$ infected
+- After 15 days: $I(15) = 100 \cdot (1.3)^{15} \approx 5,124$ infected
+
+This exponential explosion is why public health officials worry about pandemic spread. Early intervention can change the base from 1.3 to 1.1, which saves thousands of lives.
+
+**Investment Growth**
+
+A young person invests \$200 per month starting at age 25, earning an average 7% annual return. Using the compound interest formula repeatedly, they accumulate wealth exponentially. By age 65:
+
+$$A \approx 200 \cdot \frac{(1.0058)^{480} - 1}{0.0058} \approx 850,000 \text{ dollars}$$
+
+This is why starting early is so powerful — exponential growth works hardest over long time periods.
+
+## Recap
+
+An **exponential function** has the form $f(x) = a \cdot b^x$, where $a$ is the initial value and $b$ is the growth or decay factor. If $b > 1$, the function grows; if $0 < b < 1$, it decays.
+
+The natural base $e \approx 2.718$ appears in the continuous growth formula: $A(t) = Pe^{rt}$.
+
+**Compound interest**, **viral spread**, **radioactive decay**, and **population growth** all follow exponential patterns. The defining feature of exponential functions is that they multiply by a constant factor with each unit increase in input, leading to explosive growth or decay.
+
+Exponential functions model the chess legend perfectly: what seems small at first becomes vast beyond imagination.
+
+## Unlock Quiz
+
+**1. In the exponential function $f(x) = a \cdot b^x$, which value determines whether the function grows or decays?**
+   - $a$
+   - $b$
+   - $x$
+   - The product $ab$
+
+<details>
+<summary>Answer</summary>
+$b$
+</details>
+
+**2. What is the initial value of $f(x) = 50 \cdot (1.2)^x$ at $x = 0$?**
+   - 0
+   - 1.2
+   - 50
+   - 60
+
+<details>
+<summary>Answer</summary>
+50
+</details>
+
+**3. A substance has a half-life of 10 days. After 30 days, what fraction of the original amount remains?**
+   - 1/2
+   - 1/4
+   - 1/8
+   - 1/16
+
+<details>
+<summary>Answer</summary>
+1/8
+</details>
+
+**4. Which describes the graph of $f(x) = 5 \cdot (0.7)^x$?**
+   - Increases as $x$ increases
+   - Decreases as $x$ increases, approaching 0
+   - A straight line
+   - A parabola
+
+<details>
+<summary>Answer</summary>
+Decreases as $x$ increases, approaching 0
+</details>
+
+**5. You deposit \$1,000 in an account earning 5% annual interest, compounded annually. Which formula gives the amount after $t$ years?**
+   - $A = 1000(0.05)^t$
+   - $A = 1000(1.05)^t$
+   - $A = 1000 + 0.05t$
+   - $A = 1000 + 1.05t$
+
+<details>
+<summary>Answer</summary>
+$A = 1000(1.05)^t$
+</details>
+
+## Source Notes
+
+- Euler, L. (1748). *Introductio in analysin infinitorum*. https://en.wikipedia.org/wiki/Leonhard_Euler
+- https://en.wikipedia.org/wiki/Exponential_function
+- https://en.wikipedia.org/wiki/E_(mathematical_constant)
+- https://en.wikipedia.org/wiki/Half-life
+- https://en.wikipedia.org/wiki/Compound_interest

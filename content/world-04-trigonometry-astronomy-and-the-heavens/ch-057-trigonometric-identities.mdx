@@ -1,0 +1,266 @@
+---
+title: "Trigonometric Identities"
+subtitle: "Equations that are always true — and the art of transforming expressions"
+worldNumber: 4
+world: world-04-trigonometry-astronomy-and-the-heavens
+chapter: 57
+estimatedTimeMinutes: 40
+historicalPeriod: "200 BCE – 1700 CE"
+mainConcepts:
+  - "Pythagorean identities"
+  - "Sum and difference formulas"
+  - "Double-angle formulas"
+  - "Proving identities"
+learningObjectives:
+  - "Apply Pythagorean, reciprocal, and quotient identities"
+  - "Use sum, difference, and double-angle formulas"
+  - "Prove trigonometric identities"
+  - "Simplify trigonometric expressions"
+---
+
+## Story Hook
+
+In Baghdad, around 950 CE, a mathematician named Abu'l-Wafa was solving a problem that had stumped astronomers for centuries. He needed to find the sine of an angle that was the *sum* of two other angles — something like finding $\sin(45° + 30°)$ without a calculator.
+
+Working purely with geometry and no modern algebra notation, Abu'l-Wafa derived a formula: if you know the sines and cosines of angles $A$ and $B$, you can find the sine of their sum. That single formula — which you'll derive in this chapter — became the skeleton key to medieval astronomy. Navigators, astrologers, and mathematicians used it to predict planetary positions more accurately than anyone had managed before.
+
+Today, what took Abu'l-Wafa years of geometric insight is taught in a single lesson. The formulas he discovered by hand are what you're about to learn. They haven't changed; only our path to them has become clearer.
+
+## Why It Matters
+
+Trigonometric identities are equations that are *always true*, no matter what angle you plug in. They're not formulas you memorize for one problem — they're patterns that unlock an entire family of problems.
+
+Imagine you're designing a bridge. You know the angle of one support beam and the angle of another, and you need to find the angle where they meet. Or you're an engineer tuning a radio signal: you need to combine two waves oscillating at slightly different frequencies, and the math requires you to simplify expressions like $\sin A \cos B + \cos A \sin B$. Identities are what let you transform messy expressions into something you can actually work with.
+
+The real power of identities is transformation. You're learning not just facts, but a way of thinking: how to see that two very different-looking expressions are actually the same.
+
+## Historical Context
+
+Trigonometry was born from astronomy, and identities grew from the urgent need to calculate planetary positions.
+
+The earliest known work on this comes from **Hipparchus** (c. 190–120 BCE), the Greek astronomer who built the first detailed star catalogue. He worked with chords of circles (the ancient equivalent of sines and cosines) and derived relationships between them.
+
+**Ptolemy** (c. 90–168 CE) developed these ideas further in his *Almagest*, including what we now call the "angle addition formula" for chords. His work was the foundation of all later astronomy.
+
+But the most systematic development came in the Islamic Golden Age. **Abu'l-Wafa** (940–998 CE) and his student **Al-Biruni** (973–1048 CE) derived the sine and cosine addition formulas explicitly, without modern notation. They proved these geometrically, using intricate diagrams of intersecting circles and arcs. These formulas let astronomers compute planetary positions with unprecedented accuracy — each decade, the predictions grew more precise.
+
+European mathematicians, especially after the Renaissance, formalized these ideas with algebra. By the 1700s, **Leonhard Euler** (1707–1783) wrote identities in the modern symbolic notation you'll learn here.
+
+## Core Concept
+
+**Trigonometric identities are equations involving trigonometric functions that are true for all valid values of the variable.**
+
+Think of them as the "laws of trigonometry" — reliable rules that always hold. The most fundamental group is the **Pythagorean identities**, which flow directly from the definition of sine and cosine on the unit circle.
+
+Imagine a point on the unit circle at angle $\theta$. Its coordinates are $(\cos\theta, \sin\theta)$. Since this point is always exactly 1 unit away from the origin (by the definition of a unit circle), the distance formula gives us:
+
+$$(\cos\theta)^2 + (\sin\theta)^2 = 1$$
+
+This is the foundational identity. Everything else builds from it.
+
+From this one identity, you can derive others by dividing both sides by $\cos^2\theta$ or $\sin^2\theta$:
+
+$$1 + \tan^2\theta = \sec^2\theta$$
+$$1 + \cot^2\theta = \csc^2\theta$$
+
+Then come the **reciprocal identities** (definitions, really):
+
+$$\csc\theta = \frac{1}{\sin\theta}, \quad \sec\theta = \frac{1}{\cos\theta}, \quad \cot\theta = \frac{1}{\tan\theta}$$
+
+And the **quotient identities**:
+
+$$\tan\theta = \frac{\sin\theta}{\cos\theta}, \quad \cot\theta = \frac{\cos\theta}{\sin\theta}$$
+
+These basic identities are the alphabet. The **big payoff** comes with the **angle addition formulas** — the ones Abu'l-Wafa discovered:
+
+$$\sin(A + B) = \sin A \cos B + \cos A \sin B$$
+$$\sin(A - B) = \sin A \cos B - \cos A \sin B$$
+$$\cos(A + B) = \cos A \cos B - \sin A \sin B$$
+$$\cos(A - B) = \cos A \cos B + \sin A \sin B$$
+
+From these, the **double-angle formulas** follow (just set $B = A$):
+
+$$\sin(2\theta) = 2\sin\theta\cos\theta$$
+$$\cos(2\theta) = \cos^2\theta - \sin^2\theta = 2\cos^2\theta - 1 = 1 - 2\sin^2\theta$$
+
+## Definitions and Formal Lesson
+
+An identity is proven by transforming one side into the other (or both sides into a common form). The key rule: **work on only one side at a time.** Don't move terms left and right as you would in solving an equation.
+
+**Key strategy for proving identities:**
+1. Start with the more complicated side.
+2. Use Pythagorean, reciprocal, and quotient identities to rewrite expressions.
+3. Combine fractions, factor, expand — anything algebraic.
+4. Transform until you reach the other side.
+
+**Example proof (Pythagorean identity from addition formula):**
+
+Start with $\sin(A + B) = \sin A \cos B + \cos A \sin B$.
+
+Set $B = -A$:
+
+$$\sin(A - A) = \sin A \cos(-A) + \cos A \sin(-A)$$
+
+Since $\cos(-A) = \cos A$ and $\sin(-A) = -\sin A$:
+
+$$\sin 0 = \sin A \cos A + \cos A (-\sin A)$$
+$$0 = \sin A \cos A - \sin A \cos A$$
+$$0 = 0$$ ✓
+
+Now set $A = \theta$, $B = \theta$ and use the addition formula differently:
+
+$$\sin^2\theta + \cos^2\theta = (\sin\theta\cos\theta + \cos\theta\sin\theta)^2 + (\cos\theta\cos\theta - \sin\theta\sin\theta)^2$$
+
+This expands to 1 — a full proof of the Pythagorean identity from the angle addition formula.
+
+## Worked Examples
+
+**Example 1: Simplify** $\frac{\sin\theta \sec\theta}{\tan\theta}$
+
+*Solution:*
+
+$$\frac{\sin\theta \sec\theta}{\tan\theta} = \frac{\sin\theta \cdot \frac{1}{\cos\theta}}{\frac{\sin\theta}{\cos\theta}}$$
+
+$$= \frac{\sin\theta}{\cos\theta} \cdot \frac{\cos\theta}{\sin\theta} = 1$$
+
+**Example 2: Find** $\sin 75°$
+
+*Solution:* Notice that $75° = 45° + 30°$. Use the addition formula:
+
+$$\sin 75° = \sin(45° + 30°)$$
+$$= \sin 45° \cos 30° + \cos 45° \sin 30°$$
+$$= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2}$$
+$$= \frac{\sqrt{6}}{4} + \frac{\sqrt{2}}{4} = \frac{\sqrt{6} + \sqrt{2}}{4}$$
+
+**Example 3: Prove** $\sin^2\theta - \sin^4\theta = \cos^2\theta(1 - \cos^2\theta)$
+
+*Solution:* Start with the left side.
+
+$$\sin^2\theta - \sin^4\theta = \sin^2\theta(1 - \sin^2\theta)$$
+
+By the Pythagorean identity, $1 - \sin^2\theta = \cos^2\theta$:
+
+$$= \sin^2\theta \cdot \cos^2\theta$$
+
+Now simplify the right side:
+
+$$\cos^2\theta(1 - \cos^2\theta) = \cos^2\theta \cdot \sin^2\theta$$
+
+Both sides equal $\sin^2\theta\cos^2\theta$. ✓
+
+**Example 4: Find** $\cos 2\theta$ if $\sin\theta = \frac{3}{5}$
+
+*Solution:* Use the double-angle formula $\cos 2\theta = 1 - 2\sin^2\theta$:
+
+$$\cos 2\theta = 1 - 2\left(\frac{3}{5}\right)^2 = 1 - 2 \cdot \frac{9}{25} = 1 - \frac{18}{25} = \frac{7}{25}$$
+
+## Practice Set
+
+1. **Simplify:** $\cos\theta \tan\theta + \sin\theta \cot\theta$
+
+2. **Prove:** $\frac{1 - \cos 2\theta}{\sin 2\theta} = \tan\theta$
+
+3. **Find** $\sin(105°)$ using an addition formula. Leave your answer in exact form.
+
+4. **Simplify:** $\frac{\csc^2\theta - 1}{\csc^2\theta}$
+
+5. **Prove:** $\sin^4\theta - \cos^4\theta = 1 - 2\cos^2\theta$
+
+6. **Find** $\tan 2\theta$ if $\tan\theta = \frac{2}{3}$. (Hint: $\tan 2\theta = \frac{2\tan\theta}{1-\tan^2\theta}$)
+
+## Reasoning Task
+
+**Challenge:** Suppose you're designing a swinging pendulum. The angle from vertical at time $t$ is $\theta(t) = 20° \sin(t)$, where $t$ is measured in seconds. The velocity is proportional to $\cos(\theta(t))$.
+
+A colleague insists that the expression $\sin(2\theta(t))$ simplifies nicely. Show that:
+
+$$\sin(2 \cdot 20° \sin(t)) = ?$$
+
+Can you express this in a simpler form using identities? What does this tell you about the motion of the pendulum?
+
+(Hint: This problem doesn't have a tidy closed form — the point is to recognize when identities apply and when they don't.)
+
+## Application
+
+**Harmonic Oscillation & Signal Processing:**
+
+When two waves of slightly different frequencies are combined, their sum can be written as:
+
+$$\sin(f_1 t) + \sin(f_2 t)$$
+
+Using sum-to-product identities (derived from angle addition formulas), this becomes:
+
+$$2\sin\left(\frac{f_1+f_2}{2}t\right)\cos\left(\frac{f_1-f_2}{2}t\right)$$
+
+This shows that the combined wave has a *carrier frequency* (the first sine) modulated by an *envelope* (the cosine). Radio signals, music, even light waves use this principle. The identities let engineers transform a complicated sum into a comprehensible product.
+
+**Bridge Engineering:**
+
+Two trusses meet at angles $A$ and $B$ from the horizontal. The vertical component of the net force is proportional to $\sin A + \sin B$. Using the sum-to-product identity:
+
+$$\sin A + \sin B = 2\sin\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)$$
+
+This shows that the total vertical force depends on the *average* angle and the *difference* between the angles — much easier to analyze.
+
+## Recap
+
+- **Pythagorean identities** flow from the unit circle: $\sin^2\theta + \cos^2\theta = 1$ and its variants.
+- **Reciprocal and quotient identities** define secant, cosecant, cotangent, and tangent in terms of sine and cosine.
+- **Angle addition formulas** are the gates to deeper trigonometry; Abu'l-Wafa's discovery.
+- **Double-angle formulas** simplify expressions involving $\sin 2\theta$ and $\cos 2\theta$.
+- **Proving identities** requires transforming one side into the other; it's an art of algebraic manipulation.
+- Identities are the foundation of applied math: waves, forces, rotations, and oscillations all use them.
+
+## Unlock Quiz
+
+**Q1: Which equation is a Pythagorean identity?**
+- $\sin^2\theta + \cos^2\theta = 1$
+- $\sin\theta + \cos\theta = 1$
+- $\sin\theta \cos\theta = \frac{1}{2}$
+- $\tan\theta = 1$
+
+<details>
+<summary>Answer</summary>
+$\sin^2\theta + \cos^2\theta = 1$
+</details>
+
+**Q2: What is** $\sin(60° + 30°)$ **using the angle addition formula?**
+- $\sin 60° + \sin 30°$
+- $\sin 60° \cos 30° + \cos 60° \sin 30°$
+- $\cos 60° \cos 30° - \sin 60° \sin 30°$
+- $\frac{\sin 60°}{\sin 30°}$
+
+<details>
+<summary>Answer</summary>
+$\sin 60° \cos 30° + \cos 60° \sin 30°$
+</details>
+
+**Q3: Simplify** $\cos^2\theta(1 + \tan^2\theta)$
+- $1$
+- $\sin^2\theta$
+- $\cos^2\theta + \sin^2\theta$
+- $\sec^2\theta$
+
+<details>
+<summary>Answer</summary>
+$1$
+</details>
+
+**Q4: Which of the following is the correct double-angle formula for cosine?**
+- $\cos 2\theta = \sin^2\theta - \cos^2\theta$
+- $\cos 2\theta = 2\sin\theta\cos\theta$
+- $\cos 2\theta = \cos^2\theta - \sin^2\theta$
+- $\cos 2\theta = 1 + 2\sin^2\theta$
+
+<details>
+<summary>Answer</summary>
+$\cos 2\theta = \cos^2\theta - \sin^2\theta$
+</details>
+
+## Source Notes
+
+- Hipparchus and ancient Greek trigonometry: https://en.wikipedia.org/wiki/Hipparchus
+- Abu'l-Wafa and Islamic mathematics: https://en.wikipedia.org/wiki/Abu%27l-Wafa
+- Ptolemy and the *Almagest*: https://en.wikipedia.org/wiki/Almagest
+- Euler and trigonometric identities: https://en.wikipedia.org/wiki/Leonhard_Euler
+- Unit circle and trigonometric definitions: https://en.wikipedia.org/wiki/Unit_circle

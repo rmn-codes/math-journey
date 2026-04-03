@@ -1,0 +1,273 @@
+---
+worldNumber: 4
+world: world-04-trigonometry-astronomy-and-the-heavens
+chapterNumber: 63
+title: "Waves, Oscillation, and the Music of Mathematics"
+subtitle: "How sine and cosine describe every wave in the universe"
+estimatedTimeMinutes: 40
+historicalPeriod: "1700s–1800s"
+---
+
+## Story Hook
+
+Paris, 1822. Joseph Fourier presents a radical claim to the Académie des Sciences: *Every periodic function, no matter how complicated, can be written as a sum of sine and cosine waves.*
+
+Gasps. Applause. Skepticism.
+
+His colleagues were stunned because Fourier was claiming something that seemed impossible: the jagged, square-wave vibrations of a plucked string could be reconstructed from smooth, pure sinusoids. A heartbeat's complex rhythm, a square pulse, a sawtooth ramp — all of them, he insisted, were sums of sine waves at different frequencies.
+
+He was right. Today, Fourier's insight underlies JPEG compression, MP3 audio encoding, WiFi signals, MRI brain scans, and the filtering of gravitational waves from merging black holes.
+
+It all began with one physical question: how does heat flow through a metal rod?
+
+---
+
+## Why It Matters
+
+- **Signal processing:** Audio, images, and wireless communication are stored and transmitted as sums of sines and cosines (Fourier series and transforms).
+- **Sound and music:** The frequency spectrum of a sound — bass, treble, harmonics — is computed using Fourier analysis.
+- **Medicine:** EKGs (heart rhythms) and EEGs (brain waves) are periodic signals analyzed via Fourier methods.
+- **Physics:** Wave equations (light, sound, water, quantum mechanics) are naturally expressed using sine and cosine.
+- **Engineering:** Vibrations in machines, buildings, and bridges are characterized by their frequency components.
+
+Without understanding oscillations and waves, you can't understand how modern technology encodes, transmits, or interprets information.
+
+---
+
+## Historical Context
+
+For centuries, mathematicians knew that $y = A \sin(Bx + C)$ described oscillations. But what about more complex, non-sinusoidal periodic motions?
+
+The breakthrough came when Fourier, studying heat conduction for the French government, discovered that *any* periodic function could be expressed as an infinite sum of sines and cosines at harmonically related frequencies (integer multiples of a fundamental frequency).
+
+Before computers, Fourier analysis was a laborious calculation. But after the Fast Fourier Transform (FFT) was developed in 1965, it became instantaneous, and the digital age was born. Today, every digital device uses Fourier methods. Fourier's theory, developed to understand heat, became the skeleton key for all of signal processing.
+
+---
+
+## Core Concept
+
+**Oscillation** is motion that repeats over time. The classic example: a spring oscillates up and down. A pendulum swings back and forth. An AC electric current alternates direction.
+
+**Periodic functions** are the mathematical description: $f(t + T) = f(t)$ for all $t$, where $T$ is the **period** (the time for one complete cycle).
+
+**Harmonic motion** — sine and cosine waves — are the fundamental building blocks.
+
+A sinusoidal oscillation has the form:
+$$y(t) = A \sin\left(\frac{2\pi t}{T} + \phi\right)$$
+
+where:
+- **Amplitude** $A$ is the maximum displacement from equilibrium (the "size" of the oscillation).
+- **Period** $T$ is the time for one complete cycle.
+- **Frequency** $f = 1/T$ is the number of cycles per unit time (measured in Hz = cycles/second).
+- **Phase** $\phi$ is a shift that determines where in the cycle the motion starts.
+
+**Key insight:** The combination of amplitude, period, and phase uniquely determines a sinusoidal wave.
+
+**Superposition principle:** When two or more waves overlap, the total displacement is the *sum* of the individual displacements:
+$$y_{\text{total}} = y_1 + y_2 + \cdots$$
+
+This is how two sine waves at different frequencies can add up to something that looks nothing like a sine wave.
+
+---
+
+## Definitions and Formal Lesson
+
+**Definition: Periodic Function**
+A function $f(t)$ is **periodic** with period $T$ if:
+$$f(t + T) = f(t) \text{ for all } t$$
+
+The smallest positive $T$ for which this holds is called the fundamental period.
+
+**Definition: Sinusoidal Motion**
+$$y(t) = A \sin\left(2\pi f t + \phi\right) = A \sin\left(\frac{2\pi t}{T} + \phi\right)$$
+
+- **Amplitude** $A$: maximum distance from equilibrium.
+- **Frequency** $f$ (in Hz): cycles per second. Related to period by $f = 1/T$.
+- **Angular frequency** $\omega = 2\pi f$ (in rad/s): the "speed" of the oscillation.
+- **Phase** $\phi$: initial angle offset.
+
+**Definition: Simple Harmonic Motion (SHM)**
+Motion governed by $y(t) = A \cos(\omega t + \phi)$ or $y(t) = A \sin(\omega t + \phi)$.
+
+Equivalently, SHM is driven by a restoring force proportional to displacement: $F = -k y$ (Hooke's law).
+
+For a mass on a spring: $\omega = \sqrt{k/m}$, where $k$ is the spring constant and $m$ is mass.
+
+For a pendulum (small angles): $\omega = \sqrt{g/L}$, where $g$ is gravitational acceleration and $L$ is length.
+
+**Fourier Principle** (Informal)
+Any periodic function with period $T$ can be written as:
+$$f(t) = a_0 + \sum_{n=1}^{\infty} \left[ a_n \cos(2\pi n f_0 t) + b_n \sin(2\pi n f_0 t) \right]$$
+
+where $f_0 = 1/T$ is the fundamental frequency, and $a_n$, $b_n$ are coefficients determined by $f(t)$.
+
+This is the **Fourier series** — the function is decomposed into harmonics (integer multiples of the fundamental frequency).
+
+**Interference**
+When two waves combine:
+- **Constructive interference:** Peaks align, amplitudes add. Result: bigger wave.
+- **Destructive interference:** Peak of one meets trough of another. Result: cancellation (partial or complete).
+
+---
+
+## Worked Examples
+
+**Example 1: A vibrating spring**
+
+A mass on a spring oscillates with amplitude 5 cm and period 2 seconds. Write the equation of motion, assuming it starts at maximum displacement.
+
+Solution:
+- Amplitude: $A = 5$ cm
+- Period: $T = 2$ s, so frequency $f = 1/2 = 0.5$ Hz
+- Starts at max: use cosine with phase $\phi = 0$
+
+$$y(t) = 5 \cos(2\pi \cdot 0.5 \cdot t) = 5 \cos(\pi t) \text{ cm}$$
+
+At $t = 0$: $y = 5 \cos(0) = 5$ cm. ✓
+
+At $t = 0.5$ s: $y = 5 \cos(\pi/2) = 0$ cm. (Equilibrium.)
+
+At $t = 1$ s: $y = 5 \cos(\pi) = -5$ cm. (Minimum.)
+
+At $t = 2$ s: $y = 5 \cos(2\pi) = 5$ cm. (Back to start.)
+
+**Example 2: Superposition of two sine waves**
+
+Two waves: $y_1 = 3 \sin(t)$ and $y_2 = 3 \sin(t + \pi/2) = 3 \cos(t)$.
+
+Total: $y = y_1 + y_2 = 3 \sin(t) + 3 \cos(t)$.
+
+This can be rewritten as:
+$$y = \sqrt{3^2 + 3^2} \sin(t + \phi) = 3\sqrt{2} \sin(t + 45°)$$
+
+where the phase is determined by the ratio of the coefficients.
+
+The amplitude has *grown* from 3 to $3\sqrt{2} \approx 4.24$. The two equal-amplitude waves, 90° out of phase, reinforce each other constructively.
+
+**Example 3: Sound frequency and pitch**
+
+Middle C on a piano has frequency 261.6 Hz. The C one octave higher has frequency 523.3 Hz (roughly double). Write the equations for both.
+
+Middle C: $y_1(t) = A \sin(2\pi \cdot 261.6 \cdot t)$
+
+Higher C: $y_2(t) = A \sin(2\pi \cdot 523.3 \cdot t)$
+
+The higher note oscillates twice as fast. When both notes sound together, constructive and destructive interference create beats at a frequency of $|523.3 - 261.6| = 261.7$ Hz — a rhythm that musicians hear as a "wah-wah" effect.
+
+---
+
+## Practice Set
+
+1. **Write the sinusoidal equation:**
+   - A wave with amplitude 4, period 6, and zero phase.
+   - A wave with amplitude 2, frequency 5 Hz, and phase $\pi/4$.
+
+2. **Period and frequency:**
+   - If $f = 10$ Hz, what is the period $T$?
+   - If $T = 0.1$ s, what is the angular frequency $\omega$?
+
+3. **Superposition:**
+   - Add $y_1 = 2 \sin(t)$ and $y_2 = 2 \sin(t + \pi)$. What is the result? (Hint: $\sin(t + \pi) = -\sin(t)$.)
+
+4. **Applications:**
+   - A pendulum has length 1 meter. Using $\omega = \sqrt{g/L}$ with $g = 9.8$ m/s², find the period.
+   - A guitar string vibrates at 440 Hz (the note A). How many complete oscillations does it make in 0.5 seconds?
+
+---
+
+## Reasoning Task
+
+Two sound waves of the same frequency but different amplitudes interfere. One has amplitude 2 units, the other 3 units. Can their sum ever have an amplitude less than 1 unit? If so, under what condition?
+
+---
+
+## Application
+
+**Music and Acoustics**
+
+A violin note is not a pure sine wave. Instead, it's a sum of a fundamental frequency plus harmonics (integer multiples of the fundamental).
+
+Fundamental (1st harmonic): $f_1 = 440$ Hz (note A)
+
+2nd harmonic: $f_2 = 2 f_1 = 880$ Hz (octave higher)
+
+3rd harmonic: $f_3 = 3 f_1 = 1320$ Hz
+
+A simplified model of the violin sound:
+$$y(t) = A_1 \sin(2\pi f_1 t) + A_2 \sin(2\pi f_2 t) + A_3 \sin(2\pi f_3 t) + \cdots$$
+
+The *relative amplitudes* $A_1, A_2, A_3, \ldots$ determine the **timbre** — the distinctive character of the instrument. A piano, a violin, and a flute all play the same note (same fundamental frequency) but sound different because their harmonic content (the amplitudes of overtones) differs.
+
+This is Fourier's insight: every periodic sound, no matter how complex, is a sum of pure sine tones. Modern audio synthesis and digital music production rely entirely on this principle.
+
+---
+
+## Recap
+
+- **Periodic functions** repeat with period $T$. Sine and cosine are the fundamental periodic functions.
+- **Sinusoidal motion:** $y(t) = A \sin(2\pi f t + \phi)$ with amplitude $A$, frequency $f$, and phase $\phi$.
+- **Simple harmonic motion** follows $F = -k y$ and produces sinusoidal oscillations. Examples: springs, pendulums, oscillating charges.
+- **Superposition:** Waves add together. Constructive and destructive interference depend on phase differences.
+- **Fourier principle:** Any periodic function is a sum of sinusoids at harmonically related frequencies.
+- **Applications:** Sound, music, signal processing, physics, engineering, medicine.
+
+Waves and oscillations are everywhere — in light, sound, vibrations, and atomic behavior. The mathematics of sines and cosines is the universal language of these phenomena. Understanding periodic motion is understanding a huge swath of the physical world.
+
+---
+
+## Unlock Quiz
+
+**Question 1:** What is the period of $y = 3 \sin(2\pi t)$?
+- 1 second
+- 2 seconds
+- 3 seconds
+- $\pi$ seconds
+
+**Question 2:** A wave has frequency 5 Hz. How many complete cycles occur in 2 seconds?
+- 5 cycles
+- 10 cycles
+- 2.5 cycles
+- 0.4 cycles
+
+**Question 3:** If two sine waves of the same frequency and equal amplitude are 180° out of phase, what happens when they interfere?
+- They add to a wave with twice the amplitude
+- They cancel completely
+- They produce a cosine wave
+- They produce beats
+
+**Question 4:** For a mass on a spring, $\omega = \sqrt{k/m}$. If the spring constant doubles, what happens to the frequency?
+- It doubles
+- It increases by a factor of $\sqrt{2}$
+- It halves
+- It stays the same
+
+**Question 5:** In a Fourier series, what do the integer multiples of the fundamental frequency represent?
+- Harmonics or overtones
+- The amplitude of oscillation
+- The speed of the wave
+- Phase shifts
+
+<details>
+<summary>Answers</summary>
+
+1. **1 second** — For $y = 3\sin(2\pi t)$, we have $2\pi f = 2\pi$, so $f = 1$ Hz. Thus $T = 1/f = 1$ second.
+
+2. **10 cycles** — If $f = 5$ Hz, then in 2 seconds, the number of cycles is $f \times \text{time} = 5 \times 2 = 10$.
+
+3. **They cancel completely** — If two waves have the same amplitude and are 180° out of phase, destructive interference cancels them: $A\sin(t) + A\sin(t+\pi) = A\sin(t) - A\sin(t) = 0$.
+
+4. **It increases by a factor of $\sqrt{2}$** — $\omega \propto \sqrt{k}$, so doubling $k$ increases $\omega$ by a factor of $\sqrt{2}$. Since $f = \omega/(2\pi)$, the frequency also increases by $\sqrt{2}$.
+
+5. **Harmonics or overtones** — In a Fourier series, the fundamental frequency is the first term; multiples ($2f_0, 3f_0, \ldots$) are the 2nd, 3rd, etc. harmonics (overtones).
+
+</details>
+
+---
+
+## Source Notes
+
+- [Fourier series](https://en.wikipedia.org/wiki/Fourier_series) — Wikipedia
+- [Joseph Fourier](https://en.wikipedia.org/wiki/Joseph_Fourier) — Wikipedia
+- [Simple harmonic motion](https://en.wikipedia.org/wiki/Simple_harmonic_motion) — Wikipedia
+- [Wave](https://en.wikipedia.org/wiki/Wave) — Wikipedia
+- [Fast Fourier transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform) — Wikipedia

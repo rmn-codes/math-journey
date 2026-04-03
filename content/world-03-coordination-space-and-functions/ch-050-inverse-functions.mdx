@@ -1,0 +1,279 @@
+---
+worldNumber: 3
+world: world-03-coordination-space-and-functions
+chapterNumber: 50
+title: Inverse Functions
+subtitle: Undoing what a function does — and the mathematics of decoding
+historicalPeriod: 1800s
+estimatedTimeMinutes: 35
+mainConcepts:
+  - inverse function
+  - one-to-one
+  - horizontal line test
+  - composition
+  - domain and range swap
+learningObjectives:
+  - Find the inverse of a function algebraically
+  - Apply the horizontal line test
+  - Verify inverses using composition
+  - Understand the graphical relationship between a function and its inverse
+---
+
+## Story Hook
+
+Imagine you're a spy in World War II, and you've intercepted an enemy message: "KHOOR ZRUOG." Your friend gives you the key: each letter is shifted 3 places forward in the alphabet. So "K" becomes "H," "H" becomes "E," and so on. You shift backward 3 places, and the message reads: "HELLO WORLD."
+
+This is the essence of an inverse function. Your friend's encoding function shifts letters forward. The inverse function—shifting backward—undoes the encoding. Every encoding has a decoding. Every mathematical function that is one-to-one has an inverse.
+
+## Why It Matters
+
+Inverse functions let you:
+
+- **Decode and reverse-engineer:** Convert temperature from Fahrenheit to Celsius, or extract an original input from a known output.
+- **Solve equations:** Finding $x$ when you know $f(x)$ is the same as applying the inverse function.
+- **Understand symmetry:** The graph of a function and its inverse are mirror images across the line $y = x$.
+- **Model two-way relationships:** If distance is a function of time, then time is a function of distance (the inverse).
+
+## Historical Context
+
+In the 1800s, mathematicians formalized the concept of inverse functions as they developed deeper understanding of function composition and algebraic structure. The notation $f^{-1}(x)$ became standard (note: this means the inverse of $f$, not $\frac{1}{f(x)}$). The 20th century saw inverse functions become essential in cryptography, where encoding and decoding are mathematical inverses of each other. Today, inverse functions appear everywhere: GPS systems use inverses to convert coordinates to addresses, and computers use them to decrypt data.
+
+## Core Concept
+
+An **inverse function** $f^{-1}$ undoes what $f$ does. If $f$ takes you from input to output, then $f^{-1}$ takes you back from output to input. Think of it as reversing the direction of flow.
+
+**Why inverse functions matter:**
+- **Decoding:** If a function encodes a message, its inverse decodes it.
+- **Solving equations:** Solving $f(x) = b$ is the same as evaluating $f^{-1}(b)$.
+- **Conversion:** If temperature is a function of time, the inverse tells you the time given a temperature.
+- **Understanding symmetry:** The graph of an inverse reveals a beautiful mirror relationship.
+
+**The essential requirement:**
+
+**Definition:** $f^{-1}$ is the inverse of $f$ if:
+- $f^{-1}(f(x)) = x$ for all $x$ in the domain of $f$
+- $f(f^{-1}(x)) = x$ for all $x$ in the domain of $f^{-1}$
+
+**Not all functions have inverses.** For a function to have an inverse, it must be **one-to-one** (injective): each output comes from exactly one input. In other words, different inputs must produce different outputs. If two different inputs produce the same output, there's ambiguity when you try to reverse the process—which input should the inverse return?
+
+The **horizontal line test** checks this: if any horizontal line crosses the graph more than once, the function is not one-to-one and doesn't have an inverse. (Compare to the vertical line test for checking if something is a function: horizontal line test checks invertibility.)
+
+**Examples:**
+- $f(x) = 2x + 3$ (linear): Any horizontal line crosses this once. It's one-to-one. Inverse exists.
+- $f(x) = x^2$ (parabola): Most horizontal lines cross this twice (e.g., $y = 4$ crosses at $x = 2$ and $x = -2$). It's not one-to-one (without domain restriction). No inverse.
+- $f(x) = \sqrt{x}$: Every horizontal line crosses at most once. It's one-to-one. Inverse exists.
+
+When $f$ has an inverse:
+- The **domain of $f$** becomes the **range of $f^{-1}$**.
+- The **range of $f$** becomes the **domain of $f^{-1}$**.
+
+## Definitions and Formal Lesson
+
+**One-to-one function (injective):** A function where each output is paired with exactly one input. Algebraically: if $f(a) = f(b)$, then $a = b$.
+
+**Horizontal line test:** A function is one-to-one if and only if every horizontal line intersects its graph at most once.
+
+**Inverse function:** If $f$ is one-to-one with domain $A$ and range $B$, then the inverse $f^{-1}$ has domain $B$ and range $A$, defined by:
+$$f^{-1}(y) = x \text{ if and only if } f(x) = y$$
+
+**Finding the inverse algebraically:**
+1. Replace $f(x)$ with $y$: $y = f(x)$.
+2. Swap $x$ and $y$: $x = f(y)$.
+3. Solve for $y$. This $y$ is $f^{-1}(x)$.
+
+**Verification:** Check that $f(f^{-1}(x)) = x$ and $f^{-1}(f(x)) = x$.
+
+**Graphical property:** The graph of $f^{-1}$ is the reflection of the graph of $f$ across the line $y = x$. If $(a, b)$ is on the graph of $f$, then $(b, a)$ is on the graph of $f^{-1}$.
+
+## Worked Examples
+
+**Example 1: Finding the inverse of a linear function**
+
+Find the inverse of $f(x) = 2x - 5$.
+
+Step 1: Replace $f(x)$ with $y$: $y = 2x - 5$.
+
+Step 2: Swap $x$ and $y$: $x = 2y - 5$.
+
+Step 3: Solve for $y$:
+$$x = 2y - 5$$
+$$x + 5 = 2y$$
+$$y = \frac{x + 5}{2}$$
+
+So $f^{-1}(x) = \frac{x + 5}{2}$.
+
+**Verification:**
+$$f(f^{-1}(x)) = f\left(\frac{x + 5}{2}\right) = 2 \cdot \frac{x + 5}{2} - 5 = (x + 5) - 5 = x$$ ✓
+
+**Example 2: Finding the inverse of a square/square root pair**
+
+Find the inverse of $f(x) = x^2$ for $x \geq 0$.
+
+Step 1: Replace $f(x)$ with $y$: $y = x^2$ (restricted to $x \geq 0$).
+
+Step 2: Swap: $x = y^2$.
+
+Step 3: Solve for $y$: $y = \sqrt{x}$ (taking the positive root because $y \geq 0$).
+
+So $f^{-1}(x) = \sqrt{x}$ for $x \geq 0$.
+
+The original function $f(x) = x^2$ with domain $[0, \infty)$ has range $[0, \infty)$. Its inverse $f^{-1}(x) = \sqrt{x}$ has domain $[0, \infty)$ and range $[0, \infty)$. Notice the domain and range swap!
+
+**Important restriction:** Why restrict to $x \geq 0$? Because $f(x) = x^2$ (without restriction) fails the horizontal line test. For example, $f(2) = 4$ and $f(-2) = 4$—two inputs give the same output. Without the restriction, the inverse would not be a function. By restricting the domain to non-negative $x$, we guarantee one-to-one, so the inverse exists.
+
+**Example 3: Temperature conversion**
+
+The function to convert Fahrenheit to Celsius is:
+$$C(F) = \frac{5}{9}(F - 32)$$
+
+Find the inverse to convert Celsius back to Fahrenheit.
+
+Step 1: Replace $C(F)$ with $C$: $C = \frac{5}{9}(F - 32)$.
+
+Step 2: Swap $F$ and $C$: $F = \frac{5}{9}(C - 32)$.
+
+Wait—actually, we need to solve for the new variable. Let me redo this.
+
+Step 1: $C = \frac{5}{9}(F - 32)$.
+
+Step 2: Swap: $F = \frac{5}{9}(C - 32)$ — but we want to express $C$ in terms of $F$. Let me use the standard approach: swap the roles, then solve.
+
+If $C = \frac{5}{9}(F - 32)$, solve for $F$:
+$$9C = 5(F - 32)$$
+$$9C = 5F - 160$$
+$$5F = 9C + 160$$
+$$F = \frac{9C + 160}{5}$$
+
+So the inverse is $F(C) = \frac{9C + 160}{5}$ or equivalently $F(C) = \frac{9}{5}C + 32$.
+
+**Verification:** Let's check with a known conversion. Water freezes at 32°F and 0°C.
+- Forward: $C(32) = \frac{5}{9}(32 - 32) = 0$ ✓
+- Inverse: $F(0) = \frac{9}{5}(0) + 32 = 32$ ✓
+
+Water boils at 212°F and 100°C.
+- Forward: $C(212) = \frac{5}{9}(212 - 32) = \frac{5}{9}(180) = 100$ ✓
+- Inverse: $F(100) = \frac{9}{5}(100) + 32 = 180 + 32 = 212$ ✓
+
+The inverse works!
+
+## Practice Set
+
+1. Find the inverse of $f(x) = 3x + 7$. Verify your answer.
+   - Use the three-step method: replace, swap, solve.
+   - Check: does $f(f^{-1}(x)) = x$?
+
+2. Find the inverse of $g(x) = \sqrt{x - 2}$. What is the domain of $g^{-1}$?
+   - Recall that square root has domain $\geq 0$.
+   - The domain of $g$ becomes the range of $g^{-1}$.
+
+3. The function $h(x) = x^3$ has inverse $h^{-1}(x) = \sqrt[3]{x}$. Verify this using composition.
+   - Show that $h(h^{-1}(x)) = x$.
+   - Show that $h^{-1}(h(x)) = x$.
+
+4. Does $f(x) = x^2$ (with no domain restriction) have an inverse? Why or why not?
+   - Apply the horizontal line test.
+   - What if we restrict the domain to $x \geq 0$? Then?
+
+5. The function modeling profit is $P(q) = 50q - 1000$, where $q$ is units produced. Find the inverse, and interpret its meaning in context.
+   - What does the inverse tell you?
+   - What does the domain restriction on $q$ (must be non-negative) imply for the inverse?
+
+6. For the exponential function $f(x) = 2^x$, the inverse is $f^{-1}(x) = \log_2(x)$. Verify this by evaluating both directions at $x = 8$.
+
+## Reasoning Task
+
+**The Decryption Problem:**
+
+A secret code encodes each letter using the function $f(x) = 5x + 8 \pmod{26}$, where letters are numbered A=0, B=1, ..., Z=25, and the result is taken modulo 26 (remainder after dividing by 26).
+
+To find the inverse, start with:
+$$y \equiv 5x + 8 \pmod{26}$$
+
+Swap and solve:
+$$x \equiv 5y + 8 \pmod{26}$$
+$$x - 8 \equiv 5y \pmod{26}$$
+
+To isolate $y$, multiply by the modular inverse of 5 modulo 26. The inverse of 5 is 21 (since $5 \cdot 21 = 105 = 4 \cdot 26 + 1 \equiv 1 \pmod{26}$).
+
+$$y \equiv 21(x - 8) \pmod{26}$$
+$$y \equiv 21x - 168 \equiv 21x - 12 \pmod{26}$$
+
+So $f^{-1}(x) \equiv 21x - 12 \pmod{26}$ (or equivalently $21x + 14 \pmod{26}$).
+
+**Example:** If the encoded message is "R" (17), decode it:
+$$f^{-1}(17) \equiv 21(17) + 14 \equiv 357 + 14 \equiv 371 \equiv 7 \pmod{26}$$
+
+So "R" decodes to the 7th letter, which is "H". Verification: $f(7) = 5(7) + 8 = 43 \equiv 17 \pmod{26}$ ✓
+
+This is the essence of Caesar-cipher breaking: if you know the encoding function, the inverse lets you decrypt.
+
+## Application
+
+**Real-world example: Decibel scale**
+
+The loudness of a sound in decibels is given by:
+$$L = 10 \log_{10}\left(\frac{I}{I_0}\right)$$
+
+where $I$ is the intensity of the sound and $I_0$ is a reference intensity.
+
+If you know the loudness $L$, you can find the intensity using the inverse:
+$$I = I_0 \cdot 10^{L/10}$$
+
+A whisper is about 30 dB. Using the inverse:
+$$I = I_0 \cdot 10^{30/10} = I_0 \cdot 10^3 = 1000 \, I_0$$
+
+A whisper has 1,000 times the reference intensity. Inverse functions let engineers, acousticians, and musicians work with sound in both directions: from intensity to perceived loudness, and from desired loudness back to required intensity.
+
+## Recap
+
+Inverse functions are the mathematical tool for undoing. They exist precisely when a function is one-to-one. To find an inverse:
+
+1. Replace $f(x)$ with $y$.
+2. Swap $x$ and $y$.
+3. Solve for $y$.
+
+Always verify using composition: $f(f^{-1}(x)) = x$. Graphically, the inverse is a reflection across $y = x$. Domains and ranges swap. Inverse functions are essential for decoding, solving, and understanding two-way relationships.
+
+## Unlock Quiz
+
+**Question 1:** Which of the following functions has an inverse function?
+
+- $f(x) = x^2$ (all real $x$)
+- $g(x) = |x|$ (all real $x$)
+- $h(x) = 3x - 2$ (all real $x$)
+- $p(x) = x^2 - 4x$ (all real $x$)
+
+<details>
+<summary>Answer</summary>
+$h(x) = 3x - 2$ (all real $x$)
+</details>
+
+**Question 2:** If $f(x) = \frac{x - 3}{2}$, what is $f^{-1}(x)$?
+
+- $f^{-1}(x) = 2x + 3$
+- $f^{-1}(x) = \frac{2}{x - 3}$
+- $f^{-1}(x) = 2(x + 3)$
+- $f^{-1}(x) = \frac{x + 3}{2}$
+
+<details>
+<summary>Answer</summary>
+$f^{-1}(x) = 2x + 3$
+</details>
+
+**Question 3:** The graph of $f^{-1}$ is the reflection of the graph of $f$ across which line?
+
+- $y = -x$
+- $y = x$
+- The $x$-axis
+- The $y$-axis
+
+<details>
+<summary>Answer</summary>
+$y = x$
+</details>
+
+## Source Notes
+
+- Khan Academy: "Inverse Functions" — https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:functions
+- Wikipedia: "Inverse Function" — https://en.wikipedia.org/wiki/Inverse_function
+- OpenStax: "Precalculus" Chapter 1.7 — https://openstax.org/books/precalculus/pages/1-7-inverse-functions

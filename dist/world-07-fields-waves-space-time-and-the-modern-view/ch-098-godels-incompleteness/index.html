@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gödel&#x27;s Incompleteness — The Limits of Mathematics — Math Journey</title>
+    <meta name="description" content="The theorem that proved mathematics cannot prove everything" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 7 · Chapter 98</p>
+        <h1>Gödel&#x27;s Incompleteness — The Limits of Mathematics</h1>
+        <p class="hero-copy">The theorem that proved mathematics cannot prove everything</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1931 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Explain the goals of Hilbert&#x27;s programme</li><li>State Gödel&#x27;s First and Second Incompleteness Theorems</li><li>Understand the self-reference argument at an intuitive level</li><li>Connect to the halting problem</li><li>Clarify common misconceptions about what Gödel&#x27;s theorems imply</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Picture yourself as a mathematician in 1900. Mathematics has been your fortress of certainty. Everything follows from logical rules. Axioms are the bedrock—unprovable, yes, but self-evident truths. From axioms, using the rules of logic, you can derive <em>every</em> true statement in mathematics.</p>
+<p>This is the dream that David Hilbert, the greatest mathematician alive, announced to the world at the International Congress of Mathematicians in Paris: <strong>the dream of a complete and consistent mathematics.</strong></p>
+<p>Find, he said, a finite set of axioms for all of mathematics. Prove that this system is consistent (free of contradictions). And you will have shown that mathematics rests on unshakeable ground.</p>
+<p>For thirty years, mathematicians worked toward Hilbert&#x27;s goal. It seemed within reach.</p>
+<p>Then, in 1931, a 24-year-old Austrian logician named Kurt Gödel delivered a blow from which the dream never recovered.</p>
+<p>Gödel proved that Hilbert&#x27;s dream is impossible.</p>
+<p>No finite set of axioms, no matter how carefully chosen, can be both complete and consistent. In any sufficiently powerful axiom system, there will always be true statements that cannot be proved within that system. And strangest of all: the system cannot even prove its own consistency.</p>
+<p>Mathematics discovered a fundamental limit—from the inside.</p>
+<p>The proof used a trick so clever, so audacious, that it seemed almost like a magic trick. Gödel showed how to encode logical statements as numbers, turning mathematics into a language that could talk about itself. He constructed a statement that essentially said: &quot;This statement cannot be proved.&quot; And he showed that such a statement must exist.</p>
+<p>The implications shook the mathematical world. Mathematics was not finished. It would never be finished.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Gödel&#x27;s theorem is often misunderstood. Some people say it proves mathematics is unreliable, or that mathematical truth is subjective. This is false.</p>
+<p>What Gödel proved is that mathematics is <em>richer</em> than any formal system can capture. There are truths about numbers that cannot be derived from any single set of axioms. But this does not make mathematics unreliable—it makes mathematics more wonderful.</p>
+<p>In practice, mathematicians do not worry about Gödel&#x27;s theorem day-to-day. We use axiom systems that work beautifully. But the theorem reveals something profound: the human mind is not reducible to a finite algorithm. We can understand statements that no fixed set of rules can prove. Consciousness and mathematics are deeper than mechanism.</p>
+<p>Gödel&#x27;s theorem also connects to computer science. Alan Turing, inspired by Gödel, proved the &quot;halting problem&quot;: there is no algorithm that can decide whether a computer program will eventually stop or run forever. This is the same type of limitation—a fundamental unprovability embedded in the structure of computation.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>In the 1800s, mathematics had suffered a crisis. Calculus, for all its power, rested on shaky foundations. What exactly is an infinitesimal? What is a limit? Mathematicians like Karl Weierstrass and Georg Cantor spent decades making calculus rigorous, building it from sets and the real numbers.</p>
+<p>By 1900, mathematicians had high hopes. Maybe <em>all</em> of mathematics could be reduced to set theory, a small collection of axioms about sets and membership. From these axioms, everything else would follow.</p>
+<p>Hilbert&#x27;s challenge in Paris crystallized this dream. He posed 23 problems, and his second problem was about consistency: Can we prove that arithmetic (the theory of natural numbers and their properties) is consistent?</p>
+<p>For decades, mathematicians worked on Hilbert&#x27;s programme. They built elaborate axiom systems. Then came Gödel.</p>
+<p>Gödel&#x27;s proof used a technique called Gödel numbering. The idea is simple but revolutionary: every logical statement, every proof, every axiom system can be encoded as a natural number. Multiplication and divisibility of these numbers correspond to logical operations. Mathematics could describe itself.</p>
+<p>Using this self-reference, Gödel constructed a statement that says, in effect: &quot;This statement cannot be proved in this axiom system.&quot; If the system is consistent, this statement must be true (otherwise there would be a false statement provable from the axioms, contradicting consistency). But if it is true, it cannot be proved. Thus the system is incomplete.</p>
+<p>The proof was published in 1931. The mathematical community was stunned. Hilbert, now elderly, was forced to accept a profound defeat. But the work was universally recognized as a masterpiece of logical reasoning.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>An axiomatic system</strong> consists of:</p>
+<ol><li>A set of axioms (basic truths assumed without proof).</li><li>A set of logical rules of inference (rules for deriving new truths from existing ones).</li></ol>
+<p><strong>Consistency</strong> means the system contains no contradictions: there is no statement $P$ such that both $P$ and &quot;not $P$&quot; are provable.</p>
+<p><strong>Completeness</strong> means every true statement in the domain can be proved: for any statement $P$, either $P$ or &quot;not $P$&quot; (but not both) is provable from the axioms.</p>
+<p><strong>Gödel&#x27;s First Incompleteness Theorem</strong> states: Any consistent axiomatic system powerful enough to describe arithmetic contains a statement that is true but not provable within the system.</p>
+<p>The formal statement is technical, but the intuition is this: if your axioms can describe the natural numbers and arithmetic operations, then there exists a well-formed mathematical statement—a true one—that your axioms cannot prove. The system is incomplete.</p>
+<p><strong>Gödel&#x27;s Second Incompleteness Theorem</strong> is even more surprising: Such a system cannot prove its own consistency. You cannot use the axioms of arithmetic to prove that arithmetic is consistent.</p>
+<p>This is a profound blow to certainty. You can never be absolutely sure your system has no hidden contradictions.</p>
+<p><strong>Gödel numbering</strong> is the trick that makes the self-reference possible. Every symbol, every formula, every proof gets assigned a unique natural number. For example:</p>
+<ul><li>Let axioms be encoded as numbers.</li><li>Let a sequence of logical steps be encoded as the product of powers of primes (this ensures unique factorization).</li><li>A statement &quot;this statement is unprovable&quot; becomes a number that talks about numbers—about itself.</li></ul>
+<p>By clever encoding, Gödel created a statement that essentially says: &quot;I am not provable in this system.&quot; If the system is consistent, this statement must be true (because if it were provable, the system would contain a false statement). But then it is true yet unprovable.</p>
+<p><strong>The halting problem connection</strong>: Alan Turing, inspired by Gödel, proved an analogous result for computers. There is no algorithm that can determine, for every computer program, whether it will eventually halt or run forever. This is another manifestation of the same fundamental limit: some questions are undecidable.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<ul><li><strong>Axiom:</strong> A statement assumed to be true without proof; a starting point for a formal system.</li><li><strong>Axiomatic system:</strong> A collection of axioms and logical rules of inference.</li><li><strong>Consistency:</strong> A system is consistent if it contains no contradiction—if there is no statement $P$ such that both $P$ and $\neg P$ are provable.</li><li><strong>Completeness:</strong> A system is complete if every statement is decidable—for every statement $P$, either $P$ or $\neg P$ is provable (but not both).</li><li><strong>Gödel numbering:</strong> A method of encoding logical formulas as natural numbers, allowing statements to refer to other statements or to themselves.</li><li><strong>Undecidable statement:</strong> A statement in a system that is neither provable nor disprovable from the axioms.</li><li><strong>Self-reference:</strong> A statement or formula that refers to itself. The key to Gödel&#x27;s proof.</li><li><strong>The halting problem:</strong> The undecidable problem of determining whether a given computer program will halt or run forever.</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: A Simple Gödel Argument (Intuitive)</strong></p>
+<p>Consider this sentence: &quot;This sentence is not provable in system $S$.&quot;</p>
+<p>Call this sentence $G$.</p>
+<ul><li>Suppose $G$ is provable in $S$. Then there is a proof that $G$ is not provable in $S$. This contradicts the assumption that $G$ is provable. So $G$ must be true.</li><li>But if $G$ is true, it correctly asserts that it is not provable. So $G$ is indeed not provable in $S$.</li></ul>
+<p>Therefore: $G$ is true but unprovable in $S$. The system is incomplete.</p>
+<p>(Gödel&#x27;s actual proof is much more technical, but this captures the essence.)</p>
+<p><strong>Example 2: The Halting Problem</strong></p>
+<p>Imagine a computer program $H$ that takes as input another program $P$ and answers: &quot;Does $P$ halt?&quot;</p>
+<p>Now consider a program $D$ (for &quot;diagonal&quot;) that:</p>
+<ol><li>Runs $H$ on itself as input: &quot;Does $D$ halt?&quot;</li><li>If $H$ says yes, $D$ enters an infinite loop.</li><li>If $H$ says no, $D$ halts.</li></ol>
+<p>What does $H$ say about $D$? If $H$ says $D$ halts, then $D$ loops forever (contradiction). If $H$ says $D$ loops, then $D$ halts (contradiction). Thus $H$ cannot exist. The halting problem is undecidable.</p>
+<p><strong>Example 3: Consistency and Incompleteness</strong></p>
+<p>The axioms of Peano arithmetic can describe natural numbers and addition/multiplication. By Gödel&#x27;s theorem, there is a true statement about numbers—let&#x27;s call it $G$—that cannot be derived from Peano&#x27;s axioms. But if we add $G$ as a new axiom, there is a different unprovable true statement $G&#x27;$ in the extended system. We can keep adding axioms forever and never reach completeness.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>What is the difference between a statement being false and a statement being unprovable in a system?</li></ol>
+<ol><li>State Gödel&#x27;s First Incompleteness Theorem in your own words.</li></ol>
+<ol><li>What is Gödel numbering? Why is it important to the proof?</li></ol>
+<ol><li>Explain the intuition behind the self-referential sentence: &quot;This statement is not provable.&quot;</li></ol>
+<ol><li>What is the halting problem? How is it analogous to Gödel&#x27;s incompleteness?</li></ol>
+<ol><li>Suppose you add the Gödel sentence $G$ as a new axiom to a system. Does the extended system become complete?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Problem:</strong> Hilbert believed that with enough work, mathematicians could find axioms that are both complete and consistent. Gödel proved this is impossible. Explain in 1-2 paragraphs why the existence of an unprovable-but-true statement implies incompleteness, and why trying to &quot;fix&quot; the system by adding that statement as a new axiom does not solve the problem.</p>
+<p><strong>Hint:</strong> Think about what happens when you extend a system with a new axiom. Does the extended system still satisfy Gödel&#x27;s conditions?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Theoretical Computer Science:</strong> Gödel&#x27;s incompleteness directly inspires the field of computability theory. Turing&#x27;s halting problem shows that some problems are fundamentally undecidable—no algorithm can solve them. This has practical implications: there are bugs in programs that no automated tool can always detect. There are questions about software that cannot be answered by any finite algorithm. Understanding these limits is crucial for designing languages, compilers, and verification tools.</p>
+<p><strong>Practical mathematics:</strong> Despite incompleteness, we do not worry about hidden contradictions in Peano arithmetic or standard set theory. Mathematicians use axiom systems that are &quot;strong enough&quot; for their purposes and &quot;consistent enough&quot; in practice. We use ZFC (Zermelo-Fraenkel set theory with the Axiom of Choice) as a foundation, accepting that it cannot prove its own consistency, but trusting in it based on decades of fruitful use.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Hilbert&#x27;s dream was a complete, consistent axiom system for all mathematics. Gödel shattered this dream in 1931, proving that completeness and consistency cannot both be achieved in any sufficiently powerful system. The key insight was Gödel numbering—encoding logical statements as numbers, allowing a self-referential statement: &quot;I am unprovable in this system.&quot; This statement must be true (otherwise the system contradicts itself) yet unprovable. Gödel&#x27;s Second Theorem adds insult to injury: the system cannot even prove its own consistency. The implications are deep: mathematics is richer than formalism, the human mind cannot be reduced to a finite algorithm, and computation has fundamental limits (the halting problem). Yet mathematics remains reliable and beautiful—it is simply endless.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>Gödel&#x27;s First Incompleteness Theorem states that...</li></ol>
+<ul><li>Mathematicians will never discover all mathematical truths</li><li>Any consistent axiomatic system powerful enough to describe arithmetic contains true statements that are not provable within the system</li><li>Mathematics is unreliable and cannot be trusted</li><li>A sufficiently powerful axiom system must contain contradictions</li></ul>
+<ol><li>What is Gödel numbering?</li></ol>
+<ul><li>A method of assigning natural numbers to mathematical statements, allowing self-reference</li><li>A way of checking if a number is prime</li><li>A method for counting the number of theorems in a system</li><li>A way of encoding negative numbers</li></ul>
+<ol><li>The key idea in Gödel&#x27;s proof is self-reference. The statement that cannot be proved says...</li></ol>
+<ul><li>&quot;This statement is false&quot;</li><li>&quot;This statement is true&quot;</li><li>&quot;This statement is not provable in this system&quot;</li><li>&quot;All statements in this system are provable&quot;</li></ul>
+<ol><li>Gödel&#x27;s Second Incompleteness Theorem implies that...</li></ol>
+<ul><li>We can never be sure that arithmetic is consistent</li><li>A system cannot prove its own consistency</li><li>Inconsistent systems are easier to work with</li><li>Mathematical proofs are subjective</li></ul>
+<ol><li>How does the halting problem relate to Gödel&#x27;s incompleteness?</li></ol>
+<ul><li>They are unrelated</li><li>Both show that some problems/statements are fundamentally undecidable/unprovable</li><li>The halting problem proves Gödel&#x27;s theorem</li><li>Gödel&#x27;s theorem proves the halting problem</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>Any consistent axiomatic system powerful enough to describe arithmetic contains true statements that are not provable within the system</li></ol>
+<ol><li>A method of assigning natural numbers to mathematical statements, allowing self-reference</li></ol>
+<ol><li>&quot;This statement is not provable in this system&quot;</li></ol>
+<ol><li>We can never be sure that arithmetic is consistent</li></ol>
+<ol><li>Both show that some problems/statements are fundamentally undecidable/unprovable</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Gödel, K. (1931). &quot;Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme.&quot; <a href="https://en.wikipedia.org/wiki/Gödel%27s_incompleteness_theorems" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Gödel%27s_incompleteness_theorems</a></li><li>Hilbert&#x27;s programme: <a href="https://en.wikipedia.org/wiki/Hilbert%27s_programme" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Hilbert%27s_programme</a></li><li>Gödel numbering: <a href="https://en.wikipedia.org/wiki/Gödel_numbering" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Gödel_numbering</a></li><li>Turing and the halting problem: <a href="https://en.wikipedia.org/wiki/Halting_problem" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Halting_problem</a></li><li>Kurt Gödel biography: <a href="https://en.wikipedia.org/wiki/Kurt_Gödel" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Kurt_Gödel</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-097-quantum-mechanics-and-probability/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Quantum Mechanics and Probability</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-099-chaos-theory/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Chaos Theory and Dynamical Systems</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

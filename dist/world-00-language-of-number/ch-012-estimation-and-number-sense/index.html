@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Estimation and Number Sense — Math Journey</title>
+    <meta name="description" content="Knowing when an answer is reasonable — the mathematician&#x27;s most underrated skill" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 0 · Chapter 12</p>
+        <h1>Estimation and Number Sense</h1>
+        <p class="hero-copy">Knowing when an answer is reasonable — the mathematician&#x27;s most underrated skill</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>foundational</span>
+          <span>G, l, o, b, a, l</span>
+          <span>Ancient – present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Round numbers to estimate sums, differences, products, and quotients</li><li>Use front-end estimation and compatible numbers strategies</li><li>Understand order of magnitude and powers of ten</li><li>Solve Fermi estimation problems using logical reasoning and approximation</li><li>Judge whether an answer is reasonable given the context</li><li>Develop number sense—an intuitive feel for the size of numbers</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>On July 16, 1945, Enrico Fermi stood in the desert near Alamogordo, New Mexico, about 10 kilometers from the world&#x27;s first atomic bomb. As the blast erupted, he dropped small pieces of paper and watched them flutter through the air, blown by the shock wave.</p>
+<p>Later, he did a calculation using nothing but the distance those papers had traveled and basic physics. No instruments. No computers. Just his mind.</p>
+<p>His estimate of the bomb&#x27;s yield was shockingly close to the actual value — within a factor of 2, which is <em>absurdly</em> accurate for back-of-the-envelope math.</p>
+<p>Fermi had a superpower: he could take almost any question — &quot;How many piano tuners work in Chicago?&quot; &quot;How many golf balls fit in a school bus?&quot; &quot;What&#x27;s the population of Japan?&quot; — break it into smaller, estimable parts, and give an answer that was in the right ballpark. Physicists still call this skill &quot;Fermi estimation,&quot; and it&#x27;s one of the most underrated abilities in mathematics.</p>
+<p>In this final chapter of World 00, we&#x27;re not just learning how to estimate. We&#x27;re learning to <em>think</em> like someone who understands the world in terms of numbers — someone who can look at a problem and know, intuitively, whether an answer makes sense. That&#x27;s number sense. And it&#x27;s more valuable than you might think.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Here&#x27;s a question: if a store is having a sale and reduces a $50 item by 30%, what&#x27;s the new price?</p>
+<p>You could calculate it exactly: $50 \times 0.7 = 35$. But what if you&#x27;re in the store right now, deciding whether to buy? You estimate: &quot;30% off means I pay 70%. 70% of 50 is close to 35.&quot; Done. You know you&#x27;re saving about $15.</p>
+<p>Now a bigger question: a city plans to build a new highway. Engineers estimate it will cost $2.3 billion. Is that reasonable? You need number sense to even begin to judge. What does a billion dollars even mean? If a highway costs $1 million per kilometer, then $2.3 billion is 2300 kilometers. Is that plausible for a city highway? Probably not. Red flag.</p>
+<p>Or: a news article says the U.S. government&#x27;s annual budget is about $6.5 trillion. Does that make sense? With 330 million people, that&#x27;s about $20,000 per person per year. For roads, schools, police, military, health care, and everything else the government does. That sounds plausible. Your number sense tells you the article isn&#x27;t wildly off.</p>
+<p>Estimation isn&#x27;t about being sloppy. It&#x27;s about being <em>smart</em>. It&#x27;s about knowing when a calculation is close enough, when to check your work, and when to call &quot;nonsense&quot; on a claim that doesn&#x27;t pass the smell test.</p>
+<p>In fields from engineering to medicine to business, the people who are best at their jobs have strong number sense. They know what&#x27;s reasonable. They know what&#x27;s not. And they estimate constantly.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Estimation and approximation are as old as mathematics itself. Before we had calculators, or even written numerals, humans had to estimate: &quot;Is there enough food for the winter?&quot; &quot;Do we have more sheep than the neighboring tribe?&quot; &quot;Is the foundation of this building level enough?&quot;</p>
+<p>The ancient Greeks developed rigorous methods for approximation. Archimedes, in the 3rd century BCE, calculated that $\pi$ was between $\frac{223}{71}$ and $\frac{22}{7}$ by inscribing and circumscribing polygons around a circle. He couldn&#x27;t calculate $\pi$ exactly, but he bounded it — a form of estimation that&#x27;s mathematically rigorous.</p>
+<p>Babylonian mathematicians developed approximation methods for square roots. Engineers in Rome estimated materials needed for aqueducts and roads. Islamic mathematicians refined techniques for working with numbers too large or too complicated for exact calculation.</p>
+<p>But the modern &quot;Fermi estimation&quot; — taking an impossible-seeming question and breaking it into answerable pieces — really took off in the 20th century. It became a hallmark of physics education at the University of Chicago and elsewhere.</p>
+<p>Enrico Fermi was born in Rome in 1901. He was a theoretical physicist of extraordinary ability, but he was also famous for his ability to estimate anything. At a party, he might estimate how many people had red hair in Italy. At a physics seminar, he might interrupt a speaker to ask: &quot;How many piano tuners are in Chicago?&quot; When the speaker couldn&#x27;t answer, Fermi would work through it: Chicago population (about 3 million), households (maybe 1 million), fraction that own pianos (maybe 1%), pianos needing tuning annually (maybe once a year), hours to tune a piano (about 2), working hours per piano tuner per year (about 1000–1500). So about 225 piano tuners. A question that seemed unanswerable became perfectly sensible.</p>
+<p>Fermi died in 1954, but his spirit lives on. Today, &quot;Fermi problem&quot; competitions are common in schools. Engineers use Fermi estimation to sanity-check complex calculations. Scientists use it to design experiments. In the age of big data and complex models, the simple skill of asking &quot;is this answer reasonable?&quot; has become even more precious.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>Estimation is about <em>speed and judgment</em>. If you need an exact answer and you have time to calculate, calculate. But more often, you need a &quot;good enough&quot; answer fast, or you need to check whether a calculation you&#x27;ve done is in the right ballpark.</p>
+<p>There are several estimation strategies:</p>
+<p><strong>Rounding</strong> is the most basic. Round numbers to easier values, calculate with those, and you get a fast approximation. $47 + 52 \approx 50 + 50 = 100$. Not exactly 99, but close.</p>
+<p><strong>Front-end estimation</strong> uses only the leading (leftmost) digits. To estimate $237 \times 48$, you&#x27;d think: $200 \times 50 = 10,000$. The exact answer is 11,376 — not perfect, but in the right range.</p>
+<p><strong>Compatible numbers</strong> means rounding to numbers that work well together. To estimate $\frac{498}{47}$, you might think: &quot;500 divided by 50 is 10.&quot; Much easier than the exact calculation, and it gives you the right order of magnitude.</p>
+<p><strong>Order of magnitude</strong> is a rough classification by powers of ten. A million is $10^6$. A billion is $10^9$. Is something a thousand dollars or a million dollars? Is it 10 people or 10,000 people? Knowing the order of magnitude tells you if an answer is crazy or reasonable.</p>
+<p><strong>Fermi estimation</strong> is the art of breaking a hard problem into smaller, estimable pieces. The pieces might be guesses, but they&#x27;re educated guesses grounded in logic.</p>
+<p><strong>Benchmark numbers</strong> are reference points you carry in your head. A million seconds is about 11.5 days. A billion seconds is about 31.7 years. A liter of water weighs a kilogram. A dollar bill weighs about 1 gram. Your height is roughly a certain number of centimeters. With these anchors, you can estimate many other things.</p>
+<p><strong>Number sense</strong> is the sum of all these skills — the intuitive feel for what&#x27;s big, what&#x27;s small, what&#x27;s plausible, what&#x27;s absurd. It develops through practice and through constantly asking yourself: does this answer make sense?</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Estimation</strong>: The process of finding an approximate value for a calculation, usually by simplifying numbers or breaking a complex problem into parts.</p>
+<p><strong>Rounding</strong>: Replacing a number with a nearby &quot;rounder&quot; number for ease of calculation.</p>
+<ul><li>To the nearest 10, 100, 1000, etc.</li><li>If the digit to the right is 5 or more, round up. Otherwise, round down.</li></ul>
+<p><strong>Front-End Estimation</strong>: Estimating by using only the leading digits of numbers and ignoring the rest.</p>
+<ul><li>Example: Estimate $47 + 53 + 42$ → $40 + 50 + 40 = 130$ (actual: 142)</li></ul>
+<p><strong>Compatible Numbers</strong>: Replacing numbers with nearby values that are easy to compute with.</p>
+<ul><li>Example: $\frac{597}{42} \approx \frac{600}{50} = 12$ (easier to divide)</li></ul>
+<p><strong>Order of Magnitude</strong>: A classification of the size of a number based on powers of ten. Two numbers have the same order of magnitude if they&#x27;re within a factor of 10 of each other.</p>
+<ul><li>500 and 800 are both on the order of hundreds ($10^2$).</li><li>5,000 and 8,000 are both on the order of thousands ($10^3$).</li></ul>
+<p><strong>Fermi Estimation</strong>: Breaking a large or complex problem into smaller, estimable parts, estimating each part, and combining the estimates to answer the original question.</p>
+<p><strong>Number Sense</strong>: An intuitive, flexible understanding of numbers and their sizes, relationships, and uses. Includes the ability to judge whether an answer is reasonable.</p>
+<p><strong>Benchmark Numbers</strong>: Reference quantities memorized to anchor estimates.</p>
+<ul><li>1 million seconds ≈ 11.5 days</li><li>1 billion seconds ≈ 31.7 years</li><li>1 liter of water ≈ 1 kilogram</li><li>Earth&#x27;s population ≈ 8 billion</li><li>Speed of light ≈ 300,000 km/s</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Rounding and Quick Estimation</strong></p>
+<p>Estimate $48 \times 21$ using rounding.</p>
+<p>Round: $48 \approx 50$ and $21 \approx 20$</p>
+<p>Multiply: $50 \times 20 = 1000$</p>
+<p>Exact answer: $48 \times 21 = 1008$ ✓</p>
+<p><strong>Example 2: Front-End Estimation</strong></p>
+<p>Estimate $267 + 345 + 198$ using front-end estimation.</p>
+<p>Use leading digits: $200 + 300 + 100 = 600$</p>
+<p>Exact answer: $267 + 345 + 198 = 810$ (we underestimated slightly, but the order is right)</p>
+<p><strong>Example 3: Compatible Numbers</strong></p>
+<p>Estimate $\frac{482}{48}$ using compatible numbers.</p>
+<p>Replace with easy numbers: $\frac{480}{48} = 10$</p>
+<p>Exact answer: $\frac{482}{48} \approx 10.04$ ✓</p>
+<p><strong>Example 4: Fermi Estimation — Piano Tuners in a City</strong></p>
+<p>Estimate the number of piano tuners in your city (population 1 million).</p>
+<ol><li>How many households? If 250,000 households.</li><li>What fraction owns a piano? Maybe 1 in 50 → 5,000 pianos.</li><li>How often is each piano tuned? Maybe 1–2 times per year → 5,000–10,000 tunings per year.</li><li>How many tunings can one person do per year? If each takes 2 hours and a tuner works 1,500 billable hours per year → 750 tunings per year.</li><li>Number of tuners needed: $\frac{7500}{750} = 10$</li></ol>
+<p>So estimate: about 10 piano tuners.</p>
+<p><strong>Example 5: Order of Magnitude</strong></p>
+<p>A town has population 47,000. The mayor proposes a $3.2 million dollar project. Is this reasonable?</p>
+<ul><li>Population: 47,000 ≈ $5 \times 10^4$</li><li>Project cost: $3.2 million ≈ 3 \times 10^6$</li><li>Cost per capita: $\frac{3 \times 10^6}{5 \times 10^4} = \frac{3}{5} \times 10^2 = 0.6 \times 10^2 = 60$ dollars per person.</li></ul>
+<p>For a town project (maybe a school or community center), $60 per capita is reasonable.</p>
+<p><strong>Example 6: Is This Answer Reasonable?</strong></p>
+<p>A student calculates that a swimmer&#x27;s average speed over 100 meters in 2 minutes is 50 meters per minute.</p>
+<p>Check: Is this reasonable?</p>
+<ul><li>50 m/min = 3000 m/hour = 3 km/hour</li><li>For comparison, world-class swimmers swim at about 2 m/s = 120 m/min = 7.2 km/hour in a race.</li><li>3 km/hour is much slower — it&#x27;s a casual swimming pace.</li><li>For a 2-minute swim, that&#x27;s plausible (not a competitive pace, but reasonable). ✓</li></ul>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Round 427 to the nearest 10. Estimate $427 + 386$ using these rounded values.</li></ol>
+<ol><li>Use front-end estimation to estimate $534 + 287 + 149$.</li></ol>
+<ol><li>Use compatible numbers to estimate $\frac{609}{30}$.</li></ol>
+<ol><li>Which order of magnitude matches the number 85,000?</li></ol>
+<ul><li>$10^3$</li><li>$10^4$</li><li>$10^5$</li></ul>
+<ol><li>A restaurant serves about 150 customers per day. Estimate how many customers it serves in a year. (Hint: 1 year ≈ 365 days.)</li></ol>
+<ol><li>A bag of sand costs $5 and weighs about 40 kilograms. A landscaper needs about 2 tons of sand for a project. Estimate how much this will cost. (Hint: 1 ton = 1000 kg.)</li></ol>
+<ol><li>Is an answer of 0.05 meters reasonable for the width of a doorway? Explain your reasoning.</li></ol>
+<ol><li>A library has 12,000 books. How many books per person can it lend if the town has 800 residents? Estimate this without calculating exactly.</li></ol>
+<ol><li>A person types 50 words per minute and works for 7 hours per day. Estimate how many words they type per day. (Hint: 1 hour = 60 minutes.)</li></ol>
+<ol><li>Estimate how many students are in all the schools in your town. What information would you need to know first?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Fermi Problem: How Many Grains of Sand Are on a Beach?</strong></p>
+<p>Your task is to estimate the number of grains of sand on a typical beach.</p>
+<p><strong>Part A</strong>: Define the problem. What do we mean by &quot;a typical beach&quot;? Decide on dimensions: length, width, and depth of sand.</p>
+<p><strong>Part B</strong>: Estimate the volume of sand. Length × Width × Depth.</p>
+<p><strong>Part C</strong>: Estimate the volume of a grain of sand. (Hint: A grain of sand might be roughly $0.5 \text{ mm}$ across. What&#x27;s its volume in cubic millimeters?)</p>
+<p><strong>Part D</strong>: Divide the beach volume by the grain volume. How many grains of sand?</p>
+<p><strong>Part E</strong>: Is your answer reasonable? Sanity-check it by comparing to other quantities. Is it more than the number of stars in the universe? (There are about $10^{24}$ stars.) Less?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Estimation in Daily Life</strong></p>
+<p><strong>Grocery Shopping</strong>: You&#x27;re buying apples at $0.99 per pound. You pick up about 8 apples. Estimate the total cost before checkout. (Assume each apple weighs about 0.25 pounds.)</p>
+<p><strong>Gas Tank</strong>: Your car&#x27;s gas tank holds about 50 liters. Fuel costs $1.40 per liter. You&#x27;re running on empty. Estimate how much you&#x27;ll spend to fill up.</p>
+<p><strong>Home Improvement</strong>: You want to paint a room. The room is about 4 meters × 5 meters × 3 meters high. One can of paint covers about 30 square meters. Estimate how many cans you need. (Hint: Calculate the wall area.)</p>
+<p><strong>Energy Use</strong>: A typical lightbulb uses 10 watts. If you leave it on for 8 hours per day, how many watt-hours do you use per day? (This is how electricity companies measure consumption.)</p>
+<p>These real-world problems don&#x27;t need exact answers — just reasonable ballpark estimates that help you make decisions.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Estimation is the art of getting &quot;good enough&quot; answers fast, and it rests on several complementary skills: rounding, front-end estimation, compatible numbers, order of magnitude, and Fermi estimation.</p>
+<p>Simon Stevin gave us decimals. The metric system gave us consistent units. And now, with estimation, we have the final key skill in the <em>Language of Number</em>: the ability to work quickly, flexibly, and confidently with numbers in the real world.</p>
+<p>But estimation isn&#x27;t just speed. It&#x27;s judgment. It&#x27;s looking at an answer and asking: does this make sense? It&#x27;s understanding that 1 billion is incomprehensibly large — that a billion seconds is 32 years. It&#x27;s recognizing that a claim in the news, or a product price, or a calculation on a test deserves a sanity check.</p>
+<p>Enrico Fermi could estimate the power of an atomic bomb from scraps of paper and physics intuition. You don&#x27;t need to do that. But you should be able to estimate how much your shopping will cost, whether a reported statistic is plausible, and whether your homework answer is in the right ballpark.</p>
+<p>That&#x27;s number sense. And it&#x27;s your superpower.</p>
+<p>This is the end of World 00: <em>The Language of Number</em>. You&#x27;ve traveled from the very first symbols humans used to count, through whole numbers, fractions, decimals, and the metric system. You&#x27;ve learned why each system matters. And now, with estimation, you can judge the reasonableness of any numerical claim.</p>
+<p>You&#x27;re ready for the next world. You have the language. Now you&#x27;ll learn what to say with it.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> When estimating $294 + 387$, which pair of rounded numbers would you use?</p>
+<ul><li>290 + 380</li><li>300 + 400</li><li>290 + 390</li><li>200 + 400</li></ul>
+<details>
+<summary>Answer</summary>
+<p>300 + 400</p>
+</details>
+<p><strong>Question 2:</strong> What does &quot;order of magnitude&quot; mean?</p>
+<ul><li>The exact size of a number</li><li>A rough classification by powers of ten</li><li>How many digits a number has</li><li>Whether a number is positive or negative</li></ul>
+<details>
+<summary>Answer</summary>
+<p>A rough classification by powers of ten</p>
+</details>
+<p><strong>Question 3:</strong> How many seconds are in 1 million seconds approximately?</p>
+<ul><li>About 1 hour</li><li>About 1 day</li><li>About 11 days</li><li>About 32 years</li></ul>
+<details>
+<summary>Answer</summary>
+<p>About 11 days</p>
+</details>
+<p><strong>Question 4:</strong> In Fermi estimation, the strategy is to...</p>
+<ul><li>Calculate exact answers only</li><li>Break a hard problem into smaller, estimable parts</li><li>Never use rounding</li><li>Memorize all the answers</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Break a hard problem into smaller, estimable parts</p>
+</details>
+<p><strong>Question 5:</strong> Which of these is a realistic estimate for the number of piano tuners in a city of 500,000 people?</p>
+<ul><li>1</li><li>5</li><li>50</li><li>500</li></ul>
+<details>
+<summary>Answer</summary>
+<p>50</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Fermi, Enrico. <em>Enrico Fermi: Physicist</em>. Biographical sketch and interview transcript. University of Chicago. Archive available at https://en.wikipedia.org/wiki/Enrico_Fermi</li><li>https://en.wikipedia.org/wiki/Enrico_Fermi</li><li>https://en.wikipedia.org/wiki/Fermi_problem</li><li>https://en.wikipedia.org/wiki/Fermi_estimation</li><li>https://en.wikipedia.org/wiki/Order_of_magnitude</li><li>Kaplan, Michael, and Ellen Kaplan. <em>The Art of the Infinite: The Pleasures of Mathematics</em>. Oxford University Press, 2003.</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-00-language-of-number/ch-011-decimals-and-the-metric-system/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Decimals and the Metric System</span></a><a class="pager-link pager-link--next" href="../../world-01-shape-measure-greek-project/ch-013-measuring-land-and-space/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Measuring Land and Space</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

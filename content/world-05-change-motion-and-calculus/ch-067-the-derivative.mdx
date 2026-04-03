@@ -1,0 +1,287 @@
+---
+chapterNumber: 067
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+title: "The Derivative — Measuring Instantaneous Change"
+subtitle: "The slope of a curve at a single point — and how to find it exactly"
+estimatedTimeMinutes: 40
+historicalPeriod: "1660s–1680s, Newton and Leibniz"
+mainConcepts:
+  - derivative
+  - limit definition
+  - tangent line
+  - differentiability
+  - Leibniz notation
+  - prime notation
+learningObjectives:
+  - "Compute derivatives using the limit definition"
+  - "Interpret the derivative as slope of tangent and instantaneous rate of change"
+  - "Write equations of tangent lines"
+  - "Distinguish differentiability from continuity"
+  - "Use both Leibniz and prime notations"
+---
+
+## Story Hook
+
+Oxford, England. December 1665. A plague sweeps across the country, and Cambridge University closes its doors. A young man of 23, Isaac Newton, returns to his family home in Woolsthorpe. Over the next 18 months, in isolation, he will invent three revolutionary ideas: the calculus, the theory of light, and the law of universal gravitation.
+
+Meanwhile, across the Channel in Germany, Gottfried Leibniz is working independently on the same problem: how to measure instantaneous change. He too invents calculus. He publishes first (1675) and gives us the notation we use today: $\frac{dy}{dx}$.
+
+Newton is furious. He believes he thought of it first. For 30 years, until his death in 1727, the two greatest mathematicians of the age fight bitterly over priority. History's verdict: both deserve full credit. They discovered something real and deep—the derivative, the most powerful tool in mathematics.
+
+Today we use *both* their notations. We write $f'(x)$ (Newton's style) and $\frac{dy}{dx}$ (Leibniz's style) interchangeably, two languages for the same profound idea.
+
+## Why It Matters
+
+Every time you optimize something—finding the minimum cost, maximum profit, or fastest route—you use derivatives. Every time a doctor adjusts a drug dose, an engineer designs a structure, or a physicist predicts motion, the derivative is working behind the scenes.
+
+The derivative is the instantaneous rate of change. It is how we measure *right now*, at this moment, in a world of continuous motion. Without derivatives, modern civilization could not exist.
+
+## Historical Context
+
+Newton (1642–1727) developed calculus in the late 1660s using intuitive geometric ideas and his method of "fluxions." Leibniz (1646–1716) developed calculus in the mid-1670s using infinitesimals and created more elegant notation. Neither man published immediately.
+
+In 1684, Leibniz publishes his *Nova methodus*, introducing the derivative symbol $\frac{dy}{dx}$ and the integral symbol $\int$. The calculus, in Leibniz's notation, begins to spread through Europe. Bernoulli, Euler, and Lagrange build on Leibniz's work.
+
+Newton, hearing of Leibniz's publication, becomes convinced Leibniz stole his ideas. The priority dispute becomes intense and personal. Both men are brilliant, both are correct, and both deserve recognition. The mathematical community splits: British mathematicians defend Newton, Continental mathematicians follow Leibniz. This split delays the development of calculus in England by generations.
+
+By the early 1800s, historians and mathematicians recognize that both Newton and Leibniz independently invented calculus. The conflict was one of the most bitter intellectual disputes in the history of science.
+
+## Core Concept
+
+The **derivative** of a function $f$ at a point $x = a$ is the slope of the tangent line at that point. It measures the instantaneous rate of change.
+
+**Definition (using limits):**
+
+$$f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$$
+
+This formula says: take two nearby points on the curve (separated by a small distance $h$), compute the slope of the secant line between them, then let $h$ shrink to zero. The slope of the secant line approaches the slope of the tangent line.
+
+**Leibniz notation:** If $y = f(x)$, the derivative is written:
+
+$$\frac{dy}{dx} \quad \text{or} \quad \frac{df}{dx}$$
+
+This notation emphasizes the idea of a ratio: an infinitesimal change in $y$ divided by an infinitesimal change in $x$.
+
+**Prime notation:** The derivative of $f$ at $x$ is written $f'(x)$. At a specific point $x = a$, we write $f'(a)$.
+
+Both notations mean the same thing. You can use either, and mathematicians use both interchangeably.
+
+**Differentiability:** A function is differentiable at $x = a$ if the derivative $f'(a)$ exists. This requires that the limit $\lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$ converges to a single real number.
+
+**Important truth:** If $f$ is differentiable at $a$, then $f$ is continuous at $a$. But the converse is not true: a function can be continuous without being differentiable (if the tangent line is vertical or if there's a sharp corner).
+
+**Tangent Line Equation:** Once you know the derivative $f'(a)$ at a point $a$, you can write the equation of the tangent line:
+
+$$y - f(a) = f'(a)(x - a)$$
+
+This is point-slope form, where the slope is $f'(a)$ and the point is $(a, f(a))$.
+
+## Definitions and Formal Lesson
+
+**The Derivative as a Function:**
+
+If you compute the derivative at every point in the domain, you get a new function $f'(x)$, called "the derivative of $f$" or "f prime."
+
+**Tangent Line:** A line that touches a curve at one point and has the same slope as the curve at that point. The slope of the tangent line equals $f'(a)$.
+
+**Higher Derivatives:** You can take the derivative of a derivative. The second derivative, written $f''(x)$ or $\frac{d^2y}{dx^2}$, measures how the rate of change is itself changing. It quantifies acceleration.
+
+The third derivative, $f'''(x)$, measures how acceleration changes, and so on.
+
+**Units of the Derivative:** If $y$ represents distance and $x$ represents time, then $\frac{dy}{dx}$ represents speed (distance per unit time). If $y$ represents cost and $x$ represents quantity, then $\frac{dy}{dx}$ represents cost per unit.
+
+The derivative always has units: output units divided by input units.
+
+## Worked Examples
+
+**Example 1: Computing a Derivative from the Definition**
+
+Let $f(x) = x^2$. Find $f'(2)$ using the limit definition.
+
+$$f'(2) = \lim_{h \to 0} \frac{f(2+h) - f(2)}{h} = \lim_{h \to 0} \frac{(2+h)^2 - 4}{h}$$
+
+Expand $(2+h)^2 = 4 + 4h + h^2$:
+
+$$= \lim_{h \to 0} \frac{4 + 4h + h^2 - 4}{h} = \lim_{h \to 0} \frac{4h + h^2}{h}$$
+
+Factor out $h$:
+
+$$= \lim_{h \to 0} \frac{h(4 + h)}{h} = \lim_{h \to 0} (4 + h) = 4$$
+
+So $f'(2) = 4$. The instantaneous rate of change of $f(x) = x^2$ at $x = 2$ is 4.
+
+**Example 2: Finding the Equation of a Tangent Line**
+
+Using the same function $f(x) = x^2$ and the result $f'(2) = 4$:
+
+The tangent line at $(2, f(2)) = (2, 4)$ has slope $m = 4$. Using point-slope form:
+
+$$y - 4 = 4(x - 2)$$
+$$y - 4 = 4x - 8$$
+$$y = 4x - 4$$
+
+**Example 3: Computing a Derivative from the Definition (Another Function)**
+
+Let $f(x) = 3x + 1$. Find $f'(x)$ (the derivative at any point $x$).
+
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = \lim_{h \to 0} \frac{[3(x+h) + 1] - [3x + 1]}{h}$$
+
+$$= \lim_{h \to 0} \frac{3x + 3h + 1 - 3x - 1}{h} = \lim_{h \to 0} \frac{3h}{h} = \lim_{h \to 0} 3 = 3$$
+
+So $f'(x) = 3$ for all $x$. This makes sense: $f(x) = 3x + 1$ is a straight line with slope 3, so the instantaneous rate of change is constantly 3.
+
+**Example 4: Continuity vs. Differentiability**
+
+Consider $f(x) = |x|$ (absolute value). This function is continuous everywhere (no breaks or jumps). But is it differentiable everywhere?
+
+At $x = 0$, the graph has a sharp corner. From the left, the tangent line has slope $-1$. From the right, the tangent line has slope $+1$. These don't match, so there is no single tangent line at $x = 0$.
+
+Therefore, $f(x) = |x|$ is continuous at $x = 0$ but not differentiable at $x = 0$.
+
+## Practice Set
+
+1. **Using the limit definition, what is $f'(3)$ for $f(x) = x^2$?**
+   - 3
+   - 6
+   - 9
+   - 12
+
+2. **If $f(x) = 5x - 2$, what is $f'(x)$?**
+   - 5
+   - 2
+   - $5x$
+   - $-2$
+
+3. **Which notation represents the second derivative?**
+   - $f'(x)$
+   - $f''(x)$ or $\frac{d^2y}{dx^2}$
+   - $\frac{dy}{dx}$
+   - $f(x)$
+
+4. **The equation of the tangent line at $(a, f(a))$ is:**
+   - $y = f(a)$
+   - $y = f'(a)$
+   - $y - f(a) = f'(a)(x - a)$
+   - $x = a$
+
+5. **Which statement is true?**
+   - All continuous functions are differentiable
+   - All differentiable functions are continuous
+   - Some functions are both continuous and differentiable
+   - Continuity and differentiability are unrelated
+
+## Reasoning Task
+
+A friend is confused about the difference between Newton's notation $f'(x)$ and Leibniz's notation $\frac{dy}{dx}$. Your friend asks: "Are these two different things, or the same thing with different names?"
+
+Explain to your friend that they represent the same concept—the derivative, or instantaneous rate of change—but emphasize that Leibniz's notation, as a fraction-like symbol, can be very useful for understanding rates and for applying the chain rule later. Give an example where you use both notations for the same function.
+
+## Application
+
+**Velocity and Acceleration**
+
+A car's position (in meters) as a function of time (in seconds) is $s(t) = 2t^2 + 3t + 1$.
+
+The velocity is the derivative: $v(t) = \frac{ds}{dt}$. Using the limit definition or rules (which we'll learn next chapter):
+
+$$v(t) = 4t + 3$$
+
+At $t = 2$ seconds, the instantaneous velocity is $v(2) = 4(2) + 3 = 11$ m/s.
+
+The acceleration is the derivative of velocity (the second derivative of position):
+
+$$a(t) = \frac{dv}{dt} = \frac{d^2s}{dt^2} = 4 \text{ m/s}^2$$
+
+The car accelerates at a constant 4 meters per second squared.
+
+**Marginal Cost in Economics**
+
+A manufacturer's total cost (in dollars) to produce $x$ units is $C(x) = 1000 + 50x + 0.1x^2$.
+
+The marginal cost—the instantaneous rate of change of cost—is:
+
+$$\frac{dC}{dx} = 50 + 0.2x$$
+
+At $x = 100$ units, the marginal cost is $50 + 0.2(100) = 70$ dollars per unit. The 101st unit costs approximately \$70 to produce. This guides production decisions.
+
+## Recap
+
+The **derivative** is the instantaneous rate of change of a function. It is the slope of the tangent line at a point on the curve.
+
+Mathematically, the derivative of $f$ at $x = a$ is:
+
+$$f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$$
+
+We use **two notations** interchangeably: prime notation $f'(x)$ (Newton's style) and Leibniz notation $\frac{dy}{dx}$ (Leibniz's style).
+
+A function is **differentiable** at a point if its derivative exists there. Differentiability implies continuity, but not vice versa.
+
+The **tangent line** at $(a, f(a))$ has equation $y - f(a) = f'(a)(x - a)$.
+
+The **second derivative** $f''(x)$ measures how the rate of change is changing (acceleration).
+
+Newton and Leibniz independently invented the derivative in the late 1600s. Though they fought bitterly over priority, both names live on in the notation we use every day.
+
+## Unlock Quiz
+
+**1. What does the derivative measure?**
+   - The average rate of change over an interval
+   - The instantaneous rate of change at a point
+   - The distance traveled
+   - The slope of a vertical line
+
+<details>
+<summary>Answer</summary>
+The instantaneous rate of change at a point
+</details>
+
+**2. In the limit definition $f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$, what does $h$ represent?**
+   - The point at which we find the derivative
+   - A small distance between two points on the curve
+   - The slope of the tangent line
+   - The x-coordinate
+
+<details>
+<summary>Answer</summary>
+A small distance between two points on the curve
+</details>
+
+**3. If $f(x) = 2x + 7$, what is $f'(x)$?**
+   - 2
+   - 7
+   - $2x$
+   - Does not exist
+
+<details>
+<summary>Answer</summary>
+2
+</details>
+
+**4. Newton and Leibniz independently invented calculus, but their priority dispute lasted:**
+   - 5 years
+   - 15 years
+   - 30 years
+   - 60 years
+
+<details>
+<summary>Answer</summary>
+30 years
+</details>
+
+**5. A function that is continuous at a point is always differentiable there. True or false?**
+   - True
+   - False
+
+<details>
+<summary>Answer</summary>
+False
+</details>
+
+## Source Notes
+
+- Newton, I. (1666). *Method of Fluxions*. https://en.wikipedia.org/wiki/Isaac_Newton
+- Leibniz, G.W. (1684). "Nova methodus pro maximis et minimis." *Acta Eruditorum*. https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz
+- Hall, A.R. (1980). *Philosophers at War: The Quarrel between Newton and Leibniz*. https://en.wikipedia.org/wiki/History_of_calculus
+- https://en.wikipedia.org/wiki/Derivative
+- https://en.wikipedia.org/wiki/Tangent

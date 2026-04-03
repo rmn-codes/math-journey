@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vectors and Matrices — Math Journey</title>
+    <meta name="description" content="Arrays of numbers that encode transformations — the mathematics of graphics, AI, and physics" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 7 · Chapter 90</p>
+        <h1>Vectors and Matrices</h1>
+        <p class="hero-copy">Arrays of numbers that encode transformations — the mathematics of graphics, AI, and physics</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1840s–1900s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Perform matrix addition, scalar multiplication, and matrix multiplication</li><li>Compute 2×2 determinants and inverses</li><li>Solve linear systems using matrices</li><li>Interpret matrices as linear transformations</li><li>Connect to AI and graphics applications</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>In 2012, a neural network called AlexNet was released to the world. It was trained on millions of images and could recognize objects—dogs, cats, cars, buildings—with a accuracy that stunned the computer vision community.</p>
+<p>Every pixel of every photograph was represented as a number. Every transformation the network performed—every layer, every filter, every activation—was a matrix multiplication.</p>
+<p>AlexNet won the ImageNet competition by such a margin that it launched the entire modern era of artificial intelligence.</p>
+<p>Today, when you ask an AI to generate an image, when your phone recognizes your face, when an autonomous car identifies a pedestrian, when a language model generates text, matrices are working in the background. Billions of matrix multiplications per second, transforming data from one representation to another.</p>
+<p>The story begins much earlier. In 1844, an Irish mathematician named William Rowan Hamilton made a curious discovery. He was trying to generalize complex numbers to three dimensions. He failed. But in his failure, he found something unexpected: a new kind of algebraic object called a quaternion. Around the same time, Arthur Cayley was thinking about similar structures. In 1858, Cayley published a foundational paper on matrices—rectangular arrays of numbers with rules for addition and multiplication.</p>
+<p>Cayley had no idea what matrices would become. He was playing with pure abstraction. But he had built the scaffolding on which 160 years of technology would rest.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Matrices are everywhere. Your smartphone&#x27;s graphics processor uses them to rotate and scale images on your screen. Netflix uses them to recommend movies (collaborative filtering, encoded as matrix computations). Google&#x27;s PageRank algorithm, which ranks web pages, is a matrix problem. Any time you rotate, scale, reflect, or compress data, you are using matrices. Any time a computer manipulates an image or processes sound, matrices are at work.</p>
+<p>But matrices are not just a computational tool. They are a way of thinking. They tell you that any linear transformation—any operation that preserves addition and scalar multiplication—can be represented as matrix multiplication. This insight unifies linear algebra, physics, computer science, and mathematics.</p>
+<p>Without matrices, modern technology as we know it would not exist.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>In the early 1800s, mathematicians were generalizing numbers. Complex numbers had expanded the real numbers to two dimensions. Could you do the same for three dimensions?</p>
+<p>William Rowan Hamilton spent years on this problem. In 1843, during a walk along the Royal Canal in Dublin, inspiration struck. But the answer was surprising: you could not generalize complex numbers to three dimensions. However, you <em>could</em> generalize them to four dimensions. These quaternions had four components and followed strange rules of multiplication.</p>
+<p>Quaternions were beautiful but difficult to work with. Most physicists and engineers never learned them deeply. Yet they contained a profound insight: that you could arrange numbers in arrays and define multiplication rules that made sense.</p>
+<p>Arthur Cayley took this idea and ran with it. In his 1858 paper &quot;A Memoir on the Theory of Matrices,&quot; Cayley developed the theory of rectangular arrays of numbers. He defined matrix addition, scalar multiplication, and matrix multiplication. He proved properties like associativity of multiplication (though not commutativity, which surprised people at first).</p>
+<p>For decades, matrices seemed like a pure abstraction. Then physics moved in. When Einstein developed quantum mechanics in the 1920s, physicists (especially Werner Heisenberg) discovered that matrices were the perfect language for quantum states. When computers were invented in the 1940s, matrix multiplication became the fundamental operation that engineers wanted to make fast. By the late 1900s, with the rise of image processing and then machine learning, matrices became central to technology.</p>
+<p>Today, a GPU (graphics processing unit) is essentially a matrix-multiplication machine.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>A matrix</strong> is a rectangular array of numbers. We denote matrices by bold capital letters. A matrix $\mathbf{A}$ with $m$ rows and $n$ columns is said to be $m \times n$:</p>
+<p>$$\mathbf{A} = \begin{pmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \end{pmatrix}$$</p>
+<p><strong>Addition and scalar multiplication</strong> follow the natural rule:</p>
+<ul><li>Add two matrices of the same size by adding corresponding entries.</li><li>Multiply a matrix by a scalar $c$ by multiplying each entry by $c$.</li></ul>
+<p><strong>Matrix multiplication</strong> is more subtle. The product $\mathbf{AB}$ is defined only when the number of columns of $\mathbf{A}$ equals the number of rows of $\mathbf{B}$. If $\mathbf{A}$ is $m \times n$ and $\mathbf{B}$ is $n \times p$, then $\mathbf{AB}$ is $m \times p$, and the entry in row $i$ and column $j$ of $\mathbf{AB}$ is:</p>
+<p>$$(\mathbf{AB})_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}$$</p>
+<p>Important: <strong>matrix multiplication is not commutative</strong>. In general, $\mathbf{AB} \neq \mathbf{BA}$.</p>
+<p><strong>The identity matrix</strong> $\mathbf{I}$ is the $n \times n$ matrix with 1s on the diagonal and 0s everywhere else: $$\mathbf{I} = \begin{pmatrix} 1 &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; 1 &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \cdots &amp; 1 \end{pmatrix}$$</p>
+<p>For any matrix $\mathbf{A}$, we have $\mathbf{AI} = \mathbf{A}$ and $\mathbf{IA} = \mathbf{A}$ (when the dimensions match).</p>
+<p><strong>The transpose</strong> of a matrix $\mathbf{A}$, denoted $\mathbf{A}^T$ or $\mathbf{A}&#x27;$, is formed by swapping rows and columns: $$\mathbf{A} = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix} \implies \mathbf{A}^T = \begin{pmatrix} 1 &amp; 3 \\ 2 &amp; 4 \end{pmatrix}$$</p>
+<p><strong>The determinant</strong> of a 2×2 matrix is: $$\det \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = ad - bc$$</p>
+<p>The determinant measures whether a matrix is invertible. If $\det(\mathbf{A}) \neq 0$, then $\mathbf{A}$ has an inverse.</p>
+<p><strong>The inverse</strong> of a 2×2 matrix $\mathbf{A}$ with $\det(\mathbf{A}) \neq 0$ is: $$\mathbf{A}^{-1} = \frac{1}{\det(\mathbf{A})} \begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix}$$</p>
+<p>This satisfies $\mathbf{A} \mathbf{A}^{-1} = \mathbf{I}$ and $\mathbf{A}^{-1} \mathbf{A} = \mathbf{I}$.</p>
+<p><strong>Linear systems</strong> can be written in matrix form. The system $$\begin{cases} ax + by = e \\ cx + dy = f \end{cases}$$ can be written as: $$\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} e \\ f \end{pmatrix}$$</p>
+<p>or $\mathbf{A} \vec{x} = \vec{b}$. If $\det(\mathbf{A}) \neq 0$, the unique solution is: $$\vec{x} = \mathbf{A}^{-1} \vec{b}$$</p>
+<p><strong>Geometric interpretation:</strong> A matrix represents a linear transformation. Multiplying a vector $\vec{v}$ by a matrix $\mathbf{A}$ rotates, scales, or reflects the vector. For example, the matrix $\begin{pmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{pmatrix}$ rotates a vector by angle $\theta$.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<ul><li><strong>Matrix:</strong> A rectangular array of numbers with $m$ rows and $n$ columns, denoted as $m \times n$.</li><li><strong>Vector:</strong> A matrix with one column (column vector) or one row (row vector).</li><li><strong>Dimension matching:</strong> Matrix product $\mathbf{AB}$ requires the number of columns of $\mathbf{A}$ to equal the number of rows of $\mathbf{B}$.</li><li><strong>Identity matrix:</strong> The $n \times n$ matrix $\mathbf{I}$ with 1s on the main diagonal and 0s elsewhere.</li><li><strong>Transpose:</strong> The matrix $\mathbf{A}^T$ formed by swapping rows and columns of $\mathbf{A}$.</li><li><strong>Determinant (2×2):</strong> For $\mathbf{A} = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}$, we have $\det(\mathbf{A}) = ad - bc$.</li><li><strong>Inverse:</strong> For a 2×2 matrix with nonzero determinant, $\mathbf{A}^{-1} = \frac{1}{\det(\mathbf{A})} \begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix}$.</li><li><strong>Linear system:</strong> A system of equations expressed as $\mathbf{A}\vec{x} = \vec{b}$, solvable by $\vec{x} = \mathbf{A}^{-1}\vec{b}$ if $\mathbf{A}$ is invertible.</li><li><strong>Linear transformation:</strong> A mapping from vectors to vectors of the form $\vec{v} \mapsto \mathbf{A}\vec{v}$.</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Matrix Addition and Scalar Multiplication</strong> Let $\mathbf{A} = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}$ and $\mathbf{B} = \begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix}$. Compute $2\mathbf{A} + \mathbf{B}$.</p>
+<p>Solution: $$2\mathbf{A} + \mathbf{B} = \begin{pmatrix} 2 &amp; 4 \\ 6 &amp; 8 \end{pmatrix} + \begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix} = \begin{pmatrix} 7 &amp; 10 \\ 13 &amp; 16 \end{pmatrix}$$</p>
+<p><strong>Example 2: Matrix Multiplication</strong> Multiply $\mathbf{A} = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}$ and $\mathbf{B} = \begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix}$.</p>
+<p>Solution: $$\mathbf{AB} = \begin{pmatrix} 1(5) + 2(7) &amp; 1(6) + 2(8) \\ 3(5) + 4(7) &amp; 3(6) + 4(8) \end{pmatrix} = \begin{pmatrix} 19 &amp; 22 \\ 43 &amp; 50 \end{pmatrix}$$</p>
+<p><strong>Example 3: Determinant and Inverse</strong> Find the inverse of $\mathbf{A} = \begin{pmatrix} 2 &amp; 1 \\ 5 &amp; 3 \end{pmatrix}$.</p>
+<p>Solution:</p>
+<ul><li>$\det(\mathbf{A}) = 2(3) - 1(5) = 6 - 5 = 1$</li><li>$\mathbf{A}^{-1} = \frac{1}{1} \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix} = \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix}$</li></ul>
+<p>Verification: $\mathbf{A}\mathbf{A}^{-1} = \begin{pmatrix} 2 &amp; 1 \\ 5 &amp; 3 \end{pmatrix}\begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix} = \begin{pmatrix} 6-5 &amp; -2+2 \\ 15-15 &amp; -5+6 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}$ ✓</p>
+<p><strong>Example 4: Solving a Linear System</strong> Solve the system using matrix methods: $$\begin{cases} 2x + y = 4 \\ 5x + 3y = 11 \end{cases}$$</p>
+<p>Solution: $$\begin{pmatrix} 2 &amp; 1 \\ 5 &amp; 3 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 4 \\ 11 \end{pmatrix}$$</p>
+<p>From Example 3, $\mathbf{A}^{-1} = \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix}$, so: $$\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 3 &amp; -1 \\ -5 &amp; 2 \end{pmatrix}\begin{pmatrix} 4 \\ 11 \end{pmatrix} = \begin{pmatrix} 12 - 11 \\ -20 + 22 \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$$</p>
+<p>So $x = 1, y = 2$.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Add the matrices: $\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix} + \begin{pmatrix} 2 &amp; -1 \\ 0 &amp; 3 \end{pmatrix}$.</li></ol>
+<ol><li>Multiply: $\begin{pmatrix} 1 &amp; 0 \\ 2 &amp; 1 \end{pmatrix}\begin{pmatrix} 3 \\ 4 \end{pmatrix}$.</li></ol>
+<ol><li>Find the determinant of $\begin{pmatrix} 4 &amp; 7 \\ 2 &amp; 3 \end{pmatrix}$.</li></ol>
+<ol><li>Find the inverse of $\begin{pmatrix} 1 &amp; 2 \\ 1 &amp; 3 \end{pmatrix}$.</li></ol>
+<ol><li>Solve the system $\begin{cases} x + 2y = 5 \\ x + 3y = 7 \end{cases}$ using matrix methods.</li></ol>
+<ol><li>Compute the transpose of $\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{pmatrix}$.</li></ol>
+<ol><li>Verify that $\mathbf{A}\mathbf{I} = \mathbf{A}$ for $\mathbf{A} = \begin{pmatrix} 2 &amp; 3 \\ 1 &amp; 4 \end{pmatrix}$.</li></ol>
+<ol><li>Show that $\mathbf{AB} \neq \mathbf{BA}$ by computing both products for $\mathbf{A} = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}$ and $\mathbf{B} = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}$.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Problem:</strong> A 2×2 matrix $\mathbf{A}$ is singular (non-invertible) if and only if $\det(\mathbf{A}) = 0$. Explain geometrically why this makes sense.</p>
+<p><strong>Hint:</strong> If $\det(\mathbf{A}) = 0$, what does that tell you about the rows (or columns) of $\mathbf{A}$? What does that mean for the geometric transformation it represents?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Computer Graphics:</strong> When a 3D animation studio renders a scene, every model, camera position, and light is represented by matrices. To rotate an object by angle $\theta$ around the $z$-axis: $$\begin{pmatrix} \cos\theta &amp; -\sin\theta &amp; 0 \\ \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix}$$</p>
+<p>To move (translate) an object, you use an affine transformation (a matrix plus a vector). To project a 3D scene onto a 2D screen, you use a projection matrix. Every frame of a movie rendered on a computer involves matrix operations. Modern GPUs are optimized specifically to multiply matrices as fast as possible.</p>
+<p><strong>Machine Learning:</strong> In neural networks, each layer is a matrix multiplication: given an input vector $\vec{x}$, compute $\vec{y} = \mathbf{W}\vec{x} + \vec{b}$, where $\mathbf{W}$ is a weight matrix and $\vec{b}$ is a bias vector. Training a neural network means adjusting the entries of these weight matrices so that the output is correct. A single forward pass through a large language model involves billions of matrix multiplications.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>We learned that matrices are rectangular arrays of numbers with well-defined operations: addition, scalar multiplication, and multiplication. We defined the identity matrix and the transpose, and we studied the determinant and inverse for 2×2 matrices. We saw how to write linear systems in matrix form and solve them using matrix inverses. We understood matrices geometrically as linear transformations—operations that rotate, scale, and reflect vectors. Matrices are the language of linear algebra and the foundation of modern computational technology, from graphics to machine learning to scientific computing.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is the dimension of the product $\mathbf{A}\mathbf{B}$ if $\mathbf{A}$ is $3 \times 4$ and $\mathbf{B}$ is $4 \times 2$?</li></ol>
+<ul><li>$3 \times 2$</li><li>$3 \times 4$</li><li>$4 \times 4$</li><li>The product is undefined</li></ul>
+<ol><li>For the 2×2 matrix $\mathbf{A} = \begin{pmatrix} 3 &amp; 5 \\ 1 &amp; 2 \end{pmatrix}$, what is $\det(\mathbf{A})$?</li></ol>
+<ul><li>$6 - 5 = 1$</li><li>$3 + 5 + 1 + 2 = 11$</li><li>$3(2) - 5(1) = 1$</li><li>$3(2) + 5(1) = 11$</li></ul>
+<ol><li>The matrix $\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}$ geometrically represents...</li></ol>
+<ul><li>A rotation by 90 degrees</li><li>A reflection across the line $y = x$</li><li>A scaling by factor 2</li><li>A projection onto the $x$-axis</li></ul>
+<ol><li>If $\mathbf{AB} = \mathbf{I}$, then $\mathbf{B}$ is...</li></ol>
+<ul><li>The identity matrix</li><li>The inverse of $\mathbf{A}$</li><li>The transpose of $\mathbf{A}$</li><li>The determinant of $\mathbf{A}$</li></ul>
+<ol><li>In machine learning, the operation $\vec{y} = \mathbf{W}\vec{x}$ represents...</li></ol>
+<ul><li>Multiplying all elements by a scalar</li><li>A linear transformation of the input vector $\vec{x}$</li><li>Adding a constant to each element</li><li>Taking the determinant</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>$3 \times 2$</li></ol>
+<ol><li>$3(2) - 5(1) = 1$</li></ol>
+<ol><li>A reflection across the line $y = x$</li></ol>
+<ol><li>The inverse of $\mathbf{A}$</li></ol>
+<ol><li>A linear transformation of the input vector $\vec{x}$</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Arthur Cayley and matrix theory: <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Matrix_(mathematics)</a>)</li><li>William Rowan Hamilton and quaternions: <a href="https://en.wikipedia.org/wiki/Quaternion" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Quaternion</a></li><li>Determinants and linear systems: <a href="https://en.wikipedia.org/wiki/Determinant" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Determinant</a></li><li>Matrix multiplication and computational complexity: <a href="https://en.wikipedia.org/wiki/Matrix_multiplication" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Matrix_multiplication</a></li><li>GPU and matrix computation: <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Graphics_processing_unit</a></li><li>AlexNet and deep learning: <a href="https://en.wikipedia.org/wiki/AlexNet" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/AlexNet</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-089-complex-numbers/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Complex Numbers — The Imaginary Made Real</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-091-non-euclidean-geometry/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Non-Euclidean Geometry — When Parallel Lines Meet</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

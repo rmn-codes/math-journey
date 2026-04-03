@@ -1,0 +1,267 @@
+---
+worldNumber: 4
+world: world-04-trigonometry-astronomy-and-the-heavens
+chapterNumber: 56
+filename: ch-056-graphs-of-sine-and-cosine.mdx
+title: "Graphs of Sine and Cosine"
+subtitle: "The wave that runs through sound, light, tides, and heartbeats"
+historicalPeriod: "1700s–1800s"
+estimatedTimeMinutes: 40
+mainConcepts: ["sine graph", "cosine graph", "amplitude", "period", "phase shift", "vertical shift", "periodic function"]
+learningObjectives:
+  - "Identify amplitude, period, phase shift, and vertical shift from an equation"
+  - "Graph transformations of sine and cosine"
+  - "Write an equation from a graph"
+  - "Interpret sine waves in real contexts"
+---
+
+## Story Hook
+
+In 1822, a French mathematician named Joseph Fourier made a discovery so profound that it changed the course of science and engineering. He proved that any periodic signal — any repeating pattern, no matter how complicated — can be written as a sum of sine and cosine waves of different frequencies and amplitudes.
+
+This is Fourier's Theorem, and it means that if you understand the graph of $y = \sin x$, you understand the mathematical skeleton of a heartbeat, a musical note, a radio wave, the motion of a pendulum, and the tides of the ocean. Every one of these phenomena is built from sines and cosines.
+
+Today, Fourier analysis powers the technology in your pocket. Every MP3 player uses it to compress music. Every MRI scanner uses it to reconstruct images from raw data. Every cell phone uses it to transmit signals. Understanding the graphs of sine and cosine is the first step to understanding the modern world.
+
+## Why It Matters
+
+The sine and cosine graphs are perhaps the most important periodic curves in mathematics. A periodic function is one that repeats. The sine and cosine functions repeat forever, over and over, with perfect regularity.
+
+Once you master the graphs of $y = \sin x$ and $y = \cos x$, you can:
+
+- Model oscillating systems: springs, pendulums, waves in water
+- Understand AC electricity, which alternates sinusoidally
+- Compress and transmit audio and video signals
+- Analyze seismic waves from earthquakes
+- Track tides, sunspot cycles, and climate patterns
+- Design control systems in robotics and aircraft
+- Process signals in medical imaging
+
+The ability to transform and interpret these graphs is essential in science and engineering.
+
+## Historical Context
+
+The sine and cosine functions have ancient roots, but their graphs were not studied systematically until calculus developed in the 1600s and 1700s.
+
+Isaac Newton and Gottfried Leibniz, developing calculus independently in the late 1600s, showed that sine and cosine have beautiful properties under differentiation and integration: the derivative of $\sin x$ is $\cos x$, and vice versa (with a sign change). This made them realize that sine and cosine were more fundamental than anyone had suspected.
+
+Then, in the early 1800s, Joseph Fourier (1768–1830) made his revolutionary discovery: that any periodic function could be decomposed into a sum (or integral) of sines and cosines. This was controversial at first — Lagrange and Laplace were skeptical — but it turned out to be exactly right and became foundational to modern physics and engineering.
+
+By the late 1800s, the study of Fourier series had become central to mathematics, and the importance of the sine and cosine graphs was well established.
+
+## Core Concept
+
+The graph of $y = \sin x$ is a continuous wave that:
+
+- Oscillates between $-1$ and $1$ (its range)
+- Passes through the origin: $\sin(0) = 0$
+- Has period $2\pi$ (it repeats every $2\pi$ units)
+- Has zeros at $x = n\pi$ for any integer $n$
+
+The graph of $y = \cos x$ is identical to $\sin x$ but shifted left by $\frac{\pi}{2}$ (or equivalently, it passes through $(0, 1)$ instead of the origin).
+
+When we transform these basic graphs using amplitude, period, phase shift, and vertical shift, we can create any periodic oscillation we observe in nature.
+
+### The General Form
+
+$$y = a\sin(b(x - c)) + d$$
+
+where:
+- $|a|$ is the **amplitude** (half the distance between maximum and minimum)
+- $\frac{2\pi}{|b|}$ is the **period** (the distance for one complete cycle)
+- $c$ is the **phase shift** (horizontal shift; positive is right)
+- $d$ is the **vertical shift** (up if positive)
+
+The same form applies to cosine: $y = a\cos(b(x - c)) + d$.
+
+## Definitions and Formal Lesson
+
+### Properties of $y = \sin x$
+
+- **Domain**: All real numbers
+- **Range**: $[-1, 1]$
+- **Period**: $2\pi$
+- **Amplitude**: 1
+- **Zeros**: $x = n\pi$ (all integer multiples of $\pi$)
+- **Maximums**: $\sin x = 1$ at $x = \frac{\pi}{2} + 2\pi n$
+- **Minimums**: $\sin x = -1$ at $x = -\frac{\pi}{2} + 2\pi n$ (or $\frac{3\pi}{2} + 2\pi n$)
+
+### Properties of $y = \cos x$
+
+- **Domain**: All real numbers
+- **Range**: $[-1, 1]$
+- **Period**: $2\pi$
+- **Amplitude**: 1
+- **Zeros**: $x = \frac{\pi}{2} + n\pi$ (odd multiples of $\frac{\pi}{2}$)
+- **Maximums**: $\cos x = 1$ at $x = 2\pi n$
+- **Minimums**: $\cos x = -1$ at $x = \pi + 2\pi n$
+
+### Transformations
+
+For $y = a\sin(b(x - c)) + d$:
+
+| Parameter | Effect |
+|-----------|--------|
+| $a > 1$ | Stretches vertically (amplitude increases) |
+| $0 < a < 1$ | Compresses vertically (amplitude decreases) |
+| $a < 0$ | Reflects over the x-axis |
+| $b > 1$ | Compresses horizontally (period decreases) |
+| $0 < b < 1$ | Stretches horizontally (period increases) |
+| $c > 0$ | Shifts right |
+| $c < 0$ | Shifts left |
+| $d > 0$ | Shifts up |
+| $d < 0$ | Shifts down |
+
+### Key Ordered Pairs for $y = \sin x$
+
+| $x$ | $0$ | $\frac{\pi}{2}$ | $\pi$ | $\frac{3\pi}{2}$ | $2\pi$ |
+|-----|-----|--------|---------|----------|--------|
+| $\sin x$ | $0$ | $1$ | $0$ | $-1$ | $0$ |
+
+### Key Ordered Pairs for $y = \cos x$
+
+| $x$ | $0$ | $\frac{\pi}{2}$ | $\pi$ | $\frac{3\pi}{2}$ | $2\pi$ |
+|-----|-----|--------|---------|----------|--------|
+| $\cos x$ | $1$ | $0$ | $-1$ | $0$ | $1$ |
+
+## Worked Examples
+
+**Example 1: Graph $y = 2\sin x$.**
+
+Amplitude: $|2| = 2$. The graph oscillates between $-2$ and $2$ instead of $-1$ and $1$.
+
+Period: $\frac{2\pi}{1} = 2\pi$ (unchanged).
+
+The zeros remain at $x = n\pi$. The maximum is 2 (at $x = \frac{\pi}{2}$) and minimum is $-2$ (at $x = \frac{3\pi}{2}$).
+
+**Example 2: Graph $y = \sin(2x)$.**
+
+Amplitude: 1 (unchanged).
+
+Period: $\frac{2\pi}{2} = \pi$. The function completes one full cycle in $\pi$ units instead of $2\pi$. It compresses horizontally.
+
+Zeros: $2x = n\pi$, so $x = \frac{n\pi}{2}$. The zeros are closer together.
+
+**Example 3: Graph $y = \sin\left(x - \frac{\pi}{4}\right)$.**
+
+Amplitude: 1, Period: $2\pi$ (both unchanged).
+
+Phase shift: The graph shifts right by $\frac{\pi}{4}$.
+
+The zero at $x = 0$ moves to $x = \frac{\pi}{4}$. The maximum at $x = \frac{\pi}{2}$ moves to $x = \frac{\pi}{2} + \frac{\pi}{4} = \frac{3\pi}{4}$.
+
+**Example 4: Graph $y = \cos x + 2$.**
+
+Amplitude: 1, Period: $2\pi$ (both unchanged).
+
+Vertical shift: The entire graph shifts up by 2 units.
+
+The range becomes $[1, 3]$ instead of $[-1, 1]$. The maximum is 3 and minimum is 1.
+
+**Example 5: A buoy bobs up and down in the ocean. It rises and falls through a height of 6 feet with a period of 8 seconds. Write an equation for its vertical position as a function of time (in seconds), assuming it starts at the equilibrium position and moves upward.**
+
+Amplitude: $a = 3$ (half of 6 feet).
+
+Period: $8 = \frac{2\pi}{b}$, so $b = \frac{2\pi}{8} = \frac{\pi}{4}$.
+
+Starting at equilibrium and moving upward means we use cosine with a phase shift, or we can use sine: $y = 3\sin\left(\frac{\pi}{4}t\right)$.
+
+(Alternative: $y = 3\cos\left(\frac{\pi}{4}t - \frac{\pi}{2}\right) = 3\sin\left(\frac{\pi}{4}t\right)$.)
+
+## Practice Set
+
+1. Identify the amplitude and period of $y = 3\cos(4x)$.
+2. Write the equation of a sine function with amplitude 2, period $\pi$, and no shifts.
+3. Graph $y = -\sin x$ (on paper or describe it).
+4. What is the phase shift of $y = \cos\left(x + \frac{\pi}{3}\right)$?
+5. A spring oscillates vertically with equation $y = 0.5\cos(3t) + 2$. What are the maximum and minimum positions?
+6. Write an equation for $y = \cos x$ shifted right by $\frac{\pi}{4}$ and down by 1.
+7. Find the zeros of $y = \sin(2x)$ in $[0, 2\pi]$.
+8. The function $y = \sin(bx)$ has period 4. Find $b$.
+
+## Reasoning Task
+
+**Fourier's Theorem states that any periodic function can be written as a sum of sine and cosine functions.** Explain what this means in practical terms. If a musician plays a complex chord (multiple notes at once), why would representing it as a sum of sines and cosines be useful? What information would each sine or cosine term carry?
+
+## Application
+
+A heartbeat can be approximately modeled as a periodic function. A typical resting heart rate is 60 beats per minute, meaning one complete heartbeat cycle takes 1 second.
+
+Suppose the blood pressure oscillates between a minimum of 80 mmHg and a maximum of 120 mmHg. Write an equation for the blood pressure as a function of time $t$ (in seconds), assuming the pressure is at its minimum at $t = 0$ and increases from there.
+
+**Solution:**
+
+Amplitude: $a = \frac{120 - 80}{2} = 20$.
+
+Vertical shift: $d = \frac{120 + 80}{2} = 100$ (the midline).
+
+Period: 1 second $= \frac{2\pi}{b}$, so $b = 2\pi$.
+
+Starting at minimum means using cosine with a negative amplitude (or negative cosine):
+
+$$P(t) = 100 - 20\cos(2\pi t)$$
+
+or equivalently:
+
+$$P(t) = 100 + 20\cos(2\pi t + \pi)$$
+
+At $t = 0$: $P(0) = 100 - 20(1) = 80$ mmHg (minimum). ✓
+
+At $t = 0.5$: $P(0.5) = 100 - 20(-1) = 120$ mmHg (maximum). ✓
+
+## Recap
+
+- **Sine graph**: passes through origin, period $2\pi$, oscillates between $-1$ and $1$.
+- **Cosine graph**: passes through $(0,1)$, same period and amplitude, phase-shifted by $\frac{\pi}{2}$.
+- **Amplitude** $|a|$: controls the vertical stretch; **Period** $\frac{2\pi}{|b|}$: controls the horizontal stretch.
+- **Phase shift** $c$: moves the graph left (negative) or right (positive).
+- **Vertical shift** $d$: moves the graph up or down.
+- General form: $y = a\sin(b(x-c)) + d$ (or use cosine).
+- These graphs model all periodic phenomena: waves, oscillations, and cycles.
+
+## Unlock Quiz
+
+1. What is the amplitude of $y = \frac{1}{2}\sin x$?
+   - $\frac{1}{2}$
+   - $1$
+   - $2$
+   - $\frac{\pi}{2}$
+
+2. What is the period of $y = \sin(3x)$?
+   - $2\pi$
+   - $\frac{2\pi}{3}$
+   - $3$
+   - $6\pi$
+
+3. The graph of $y = \cos(x - \frac{\pi}{2})$ is equivalent to which function?
+   - $y = \sin x$
+   - $y = -\sin x$
+   - $y = \cos x$
+   - $y = -\cos x$
+
+4. If a periodic function has amplitude 4 and period 6, and is in the form $y = a\sin(bx)$, what are $a$ and $b$?
+   - $a = 4$, $b = \frac{\pi}{3}$
+   - $a = 4$, $b = \frac{2\pi}{6}$
+   - $a = 4$, $b = 6$
+   - $a = 2$, $b = \frac{\pi}{3}$
+
+<details>
+<summary>Answers</summary>
+
+1. **$\frac{1}{2}$** — The amplitude is the absolute value of the coefficient of sine: $\left|\frac{1}{2}\right| = \frac{1}{2}$.
+
+2. **$\frac{2\pi}{3}$** — Period $= \frac{2\pi}{|b|} = \frac{2\pi}{3}$.
+
+3. **$y = \sin x$** — We know that $\sin x = \cos\left(x - \frac{\pi}{2}\right)$ (cosine shifted right by $\frac{\pi}{2}$ equals sine).
+
+4. **$a = 4$, $b = \frac{\pi}{3}$** — Amplitude $a = 4$. Period $6 = \frac{2\pi}{b}$, so $b = \frac{2\pi}{6} = \frac{\pi}{3}$.
+
+</details>
+
+## Source Notes
+
+- [Joseph Fourier - Wikipedia](https://en.wikipedia.org/wiki/Joseph_Fourier)
+- [Fourier Series - Wikipedia](https://en.wikipedia.org/wiki/Fourier_series)
+- [Sine and Cosine - Wikipedia](https://en.wikipedia.org/wiki/Sine_and_cosine)
+- [Periodic Function - Wikipedia](https://en.wikipedia.org/wiki/Periodic_function)
+- [History of Trigonometry - Wikipedia](https://en.wikipedia.org/wiki/History_of_trigonometry)

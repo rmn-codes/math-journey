@@ -1,0 +1,286 @@
+---
+worldNumber: 3
+world: world-03-coordination-space-and-functions
+chapterNumber: 51
+title: Systems of Equations — A Graphical View
+subtitle: Where two lines meet — and what it means when they don't
+historicalPeriod: 1800s, Europe
+estimatedTimeMinutes: 35
+mainConcepts:
+  - system of equations
+  - intersection
+  - consistent
+  - inconsistent
+  - dependent
+  - substitution
+  - elimination
+learningObjectives:
+  - Solve systems graphically by finding intersection points
+  - Identify consistent, inconsistent, and dependent systems
+  - Apply substitution and elimination
+  - Model real situations with systems
+---
+
+## Story Hook
+
+Two trains leave from different cities, traveling toward each other at different speeds. One leaves City A at 60 mph heading east. The other leaves City B at 50 mph heading west. The cities are 220 miles apart.
+
+When will they meet? Where?
+
+This is a system of equations—two constraints, one question. The graphical answer is crystal clear: where the two distance-time lines cross. At that point, both trains are at the same location at the same time.
+
+Systems of equations appear everywhere: business (break-even analysis), physics (collisions), economics (supply and demand), and engineering. This chapter teaches you to visualize and solve them.
+
+## Why It Matters
+
+Systems of equations let you:
+
+- **Solve real constraints together:** Business must satisfy cost AND profit goals. You can't ignore one.
+- **Find breaking points:** Where does cost equal revenue (break-even)? Where do supply and demand balance?
+- **Model complex situations:** A single equation often isn't enough. Multiple equations capture the full picture.
+- **Verify solutions:** If your answer doesn't satisfy both equations, it's wrong. The graph shows this immediately.
+
+## Historical Context
+
+The graphical method of solving systems emerged in the 1600s with the development of coordinate geometry by Descartes and Fermat. But it was the 1800s—the industrial age—that gave systems of equations their practical power. Engineers and economists used systems to optimize production, manage resources, and plan transportation networks. Today, systems of equations are solved by computers in real time: traffic lights adjust based on flow (a system), airlines optimize routes (a massive system), and climate models involve millions of interacting equations.
+
+## Core Concept
+
+A **system of linear equations** is a collection of two or more linear equations. The solution is a set of values that satisfies every equation simultaneously.
+
+Consider a system of two equations with two unknowns:
+$$\begin{cases}
+2x + y = 5 \\
+x - y = 1
+\end{cases}$$
+
+**Graphically:** Each equation represents a line. The solution is the point where the lines intersect.
+
+**Three possible outcomes:**
+
+1. **One solution:** The lines cross at exactly one point (consistent and independent). The system has a unique solution.
+
+2. **No solution:** The lines are parallel and never meet (inconsistent). There's no value of $x$ and $y$ that satisfies both equations.
+
+3. **Infinitely many solutions:** The lines are identical—the same line written two ways (consistent and dependent). Every point on the line is a solution.
+
+## Definitions and Formal Lesson
+
+**System of linear equations:** Two or more linear equations involving the same variables.
+
+**Solution of a system:** A set of values for the variables that makes every equation true simultaneously.
+
+**Consistent system:** A system with at least one solution.
+
+**Inconsistent system:** A system with no solution (parallel lines).
+
+**Independent equations:** Equations that are not scalar multiples of each other. They represent different lines.
+
+**Dependent equations:** Equations that are scalar multiples of each other. They represent the same line.
+
+**Graphical solution:** Plot both lines on a coordinate plane. The solution is the intersection point (if it exists).
+
+**Algebraic solution by substitution:**
+1. Solve one equation for one variable.
+2. Substitute that expression into the other equation.
+3. Solve for the remaining variable.
+4. Back-substitute to find the other variable.
+
+**Algebraic solution by elimination:**
+1. Multiply one or both equations by constants so that one variable has the same coefficient (with opposite signs).
+2. Add or subtract the equations to eliminate that variable.
+3. Solve for the remaining variable.
+4. Back-substitute to find the other variable.
+
+## Worked Examples
+
+**Example 1: Graphical solution**
+
+Solve the system graphically:
+$$\begin{cases}
+y = 2x - 1 \\
+y = -x + 2
+\end{cases}$$
+
+Plot the first line: $y = 2x - 1$ has slope 2 and $y$-intercept $-1$.
+Plot the second line: $y = -x + 2$ has slope $-1$ and $y$-intercept $2$.
+
+The lines intersect at the point $(1, 1)$.
+
+**Verify:** $y = 2(1) - 1 = 1$ ✓ and $y = -(1) + 2 = 1$ ✓
+
+So the solution is $(x, y) = (1, 1)$.
+
+**Example 2: Substitution method**
+
+Solve the system:
+$$\begin{cases}
+3x + y = 7 \\
+2x - y = 3
+\end{cases}$$
+
+From the first equation, solve for $y$:
+$$y = 7 - 3x$$
+
+Substitute into the second equation:
+$$2x - (7 - 3x) = 3$$
+$$2x - 7 + 3x = 3$$
+$$5x = 10$$
+$$x = 2$$
+
+Back-substitute to find $y$:
+$$y = 7 - 3(2) = 7 - 6 = 1$$
+
+The solution is $(x, y) = (2, 1)$.
+
+**Example 3: Elimination method**
+
+Solve the system:
+$$\begin{cases}
+2x + 3y = 12 \\
+3x + 2y = 13
+\end{cases}$$
+
+Multiply the first equation by 3: $6x + 9y = 36$.
+Multiply the second equation by $-2$: $-6x - 4y = -26$.
+
+Add the equations:
+$$(6x + 9y) + (-6x - 4y) = 36 - 26$$
+$$5y = 10$$
+$$y = 2$$
+
+Substitute back into the first equation:
+$$2x + 3(2) = 12$$
+$$2x + 6 = 12$$
+$$2x = 6$$
+$$x = 3$$
+
+The solution is $(x, y) = (3, 2)$.
+
+**Example 4: No solution (parallel lines)**
+
+Solve the system:
+$$\begin{cases}
+y = 2x + 1 \\
+y = 2x - 3
+\end{cases}$$
+
+Both lines have slope 2 but different $y$-intercepts. They are parallel and never meet. There is no solution.
+
+**Example 5: Infinitely many solutions (dependent equations)**
+
+Solve the system:
+$$\begin{cases}
+2x + y = 4 \\
+4x + 2y = 8
+\end{cases}$$
+
+Notice the second equation is exactly 2 times the first. They represent the same line. Any point on the line $2x + y = 4$ is a solution. There are infinitely many solutions.
+
+## Practice Set
+
+Solve each system using any method (graphical, substitution, or elimination). Always verify your solution in both equations.
+
+1. $\begin{cases} x + y = 5 \\ 2x - y = 4 \end{cases}$
+   - Try elimination by adding the equations.
+   - Check your solution: does $(x, y)$ satisfy both?
+
+2. $\begin{cases} y = 3x - 2 \\ y = -x + 6 \end{cases}$
+   - These are already solved for $y$. What does this tell you?
+   - Use substitution or recognize these are lines in slope-intercept form.
+
+3. $\begin{cases} 2x + 3y = 6 \\ 4x - 3y = 12 \end{cases}$
+   - Notice the $y$ terms: $+3y$ and $-3y$. Elimination is quick.
+   - Solve, then back-substitute.
+
+4. $\begin{cases} x - 2y = 3 \\ 3x - 6y = 9 \end{cases}$
+   - Multiply the first equation by 3. What do you get?
+   - What type of system is this? (Consistent and dependent? Inconsistent?)
+
+5. $\begin{cases} y = x + 1 \\ y = x - 2 \end{cases}$
+   - Compare the equations carefully.
+   - What is the relationship between the lines? What type of system is this?
+
+6. **Challenge:** $\begin{cases} 3x + 2y = 11 \\ x - y = 2 \end{cases}$
+   - Solve using substitution: from the second equation, express $x$ in terms of $y$.
+   - Substitute into the first and solve.
+
+## Reasoning Task
+
+**The Coffee Shop Problem:**
+
+Two coffee shops open on the same street. Shop A charges $3 per coffee with a $200 daily overhead cost. Shop B charges $2.50 per coffee with a $100 daily overhead cost. Their daily revenue functions are:
+
+- Shop A: $R_A(x) = 3x - 200$ (where $x$ is cups sold)
+- Shop B: $R_B(x) = 2.5x - 100$
+
+At what point (if ever) do the two shops have equal daily revenue? Interpret your answer. If you were an investor, which shop would you choose, and why?
+
+## Application
+
+**Real-world example: Break-even analysis**
+
+A small publisher wants to print a new book. The fixed costs (design, setup) are $5,000. Each book costs $8 to print. They sell each book for $20.
+
+**Cost function:** $C(x) = 5000 + 8x$ (fixed + variable cost)
+**Revenue function:** $R(x) = 20x$ (price × quantity)
+
+Solve the system:
+$$\begin{cases}
+y = 5000 + 8x \\
+y = 20x
+\end{cases}$$
+
+Subtract: $0 = 5000 + 8x - 20x = 5000 - 12x$
+
+So $x = \frac{5000}{12} \approx 417$ books.
+
+The break-even point is at 417 books. Below this, they lose money. Above this, they profit. This single insight—the intersection—determines the business strategy.
+
+## Recap
+
+Systems of equations capture multiple constraints simultaneously. The graphical method shows the answer visually: it's where the lines meet. Algebraically, substitution and elimination are systematic tools for finding that intersection. Three outcomes exist: one solution (consistent, independent), no solution (inconsistent), or infinitely many (consistent, dependent). Understanding systems is essential for modeling real-world situations where multiple conditions must be satisfied at once.
+
+## Unlock Quiz
+
+**Question 1:** What does the solution to a system of two linear equations represent graphically?
+
+- The $x$-intercept of one line
+- The point where the two lines intersect
+- The slope of the average line
+- The area between the two lines
+
+<details>
+<summary>Answer</summary>
+The point where the two lines intersect
+</details>
+
+**Question 2:** A system has two parallel lines with different $y$-intercepts. Which statement is true?
+
+- The system is consistent and independent
+- The system is consistent and dependent
+- The system is inconsistent
+- The system has infinitely many solutions
+
+<details>
+<summary>Answer</summary>
+The system is inconsistent
+</details>
+
+**Question 3:** Using elimination, solve: $\begin{cases} 2x + y = 7 \\ x - y = 2 \end{cases}$
+
+- $(x, y) = (3, 1)$
+- $(x, y) = (1, 5)$
+- $(x, y) = (2, 3)$
+- $(x, y) = (4, -1)$
+
+<details>
+<summary>Answer</summary>
+$(x, y) = (3, 1)$
+</details>
+
+## Source Notes
+
+- Khan Academy: "Systems of Equations" — https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations
+- Wikipedia: "System of Linear Equations" — https://en.wikipedia.org/wiki/System_of_linear_equations
+- OpenStax: "Algebra" Chapter 4 — https://openstax.org/books/algebra-and-trigonometry/pages/4-1-systems-of-linear-equations-two-variables

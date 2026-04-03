@@ -1,0 +1,281 @@
+---
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+chapter: 70
+title: The Integral — Measuring Accumulation
+subtitle: The area under a curve — and how to add up infinitely many infinitely thin slices
+slug: ch-070-the-integral
+historicalPeriod: Ancient–1600s
+estimatedTimeMinutes: 40
+mainConcepts:
+  - Riemann sum
+  - definite integral
+  - area under a curve
+  - net area
+  - average value
+learningObjectives:
+  - Estimate areas using left, right, and midpoint Riemann sums
+  - Set up definite integrals
+  - Apply properties of definite integrals
+  - Interpret the integral as accumulated change
+  - Find average value of a function
+---
+
+## Story Hook
+
+Around 250 BCE, Archimedes sits in Sicily, thinking about parabolas. He wants to find the area enclosed by a parabolic curve and a straight line. Straight lines and circles — he can handle those. But a parabola? No formula exists.
+
+So he invents one.
+
+He imagines inscribing triangles under the parabola, then inscribing more triangles in the gaps, and more, and more — each layer adding area but never quite reaching the true answer. Then he does the same from above, with triangles circumscribing the parabola. Squeezed between these two towers of triangles, the true area must lie. As he adds more and more triangles, the gap shrinks to nothing.
+
+He calls it the method of exhaustion.
+
+Two thousand years later, Riemann formalises Archimedes' intuition. Instead of triangles, use rectangles. Instead of stopping, let the number of rectangles become infinite. The limit of these Riemann sums is called the **definite integral** — and it is exactly the inverse of the derivative.
+
+## Why It Matters
+
+Accumulation is everywhere. A reservoir fills at a rate that changes throughout the day — integral tells you the total volume added. A car's speed changes continuously — integral tells you the distance travelled. A disease spreads at a changing rate — integral predicts the cumulative number infected. Money in a savings account grows with compound interest — integral computes the total wealth.
+
+Whenever you accumulate something that arrives at a changing rate, you need an integral.
+
+## Historical Context
+
+Archimedes' method was brilliant but exhausting — literally. Computing even one area required pages of geometric argument. Mathematicians knew there had to be a better way.
+
+In the 1600s, as calculus was being born, mathematicians noticed something miraculous: areas and slopes are linked. A function's area from $a$ to $x$ changes at exactly the rate of the function's height at $x$. This discovery — the Fundamental Theorem of Calculus — transformed integration from a laborious geometric procedure into something almost mechanical. Instead of constructing infinite towers of polygons like Archimedes, mathematicians could now evaluate a single antiderivative at two points.
+
+By the 1800s, Riemann, Lebesgue, and others formalised the integral with rigour. Riemann sums provided a precise definition: the integral is the limit of sums of rectangles. Today it underlies probability, physics, engineering, and economics. When NASA engineers in the 1960s needed the volume of the Saturn V's curved fuel tanks, they used integration—the same concept Archimedes had intuited two millennia before.
+
+## Core Concept
+
+Imagine a function $f(x)$ drawn on a graph from $x = a$ to $x = b$. We want the area between the curve and the $x$-axis.
+
+**The Riemann Sum Idea:** Divide the interval $[a, b]$ into $n$ equal subintervals, each of width $\Delta x = \frac{b-a}{n}$. On each subinterval, draw a rectangle. The height of the rectangle can be:
+- The function's value at the **left endpoint** (left Riemann sum),
+- The function's value at the **right endpoint** (right Riemann sum), or
+- The function's value at the **midpoint** (midpoint Riemann sum).
+
+Sum all the rectangle areas:
+$$\text{Riemann sum} = \sum_{i=1}^{n} f(x_i^*) \cdot \Delta x$$
+
+where $x_i^*$ is the chosen point in the $i$-th subinterval.
+
+As $n \to \infty$, $\Delta x \to 0$, and the Riemann sum approaches the **definite integral**:
+$$\int_a^b f(x)\,dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i^*) \cdot \Delta x$$
+
+This integral represents the signed area: area above the $x$-axis counts positive; area below counts negative.
+
+## Definitions and Formal Lesson
+
+**Definite Integral:** The limit of Riemann sums as the number of subintervals approaches infinity. Notation: $\int_a^b f(x)\,dx$.
+
+**Integrand:** The function $f(x)$ being integrated.
+
+**Limits of Integration:** The values $a$ (lower) and $b$ (upper) that define the interval.
+
+**Riemann Sum:** A sum of the form $\sum_{i=1}^{n} f(x_i^*) \cdot \Delta x$, used to approximate the area. The three common types are left, right, and midpoint Riemann sums.
+
+**Net Area:** The signed area, counting upward as positive and downward as negative. For a function that dips below the $x$-axis, regions below contribute negatively to the integral.
+
+**Partition:** A division of an interval $[a, b]$ into subintervals. The width of each subinterval is $\Delta x = \frac{b-a}{n}$.
+
+**Properties of Definite Integrals:**
+1. Linearity: $\int_a^b [cf(x) + g(x)]\,dx = c\int_a^b f(x)\,dx + \int_a^b g(x)\,dx$.
+2. Additivity: $\int_a^c f(x)\,dx + \int_c^b f(x)\,dx = \int_a^b f(x)\,dx$.
+3. Zero interval: $\int_a^a f(x)\,dx = 0$.
+4. Reversal: $\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx$.
+
+**Average Value of $f$ on $[a, b]$:**
+$$\text{Average} = \frac{1}{b-a}\int_a^b f(x)\,dx$$
+
+This is the height of a rectangle with width $(b-a)$ that has the same area as the region under $f$. In other words, it represents the typical or mean height of the function over the interval.
+
+**Convergence:** As $n \to \infty$, Riemann sums converge to the definite integral for functions that are continuous or have only finitely many discontinuities.
+
+## Worked Examples
+
+**Example 1: Left and Right Riemann Sums**
+
+Estimate $\int_0^2 (x^2 + 1)\,dx$ using 4 subintervals.
+
+With $n = 4$, $\Delta x = \frac{2-0}{4} = 0.5$. Subintervals: $[0, 0.5], [0.5, 1], [1, 1.5], [1.5, 2]$.
+
+Function values: $f(0) = 1$, $f(0.5) = 1.25$, $f(1) = 2$, $f(1.5) = 3.25$, $f(2) = 5$.
+
+**Left Riemann sum** (heights at left endpoints):
+$$L_4 = (1 + 1.25 + 2 + 3.25) \cdot 0.5 = 7.5 \cdot 0.5 = 3.75$$
+
+**Right Riemann sum** (heights at right endpoints):
+$$R_4 = (1.25 + 2 + 3.25 + 5) \cdot 0.5 = 11.5 \cdot 0.5 = 5.75$$
+
+The true area lies between 3.75 and 5.75. (The exact value is $\frac{14}{3} \approx 4.67$.)
+
+**Example 2: Net Area (Signed Area)**
+
+Compute $\int_0^{2\pi} \sin(x)\,dx$.
+
+The sine function is positive on $[0, \pi]$ (area above the axis) and negative on $[\pi, 2\pi]$ (area below the axis). By symmetry, the area above equals the area below, so:
+$$\int_0^{2\pi} \sin(x)\,dx = 0$$
+
+The net area is zero because positive and negative regions cancel.
+
+**Example 3: Average Value**
+
+Find the average value of $f(x) = x^2$ on $[0, 3]$.
+
+$$\text{Average} = \frac{1}{3-0}\int_0^3 x^2\,dx$$
+
+We'll need the antiderivative later, but for now think of it as the height of a rectangle over $[0, 3]$ with area equal to the region under $x^2$.
+
+**Example 4: Riemann Sum with Midpoint Rule**
+
+Estimate $\int_0^1 e^x\,dx$ using the midpoint Riemann sum with $n = 2$ subintervals.
+
+With $n = 2$, $\Delta x = \frac{1-0}{2} = 0.5$. Subintervals: $[0, 0.5]$ and $[0.5, 1]$.
+
+Midpoints: $x_1^* = 0.25$ and $x_2^* = 0.75$.
+
+Function values: $f(0.25) = e^{0.25} \approx 1.284$ and $f(0.75) = e^{0.75} \approx 2.117$.
+
+$$M_2 = (1.284 + 2.117) \cdot 0.5 = 3.401 \cdot 0.5 \approx 1.701$$
+
+The true value is $e - 1 \approx 1.718$, so the midpoint rule gives a good approximation.
+
+**Example 5: Interpreting Integral as Accumulation**
+
+A factory produces bicycles at a rate of $r(t) = 100 + 10t$ units per day, where $t$ is days since January 1st. How many bicycles are produced in the first 10 days?
+
+The total production is:
+$$P = \int_0^{10} (100 + 10t)\,dt$$
+
+This is the accumulated production — we are "adding up" all the bicycles produced at the changing rate $r(t)$.
+
+(We'll evaluate this integral once we learn the Fundamental Theorem.)
+
+**Example 6: Comparing Riemann Sum Accuracy**
+
+Compare all three Riemann sums for $f(x) = x$ on $[0, 2]$ using $n = 2$ subintervals.
+
+With $n = 2$, $\Delta x = 1$. Subintervals: $[0, 1]$ and $[1, 2]$.
+
+Function values: $f(0) = 0$, $f(1) = 1$, $f(2) = 2$.
+
+**Left Riemann sum:** $L_2 = (0 + 1) \cdot 1 = 1$.
+
+**Right Riemann sum:** $R_2 = (1 + 2) \cdot 1 = 3$.
+
+**Midpoint Riemann sum:** $f(0.5) = 0.5$ and $f(1.5) = 1.5$, so $M_2 = (0.5 + 1.5) \cdot 1 = 2$.
+
+The true integral (by geometry, a triangle) is $\frac{1}{2} \cdot 2 \cdot 2 = 2$. The midpoint rule is exact! For linear functions, the midpoint rule is always exact.
+
+## Practice Set
+
+1. For $f(x) = 2x$ on $[0, 2]$ with $n = 4$ subintervals, what is the left Riemann sum?
+   - 2
+   - 3
+   - 4
+   - 6
+
+2. Which Riemann sum — left, right, or midpoint — is most accurate for the integral of a concave-down function?
+   - Left
+   - Right
+   - Midpoint
+   - All equally accurate
+
+3. What does $\int_0^0 f(x)\,dx$ equal?
+   - The value of $f(0)$
+   - Zero
+   - Undefined
+   - The area from 0 to 0
+
+4. If $\int_a^b f(x)\,dx = 10$ and $\int_a^c f(x)\,dx = 15$, what is $\int_b^c f(x)\,dx$?
+   - 5
+   - 25
+   - -5
+   - Cannot be determined
+
+5. For a positive function on $[a, b]$, which is true: $\int_a^b f(x)\,dx$ is always positive?
+   - Yes, always
+   - No, only if $f$ is increasing
+   - No, only if $b > a$
+   - Both (b) and (c)
+
+6. The midpoint Riemann sum for an increasing, concave-up function on $[0, 1]$ with $n = 2$ will?
+   - Overestimate the integral
+   - Underestimate the integral
+   - Equal the integral exactly
+   - Oscillate above and below the true value
+
+## Reasoning Task
+
+A water tank has a pipe that lets water flow out. The flow rate (in litres per minute) is given by $r(t) = 10 - 0.5t$ for $0 \leq t \leq 10$ minutes.
+
+How much water (in litres) flows out during the 10 minutes? Set up the integral and explain why integration represents the accumulated volume.
+
+**Hint:** Accumulation means adding up small changes. If water flows at rate $r(t)$ litres/minute, then in a tiny time $dt$, the volume is $r(t) \cdot dt$.
+
+## Application
+
+Engineers designing dams must know how much water a river delivers during a flood. If they have a graph of flow rate over time, the area under that curve — computed via integration — tells them the total volume of water. Similarly, when epidemiologists model disease spread, the integral of the infection rate gives the cumulative number of infections. In finance, the integral of a growth rate function yields total wealth accumulated over time.
+
+## Recap
+
+The integral measures accumulation by summing infinitely many infinitely thin slices. Riemann sums approximate this with finitely many rectangles. As the number of rectangles increases, the Riemann sum approaches the definite integral. Archimedes used this idea geometrically 2,000 years ago; Riemann formalised it. Properties of integrals allow us to split regions, factor constants, and reverse limits. The average value of a function can be computed as an integral divided by the interval width. Integration and differentiation are inverses — revealed by the Fundamental Theorem.
+
+## Unlock Quiz
+
+1. What is a Riemann sum?
+   - The exact area under a curve
+   - An approximation of area using rectangles
+   - The derivative of a function
+   - The sum of all function values
+
+2. Which statement is true about $\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx$?
+   - Reversing the limits changes the sign
+   - The integrals are always equal
+   - It's only true for positive functions
+   - It's only true for negative functions
+
+3. If $f(x)$ is concave up on $[a, b]$, which Riemann sum underestimates the true area?
+   - Left Riemann sum
+   - Right Riemann sum
+   - Midpoint Riemann sum
+   - All three overestimate
+
+4. The average value of $f(x) = 3x$ on $[0, 4]$ is?
+   - 3
+   - 6
+   - 12
+   - 24
+
+5. As $n \to \infty$ in a Riemann sum, what happens to $\Delta x$?
+   - It increases
+   - It approaches zero
+   - It equals the number of intervals
+   - It becomes the height of rectangles
+
+6. In Archimedes' method of exhaustion, which approximation is guaranteed to be less than the true area?
+   - Inscribed polygons
+   - Circumscribed polygons
+   - The average of both
+   - Neither; both can exceed the true area
+
+<details>
+<summary>Answers</summary>
+
+1. An approximation of area using rectangles
+2. Reversing the limits changes the sign
+3. Left Riemann sum
+4. 6
+5. It approaches zero
+6. Inscribed polygons
+
+</details>
+
+## Source Notes
+
+- Archimedes and the method of exhaustion: https://en.wikipedia.org/wiki/Method_of_exhaustion
+- Riemann integration: https://en.wikipedia.org/wiki/Riemann_integral
+- History of calculus: https://en.wikipedia.org/wiki/History_of_calculus
+- Applications of integration in engineering: https://en.wikipedia.org/wiki/Integral

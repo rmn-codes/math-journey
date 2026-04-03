@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prime Numbers — The Atoms of Arithmetic — Math Journey</title>
+    <meta name="description" content="The building blocks of every number — and one of mathematics&#x27; deepest mysteries" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 0 · Chapter 9</p>
+        <h1>Prime Numbers — The Atoms of Arithmetic</h1>
+        <p class="hero-copy">The building blocks of every number — and one of mathematics&#x27; deepest mysteries</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>foundational</span>
+          <span>Greece, global</span>
+          <span>300 BCE – present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Define prime and composite numbers and identify them</li><li>Use the Sieve of Eratosthenes to find primes up to 100</li><li>Write the prime factorization of any whole number</li><li>State the Fundamental Theorem of Arithmetic</li><li>Use prime factorization to find GCF and LCM</li><li>Appreciate that prime numbers are still a source of open mathematical questions</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Picture the great library of Alexandria, around 240 BCE. Eratosthenes, the chief librarian, sits at a wooden table with a wax tablet marked with numbers from 2 to 100. He begins a remarkable process: methodically crossing out numbers that <em>aren&#x27;t</em> prime, the way a baker sieves flour to remove lumps. He crosses out all multiples of 2, then all multiples of 3, then 5, then 7. What remains? The primes — the numbers that cannot be divided by any number except 1 and themselves.</p>
+<p>His method, called the <strong>Sieve of Eratosthenes</strong>, is one of the oldest algorithms in human history. It&#x27;s still one of the most elegant. And it tells us something profound: primes are like atoms. Every whole number above 1 is either prime itself or built from primes by multiplication. Nothing else is possible.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Prime numbers are the atoms of arithmetic. Just as physicists break matter down to atoms to understand it, mathematicians break numbers down to primes to understand their structure. This isn&#x27;t abstract trivia — primes run through modern life invisibly.</p>
+<p>Every time you log into a website securely, your browser and the server negotiate using prime numbers. The encryption that protects your passwords, your bank account, and your medical records depends on the fact that very large numbers are extremely hard to factor (break into their prime pieces). Cryptographers choose two enormous primes, multiply them together, and use the result as part of a lock. Breaking the lock would require finding those original primes — a computation so hard that the most powerful computers in the world would take longer than the age of the universe.</p>
+<p>Primes also appear in the rhythms of nature: the mating cycles of certain insects, the spacing of petals on flowers, the tails of clock-mechanism design. They are far more than a classroom curiosity.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Euclid proved around 300 BCE that there are infinitely many primes — a stunning result that told mathematicians: no matter how far you count, primes never run out. The proof is so elegant that students still study it thousands of years later.</p>
+<p>Eratosthenes&#x27; sieve, written down in his work on prime-finding, has been refined but never fundamentally replaced. For over two millennia, it remained the fastest way to find all primes up to a given number.</p>
+<p>The modern era brought surprises. In the 1640s, Marin Mersenne studied primes of a special form: $2^p - 1$ where $p$ is prime. Some of these <em>Mersenne primes</em> are spectacular — enormous numbers that push the boundaries of what mathematicians can compute. The largest known prime today is a Mersenne prime with nearly 25 million digits.</p>
+<p>Even more mysterious: <strong>twin primes</strong> — pairs of primes that differ by 2, like 3 and 5, or 11 and 13, or 29 and 31. Do they go on forever? Mathematicians still don&#x27;t know. This is one of the greatest open questions in mathematics.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>prime number</strong> is a whole number greater than 1 that has exactly two factors: 1 and itself. A <strong>composite number</strong> has more than two factors.</p>
+<ul><li>Prime: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ...</li><li>Composite: 4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20, ...</li><li>Special case: 1 is neither prime nor composite.</li></ul>
+<p>Every composite number can be written as a product of primes. This is the <strong>Fundamental Theorem of Arithmetic</strong>: every integer greater than 1 is either prime itself or the unique product of prime numbers (ignoring order).</p>
+<p>For example:</p>
+<ul><li>$12 = 2^2 \times 3$</li><li>$100 = 2^2 \times 5^2$</li><li>$17 = 17$ (itself, since 17 is prime)</li></ul>
+<p>This factorization is unique — there&#x27;s exactly one way to write any composite number as a product of primes.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Prime Number:</strong> A natural number $p &gt; 1$ with exactly two positive divisors: 1 and $p$ itself.</p>
+<p><strong>Composite Number:</strong> A natural number $n &gt; 1$ with more than two positive divisors.</p>
+<p><strong>Prime Factorization:</strong> The expression of a composite number as a product of primes. Written in exponential form: $n = p_1^{a_1} \times p_2^{a_2} \times \cdots \times p_k^{a_k}$ where $p_1, p_2, \ldots, p_k$ are distinct primes and $a_i &gt; 0$.</p>
+<p><strong>Fundamental Theorem of Arithmetic:</strong> Every integer $n &gt; 1$ is either prime or can be uniquely expressed as a product of prime numbers (up to order).</p>
+<p><strong>Sieve of Eratosthenes:</strong> An algorithm to find all primes up to a given number $N$:</p>
+<ol><li>Write all integers from 2 to $N$.</li><li>Start with 2 (the smallest prime). Cross out all multiples of 2 (except 2 itself).</li><li>Move to the next uncrossed number (3). Cross out all multiples of 3 (except 3 itself).</li><li>Continue with 5, 7, and so on, until you&#x27;ve processed all primes up to $\sqrt{N}$.</li><li>All uncrossed numbers are prime.</li></ol>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Identifying Primes and Composites</strong></p>
+<p>Is 23 prime or composite?</p>
+<p>Check divisibility by numbers up to $\sqrt{23} \approx 4.8$: So test 2, 3, 4.</p>
+<ul><li>$23 \div 2 = 11.5$ (not a whole number)</li><li>$23 \div 3 = 7.67...$ (not a whole number)</li><li>$23 \div 4 = 5.75$ (not a whole number)</li></ul>
+<p>Since 23 has no divisors except 1 and itself, <strong>23 is prime</strong>.</p>
+<p><strong>Example 2: Prime Factorization Using a Factor Tree</strong></p>
+<p>Find the prime factorization of 60.</p>
+<pre><code>       60
+      /  \
+     6   10
+    / \   / \
+   2  3  2  5</code></pre>
+<p>Reading the bottom row: $60 = 2 \times 3 \times 2 \times 5 = 2^2 \times 3 \times 5$.</p>
+<p><strong>Example 3: Using Prime Factorization to Find GCF</strong></p>
+<p>Find GCF(72, 120) using prime factorization.</p>
+<p>$72 = 2^3 \times 3^2$ $120 = 2^3 \times 3 \times 5$</p>
+<p>The common prime factors are $2^3$ (appears in both) and $3^1$ (lowest power).</p>
+<p>$$\text{GCF}(72, 120) = 2^3 \times 3 = 8 \times 3 = 24$$</p>
+<p><strong>Example 4: Using Prime Factorization to Find LCM</strong></p>
+<p>Find LCM(72, 120) using prime factorization.</p>
+<p>$72 = 2^3 \times 3^2$ $120 = 2^3 \times 3 \times 5$</p>
+<p>For LCM, take each prime at its highest power: $2^3, 3^2, 5^1$.</p>
+<p>$$\text{LCM}(72, 120) = 2^3 \times 3^2 \times 5 = 8 \times 9 \times 5 = 360$$</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>List all prime numbers between 10 and 30.</li></ol>
+<ol><li>Write the prime factorization of 84 using a factor tree.</li></ol>
+<ol><li>Is 91 prime? (Hint: test divisibility by small primes up to $\sqrt{91} \approx 9.5$.)</li></ol>
+<ol><li>Use the prime factorization to find GCF(36, 60).</li></ol>
+<ol><li>Use the prime factorization to find LCM(36, 60).</li></ol>
+<ol><li>The Sieve of Eratosthenes: Mark all multiples of 2, 3, 5, and 7 in the list 2 through 30. Which numbers remain?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>You&#x27;re given two composite numbers: 40 and 75.</p>
+<p>a) Find the complete prime factorization of each using factor trees.</p>
+<p>b) Use your factorizations to find GCF(40, 75) and LCM(40, 75).</p>
+<p>c) Verify: multiply GCF × LCM. What do you notice about this product compared to $40 \times 75$?</p>
+<p>d) Is this relationship always true? Why might it be?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Real-World Scenario: Secure Messaging</strong></p>
+<p>When you send a private message online, your device often uses <strong>RSA encryption</strong>, which works like this:</p>
+<ol><li>A large prime number $p$ and another large prime number $q$ are chosen (each might have hundreds of digits).</li><li>The product $n = p \times q$ is public, but $p$ and $q$ are secret.</li><li>Someone wanting to send you a secret message uses $n$ to encrypt it.</li><li>Only you, who know the original primes $p$ and $q$, can decrypt it.</li></ol>
+<p>The security depends on a startling fact: while multiplying two primes is easy (even very large ones), <strong>factoring</strong> their product back to the original primes is fantastically hard. There is no known fast algorithm. A supercomputer attacking a 2048-bit RSA key would take centuries.</p>
+<p>This is why understanding primes became suddenly critical to modern security in the late 20th century. Primes, which seemed like pure mathematics with no application, became guardians of your personal information.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Prime numbers are the irreducible building blocks of arithmetic. The Sieve of Eratosthenes is an ancient, elegant algorithm for finding all primes up to any given number. The Fundamental Theorem of Arithmetic guarantees that every composite number has a unique prime factorization. Prime factorizations give us powerful tools: finding GCF by taking common primes at minimum power, finding LCM by taking all primes at maximum power. Modern cryptography, which protects global digital security, rests on the difficulty of factoring products of large primes. And after thousands of years of study, primes still hold mysteries — open questions like the Twin Prime Conjecture remind us that mathematics is never finished.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>Which of these is prime?</li></ol>
+<ul><li>12</li><li>17</li><li>21</li><li>35</li></ul>
+<ol><li>What is the prime factorization of 20?</li></ol>
+<ul><li>$2 \times 10$</li><li>$2^2 \times 5$</li><li>$4 \times 5$</li><li>$2 \times 2 \times 5$ (all equivalent to $2^2 \times 5$)</li></ul>
+<ol><li>Using prime factorization, find GCF(48, 80).</li></ol>
+<ul><li>8</li><li>16</li><li>24</li><li>40</li></ul>
+<ol><li>Using prime factorization, find LCM(12, 18).</li></ol>
+<ul><li>24</li><li>30</li><li>36</li><li>54</li></ul>
+<ol><li>In the Sieve of Eratosthenes, after crossing out all multiples of 2, 3, and 5, which numbers from 1 to 30 remain as primes?</li></ol>
+<ul><li>2, 3, 5, 7, 11, 13, 17, 19, 23, 29</li><li>7, 11, 13, 17, 19, 23, 29</li><li>1, 7, 11, 13, 17, 19, 23, 29</li><li>7, 11, 13, 17, 19, 23, 29, 31</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li><strong>17</strong> — 17 has no divisors except 1 and 17. (12 = 2² × 3, 21 = 3 × 7, 35 = 5 × 7 are all composite.)</li></ol>
+<ol><li><strong>$2^2 \times 5$</strong> — Prime factorization: 20 = 4 × 5 = 2 × 2 × 5 = $2^2 \times 5$.</li></ol>
+<ol><li><strong>16</strong> — $48 = 2^4 \times 3$ and $80 = 2^4 \times 5$. Common prime factors: $2^4 = 16$.</li></ol>
+<ol><li><strong>36</strong> — $12 = 2^2 \times 3$ and $18 = 2 \times 3^2$. LCM uses highest powers: $2^2 \times 3^2 = 4 \times 9 = 36$.</li></ol>
+<ol><li><strong>7, 11, 13, 17, 19, 23, 29</strong> — After removing multiples of 2, 3, 5, the remaining numbers from 2 to 30 are the seven primes listed. (Note: 1 is not prime.)</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Euclid, <em>Elements</em>, Book IX, Proposition 20 (circa 300 BCE). Proof that infinitely many primes exist.</li><li><a href="https://en.wikipedia.org/wiki/Prime_number" target="_blank" rel="noopener">Prime Number — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic" target="_blank" rel="noopener">Fundamental Theorem of Arithmetic — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="noopener">Sieve of Eratosthenes — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Mersenne_prime" target="_blank" rel="noopener">Mersenne Prime — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Twin_prime" target="_blank" rel="noopener">Twin Prime — Wikipedia</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-00-language-of-number/ch-008-factors-multiples-divisibility/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Factors, Multiples, and Divisibility</span></a><a class="pager-link pager-link--next" href="../../world-00-language-of-number/ch-010-fractions/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Fractions — Parts of a Whole</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

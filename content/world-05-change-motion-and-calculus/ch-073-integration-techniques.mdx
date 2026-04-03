@@ -1,0 +1,286 @@
+---
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+chapterNumber: 73
+chapterTitle: Integration Techniques
+subtitle: The art of antidifferentiation — strategies for integrals that resist direct rules
+historicalPeriod: 1700s–1800s
+estimatedTimeMinutes: 40
+---
+
+## Story Hook
+
+You're standing in your kitchen, and you realize you've left the stove on. The room is warming. You measure the temperature at different times and notice it follows a pattern — but the pattern isn't simple. To predict when the room will reach a dangerous temperature, you'd need to reverse the chain rule, undo a product, recognize a hidden trigonometric structure. That's integration techniques in a nutshell: the art of spotting disguised patterns and untangling them.
+
+Not every integral yields to the basic power rule or direct substitution. Mathematicians in the 1700s and 1800s — Leibniz, the Bernoulli family, Euler — spent decades developing clever strategies. Like detectives, they learned to see a complicated integral and ask: *What rule was this function likely created from?* Each technique is a way of working backward, of reversing a familiar operation from calculus to expose the hidden antiderivative.
+
+## Why It Matters
+
+In the real world, almost no integral is simple. Engineering, physics, chemistry, economics — all involve integrals that look messy. Without integration techniques, you'd be stuck. These methods are the difference between being able to solve a real problem and being stuck on the first step.
+
+When you see $\int x e^x \, dx$ or $\int \frac{1}{x^2 + 4x + 5} \, dx$, you need a playbook. The techniques in this chapter *are* that playbook.
+
+## Historical Context
+
+In the late 1600s, Newton and Leibniz invented calculus, but integration was hard. Differentiation was straightforward — take a derivative, apply the rules. But finding antiderivatives? That required *cleverness*. For the next century, mathematicians built a toolkit.
+
+Leibniz himself developed integration by parts, recognizing that if the product rule creates a derivative, it should be reversible. Euler, the most prolific mathematician who ever lived, devised methods for integrals of rational functions (fractions of polynomials) and trigonometric expressions. The Bernoullis developed substitution strategies.
+
+By the 1800s, a canon of techniques had solidified — the methods we use today. What's remarkable is that despite computers and symbolic algebra systems, these same techniques remain central to calculus because they teach *reasoning*: how to transform an unfamiliar problem into a familiar one.
+
+## Core Concept
+
+Integration techniques are **strategies for recognizing the structure hidden inside a complicated integral and transforming it into something you already know how to integrate**.
+
+The key insight: if a function was created by a differentiation rule, you can reverse that rule to integrate it. Every technique works by asking: *What rule made this?*
+
+### u-Substitution: Reversing the Chain Rule
+
+The chain rule says: if $y = f(g(x))$, then $\frac{dy}{dx} = f'(g(x)) \cdot g'(x)$.
+
+So if you integrate both sides:
+$$\int f'(g(x)) \cdot g'(x) \, dx = f(g(x)) + C$$
+
+This is **u-substitution**. You set $u = g(x)$, so $du = g'(x) \, dx$, and the integral becomes:
+$$\int f'(u) \, du = f(u) + C = f(g(x)) + C$$
+
+The art is recognizing which part of the integrand is $g(x)$ and which is $g'(x)$.
+
+### Integration by Parts: Reversing the Product Rule
+
+The product rule says: $(uv)' = u'v + uv'$.
+
+Integrate both sides:
+$$\int (u'v + uv') \, dx = uv + C$$
+
+Rearrange:
+$$\int u \, dv = uv - \int v \, du$$
+
+This is **integration by parts**. It trades one integral for another — useful when the new integral is simpler.
+
+The **LIATE rule** tells you how to choose $u$:
+- **L**ogarithmic functions
+- **I**nverse trig functions
+- **A**lgebraic (polynomial)
+- **T**rigonometric
+- **E**xponential
+
+Whichever comes first in LIATE, make that your $u$.
+
+### Trigonometric Integrals and Standard Forms
+
+Some integrals appear so often they're worth memorizing:
+$$\int \sin x \, dx = -\cos x + C$$
+$$\int \cos x \, dx = \sin x + C$$
+$$\int \sec^2 x \, dx = \tan x + C$$
+$$\int \tan x \, dx = -\ln|\cos x| + C = \ln|\sec x| + C$$
+$$\int \sec x \tan x \, dx = \sec x + C$$
+$$\int \csc^2 x \, dx = -\cot x + C$$
+$$\int \csc x \cot x \, dx = -\csc x + C$$
+
+When you spot a trigonometric integral, you're looking for these forms — or ways to transform the integral into them using identities like $\sin^2 x + \cos^2 x = 1$.
+
+For more complex trigonometric integrals, you often use the **power reduction formulas**:
+$$\sin^2 x = \frac{1 - \cos(2x)}{2}, \quad \cos^2 x = \frac{1 + \cos(2x)}{2}$$
+
+These allow you to reduce the power of trigonometric functions and integrate. For instance:
+$$\int \sin^2 x \, dx = \int \frac{1 - \cos(2x)}{2} \, dx = \frac{x}{2} - \frac{\sin(2x)}{4} + C$$
+
+### Completing the Square
+
+For integrals like $\int \frac{1}{x^2 + 4x + 5} \, dx$, you complete the square:
+$$x^2 + 4x + 5 = (x+2)^2 + 1$$
+
+Then use $u$-substitution with $u = x + 2$, and you get a standard arctangent form.
+
+### Partial Fractions (Linear Factors)
+
+For a rational function $\frac{p(x)}{q(x)}$ where $q(x)$ factors into distinct linear factors, you decompose it:
+$$\frac{x+5}{(x-1)(x+2)} = \frac{A}{x-1} + \frac{B}{x+2}$$
+
+Solve for $A$ and $B$, then integrate each piece separately — usually yielding logarithms.
+
+## Definitions and Formal Lesson
+
+**Integration by substitution (u-substitution):** If $u = g(x)$, then $du = g'(x) \, dx$, and:
+$$\int f(g(x)) \cdot g'(x) \, dx = \int f(u) \, du$$
+
+This reverses the chain rule. The key step is recognizing that the integrand contains both a composite function and the derivative of its inner function.
+
+**Integration by parts:** If $u$ and $v$ are differentiable:
+$$\int u \, dv = uv - \int v \, du$$
+
+This reverses the product rule. Use the LIATE rule to decide which factor should be $u$ (and which should be $dv$).
+
+**Standard trigonometric integrals:** Memorize the basic forms ($\sin$, $\cos$, $\sec^2$, $\tan$, etc.) and use power reduction formulas to simplify higher powers.
+
+**Completing the square:** Rewrite $ax^2 + bx + c$ as $a(x + p)^2 + q$ to expose a standard form (usually arctangent).
+
+**Partial fractions:** Decompose a rational function $\frac{p(x)}{q(x)}$ into simpler fractions whose antiderivatives are known (usually logarithms). Factor the denominator first, then set up the decomposition and solve for unknowns.
+
+## Worked Examples
+
+**Example 1: u-substitution with the chain rule reversed**
+
+Find $\int 2x \cos(x^2) \, dx$.
+
+*Solution:* Notice that if $u = x^2$, then $du = 2x \, dx$ — and that's exactly in the integrand!
+$$\int 2x \cos(x^2) \, dx = \int \cos(u) \, du = \sin(u) + C = \sin(x^2) + C$$
+
+**Example 2: integration by parts**
+
+Find $\int x e^x \, dx$.
+
+*Solution:* Choose $u = x$ (algebraic, lower in LIATE than exponential). Then $dv = e^x \, dx$, so $du = dx$ and $v = e^x$.
+$$\int x e^x \, dx = x e^x - \int e^x \, dx = x e^x - e^x + C = e^x(x - 1) + C$$
+
+**Example 3: trigonometric integral**
+
+Find $\int \sec^2 x \, dx$.
+
+*Solution:* This is a standard form.
+$$\int \sec^2 x \, dx = \tan x + C$$
+
+**Example 4: completing the square**
+
+Find $\int \frac{1}{x^2 + 2x + 5} \, dx$.
+
+*Solution:* Complete the square: $x^2 + 2x + 5 = (x+1)^2 + 4$. Let $u = x + 1$, $du = dx$.
+$$\int \frac{1}{(x+1)^2 + 4} \, dx = \int \frac{1}{u^2 + 4} \, du$$
+
+Now recognize the arctangent form: $\int \frac{1}{u^2 + a^2} \, du = \frac{1}{a} \arctan\left(\frac{u}{a}\right) + C$ with $a = 2$.
+$$\int \frac{1}{u^2 + 4} \, du = \frac{1}{2} \arctan\left(\frac{u}{2}\right) + C = \frac{1}{2} \arctan\left(\frac{x+1}{2}\right) + C$$
+
+**Example 5: trigonometric integral with power reduction**
+
+Find $\int \sin^2 x \, dx$.
+
+*Solution:* Use the power reduction formula $\sin^2 x = \frac{1 - \cos(2x)}{2}$:
+$$\int \sin^2 x \, dx = \int \frac{1 - \cos(2x)}{2} \, dx = \frac{1}{2} \int (1 - \cos(2x)) \, dx$$
+
+Integrate term by term:
+$$= \frac{1}{2} \left( x - \frac{\sin(2x)}{2} \right) + C = \frac{x}{2} - \frac{\sin(2x)}{4} + C$$
+
+## Practice Set
+
+1. Use $u$-substitution to find $\int 3x^2 \sin(x^3) \, dx$.
+
+2. Use integration by parts to find $\int x \sin x \, dx$.
+
+3. Evaluate $\int \tan x \, dx$.
+
+4. Complete the square and integrate: $\int \frac{1}{x^2 - 4x + 8} \, dx$.
+
+5. Which technique would you use first for $\int (x^2 + 3) e^{x^2} \, dx$? Explain your reasoning.
+
+6. Use power reduction to evaluate $\int \cos^2 x \, dx$.
+
+7. Integrate by parts twice: find $\int e^x \cos x \, dx$.
+
+8. For $\int \frac{x + 1}{x^2 + x - 2} \, dx$, factor the denominator and use partial fractions.
+
+## Reasoning Task
+
+**The Detective's Dilemma:** You're given $\int x^3 \sqrt{x^2 + 1} \, dx$.
+
+- Which integration technique(s) might work?
+- Why is integration by parts awkward here?
+- How does a clever $u$-substitution still fail to give a closed form?
+- What does this tell you about the limits of these techniques?
+
+(The integral doesn't have a closed form in elementary functions. But recognizing *why* is valuable.)
+
+## Application
+
+**Cooling Coffee:** Newton's Law of Cooling says the temperature $T(t)$ of cooling coffee satisfies:
+$$\frac{dT}{dt} = -k(T - T_s)$$
+
+where $T_s$ is room temperature and $k > 0$ is a constant. Solving this (via separation of variables, which we'll meet soon) involves the integral:
+$$\int \frac{dT}{T - T_s}$$
+
+This is a standard partial fractions form:
+$$\int \frac{dT}{T - T_s} = \ln|T - T_s| + C$$
+
+Without this single integral, you couldn't model coffee cooling — or the temperature of a building, the decay of heat in an engine, or the concentration of medication in your bloodstream.
+
+**Motion and Arc Length:** To find the arc length of a curve $y = f(x)$ from $x = a$ to $x = b$, you integrate:
+$$L = \int_a^b \sqrt{1 + \left(\frac{dy}{dx}\right)^2} \, dx$$
+
+For example, the arc length of $y = x^{3/2}$ from $0$ to $4$ requires:
+$$L = \int_0^4 \sqrt{1 + \left(\frac{3}{2}\sqrt{x}\right)^2} \, dx = \int_0^4 \sqrt{1 + \frac{9x}{4}} \, dx$$
+
+Completing the square (or a clever substitution) turns this into an integrable form. Arc length calculations are essential in physics (for understanding pendulum motion), engineering (for designing roads and roller coasters), and navigation.
+
+## Recap
+
+- **u-substitution** reverses the chain rule: identify the "inside function," set it as $u$, and transform the integral. This works when the integrand contains a composite function along with the derivative of its inner function.
+- **Integration by parts** reverses the product rule: useful when one part is easy to integrate and the other easy to differentiate. It trades one integral for (hopefully) a simpler one.
+- **LIATE** tells you which part should be $u$ in integration by parts: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential (in order of priority).
+- **Trigonometric integrals** often reduce to standard forms via identities. Power reduction formulas turn high powers into integrableforms.
+- **Completing the square** transforms awkward quadratics into recognizable arctangent or logarithm forms. This is especially useful for integrands involving $\frac{1}{x^2 + bx + c}$.
+- **Partial fractions** decompose rational functions into integrable pieces, usually yielding logarithms.
+- **Strategy:** Try substitution first. If that fails, try parts. Recognize standard forms. Know when to stop—some integrals don't have elementary antiderivatives.
+
+## Unlock Quiz
+
+**Question 1:** Which of the following is the correct formula for integration by parts?
+- $\int u \, dv = uv + \int v \, du$
+- $\int u \, dv = uv - \int v \, du$
+- $\int u \, dv = \int u \, \int v$
+- $\int u \, dv = \frac{u}{v} - \int \frac{v}{u} \, dx$
+
+<details>
+<summary>Answer</summary>
+$\int u \, dv = uv - \int v \, du$
+</details>
+
+**Question 2:** In the LIATE rule, which function type takes priority when choosing $u$?
+- Exponential
+- Trigonometric
+- Algebraic
+- Logarithmic
+
+<details>
+<summary>Answer</summary>
+Logarithmic
+</details>
+
+**Question 3:** What is $\int \sec^2 x \, dx$?
+- $\sec x + C$
+- $\tan x + C$
+- $\ln|\sec x| + C$
+- $-\cos x + C$
+
+<details>
+<summary>Answer</summary>
+$\tan x + C$
+</details>
+
+**Question 4:** To integrate $\int 2x \cos(x^2) \, dx$, which substitution is most helpful?
+- $u = 2x$
+- $u = \cos(x^2)$
+- $u = x^2$
+- $u = \cos x$
+
+<details>
+<summary>Answer</summary>
+$u = x^2$
+</details>
+
+**Question 5:** What does completing the square help you recognize in $\int \frac{1}{x^2 + 6x + 10} \, dx$?
+- A logarithmic form
+- An arctangent form
+- A secant form
+- A sine form
+
+<details>
+<summary>Answer</summary>
+An arctangent form
+</details>
+
+## Source Notes
+
+- **Integration by parts:** Leibniz (1684). [Wikipedia: Integration by parts](https://en.wikipedia.org/wiki/Integration_by_parts)
+- **Substitution rule:** Foundations in chain rule, rigorous formulation in 18th century. [Wikipedia: Integration by substitution](https://en.wikipedia.org/wiki/Integration_by_substitution)
+- **Partial fractions decomposition:** [Wikipedia: Partial fraction decomposition](https://en.wikipedia.org/wiki/Partial_fraction_decomposition)
+- **Trigonometric integrals and identities:** [Wikipedia: Trigonometric integral](https://en.wikipedia.org/wiki/Trigonometric_integral)

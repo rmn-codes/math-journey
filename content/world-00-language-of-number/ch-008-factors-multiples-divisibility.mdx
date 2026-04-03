@@ -1,0 +1,211 @@
+---
+id: ch-008
+slug: factors-multiples-divisibility
+title: Factors, Multiples, and Divisibility
+worldNumber: 0
+world: world-00-language-of-number
+chapterNumber: 8
+level: foundational
+subtitle: "The hidden structure of whole numbers — who divides whom"
+historicalPeriod: "Ancient Greece – present"
+historicalRegions:
+  - Greece
+  - India
+estimatedTimeMinutes: 35
+mainConcepts:
+  - factor
+  - multiple
+  - divisibility rules
+  - GCF (greatest common factor)
+  - LCM (least common multiple)
+  - factor pairs
+  - factor trees
+learningObjectives:
+  - Define factor and multiple and identify them for given numbers
+  - Apply divisibility rules for 2, 3, 4, 5, 6, 9, and 10
+  - Find the GCF of two numbers using factor lists and the Euclidean algorithm
+  - Find the LCM of two numbers using multiples and prime factorization
+  - Use GCF and LCM in real-world problems (simplifying fractions, scheduling)
+---
+
+## Story Hook
+
+Imagine two Roman soldiers marching together in a grand parade. One takes a confident step every 3 beats of the ceremonial drum. The other, whose legs are longer, strides every 4 beats. Their commanders want to know: at what beat will both soldiers step down at exactly the same moment? This isn't a question about chance — it's about the hidden structure of numbers themselves.
+
+Or consider a baker's challenge: she has one batch of pastries that splits evenly into sixths, and another that divides evenly into eighths. If she wants to arrange all the pastries on a single tray where every piece is the same size, what size must the pieces be? These are the questions that factors and multiples answer.
+
+## Why It Matters
+
+The structure of divisibility is woven into everyday life. When you schedule meetings (when do all calendars align?), when you cook (how many people can an 8-pound roast feed?), when you build with bricks or tiles (what dimensions work perfectly?), or when you organize groups (how do we split into teams evenly?) — you're working with factors and multiples. These patterns also form the foundation for understanding fractions, ratios, and the deep architecture of number itself.
+
+Musicians know that two instruments playing at different tempos "sync" at specific moments — that's LCM. Pharmacists calculate when two medicines, each taken on different schedules, will be in your bloodstream together — also LCM. Engineers designing gears or pulleys need them to mesh perfectly — factors and multiples again.
+
+## Historical Context
+
+The ancient Greeks, especially Euclid (around 300 BCE), studied divisibility with profound intensity. They invented the **Euclidean algorithm** — a method for finding the greatest common factor of two numbers by repeatedly dividing and taking remainders. This algorithm, described in his *Elements*, is one of the oldest effective algorithms still used in modern computer science.
+
+Indian mathematicians developed deep understanding of divisibility rules centuries before Europe rediscovered them. These rules — the shortcuts that tell you instantly whether 7, 482 is divisible by 3 without doing the full division — were documented in Sanskrit texts and eventually transmitted westward through Islamic scholars.
+
+## Core Concept
+
+Every whole number can be **broken down into factors** — the numbers that divide it evenly. We say $a$ is a **factor** of $b$ if $b \div a$ has no remainder. Equivalently, $b$ is a **multiple** of $a$.
+
+For example, consider 12:
+- The factors of 12 are: 1, 2, 3, 4, 6, 12
+- The multiples of 12 are: 12, 24, 36, 48, 60, ...
+
+Notice that factors are finite (they end at the number itself), while multiples go on forever.
+
+The key insight: when you find the **greatest common factor** (GCF) of two numbers, you find the largest number that divides both evenly. When you find the **least common multiple** (LCM), you find the smallest number that both divide into evenly.
+
+## Definitions and Formal Lesson
+
+**Factor:** $a$ is a factor of $b$ if $b = a \times k$ for some whole number $k$. Equivalently, $b \div a$ leaves remainder 0.
+
+**Multiple:** $b$ is a multiple of $a$ if $b = a \times k$ for some whole number $k$.
+
+**Divisibility:** We say "$a$ divides $b$" (written $a \mid b$) if $a$ is a factor of $b$.
+
+**Greatest Common Factor (GCF):** The largest positive integer that divides both $a$ and $b$.
+
+**Least Common Multiple (LCM):** The smallest positive integer that is a multiple of both $a$ and $b$.
+
+**Divisibility Rules:**
+- **By 2:** The number is even (ends in 0, 2, 4, 6, or 8)
+- **By 3:** The sum of the digits is divisible by 3
+- **By 4:** The last two digits form a number divisible by 4
+- **By 5:** The number ends in 0 or 5
+- **By 6:** The number is divisible by both 2 and 3
+- **By 9:** The sum of the digits is divisible by 9
+- **By 10:** The number ends in 0
+
+## Worked Examples
+
+**Example 1: Finding Factors**
+
+Find all factors of 24.
+
+We look for all numbers that divide 24 evenly:
+$$24 \div 1 = 24 \quad 24 \div 2 = 12 \quad 24 \div 3 = 8 \quad 24 \div 4 = 6$$
+
+So the factors are: **1, 2, 3, 4, 6, 8, 12, 24**.
+
+Notice they come in pairs: $1 \times 24$, $2 \times 12$, $3 \times 8$, $4 \times 6$. These are called **factor pairs**.
+
+**Example 2: Applying a Divisibility Rule**
+
+Is 2,358 divisible by 3?
+
+Add the digits: $2 + 3 + 5 + 8 = 18$. Since 18 is divisible by 3, then **2,358 is divisible by 3**. (Check: $2,358 \div 3 = 786$.)
+
+**Example 3: Finding GCF**
+
+Find the GCF of 24 and 36.
+
+Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24
+Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36
+
+Common factors: 1, 2, 3, 4, 6, 12
+
+**GCF(24, 36) = 12**
+
+**Example 4: Finding LCM**
+
+Find the LCM of 6 and 8.
+
+Multiples of 6: 6, 12, 18, 24, 30, 36, 42, 48, ...
+Multiples of 8: 8, 16, 24, 32, 40, 48, ...
+
+Common multiples: 24, 48, ...
+
+**LCM(6, 8) = 24**
+
+## Practice Set
+
+1. Find all factor pairs of 36.
+
+2. Is 5,432 divisible by 4? Use the divisibility rule to decide.
+
+3. Find GCF(18, 30).
+
+4. Find LCM(4, 6).
+
+5. A baker arranges muffins in rows of 8 and rows of 12. What is the fewest number of muffins she needs so there are no leftovers in either arrangement?
+
+6. Two light displays blink: one every 6 seconds, the other every 10 seconds. Starting at the same moment, when will both lights blink together?
+
+## Reasoning Task
+
+The Roman soldiers from our opening story march at 3-beat and 4-beat intervals. Their commander wants them to step together at exactly 60 beats into the march.
+
+a) At what beat numbers do they step together? (Find multiples of 3, multiples of 4, and identify the overlap.)
+
+b) Will they step together at beat 60? Why or why not?
+
+c) What is the pattern of beats at which they sync?
+
+## Application
+
+**Real-World Scenario: Organizing a Community Garden**
+
+A community center wants to design raised garden beds using bricks. One person donates 48 bricks, another donates 60. The garden coordinator wants to use all bricks to build identical rectangular beds (same dimensions, no bricks left over).
+
+Using GCF(48, 60), what is the largest size of bed she can make? If each brick is 1 unit long, what are the possible rectangular dimensions?
+
+## Recap
+
+Factors are the building blocks that divide a number evenly. Multiples are the numbers built from a given factor. Divisibility rules let us instantly test whether one number divides another. The greatest common factor is the largest divisor of two numbers, essential for simplifying fractions and solving sharing problems. The least common multiple is the smallest number divisible by two given numbers, crucial for scheduling and synchronization.
+
+## Unlock Quiz
+
+1. What is a factor of 30?
+   - 2
+   - 4
+   - 7
+   - 8
+
+2. Is 3,654 divisible by 3?
+   - Yes, because the digit sum is 18
+   - No, because it's not even
+   - Yes, because it ends in 4
+   - No, because it doesn't end in 0 or 5
+
+3. Find GCF(20, 30).
+   - 5
+   - 10
+   - 15
+   - 20
+
+4. Find LCM(5, 7).
+   - 12
+   - 25
+   - 35
+   - 70
+
+5. A gardener plants seeds in rows of 9 and columns of 12. The total number of seeds will definitely be divisible by which of these?
+   - 4
+   - 6
+   - 9
+   - 7
+
+<details>
+<summary>Answers</summary>
+
+1. **2** — 30 = 2 × 15, so 2 is a factor of 30. (Also 3, 5, 6, 10, 15, and 30 are factors.)
+
+2. **Yes, because the digit sum is 18** — 3 + 6 + 5 + 4 = 18, and 18 is divisible by 3.
+
+3. **10** — Factors of 20: 1, 2, 4, 5, 10, 20. Factors of 30: 1, 2, 3, 5, 6, 10, 15, 30. Greatest common: 10.
+
+4. **35** — Multiples of 5: 5, 10, 15, 20, 25, 30, 35, ... Multiples of 7: 7, 14, 21, 28, 35, ... First common: 35.
+
+5. **6** — With 9 rows and 12 columns, the total is $9 \times 12 = 108$. Since GCF(9, 12) = 3 and both 9 and 12 are even multiples of 3, the product is divisible by 2, 3, 4, 6, and 9. Only 7 does not divide 108.
+
+</details>
+
+## Source Notes
+
+- Euclid, *Elements*, Book VII (circa 300 BCE). The Euclidean algorithm appears in propositions 1–2.
+- [Divisibility Rules — Wikipedia](https://en.wikipedia.org/wiki/Divisibility_rule)
+- [Greatest Common Divisor — Wikipedia](https://en.wikipedia.org/wiki/Greatest_common_divisor)
+- [Least Common Multiple — Wikipedia](https://en.wikipedia.org/wiki/Least_common_multiple)

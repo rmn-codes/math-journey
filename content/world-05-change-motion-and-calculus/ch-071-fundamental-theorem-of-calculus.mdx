@@ -1,0 +1,282 @@
+---
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+chapter: 71
+title: The Fundamental Theorem of Calculus
+subtitle: The theorem that unites differentiation and integration — the heart of calculus
+slug: ch-071-fundamental-theorem-of-calculus
+historicalPeriod: 1660s–1700s
+estimatedTimeMinutes: 40
+mainConcepts:
+  - Fundamental Theorem of Calculus
+  - antiderivative
+  - indefinite integral
+  - constant of integration
+  - basic integration rules
+learningObjectives:
+  - State both parts of the Fundamental Theorem of Calculus
+  - Find antiderivatives using basic rules
+  - Evaluate definite integrals using FTC Part 2
+  - Understand that differentiation and integration are inverse operations
+---
+
+## Story Hook
+
+Isaac Newton and Gottfried Leibniz did not invent the derivative and the integral by accident. They discovered something so profound that it changed mathematics forever: the two operations are *inverses* of each other.
+
+Imagine a mathematician in 1660, before Newton and Leibniz. She knows how to find tangent lines — the slope at a point. She knows how to find areas under curves — the method of exhaustion. But are these two problems connected? They seem completely different.
+
+Then the insight comes: if you know how to find areas, you can find slopes, and vice versa.
+
+If you want the area under a curve from $a$ to $b$, just find a function whose derivative equals the curve, and subtract: $F(b) - F(a)$. This is so unexpected, so powerful, so beautiful that mathematicians call it the **Fundamental Theorem of Calculus** — the most important result in analysis.
+
+With this one theorem, integration stopped being an exhausting geometric procedure and became almost mechanical.
+
+## Why It Matters
+
+Before the Fundamental Theorem, computing an area required pages of geometric reasoning. After, a student with an antiderivative formula could compute it in seconds.
+
+This speed was revolutionary. Engineers could predict projectile paths. Physicists could solve planetary orbits. Economists could model growth. The Theorem unlocked the entire universe of applications that we depend on today.
+
+Moreover, it reveals a deep truth: that accumulation and rate-of-change are two sides of the same coin. This principle extends far beyond calculus, appearing in physics, thermodynamics, quantum mechanics, and information theory.
+
+## Historical Context
+
+By the 1660s, mathematicians had developed techniques for finding tangent lines (Descartes, Fermat) and techniques for finding areas (Archimedes, Cavalieri, Wallis). But no one saw the connection.
+
+Newton, working in Cambridge during the Great Plague of 1665–1666, spent his time thinking about these problems. He realised that if you integrate a function's derivative, you get back the original function. Leibniz, working independently in Germany, discovered the same connection and, importantly, invented the notation $\int$ (the elongated 's' for sum) that we still use today.
+
+The Fundamental Theorem appeared in Newton's unpublished manuscripts and in Leibniz's published work. It was the beating heart of their calculus.
+
+## Core Concept
+
+**Part 1 of the Fundamental Theorem of Calculus:**
+
+If $f$ is continuous on $[a, b]$ and $F(x) = \int_a^x f(t)\,dt$ (the area under $f$ from $a$ to $x$), then:
+$$F'(x) = f(x)$$
+
+In words: the derivative of the accumulated area equals the height of the curve.
+
+**Part 2 of the Fundamental Theorem of Calculus:**
+
+If $f$ is continuous on $[a, b]$ and $F$ is *any* antiderivative of $f$ (meaning $F'(x) = f(x)$), then:
+$$\int_a^b f(x)\,dx = F(b) - F(a)$$
+
+In words: to compute the definite integral (area), find an antiderivative and evaluate it at the endpoints.
+
+**Antiderivative and Indefinite Integral:**
+
+An **antiderivative** of $f$ is a function $F$ such that $F'(x) = f(x)$. The set of all antiderivatives is written as the **indefinite integral**:
+$$\int f(x)\,dx = F(x) + C$$
+
+The $+ C$ (constant of integration) accounts for the fact that $F(x)$, $F(x) + 1$, $F(x) + 100$ all have the same derivative.
+
+## Definitions and Formal Lesson
+
+**Antiderivative:** A function $F$ is an antiderivative of $f$ if $F'(x) = f(x)$ for all $x$ in the domain.
+
+**Indefinite Integral:** The set of all antiderivatives: $\int f(x)\,dx = F(x) + C$.
+
+**Constant of Integration:** The arbitrary constant $C$ in the indefinite integral, accounting for infinitely many antiderivatives.
+
+**Basic Antiderivative Rules:**
+
+1. **Power Rule:** $\int x^n\,dx = \frac{x^{n+1}}{n+1} + C$ for $n \neq -1$.
+
+2. **Reciprocal Rule:** $\int \frac{1}{x}\,dx = \ln|x| + C$.
+
+3. **Exponential Rule:** $\int e^x\,dx = e^x + C$.
+
+4. **Cosine Rule:** $\int \cos(x)\,dx = \sin(x) + C$.
+
+5. **Sine Rule:** $\int \sin(x)\,dx = -\cos(x) + C$.
+
+6. **Linearity:** $\int [cf(x) + g(x)]\,dx = c\int f(x)\,dx + \int g(x)\,dx$.
+
+## Worked Examples
+
+**Example 1: Finding an Antiderivative**
+
+Find $\int (3x^2 - 2x + 5)\,dx$.
+
+Using linearity and the power rule:
+$$\int 3x^2\,dx = 3 \cdot \frac{x^3}{3} = x^3$$
+$$\int (-2x)\,dx = -2 \cdot \frac{x^2}{2} = -x^2$$
+$$\int 5\,dx = 5x$$
+
+Therefore:
+$$\int (3x^2 - 2x + 5)\,dx = x^3 - x^2 + 5x + C$$
+
+To verify: $\frac{d}{dx}(x^3 - x^2 + 5x + C) = 3x^2 - 2x + 5$. ✓
+
+**Example 2: Evaluating a Definite Integral Using FTC Part 2**
+
+Compute $\int_1^4 (2x + 3)\,dx$.
+
+First, find an antiderivative:
+$$F(x) = \int (2x + 3)\,dx = x^2 + 3x + C$$
+
+Using FTC Part 2:
+$$\int_1^4 (2x + 3)\,dx = F(4) - F(1) = [16 + 12] - [1 + 3] = 28 - 4 = 24$$
+
+Note: The constant $C$ cancels when we subtract $F(b) - F(a)$, so we can choose $C = 0$.
+
+**Example 3: Trigonometric Integral**
+
+Compute $\int_0^{\pi/2} \cos(x)\,dx$.
+
+Antiderivative: $F(x) = \sin(x)$.
+
+Using FTC Part 2:
+$$\int_0^{\pi/2} \cos(x)\,dx = \sin\left(\frac{\pi}{2}\right) - \sin(0) = 1 - 0 = 1$$
+
+**Example 4: Connecting Rate to Accumulation (FTC Part 1)**
+
+If a tank contains water and the outflow rate is $f(t) = 5 - 0.1t$ litres per minute, the total water that has flowed out by time $t$ is:
+$$F(t) = \int_0^t (5 - 0.1s)\,ds = 5t - 0.05t^2$$
+
+By FTC Part 1:
+$$F'(t) = 5 - 0.1t = f(t)$$
+
+The rate of outflow at time $t$ is the derivative of the cumulative outflow — the core relationship between differentiation and integration.
+
+**Example 5: Finding Antiderivatives of Mixed Functions**
+
+Find $\int (4x^3 + 2\sin x - e^x)\,dx$.
+
+Using linearity:
+$$\int 4x^3\,dx = 4 \cdot \frac{x^4}{4} = x^4$$
+$$\int 2\sin x\,dx = 2 \cdot (-\cos x) = -2\cos x$$
+$$\int (-e^x)\,dx = -e^x$$
+
+Therefore:
+$$\int (4x^3 + 2\sin x - e^x)\,dx = x^4 - 2\cos x - e^x + C$$
+
+Verify by differentiating: $\frac{d}{dx}(x^4 - 2\cos x - e^x + C) = 4x^3 + 2\sin x - e^x$. ✓
+
+**Example 6: Computing Definite Integral with Careful Limits**
+
+Evaluate $\int_{\pi/4}^{\pi/2} (2\cos x - 1)\,dx$.
+
+Antiderivative: $F(x) = 2\sin x - x$.
+
+$$\int_{\pi/4}^{\pi/2} (2\cos x - 1)\,dx = [2\sin x - x]_{\pi/4}^{\pi/2}$$
+
+At $x = \frac{\pi}{2}$: $2\sin\frac{\pi}{2} - \frac{\pi}{2} = 2(1) - \frac{\pi}{2} = 2 - \frac{\pi}{2}$.
+
+At $x = \frac{\pi}{4}$: $2\sin\frac{\pi}{4} - \frac{\pi}{4} = 2 \cdot \frac{\sqrt{2}}{2} - \frac{\pi}{4} = \sqrt{2} - \frac{\pi}{4}$.
+
+$$\text{Result} = \left(2 - \frac{\pi}{2}\right) - \left(\sqrt{2} - \frac{\pi}{4}\right) = 2 - \sqrt{2} - \frac{\pi}{2} + \frac{\pi}{4} = 2 - \sqrt{2} - \frac{\pi}{4}$$
+
+## Practice Set
+
+1. What is $\int 6x^2\,dx$?
+   - $2x^3 + C$
+   - $3x^3 + C$
+   - $6x^3 + C$
+   - $12x + C$
+
+2. Evaluate $\int_0^2 (x^3 + 1)\,dx$.
+   - 2
+   - 4
+   - 6
+   - 10
+
+3. What is $\int \frac{1}{x}\,dx$?
+   - $-\frac{1}{x^2} + C$
+   - $\ln(x) + C$
+   - $\ln|x| + C$
+   - $\frac{1}{x^2} + C$
+
+4. Which statement best describes the relationship between $F'(x) = f(x)$ and $\int f(x)\,dx = F(x) + C$?
+   - They are unrelated
+   - Differentiation and integration are inverse operations
+   - They always give the same numerical result
+   - Integration is a special case of differentiation
+
+5. Find $\int (5e^x - 4\cos x)\,dx$.
+   - $5e^x - 4\sin x + C$
+   - $5e^x + 4\sin x + C$
+   - $e^x - \sin x + C$
+   - $5e^x - \sin x + C$
+
+6. What is the constant of integration in the indefinite integral?
+   - It accounts for all antiderivatives of a function
+   - It is always zero
+   - It represents a specific point on the curve
+   - It is the value of the function at $x = 0$
+
+## Reasoning Task
+
+A car starts from rest and accelerates with acceleration $a(t) = 2t$ m/s² for the first 5 seconds.
+
+1. Find the velocity function $v(t)$ by integrating the acceleration. (Hint: the initial velocity is 0.)
+2. Find the position function $s(t)$ by integrating the velocity. (Hint: the initial position is 0.)
+3. Verify your answer using FTC Part 1: take the derivative of $s(t)$ and confirm you get $v(t)$.
+
+## Application
+
+Every science and engineering field uses the Fundamental Theorem. A structural engineer designs a beam by integrating a load distribution to find the total force. A pharmacologist predicts drug concentration in the bloodstream by integrating the metabolism rate. An economist models cumulative economic output by integrating a growth rate function. A climate scientist predicts temperature change by integrating a heat transfer equation.
+
+In the 1900s, differential equations became the language of nature — equations expressing rates of change. To solve them, scientists use the Fundamental Theorem: to go from rate to quantity, integrate.
+
+## Recap
+
+The Fundamental Theorem of Calculus unites the two central operations of calculus: differentiation (finding rates) and integration (finding accumulation). Part 1 says that the derivative of an accumulated quantity equals the rate at that instant. Part 2 says that a definite integral can be computed using any antiderivative: $\int_a^b f(x)\,dx = F(b) - F(a)$. This transforms integration from a geometric procedure into an algebraic calculation. Basic antiderivatives follow predictable rules: power rule, exponential rule, trigonometric rules, and linearity. The constant of integration $+ C$ appears in indefinite integrals because infinitely many functions share the same derivative.
+
+## Unlock Quiz
+
+1. State FTC Part 2 in words.
+   - The derivative of an integral is the original function
+   - To compute a definite integral, find an antiderivative and evaluate at the endpoints
+   - Integration and differentiation are inverse operations
+   - The integral of a derivative is always zero
+
+2. What is $\int \sin(x)\,dx$?
+   - $\cos(x) + C$
+   - $-\cos(x) + C$
+   - $\sin(x) + C$
+   - $-\sin(x) + C$
+
+3. If $F(x) = x^4 - 2x^2$, what is $\int F'(x)\,dx$?
+   - $x^4 - 2x^2$
+   - $x^4 - 2x^2 + C$
+   - $4x^3 - 4x$
+   - Cannot be determined
+
+4. Evaluate $\int_0^1 e^x\,dx$.
+   - $e - 1$
+   - $1$
+   - $e$
+   - $\frac{1}{e}$
+
+5. For FTC Part 1, if $F(x) = \int_a^x f(t)\,dt$, then $F'(x)$ equals?
+   - $f(x)$
+   - $f(a)$
+   - $f(x) - f(a)$
+   - The original function before integration
+
+6. Why is the constant $C$ unnecessary when evaluating $\int_a^b f(x)\,dx$ with FTC Part 2?
+   - The constant always equals zero
+   - The constant cancels when we subtract $F(b) - F(a)$
+   - There is no reason; $C$ should always be included
+   - The constant is absorbed into the limits of integration
+
+<details>
+<summary>Answers</summary>
+
+1. To compute a definite integral, find an antiderivative and evaluate at the endpoints
+2. $-\cos(x) + C$
+3. $x^4 - 2x^2 + C$
+4. $e - 1$
+5. $f(x)$
+6. The constant cancels when we subtract $F(b) - F(a)$
+
+</details>
+
+## Source Notes
+
+- Fundamental Theorem of Calculus: https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus
+- Newton and Leibniz: https://en.wikipedia.org/wiki/Calculus
+- History of antiderivatives: https://en.wikipedia.org/wiki/Antiderivative
+- Applications of the Fundamental Theorem: https://en.wikipedia.org/wiki/Integral

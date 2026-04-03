@@ -1,0 +1,236 @@
+---
+chapterNumber: 90
+worldNumber: 7
+world: world-07-fields-waves-space-time-and-the-modern-view
+title: "Vectors and Matrices"
+subtitle: "Arrays of numbers that encode transformations — the mathematics of graphics, AI, and physics"
+estimatedTimeMinutes: 40
+historicalPeriod: "1840s–1900s"
+mainConcepts: ["matrix", "matrix multiplication", "determinant", "inverse matrix", "linear transformation", "matrix equation"]
+learningObjectives:
+  - "Perform matrix addition, scalar multiplication, and matrix multiplication"
+  - "Compute 2×2 determinants and inverses"
+  - "Solve linear systems using matrices"
+  - "Interpret matrices as linear transformations"
+  - "Connect to AI and graphics applications"
+---
+
+## Story Hook
+
+In 2012, a neural network called AlexNet was released to the world. It was trained on millions of images and could recognize objects—dogs, cats, cars, buildings—with a accuracy that stunned the computer vision community.
+
+Every pixel of every photograph was represented as a number. Every transformation the network performed—every layer, every filter, every activation—was a matrix multiplication.
+
+AlexNet won the ImageNet competition by such a margin that it launched the entire modern era of artificial intelligence.
+
+Today, when you ask an AI to generate an image, when your phone recognizes your face, when an autonomous car identifies a pedestrian, when a language model generates text, matrices are working in the background. Billions of matrix multiplications per second, transforming data from one representation to another.
+
+The story begins much earlier. In 1844, an Irish mathematician named William Rowan Hamilton made a curious discovery. He was trying to generalize complex numbers to three dimensions. He failed. But in his failure, he found something unexpected: a new kind of algebraic object called a quaternion. Around the same time, Arthur Cayley was thinking about similar structures. In 1858, Cayley published a foundational paper on matrices—rectangular arrays of numbers with rules for addition and multiplication.
+
+Cayley had no idea what matrices would become. He was playing with pure abstraction. But he had built the scaffolding on which 160 years of technology would rest.
+
+## Why It Matters
+
+Matrices are everywhere. Your smartphone's graphics processor uses them to rotate and scale images on your screen. Netflix uses them to recommend movies (collaborative filtering, encoded as matrix computations). Google's PageRank algorithm, which ranks web pages, is a matrix problem. Any time you rotate, scale, reflect, or compress data, you are using matrices. Any time a computer manipulates an image or processes sound, matrices are at work.
+
+But matrices are not just a computational tool. They are a way of thinking. They tell you that any linear transformation—any operation that preserves addition and scalar multiplication—can be represented as matrix multiplication. This insight unifies linear algebra, physics, computer science, and mathematics.
+
+Without matrices, modern technology as we know it would not exist.
+
+## Historical Context
+
+In the early 1800s, mathematicians were generalizing numbers. Complex numbers had expanded the real numbers to two dimensions. Could you do the same for three dimensions?
+
+William Rowan Hamilton spent years on this problem. In 1843, during a walk along the Royal Canal in Dublin, inspiration struck. But the answer was surprising: you could not generalize complex numbers to three dimensions. However, you *could* generalize them to four dimensions. These quaternions had four components and followed strange rules of multiplication.
+
+Quaternions were beautiful but difficult to work with. Most physicists and engineers never learned them deeply. Yet they contained a profound insight: that you could arrange numbers in arrays and define multiplication rules that made sense.
+
+Arthur Cayley took this idea and ran with it. In his 1858 paper "A Memoir on the Theory of Matrices," Cayley developed the theory of rectangular arrays of numbers. He defined matrix addition, scalar multiplication, and matrix multiplication. He proved properties like associativity of multiplication (though not commutativity, which surprised people at first).
+
+For decades, matrices seemed like a pure abstraction. Then physics moved in. When Einstein developed quantum mechanics in the 1920s, physicists (especially Werner Heisenberg) discovered that matrices were the perfect language for quantum states. When computers were invented in the 1940s, matrix multiplication became the fundamental operation that engineers wanted to make fast. By the late 1900s, with the rise of image processing and then machine learning, matrices became central to technology.
+
+Today, a GPU (graphics processing unit) is essentially a matrix-multiplication machine.
+
+## Core Concept
+
+**A matrix** is a rectangular array of numbers. We denote matrices by bold capital letters. A matrix $\mathbf{A}$ with $m$ rows and $n$ columns is said to be $m \times n$:
+
+$$\mathbf{A} = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}$$
+
+**Addition and scalar multiplication** follow the natural rule:
+- Add two matrices of the same size by adding corresponding entries.
+- Multiply a matrix by a scalar $c$ by multiplying each entry by $c$.
+
+**Matrix multiplication** is more subtle. The product $\mathbf{AB}$ is defined only when the number of columns of $\mathbf{A}$ equals the number of rows of $\mathbf{B}$. If $\mathbf{A}$ is $m \times n$ and $\mathbf{B}$ is $n \times p$, then $\mathbf{AB}$ is $m \times p$, and the entry in row $i$ and column $j$ of $\mathbf{AB}$ is:
+
+$$(\mathbf{AB})_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}$$
+
+Important: **matrix multiplication is not commutative**. In general, $\mathbf{AB} \neq \mathbf{BA}$.
+
+**The identity matrix** $\mathbf{I}$ is the $n \times n$ matrix with 1s on the diagonal and 0s everywhere else:
+$$\mathbf{I} = \begin{pmatrix} 1 & 0 & \cdots & 0 \\ 0 & 1 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & 1 \end{pmatrix}$$
+
+For any matrix $\mathbf{A}$, we have $\mathbf{AI} = \mathbf{A}$ and $\mathbf{IA} = \mathbf{A}$ (when the dimensions match).
+
+**The transpose** of a matrix $\mathbf{A}$, denoted $\mathbf{A}^T$ or $\mathbf{A}'$, is formed by swapping rows and columns:
+$$\mathbf{A} = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \implies \mathbf{A}^T = \begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix}$$
+
+**The determinant** of a 2×2 matrix is:
+$$\det \begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc$$
+
+The determinant measures whether a matrix is invertible. If $\det(\mathbf{A}) \neq 0$, then $\mathbf{A}$ has an inverse.
+
+**The inverse** of a 2×2 matrix $\mathbf{A}$ with $\det(\mathbf{A}) \neq 0$ is:
+$$\mathbf{A}^{-1} = \frac{1}{\det(\mathbf{A})} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$$
+
+This satisfies $\mathbf{A} \mathbf{A}^{-1} = \mathbf{I}$ and $\mathbf{A}^{-1} \mathbf{A} = \mathbf{I}$.
+
+**Linear systems** can be written in matrix form. The system
+$$\begin{cases} ax + by = e \\ cx + dy = f \end{cases}$$
+can be written as:
+$$\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} e \\ f \end{pmatrix}$$
+
+or $\mathbf{A} \vec{x} = \vec{b}$. If $\det(\mathbf{A}) \neq 0$, the unique solution is:
+$$\vec{x} = \mathbf{A}^{-1} \vec{b}$$
+
+**Geometric interpretation:** A matrix represents a linear transformation. Multiplying a vector $\vec{v}$ by a matrix $\mathbf{A}$ rotates, scales, or reflects the vector. For example, the matrix $\begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$ rotates a vector by angle $\theta$.
+
+## Definitions and Formal Lesson
+
+- **Matrix:** A rectangular array of numbers with $m$ rows and $n$ columns, denoted as $m \times n$.
+- **Vector:** A matrix with one column (column vector) or one row (row vector).
+- **Dimension matching:** Matrix product $\mathbf{AB}$ requires the number of columns of $\mathbf{A}$ to equal the number of rows of $\mathbf{B}$.
+- **Identity matrix:** The $n \times n$ matrix $\mathbf{I}$ with 1s on the main diagonal and 0s elsewhere.
+- **Transpose:** The matrix $\mathbf{A}^T$ formed by swapping rows and columns of $\mathbf{A}$.
+- **Determinant (2×2):** For $\mathbf{A} = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$, we have $\det(\mathbf{A}) = ad - bc$.
+- **Inverse:** For a 2×2 matrix with nonzero determinant, $\mathbf{A}^{-1} = \frac{1}{\det(\mathbf{A})} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$.
+- **Linear system:** A system of equations expressed as $\mathbf{A}\vec{x} = \vec{b}$, solvable by $\vec{x} = \mathbf{A}^{-1}\vec{b}$ if $\mathbf{A}$ is invertible.
+- **Linear transformation:** A mapping from vectors to vectors of the form $\vec{v} \mapsto \mathbf{A}\vec{v}$.
+
+## Worked Examples
+
+**Example 1: Matrix Addition and Scalar Multiplication**
+Let $\mathbf{A} = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $\mathbf{B} = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$. Compute $2\mathbf{A} + \mathbf{B}$.
+
+Solution:
+$$2\mathbf{A} + \mathbf{B} = \begin{pmatrix} 2 & 4 \\ 6 & 8 \end{pmatrix} + \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} = \begin{pmatrix} 7 & 10 \\ 13 & 16 \end{pmatrix}$$
+
+**Example 2: Matrix Multiplication**
+Multiply $\mathbf{A} = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $\mathbf{B} = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$.
+
+Solution:
+$$\mathbf{AB} = \begin{pmatrix} 1(5) + 2(7) & 1(6) + 2(8) \\ 3(5) + 4(7) & 3(6) + 4(8) \end{pmatrix} = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix}$$
+
+**Example 3: Determinant and Inverse**
+Find the inverse of $\mathbf{A} = \begin{pmatrix} 2 & 1 \\ 5 & 3 \end{pmatrix}$.
+
+Solution:
+- $\det(\mathbf{A}) = 2(3) - 1(5) = 6 - 5 = 1$
+- $\mathbf{A}^{-1} = \frac{1}{1} \begin{pmatrix} 3 & -1 \\ -5 & 2 \end{pmatrix} = \begin{pmatrix} 3 & -1 \\ -5 & 2 \end{pmatrix}$
+
+Verification: $\mathbf{A}\mathbf{A}^{-1} = \begin{pmatrix} 2 & 1 \\ 5 & 3 \end{pmatrix}\begin{pmatrix} 3 & -1 \\ -5 & 2 \end{pmatrix} = \begin{pmatrix} 6-5 & -2+2 \\ 15-15 & -5+6 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ ✓
+
+**Example 4: Solving a Linear System**
+Solve the system using matrix methods:
+$$\begin{cases} 2x + y = 4 \\ 5x + 3y = 11 \end{cases}$$
+
+Solution:
+$$\begin{pmatrix} 2 & 1 \\ 5 & 3 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 4 \\ 11 \end{pmatrix}$$
+
+From Example 3, $\mathbf{A}^{-1} = \begin{pmatrix} 3 & -1 \\ -5 & 2 \end{pmatrix}$, so:
+$$\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 3 & -1 \\ -5 & 2 \end{pmatrix}\begin{pmatrix} 4 \\ 11 \end{pmatrix} = \begin{pmatrix} 12 - 11 \\ -20 + 22 \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$$
+
+So $x = 1, y = 2$.
+
+## Practice Set
+
+1. Add the matrices: $\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} + \begin{pmatrix} 2 & -1 \\ 0 & 3 \end{pmatrix}$.
+
+2. Multiply: $\begin{pmatrix} 1 & 0 \\ 2 & 1 \end{pmatrix}\begin{pmatrix} 3 \\ 4 \end{pmatrix}$.
+
+3. Find the determinant of $\begin{pmatrix} 4 & 7 \\ 2 & 3 \end{pmatrix}$.
+
+4. Find the inverse of $\begin{pmatrix} 1 & 2 \\ 1 & 3 \end{pmatrix}$.
+
+5. Solve the system $\begin{cases} x + 2y = 5 \\ x + 3y = 7 \end{cases}$ using matrix methods.
+
+6. Compute the transpose of $\begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$.
+
+7. Verify that $\mathbf{A}\mathbf{I} = \mathbf{A}$ for $\mathbf{A} = \begin{pmatrix} 2 & 3 \\ 1 & 4 \end{pmatrix}$.
+
+8. Show that $\mathbf{AB} \neq \mathbf{BA}$ by computing both products for $\mathbf{A} = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$ and $\mathbf{B} = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.
+
+## Reasoning Task
+
+**Problem:** A 2×2 matrix $\mathbf{A}$ is singular (non-invertible) if and only if $\det(\mathbf{A}) = 0$. Explain geometrically why this makes sense.
+
+**Hint:** If $\det(\mathbf{A}) = 0$, what does that tell you about the rows (or columns) of $\mathbf{A}$? What does that mean for the geometric transformation it represents?
+
+## Application
+
+**Computer Graphics:** When a 3D animation studio renders a scene, every model, camera position, and light is represented by matrices. To rotate an object by angle $\theta$ around the $z$-axis:
+$$\begin{pmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}$$
+
+To move (translate) an object, you use an affine transformation (a matrix plus a vector). To project a 3D scene onto a 2D screen, you use a projection matrix. Every frame of a movie rendered on a computer involves matrix operations. Modern GPUs are optimized specifically to multiply matrices as fast as possible.
+
+**Machine Learning:** In neural networks, each layer is a matrix multiplication: given an input vector $\vec{x}$, compute $\vec{y} = \mathbf{W}\vec{x} + \vec{b}$, where $\mathbf{W}$ is a weight matrix and $\vec{b}$ is a bias vector. Training a neural network means adjusting the entries of these weight matrices so that the output is correct. A single forward pass through a large language model involves billions of matrix multiplications.
+
+## Recap
+
+We learned that matrices are rectangular arrays of numbers with well-defined operations: addition, scalar multiplication, and multiplication. We defined the identity matrix and the transpose, and we studied the determinant and inverse for 2×2 matrices. We saw how to write linear systems in matrix form and solve them using matrix inverses. We understood matrices geometrically as linear transformations—operations that rotate, scale, and reflect vectors. Matrices are the language of linear algebra and the foundation of modern computational technology, from graphics to machine learning to scientific computing.
+
+## Unlock Quiz
+
+1. What is the dimension of the product $\mathbf{A}\mathbf{B}$ if $\mathbf{A}$ is $3 \times 4$ and $\mathbf{B}$ is $4 \times 2$?
+   - $3 \times 2$
+   - $3 \times 4$
+   - $4 \times 4$
+   - The product is undefined
+
+2. For the 2×2 matrix $\mathbf{A} = \begin{pmatrix} 3 & 5 \\ 1 & 2 \end{pmatrix}$, what is $\det(\mathbf{A})$?
+   - $6 - 5 = 1$
+   - $3 + 5 + 1 + 2 = 11$
+   - $3(2) - 5(1) = 1$
+   - $3(2) + 5(1) = 11$
+
+3. The matrix $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$ geometrically represents...
+   - A rotation by 90 degrees
+   - A reflection across the line $y = x$
+   - A scaling by factor 2
+   - A projection onto the $x$-axis
+
+4. If $\mathbf{AB} = \mathbf{I}$, then $\mathbf{B}$ is...
+   - The identity matrix
+   - The inverse of $\mathbf{A}$
+   - The transpose of $\mathbf{A}$
+   - The determinant of $\mathbf{A}$
+
+5. In machine learning, the operation $\vec{y} = \mathbf{W}\vec{x}$ represents...
+   - Multiplying all elements by a scalar
+   - A linear transformation of the input vector $\vec{x}$
+   - Adding a constant to each element
+   - Taking the determinant
+
+<details>
+<summary>Answers</summary>
+
+1. $3 \times 2$
+
+2. $3(2) - 5(1) = 1$
+
+3. A reflection across the line $y = x$
+
+4. The inverse of $\mathbf{A}$
+
+5. A linear transformation of the input vector $\vec{x}$
+
+</details>
+
+## Source Notes
+
+- Arthur Cayley and matrix theory: [https://en.wikipedia.org/wiki/Matrix_(mathematics)](https://en.wikipedia.org/wiki/Matrix_(mathematics))
+- William Rowan Hamilton and quaternions: [https://en.wikipedia.org/wiki/Quaternion](https://en.wikipedia.org/wiki/Quaternion)
+- Determinants and linear systems: [https://en.wikipedia.org/wiki/Determinant](https://en.wikipedia.org/wiki/Determinant)
+- Matrix multiplication and computational complexity: [https://en.wikipedia.org/wiki/Matrix_multiplication](https://en.wikipedia.org/wiki/Matrix_multiplication)
+- GPU and matrix computation: [https://en.wikipedia.org/wiki/Graphics_processing_unit](https://en.wikipedia.org/wiki/Graphics_processing_unit)
+- AlexNet and deep learning: [https://en.wikipedia.org/wiki/AlexNet](https://en.wikipedia.org/wiki/AlexNet)

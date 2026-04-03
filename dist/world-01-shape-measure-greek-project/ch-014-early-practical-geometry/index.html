@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Early Practical Geometry — Math Journey</title>
+    <meta name="description" content="When shapes and angles became tools for building and surveying" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 1 · Chapter 14</p>
+        <h1>Early Practical Geometry</h1>
+        <p class="hero-copy">When shapes and angles became tools for building and surveying</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>foundational</span>
+          <span>Mesopotamia, Egypt</span>
+          <span>2000-1500 BCE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Understand why the right angle was essential for construction and surveying</li><li>Recognize Pythagorean triples as empirical tools used before proof</li><li>Compute and apply basic ratios in geometry</li><li>Explain slope and gradient in practical contexts</li><li>See geometry as a craft, not just a theory</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#key-terms">Key Terms</a></li><li class="toc-level-3"><a href="#the-three-four-five-rule">The Three-Four-Five Rule</a></li><li class="toc-level-3"><a href="#other-common-pythagorean-triples">Other Common Pythagorean Triples</a></li><li class="toc-level-3"><a href="#using-ratios-in-construction">Using Ratios in Construction</a></li><li class="toc-level-3"><a href="#the-seked-in-egyptian-architecture">The Seked in Egyptian Architecture</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-constructing-a-right-angle-using-the-3-4-5-rule">Example 1: Constructing a Right Angle Using the 3-4-5 Rule</a></li><li class="toc-level-3"><a href="#example-2-finding-a-pythagorean-triple">Example 2: Finding a Pythagorean Triple</a></li><li class="toc-level-3"><a href="#example-3-using-slope-ratio-for-a-ramp">Example 3: Using Slope Ratio for a Ramp</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-3"><a href="#warm-up">Warm-Up</a></li><li class="toc-level-3"><a href="#core-practice">Core Practice</a></li><li class="toc-level-3"><a href="#stretch">Stretch</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>A builder stands on a piece of land where a temple must be constructed. The foundation must be a perfect square, with corners that meet at right angles. If the corners are not square, the walls will lean, crack, and eventually collapse.</p>
+<p>But how do you make a right angle without a modern protractor? You cannot see a right angle—it is not marked in the earth.</p>
+<p>The solution came from a surprising place: rope. Tie a rope into a loop with 12 equally spaced knots. Create a triangle using the knots as vertices. If the sides are in the proportions 3, 4, and 5, the corner opposite the longest side will be exactly square. A builder could repeat this method thousands of times, creating perfect corners across Egypt and Mesopotamia, without ever understanding <em>why</em> it worked.</p>
+<p>This is geometry as craft: learned through practice, passed hand to hand, trusted because it delivered results.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Practical geometry matters because it:</p>
+<ul><li>allowed ancient peoples to build structures that lasted millennia</li><li>created empirical knowledge about shapes and angles before formal mathematics</li><li>shows that mathematics often comes <em>from</em> solving real problems, not from pure thought</li><li>introduces ideas like the right angle and ratio that will later be proven rigorously</li><li>reveals that you can use a mathematical relationship reliably even when you do not understand its deeper reason</li></ul>
+<p>This chapter honors a truth: you do not need a proof to use mathematics well. But proofs eventually let you see <em>why</em> the method works and how to invent new methods.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Archaeological and cuneiform evidence shows that Mesopotamian builders and surveyors around 2000-1500 BCE knew and used specific number triples that create right angles. The clay tablet known as Plimpton 322, dated to around 1800 BCE, contains a systematic list of such triples: (3, 4, 5), (5, 12, 13), (8, 15, 17), and others. Whether the Babylonians understood these as Pythagorean triples or simply as practical construction tools remains debated, but they clearly knew their power.</p>
+<p>Egyptian builders and pyramid architects also relied on right-angle construction, though surviving records are less explicit about the methods. Rope stretching remained a common technique, and evidence suggests that by the time Euclid wrote his Elements in Alexandria (around 300 BCE), the knowledge of these relationships was well established in both civilizations.</p>
+<p>Historians disagree on some details. Did the Babylonians <em>discover</em> these triples through systematic trial, or through pure geometry? Did they see the relationship as mathematical, or simply as craft knowledge? The fragmentary nature of ancient sources makes certainty hard. But one fact is clear: these civilizations had <em>effective</em> geometry, even if they had not yet created formal proofs.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>right angle</strong> is a corner where two lines or surfaces meet at exactly 90 degrees. It is the most fundamental angle in practical geometry because right angles allow you to build square foundations, align walls, divide land fairly, and construct objects that fit together.</p>
+<p>The key insight of ancient builders was this: <em>certain number triples always create right angles</em>.</p>
+<p>If you have three sticks or ropes of lengths 3, 4, and 5 (in the same units), and you arrange them into a triangle, the corner opposite the side of length 5 will be a right angle.</p>
+<p>Later, in ancient Greece, this relationship was named after Pythagoras and eventually stated as a theorem:</p>
+<p>$$a^2 + b^2 = c^2$$</p>
+<p>where $c$ is the longest side of a right triangle. But long before anyone proved this, builders <em>used</em> it.</p>
+<p>A <strong>ratio</strong> is a comparison between two quantities.</p>
+<p>If a field is twice as long as it is wide, the ratio of length to width is 2 to 1, written as $2:1$.</p>
+<p><strong>Slope</strong> (or <strong>gradient</strong>) describes how steep something is. If a ramp rises 3 cubits for every 4 cubits of horizontal distance, the slope is $3:4$ or the rise-over-run is $\frac{3}{4}$.</p>
+<p>Egyptian architects used slope ratios to design the faces of pyramids. The <em>seked</em> was the Egyptian measure of slope: the amount of horizontal distance per unit of vertical rise.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="key-terms">Key Terms</h3>
+<p><strong>Right angle</strong> An angle of exactly 90 degrees, formed when two straight lines or surfaces meet perpendicularly.</p>
+<p><strong>Pythagorean triple</strong> A set of three whole numbers $(a, b, c)$ such that $a^2 + b^2 = c^2$, meaning they can form the sides of a right triangle.</p>
+<p><strong>Ratio</strong> A comparison between two quantities, often written as $a:b$ or $\frac{a}{b}$.</p>
+<p><strong>Slope (or gradient)</strong> The steepness of an incline, usually expressed as rise over run: $\frac{\text{vertical rise}}{\text{horizontal distance}}$.</p>
+<p><strong>Seked</strong> The Egyptian measure of slope for pyramids and ramps, typically expressed as horizontal distance per unit of vertical rise.</p>
+<h3 id="the-three-four-five-rule">The Three-Four-Five Rule</h3>
+<p>The simplest Pythagorean triple is (3, 4, 5).</p>
+<p>If you arrange ropes or sticks in these proportions:</p>
+<ul><li>one side of length 3</li><li>another side of length 4</li><li>a third side of length 5</li></ul>
+<p>the angle where the sides of length 3 and 4 meet will be exactly 90 degrees.</p>
+<p>Check: $3^2 + 4^2 = 9 + 16 = 25 = 5^2$ ✓</p>
+<p><strong>Why this works for any scale:</strong></p>
+<p>The triple (3, 4, 5) is just one example. You can scale it:</p>
+<ul><li>(6, 8, 10): multiply by 2</li><li>(9, 12, 15): multiply by 3</li><li>(15, 20, 25): multiply by 5</li></ul>
+<p>Each of these will also create a right angle.</p>
+<h3 id="other-common-pythagorean-triples">Other Common Pythagorean Triples</h3>
+<p>Ancient builders and mathematicians knew many triples:</p>
+<ul><li>(5, 12, 13): $5^2 + 12^2 = 25 + 144 = 169 = 13^2$</li><li>(8, 15, 17): $8^2 + 15^2 = 64 + 225 = 289 = 17^2$</li><li>(7, 24, 25): $7^2 + 24^2 = 49 + 576 = 625 = 25^2$</li></ul>
+<p>Each triple appears on Plimpton 322, suggesting that Mesopotamian mathematicians were systematically generating and recording them—though whether they understood the underlying pattern is unknown.</p>
+<h3 id="using-ratios-in-construction">Using Ratios in Construction</h3>
+<p>When a builder needs to scale a design, ratios maintain the shape.</p>
+<p><strong>Example:</strong> A pyramid is designed with a slope ratio of 4:3 (rise to run). If the pyramid is to be 60 cubits high, and the slope ratio is 4:3, then for every 4 cubits of height, there are 3 cubits of horizontal distance.</p>
+<p>Height = 60 cubits Horizontal distance = $60 \times \frac{3}{4} = 45$ cubits</p>
+<p>So the base of the pyramid (from center to edge) is 45 cubits.</p>
+<h3 id="the-seked-in-egyptian-architecture">The Seked in Egyptian Architecture</h3>
+<p>The seked was expressed in &quot;hands and fingers&quot; and represented the horizontal distance (in units called &quot;hands&quot;) per 1 cubit of vertical rise.</p>
+<p>A common seked was 5 hands and 1 finger per cubit, which is roughly a slope of 1:1.25 or 4:5.</p>
+<p>If you know the seked and the height, you can find the horizontal distance. If you know the height and horizontal distance, you can compute the seked.</p>
+<p>This allowed Egyptian architects to design pyramid faces with precision and consistency across generations.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-constructing-a-right-angle-using-the-3-4-5-rule">Example 1: Constructing a Right Angle Using the 3-4-5 Rule</h3>
+<p>A builder needs to lay out a rectangular foundation for a storehouse. The desired dimensions are 12 cubits by 9 cubits.</p>
+<p>First, she creates a right angle using ropes. She ties knots in a rope to mark lengths of 3, 4, and 5 cubits. She stakes the rope into a triangle and verifies that the corner opposite the longest side is square.</p>
+<p>Once the right angle is established, she extends the 3-cubit side to 9 cubits and the 4-cubit side to 12 cubits.</p>
+<p>What is the distance across the diagonal?</p>
+<p><strong>Solution</strong></p>
+<p>If the sides are 9 and 12 cubits, the diagonal $c$ satisfies: $$c^2 = 9^2 + 12^2 = 81 + 144 = 225$$ $$c = 15 \text{ cubits}$$</p>
+<p>Notice that (9, 12, 15) is the (3, 4, 5) triple scaled by 3. The diagonal is 15 cubits.</p>
+<p>This diagonal check allows the builder to verify the rectangle is truly square at all four corners. If the diagonal is not exactly 15 cubits, something is off.</p>
+<h3 id="example-2-finding-a-pythagorean-triple">Example 2: Finding a Pythagorean Triple</h3>
+<p>A surveyor measures a triangular field and finds that two sides are 5 and 12 cubits, and they meet at a right angle. What must the hypotenuse (longest side) be?</p>
+<p><strong>Solution</strong></p>
+<p>Use the relationship for right triangles: $$c^2 = 5^2 + 12^2 = 25 + 144 = 169$$ $$c = 13 \text{ cubits}$$</p>
+<p>The triple (5, 12, 13) is another Pythagorean triple. The hypotenuse is 13 cubits.</p>
+<h3 id="example-3-using-slope-ratio-for-a-ramp">Example 3: Using Slope Ratio for a Ramp</h3>
+<p>A builder is constructing a ramp to a temple platform. The platform is 8 cubits high. The desired slope ratio is 1:4 (rise to run), meaning 1 cubit of rise for every 4 cubits of horizontal distance.</p>
+<p>How long must the ramp be horizontally?</p>
+<p><strong>Solution</strong></p>
+<p>If the rise is 8 cubits and the ratio is 1:4, then: $$\text{horizontal distance} = 8 \times 4 = 32 \text{ cubits}$$</p>
+<p>The ramp extends 32 cubits horizontally.</p>
+<p>To find the length of the ramp itself (the hypotenuse): $$\text{ramp length}^2 = 8^2 + 32^2 = 64 + 1024 = 1088$$ $$\text{ramp length} \approx 33 \text{ cubits}$$</p>
+<p>(More precisely, $\sqrt{1088} \approx 32.98$ cubits, but ancient builders would round to 33.)</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<h3 id="warm-up">Warm-Up</h3>
+<ol><li>Check whether (6, 8, 10) is a Pythagorean triple. Does it form a right triangle?</li><li>A slope ratio is 1:3 (rise to run). If the rise is 5 cubits, what is the horizontal distance?</li></ol>
+<h3 id="core-practice">Core Practice</h3>
+<ol><li>A right triangle has sides of 7 and 24 cubits that meet at the right angle. Find the hypotenuse.</li><li>A surveyor scales a design that uses a ratio of 3:5. If the original design is 15 cubits, what is the scaled version at ratio 3:5 if one dimension is 20 cubits?</li><li>The seked of a pyramid face is such that for every 1 cubit of rise, there are 1.25 cubits of horizontal distance. If the pyramid is 60 cubits high, what is the horizontal distance from center to edge?</li><li>Verify that (8, 15, 17) is a Pythagorean triple by checking that $8^2 + 15^2 = 17^2$.</li></ol>
+<h3 id="stretch">Stretch</h3>
+<ol><li>A rectangular field is known to be square at all corners. Two adjacent sides measure 20 cubits and 21 cubits. Is there an error in the measurement? (Hint: what should the diagonal be if corners are truly square?)</li></ol>
+<details>
+<summary>Practice Answer Guide</summary>
+<ol><li>Check: $6^2 + 8^2 = 36 + 64 = 100 = 10^2$. Yes, it is a Pythagorean triple and forms a right triangle.</li><li>If rise:run = 1:3 and rise = 5, then run = 5 × 3 = 15 cubits.</li><li>$c^2 = 7^2 + 24^2 = 49 + 576 = 625$, so $c = 25$ cubits.</li><li>If the ratio is 3:5 and one dimension is 20 cubits, then the other is $20 \times \frac{3}{5} = 12$ cubits. (Or if one is 20 and the ratio 3:5 applies, the scaled version depends on which dimension; clarify context. If scaling from original 15, then 15 × (3/5) = 9 is the other dimension of the scaled design.)</li><li>Horizontal distance = 60 × 1.25 = 75 cubits.</li><li>$8^2 + 15^2 = 64 + 225 = 289 = 17^2$ ✓</li><li>If the field is a perfect rectangle with sides 20 and 21 cubits, the diagonal should be $\sqrt{20^2 + 21^2} = \sqrt{400 + 441} = \sqrt{841} = 29$ cubits. If a different diagonal was measured, there is an error in layout or measurement.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>An ancient builder claims she can construct a perfect right angle using only rope and knots, without any instruments. A skeptic says, &quot;That is impossible. You need instruments to measure degrees.&quot;</p>
+<p>Write 4–6 sentences explaining how the builder can do this. Your answer should:</p>
+<ul><li>describe a practical method using rope</li><li>explain why Pythagorean triples make this possible</li><li>address why no degrees or instruments are needed for this to work</li></ul>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>The practical geometry in this chapter is still used today.</p>
+<p>Construction workers use the 3-4-5 rule (or multiples like 6-8-10) to square corners when building houses and buildings. Surveyors use slope ratios when designing roads, ramps, and terraces. Architects use proportional ratios when scaling designs. Any time you see a ramp with a specific steepness or a building with straight, square corners, you are looking at practical geometry descended directly from ancient Mesopotamian and Egyptian methods.</p>
+<p>Modern tools (lasers, GPS, calculators) have made the work faster and more precise, but the mathematical reasoning is unchanged. A builder still needs to know that two specific measurements will create a right angle, and why slope matters for safety and function.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li>A <strong>right angle</strong> is a 90-degree corner, essential for building and surveying.</li><li><strong>Pythagorean triples</strong> are sets of whole numbers (like 3, 4, 5) that create right angles when arranged as triangle sides.</li><li>Ancient builders used triples as empirical tools long before proofs existed.</li><li>A <strong>ratio</strong> compares two quantities and allows designs to be scaled while maintaining shape.</li><li><strong>Slope (or seked)</strong> measures steepness as rise over run, critical for ramps, pyramids, and canals.</li><li>Practical geometry was developed out of necessity: building, surveying, and construction cannot rely on approximation.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is a Pythagorean triple?</li></ol>
+<ul><li>A shape with three sides</li><li>A set of three whole numbers that form a right triangle</li><li>A rope with three knots</li><li>A method of counting in ancient Egypt</li></ul>
+<ol><li>Which of the following is a Pythagorean triple?</li></ol>
+<ul><li>(2, 3, 4)</li><li>(5, 12, 13)</li><li>(4, 5, 6)</li><li>(3, 3, 3)</li></ul>
+<ol><li>A builder uses the 3-4-5 rule by scaling it to 6-8-10 to construct a larger right angle. Why does this still work?</li></ol>
+<ul><li>The angle size depends on how long the ropes are</li><li>Scaling preserves the ratio, so the corner remains square</li><li>It only works with the original 3-4-5</li><li>Ancient builders invented different rules for different sizes</li></ul>
+<ol><li>A ramp has a slope ratio of 1:4 (rise to run). If it rises 12 cubits, how far does it extend horizontally?</li></ol>
+<ul><li>3 cubits</li><li>12 cubits</li><li>48 cubits</li><li>16 cubits</li></ul>
+<ol><li>What was the seked in Egyptian architecture?</li></ol>
+<ul><li>A unit of area</li><li>A measure of slope for pyramid faces and ramps</li><li>A type of brick used in construction</li><li>A tool for measuring angles</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>A set of three whole numbers that form a right triangle</li><li>(5, 12, 13)</li><li>Scaling preserves the ratio, so the corner remains square</li><li>48 cubits</li><li>A measure of slope for pyramid faces and ramps</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Pythagorean_triple" target="_blank" rel="noopener">Pythagorean triple</a> — mathematical background on Pythagorean triples and their historical use in construction</li><li><a href="https://en.wikipedia.org/wiki/Plimpton_322" target="_blank" rel="noopener">Plimpton 322</a> — detailed information about this famous Babylonian tablet listing Pythagorean triples</li><li><a href="https://en.wikipedia.org/wiki/Babylonian_mathematics" target="_blank" rel="noopener">Babylonian mathematics</a> — the mathematical knowledge of ancient Mesopotamia, including geometry and algebra</li><li><a href="https://en.wikipedia.org/wiki/Egyptian_pyramid_construction" target="_blank" rel="noopener">Egyptian pyramid construction</a> — practical geometry and measurement in pyramid building</li><li><a href="https://en.wikipedia.org/wiki/Slope" target="_blank" rel="noopener">Slope</a> — the mathematical concept of slope and its applications in geometry and engineering</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-01-shape-measure-greek-project/ch-013-measuring-land-and-space/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Measuring Land and Space</span></a><a class="pager-link pager-link--next" href="../../world-01-shape-measure-greek-project/ch-015-the-greek-turn-toward-proof/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Greek Turn Toward Proof</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

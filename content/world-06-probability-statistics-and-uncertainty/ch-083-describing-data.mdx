@@ -1,0 +1,387 @@
+---
+worldNumber: 6
+world: world-06-probability-statistics-and-uncertainty
+chapterNumber: 83
+title: "Describing Data — Centre, Spread, and Shape"
+subtitle: "How to summarise a thousand numbers in five — the art of statistics"
+historicalPeriod: "1800s–1900s"
+estimatedTimeMinutes: 35
+mainConcepts:
+  - mean
+  - median
+  - mode
+  - variance
+  - standard deviation
+  - IQR
+  - five-number summary
+  - box plot
+  - distribution shape
+learningObjectives:
+  - Compute mean, median, and mode
+  - Calculate variance, standard deviation, and IQR
+  - Construct and interpret box plots
+  - Describe distribution shape
+  - Identify outliers using IQR
+---
+
+## Story Hook
+
+**Florence Nightingale** (1854–1856) arrives at a hospital in Scutari, Turkey, during the Crimean War. Soldiers are dying — thousands of them — from disease, not battle wounds. The medical establishment ignores her concerns. Words aren't enough.
+
+In 1857, Nightingale presents to the British Parliament a striking visualisation: a **polar area chart** (nicknamed "coxcomb diagram"), showing that the vast majority of deaths are from *preventable diseases* — cholera, dysentery, typhoid — not combat.
+
+Parliament is moved. The military hospital system is reformed. Conditions improve. Deaths plummet.
+
+Nightingale herself wrote: *"Statistics are the most important science in the whole world."* Not because numbers are inherently interesting, but because they *reveal truth* and *compel action*.
+
+This chapter teaches you how to describe data the way Nightingale did: clearly, persuasively, and honestly. We'll learn measures of centre, spread, and shape — the tools statisticians use to summarise vast datasets in simple, meaningful ways.
+
+## Why It Matters
+
+Every day, people face data:
+- A hospital tracks patient recovery times: how long, on average, until discharge?
+- A school analyses test scores: do students cluster around the middle or spread wide?
+- A company measures customer satisfaction: what's typical, and how much do ratings vary?
+- A city tracks air quality: is pollution getting worse? How unusual is today's reading?
+
+Without statistical descriptions, you're lost. A thousand numbers mean nothing. But a few numbers — the centre, the spread, the shape — tell you *everything you need to know*.
+
+Statistical literacy lets you:
+- Spot trends and anomalies in data
+- Identify unusual or concerning values (outliers)
+- Compare datasets (is this year's performance better than last year's?)
+- Communicate findings to others
+- Avoid manipulation (bad actors use misleading descriptions to deceive)
+
+## Historical Context
+
+The 1800s saw an explosion of data collection. Governments measured crime, poverty, health, literacy. Statisticians needed language to describe these datasets.
+
+**Florence Nightingale** (1820–1910) wasn't primarily a mathematician — she was a nurse and social reformer. But she became a pioneer in data visualisation and descriptive statistics.
+
+**Francis Galton** (1822–1911) and **Karl Pearson** (1857–1936) formalised measures of centre and spread. They invented concepts like variance, standard deviation, and correlation.
+
+**John Tukey** (1915–2000) developed the **five-number summary** and **box plot** in the 1970s, making it easy to visualise distributions at a glance.
+
+By the 20th century, descriptive statistics had become a core language of science, medicine, engineering, economics, and public policy. It remains so today.
+
+## Core Concept
+
+Imagine you're given 100 student test scores. You could list all 100 numbers, but that's overwhelming. Instead, you *describe* them:
+- What's the *typical* score? (Centre)
+- Do scores cluster tightly or spread wide? (Spread)
+- Are there unusual scores? (Outliers)
+- Is the distribution symmetric or skewed? (Shape)
+
+**Centre** answers: what's a representative value?
+**Spread** answers: how much variation is there?
+**Shape** answers: how is the data distributed?
+
+These three aspects tell you almost everything about a dataset.
+
+### Types of Data
+
+Before describing data, classify it:
+- **Categorical** (qualitative): colours, categories, labels. E.g., blood type, gender, country
+  - **Nominal:** no natural order. E.g., colours
+  - **Ordinal:** natural order. E.g., education level (primary < secondary < tertiary)
+- **Quantitative** (numerical): numbers measured on a scale
+  - **Discrete:** countable values. E.g., number of children, defects, errors
+  - **Continuous:** any value in a range. E.g., height, weight, time, temperature
+
+Different types of data need different descriptions. For categorical data, you count frequencies. For quantitative data, you calculate centre and spread.
+
+## Definitions and Formal Lesson
+
+### Measures of Centre
+
+#### Mean (Average)
+
+$$\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} = \frac{x_1 + x_2 + \cdots + x_n}{n}$$
+
+Sum all values and divide by the count. Most familiar measure, but *sensitive to outliers*.
+
+**Example:** Test scores: 60, 75, 80, 85, 90. Mean = $\frac{60+75+80+85+90}{5} = \frac{390}{5} = 78$.
+
+#### Median (Middle Value)
+
+Arrange data in order. The median is the middle value (if $n$ is odd) or the average of the two middle values (if $n$ is even).
+
+**Example 1 (odd $n$):** Scores: 60, 75, 80, 85, 90. Median = 80 (middle value).
+
+**Example 2 (even $n$):** Scores: 60, 75, 80, 85. Median = $\frac{75 + 80}{2} = 77.5$.
+
+The median is *resistant to outliers*. If one score were 200 instead of 90, the mean would jump to $\frac{500}{5} = 100$, but the median stays at 80.
+
+#### Mode (Most Frequent Value)
+
+The value that appears most often. A dataset can have one mode (unimodal), two modes (bimodal), or no mode.
+
+**Example:** Scores: 75, 80, 80, 85, 85, 85, 90. Mode = 85 (appears three times).
+
+### Measures of Spread
+
+#### Range
+
+$$\text{Range} = \max - \min$$
+
+Simplest measure, but influenced by outliers.
+
+**Example:** Scores from 60 to 90. Range = 90 − 60 = 30.
+
+#### Variance
+
+$$s^2 = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n-1}$$
+
+(Note: divide by $n-1$, not $n$, for a sample. This is called "Bessel's correction" and makes the estimate unbiased.)
+
+Variance measures *average squared distance from the mean*. Units are squared (e.g., if measuring height in cm, variance is in cm²).
+
+**Example:** Scores: 60, 75, 80, 85, 90. Mean = 78.
+- $(60 - 78)^2 = 324$
+- $(75 - 78)^2 = 9$
+- $(80 - 78)^2 = 4$
+- $(85 - 78)^2 = 49$
+- $(90 - 78)^2 = 144$
+
+Sum = 530. Variance = $\frac{530}{4} = 132.5$.
+
+#### Standard Deviation
+
+$$s = \sqrt{s^2}$$
+
+The square root of variance. More interpretable because it's in the *same units* as the data. "Typical deviation from the mean."
+
+**Example:** $s = \sqrt{132.5} \approx 11.51$. Scores typically deviate by about 11.5 points from the mean.
+
+#### Interquartile Range (IQR)
+
+First, define **quartiles**:
+- **Q1** (first quartile): 25th percentile (25% of data below)
+- **Q2** (second quartile): 50th percentile = median
+- **Q3** (third quartile): 75th percentile (75% of data below)
+
+$$\text{IQR} = Q3 - Q1$$
+
+The IQR is *resistant to outliers* (uses the middle 50% of data).
+
+### Five-Number Summary
+
+$$\text{Min}, \, Q1, \, \text{Median}, \, Q3, \, \text{Max}$$
+
+This gives a complete picture of the distribution in five numbers. Often visualised as a **box plot**.
+
+**Box Plot:**
+- A box spans from Q1 to Q3, with a line inside at the median
+- Whiskers extend from the box to the min and max (or to 1.5 × IQR beyond Q1/Q3 if there are outliers)
+- Outliers are plotted as individual points
+
+**Identifying Outliers:**
+
+A value is an outlier if:
+$$x < Q1 - 1.5 \times \text{IQR} \quad \text{or} \quad x > Q3 + 1.5 \times \text{IQR}$$
+
+### Distribution Shape
+
+Examine a histogram or box plot to describe shape:
+- **Symmetric:** Left and right sides mirror each other. Mean ≈ median.
+- **Skewed right:** Long tail on the right. Mean > median. (Examples: income, house prices)
+- **Skewed left:** Long tail on the left. Mean < median. (Examples: test scores with a ceiling)
+
+## Worked Examples
+
+**Example 1: Comparing Two Datasets**
+
+Test scores for two classes:
+- Class A: 65, 72, 78, 82, 89 (Mean = 77.2, Median = 78, Std Dev ≈ 8.4)
+- Class B: 70, 75, 78, 80, 100 (Mean = 80.6, Median = 78, Std Dev ≈ 11.0)
+
+**Interpretation:** Class B has a higher mean (80.6 vs 77.2) — students performed better on average. But Class B also has higher standard deviation (11.0 vs 8.4) — scores are more spread out. The extreme score of 100 in Class B pulls up the mean but doesn't affect the median. This suggests Class B has one standout student but otherwise similar performance to Class A.
+
+**Example 2: Five-Number Summary and Outliers**
+
+Salary data (in thousands): 35, 40, 42, 45, 48, 50, 52, 55, 58, 200
+
+Ordered: same.
+- Min = 35
+- Q1 = 42.5 (average of 42 and 43 — wait, 43 isn't in the list. Q1 is the median of the lower half: 35, 40, 42, 45, 48. Q1 = 42.)
+- Median = (48 + 50) / 2 = 49
+- Q3 = 55 (median of upper half: 50, 52, 55, 58, 200. Q3 = 55.)
+- Max = 200
+
+IQR = 55 − 42 = 13.
+
+Outlier threshold: $Q3 + 1.5 \times \text{IQR} = 55 + 1.5 \times 13 = 55 + 19.5 = 74.5$.
+
+The value 200 exceeds 74.5, so it's an outlier — likely a CEO or high earner in a dataset of regular employees.
+
+**Example 3: Shape and Distribution**
+
+- Test scores (most students cluster in the 70s–80s, few score very low): symmetric or slightly skewed left (ceiling effect)
+- Income distribution (most people earn $30k–$60k, some earn $100k+): skewed right (right tail)
+- Grades (if the professor curves to A = 90+, B = 80+, etc.): skewed left (clustered at the ceiling)
+
+## Practice Set
+
+1. **Computing Descriptive Statistics:** Data: 12, 15, 18, 22, 25, 28, 30.
+   - Find the mean, median, and mode.
+   - Calculate the variance and standard deviation. (Hint: mean = 21.43.)
+   - Find Q1, Q3, and IQR.
+
+2. **Identifying Outliers:** Dataset: 100, 105, 110, 112, 115, 120, 125, 130, 500.
+   - Calculate the five-number summary.
+   - Identify any outliers using the IQR method.
+   - How does the presence of 500 affect the mean? The median?
+
+3. **Distribution Shape:** A histogram shows test scores. The median is 75, but the mean is 82. Is the distribution skewed left or right? Why?
+
+4. **Box Plot Interpretation:** Two box plots show delivery times (in days) for two shipping companies.
+   - Company A: Box from 2 to 4, median at 3, whiskers at 1 and 5.
+   - Company B: Box from 3 to 7, median at 5, whiskers at 2 and 10.
+   - Which company is more consistent? Which is faster? Explain.
+
+5. **Real Data:** Heights of 10 students (cm): 160, 162, 165, 168, 170, 172, 175, 178, 180, 185.
+   - Compute mean, median, std dev.
+   - Create a five-number summary.
+   - Sketch a box plot.
+
+## Reasoning Task
+
+**Misleading Statistics**
+
+Scenario: A politician claims that "the average household income in the city is $95,000, proving that our policies work!"
+
+But the distribution is:
+- 80% of households earn $30,000–$60,000
+- 15% earn $60,000–$100,000
+- 5% earn $500,000+ (wealthy CEOs, entrepreneurs)
+
+**Your Task:**
+
+1. Calculate the mean income. Is the claim accurate?
+2. What's a better measure of "typical" income — mean or median? Why?
+3. Why might the politician use the mean instead of the median?
+4. What do the five-number summary and quartiles reveal about income inequality?
+
+This is how statistics are misused in politics and marketing. Understanding centre, spread, and shape lets you see through the deception.
+
+## Application
+
+**Real-World Scenario: Hospital Performance Evaluation**
+
+A hospital tracks patient wait times (minutes) in the emergency department. Over a month, 200 patients are treated:
+
+Data summary:
+- Mean = 47 minutes
+- Median = 35 minutes
+- Std Dev = 28 minutes
+- Min = 5, Q1 = 20, Q3 = 65, Max = 180
+
+**Questions:**
+
+1. Is the distribution symmetric or skewed? What does this tell you?
+2. The hospital's target is "50% of patients seen within 45 minutes." Are they meeting this target? (Hint: what does Q2 tell you?)
+3. Identify and describe the outliers (patients waiting 2+ hours).
+4. Should the hospital report the mean or median to the public? Which is more representative of patient experience?
+5. What operational changes (more staff, triage, etc.) might reduce wait times?
+
+This scenario reflects real-world healthcare data. Hospitals use these statistics to identify bottlenecks and improve service.
+
+## Recap
+
+**Describing data requires three perspectives:**
+
+**Centre (Location):**
+- Mean: sensitive to outliers, most familiar
+- Median: resistant to outliers, best for skewed data
+- Mode: useful for categorical data, identifies peaks
+
+**Spread (Variability):**
+- Range: simple but influenced by outliers
+- Variance: average squared deviation from mean
+- Standard deviation: typical deviation from mean (same units as data)
+- IQR: resistant to outliers, captures middle 50%
+
+**Shape (Distribution):**
+- Symmetric: mean ≈ median
+- Skewed right: mean > median
+- Skewed left: mean < median
+- Five-number summary and box plots visualise shape
+
+**Why it Matters:**
+- Describes large datasets in simple, meaningful terms
+- Identifies outliers and unusual patterns
+- Enables comparison between groups
+- Reveals truth that raw data hides
+
+Florence Nightingale proved that good data descriptions compel action and save lives. Today, statistics underpin medicine, engineering, business, public policy, and science. Master these tools, and you can understand the world.
+
+## Unlock Quiz
+
+**Question 1:** For the dataset 5, 7, 9, 11, 13, what is the mean?
+
+- 8
+- 9
+- 10
+- 11
+
+<details>
+<summary>Answer</summary>
+Mean = $\frac{5 + 7 + 9 + 11 + 13}{5} = \frac{45}{5} = 9$. The answer is 9.
+</details>
+
+**Question 2:** For the dataset 10, 20, 30, 40, 50, 60, what is the median?
+
+- 35
+- 40
+- 45
+- 30
+
+<details>
+<summary>Answer</summary>
+With 6 values (even), the median is the average of the 3rd and 4th values: $\frac{30 + 40}{2} = 35$. The answer is 35.
+</details>
+
+**Question 3:** A dataset has Q1 = 20 and Q3 = 40. What is the IQR?
+
+- 20
+- 30
+- 40
+- 60
+
+<details>
+<summary>Answer</summary>
+IQR = Q3 − Q1 = 40 − 20 = 20. The answer is 20.
+</details>
+
+**Question 4:** A value is considered an outlier if it falls outside which range?
+
+- $Q1 - \text{IQR}$ to $Q3 + \text{IQR}$
+- $Q1 - 1.5 \times \text{IQR}$ to $Q3 + 1.5 \times \text{IQR}$
+- $\text{Min}$ to $\text{Max}$
+- $\mu - 3\sigma$ to $\mu + 3\sigma$
+
+<details>
+<summary>Answer</summary>
+Values below $Q1 - 1.5 \times \text{IQR}$ or above $Q3 + 1.5 \times \text{IQR}$ are considered outliers. The answer is the second option.
+</details>
+
+**Question 5:** A test score distribution has mean 70 and median 75. Is the distribution skewed left or right?
+
+- Skewed left (mean < median)
+- Skewed right (mean > median)
+- Symmetric (mean ≈ median)
+- Cannot determine
+
+<details>
+<summary>Answer</summary>
+When mean < median, the distribution is skewed left (a long tail pulls the mean down). The answer is "Skewed left (mean < median)".
+</details>
+
+## Source Notes
+
+- [Descriptive statistics — Wikipedia](https://en.wikipedia.org/wiki/Descriptive_statistics)
+- [Florence Nightingale — Wikipedia](https://en.wikipedia.org/wiki/Florence_Nightingale)
+- [Box plot — Wikipedia](https://en.wikipedia.org/wiki/Box_plot)
+- [Standard deviation — Wikipedia](https://en.wikipedia.org/wiki/Standard_deviation)
+- [Quartile — Wikipedia](https://en.wikipedia.org/wiki/Quartile)

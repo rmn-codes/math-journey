@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ch-073-integration-techniques — Math Journey</title>
+    <meta name="description" content="The art of antidifferentiation — strategies for integrals that resist direct rules" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 5 · Chapter 73</p>
+        <h1>ch-073-integration-techniques</h1>
+        <p class="hero-copy">The art of antidifferentiation — strategies for integrals that resist direct rules</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1700s–1800s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#u-substitution-reversing-the-chain-rule">u-Substitution: Reversing the Chain Rule</a></li><li class="toc-level-3"><a href="#integration-by-parts-reversing-the-product-rule">Integration by Parts: Reversing the Product Rule</a></li><li class="toc-level-3"><a href="#trigonometric-integrals-and-standard-forms">Trigonometric Integrals and Standard Forms</a></li><li class="toc-level-3"><a href="#completing-the-square">Completing the Square</a></li><li class="toc-level-3"><a href="#partial-fractions-linear-factors">Partial Fractions (Linear Factors)</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>You&#x27;re standing in your kitchen, and you realize you&#x27;ve left the stove on. The room is warming. You measure the temperature at different times and notice it follows a pattern — but the pattern isn&#x27;t simple. To predict when the room will reach a dangerous temperature, you&#x27;d need to reverse the chain rule, undo a product, recognize a hidden trigonometric structure. That&#x27;s integration techniques in a nutshell: the art of spotting disguised patterns and untangling them.</p>
+<p>Not every integral yields to the basic power rule or direct substitution. Mathematicians in the 1700s and 1800s — Leibniz, the Bernoulli family, Euler — spent decades developing clever strategies. Like detectives, they learned to see a complicated integral and ask: <em>What rule was this function likely created from?</em> Each technique is a way of working backward, of reversing a familiar operation from calculus to expose the hidden antiderivative.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>In the real world, almost no integral is simple. Engineering, physics, chemistry, economics — all involve integrals that look messy. Without integration techniques, you&#x27;d be stuck. These methods are the difference between being able to solve a real problem and being stuck on the first step.</p>
+<p>When you see $\int x e^x \, dx$ or $\int \frac{1}{x^2 + 4x + 5} \, dx$, you need a playbook. The techniques in this chapter <em>are</em> that playbook.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>In the late 1600s, Newton and Leibniz invented calculus, but integration was hard. Differentiation was straightforward — take a derivative, apply the rules. But finding antiderivatives? That required <em>cleverness</em>. For the next century, mathematicians built a toolkit.</p>
+<p>Leibniz himself developed integration by parts, recognizing that if the product rule creates a derivative, it should be reversible. Euler, the most prolific mathematician who ever lived, devised methods for integrals of rational functions (fractions of polynomials) and trigonometric expressions. The Bernoullis developed substitution strategies.</p>
+<p>By the 1800s, a canon of techniques had solidified — the methods we use today. What&#x27;s remarkable is that despite computers and symbolic algebra systems, these same techniques remain central to calculus because they teach <em>reasoning</em>: how to transform an unfamiliar problem into a familiar one.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>Integration techniques are <strong>strategies for recognizing the structure hidden inside a complicated integral and transforming it into something you already know how to integrate</strong>.</p>
+<p>The key insight: if a function was created by a differentiation rule, you can reverse that rule to integrate it. Every technique works by asking: <em>What rule made this?</em></p>
+<h3 id="u-substitution-reversing-the-chain-rule">u-Substitution: Reversing the Chain Rule</h3>
+<p>The chain rule says: if $y = f(g(x))$, then $\frac{dy}{dx} = f&#x27;(g(x)) \cdot g&#x27;(x)$.</p>
+<p>So if you integrate both sides: $$\int f&#x27;(g(x)) \cdot g&#x27;(x) \, dx = f(g(x)) + C$$</p>
+<p>This is <strong>u-substitution</strong>. You set $u = g(x)$, so $du = g&#x27;(x) \, dx$, and the integral becomes: $$\int f&#x27;(u) \, du = f(u) + C = f(g(x)) + C$$</p>
+<p>The art is recognizing which part of the integrand is $g(x)$ and which is $g&#x27;(x)$.</p>
+<h3 id="integration-by-parts-reversing-the-product-rule">Integration by Parts: Reversing the Product Rule</h3>
+<p>The product rule says: $(uv)&#x27; = u&#x27;v + uv&#x27;$.</p>
+<p>Integrate both sides: $$\int (u&#x27;v + uv&#x27;) \, dx = uv + C$$</p>
+<p>Rearrange: $$\int u \, dv = uv - \int v \, du$$</p>
+<p>This is <strong>integration by parts</strong>. It trades one integral for another — useful when the new integral is simpler.</p>
+<p>The <strong>LIATE rule</strong> tells you how to choose $u$:</p>
+<ul><li><strong>L</strong>ogarithmic functions</li><li><strong>I</strong>nverse trig functions</li><li><strong>A</strong>lgebraic (polynomial)</li><li><strong>T</strong>rigonometric</li><li><strong>E</strong>xponential</li></ul>
+<p>Whichever comes first in LIATE, make that your $u$.</p>
+<h3 id="trigonometric-integrals-and-standard-forms">Trigonometric Integrals and Standard Forms</h3>
+<p>Some integrals appear so often they&#x27;re worth memorizing: $$\int \sin x \, dx = -\cos x + C$$ $$\int \cos x \, dx = \sin x + C$$ $$\int \sec^2 x \, dx = \tan x + C$$ $$\int \tan x \, dx = -\ln|\cos x| + C = \ln|\sec x| + C$$ $$\int \sec x \tan x \, dx = \sec x + C$$ $$\int \csc^2 x \, dx = -\cot x + C$$ $$\int \csc x \cot x \, dx = -\csc x + C$$</p>
+<p>When you spot a trigonometric integral, you&#x27;re looking for these forms — or ways to transform the integral into them using identities like $\sin^2 x + \cos^2 x = 1$.</p>
+<p>For more complex trigonometric integrals, you often use the <strong>power reduction formulas</strong>: $$\sin^2 x = \frac{1 - \cos(2x)}{2}, \quad \cos^2 x = \frac{1 + \cos(2x)}{2}$$</p>
+<p>These allow you to reduce the power of trigonometric functions and integrate. For instance: $$\int \sin^2 x \, dx = \int \frac{1 - \cos(2x)}{2} \, dx = \frac{x}{2} - \frac{\sin(2x)}{4} + C$$</p>
+<h3 id="completing-the-square">Completing the Square</h3>
+<p>For integrals like $\int \frac{1}{x^2 + 4x + 5} \, dx$, you complete the square: $$x^2 + 4x + 5 = (x+2)^2 + 1$$</p>
+<p>Then use $u$-substitution with $u = x + 2$, and you get a standard arctangent form.</p>
+<h3 id="partial-fractions-linear-factors">Partial Fractions (Linear Factors)</h3>
+<p>For a rational function $\frac{p(x)}{q(x)}$ where $q(x)$ factors into distinct linear factors, you decompose it: $$\frac{x+5}{(x-1)(x+2)} = \frac{A}{x-1} + \frac{B}{x+2}$$</p>
+<p>Solve for $A$ and $B$, then integrate each piece separately — usually yielding logarithms.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Integration by substitution (u-substitution):</strong> If $u = g(x)$, then $du = g&#x27;(x) \, dx$, and: $$\int f(g(x)) \cdot g&#x27;(x) \, dx = \int f(u) \, du$$</p>
+<p>This reverses the chain rule. The key step is recognizing that the integrand contains both a composite function and the derivative of its inner function.</p>
+<p><strong>Integration by parts:</strong> If $u$ and $v$ are differentiable: $$\int u \, dv = uv - \int v \, du$$</p>
+<p>This reverses the product rule. Use the LIATE rule to decide which factor should be $u$ (and which should be $dv$).</p>
+<p><strong>Standard trigonometric integrals:</strong> Memorize the basic forms ($\sin$, $\cos$, $\sec^2$, $\tan$, etc.) and use power reduction formulas to simplify higher powers.</p>
+<p><strong>Completing the square:</strong> Rewrite $ax^2 + bx + c$ as $a(x + p)^2 + q$ to expose a standard form (usually arctangent).</p>
+<p><strong>Partial fractions:</strong> Decompose a rational function $\frac{p(x)}{q(x)}$ into simpler fractions whose antiderivatives are known (usually logarithms). Factor the denominator first, then set up the decomposition and solve for unknowns.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: u-substitution with the chain rule reversed</strong></p>
+<p>Find $\int 2x \cos(x^2) \, dx$.</p>
+<p><em>Solution:</em> Notice that if $u = x^2$, then $du = 2x \, dx$ — and that&#x27;s exactly in the integrand! $$\int 2x \cos(x^2) \, dx = \int \cos(u) \, du = \sin(u) + C = \sin(x^2) + C$$</p>
+<p><strong>Example 2: integration by parts</strong></p>
+<p>Find $\int x e^x \, dx$.</p>
+<p><em>Solution:</em> Choose $u = x$ (algebraic, lower in LIATE than exponential). Then $dv = e^x \, dx$, so $du = dx$ and $v = e^x$. $$\int x e^x \, dx = x e^x - \int e^x \, dx = x e^x - e^x + C = e^x(x - 1) + C$$</p>
+<p><strong>Example 3: trigonometric integral</strong></p>
+<p>Find $\int \sec^2 x \, dx$.</p>
+<p><em>Solution:</em> This is a standard form. $$\int \sec^2 x \, dx = \tan x + C$$</p>
+<p><strong>Example 4: completing the square</strong></p>
+<p>Find $\int \frac{1}{x^2 + 2x + 5} \, dx$.</p>
+<p><em>Solution:</em> Complete the square: $x^2 + 2x + 5 = (x+1)^2 + 4$. Let $u = x + 1$, $du = dx$. $$\int \frac{1}{(x+1)^2 + 4} \, dx = \int \frac{1}{u^2 + 4} \, du$$</p>
+<p>Now recognize the arctangent form: $\int \frac{1}{u^2 + a^2} \, du = \frac{1}{a} \arctan\left(\frac{u}{a}\right) + C$ with $a = 2$. $$\int \frac{1}{u^2 + 4} \, du = \frac{1}{2} \arctan\left(\frac{u}{2}\right) + C = \frac{1}{2} \arctan\left(\frac{x+1}{2}\right) + C$$</p>
+<p><strong>Example 5: trigonometric integral with power reduction</strong></p>
+<p>Find $\int \sin^2 x \, dx$.</p>
+<p><em>Solution:</em> Use the power reduction formula $\sin^2 x = \frac{1 - \cos(2x)}{2}$: $$\int \sin^2 x \, dx = \int \frac{1 - \cos(2x)}{2} \, dx = \frac{1}{2} \int (1 - \cos(2x)) \, dx$$</p>
+<p>Integrate term by term: $$= \frac{1}{2} \left( x - \frac{\sin(2x)}{2} \right) + C = \frac{x}{2} - \frac{\sin(2x)}{4} + C$$</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Use $u$-substitution to find $\int 3x^2 \sin(x^3) \, dx$.</li></ol>
+<ol><li>Use integration by parts to find $\int x \sin x \, dx$.</li></ol>
+<ol><li>Evaluate $\int \tan x \, dx$.</li></ol>
+<ol><li>Complete the square and integrate: $\int \frac{1}{x^2 - 4x + 8} \, dx$.</li></ol>
+<ol><li>Which technique would you use first for $\int (x^2 + 3) e^{x^2} \, dx$? Explain your reasoning.</li></ol>
+<ol><li>Use power reduction to evaluate $\int \cos^2 x \, dx$.</li></ol>
+<ol><li>Integrate by parts twice: find $\int e^x \cos x \, dx$.</li></ol>
+<ol><li>For $\int \frac{x + 1}{x^2 + x - 2} \, dx$, factor the denominator and use partial fractions.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Detective&#x27;s Dilemma:</strong> You&#x27;re given $\int x^3 \sqrt{x^2 + 1} \, dx$.</p>
+<ul><li>Which integration technique(s) might work?</li><li>Why is integration by parts awkward here?</li><li>How does a clever $u$-substitution still fail to give a closed form?</li><li>What does this tell you about the limits of these techniques?</li></ul>
+<p>(The integral doesn&#x27;t have a closed form in elementary functions. But recognizing <em>why</em> is valuable.)</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Cooling Coffee:</strong> Newton&#x27;s Law of Cooling says the temperature $T(t)$ of cooling coffee satisfies: $$\frac{dT}{dt} = -k(T - T_s)$$</p>
+<p>where $T_s$ is room temperature and $k &gt; 0$ is a constant. Solving this (via separation of variables, which we&#x27;ll meet soon) involves the integral: $$\int \frac{dT}{T - T_s}$$</p>
+<p>This is a standard partial fractions form: $$\int \frac{dT}{T - T_s} = \ln|T - T_s| + C$$</p>
+<p>Without this single integral, you couldn&#x27;t model coffee cooling — or the temperature of a building, the decay of heat in an engine, or the concentration of medication in your bloodstream.</p>
+<p><strong>Motion and Arc Length:</strong> To find the arc length of a curve $y = f(x)$ from $x = a$ to $x = b$, you integrate: $$L = \int_a^b \sqrt{1 + \left(\frac{dy}{dx}\right)^2} \, dx$$</p>
+<p>For example, the arc length of $y = x^{3/2}$ from $0$ to $4$ requires: $$L = \int_0^4 \sqrt{1 + \left(\frac{3}{2}\sqrt{x}\right)^2} \, dx = \int_0^4 \sqrt{1 + \frac{9x}{4}} \, dx$$</p>
+<p>Completing the square (or a clever substitution) turns this into an integrable form. Arc length calculations are essential in physics (for understanding pendulum motion), engineering (for designing roads and roller coasters), and navigation.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>u-substitution</strong> reverses the chain rule: identify the &quot;inside function,&quot; set it as $u$, and transform the integral. This works when the integrand contains a composite function along with the derivative of its inner function.</li><li><strong>Integration by parts</strong> reverses the product rule: useful when one part is easy to integrate and the other easy to differentiate. It trades one integral for (hopefully) a simpler one.</li><li><strong>LIATE</strong> tells you which part should be $u$ in integration by parts: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential (in order of priority).</li><li><strong>Trigonometric integrals</strong> often reduce to standard forms via identities. Power reduction formulas turn high powers into integrableforms.</li><li><strong>Completing the square</strong> transforms awkward quadratics into recognizable arctangent or logarithm forms. This is especially useful for integrands involving $\frac{1}{x^2 + bx + c}$.</li><li><strong>Partial fractions</strong> decompose rational functions into integrable pieces, usually yielding logarithms.</li><li><strong>Strategy:</strong> Try substitution first. If that fails, try parts. Recognize standard forms. Know when to stop—some integrals don&#x27;t have elementary antiderivatives.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> Which of the following is the correct formula for integration by parts?</p>
+<ul><li>$\int u \, dv = uv + \int v \, du$</li><li>$\int u \, dv = uv - \int v \, du$</li><li>$\int u \, dv = \int u \, \int v$</li><li>$\int u \, dv = \frac{u}{v} - \int \frac{v}{u} \, dx$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\int u \, dv = uv - \int v \, du$</p>
+</details>
+<p><strong>Question 2:</strong> In the LIATE rule, which function type takes priority when choosing $u$?</p>
+<ul><li>Exponential</li><li>Trigonometric</li><li>Algebraic</li><li>Logarithmic</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Logarithmic</p>
+</details>
+<p><strong>Question 3:</strong> What is $\int \sec^2 x \, dx$?</p>
+<ul><li>$\sec x + C$</li><li>$\tan x + C$</li><li>$\ln|\sec x| + C$</li><li>$-\cos x + C$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\tan x + C$</p>
+</details>
+<p><strong>Question 4:</strong> To integrate $\int 2x \cos(x^2) \, dx$, which substitution is most helpful?</p>
+<ul><li>$u = 2x$</li><li>$u = \cos(x^2)$</li><li>$u = x^2$</li><li>$u = \cos x$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$u = x^2$</p>
+</details>
+<p><strong>Question 5:</strong> What does completing the square help you recognize in $\int \frac{1}{x^2 + 6x + 10} \, dx$?</p>
+<ul><li>A logarithmic form</li><li>An arctangent form</li><li>A secant form</li><li>A sine form</li></ul>
+<details>
+<summary>Answer</summary>
+<p>An arctangent form</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><strong>Integration by parts:</strong> Leibniz (1684). <a href="https://en.wikipedia.org/wiki/Integration_by_parts" target="_blank" rel="noopener">Wikipedia: Integration by parts</a></li><li><strong>Substitution rule:</strong> Foundations in chain rule, rigorous formulation in 18th century. <a href="https://en.wikipedia.org/wiki/Integration_by_substitution" target="_blank" rel="noopener">Wikipedia: Integration by substitution</a></li><li><strong>Partial fractions decomposition:</strong> <a href="https://en.wikipedia.org/wiki/Partial_fraction_decomposition" target="_blank" rel="noopener">Wikipedia: Partial fraction decomposition</a></li><li><strong>Trigonometric integrals and identities:</strong> <a href="https://en.wikipedia.org/wiki/Trigonometric_integral" target="_blank" rel="noopener">Wikipedia: Trigonometric integral</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-068-differentiation-rules/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Differentiation Rules</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-074-differential-equations/index.html"><span class="pager-dir">Next →</span><span class="pager-title">ch-074-differential-equations</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,239 @@
+---
+worldNumber: 4
+world: world-04-trigonometry-astronomy-and-the-heavens
+chapterNumber: 61
+title: Inverse Trigonometric Functions
+subtitle: Working backwards from a ratio to an angle — the tool every engineer uses
+estimatedTimeMinutes: 35
+historicalPeriod: "1700s–1800s"
+---
+
+## Story Hook
+
+Maria is designing a wheelchair ramp for the entrance to a library. Building code is strict: the slope must not exceed 1:12 — one unit of rise for every twelve units of run. Her assistant asks, "What angle does that make with the ground?"
+
+Maria knows the ratio. But how does she find the angle?
+
+She reaches for her calculator and types: **arcsin(1/√145)** ≈ 4.76°.
+
+The inverse trigonometric functions are the tools that let us work *backwards* — from a known ratio to an unknown angle. No angle measurement needed. No protractor. Just the relationship between the vertical and horizontal, and the inverse trig functions that unlock the angle hiding inside.
+
+---
+
+## Why It Matters
+
+- **Navigation and surveying**: Surveyors measure distances and slopes, then use inverse trig to find angles of elevation.
+- **Engineering and design**: From roof pitches to ramp angles, every structure needs angles computed from slopes.
+- **Physics and astronomy**: Finding the angle at which light hits a surface, or where a star appears in the sky.
+- **Computer graphics and robotics**: When a robot arm reaches toward a target, inverse trig computes the joint angles needed.
+
+Without inverse trigonometry, we'd be stuck: knowing the relationship but unable to find the angle.
+
+---
+
+## Historical Context
+
+For centuries, mathematicians and engineers had tables: given an angle, here's its sine. But by the 1700s, the inverse question became urgent. As navigation, surveying, and engineering exploded, scientists needed to *reverse* the lookup — given a sine value, find the angle.
+
+Leonhard Euler and his contemporaries formalized the inverse trigonometric functions. By the 1800s, inverse trig appeared in engineering handbooks across Europe and America. Today, every calculator and computer has them built in, pressing the bounds between what's "forward" and what's "backward" — they're equally natural.
+
+---
+
+## Core Concept
+
+**Inverse trigonometric functions undo trigonometric functions.**
+
+If $\sin(30°) = 1/2$, then $\arcsin(1/2) = 30°$.
+
+The three inverse functions are:
+- **arcsin** (inverse sine): given a ratio, find the angle
+- **arccos** (inverse cosine): given a ratio, find the angle
+- **arctan** (inverse tangent): given a ratio, find the angle
+
+But there's a subtlety. Because sine, cosine, and tangent are periodic — they repeat over and over — they're not one-to-one. The sine of 30° is 1/2, but so is the sine of 150°. To define a proper inverse, we *restrict the domain*.
+
+**Restricted domains:**
+- $\arcsin x$: domain $[-1, 1]$, range $[-90°, 90°]$ (or $[-\pi/2, \pi/2]$)
+- $\arccos x$: domain $[-1, 1]$, range $[0°, 180°]$ (or $[0, \pi]$)
+- $\arctan x$: domain all real numbers, range $(-90°, 90°)$ (or $(-\pi/2, \pi/2)$)
+
+Notice: the range of $\arcsin$ includes negative angles (fourth quadrant). The range of $\arccos$ covers the upper half-plane. The range of $\arctan$ is symmetric around zero.
+
+These restrictions ensure each ratio maps to exactly one angle.
+
+---
+
+## Definitions and Formal Lesson
+
+**Definition: Inverse Sine**
+$$\arcsin x = \sin^{-1} x$$
+is the unique angle $\theta$ in $[-90°, 90°]$ such that $\sin(\theta) = x$.
+
+**Example:** $\arcsin(1/2) = 30°$ because $\sin(30°) = 1/2$ and $30°$ lies in $[-90°, 90°]$.
+
+**Definition: Inverse Cosine**
+$$\arccos x = \cos^{-1} x$$
+is the unique angle $\theta$ in $[0°, 180°]$ such that $\cos(\theta) = x$.
+
+**Example:** $\arccos(1/2) = 60°$ because $\cos(60°) = 1/2$ and $60°$ lies in $[0°, 180°]$.
+
+**Definition: Inverse Tangent**
+$$\arctan x = \tan^{-1} x$$
+is the unique angle $\theta$ in $(-90°, 90°)$ such that $\tan(\theta) = x$.
+
+**Example:** $\arctan(1) = 45°$ because $\tan(45°) = 1$ and $45°$ lies in $(-90°, 90°)$.
+
+**Key Identities:**
+For $x$ in the appropriate domain:
+$$\sin(\arcsin x) = x$$
+$$\cos(\arccos x) = x$$
+$$\tan(\arctan x) = x$$
+
+And conversely:
+$$\arcsin(\sin \theta) = \theta \text{ (if } \theta \in [-90°, 90°]\text{)}$$
+
+---
+
+## Worked Examples
+
+**Example 1: Finding an angle from a ratio**
+
+A right triangle has opposite side 3 and hypotenuse 5. Find the angle opposite the side of length 3.
+
+*Solution:*
+The sine of the angle is opposite/hypotenuse = 3/5 = 0.6.
+$$\theta = \arcsin(0.6) \approx 36.87°$$
+
+**Example 2: The ramp angle**
+
+A wheelchair ramp rises 1 foot for every 12 feet of run. What is the angle of inclination?
+
+*Solution:*
+The tangent of the angle equals rise/run = 1/12 ≈ 0.0833.
+$$\theta = \arctan(1/12) \approx 4.76°$$
+
+This meets building code (≤ 5°). ✓
+
+**Example 3: Solving a trigonometric equation**
+
+Solve: $\sin(\theta) = 0.8$ for $\theta$ in $[0°, 360°)$.
+
+*Solution:*
+First find the principal angle:
+$$\theta_1 = \arcsin(0.8) \approx 53.13°$$
+
+This is in the first quadrant. Since sine is also positive in the second quadrant:
+$$\theta_2 = 180° - 53.13° = 126.87°$$
+
+So $\theta \in \{53.13°, 126.87°\}$ (or in $[0°, 360°)$, these two solutions).
+
+---
+
+## Practice Set
+
+1. **Evaluate exactly:**
+   - $\arcsin(1/2)$
+   - $\arccos(\sqrt{3}/2)$
+   - $\arctan(1)$
+
+2. **Find the angle of inclination (in degrees):**
+   - A roof pitch of 5 units of rise and 12 units of run
+   - A staircase where each step rises 7 inches and runs 11 inches
+
+3. **Solve for $\theta$ in $[0°, 360°)$:**
+   - $\cos(\theta) = 0.5$
+   - $\tan(\theta) = -1$
+
+4. **Application:** A ladder leans against a wall. The ladder is 10 feet long, and the base is 6 feet from the wall. At what angle does the ladder touch the ground?
+
+---
+
+## Reasoning Task
+
+A student claims: "$\arcsin(\sin(100°)) = 100°$."
+
+Is this correct? Why or why not? What is the actual value of $\arcsin(\sin(100°))$?
+
+*Hint:* Remember the range of arcsin is $[-90°, 90°]$. Does $100°$ lie in that range?
+
+---
+
+## Application
+
+**Navigation and Surveying**
+
+A surveyor stands at point A and observes a flagpole of height 20 meters at point B, which is 50 meters away horizontally. What is the angle of elevation?
+
+$$\tan(\text{angle}) = \frac{20}{50} = 0.4$$
+$$\text{angle} = \arctan(0.4) \approx 21.8°$$
+
+This angle is what the surveyor records in her field notes. Later, this angle — recovered by inverse trig — helps establish property lines and slopes of terrain.
+
+---
+
+## Recap
+
+- **Inverse trigonometric functions** reverse the process: given a ratio, find an angle.
+- **Three inverse functions:** arcsin (range $[-90°, 90°]$), arccos (range $[0°, 180°]$), arctan (range $(-90°, 90°)$).
+- **Restricted domains** ensure each function is one-to-one and thus invertible.
+- **Applications:** ramp design, navigation, surveying, solving trigonometric equations, robotics, engineering.
+- **Key principle:** $\sin(\arcsin x) = x$ for $x \in [-1,1]$, and similar for cos and tan.
+
+The inverse trig functions are the bridge from observation (a measured slope, a known ratio) to understanding (the angle that ratio represents). They're indispensable in any field where we know the relationship and need to find the angle.
+
+---
+
+## Unlock Quiz
+
+**Question 1:** What is $\arcsin(1/2)$?
+- 30°
+- 45°
+- 60°
+- 90°
+
+**Question 2:** The range of the arccos function is:
+- $[-90°, 90°]$
+- $[0°, 180°]$
+- $(-90°, 90°)$
+- $[0°, 360°]$
+
+**Question 3:** If $\tan(\theta) = 2$, what is $\theta$ (approximately)?
+- $26.6°$
+- $45°$
+- $63.4°$
+- $90°$
+
+**Question 4:** A building's shadow is 30 meters long, and the sun is 45° above the horizon. How tall is the building?
+- 15 meters
+- 21 meters
+- 30 meters
+- 60 meters
+
+**Question 5:** Why do we restrict the domain of sine to $[-90°, 90°]$ for the arcsin function?
+- To make the calculations faster
+- To ensure arcsin is a function (one-to-one): each input maps to exactly one output
+- To match the domain of cosine
+- Because negative angles don't exist
+
+<details>
+<summary>Answers</summary>
+
+1. **30°** — $\sin(30°) = 1/2$, and $30° \in [-90°, 90°]$.
+
+2. **$[0°, 180°]$** — The range of arccos covers angles from 0° to 180° (the upper half-plane).
+
+3. **$63.4°$** — $\arctan(2) \approx 63.4°$.
+
+4. **30 meters** — If the sun is 45° above the horizon and the shadow is 30 m, then $\tan(45°) = \text{height}/30$, so height = $30 \tan(45°) = 30(1) = 30$ m.
+
+5. **To ensure arcsin is a function (one-to-one): each input maps to exactly one output** — Without restricting the domain, many angles would map to the same sine value, so arcsin wouldn't be well-defined.
+
+</details>
+
+---
+
+## Source Notes
+
+- [Inverse Trigonometric Functions](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions) — Wikipedia
+- [History of Trigonometry](https://en.wikipedia.org/wiki/History_of_trigonometry) — Wikipedia
+- [Leonhard Euler](https://en.wikipedia.org/wiki/Leonhard_Euler) — Wikipedia

@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sampling and Statistical Inference — Math Journey</title>
+    <meta name="description" content="How a sample of 1,000 can tell you about 300 million — if done carefully" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 6 · Chapter 85</p>
+        <h1>Sampling and Statistical Inference</h1>
+        <p class="hero-copy">How a sample of 1,000 can tell you about 300 million — if done carefully</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1900s–present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Distinguish population parameters from sample statistics</li><li>Identify sampling methods and potential biases</li><li>State and apply the Central Limit Theorem</li><li>Interpret confidence intervals and margin of error</li><li>Understand the logic of hypothesis testing</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#common-sampling-scenarios-and-pitfalls">Common Sampling Scenarios and Pitfalls</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#thinking-critically-about-samples">Thinking Critically About Samples</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#the-modern-sampling-landscape">The Modern Sampling Landscape</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>It&#x27;s election night, November 3, 1936. The Literary Digest, a prestigious magazine, publishes its presidential poll results with great confidence. Their headline predicts a landslide victory for Republican challenger Alf Landon over Franklin D. Roosevelt.</p>
+<p>The magazine did not take a casual poll. They had mailed questionnaires to 10 million Americans and received responses from 2.4 million. That is the largest political sample ever collected at that time.</p>
+<p>The night&#x27;s results told a different story. Roosevelt won decisively, carrying 46 of 48 states.</p>
+<p>Meanwhile, a young statistician named George Gallup had released his own poll prediction. He surveyed only 50,000 people carefully selected to represent the nation. He predicted Roosevelt&#x27;s victory, nearly perfectly.</p>
+<p>How did the smaller, cheaper poll beat the massive one?</p>
+<p>The answer is sampling bias.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>You cannot always ask everyone a question. You cannot interview all 300 million Americans about their voting plans. You cannot test every lightbulb a factory produces. You cannot measure the lead content in every grain of rice shipped to the country.</p>
+<p>So we sample. We ask a subset and infer about the whole.</p>
+<p>But sampling is delicate. If your sample is not truly representative, your inference will be wrong—sometimes spectacularly so. The Literary Digest mailed questionnaires to people who owned cars and telephones and subscribed to magazines. In 1936, during the Great Depression, those people skewed wealthy and Republican. People without cars, phones, and subscriptions—poorer Americans, who favored Roosevelt—barely heard the poll.</p>
+<p>This chapter is about how to sample well, how to measure what you learn from samples, and how to use that learning to make statements about populations we cannot fully observe.</p>
+<p>It is foundational to modern science, medicine, marketing, and democracy itself.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Sampling theory emerged slowly. For centuries, if you wanted to know something about a population, you tried to count everyone. The census, conducted every ten years in the United States since 1790, is the oldest attempt at a complete population count for democratic purposes.</p>
+<p>But completeness is expensive, slow, and imperfect. In the early 1900s, statisticians began asking whether we could do better by being smarter, not bigger.</p>
+<p>Karl Pearson, Ronald Fisher, and Jerzy Neyman developed the mathematical foundations of sampling theory in the 1920s and 1930s. Their work showed that a carefully chosen small sample could be more reliable than a careless large one.</p>
+<p>George Gallup and Elmo Roper applied these ideas to commercial polling in the 1930s. Their success—especially in the 1936 election—made sampling the standard tool for opinion research, market research, and scientific studies.</p>
+<p>Today, sampling underlies virtually every statement you hear about national averages, prevalence of disease, consumer preferences, and social trends.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Population and Sample.</strong> A population is the entire group you want to learn about. A sample is the subset you actually observe.</p>
+<p>When we measure a characteristic of a population—say, the average height of all American adults—we call it a <strong>parameter</strong>. We rarely know the true parameter, but we can estimate it using a <strong>statistic</strong> computed from a sample.</p>
+<p>For example:</p>
+<ul><li>The true average height of all American adults (parameter) is unknown.</li><li>The average height of 1,000 randomly surveyed Americans (statistic) estimates the parameter.</li></ul>
+<p><strong>Sampling Methods.</strong> How you select your sample determines whether your statistic is likely to estimate the parameter well.</p>
+<p><strong>Simple random sampling:</strong> Every person (or item) in the population has an equal chance of being selected. This is the gold standard when it is feasible. Draw names from a hat; use a random number generator; both are simple random sampling.</p>
+<p><strong>Stratified sampling:</strong> Divide the population into groups (strata) based on a characteristic (age, region, income), then randomly sample within each stratum. If you want to poll across rural and urban America equally, stratify by location first, then randomly sample each.</p>
+<p><strong>Cluster sampling:</strong> Divide the population into clusters (perhaps geographic), randomly select clusters, then sample everyone (or everyone in a sample) within those clusters. Useful when a complete list is unavailable but clusters are easy to identify.</p>
+<p><strong>Systematic sampling:</strong> Select every $k$-th item from a list. Simple, used in quality control.</p>
+<p><strong>Convenience sampling:</strong> Take whatever sample is easy to get—poll people at a mall, survey your classroom. Fast, but often biased. Avoid for statistical inference about populations.</p>
+<p><strong>Sampling Bias.</strong> A sample can be large and still give systematically wrong estimates if it is biased.</p>
+<p><strong>Voluntary response bias:</strong> People who respond are more motivated than non-responders, skewing results. &quot;Call 1-800-POLL-NOW to vote on tonight&#x27;s question!&quot;—only passionate people call.</p>
+<p><strong>Non-response bias:</strong> People who don&#x27;t answer differ from those who do. Richer, healthier, busier people may refuse surveys; poorer, sicker, less busy people may respond.</p>
+<p><strong>Undercoverage:</strong> Some population members cannot be selected. The Literary Digest&#x27;s questionnaires never reached millions of poor Americans. Telephone polls undercover the phoneless. Online surveys undercover the internet-less.</p>
+<p><strong>Convenience bias:</strong> Your sample is too easily reached. &quot;Everyone I know agrees with me&quot; is not evidence that everyone does.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Parameter:</strong> A numerical characteristic of the population, usually denoted $\mu$ (mean), $\sigma$ (standard deviation), $p$ (proportion), or $\rho$ (correlation).</p>
+<p><strong>Statistic:</strong> A numerical characteristic of the sample, usually denoted $\bar{x}$ (sample mean), $s$ (sample standard deviation), $\hat{p}$ (sample proportion), $r$ (sample correlation).</p>
+<p><strong>Sampling distribution:</strong> The probability distribution of a statistic across all possible samples of size $n$ from the population.</p>
+<p><strong>Standard error:</strong> The standard deviation of the sampling distribution, denoted $SE = \frac{\sigma}{\sqrt{n}}$ for the sample mean. It measures the typical difference between the sample statistic and the population parameter.</p>
+<p><strong>Central Limit Theorem (CLT):</strong> If we draw a large random sample ($n \geq 30$ is a useful rule of thumb) from <em>any</em> population with mean $\mu$ and standard deviation $\sigma$, the sample mean $\bar{X}$ is approximately normally distributed with mean $\mu$ and standard deviation $\frac{\sigma}{\sqrt{n}}$.</p>
+<p>Mathematically: $$\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right) \quad \text{for large } n$$</p>
+<p><strong>Confidence Interval:</strong> A range that likely contains the true parameter. A 95% confidence interval for the population mean is: $$\bar{x} \pm z^<em> \cdot \frac{\sigma}{\sqrt{n}}$$ where $z^</em> = 1.96$ for 95% confidence.</p>
+<p>We say: &quot;I am 95% confident that the true population mean lies between [lower bound] and [upper bound].&quot;</p>
+<p><strong>Margin of Error:</strong> Half the width of the confidence interval, $z^* \cdot \frac{\sigma}{\sqrt{n}}$. A margin of ±3 percentage points means our estimate could be off by up to 3 points in either direction.</p>
+<p><strong>Hypothesis Testing (Conceptual):</strong> We assume a null hypothesis $H_0$ (a statement about the parameter—often &quot;no effect, no difference&quot;). We collect data. We compute a test statistic and a $p$-value: the probability of observing data at least as extreme as what we got, if $H_0$ were true. If the $p$-value is very small (typically $p &lt; 0.05$), we reject $H_0$ and conclude the alternative hypothesis $H_a$ is plausible.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Sample size and standard error.</strong></p>
+<p>A factory manufactures bolts. The population standard deviation is $\sigma = 0.5$ mm. We draw a sample of $n = 100$ bolts and measure the average length as $\bar{x} = 25.1$ mm. What is the standard error?</p>
+<p>$$SE = \frac{\sigma}{\sqrt{n}} = \frac{0.5}{\sqrt{100}} = \frac{0.5}{10} = 0.05 \text{ mm}$$</p>
+<p>The standard error is 0.05 mm. Our sample mean is typically about 0.05 mm away from the true population mean.</p>
+<p><strong>Example 2: Confidence interval.</strong></p>
+<p>Continuing Example 1, construct a 95% confidence interval for the true population mean.</p>
+<p>$$\bar{x} \pm 1.96 \cdot SE = 25.1 \pm 1.96(0.05) = 25.1 \pm 0.098$$</p>
+<p>The 95% confidence interval is $(25.002, 25.198)$ mm.</p>
+<p>We are 95% confident the true population mean bolt length is between 25.002 and 25.198 mm.</p>
+<p><strong>Example 3: Margin of error in polling.</strong></p>
+<p>A poll of 1,000 registered voters finds that 52% support a candidate. What is the approximate margin of error at 95% confidence?</p>
+<p>Here $n = 1000$, $\hat{p} = 0.52$, $\hat{q} = 0.48$.</p>
+<p>$$SE_{\hat{p}} = \sqrt{\frac{\hat{p}\hat{q}}{n}} = \sqrt{\frac{(0.52)(0.48)}{1000}} = \sqrt{0.0002496} \approx 0.0158$$</p>
+<p>Margin of error $= 1.96 \times 0.0158 \approx 0.031$, or about 3.1 percentage points.</p>
+<p>The 95% confidence interval is $52\% \pm 3.1\%$, or $(48.9\%, 55.1\%)$.</p>
+<p><strong>Example 4: Identifying bias.</strong></p>
+<p>A survey recruits participants through a Facebook ad: &quot;Tell us what you think about social media!&quot; Who responds? People who (a) use Facebook, (b) see the ad, (c) feel strongly enough to click. This is voluntary response bias combined with undercoverage (no non-Facebook users). Any inference to &quot;what the general population thinks&quot; will be biased.</p>
+</section><section class="lesson-section lesson-section--generic"><h2 id="common-sampling-scenarios-and-pitfalls">Common Sampling Scenarios and Pitfalls</h2>
+<p><strong>Online surveys.</strong> A website offers a survey: &quot;Tell us what you think! Click here.&quot; Who responds? People with internet access, time to spend on surveys, and strong opinions. People who are busy, offline, or neutral skip it. The result is skewed.</p>
+<p>To improve: use random sampling from a defined population (e.g., a pre-recruited panel) rather than open participation.</p>
+<p><strong>Telephone polling.</strong> For decades, pollsters called landlines. But younger people use cell phones, and some use neither. People who screen calls are systematically excluded. Non-response bias—people who refuse to talk—correlates with politics and education.</p>
+<p>Modern polls use multiple modes (landline, cell, online) and weight results to match census demographics.</p>
+<p><strong>Workplace surveys.</strong> A company surveys employees about morale. Employees who are unhappy might skip it (thinking it is pointless) or complete it with exaggerated negativity (hoping to spur change). Satisfied employees might also skip it (feeling their input does not matter). The respondents are a biased subset.</p>
+<p>To improve: make surveys anonymous, emphasize that responses are taken seriously, and use multiple methods to reach all groups.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Define the population and sample in each scenario:</li></ol>
+<ul><li>a) A quality inspector tests 50 light bulbs from a batch of 10,000 to estimate how many are defective.</li><li>b) A political scientist surveys 800 registered voters to estimate the proportion who will vote in the upcoming election.</li></ul>
+<ol><li>Name the sampling method:</li></ol>
+<ul><li>a) To survey customer satisfaction, a bank calls every 50th customer from their customer database.</li><li>b) A researcher wants to survey high school students across the state. She randomly selects 5 schools, then randomly samples 40 students from each.</li></ul>
+<ol><li>Identify the type of bias:</li></ol>
+<ul><li>a) A survey asks: &quot;Do you agree that the government wastes too much money?&quot; (hint: leading question bias, but also think about who responds)</li><li>b) A health survey conducted at a gym has higher rates of exercise than a survey of the general population.</li></ul>
+<ol><li>If a population has $\mu = 100$ and $\sigma = 15$, what is the standard error of the sample mean when $n = 25$?</li></ol>
+<ol><li>A researcher surveys 400 people about household income and finds $\bar{x} = \$65,000$ with $s = \$20,000$. Approximate the 95% confidence interval for the population mean household income.</li></ol>
+</section><section class="lesson-section lesson-section--generic"><h2 id="thinking-critically-about-samples">Thinking Critically About Samples</h2>
+<p>When you encounter a study or poll, ask yourself:</p>
+<p><strong>How was the sample selected?</strong> Random selection is best. Convenience sampling (whoever is easiest to reach) is suspect. Voluntary response (people choose whether to participate) is highly biased.</p>
+<p><strong>Is there potential undercoverage?</strong> Are some population members systematically missed? Internet polls miss the offline population. Telephone polls miss the phoneless. In-person surveys miss the homebound. A sample that misses entire groups is unreliable.</p>
+<p><strong>What is the non-response rate?</strong> If 100 people are surveyed and 50 respond, the 50 who responded might differ systematically from the 50 who declined. If 100 are surveyed and 95 respond, the sample is more credible.</p>
+<p><strong>Is the sample size adequate?</strong> Bigger is generally better (narrower confidence intervals), but a biased sample of 10,000 is worse than an unbiased sample of 500. Quality matters more than quantity.</p>
+<p><strong>What is the margin of error?</strong> This tells you the range of plausible values for the population parameter. A margin of ±3 percentage points is typical for 1,000-person polls. A margin of ±10 percentage points (from a smaller sample) is much wider.</p>
+<p><strong>Are there relevant subgroups?</strong> A poll of &quot;likely voters&quot; might differ from &quot;registered voters&quot; or &quot;all adults.&quot; A study of hospital patients might not represent healthy people. Check whether the sample matches the population of interest.</p>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Replication Problem.</strong> A team of researchers publishes a study: &quot;Drinking coffee reduces the risk of heart disease.&quot; The study surveyed 10,000 people and found a statistically significant association ($p = 0.03$). The result makes the news.</p>
+<p>Three years later, a larger, better-controlled study of 50,000 people finds no association ($p = 0.65$).</p>
+<p>Why might the first study have found an effect that does not truly exist? (Hint: think about sampling variability, multiple comparisons, and publication bias. If the team tested 20 different beverages, what do you expect by chance alone?)</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Election polling:</strong> News outlets commission polls of 1,000–2,000 voters before elections. How is the sampling done to avoid the fate of the Literary Digest? Modern polls stratify by age, education, race, and region, and use random digit dialing (for phone) or online panel recruitment. They weight results to match census data. The margin of error is typically ±3 percentage points for a sample of 1,000. Yet polls often differ from each other and from final results. Why? Sampling variability, non-response, and late-deciding voters all play a role.</p>
+<p><strong>Medical trials:</strong> Before a new drug is approved, it is tested on thousands of participants in randomized controlled trials. Why? To use sampling and statistical inference to estimate the drug&#x27;s true effect on the population. A treatment group receives the drug; a control group receives a placebo. Randomization ensures both groups are representative of the population.</p>
+</section><section class="lesson-section lesson-section--generic"><h2 id="the-modern-sampling-landscape">The Modern Sampling Landscape</h2>
+<p>Today&#x27;s sampling challenges differ from those of the 20th century. In the era of big surveys (Gallup, Pew Research), the cost of sampling was high; people were hired to call households or conduct in-person interviews. Precision mattered because each additional response was expensive.</p>
+<p>The internet changed that. Now it is cheap to collect responses from thousands. Companies conduct rapid A/B tests with millions of users. But new problems emerged:</p>
+<p><strong>Selection bias in online settings:</strong> People who respond to online surveys are self-selected (they chose to participate). Algorithms can adjust statistically, but the bias is real. A survey of &quot;website visitors&quot; never reaches people who don&#x27;t visit the site.</p>
+<p><strong>The proliferation of data.</strong> Companies like Google, Facebook, and Amazon have access to massive datasets. Sampling becomes less necessary; they observe entire populations of users. But new challenges arise: the population is all internet users (biased toward wealthy, educated populations), and privacy concerns limit how data can be used.</p>
+<p><strong>Synthetic populations.</strong> With powerful computers, researchers can simulate populations and sample from them. If you know the distribution of a variable, you can generate billions of samples to understand its properties. This computational approach complements traditional sampling.</p>
+<p>The principles remain: representative samples are more informative than larger biased samples, variability decreases with $\sqrt{n}$, and understanding bias is critical.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Population parameters are usually unknown. We use statistics from random samples to estimate them. The <em>method</em> of sampling—random, stratified, etc.—matters more than the <em>size</em> of the sample; a biased sample of millions is worse than an unbiased sample of thousands.</p>
+<p>The <strong>Central Limit Theorem</strong> guarantees that for large samples, the sample mean is approximately normally distributed with standard error $SE = \sigma/\sqrt{n}$. This justifies confidence intervals and hypothesis tests.</p>
+<p>A <strong>confidence interval</strong> gives a range likely to contain the true parameter. A <strong>margin of error</strong> quantifies our uncertainty.</p>
+<p><strong>Hypothesis testing</strong> asks: if a null hypothesis were true, how likely is the data we observed? Small p-values suggest the null hypothesis is false.</p>
+<p>Sampling is not easy—it is a craft, honed over a century, and still prone to mistakes. But when done right, it lets us learn about vast populations from small, manageable samples.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>The Literary Digest poll in 1936 had 2.4 million responses but predicted incorrectly. George Gallup&#x27;s poll had 50,000 responses and predicted correctly. The key difference was:</li></ol>
+<ul><li>A majority of the Literary Digest respondents were wealthy people with cars and phones</li><li>Gallup&#x27;s sample was selected to be representative of the entire population</li><li>The Literary Digest used convenience sampling</li><li>All of the above</li></ul>
+<ol><li>A coffee shop wants to estimate the average daily revenue. Rather than checking revenue every day for a year, they randomly choose 30 days and average the revenue. What is the 30-day selection an example of?</li></ol>
+<ul><li>A parameter</li><li>A sample</li><li>A population</li><li>A statistic (once computed)</li></ul>
+<ol><li>A hospital wants to survey patient satisfaction across its five departments. It randomly selects 10 patients from each department. This is an example of:</li></ol>
+<ul><li>Simple random sampling</li><li>Stratified sampling</li><li>Cluster sampling</li><li>Convenience sampling</li></ul>
+<ol><li>If a population has standard deviation $\sigma = 10$ and we draw a sample of size $n = 100$, the standard error of the sample mean is:</li></ol>
+<ul><li>10</li><li>1</li><li>0.1</li><li>100</li></ul>
+<ol><li>A poll of 1,000 people finds 60% support a policy. The margin of error at 95% confidence is approximately 3 percentage points. What does this mean?</li></ol>
+<ul><li>We are 95% sure the true proportion is between 57% and 63%</li><li>The poll might be off by as much as 3 points</li><li>There is a 95% chance that anywhere from 57% to 63% of the population supports the policy</li><li>All of the above</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li><strong>D — All of the above.</strong> The Literary Digest suffered from undercoverage and non-response bias; its sample was systematically skewed toward wealthy, Republican respondents. Gallup deliberately ensured his sample was representative.</li></ol>
+<ol><li><strong>B — A sample.</strong> The 30 randomly chosen days form a sample. Once you compute the average, that average is a statistic.</li></ol>
+<ol><li><strong>B — Stratified sampling.</strong> The hospital divided the population (all patients) into strata (five departments), then randomly sampled from each stratum.</li></ol>
+<ol><li><strong>B — 1.</strong> $SE = \frac{10}{\sqrt{100}} = \frac{10}{10} = 1$.</li></ol>
+<ol><li><strong>D — All of the above.</strong> A 95% confidence interval means we are 95% confident the true proportion is in the interval [0.57, 0.63]. This is equivalent to saying the estimate could be off by as much as 3 percentage points.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><strong>Literary Digest Election Poll, 1936:</strong> <a href="https://en.wikipedia.org/wiki/Literary_Digest" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Literary_Digest</a></li><li><strong>George Gallup and polling:</strong> <a href="https://en.wikipedia.org/wiki/George_Gallup" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/George_Gallup</a></li><li><strong>Sampling methods and bias:</strong> <a href="https://en.wikipedia.org/wiki/Sampling_(statistics" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Sampling_(statistics)</a>)</li><li><strong>Central Limit Theorem:</strong> <a href="https://en.wikipedia.org/wiki/Central_limit_theorem" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Central_limit_theorem</a></li><li><strong>Confidence intervals:</strong> <a href="https://en.wikipedia.org/wiki/Confidence_interval" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Confidence_interval</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-084-correlation-and-regression/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Correlation and Linear Regression</span></a><a class="pager-link pager-link--next" href="../../world-06-probability-statistics-and-uncertainty/ch-086-central-limit-theorem/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Central Limit Theorem — Why Normality Appears Everywhere</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

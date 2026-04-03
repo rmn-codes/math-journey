@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Greek Turn Toward Proof — Math Journey</title>
+    <meta name="description" content="Why asking &#x27;why?&#x27; changed mathematics forever" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 1 · Chapter 15</p>
+        <h1>The Greek Turn Toward Proof</h1>
+        <p class="hero-copy">Why asking &#x27;why?&#x27; changed mathematics forever</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>foundational</span>
+          <span>Greece, Mediterranean</span>
+          <span>600-400 BCE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Understand the difference between empirical rules and proven theorems</li><li>Recognize that the Greeks shifted from &quot;does it work?&quot; to &quot;why must it be true?&quot;</li><li>Appreciate how Plato and philosophy influenced mathematical rigor</li><li>See proof as a form of explanation, not just verification</li><li>Grasp the idea that certain truths follow logically from others</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#key-terms">Key Terms</a></li><li class="toc-level-3"><a href="#from-craft-to-proof-an-example">From Craft to Proof: An Example</a></li><li class="toc-level-3"><a href="#why-proofs-matter">Why Proofs Matter</a></li><li class="toc-level-3"><a href="#the-role-of-axioms">The Role of Axioms</a></li><li class="toc-level-3"><a href="#logical-necessity-vs-empirical-truth">Logical Necessity vs. Empirical Truth</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-transforming-a-conjecture-into-a-proof-simplified">Example 1: Transforming a Conjecture into a Proof (Simplified)</a></li><li class="toc-level-3"><a href="#example-2-from-axiom-to-conclusion">Example 2: From Axiom to Conclusion</a></li><li class="toc-level-3"><a href="#example-3-why-proof-protects-against-error">Example 3: Why Proof Protects Against Error</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-3"><a href="#warm-up">Warm-Up</a></li><li class="toc-level-3"><a href="#core-practice">Core Practice</a></li><li class="toc-level-3"><a href="#stretch">Stretch</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>An Egyptian builder knows that a 3-4-5 rope creates a right angle. She uses it every day. She does not ask why. It works.</p>
+<p>A Greek mathematician sees the same rope and asks: <em>Why must this always be true?</em> Why is there something special about the numbers 3, 4, and 5? Could I prove it? Could I show someone who has never seen a rope that this must be true—not because it works, but because logic itself demands it?</p>
+<p>This simple question—<em>why?</em>—marks a turning point in human thought. The ancient Egyptians and Mesopotamians had geometry as craft. The Greeks turned it into proof.</p>
+<p>This shift did not happen overnight. It was rooted in Mediterranean trade, the rise of cities like Miletus and Athens, and a new kind of argument: the logical argument that something <em>must</em> be true, not just that it probably is.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>This chapter matters because it shows that:</p>
+<ul><li>mathematics is not the same as computation or craft</li><li>a proof is a form of explanation, not just a tool</li><li>asking &quot;why?&quot; and &quot;how do you know?&quot; is how science and mathematics grow</li><li>the Greek insistence on proof shaped mathematics for over 2,000 years</li><li>once you prove something, it becomes a foundation for proving more things—creating a tower of knowledge</li></ul>
+<p>If you understand why the Greeks demanded proof, you will later see that all of modern mathematics, physics, and computer science rest on this same principle: claims must be justified by logic.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Around 600 BCE, the Greek city of Miletus on the coast of what is now Turkey became a center of philosophical inquiry. Thinkers like Thales asked fundamental questions: What is everything made of? How does knowledge work? Can we be certain of anything?</p>
+<p>Thales himself is traditionally credited with the first mathematical proofs, including the theorem that the diameter of a circle divides it into two equal halves. Whether Thales actually wrote formal proofs or this is a legend is unclear—no writings survive. But the story marks a real shift: by 500 BCE, Greek mathematicians were stating theorems and expecting justification.</p>
+<p>Pythagoras (born around 570 BCE) and his school made geometry a spiritual and philosophical pursuit, not just a craft. The Pythagoreans believed that numbers and shapes revealed ultimate truth about reality. This belief drove them to seek proofs rather than accept empirical rules.</p>
+<p>By the time Plato founded his Academy in Athens around 387 BCE, the demand for proof was central to Greek mathematics. Plato&#x27;s philosophy emphasized that true knowledge is not mere opinion (doxa) but something stable, eternal, and justified by reason. Geometry became a model for all knowledge.</p>
+<p>This was revolutionary. And like all revolutions, it took time. Many Egyptian and Mesopotamian practices persisted. But the intellectual pressure toward proof grew stronger, until Euclid, around 300 BCE, created a unified system where nearly every claim had to be justified.</p>
+<p>The history here is somewhat uncertain in details. Ancient sources are fragmentary. But the broad picture is solid: Greece developed a new standard for mathematical truth.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>An <strong>empirical rule</strong> is a pattern observed in practice: &quot;Every time we use ropes in a 3-4-5 ratio, we get a right angle.&quot;</p>
+<p>This is powerful knowledge. It works. But it leaves a question open: <em>must</em> it always work?</p>
+<p>A <strong>proof</strong> is a chain of logical reasoning that shows why something <em>must</em> be true, regardless of how many times you test it.</p>
+<p>A <strong>theorem</strong> is a statement that has been proven. Once proven, it is no longer just an observation—it becomes a fact that must be true in all cases.</p>
+<p>An <strong>axiom</strong> (or <strong>postulate</strong>) is a statement so basic that it is accepted as true without proof. Everything else is built from axioms by logical steps.</p>
+<p><strong>Logical necessity</strong> means: given these starting points (axioms), this conclusion <em>must</em> follow. There is no other possibility.</p>
+<p>This is the Greek innovation. They asked: Can I build geometry from a small set of simple truths, using only logic, in such a way that everything else <em>must</em> follow?</p>
+<p>The answer was yes. And that answer reshaped mathematics.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="key-terms">Key Terms</h3>
+<p><strong>Proof</strong> A step-by-step argument showing why a statement must be true, using axioms, definitions, and previously proven theorems.</p>
+<p><strong>Conjecture</strong> A statement believed to be true but not yet proven.</p>
+<p><strong>Theorem</strong> A statement that has been proven from axioms or other proven theorems.</p>
+<p><strong>Axiom (or Postulate)</strong> A basic statement accepted as true without proof, used as a starting point for logical reasoning.</p>
+<p><strong>Logical necessity</strong> The quality of a conclusion that <em>must</em> be true if the premises are true. There is no other possibility.</p>
+<h3 id="from-craft-to-proof-an-example">From Craft to Proof: An Example</h3>
+<p><strong>The empirical stage (Egyptian/Mesopotamian):</strong></p>
+<ul><li>Observation: &quot;We tried 3-4-5 many times. It always works.&quot;</li><li>Practice: &quot;Use 3-4-5 to make right angles in building.&quot;</li><li>Trust: Passed from builder to builder, teacher to student.</li></ul>
+<p><strong>The proof stage (Greek):</strong></p>
+<ul><li>Axiom: &quot;If two points determine a unique line, and we accept these basic rules of geometry...&quot;</li><li>Logic: &quot;Then if we arrange three line segments of lengths 3, 4, and 5, the angle opposite the 5-segment must be 90 degrees.&quot;</li><li>Result: &quot;This is true <em>always</em>, for any 3-4-5 triangle, not because we tested it, but because logic itself requires it.&quot;</li></ul>
+<h3 id="why-proofs-matter">Why Proofs Matter</h3>
+<p>Without proof, knowledge is brittle. It rests on examples:</p>
+<ul><li>&quot;We measured 100 triangles and 100 had the property.&quot;</li><li>&quot;Our engineers used this method and it worked.&quot;</li></ul>
+<p>But what about the 101st triangle? What if someone builds incorrectly?</p>
+<p>With proof, knowledge is unshakeable:</p>
+<ul><li>&quot;This must be true because of logical necessity.&quot;</li><li>&quot;If the axioms are true and my reasoning is sound, the conclusion cannot be false.&quot;</li></ul>
+<p>This shift—from &quot;we believe this based on experience&quot; to &quot;this must be true because of logic&quot;—is the foundation of modern science and mathematics.</p>
+<h3 id="the-role-of-axioms">The Role of Axioms</h3>
+<p>Every proof rests on axioms: foundational statements accepted without proof.</p>
+<p>The Greeks asked: <em>What is the smallest set of axioms from which all geometry can be built?</em></p>
+<p>This became Euclid&#x27;s project. He chose five postulates (axioms) and showed that nearly all geometry could be derived from them through pure logic.</p>
+<p>For example, one postulate was: &quot;A straight line can be drawn between any two points.&quot;</p>
+<p>From such simple ideas, Euclid built the Pythagorean theorem, theorems about circles, methods for constructing regular polygons, and much more.</p>
+<h3 id="logical-necessity-vs-empirical-truth">Logical Necessity vs. Empirical Truth</h3>
+<p><strong>Empirical:</strong> &quot;We observe that this is true in many cases.&quot;</p>
+<p><strong>Necessary:</strong> &quot;Given these axioms, this conclusion <em>must</em> be true. No other outcome is logically possible.&quot;</p>
+<p>A proof moves a claim from the first category to the second. Once proven, a theorem is no longer a hypothesis to test. It is a fact of logical consequence.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-transforming-a-conjecture-into-a-proof-simplified">Example 1: Transforming a Conjecture into a Proof (Simplified)</h3>
+<p><strong>Conjecture (observed by many builders):</strong> If you arrange three line segments in the proportions 3:4:5, the angle where the shorter sides meet is a right angle.</p>
+<p><strong>A proof sketch</strong> (not complete, but showing the idea):</p>
+<ol><li>Assume the axioms of Euclidean geometry (lines, angles, congruence, etc.).</li><li>Draw a right angle using the basic tools (straightedge and compass).</li><li>Construct a triangle with legs of length 3 and 4 on this right angle.</li><li>Measure the hypotenuse. By geometric reasoning, it must equal 5.</li><li>Therefore, any triangle with sides 3, 4, 5 arranged in this way must have a right angle.</li></ol>
+<p><strong>Result:</strong> The empirical rule becomes a proven theorem. It is not true because we tested it. It is true because logic requires it.</p>
+<h3 id="example-2-from-axiom-to-conclusion">Example 2: From Axiom to Conclusion</h3>
+<p><strong>Axiom:</strong> If a straight line intersects another straight line, exactly two angles form on each side, and opposite angles are equal.</p>
+<p><strong>Reasoning:</strong></p>
+<ul><li>Place two lines crossing at a point.</li><li>The four angles at the intersection must sum to 360 degrees (a full rotation).</li><li>If opposite angles are equal, then the top angle equals the bottom angle, and the left angle equals the right angle.</li><li>Call the top angle $x$. Then bottom is also $x$. Left is $180° - x$ (since top and left sum to 180°). Right is also $180° - x$.</li><li>Check: $x + (180° - x) + x + (180° - x) = 360°$ ✓</li></ul>
+<p><strong>Conclusion:</strong> Opposite angles must be equal. This is not a guess—it logically <em>must</em> be true if our axioms are sound.</p>
+<h3 id="example-3-why-proof-protects-against-error">Example 3: Why Proof Protects Against Error</h3>
+<p>Suppose an engineer claims, &quot;Angle A in a triangle is always less than the sum of angles B and C.&quot;</p>
+<p>A builder who has tested this on 50 triangles might agree.</p>
+<p>But a mathematician asks: &quot;Can you prove it?&quot;</p>
+<p>Proof: In any triangle, the sum of all angles is 180°. Let angle A be $a$, angle B be $b$, angle C be $c$. $$a + b + c = 180°$$ $$a = 180° - b - c$$</p>
+<p>Since $b + c &gt; 0$ (angles are positive), we have: $$a &lt; 180°$$</p>
+<p>But more: since $b &gt; 0$ and $c &gt; 0$, we have: $$b + c &gt; 0$$</p>
+<p>Therefore: $$a = 180° - (b + c) &lt; 180° - 0 = 180°$$</p>
+<p>and more strongly: $$a &lt; b + c$$ (because $a &lt; 180°$ and $b + c = 180° - a$, so... actually, let me restate clearly.)</p>
+<p>Since $a + b + c = 180°$: $$a = 180° - (b + c)$$</p>
+<p>Since $b, c &gt; 0$, we know $b + c &gt; 0$, so $a &lt; 180°$.</p>
+<p>Actually, $a$ must be less than the sum of $b + c$ because: $$a + b + c = 180°$$</p>
+<p>means $a = 180° - b - c$. So $a + (b + c) = 180°$. If $b + c$ were less than $a$, then $a + (b+c) &lt; 2a$, meaning $180° &lt; 2a$, so $a &gt; 90°$. But $b + c &lt; a$ is not always true.</p>
+<p>Let me restart: In a triangle, $a + b + c = 180°$. We want to show $a &lt; b + c$.</p>
+<p>Rearrange: $a + b + c = 180°$ means $a &lt; 180°$. Also, $b + c = 180° - a$. So $a &lt; b + c$ is equivalent to $a &lt; 180° - a$, which means $2a &lt; 180°$, so $a &lt; 90°$.</p>
+<p>This is NOT always true. So the engineer&#x27;s claim is false for angles greater than 90°.</p>
+<p>Proof catches the error. Testing alone might not, depending on which triangles the builder chose.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<h3 id="warm-up">Warm-Up</h3>
+<ol><li>Define the term &quot;theorem&quot; in your own words.</li><li>What is an axiom, and why are axioms needed in mathematics?</li></ol>
+<h3 id="core-practice">Core Practice</h3>
+<ol><li>A conjecture states: &quot;The sum of any two odd numbers is always even.&quot; Decide if this is true and explain your reasoning without testing specific numbers.</li><li>In a right triangle with legs of length $a$ and $b$, the hypotenuse has length $c$. Write the relationship that a proof might use to show $a^2 + b^2 = c^2$.</li><li>If we accept the axiom &quot;A straight line is the shortest distance between two points,&quot; what can we conclude about a triangle with sides of length 3, 4, and 6? (Does it satisfy the triangle inequality?)</li><li>A student observes that in five triangles, the largest angle is always opposite the longest side. Is this observation enough to prove the statement? Explain.</li></ol>
+<h3 id="stretch">Stretch</h3>
+<ol><li>Consider the axiom &quot;Through any point not on a line, exactly one line parallel to the given line can be drawn.&quot; This axiom seems obvious, but the Greeks debated it. Why might people question it, and what would change about geometry if it were false?</li></ol>
+<details>
+<summary>Practice Answer Guide</summary>
+<ol><li>A theorem is a statement that has been proven to be true using logical reasoning and starting from axioms or other proven theorems.</li><li>An axiom is a basic, foundational statement accepted without proof. Axioms are needed because every proof must start somewhere; without axioms, we would have an infinite regress of things to prove.</li><li>Conjecture: &quot;The sum of any two odd numbers is always even.&quot; This is true. Proof: Any odd number can be written as $2m + 1$ for some integer $m$. Two odd numbers: $(2m + 1) + (2n + 1) = 2m + 2n + 2 = 2(m + n + 1)$, which is even.</li><li>The relationship uses the right angle: if the legs meet at a 90° angle and we accept rules about congruent triangles and area, we can show that $a^2 + b^2 = c^2$.</li><li>The triangle inequality states that the sum of any two sides must exceed the third. Check: $3 + 4 = 7 &gt; 6$ ✓, $3 + 6 = 9 &gt; 4$ ✓, $4 + 6 = 10 &gt; 3$ ✓. So the triangle satisfies the inequality and can exist.</li><li>No, observing five triangles is not enough to prove a general statement. Proof requires logical reasoning that applies to <em>all</em> triangles, not just the ones tested.</li><li>The parallel postulate (axiom) seems obvious but is the one axiom Greek geometers questioned most. If it were false—if multiple parallel lines could be drawn—we would have non-Euclidean geometry, which is actually consistent and was discovered centuries later (by Lobachevsky, Bolyai, and others).</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>A master craftsperson has used the 3-4-5 rope method for 30 years. It has never failed. A young mathematician asks her to prove why it always works.</p>
+<p>The craftsperson says, &quot;I do not need a proof. I have tested it thousands of times. Proof is unnecessary.&quot;</p>
+<p>Write 4–6 sentences responding to the craftsperson. Your answer should:</p>
+<ul><li>acknowledge the value of her experience</li><li>explain why proof provides something that testing does not</li><li>give an example of how proof could reveal something new that testing might miss</li><li>respect both empirical knowledge and logical proof</li></ul>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>The Greek emphasis on proof is alive in every modern scientific and mathematical field.</p>
+<p>In medicine, doctors do not simply prescribe a treatment because it worked once. They conduct controlled trials and demand statistical evidence and mechanisms of action. In engineering, buildings are not designed based on &quot;it usually works.&quot; They are designed using proven principles of physics and materials science. In computer science, algorithms are not released because they worked on a few test cases. They are analyzed for correctness and efficiency using mathematical proof.</p>
+<p>The Greeks showed that proof is not pedantic or unnecessary. Proof is a way of seeing <em>why</em> something works, of catching errors that experience might miss, and of extending knowledge beyond what has been tested. Every field that cares about getting things right uses proofs or their equivalents.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li>The Greeks shifted from asking &quot;does it work?&quot; to asking &quot;why must it be true?&quot;</li><li>A <strong>proof</strong> is a logical argument showing why something must be true.</li><li>A <strong>theorem</strong> is a proven statement.</li><li>An <strong>axiom</strong> is a foundational statement accepted without proof.</li><li><strong>Logical necessity</strong> means a conclusion must follow from its premises.</li><li>Proof provides certainty beyond what empirical testing offers.</li><li>Thales, Pythagoras, and Plato were key figures in making proof central to Greek mathematics.</li><li>Euclid later systematized Greek geometry by building it from five postulates.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What was the main philosophical shift the Greeks introduced to mathematics?</li></ol>
+<ul><li>They used bigger numbers</li><li>They moved from &quot;does it work?&quot; to &quot;why must it be true?&quot;</li><li>They invented new tools like compasses</li><li>They stopped building structures</li></ul>
+<ol><li>What is the difference between a conjecture and a theorem?</li></ol>
+<ul><li>A theorem is longer</li><li>A conjecture is believed to be true but not yet proven; a theorem has been proven</li><li>A conjecture uses different numbers</li><li>There is no real difference</li></ul>
+<ol><li>Why do mathematicians insist on axioms?</li></ol>
+<ul><li>Because ancient Greeks liked axioms</li><li>Every proof must start somewhere; axioms are foundational truths</li><li>Axioms make mathematics harder</li><li>Axioms replace the need for proof</li></ul>
+<ol><li>What does &quot;logical necessity&quot; mean in mathematics?</li></ol>
+<ul><li>The conclusion is probably true</li><li>The conclusion must be true given the starting axioms; there is no other logical possibility</li><li>The conclusion is true in most cases</li><li>The conclusion must be tested many times</li></ul>
+<ol><li>How did the Greeks&#x27; demand for proof change mathematics?</li></ol>
+<ul><li>It slowed down progress</li><li>It allowed knowledge to grow beyond what could be personally tested or observed</li><li>It made mathematics less practical</li><li>It ended the age of geometry</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>They moved from &quot;does it work?&quot; to &quot;why must it be true?&quot;</li><li>A conjecture is believed to be true but not yet proven; a theorem has been proven</li><li>Every proof must start somewhere; axioms are foundational truths</li><li>The conclusion must be true given the starting axioms; there is no other logical possibility</li><li>It allowed knowledge to grow beyond what could be personally tested or observed</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Thales_of_Miletus" target="_blank" rel="noopener">Thales of Miletus</a> — the first Greek philosopher and mathematician credited with initiating logical proof</li><li><a href="https://en.wikipedia.org/wiki/Pythagoras" target="_blank" rel="noopener">Pythagoras</a> — founder of the Pythagorean school, which pursued geometry as both practical and spiritual knowledge</li><li><a href="https://en.wikipedia.org/wiki/Plato" target="_blank" rel="noopener">Plato</a> — philosopher whose Academy promoted the idea that true knowledge is justified by reason, influencing Greek mathematics</li><li><a href="https://en.wikipedia.org/wiki/Mathematical_proof" target="_blank" rel="noopener">Mathematical proof</a> — detailed overview of what constitutes a proof and its importance in mathematics</li><li><a href="https://en.wikipedia.org/wiki/Ancient_Greek_mathematics" target="_blank" rel="noopener">Greek mathematics</a> — comprehensive history of how Greek geometry and proof developed</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-01-shape-measure-greek-project/ch-014-early-practical-geometry/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Early Practical Geometry</span></a><a class="pager-link pager-link--next" href="../../world-01-shape-measure-greek-project/ch-016-euclid-and-the-axiomatic-method/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Euclid and the Axiomatic Method</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

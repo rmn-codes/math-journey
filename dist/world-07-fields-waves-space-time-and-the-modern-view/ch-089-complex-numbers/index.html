@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Complex Numbers — The Imaginary Made Real — Math Journey</title>
+    <meta name="description" content="The square root of negative one — the number that shouldn&#x27;t exist, but does everything" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 7 · Chapter 89</p>
+        <h1>Complex Numbers — The Imaginary Made Real</h1>
+        <p class="hero-copy">The square root of negative one — the number that shouldn&#x27;t exist, but does everything</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1500s–1800s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Perform arithmetic with complex numbers</li><li>Plot complex numbers on the Argand diagram</li><li>Convert to polar form and apply Euler&#x27;s formula</li><li>Apply De Moivre&#x27;s theorem</li><li>State the Fundamental Theorem of Algebra</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Imagine solving a puzzle, following the rules exactly, and arriving at an instruction that reads: &quot;Take the square root of negative fifteen.&quot;</p>
+<p>Your stomach sinks. Square roots of negative numbers don&#x27;t exist. Everyone knows that. A negative number times itself is still negative—there is no way to multiply two identical numbers and get a negative result.</p>
+<p>Yet in 1545, Gerolamo Cardano, one of Renaissance Italy&#x27;s greatest mathematicians, encountered exactly this impossibility while solving cubic equations. He could have stopped. Instead, he made a choice that would puzzle mathematicians for three centuries.</p>
+<p>He kept going anyway.</p>
+<p>Cardano called these square roots of negative numbers <em>fictitious</em>—fake, invented, impossible. But he used them as though they were real. He manipulated them by the same rules as ordinary numbers. And when he reached the end of his calculation, the fictitious quantities canceled out, leaving an answer that was genuinely true.</p>
+<p>Something impossible had helped him find something real.</p>
+<p>For three hundred years, mathematicians lived with this contradiction. They used imaginary numbers. They didn&#x27;t believe in them. Then in 1831, Carl Friedrich Gauss proposed a radical idea: imaginary numbers are not fictitious at all. They are as real as the real numbers—just in a different direction. When you draw them on a plane, where the horizontal axis is the real numbers and the vertical axis is imaginary numbers, complex numbers become points in a 2D space, as concrete as coordinates on a map.</p>
+<p>Today complex numbers are indispensable. They power quantum mechanics. They let engineers design electrical circuits and signal processors. They explain why waves behave the way they do. The &quot;imaginary&quot; turned out to be the most real thing in physics.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>When physicists describe an electron, they use a wave function that contains complex numbers. When engineers design a smartphone, they use matrices of complex numbers to filter signals. When musicians use digital audio processing, complex numbers decompose sound into its frequencies. When architects design buildings to withstand earthquakes, they use complex numbers to model vibrations.</p>
+<p>Complex numbers are not a curiosity. They are the language in which nature speaks about waves, oscillations, and quantum phenomena. Without them, you cannot build modern technology or understand modern physics.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Cardano lived in a time when negative numbers themselves were controversial. The idea of a quantity less than nothing seemed philosophically absurd. But by the 1500s, mathematicians had accepted negative numbers as tools for solving problems, even if their meaning remained mysterious.</p>
+<p>Cardano&#x27;s insight—that you could use impossible quantities to solve real problems—suggested a deeper truth: that mathematical objects might not need to correspond to the physical world to be useful. They just needed to follow consistent rules.</p>
+<p>For 200 years, mathematicians used complex numbers and hated themselves for it. The Swiss mathematician Leonhard Euler, in the 1700s, worked extensively with complex numbers and made great discoveries, yet still seemed uneasy about their legitimacy.</p>
+<p>The turning point came with Gauss. By representing complex numbers as points in a plane (later called the Argand diagram, after Jean-Robert Argand), Gauss showed that complex numbers had a clear geometric meaning. They were not phantom quantities. They were locations in 2D space.</p>
+<p>Once mathematicians accepted complex numbers, the mathematics of the 1800s and 1900s exploded. Complex analysis—calculus applied to complex functions—became one of the most powerful tools in mathematics. Riemann, Cauchy, and others built a stunning theory. And when quantum mechanics arrived in the 1920s, complex numbers were already waiting, perfectly suited to the task.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>The imaginary unit</strong> $i$ is defined as the number whose square is $-1$: $$i^2 = -1$$</p>
+<p>This is the simplest definition, and everything else follows from it. Note: $i$ is not &quot;the square root of $-1$&quot; in the usual sense (since there is no unique square root). Rather, $i$ is <em>a</em> number that satisfies $i^2 = -1$. Its negative, $-i$, also satisfies this equation.</p>
+<p><strong>A complex number</strong> is an expression of the form: $$z = a + bi$$</p>
+<p>where $a$ and $b$ are real numbers. We call $a$ the <em>real part</em> and $b$ the <em>imaginary part</em>.</p>
+<p>For example:</p>
+<ul><li>$3 + 2i$ has real part 3 and imaginary part 2.</li><li>$5 - i$ has real part 5 and imaginary part $-1$.</li><li>$7$ has real part 7 and imaginary part 0 (so all real numbers are complex numbers with imaginary part zero).</li><li>$3i$ has real part 0 and imaginary part 3.</li></ul>
+<p><strong>Arithmetic with complex numbers</strong> follows the rules of algebra, with one key rule: whenever you encounter $i^2$, replace it with $-1$.</p>
+<p><em>Addition and subtraction:</em> Combine real parts and imaginary parts separately. $$(3 + 2i) + (5 - i) = (3 + 5) + (2 - 1)i = 8 + i$$</p>
+<p><em>Multiplication:</em> Use FOIL, remembering that $i^2 = -1$. $$(3 + 2i)(5 - i) = 15 - 3i + 10i - 2i^2 = 15 - 3i + 10i + 2 = 17 + 7i$$</p>
+<p><em>Division:</em> Multiply numerator and denominator by the <em>conjugate</em> of the denominator. The conjugate of $a + bi$ is $a - bi$. $$\frac{3 + 2i}{5 - i} = \frac{(3 + 2i)(5 + i)}{(5 - i)(5 + i)} = \frac{15 + 3i + 10i + 2i^2}{25 - i^2} = \frac{15 + 13i - 2}{25 + 1} = \frac{13 + 13i}{26} = \frac{1}{2} + \frac{1}{2}i$$</p>
+<p><strong>The modulus</strong> (or absolute value) of $z = a + bi$ is: $$|z| = \sqrt{a^2 + b^2}$$</p>
+<p>This is the distance from $z$ to the origin in the complex plane.</p>
+<p><strong>Polar form:</strong> Any complex number can be written as: $$z = r(\cos\theta + i\sin\theta) = re^{i\theta}$$</p>
+<p>where $r = |z|$ and $\theta$ is the argument (angle from the positive real axis). The expression $e^{i\theta}$ is <strong>Euler&#x27;s formula</strong>, one of the most beautiful equations in mathematics.</p>
+<p><strong>De Moivre&#x27;s theorem</strong> says that if $z = re^{i\theta}$, then: $$(re^{i\theta})^n = r^n e^{in\theta}$$</p>
+<p>This makes powers and roots of complex numbers easy to compute.</p>
+<p><strong>The Fundamental Theorem of Algebra</strong> states: Every polynomial of degree $n$ has exactly $n$ complex roots (counting multiplicities). This theorem finally answered a 300-year-old question: do polynomial equations always have solutions? Yes—as long as you allow complex numbers.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<ul><li><strong>Imaginary unit:</strong> The number $i$ satisfying $i^2 = -1$.</li><li><strong>Complex number:</strong> An element of the form $z = a + bi$ where $a, b \in \mathbb{R}$.</li><li><strong>Real part:</strong> The number $a$ in $z = a + bi$.</li><li><strong>Imaginary part:</strong> The number $b$ in $z = a + bi$ (note: the imaginary part is real; the name refers to the coefficient of $i$).</li><li><strong>Conjugate:</strong> The complex conjugate of $z = a + bi$ is $\bar{z} = a - bi$.</li><li><strong>Modulus (absolute value):</strong> For $z = a + bi$, we have $|z| = \sqrt{a^2 + b^2}$.</li><li><strong>Complex plane (Argand diagram):</strong> The plane with real numbers on the horizontal axis and imaginary numbers on the vertical axis; each complex number corresponds to a point.</li><li><strong>Polar form:</strong> Representation $z = r e^{i\theta}$ where $r = |z|$ and $\theta = \arg(z)$.</li><li><strong>Argument:</strong> The angle $\theta$ that $z$ makes with the positive real axis.</li><li><strong>Euler&#x27;s formula:</strong> $e^{i\theta} = \cos\theta + i\sin\theta$.</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Arithmetic</strong> Compute $(2 + 3i)^2$.</p>
+<p>Solution: $$(2 + 3i)^2 = (2 + 3i)(2 + 3i) = 4 + 6i + 6i + 9i^2 = 4 + 12i - 9 = -5 + 12i$$</p>
+<p><strong>Example 2: Conjugate and Division</strong> Compute $\frac{2 + i}{1 + 2i}$.</p>
+<p>Solution: $$\frac{2 + i}{1 + 2i} \cdot \frac{1 - 2i}{1 - 2i} = \frac{(2 + i)(1 - 2i)}{(1 + 2i)(1 - 2i)} = \frac{2 - 4i + i - 2i^2}{1 - 4i^2} = \frac{2 - 3i + 2}{1 + 4} = \frac{4 - 3i}{5} = \frac{4}{5} - \frac{3}{5}i$$</p>
+<p><strong>Example 3: Modulus</strong> Find $|3 - 4i|$.</p>
+<p>Solution: $$|3 - 4i| = \sqrt{3^2 + (-4)^2} = \sqrt{9 + 16} = \sqrt{25} = 5$$</p>
+<p><strong>Example 4: Polar Form and De Moivre</strong> Express $z = 1 + i$ in polar form and compute $z^4$.</p>
+<p>Solution:</p>
+<ul><li>$r = |1 + i| = \sqrt{1 + 1} = \sqrt{2}$</li><li>$\theta = \arctan(1/1) = \pi/4$</li><li>So $z = \sqrt{2} e^{i\pi/4}$</li><li>By De Moivre: $z^4 = (\sqrt{2})^4 e^{i \cdot 4\pi/4} = 4 e^{i\pi} = 4(\cos\pi + i\sin\pi) = 4(-1 + 0i) = -4$</li></ul>
+<p>Check: $(1 + i)^2 = 1 + 2i - 1 = 2i$, and $(2i)^2 = -4$. ✓</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Compute $(3 + 2i) + (1 - 5i)$.</li></ol>
+<ol><li>Multiply $(2 + i)(3 - 2i)$.</li></ol>
+<ol><li>Find the modulus of $5 + 12i$.</li></ol>
+<ol><li>Express $3 + 3i$ in polar form.</li></ol>
+<ol><li>Use De Moivre&#x27;s theorem to find $(1 + i)^8$.</li></ol>
+<ol><li>Solve $z^2 = -1$ for all complex solutions.</li></ol>
+<ol><li>Divide: $\frac{1 + 2i}{2 - i}$.</li></ol>
+<ol><li>Find the conjugate of $-2 + 5i$ and multiply it by the original number.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Problem:</strong> The polynomial $z^2 + 1 = 0$ has no real solutions (since $z^2 = -1$ is impossible for real $z$). Show that it has exactly two complex solutions, and verify that they are conjugates of each other.</p>
+<p><strong>Hint:</strong> If $z = a + bi$, then $z^2 = (a + bi)^2 = a^2 - b^2 + 2abi$. For this to equal $-1$, what must $a^2 - b^2$ and $2ab$ equal?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Signal Processing:</strong> In electrical engineering and audio processing, signals are often represented as complex numbers. A signal $s(t) = A e^{i\phi(t)}$ encodes both magnitude (amplitude) and phase information in a single object. Taking the real part gives the actual physical signal: $\Re(s) = A \cos\phi(t)$. Complex notation makes it easy to combine signals, filter them, and analyze them mathematically. This is why Fourier analysis (breaking signals into frequency components) relies fundamentally on complex numbers and Euler&#x27;s formula.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Complex numbers extended the number system by introducing $i$ with the property $i^2 = -1$. What seemed fictitious became real once we understood them geometrically as points in the complex plane. We learned to add, subtract, multiply, and divide complex numbers; to represent them in polar form using Euler&#x27;s formula; and to compute powers and roots using De Moivre&#x27;s theorem. The Fundamental Theorem of Algebra guarantees that complex numbers complete the picture: every polynomial has a solution. These &quot;impossible&quot; numbers turned out to be essential for physics, engineering, and understanding the world.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is the definition of $i$?</li></ol>
+<ul><li>$i$ is the number such that $i = \sqrt{-1}$</li><li>$i$ is the number such that $i^2 = -1$</li><li>$i$ is defined by the equation $i = -1/i$</li><li>$i$ is an undefined symbol in formal mathematics</li></ul>
+<ol><li>Which of the following is the correct way to multiply $(2 + i)(3 - i)$?</li></ol>
+<ul><li>$(2)(3) + (i)(-i) = 6 - i^2 = 7$</li><li>$6 - 2i + 3i - i^2 = 6 + i + 1 = 7 + i$</li><li>$(2)(3) - (i)(i) = 6 - i^2 = 7$</li><li>$2 + 3 + i - i = 5$</li></ul>
+<ol><li>What is the modulus of $3 + 4i$?</li></ol>
+<ul><li>$7$</li><li>$5$</li><li>$\sqrt{7}$</li><li>$12$</li></ul>
+<ol><li>In polar form, the complex number $1 + i$ is written as...</li></ol>
+<ul><li>$\sqrt{2} e^{i\pi/4}$</li><li>$2 e^{i\pi/4}$</li><li>$e^{i\pi/2}$</li><li>$\sqrt{2} e^{i\pi/2}$</li></ul>
+<ol><li>The Fundamental Theorem of Algebra states that...</li></ol>
+<ul><li>A polynomial of degree $n$ has at most $n$ real roots</li><li>A polynomial of degree $n$ has exactly $n$ complex roots (counting multiplicities)</li><li>A polynomial with real coefficients has only real roots</li><li>No polynomial of degree 5 or higher has a general formula for its roots</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>$i$ is the number such that $i^2 = -1$</li></ol>
+<ol><li>$6 - 2i + 3i - i^2 = 6 + i + 1 = 7 + i$</li></ol>
+<ol><li>$5$</li></ol>
+<ol><li>$\sqrt{2} e^{i\pi/4}$</li></ol>
+<ol><li>A polynomial of degree $n$ has exactly $n$ complex roots (counting multiplicities)</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Cardano, Gerolamo. <em>Ars Magna</em> (The Great Art), 1545. <a href="https://en.wikipedia.org/wiki/Ars_Magna_(Cardano_book" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Ars_Magna_(Cardano_book)</a>)</li><li>Euler and imaginary numbers: <a href="https://en.wikipedia.org/wiki/Imaginary_unit" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Imaginary_unit</a></li><li>Gauss and the Argand diagram: <a href="https://en.wikipedia.org/wiki/Complex_number" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Complex_number</a></li><li>Euler&#x27;s formula: <a href="https://en.wikipedia.org/wiki/Euler%27s_formula" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Euler%27s_formula</a></li><li>Fundamental Theorem of Algebra: <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-077-the-mathematics-of-chance/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Mathematics of Chance</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-090-vectors-and-matrices/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Vectors and Matrices</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

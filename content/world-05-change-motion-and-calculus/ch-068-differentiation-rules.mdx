@@ -1,0 +1,330 @@
+---
+chapterNumber: 068
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+title: "Differentiation Rules"
+subtitle: "Shortcuts that save the world — the rules that make calculus practical"
+estimatedTimeMinutes: 40
+historicalPeriod: "1680s–1700s"
+mainConcepts:
+  - power rule
+  - product rule
+  - quotient rule
+  - chain rule
+  - derivatives of trig functions
+  - derivatives of exponential and logarithmic functions
+learningObjectives:
+  - "Apply power, product, quotient, and chain rules"
+  - "Differentiate trig, exponential, and logarithmic functions"
+  - "Compute higher-order derivatives"
+  - "Combine rules for complex functions"
+---
+
+## Story Hook
+
+Cambridge, England. 1700. Isaac Newton, now in his late 50s, sits at his desk reflecting on the past 30 years of calculus. Using only the limit definition, computing the derivative of a polynomial like $f(x) = x^{10}$ requires expanding $(x+h)^{10}$ with the binomial theorem—a monumental algebraic task.
+
+But Newton, always brilliant, noticed something. The derivative of $x^2$ is $2x$. The derivative of $x^3$ is $3x^2$. The derivative of $x^4$ is $4x^3$. There's a pattern. The same insight hit Leibniz independently. They both discovered rules—shortcuts—that let you compute derivatives instantly without ever using the limit definition.
+
+These rules transformed calculus from a theoretical marvel into a practical tool. An engineer designing a bridge no longer spends hours computing derivatives. They apply a few rules and get the answer in minutes. Over 300 years later, these same rules are still the fastest way to differentiate almost any function.
+
+## Why It Matters
+
+Without differentiation rules, calculus is impractical. The limit definition works in principle but is tedious for anything beyond the simplest functions. With rules, you can find derivatives instantly—and once you can differentiate, you can optimize, predict, and control.
+
+Every algorithm that learns from data uses derivatives via the chain rule. Every smartphone app that finds the fastest route uses derivatives. Every airplane wing is designed with derivatives. The rules of differentiation are the most widely used formulas in science, engineering, and machine learning.
+
+## Historical Context
+
+Newton and Leibniz discovered the basic differentiation rules independently in the 1660s–1680s. By 1700, mathematicians had compiled a complete toolkit: the power rule, product rule, quotient rule, and chain rule. The notation was standardized, largely following Leibniz's elegant conventions.
+
+In the 1700s, Leonhard Euler and other mathematicians extended the rules to include derivatives of trigonometric functions, exponential functions, and logarithmic functions. By the time of Euler's death in 1783, differentiation was a fully developed, systematic science. What had been a dazzling mystery a century earlier had become routine.
+
+The history of calculus is a story of how humans found shortcuts. The limit definition is the deep truth. The rules are the practical applications of that truth.
+
+## Core Concept
+
+The **power rule** is the workhorse of differentiation:
+
+$$\frac{d}{dx}[x^n] = nx^{n-1}$$
+
+This says: to differentiate $x^n$, bring down the exponent $n$ as a coefficient and reduce the exponent by 1.
+
+Examples:
+- $\frac{d}{dx}[x^3] = 3x^2$
+- $\frac{d}{dx}[x^{-2}] = -2x^{-3}$
+- $\frac{d}{dx}[\sqrt{x}] = \frac{d}{dx}[x^{1/2}] = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}}$
+
+The **constant rule:** If $c$ is a constant, $\frac{d}{dx}[c] = 0$.
+
+The **constant multiple rule:** $\frac{d}{dx}[cf(x)] = c \cdot f'(x)$.
+
+The **sum and difference rule:** $\frac{d}{dx}[f(x) + g(x)] = f'(x) + g'(x)$.
+
+The **product rule** lets you differentiate products of functions:
+
+$$\frac{d}{dx}[f(x) \cdot g(x)] = f'(x) \cdot g(x) + f(x) \cdot g'(x)$$
+
+Mnemonic: "first times the derivative of the second, plus the second times the derivative of the first."
+
+The **quotient rule** handles fractions:
+
+$$\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}$$
+
+Mnemonic: "low times the derivative of the high, minus high times the derivative of the low, all over low squared."
+
+The **chain rule** is the most powerful rule. It handles composite functions (functions of functions):
+
+$$\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)$$
+
+This says: to differentiate a composition, differentiate the outside function (keeping the inside unchanged), then multiply by the derivative of the inside function.
+
+## Definitions and Formal Lesson
+
+**Power Rule (General):** For any real number $n$,
+
+$$\frac{d}{dx}[x^n] = nx^{n-1}$$
+
+**Constant Rule:** $\frac{d}{dx}[c] = 0$
+
+**Constant Multiple Rule:** $\frac{d}{dx}[c \cdot f(x)] = c \cdot f'(x)$
+
+**Sum/Difference Rule:** $\frac{d}{dx}[f(x) \pm g(x)] = f'(x) \pm g'(x)$
+
+**Product Rule:** $\frac{d}{dx}[f \cdot g] = f' \cdot g + f \cdot g'$
+
+**Quotient Rule:** $\frac{d}{dx}\left[\frac{f}{g}\right] = \frac{f'g - fg'}{g^2}$
+
+**Chain Rule:** $\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)$
+
+**Trigonometric Derivatives:**
+- $\frac{d}{dx}[\sin x] = \cos x$
+- $\frac{d}{dx}[\cos x] = -\sin x$
+- $\frac{d}{dx}[\tan x] = \sec^2 x$
+
+**Exponential and Logarithmic Derivatives:**
+- $\frac{d}{dx}[e^x] = e^x$
+- $\frac{d}{dx}[a^x] = a^x \ln a$ (for $a > 0, a \neq 1$)
+- $\frac{d}{dx}[\ln x] = \frac{1}{x}$
+- $\frac{d}{dx}[\log_a x] = \frac{1}{x \ln a}$
+
+**Higher Derivatives:** The second derivative is $f''(x) = \frac{d}{dx}[f'(x)]$. Apply differentiation rules to $f'(x)$ to get $f''(x)$.
+
+## Worked Examples
+
+**Example 1: Power Rule**
+
+Let $f(x) = x^5$. Find $f'(x)$.
+
+$$f'(x) = 5x^{5-1} = 5x^4$$
+
+**Example 2: Combining Rules (Power, Constant Multiple, Sum)**
+
+Let $f(x) = 3x^4 - 2x^2 + 7x - 5$.
+
+Differentiate term by term:
+
+$$f'(x) = 3 \cdot 4x^3 - 2 \cdot 2x + 7 \cdot 1 - 0 = 12x^3 - 4x + 7$$
+
+**Example 3: Product Rule**
+
+Let $f(x) = (x^2 + 1)(x^3 - 2)$. Find $f'(x)$.
+
+Let $u = x^2 + 1$ and $v = x^3 - 2$. Then $u' = 2x$ and $v' = 3x^2$.
+
+$$f'(x) = u'v + uv' = (2x)(x^3 - 2) + (x^2 + 1)(3x^2)$$
+
+$$= 2x^4 - 4x + 3x^4 + 3x^2 = 5x^4 + 3x^2 - 4x$$
+
+**Example 4: Quotient Rule**
+
+Let $f(x) = \frac{x^2 + 1}{x + 2}$. Find $f'(x)$.
+
+Let $f(x) = x^2 + 1$ and $g(x) = x + 2$. Then $f'(x) = 2x$ and $g'(x) = 1$.
+
+$$f'(x) = \frac{(2x)(x+2) - (x^2+1)(1)}{(x+2)^2} = \frac{2x^2 + 4x - x^2 - 1}{(x+2)^2} = \frac{x^2 + 4x - 1}{(x+2)^2}$$
+
+**Example 5: Chain Rule**
+
+Let $f(x) = (3x + 2)^5$. Find $f'(x)$.
+
+The outside function is $u^5$. The inside function is $u = 3x + 2$.
+
+By the chain rule:
+
+$$f'(x) = 5(3x+2)^4 \cdot 3 = 15(3x+2)^4$$
+
+**Example 6: Chain Rule with a Trig Function**
+
+Let $f(x) = \sin(x^2)$. Find $f'(x)$.
+
+The outside function is $\sin u$. The inside is $u = x^2$.
+
+$$f'(x) = \cos(x^2) \cdot 2x = 2x \cos(x^2)$$
+
+**Example 7: Exponential Function**
+
+Let $f(x) = e^{2x}$. Find $f'(x)$.
+
+Using the chain rule with $u = 2x$:
+
+$$f'(x) = e^{2x} \cdot 2 = 2e^{2x}$$
+
+**Example 8: Second Derivative**
+
+Let $f(x) = x^4 - 3x^2 + 2$. Find $f''(x)$.
+
+First derivative: $f'(x) = 4x^3 - 6x$
+
+Second derivative: $f''(x) = 12x^2 - 6$
+
+## Practice Set
+
+1. **What is the derivative of $f(x) = x^7$?**
+   - $7x^6$
+   - $7x^8$
+   - $x^6$
+   - $6x^7$
+
+2. **Using the power rule, $\frac{d}{dx}[x^{-3}]$ equals:**
+   - $-3x^{-2}$
+   - $-3x^{-4}$
+   - $x^{-4}$
+   - $3x^{-4}$
+
+3. **If $f(x) = 5x^2 + 3x - 4$, what is $f'(x)$?**
+   - $10x + 3$
+   - $5x + 3$
+   - $10x^2 + 3$
+   - $5x^2 + 3$
+
+4. **For the product $f(x) = x \cdot \sin x$, the derivative using the product rule is:**
+   - $\sin x + x \cos x$
+   - $\cos x$
+   - $x \cos x$
+   - $1 \cdot \cos x$
+
+5. **What is $\frac{d}{dx}[e^{3x}]$?**
+   - $e^{3x}$
+   - $3e^{3x}$
+   - $e^{3x} + 3$
+   - $3$
+
+## Reasoning Task
+
+Your classmate is confused about when to use the product rule versus simply expanding the product and then differentiating term by term.
+
+Compare these two approaches for $f(x) = (2x)(x^2 + 1)$:
+1. Expand first: $f(x) = 2x^3 + 2x$, then differentiate.
+2. Use the product rule directly on $(2x)(x^2 + 1)$.
+
+Show that both methods give the same answer. Then explain why expanding first is often easier for polynomials, but the product rule is essential for more complex functions.
+
+## Application
+
+**Optimizing a Box (Calculus and Economics)**
+
+A cardboard box is to be built with a square base. Let $x$ be the side length of the base (in meters). The height is fixed at 2 meters.
+
+Volume: $V(x) = x^2 \cdot 2 = 2x^2$
+
+Cost to build (let's say \$1 per square meter of cardboard): The surface area is $2x^2 + 4 \cdot 2x = 2x^2 + 8x$.
+
+Cost: $C(x) = 2x^2 + 8x$
+
+To minimize cost, find where $\frac{dC}{dx} = 0$:
+
+$$\frac{dC}{dx} = 4x + 8 = 0 \implies x = -2$$
+
+Since $x$ must be positive, we check the boundary. The cost function $C(x) = 2x^2 + 8x$ has derivative $4x + 8 > 0$ for all $x > 0$, so cost increases with size. The optimal box is as small as the constraints allow.
+
+**Compound Interest (Exponential Derivatives)**
+
+An investment grows according to $A(t) = 1000 e^{0.05t}$, where $t$ is time in years and the amount is in dollars.
+
+The rate of growth (how fast the amount is increasing) is:
+
+$$\frac{dA}{dt} = 1000 \cdot e^{0.05t} \cdot 0.05 = 50 e^{0.05t}$$
+
+At $t = 0$, the growth rate is $50e^0 = 50$ dollars per year. As time goes on, the growth rate increases exponentially because you're earning interest on your interest.
+
+## Recap
+
+**Differentiation rules** are shortcuts that let you compute derivatives without using limits every time.
+
+The **power rule** $\frac{d}{dx}[x^n] = nx^{n-1}$ is the most basic rule. The **constant rule**, **constant multiple rule**, and **sum/difference rule** let you handle sums and products of powers.
+
+The **product rule** $f'g + fg'$ and **quotient rule** $\frac{f'g - fg'}{g^2}$ handle products and quotients.
+
+The **chain rule** $f'(g(x)) \cdot g'(x)$ is the most powerful, handling composite functions. It's essential for trig, exponential, and logarithmic functions.
+
+The derivatives of sine, cosine, $e^x$, and $\ln x$ are fundamental formulas worth memorizing.
+
+**Higher derivatives** like $f''(x)$ are found by applying the rules repeatedly. The second derivative often represents acceleration or the rate of change of a rate.
+
+By 1700, Newton, Leibniz, and their contemporaries had compiled all these rules. What had been revolutionary became routine. Differentiation is now taught in high school, practiced millions of times per day by engineers and scientists worldwide.
+
+## Unlock Quiz
+
+**1. What does the power rule say about differentiating $x^n$?**
+   - Bring down the exponent, reduce it by 1, multiply
+   - Increase the exponent by 1
+   - Divide by the exponent
+   - The derivative is $x^{n-1}$
+
+<details>
+<summary>Answer</summary>
+Bring down the exponent, reduce it by 1, multiply
+</details>
+
+**2. In the product rule $\frac{d}{dx}[f \cdot g] = f' \cdot g + f \cdot g'$, which term is "first times derivative of second"?**
+   - $f' \cdot g$
+   - $f \cdot g'$
+   - Both
+   - Neither
+
+<details>
+<summary>Answer</summary>
+$f' \cdot g$
+</details>
+
+**3. What is the chain rule?**
+   - $(f + g)' = f' + g'$
+   - $f'(g(x)) \cdot g'(x)$
+   - $\frac{f'g - fg'}{g^2}$
+   - $(f \cdot g)' = f' \cdot g'$
+
+<details>
+<summary>Answer</summary>
+$f'(g(x)) \cdot g'(x)$
+</details>
+
+**4. What is $\frac{d}{dx}[\sin x]$?**
+   - $\cos x$
+   - $-\cos x$
+   - $\sin x$
+   - $-\sin x$
+
+<details>
+<summary>Answer</summary>
+$\cos x$
+</details>
+
+**5. For $f(x) = (x^2 + 3)^4$, which rule is most appropriate?**
+   - Power rule
+   - Product rule
+   - Chain rule
+   - Quotient rule
+
+<details>
+<summary>Answer</summary>
+Chain rule
+</details>
+
+## Source Notes
+
+- Newton, I. (1687). *Philosophiæ Naturalis Principia Mathematica*. https://en.wikipedia.org/wiki/Isaac_Newton
+- Leibniz, G.W. (1696). *Acta Eruditorum* (papers on differentiation). https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz
+- Euler, L. (1755). *Institutiones calculi differentialis*. https://en.wikipedia.org/wiki/Leonhard_Euler
+- https://en.wikipedia.org/wiki/Differentiation_rules
+- https://en.wikipedia.org/wiki/Chain_rule

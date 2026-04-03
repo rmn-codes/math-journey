@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Angles and the Language of Turning — Math Journey</title>
+    <meta name="description" content="Degrees, radians, and why a circle has 360 degrees — and also 2π" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 4 · Chapter 53</p>
+        <h1>Angles and the Language of Turning</h1>
+        <p class="hero-copy">Degrees, radians, and why a circle has 360 degrees — and also 2π</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>core</span>
+          
+          <span>2000 BCE – 1700 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Convert between degrees and radians</li><li>Find arc length using s = rθ</li><li>Identify coterminal angles</li><li>Place angles in standard position</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#converting-between-degrees-and-radians">Converting Between Degrees and Radians</a></li><li class="toc-level-3"><a href="#common-angle-conversions">Common Angle Conversions</a></li><li class="toc-level-3"><a href="#arc-length-formula">Arc Length Formula</a></li><li class="toc-level-3"><a href="#coterminal-angles">Coterminal Angles</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Imagine you&#x27;re standing in Babylon around 2000 BCE. The sky is clear, and above you, stars trace an invisible path. A team of astronomers is working on a problem: how do we measure this circular dance? How do we divide up the circle so that our measurements are useful?</p>
+<p>They choose 360 degrees. Why 360? Because 360 is beautifully divisible. It&#x27;s close to the number of days in a year (about 365), and it divides evenly by 2, 3, 4, 5, 6, 8, 9, 10, and 12. For a civilization doing astronomy and surveying without computers, that divisibility is gold.</p>
+<p>For nearly 4,000 years, degrees ruled. Every navigator, surveyor, and engineer used them. But then mathematicians discovered something more elegant: a way to measure angles using the circle&#x27;s own radius as the unit. This is the radian, and it&#x27;s so powerful that modern physics, calculus, and engineering rely on it almost exclusively.</p>
+<p>Today, both systems live side by side. Degrees dominate everyday life: navigation, geography, sports. Radians dominate mathematics and science. By the end of this chapter, you&#x27;ll understand both, and why each one matters.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Measuring angles is like having a universal language. Whether you&#x27;re steering a ship, designing a bridge, tracking a planet, or writing code for a 3D video game, you need to talk about turning and rotation. But turning can be measured in different ways — and choosing the right unit makes calculations easier or harder.</p>
+<p>Think of it this way: if you&#x27;re building a wheel and you only think in degrees, you might do fine. But if you&#x27;re designing a pendulum, calculating wave motion, or writing physics simulations, radians fit the mathematics so naturally that the physics equations simplify. That&#x27;s why we learn both.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The Babylonians (circa 2000 BCE) established the 360-degree system. They were brilliant astronomers and mathematicians, but not for abstract reasons: they needed to predict when rivers would flood, when to plant crops, and where stars would appear. A circle of 360 degrees was their gift to us.</p>
+<p>For two millennia, this system was unchallenged. Then, in the 1600s and 1700s, as calculus was being invented, mathematicians realized that angles measured in terms of arc length divided by radius (the radian) made derivative and integral formulas dramatically simpler. By the 1800s, the radian was standard in advanced mathematics.</p>
+<p>Leonhard Euler, in the 1700s, formalized much of trigonometry and showed how deeply the radian fits into the mathematical fabric of waves, circles, and periodic motion. Today, his insights shape everything from signal processing to quantum mechanics.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>An angle measures rotation. At its simplest, an angle describes how far we&#x27;ve turned from a starting direction.</p>
+<p><strong>Degrees</strong> divide a full rotation into 360 equal parts. Why 360? Tradition and divisibility. A right angle is 90 degrees. A straight angle (half rotation) is 180 degrees.</p>
+<p><strong>Radians</strong> divide a full rotation into $2\pi$ equal parts. One radian is the angle at the center of a circle when the arc length equals the radius. This definition sounds abstract until you see how perfectly it works in calculus and physics.</p>
+<p>The relationship: $$360° = 2\pi \text{ radians}$$</p>
+<p>Therefore: $$1° = \frac{\pi}{180} \text{ radians} \quad \text{and} \quad 1 \text{ radian} = \frac{180}{\pi}°$$</p>
+<p><strong>Standard Position</strong>: An angle in standard position has its vertex at the origin, its initial side along the positive x-axis, and its terminal side rotated by the angle. If the rotation is counterclockwise, the angle is positive. Clockwise rotations are negative.</p>
+<p><strong>Coterminal Angles</strong>: Two angles that have the same terminal side. For example, $45°$ and $405°$ are coterminal (because $405° = 45° + 360°$). Any angle $\theta$ has coterminal angles at $\theta + 360°k$ for any integer $k$ (in degrees) or $\theta + 2\pi k$ (in radians).</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="converting-between-degrees-and-radians">Converting Between Degrees and Radians</h3>
+<p>$$\text{degrees} = \text{radians} \times \frac{180°}{\pi}$$</p>
+<p>$$\text{radians} = \text{degrees} \times \frac{\pi}{180°}$$</p>
+<h3 id="common-angle-conversions">Common Angle Conversions</h3>
+<p>| Degrees | Radians | |---------|---------| | $30°$ | $\pi/6$ | | $45°$ | $\pi/4$ | | $60°$ | $\pi/3$ | | $90°$ | $\pi/2$ | | $180°$ | $\pi$ | | $360°$ | $2\pi$ |</p>
+<h3 id="arc-length-formula">Arc Length Formula</h3>
+<p>For a circle of radius $r$ and a central angle $\theta$ (in radians):</p>
+<p>$$s = r\theta$$</p>
+<p>where $s$ is the arc length. This is one of the most important formulas in trigonometry — and it only works when $\theta$ is in radians, which shows why radians are so natural.</p>
+<h3 id="coterminal-angles">Coterminal Angles</h3>
+<p>Angles $\alpha$ and $\beta$ are coterminal if $\alpha = \beta + 360°k$ (or $\beta + 2\pi k$ in radians) for some integer $k$.</p>
+<p>To find a coterminal angle between $0°$ and $360°$, repeatedly add or subtract $360°$ until the result falls in that range.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Convert $120°$ to radians.</strong></p>
+<p>$$120° \times \frac{\pi}{180°} = \frac{120\pi}{180} = \frac{2\pi}{3} \text{ radians}$$</p>
+<p><strong>Example 2: Convert $\frac{5\pi}{4}$ radians to degrees.</strong></p>
+<p>$$\frac{5\pi}{4} \times \frac{180°}{\pi} = \frac{5 \times 180°}{4} = \frac{900°}{4} = 225°$$</p>
+<p><strong>Example 3: A circle has radius $5$ cm. Find the arc length of a central angle of $\frac{\pi}{3}$ radians.</strong></p>
+<p>$$s = r\theta = 5 \times \frac{\pi}{3} = \frac{5\pi}{3} \text{ cm} \approx 5.24 \text{ cm}$$</p>
+<p><strong>Example 4: Find a coterminal angle to $-60°$ that lies between $0°$ and $360°$.</strong></p>
+<p>$$-60° + 360° = 300°$$</p>
+<p>So $300°$ is coterminal with $-60°$.</p>
+<p><strong>Example 5: A wheel rotates through an angle of $\frac{3\pi}{2}$ radians. Through how many degrees did it rotate?</strong></p>
+<p>$$\frac{3\pi}{2} \times \frac{180°}{\pi} = \frac{3 \times 180°}{2} = 270°$$</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Convert $45°$ to radians.</li><li>Convert $\frac{\pi}{6}$ radians to degrees.</li><li>A circle has radius $8$ inches. Find the arc length of a central angle of $\frac{\pi}{4}$ radians.</li><li>Find a coterminal angle to $450°$ that lies between $0°$ and $360°$.</li><li>An angle in standard position has its terminal side in the third quadrant. Is the angle positive or negative? Explain.</li><li>Convert $-240°$ to radians.</li><li>A pendulum swings through an angle of $\frac{5\pi}{6}$ radians. What is this angle in degrees?</li><li>Two coterminal angles are $100°$ and another angle $\beta$ where $\beta$ is between $100°$ and $500°$. Find $\beta$.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Explain why the formula $s = r\theta$ only works when $\theta$ is in radians, not degrees.</strong> Start by thinking about what happens when $\theta = 360°$ (or $\theta = 2\pi$ radians). What should the arc length be? Then consider the relationship between radians and arc length.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>A bicycle wheel has radius $0.35$ meters. The wheel rotates $24$ times. How far does the bicycle travel?</p>
+<p><strong>Solution:</strong></p>
+<ul><li>One complete rotation is $2\pi$ radians, or arc length $s = r \times 2\pi = 0.35 \times 2\pi = 0.7\pi$ meters.</li><li>For 24 rotations: total distance $= 24 \times 0.7\pi = 16.8\pi \approx 52.8$ meters.</li></ul>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li>A <strong>degree</strong> is $\frac{1}{360}$ of a full rotation. A <strong>radian</strong> is the angle at the center of a circle when the arc equals the radius.</li><li>Full circle: $360° = 2\pi$ radians.</li><li>Convert using: degrees $\times \frac{\pi}{180} =$ radians; radians $\times \frac{180}{\pi} =$ degrees.</li><li><strong>Arc length</strong>: $s = r\theta$ (θ in radians).</li><li><strong>Coterminal angles</strong> share the same terminal side; they differ by multiples of $360°$ (or $2\pi$ radians).</li><li><strong>Standard position</strong>: vertex at origin, initial side on positive x-axis.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>Convert $\frac{2\pi}{3}$ radians to degrees.</li></ol>
+<ul><li>60°</li><li>90°</li><li>120°</li><li>150°</li></ul>
+<ol><li>A circle has radius 6 cm and a central angle of $\frac{\pi}{2}$ radians. What is the arc length?</li></ol>
+<ul><li>$3\pi$ cm</li><li>$6\pi$ cm</li><li>$9\pi$ cm</li><li>$12\pi$ cm</li></ul>
+<ol><li>Which angle is coterminal with $-45°$?</li></ol>
+<ul><li>$45°$</li><li>$135°$</li><li>$315°$</li><li>$360°$</li></ul>
+<ol><li>Convert $270°$ to radians.</li></ol>
+<ul><li>$\frac{\pi}{2}$</li><li>$\pi$</li><li>$\frac{3\pi}{2}$</li><li>$2\pi$</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li><strong>120°</strong> — Multiply: $\frac{2\pi}{3} \times \frac{180}{\pi} = \frac{2 \times 180}{3} = 120°$</li></ol>
+<ol><li><strong>$3\pi$ cm</strong> — Use $s = r\theta = 6 \times \frac{\pi}{2} = 3\pi$ cm</li></ol>
+<ol><li><strong>$315°$</strong> — Add $360°$ to $-45°$: $-45° + 360° = 315°$</li></ol>
+<ol><li><strong>$\frac{3\pi}{2}$</strong> — Multiply: $270° \times \frac{\pi}{180°} = \frac{3\pi}{2}$</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Babylonian_mathematics" target="_blank" rel="noopener">Babylonian Mathematics - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/History_of_trigonometry" target="_blank" rel="noopener">History of Trigonometry - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Radian" target="_blank" rel="noopener">Radian - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Circle" target="_blank" rel="noopener">Circle - Wikipedia</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-03-coordination-space-and-functions/ch-052-modeling-with-functions/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Modeling with Functions</span></a><a class="pager-link pager-link--next" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-054-the-unit-circle/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Unit Circle — Sine and Cosine</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

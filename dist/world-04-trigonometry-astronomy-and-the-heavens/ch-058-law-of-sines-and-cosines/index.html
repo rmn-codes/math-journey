@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Law of Sines and the Law of Cosines — Math Journey</title>
+    <meta name="description" content="Solving any triangle — the tools that let navigators cross oceans" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 4 · Chapter ?</p>
+        <h1>The Law of Sines and the Law of Cosines</h1>
+        <p class="hero-copy">Solving any triangle — the tools that let navigators cross oceans</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>150 BCE – 1200 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Apply the Law of Sines to solve triangles in AAS, ASA, and SSA cases</li><li>Apply the Law of Cosines in SAS and SSS cases</li><li>Find triangle area using $\\frac{1}{2}ab\\sin C$</li><li>Recognise when each law applies</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Imagine you&#x27;re the navigator of a 15th-century ship, far from any shore. The stars are your only guides. You measure the angle to two bright stars and you know from tables the distance between them on the celestial sphere. But where are you?</p>
+<p>Using only these three pieces of information—two angles and the distance between them—a medieval navigator could triangulate her position. She wasn&#x27;t solving an equation or using trigonometric tables directly. She was using a principle so elegant and powerful that it let ancient astronomers and medieval explorers do something that seems impossible: measure distances they could never reach.</p>
+<p>That principle is the <strong>Law of Sines</strong>, and its companion, the <strong>Law of Cosines</strong>. These two tools are the reason triangles became humanity&#x27;s greatest tool for understanding the world.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>In earlier chapters, you solved right triangles using simple ratios: sine, cosine, tangent. But the real world rarely gives you right angles. Surveyors measuring a plot of land, engineers designing roof trusses, astronomers locating stars—they all encounter <em>oblique triangles</em>, and they need a way to find unknown sides and angles.</p>
+<p>The Law of Sines and Law of Cosines are the answer. Together, they let you solve <em>any</em> triangle if you know enough information. More than that, they reveal something profound: the shape of a triangle is determined by just three pieces of information (the &quot;angle-side&quot; relationships), and trigonometry gives you formulas to find everything else.</p>
+<p>Modern GPS and satellite navigation rely on triangulation principles rooted in these ancient laws. Every time your phone knows where you are, these formulas are working in the background.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The <strong>Law of Sines</strong> appears in the work of <strong>Ptolemy</strong> (c. 90–168 CE), the greatest astronomer of the classical world. But the first <em>explicit statement</em> came from <strong>Al-Biruni</strong> (973–1048 CE), the Persian mathematician and astronomer, who used it to measure the radius of the Earth—and got within a few percent of the correct value.</p>
+<p>The <strong>Law of Cosines</strong> is essentially a generalization of the Pythagorean theorem. It appears implicitly in <strong>Euclid&#x27;s Elements</strong> (c. 300 BCE) as Proposition II.12, but the modern formulation came later. <strong>Al-Khwarizmi</strong> (c. 780–850 CE) and his successors worked with chord versions of these laws; <strong>Nasir al-Din al-Tusi</strong> (1201–1274 CE) gave explicit trigonometric versions.</p>
+<p>By the Renaissance, European mathematicians had absorbed these results. <strong>François Viète</strong> (1540–1603) published systematic treatments, and by the 1600s, these laws were standard tools for surveyors, navigators, and astronomers across Europe.</p>
+<p>The real revolution came with exploration. The <strong>Age of Exploration</strong> — the 15th and 16th centuries — depended entirely on accurate navigation. Ships needed to find their position thousands of miles from shore. The Laws of Sines and Cosines, combined with astronomical tables, made this possible. Without them, the great voyages of discovery would have been far more perilous or impossible.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>The Law of Sines</strong> states that in any triangle, the ratios of sides to the sines of opposite angles are equal:</p>
+<p>$$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$$</p>
+<p>Here, $a$, $b$, $c$ are the side lengths, and $A$, $B$, $C$ are the angles opposite those sides.</p>
+<p>Why does this work? Imagine any triangle. Drop a perpendicular from angle $C$ to side $c$. The height $h$ satisfies:</p>
+<p>$$h = a\sin B = b\sin A$$</p>
+<p>Rearranging: $\frac{a}{\sin A} = \frac{b}{\sin B}$. The same argument with other perpendiculars gives the full law.</p>
+<p><strong>When to use the Law of Sines:</strong></p>
+<ul><li><strong>AAS</strong> (Angle-Angle-Side): You know two angles and a side not between them.</li><li><strong>ASA</strong> (Angle-Side-Angle): You know two angles and the side between them.</li><li><strong>SSA</strong> (Side-Side-Angle): You know two sides and an angle opposite one of them. <em>Warning:</em> This is ambiguous — there may be 0, 1, or 2 valid triangles.</li></ul>
+<p><strong>The Law of Cosines</strong> relates all three sides to one angle:</p>
+<p>$$c^2 = a^2 + b^2 - 2ab\cos C$$</p>
+<p>Notice: when $C = 90°$, we have $\cos 90° = 0$, so this becomes $c^2 = a^2 + b^2$ — the Pythagorean theorem! The Law of Cosines is a generalization.</p>
+<p><strong>When to use the Law of Cosines:</strong></p>
+<ul><li><strong>SAS</strong> (Side-Angle-Side): You know two sides and the angle between them.</li><li><strong>SSS</strong> (Side-Side-Side): You know all three sides (useful for checking if a triangle is valid, or finding angles).</li></ul>
+<p><strong>The ambiguous case (SSA):</strong> If you know two sides and an angle opposite one of them, you might get 0, 1, or 2 valid triangles, depending on the measurements. This is the trickiest case.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Law of Sines (detailed):</strong></p>
+<p>In a triangle with sides $a$, $b$, $c$ opposite angles $A$, $B$, $C$ respectively:</p>
+<p>$$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = \frac{2R}{\text{circumradius}}$$</p>
+<p>The constant of proportionality is related to the circumradius (the radius of the circle passing through all three vertices).</p>
+<p><strong>Law of Cosines (three forms):</strong></p>
+<p>$$a^2 = b^2 + c^2 - 2bc\cos A$$ $$b^2 = a^2 + c^2 - 2ac\cos B$$ $$c^2 = a^2 + b^2 - 2ab\cos C$$</p>
+<p>Each form lets you find one side if you know the other two sides and the angle between them. Rearranged for an angle:</p>
+<p>$$\cos C = \frac{a^2 + b^2 - c^2}{2ab}$$</p>
+<p><strong>Area of a triangle:</strong></p>
+<p>If you know two sides and the included angle:</p>
+<p>$$\text{Area} = \frac{1}{2}ab\sin C$$</p>
+<p>This is a direct consequence of the definition: (base)(height)/2, where height = $a\sin C$.</p>
+<p><strong>The ambiguous case (SSA) resolved:</strong></p>
+<p>Given sides $a$ and $b$ and angle $A$ (opposite to side $a$), use the Law of Sines to find angle $B$:</p>
+<p>$$\sin B = \frac{b\sin A}{a}$$</p>
+<ul><li>If $\sin B &gt; 1$: No triangle exists.</li><li>If $\sin B = 1$: One right triangle (angle $B = 90°$).</li><li>If $\sin B &lt; 1$: There are two possible values for $B$ (one acute, one obtuse). Both may lead to valid triangles, or one might be rejected if the angle sum exceeds 180°.</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: AAS — Find the missing side</strong></p>
+<p>In triangle $ABC$, $A = 40°$, $B = 65°$, and $a = 10$ cm. Find side $b$.</p>
+<p><em>Solution:</em> Use the Law of Sines:</p>
+<p>$$\frac{a}{\sin A} = \frac{b}{\sin B}$$ $$\frac{10}{\sin 40°} = \frac{b}{\sin 65°}$$ $$b = \frac{10 \sin 65°}{\sin 40°} = \frac{10 \times 0.906}{0.643} \approx 14.1 \text{ cm}$$</p>
+<p><strong>Example 2: SAS — Find the missing side</strong></p>
+<p>In triangle $ABC$, $a = 7$ cm, $b = 9$ cm, and $C = 50°$. Find side $c$.</p>
+<p><em>Solution:</em> Use the Law of Cosines:</p>
+<p>$$c^2 = a^2 + b^2 - 2ab\cos C$$ $$c^2 = 49 + 81 - 2(7)(9)\cos 50°$$ $$c^2 = 130 - 126(0.643) = 130 - 81.0 = 49$$ $$c = 7 \text{ cm}$$</p>
+<p>(This is an isosceles triangle!)</p>
+<p><strong>Example 3: SSS — Find an angle</strong></p>
+<p>In triangle $ABC$, $a = 5$, $b = 6$, $c = 8$. Find angle $C$.</p>
+<p><em>Solution:</em> Use the Law of Cosines rearranged:</p>
+<p>$$\cos C = \frac{a^2 + b^2 - c^2}{2ab} = \frac{25 + 36 - 64}{2(5)(6)} = \frac{-3}{60} = -0.05$$</p>
+<p>$$C = \arccos(-0.05) \approx 92.9°$$</p>
+<p>The angle is slightly obtuse, as we&#x27;d expect (the longest side is opposite the largest angle).</p>
+<p><strong>Example 4: Area with known sides and included angle</strong></p>
+<p>Sides $a = 8$ m and $b = 10$ m meet at angle $C = 35°$. Find the area.</p>
+<p><em>Solution:</em></p>
+<p>$$\text{Area} = \frac{1}{2}ab\sin C = \frac{1}{2}(8)(10)\sin 35°$$ $$= 40(0.574) \approx 22.9 \text{ m}^2$$</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Solve triangle ABC:</strong> $A = 30°$, $B = 70°$, $a = 5$ cm. Find $b$, $c$, and $C$.</li></ol>
+<ol><li><strong>Solve triangle ABC:</strong> $a = 12$ ft, $b = 15$ ft, $C = 55°$. Find $c$, $A$, and $B$.</li></ol>
+<ol><li><strong>Ambiguous case:</strong> $a = 4$, $b = 6$, $A = 30°$. How many triangles are possible? Explain.</li></ol>
+<ol><li><strong>Find the area:</strong> A triangle has sides $p = 13$ m, $q = 14$ m, $r = 15$ m. Find its area using the Law of Cosines to find an angle, then use the area formula.</li></ol>
+<ol><li><strong>Navigation problem:</strong> Two observation posts are 15 km apart. An aircraft is spotted from post A at an angle of 35° from the line joining the posts, and from post B at an angle of 50°. How far is the aircraft from post A?</li></ol>
+<ol><li><strong>Verify the Pythagorean theorem:</strong> In a right triangle with legs 3 and 4 and hypotenuse 5, verify that the Law of Cosines with $C = 90°$ gives $c = 5$.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Challenge:</strong> A surveyor needs to find the width of a river. She stands at point A on one bank and marks a point B directly across (the width she wants). She can&#x27;t measure directly across the water, but she walks 50 meters along the bank to point C and measures:</p>
+<ul><li>Angle BAC = 90° (she walked perpendicular to the river)</li><li>Angle BCA = 65°</li></ul>
+<p>Using only the Law of Sines, find the width of the river (distance AB).</p>
+<p>Then: Why can&#x27;t she use the Law of Cosines directly here? What information would she need?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Surveying and Land Measurement:</strong></p>
+<p>A surveyor needs to find the area of a triangular plot of land. She measures two sides: 120 m and 150 m, and the angle between them is 70°. Using the area formula:</p>
+<p>$$\text{Area} = \frac{1}{2}(120)(150)\sin 70° = 9000(0.94) \approx 8460 \text{ m}^2$$</p>
+<p>She can bill the landowner accurately, and the formula works even though the land isn&#x27;t a right triangle.</p>
+<p><strong>Navigation and GPS:</strong></p>
+<p>A ship at point A receives signals from two lighthouses at B and C that are 12 km apart. The angle at the ship to the two lighthouses is 40°. The angle at lighthouse B to the ship and lighthouse C is 75°. Using the Law of Sines, she finds her distance to each lighthouse — and thus her exact position.</p>
+<p><strong>Astronomy:</strong></p>
+<p>Ancient astronomers used triangulation to estimate distances to the Moon and planets. They measured the angle to a celestial object from two positions on Earth separated by a known distance (the baseline). The smaller the angle, the farther away the object. Using the Law of Sines with these angles and the baseline, they computed distances — a technique still used today.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>The Law of Sines</strong> relates sides and angles: $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$.</li><li>Use it for <strong>AAS, ASA, and SSA</strong> cases.</li><li><strong>The Law of Cosines</strong> generalizes the Pythagorean theorem: $c^2 = a^2 + b^2 - 2ab\cos C$.</li><li>Use it for <strong>SAS and SSS</strong> cases.</li><li><strong>The area formula</strong> $\text{Area} = \frac{1}{2}ab\sin C$ connects sides, angles, and area directly.</li><li><strong>The ambiguous case (SSA)</strong> requires careful analysis: check whether 0, 1, or 2 triangles exist.</li><li>These laws are the foundation of surveying, navigation, and astronomy—connecting pure trigonometry to the real world.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Q1: In a triangle, you know two angles and one side. Which law should you use?</strong></p>
+<ul><li>Law of Sines</li><li>Law of Cosines</li><li>Both equally well</li><li>Neither; you need more information</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Law of Sines</p>
+</details>
+<p><strong>Q2: The Law of Cosines reduces to the Pythagorean theorem when:</strong></p>
+<ul><li>One angle is 45°</li><li>One angle is 90°</li><li>One side equals zero</li><li>The triangle is isosceles</li></ul>
+<details>
+<summary>Answer</summary>
+<p>One angle is 90°</p>
+</details>
+<p><strong>Q3: Which case represents the ambiguous case for triangle solving?</strong></p>
+<ul><li>AAS</li><li>ASA</li><li>SSA</li><li>SSS</li></ul>
+<details>
+<summary>Answer</summary>
+<p>SSA</p>
+</details>
+<p><strong>Q4: The area formula</strong> $\text{Area} = \frac{1}{2}ab\sin C$ <strong>requires knowing:</strong></p>
+<ul><li>Two sides and the included angle</li><li>All three sides</li><li>All three angles</li><li>One side and two angles</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Two sides and the included angle</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Al-Biruni and measurement of Earth&#x27;s radius: https://en.wikipedia.org/wiki/Al-Biruni</li><li>Ptolemy and ancient trigonometry: https://en.wikipedia.org/wiki/Ptolemy</li><li>Nasir al-Din al-Tusi and spherical trigonometry: https://en.wikipedia.org/wiki/Nasir_al-Din_al-Tusi</li><li>Law of Sines and Law of Cosines: https://en.wikipedia.org/wiki/Law_of_sines</li><li>Historical development of trigonometry: https://en.wikipedia.org/wiki/History_of_trigonometry</li><li>François Viète and trigonometric tables: https://en.wikipedia.org/wiki/Fran%C3%A7ois_Vi%C3%A8te</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-060-polar-coordinates/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Polar Coordinates and Complex Plane</span></a><a class="pager-link pager-link--next" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-057-trigonometric-identities/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Trigonometric Identities</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

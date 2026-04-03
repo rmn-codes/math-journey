@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trigonometric Identities — Math Journey</title>
+    <meta name="description" content="Equations that are always true — and the art of transforming expressions" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 4 · Chapter ?</p>
+        <h1>Trigonometric Identities</h1>
+        <p class="hero-copy">Equations that are always true — and the art of transforming expressions</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>200 BCE – 1700 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Apply Pythagorean, reciprocal, and quotient identities</li><li>Use sum, difference, and double-angle formulas</li><li>Prove trigonometric identities</li><li>Simplify trigonometric expressions</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>In Baghdad, around 950 CE, a mathematician named Abu&#x27;l-Wafa was solving a problem that had stumped astronomers for centuries. He needed to find the sine of an angle that was the <em>sum</em> of two other angles — something like finding $\sin(45° + 30°)$ without a calculator.</p>
+<p>Working purely with geometry and no modern algebra notation, Abu&#x27;l-Wafa derived a formula: if you know the sines and cosines of angles $A$ and $B$, you can find the sine of their sum. That single formula — which you&#x27;ll derive in this chapter — became the skeleton key to medieval astronomy. Navigators, astrologers, and mathematicians used it to predict planetary positions more accurately than anyone had managed before.</p>
+<p>Today, what took Abu&#x27;l-Wafa years of geometric insight is taught in a single lesson. The formulas he discovered by hand are what you&#x27;re about to learn. They haven&#x27;t changed; only our path to them has become clearer.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Trigonometric identities are equations that are <em>always true</em>, no matter what angle you plug in. They&#x27;re not formulas you memorize for one problem — they&#x27;re patterns that unlock an entire family of problems.</p>
+<p>Imagine you&#x27;re designing a bridge. You know the angle of one support beam and the angle of another, and you need to find the angle where they meet. Or you&#x27;re an engineer tuning a radio signal: you need to combine two waves oscillating at slightly different frequencies, and the math requires you to simplify expressions like $\sin A \cos B + \cos A \sin B$. Identities are what let you transform messy expressions into something you can actually work with.</p>
+<p>The real power of identities is transformation. You&#x27;re learning not just facts, but a way of thinking: how to see that two very different-looking expressions are actually the same.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Trigonometry was born from astronomy, and identities grew from the urgent need to calculate planetary positions.</p>
+<p>The earliest known work on this comes from <strong>Hipparchus</strong> (c. 190–120 BCE), the Greek astronomer who built the first detailed star catalogue. He worked with chords of circles (the ancient equivalent of sines and cosines) and derived relationships between them.</p>
+<p><strong>Ptolemy</strong> (c. 90–168 CE) developed these ideas further in his <em>Almagest</em>, including what we now call the &quot;angle addition formula&quot; for chords. His work was the foundation of all later astronomy.</p>
+<p>But the most systematic development came in the Islamic Golden Age. <strong>Abu&#x27;l-Wafa</strong> (940–998 CE) and his student <strong>Al-Biruni</strong> (973–1048 CE) derived the sine and cosine addition formulas explicitly, without modern notation. They proved these geometrically, using intricate diagrams of intersecting circles and arcs. These formulas let astronomers compute planetary positions with unprecedented accuracy — each decade, the predictions grew more precise.</p>
+<p>European mathematicians, especially after the Renaissance, formalized these ideas with algebra. By the 1700s, <strong>Leonhard Euler</strong> (1707–1783) wrote identities in the modern symbolic notation you&#x27;ll learn here.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Trigonometric identities are equations involving trigonometric functions that are true for all valid values of the variable.</strong></p>
+<p>Think of them as the &quot;laws of trigonometry&quot; — reliable rules that always hold. The most fundamental group is the <strong>Pythagorean identities</strong>, which flow directly from the definition of sine and cosine on the unit circle.</p>
+<p>Imagine a point on the unit circle at angle $\theta$. Its coordinates are $(\cos\theta, \sin\theta)$. Since this point is always exactly 1 unit away from the origin (by the definition of a unit circle), the distance formula gives us:</p>
+<p>$$(\cos\theta)^2 + (\sin\theta)^2 = 1$$</p>
+<p>This is the foundational identity. Everything else builds from it.</p>
+<p>From this one identity, you can derive others by dividing both sides by $\cos^2\theta$ or $\sin^2\theta$:</p>
+<p>$$1 + \tan^2\theta = \sec^2\theta$$ $$1 + \cot^2\theta = \csc^2\theta$$</p>
+<p>Then come the <strong>reciprocal identities</strong> (definitions, really):</p>
+<p>$$\csc\theta = \frac{1}{\sin\theta}, \quad \sec\theta = \frac{1}{\cos\theta}, \quad \cot\theta = \frac{1}{\tan\theta}$$</p>
+<p>And the <strong>quotient identities</strong>:</p>
+<p>$$\tan\theta = \frac{\sin\theta}{\cos\theta}, \quad \cot\theta = \frac{\cos\theta}{\sin\theta}$$</p>
+<p>These basic identities are the alphabet. The <strong>big payoff</strong> comes with the <strong>angle addition formulas</strong> — the ones Abu&#x27;l-Wafa discovered:</p>
+<p>$$\sin(A + B) = \sin A \cos B + \cos A \sin B$$ $$\sin(A - B) = \sin A \cos B - \cos A \sin B$$ $$\cos(A + B) = \cos A \cos B - \sin A \sin B$$ $$\cos(A - B) = \cos A \cos B + \sin A \sin B$$</p>
+<p>From these, the <strong>double-angle formulas</strong> follow (just set $B = A$):</p>
+<p>$$\sin(2\theta) = 2\sin\theta\cos\theta$$ $$\cos(2\theta) = \cos^2\theta - \sin^2\theta = 2\cos^2\theta - 1 = 1 - 2\sin^2\theta$$</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p>An identity is proven by transforming one side into the other (or both sides into a common form). The key rule: <strong>work on only one side at a time.</strong> Don&#x27;t move terms left and right as you would in solving an equation.</p>
+<p><strong>Key strategy for proving identities:</strong></p>
+<ol><li>Start with the more complicated side.</li><li>Use Pythagorean, reciprocal, and quotient identities to rewrite expressions.</li><li>Combine fractions, factor, expand — anything algebraic.</li><li>Transform until you reach the other side.</li></ol>
+<p><strong>Example proof (Pythagorean identity from addition formula):</strong></p>
+<p>Start with $\sin(A + B) = \sin A \cos B + \cos A \sin B$.</p>
+<p>Set $B = -A$:</p>
+<p>$$\sin(A - A) = \sin A \cos(-A) + \cos A \sin(-A)$$</p>
+<p>Since $\cos(-A) = \cos A$ and $\sin(-A) = -\sin A$:</p>
+<p>$$\sin 0 = \sin A \cos A + \cos A (-\sin A)$$ $$0 = \sin A \cos A - \sin A \cos A$$ $$0 = 0$$ ✓</p>
+<p>Now set $A = \theta$, $B = \theta$ and use the addition formula differently:</p>
+<p>$$\sin^2\theta + \cos^2\theta = (\sin\theta\cos\theta + \cos\theta\sin\theta)^2 + (\cos\theta\cos\theta - \sin\theta\sin\theta)^2$$</p>
+<p>This expands to 1 — a full proof of the Pythagorean identity from the angle addition formula.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Simplify</strong> $\frac{\sin\theta \sec\theta}{\tan\theta}$</p>
+<p><em>Solution:</em></p>
+<p>$$\frac{\sin\theta \sec\theta}{\tan\theta} = \frac{\sin\theta \cdot \frac{1}{\cos\theta}}{\frac{\sin\theta}{\cos\theta}}$$</p>
+<p>$$= \frac{\sin\theta}{\cos\theta} \cdot \frac{\cos\theta}{\sin\theta} = 1$$</p>
+<p><strong>Example 2: Find</strong> $\sin 75°$</p>
+<p><em>Solution:</em> Notice that $75° = 45° + 30°$. Use the addition formula:</p>
+<p>$$\sin 75° = \sin(45° + 30°)$$ $$= \sin 45° \cos 30° + \cos 45° \sin 30°$$ $$= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2}$$ $$= \frac{\sqrt{6}}{4} + \frac{\sqrt{2}}{4} = \frac{\sqrt{6} + \sqrt{2}}{4}$$</p>
+<p><strong>Example 3: Prove</strong> $\sin^2\theta - \sin^4\theta = \cos^2\theta(1 - \cos^2\theta)$</p>
+<p><em>Solution:</em> Start with the left side.</p>
+<p>$$\sin^2\theta - \sin^4\theta = \sin^2\theta(1 - \sin^2\theta)$$</p>
+<p>By the Pythagorean identity, $1 - \sin^2\theta = \cos^2\theta$:</p>
+<p>$$= \sin^2\theta \cdot \cos^2\theta$$</p>
+<p>Now simplify the right side:</p>
+<p>$$\cos^2\theta(1 - \cos^2\theta) = \cos^2\theta \cdot \sin^2\theta$$</p>
+<p>Both sides equal $\sin^2\theta\cos^2\theta$. ✓</p>
+<p><strong>Example 4: Find</strong> $\cos 2\theta$ if $\sin\theta = \frac{3}{5}$</p>
+<p><em>Solution:</em> Use the double-angle formula $\cos 2\theta = 1 - 2\sin^2\theta$:</p>
+<p>$$\cos 2\theta = 1 - 2\left(\frac{3}{5}\right)^2 = 1 - 2 \cdot \frac{9}{25} = 1 - \frac{18}{25} = \frac{7}{25}$$</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Simplify:</strong> $\cos\theta \tan\theta + \sin\theta \cot\theta$</li></ol>
+<ol><li><strong>Prove:</strong> $\frac{1 - \cos 2\theta}{\sin 2\theta} = \tan\theta$</li></ol>
+<ol><li><strong>Find</strong> $\sin(105°)$ using an addition formula. Leave your answer in exact form.</li></ol>
+<ol><li><strong>Simplify:</strong> $\frac{\csc^2\theta - 1}{\csc^2\theta}$</li></ol>
+<ol><li><strong>Prove:</strong> $\sin^4\theta - \cos^4\theta = 1 - 2\cos^2\theta$</li></ol>
+<ol><li><strong>Find</strong> $\tan 2\theta$ if $\tan\theta = \frac{2}{3}$. (Hint: $\tan 2\theta = \frac{2\tan\theta}{1-\tan^2\theta}$)</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Challenge:</strong> Suppose you&#x27;re designing a swinging pendulum. The angle from vertical at time $t$ is $\theta(t) = 20° \sin(t)$, where $t$ is measured in seconds. The velocity is proportional to $\cos(\theta(t))$.</p>
+<p>A colleague insists that the expression $\sin(2\theta(t))$ simplifies nicely. Show that:</p>
+<p>$$\sin(2 \cdot 20° \sin(t)) = ?$$</p>
+<p>Can you express this in a simpler form using identities? What does this tell you about the motion of the pendulum?</p>
+<p>(Hint: This problem doesn&#x27;t have a tidy closed form — the point is to recognize when identities apply and when they don&#x27;t.)</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Harmonic Oscillation &amp; Signal Processing:</strong></p>
+<p>When two waves of slightly different frequencies are combined, their sum can be written as:</p>
+<p>$$\sin(f_1 t) + \sin(f_2 t)$$</p>
+<p>Using sum-to-product identities (derived from angle addition formulas), this becomes:</p>
+<p>$$2\sin\left(\frac{f_1+f_2}{2}t\right)\cos\left(\frac{f_1-f_2}{2}t\right)$$</p>
+<p>This shows that the combined wave has a <em>carrier frequency</em> (the first sine) modulated by an <em>envelope</em> (the cosine). Radio signals, music, even light waves use this principle. The identities let engineers transform a complicated sum into a comprehensible product.</p>
+<p><strong>Bridge Engineering:</strong></p>
+<p>Two trusses meet at angles $A$ and $B$ from the horizontal. The vertical component of the net force is proportional to $\sin A + \sin B$. Using the sum-to-product identity:</p>
+<p>$$\sin A + \sin B = 2\sin\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)$$</p>
+<p>This shows that the total vertical force depends on the <em>average</em> angle and the <em>difference</em> between the angles — much easier to analyze.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>Pythagorean identities</strong> flow from the unit circle: $\sin^2\theta + \cos^2\theta = 1$ and its variants.</li><li><strong>Reciprocal and quotient identities</strong> define secant, cosecant, cotangent, and tangent in terms of sine and cosine.</li><li><strong>Angle addition formulas</strong> are the gates to deeper trigonometry; Abu&#x27;l-Wafa&#x27;s discovery.</li><li><strong>Double-angle formulas</strong> simplify expressions involving $\sin 2\theta$ and $\cos 2\theta$.</li><li><strong>Proving identities</strong> requires transforming one side into the other; it&#x27;s an art of algebraic manipulation.</li><li>Identities are the foundation of applied math: waves, forces, rotations, and oscillations all use them.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Q1: Which equation is a Pythagorean identity?</strong></p>
+<ul><li>$\sin^2\theta + \cos^2\theta = 1$</li><li>$\sin\theta + \cos\theta = 1$</li><li>$\sin\theta \cos\theta = \frac{1}{2}$</li><li>$\tan\theta = 1$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\sin^2\theta + \cos^2\theta = 1$</p>
+</details>
+<p><strong>Q2: What is</strong> $\sin(60° + 30°)$ <strong>using the angle addition formula?</strong></p>
+<ul><li>$\sin 60° + \sin 30°$</li><li>$\sin 60° \cos 30° + \cos 60° \sin 30°$</li><li>$\cos 60° \cos 30° - \sin 60° \sin 30°$</li><li>$\frac{\sin 60°}{\sin 30°}$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\sin 60° \cos 30° + \cos 60° \sin 30°$</p>
+</details>
+<p><strong>Q3: Simplify</strong> $\cos^2\theta(1 + \tan^2\theta)$</p>
+<ul><li>$1$</li><li>$\sin^2\theta$</li><li>$\cos^2\theta + \sin^2\theta$</li><li>$\sec^2\theta$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$1$</p>
+</details>
+<p><strong>Q4: Which of the following is the correct double-angle formula for cosine?</strong></p>
+<ul><li>$\cos 2\theta = \sin^2\theta - \cos^2\theta$</li><li>$\cos 2\theta = 2\sin\theta\cos\theta$</li><li>$\cos 2\theta = \cos^2\theta - \sin^2\theta$</li><li>$\cos 2\theta = 1 + 2\sin^2\theta$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\cos 2\theta = \cos^2\theta - \sin^2\theta$</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Hipparchus and ancient Greek trigonometry: https://en.wikipedia.org/wiki/Hipparchus</li><li>Abu&#x27;l-Wafa and Islamic mathematics: https://en.wikipedia.org/wiki/Abu%27l-Wafa</li><li>Ptolemy and the <em>Almagest</em>: https://en.wikipedia.org/wiki/Almagest</li><li>Euler and trigonometric identities: https://en.wikipedia.org/wiki/Leonhard_Euler</li><li>Unit circle and trigonometric definitions: https://en.wikipedia.org/wiki/Unit_circle</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-058-law-of-sines-and-cosines/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Law of Sines and the Law of Cosines</span></a><a class="pager-link pager-link--next" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-059-trig-and-ancient-astronomy/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Trigonometry and Ancient Astronomy</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

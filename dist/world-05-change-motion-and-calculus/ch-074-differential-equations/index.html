@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ch-074-differential-equations — Math Journey</title>
+    <meta name="description" content="Equations that describe how things change — and the laws they reveal" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 5 · Chapter 74</p>
+        <h1>ch-074-differential-equations</h1>
+        <p class="hero-copy">Equations that describe how things change — and the laws they reveal</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1680s–1800s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#order-and-degree">Order and Degree</a></li><li class="toc-level-3"><a href="#separable-differential-equations">Separable Differential Equations</a></li><li class="toc-level-3"><a href="#exponential-growth-and-decay">Exponential Growth and Decay</a></li><li class="toc-level-3"><a href="#newton-s-law-of-cooling">Newton&#x27;s Law of Cooling</a></li><li class="toc-level-3"><a href="#logistic-growth-conceptual">Logistic Growth (Conceptual)</a></li><li class="toc-level-3"><a href="#initial-value-problems">Initial Value Problems</a></li><li class="toc-level-3"><a href="#slope-fields-direction-fields">Slope Fields (Direction Fields)</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Isaac Newton sits in an apple orchard, and an apple falls. He asks: <em>What is the force that pulled it down?</em> He knows that force, mass, and acceleration are related, and he writes it as $F = ma$. But acceleration is the second derivative of position with respect to time. So Newton&#x27;s Second Law isn&#x27;t really an equation about position, velocity, and force. It&#x27;s an equation about derivatives. It&#x27;s a <strong>differential equation</strong>.</p>
+<p>Every physical law is a differential equation. Why does your coffee cool? Why do populations grow and shrink? Why do electrical circuits oscillate? Why do pandemic models predict surges and plateaus? All of these are differential equations. Newton didn&#x27;t just invent calculus to solve them — calculus was invented <em>because</em> differential equations are so important.</p>
+<p>This chapter introduces you to the language and solving techniques for differential equations. You&#x27;ll see why they matter, how to recognize them, and how to solve the simplest class: separable equations.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>The world is not static. Everything changes: populations, temperatures, concentrations, velocities, wealth, diseases. And change is governed by laws. Those laws are written as differential equations. Without differential equations, we couldn&#x27;t:</p>
+<ul><li>Predict planetary orbits</li><li>Design bridges or buildings</li><li>Model disease spread</li><li>Build electrical circuits</li><li>Understand chemical reactions</li><li>Forecast weather</li><li>Design drug doses</li></ul>
+<p>Every serious science and engineering discipline relies on differential equations. The mathematics of change is the mathematics of the real world.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Newton developed calculus (1665–1666, during the plague) specifically to work with differential equations. His Second Law, $F = ma$, is a differential equation. So is his Law of Gravitation. The most important equations in all of physics are differential equations.</p>
+<p>In the 1700s, Euler and the Bernoullis solved differential equations for vibrating strings, fluid flow, and wave propagation. Laplace used them to model heat flow and gravitational potential. By the 1800s, differential equations were the central tool in mathematical physics.</p>
+<p>Newton&#x27;s Law of Cooling (formulated by Newton in 1701) is a classic example: the rate at which an object loses heat is proportional to its temperature difference from the surroundings. This simple idea, expressed as a differential equation, allows us to predict cooling curves exactly.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>differential equation</strong> is an equation that relates a function to its derivatives.</p>
+<p>The simplest form is: $$\frac{dy}{dx} = f(x, y)$$</p>
+<p>This says: the rate of change of $y$ with respect to $x$ depends on both $x$ and $y$ in some way.</p>
+<h3 id="order-and-degree">Order and Degree</h3>
+<p>The <strong>order</strong> of a differential equation is the order of the highest derivative. For example:</p>
+<ul><li>$\frac{dy}{dx} = 2x$ is first-order (only $\frac{dy}{dx}$ appears)</li><li>$\frac{d^2y}{dx^2} + 3\frac{dy}{dx} + 2y = 0$ is second-order (has $\frac{d^2y}{dx^2}$)</li></ul>
+<p>The <strong>degree</strong> is the power of the highest derivative (we usually work with degree 1).</p>
+<h3 id="separable-differential-equations">Separable Differential Equations</h3>
+<p>The simplest class to solve is <strong>separable equations</strong>. These can be written in the form: $$\frac{dy}{dx} = g(x) h(y)$$</p>
+<p>To solve, separate variables: $$\frac{dy}{h(y)} = g(x) \, dx$$</p>
+<p>Then integrate both sides: $$\int \frac{dy}{h(y)} = \int g(x) \, dx$$</p>
+<p>Solve for $y$ to get the general solution (which includes an arbitrary constant $C$).</p>
+<h3 id="exponential-growth-and-decay">Exponential Growth and Decay</h3>
+<p>The equation: $$\frac{dy}{dt} = ky$$</p>
+<p>where $k$ is a constant, is separable: $$\frac{dy}{y} = k \, dt$$ $$\int \frac{dy}{y} = \int k \, dt$$ $$\ln|y| = kt + C$$ $$y = Ae^{kt}$$</p>
+<p>where $A = e^C$ is an arbitrary constant. This is the equation for:</p>
+<ul><li><strong>Exponential growth</strong> if $k &gt; 0$ (population, compound interest, nuclear chain reactions)</li><li><strong>Exponential decay</strong> if $k &lt; 0$ (radioactive decay, medication clearance, cooling)</li></ul>
+<h3 id="newton-s-law-of-cooling">Newton&#x27;s Law of Cooling</h3>
+<p>The rate at which an object cools is proportional to the difference between its temperature and the ambient temperature: $$\frac{dT}{dt} = k(T - T_s)$$</p>
+<p>where $T$ is temperature at time $t$, $T_s$ is the ambient (surrounding) temperature, and $k &lt; 0$ is a constant.</p>
+<p>This is separable: $$\frac{dT}{T - T_s} = k \, dt$$ $$\ln|T - T_s| = kt + C$$ $$T - T_s = Ae^{kt}$$ $$T(t) = T_s + Ae^{kt}$$</p>
+<p>If we know an initial condition — say, the object&#x27;s temperature at $t = 0$ is $T_0$ — we can find $A$: $$T_0 = T_s + A$$ $$A = T_0 - T_s$$</p>
+<p>So the <strong>particular solution</strong> is: $$T(t) = T_s + (T_0 - T_s)e^{kt}$$</p>
+<p>This tells us exactly how the temperature changes over time.</p>
+<h3 id="logistic-growth-conceptual">Logistic Growth (Conceptual)</h3>
+<p>Real populations don&#x27;t grow exponentially forever — resources run out. A better model is: $$\frac{dP}{dt} = rP\left(1 - \frac{P}{K}\right)$$</p>
+<p>where $r$ is the growth rate and $K$ is the <strong>carrying capacity</strong> (maximum sustainable population). When $P$ is small, the equation approximates exponential growth. As $P$ approaches $K$, growth slows, then stops. This is more realistic than pure exponential growth.</p>
+<h3 id="initial-value-problems">Initial Value Problems</h3>
+<p>A differential equation has infinitely many solutions (the general solution with varying $C$). To find a <em>specific</em> solution, you need an <strong>initial condition</strong>: the value of $y$ at some point, like $y(0) = y_0$.</p>
+<p>An <strong>initial value problem</strong> is a differential equation plus an initial condition: $$\frac{dy}{dt} = ky, \quad y(0) = 100$$</p>
+<p>Solving the equation gives $y = Ae^{kt}$. The initial condition tells us $100 = A$, so the particular solution is $y = 100e^{kt}$.</p>
+<h3 id="slope-fields-direction-fields">Slope Fields (Direction Fields)</h3>
+<p>Not all differential equations have closed-form solutions. But you can visualize the solutions using a <strong>slope field</strong> (or <strong>direction field</strong>). At each point $(x, y)$ in the plane, plot a small line segment with slope $f(x, y)$. The solutions are curves that follow these little slopes everywhere.</p>
+<p>A slope field shows <em>qualitatively</em> how solutions behave, even if you can&#x27;t write them down explicitly.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Differential equation:</strong> An equation involving a function and its derivatives.</p>
+<p><strong>Order:</strong> The order of the highest derivative in the equation.</p>
+<p><strong>Separable equation:</strong> An equation of the form $\frac{dy}{dx} = g(x) h(y)$, solvable by separation of variables.</p>
+<p><strong>General solution:</strong> A family of solutions containing an arbitrary constant $C$.</p>
+<p><strong>Particular solution:</strong> A single solution obtained by specifying $C$ via an initial condition.</p>
+<p><strong>Initial value problem:</strong> A differential equation plus initial condition(s).</p>
+<p><strong>Slope field:</strong> A graphical representation of solutions via directional line segments.</p>
+<p><strong>Exponential growth/decay:</strong> Solutions to $\frac{dy}{dt} = ky$ are $y = Ae^{kt}$.</p>
+<p><strong>Newton&#x27;s Law of Cooling:</strong> $\frac{dT}{dt} = k(T - T_s)$ with solution $T(t) = T_s + (T_0 - T_s)e^{kt}$.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Exponential decay</strong></p>
+<p>Radioactive iodine-131 decays at a rate proportional to the amount present. If you start with 100 mg and half of it remains after 8 days, find the amount remaining after 20 days.</p>
+<p><em>Solution:</em> The equation is $\frac{dN}{dt} = kN$ with general solution $N(t) = Ae^{kt}$.</p>
+<p>From the initial condition: $N(0) = 100 = A$.</p>
+<p>From the half-life: $N(8) = 50 = 100 e^{8k}$, so $e^{8k} = 0.5$, giving $k = \frac{\ln(0.5)}{8} \approx -0.0866$.</p>
+<p>After 20 days: $N(20) = 100 e^{20 \cdot (-0.0866)} = 100 e^{-1.732} \approx 17.7$ mg.</p>
+<p><strong>Example 2: Newton&#x27;s Law of Cooling</strong></p>
+<p>Hot tea at 95°C is placed in a room at 20°C. After 5 minutes, the tea is 75°C. How long until it cools to 45°C?</p>
+<p><em>Solution:</em> $T(t) = T_s + (T_0 - T_s)e^{kt} = 20 + 75e^{kt}$.</p>
+<p>From $T(5) = 75$: $75 = 20 + 75e^{5k}$, so $55 = 75e^{5k}$, giving $e^{5k} = \frac{55}{75} = \frac{11}{15}$.</p>
+<p>Thus $k = \frac{1}{5}\ln\left(\frac{11}{15}\right) \approx -0.0631$.</p>
+<p>For $T(t) = 45$: $45 = 20 + 75e^{kt}$, so $25 = 75e^{kt}$, giving $e^{kt} = \frac{1}{3}$.</p>
+<p>Thus $t = \frac{\ln(1/3)}{k} = \frac{-\ln 3}{-0.0631} \approx 17.4$ minutes.</p>
+<p><strong>Example 3: Separable equation</strong></p>
+<p>Solve $\frac{dy}{dx} = 3xy$ with initial condition $y(0) = 2$.</p>
+<p><em>Solution:</em> Separate: $\frac{dy}{y} = 3x \, dx$. Integrate: $\ln|y| = \frac{3x^2}{2} + C$.</p>
+<p>Exponentiate: $y = Ae^{3x^2/2}$.</p>
+<p>From $y(0) = 2$: $2 = A$, so $y = 2e^{3x^2/2}$.</p>
+<p><strong>Example 4: Logistic growth (conceptual)</strong></p>
+<p>A bacterial colony grows according to $\frac{dP}{dt} = 0.3P(1 - P/1000)$ where $P$ is population and carrying capacity is 1000. Describe the long-term behavior.</p>
+<p><em>Solution:</em> As $t \to \infty$, $P$ approaches 1000. When $P$ is small, growth is roughly exponential. As $P$ nears 1000, growth slows. The population levels off at the carrying capacity.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Solve the separable equation $\frac{dy}{dx} = \frac{x}{y}$ with $y(0) = 2$.</li></ol>
+<ol><li>A radioactive sample has half-life of 12 years. If you start with 200 grams, how much remains after 30 years?</li></ol>
+<ol><li>Hot pizza at 200°F cools to 150°F in 10 minutes in a 70°F room. When will it cool to 100°F?</li></ol>
+<ol><li>Solve $\frac{dN}{dt} = -2N$ with $N(0) = 50$.</li></ol>
+<ol><li>Sketch a slope field for $\frac{dy}{dx} = y$ and describe the solutions you see.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Population Puzzle:</strong> A lake with carrying capacity 5000 fish initially contains 100 fish. After one year, there are 200 fish.</p>
+<ul><li>Write a logistic growth equation that models this population.</li><li>Estimate the growth rate $r$.</li><li>What is the population at $t = 10$ years?</li><li>In what year will the population first exceed 4000?</li></ul>
+<p>(This requires solving a logistic differential equation, which is more complex than separable equations — but worth thinking about.)</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Drug Dosing:</strong> A doctor prescribes a medication. The body absorbs it, and the kidneys eliminate it at a rate proportional to the amount in the bloodstream. The concentration in blood obeys: $$\frac{dC}{dt} = -kC$$</p>
+<p>where $k &gt; 0$ is the elimination rate constant. If a single dose of 200 mg is given and the half-life is 6 hours, then after 24 hours, the concentration is: $$C(24) = 200 \cdot \left(\frac{1}{2}\right)^{24/6} = 200 \cdot (0.5)^4 = 12.5 \text{ mg}$$</p>
+<p>For repeated doses, doctors use this knowledge to decide when and how much to give next. Without differential equations, dosing would be guesswork.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>Differential equations</strong> describe how quantities change. They relate a function to its derivatives.</li><li><strong>Separable equations</strong> can be solved by rearranging so all $y$ terms are on one side, all $x$ terms on the other, then integrating both sides.</li><li><strong>Exponential growth/decay</strong> follows $y = Ae^{kt}$ and models radioactive decay, population growth, cooling, and more.</li><li><strong>Newton&#x27;s Law of Cooling</strong> is $\frac{dT}{dt} = k(T - T_s)$, solved using separation of variables and integration.</li><li><strong>Initial conditions</strong> pin down a particular solution from the infinite family of general solutions.</li><li><strong>Slope fields</strong> visualize solutions when closed forms are hard to find.</li><li>Differential equations are the language of science and engineering. Learning to solve them is learning to understand the world.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> What is the order of the differential equation $\frac{d^2y}{dx^2} + 2\frac{dy}{dx} = 0$?</p>
+<ul><li>First-order</li><li>Second-order</li><li>Zeroth-order</li><li>Third-order</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Second-order</p>
+</details>
+<p><strong>Question 2:</strong> For the separable equation $\frac{dy}{dx} = g(x)h(y)$, what is the first step in solving?</p>
+<ul><li>Integrate both sides</li><li>Separate variables: $\frac{dy}{h(y)} = g(x) dx$</li><li>Differentiate both sides</li><li>Substitute $u = xy$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Separate variables: $\frac{dy}{h(y)} = g(x) dx$</p>
+</details>
+<p><strong>Question 3:</strong> What is the general solution to $\frac{dy}{dt} = 5y$?</p>
+<ul><li>$y = t^5 + C$</li><li>$y = 5t + C$</li><li>$y = Ae^{5t}$</li><li>$y = A\sin(5t) + B\cos(5t)$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$y = Ae^{5t}$</p>
+</details>
+<p><strong>Question 4:</strong> In Newton&#x27;s Law of Cooling, $\frac{dT}{dt} = k(T - T_s)$, what does $T_s$ represent?</p>
+<ul><li>The initial temperature</li><li>The surrounding (ambient) temperature</li><li>The final temperature</li><li>The temperature of the heat source</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The surrounding (ambient) temperature</p>
+</details>
+<p><strong>Question 5:</strong> A bacteria culture has population $P$ that satisfies $\frac{dP}{dt} = 0.2P$ with $P(0) = 100$. What is $P(t)$?</p>
+<ul><li>$P(t) = 100 + 0.2t$</li><li>$P(t) = 100e^{0.2t}$</li><li>$P(t) = 100 \sin(0.2t)$</li><li>$P(t) = 0.2t^2 + 100$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$P(t) = 100e^{0.2t}$</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><strong>Differential equations overview:</strong> <a href="https://en.wikipedia.org/wiki/Differential_equation" target="_blank" rel="noopener">Wikipedia: Differential equation</a></li><li><strong>Separable equations:</strong> <a href="https://en.wikipedia.org/wiki/Separation_of_variables" target="_blank" rel="noopener">Wikipedia: Separation of variables</a></li><li><strong>Newton&#x27;s Law of Cooling:</strong> Newton (1701). <a href="https://en.wikipedia.org/wiki/Newton%27s_law_of_cooling" target="_blank" rel="noopener">Wikipedia: Newton&#x27;s law of cooling</a></li><li><strong>Exponential growth and decay:</strong> <a href="https://en.wikipedia.org/wiki/Exponential_decay" target="_blank" rel="noopener">Wikipedia: Exponential decay</a></li><li><strong>Logistic growth model:</strong> <a href="https://en.wikipedia.org/wiki/Logistic_function" target="_blank" rel="noopener">Wikipedia: Logistic function</a></li><li><strong>Slope fields:</strong> <a href="https://en.wikipedia.org/wiki/Slope_field" target="_blank" rel="noopener">Wikipedia: Slope field</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-073-integration-techniques/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">ch-073-integration-techniques</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-075-sequences-and-series/index.html"><span class="pager-dir">Next →</span><span class="pager-title">ch-075-sequences-and-series</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,254 @@
+---
+worldNumber: 7
+world: world-07-fields-waves-space-time-and-the-modern-view
+chapterNumber: 95
+title: Fourier Analysis — Decomposing Signals
+subtitle: Any wave is a sum of sine waves — the most powerful idea in applied mathematics
+historicalPeriod: 1822 CE – present
+estimatedTimeMinutes: 40
+---
+
+## Story Hook
+
+Paris, 1822. Joseph Fourier, a French mathematician and physicist, publishes his theory of heat conduction. In a paper titled *"Théorie analytique de la chaleur"* (The Analytical Theory of Heat), he makes an extraordinary claim:
+
+**Any function — any wave, any signal, any shape — can be written as a sum of sine and cosine waves.**
+
+The leading mathematicians of the day are scandalized. Joseph-Louis Lagrange, one of the greatest minds alive, objects fiercely. A square wave, he argues, cannot possibly be written as an infinite sum of smooth sine curves. It's absurd.
+
+Fourier is right. Lagrange is wrong. And in being right, Fourier unlocks perhaps the most powerful tool in all of applied mathematics.
+
+Today, the Fourier transform is absolutely everywhere. It's in your phone (filtering sound). It's in the hospital (MRI machines reconstruct images using it). It's in your GPS, your WiFi, your computer's processor. It's in every piece of recorded music ever made. Every photo you take, every song you stream, every video you watch — Fourier's mathematics is working invisibly underneath.
+
+The reason is simple: **Fourier analysis lets you see signals in a different way.**
+
+Look at a sound wave and you see a complicated wiggly line. Apply Fourier analysis and you see its frequencies: "This sound is 20% bass, 30% midrange, 50% treble." Suddenly the signal becomes clear. You can compress it, filter it, understand it, manipulate it. That's the power of looking at the world through Fourier's eyes.
+
+## Why It Matters
+
+Fourier analysis answers a fundamental question: **What is inside a signal?**
+
+When you hear music, your ear receives sound waves — air vibrating at different frequencies. A pure note (a sine wave) has one frequency. Real music has many frequencies, mixed together.
+
+Fourier analysis separates them. It says: "I can rewrite this complex signal as a sum of simple sine and cosine waves, each with a specific frequency and amplitude."
+
+Once you've decomposed a signal into frequencies, you can:
+
+- **Compress it**: JPEG photos discard high frequencies your eye can't see. MP3 songs use a psychoacoustic model to discard frequencies your ear can't hear.
+- **Filter it**: Remove unwanted frequencies (noise, hum from electrical wires).
+- **Enhance it**: Boost certain frequencies to make music sound richer.
+- **Transmit it**: Send only the important frequency components.
+- **Analyze it**: Identify what's in a signal (medical imaging, spectroscopy, radar).
+
+Without Fourier analysis, there would be no:
+- JPEG, PNG (image compression)
+- MP3, FLAC (audio compression)
+- MRI machines (medical imaging)
+- WiFi and 5G (wireless communication)
+- Earthquake and tsunami detection
+- Analysis of how atoms vibrate in molecules
+
+Fourier analysis moved from pure mathematics into **the infrastructure of civilization**.
+
+## Historical Context
+
+Joseph Fourier (1768–1830) was not a pure mathematician. He was an engineer, a physicist, a man of practical affairs. As a young man, he joined the French Revolution. He was nearly executed during the Terror. He served in Napoleon's army during the Egyptian campaign. He was a prefect (administrator) of a French region.
+
+In 1811, while serving as a prefect, Fourier posed a mathematical challenge: **"How does heat flow through a rod?"**
+
+He knew the answer required calculus. He wrote down the differential equations. But to solve them, he invented his decomposition: any initial temperature distribution can be written as a sum of sine and cosine waves.
+
+The mathematical community resisted. The claim seemed too bold, too weird. But nature gave the answer: Fourier's theory worked perfectly to predict how heat spreads.
+
+Over the next century, scientists realized Fourier's idea was universal. Any periodic function — any repeating pattern — could be decomposed this way. By 1900, Fourier analysis was central to physics.
+
+Then computers arrived. In the 1960s, engineers discovered the **Fast Fourier Transform (FFT)** — an algorithm that computes Fourier analysis in $O(n \log n)$ time instead of $O(n^2)$. This was revolutionary. Suddenly, you could analyze signals in real time. FFT made Fourier practical.
+
+Today, FFT is one of the most used algorithms on Earth.
+
+## Core Concept
+
+**Fourier Analysis** decomposes a signal into its frequency components — its "building blocks."
+
+From earlier worlds, you remember that trigonometric functions are periodic. A sine wave oscillates. A cosine wave does too.
+
+Fourier's insight: **Any** periodic function can be written as:
+
+$$f(x) = a_0 + \sum_{n=1}^{\infty}\left( a_n \cos(nx) + b_n \sin(nx) \right)$$
+
+Here:
+- $a_0$ is a constant (the average value).
+- $a_n$ and $b_n$ are **coefficients** that tell you the strength (amplitude) of each frequency.
+- Higher $n$ means higher frequency (more oscillations).
+
+This is the **Fourier series**. Each term in the sum is one "frequency component."
+
+For a non-periodic signal, you use the **Fourier transform**, which decomposes it into a continuum of frequencies.
+
+For digital data (which computers handle), you use the **Discrete Fourier Transform (DFT)**. And if you're smart about computing it, you use the **Fast Fourier Transform (FFT)**, which does it in roughly $n \log n$ operations instead of $n^2$.
+
+The key insight: **The same signal, viewed two ways.**
+
+- **Time domain**: Sound as a function of time (amplitude vs. time).
+- **Frequency domain**: The same sound as a function of frequency (how much bass, how much treble, etc.).
+
+Both are the same signal. One view is sometimes more useful than the other.
+
+## Definitions and Formal Lesson
+
+**Fourier Series** (for a periodic function $f(x)$ with period $2\pi$):
+$$f(x) = a_0 + \sum_{n=1}^{\infty}\left( a_n \cos(nx) + b_n \sin(nx) \right)$$
+
+**Fourier Coefficients**:
+$$a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos(nx) \, dx$$
+$$b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin(nx) \, dx$$
+
+These integrals compute "how much" of each frequency is in the signal.
+
+**Fourier Transform** (for non-periodic signals):
+$$\hat{f}(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} \, dt$$
+
+Here $\omega$ is angular frequency and $\hat{f}(\omega)$ tells you the amplitude at each frequency.
+
+**Inverse Fourier Transform**:
+$$f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \hat{f}(\omega) e^{i\omega t} \, d\omega$$
+
+**Discrete Fourier Transform (DFT)**: For a signal with $N$ samples:
+$$X_k = \sum_{n=0}^{N-1} x_n e^{-2\pi i kn/N}$$
+
+where $x_n$ is the $n$-th sample and $X_k$ is the amplitude at frequency $k$.
+
+**Fast Fourier Transform (FFT)**: Computes DFT in $O(N \log N)$ operations instead of $O(N^2)$. Requires $N$ to be a power of 2.
+
+## Worked Examples
+
+**Example 1: Fourier Series of a Square Wave**
+
+A square wave alternates between +1 and -1. Its Fourier series is:
+$$f(x) = \frac{4}{\pi}\left( \sin(x) + \frac{1}{3}\sin(3x) + \frac{1}{5}\sin(5x) + \cdots \right)$$
+
+Notice: the square wave is built from odd-frequency sine waves, each with amplitude decreasing as $1/n$. If you sum the first few terms, you get a wiggly approximation. Sum more and it converges to a perfect square wave. This astonished mathematicians because a square wave has sharp corners, yet it's made from smooth sine curves!
+
+**Example 2: JPEG Image Compression**
+
+JPEG doesn't use sine waves; it uses cosines (the **Discrete Cosine Transform**, a variant of Fourier):
+
+1. Divide the image into 8×8 pixel blocks.
+2. Apply DCT to each block.
+3. High-frequency components (fine detail) are typically small. Discard or reduce them.
+4. Use entropy coding on the remaining coefficients.
+
+Result: A 1 MB image compressed to 100 KB with minimal visible quality loss. You see fewer high frequencies, but your eye doesn't miss them.
+
+**Example 3: Filtering Noise**
+
+A recorded voice contains speech (low frequencies) and electrical hum at 60 Hz (specific unwanted frequency).
+
+1. Apply FFT to convert sound to frequency domain.
+2. Identify and reduce the 60 Hz spike.
+3. Apply inverse FFT to convert back to time domain.
+
+Result: Clean audio without the hum. Much easier than filtering in the time domain.
+
+## Practice Set
+
+1. **Recognizing Frequencies**: A signal contains three pure sine waves: 10 Hz, 50 Hz, and 100 Hz. If you apply the Fourier transform, what will you see? (Describe the frequency spectrum with spikes at specific locations.)
+
+2. **Fourier Coefficients**: For a simple square wave, sketch the amplitude of the first few Fourier coefficients ($a_0, a_1, b_1, a_2, b_2$, etc.). What pattern do you notice? How does the amplitude fall off with frequency?
+
+3. **Time vs. Frequency**: You have a sound wave in the time domain. Explain what the Fourier transform tells you that the time-domain view does not. Which domain is better for detecting if a specific note is present?
+
+4. **Compression Reasoning**: Why can JPEG discard high-frequency components without significantly degrading an image? Why can MP3 discard frequencies your ear cannot hear? What would happen if you discarded low frequencies instead?
+
+5. **FFT Efficiency**: The FFT computes the DFT in $O(N \log N)$ time. If $N = 1,000,000$, how many operations does FFT need versus naive DFT? (Rough estimate. What is the speedup factor?)
+
+6. **Practical Application**: Your microphone records a 1-second audio clip at 44,100 Hz sampling rate. You want to remove 60 Hz hum (from electrical interference). Describe how you would use Fourier analysis to identify and remove it.
+
+## Reasoning Task
+
+**Why is the FFT So Revolutionary?**
+
+Before the Fast Fourier Transform (1960s), Fourier analysis was powerful in theory but impractical. Computing the DFT of a 1024-point signal took roughly $1024^2 = 1,048,576$ operations. Computing it for a 1-second audio sample (44,100 samples) took billions of operations.
+
+The FFT reduced this to $1024 \log_2(1024) \approx 10,240$ operations — 100 times faster.
+
+Discuss:
+
+- How did this speed-up make real-time audio processing possible?
+- Why couldn't smartphones, medical devices, or WiFi exist without fast Fourier algorithms?
+- What modern applications still rely on FFT?
+
+## Application
+
+**MRI Medical Imaging**
+
+An MRI machine uses radio waves to excite hydrogen nuclei in your body. These nuclei emit signals as they relax. The raw signals are captured in "k-space" — essentially the frequency domain.
+
+To create an image:
+
+1. **Data acquisition**: Receive Fourier components of the spatial structure.
+2. **Inverse Fourier Transform**: Apply iFFT to convert from frequency domain to spatial domain.
+3. **Reconstruction**: The result is a detailed 3D image showing soft tissue, organs, and abnormalities.
+
+Without Fourier analysis, MRI would not work. The transform is the bridge between the frequency data the machine measures and the anatomical images doctors see.
+
+Similarly, **CT scans, X-ray analysis, ultrasound imaging, and radar** all rely on Fourier principles.
+
+## Recap
+
+Joseph Fourier showed that any periodic function can be decomposed into a sum of sine and cosine waves — the Fourier series. The Fourier transform generalizes this to non-periodic signals and reveals their frequency content. The Discrete Fourier Transform (DFT) applies to digital data. The Fast Fourier Transform (FFT) computes DFT efficiently in $O(n \log n)$ time, making real-time signal processing practical. Fourier analysis is the foundation of image compression (JPEG), audio compression (MP3), medical imaging (MRI), wireless communication (WiFi, 5G), and countless other technologies. By decomposing signals into frequencies, we can filter, compress, transmit, and understand the world's signals.
+
+Fourier's insight was that signals can be viewed from two perspectives: time and frequency. Neither is more "real" — they are two ways of seeing the same thing. The time-domain view shows how a signal evolves moment by moment. The frequency-domain view shows what frequencies compose the signal. For many problems, the frequency domain is where solutions naturally appear. Want to remove noise? Easy in the frequency domain — just zero out the noise frequencies. Want to compress an image? Discard imperceptible high frequencies, keep the visually important low frequencies. The Fourier transform is the bridge between these worlds, and the FFT makes crossing that bridge practical enough to do billions of times per second in modern devices.
+
+## Unlock Quiz
+
+1. Fourier's claim was that any periodic function can be written as:
+   - A polynomial
+   - A sum of sine and cosine waves
+   - A rational function
+   - A power series with one term
+
+2. In the Fourier series, what does the coefficient $b_n$ represent?
+   - The average value of the function
+   - The amplitude of the $n$-th sine component
+   - The amplitude of the $n$-th cosine component
+   - The frequency of oscillation
+
+3. Which of the following is a major advantage of the Fast Fourier Transform (FFT)?
+   - It works for all functions, not just periodic ones
+   - It reduces computation from $O(n^2)$ to $O(n \log n)$
+   - It eliminates the need for inverse transforms
+   - It only works for real-valued signals
+
+4. JPEG image compression uses a variant of Fourier analysis called:
+   - The Laplace Transform
+   - The Discrete Cosine Transform
+   - The Discrete Sine Transform
+   - The Fast Fourier Transform
+
+5. In MRI imaging, the inverse Fourier transform is used to:
+   - Generate the radio pulses
+   - Convert frequency-domain data into spatial images
+   - Reduce patient radiation exposure
+   - Strengthen the magnetic field
+
+<details>
+<summary>Answers</summary>
+
+1. A sum of sine and cosine waves
+2. The amplitude of the $n$-th sine component
+3. It reduces computation from $O(n^2)$ to $O(n \log n)$
+4. The Discrete Cosine Transform
+5. Convert frequency-domain data into spatial images
+
+</details>
+
+## Source Notes
+
+- Fourier, J. B. J. (1822). *Théorie analytique de la chaleur*. Firmin Didot. The foundational work on heat and Fourier series.
+- https://en.wikipedia.org/wiki/Fourier_series
+- https://en.wikipedia.org/wiki/Fourier_transform
+- https://en.wikipedia.org/wiki/Fast_Fourier_transform
+- https://en.wikipedia.org/wiki/Discrete_cosine_transform
+- https://en.wikipedia.org/wiki/Joseph_Fourier
+- https://en.wikipedia.org/wiki/Magnetic_resonance_imaging

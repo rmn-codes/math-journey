@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Transformations of Functions — Math Journey</title>
+    <meta name="description" content="Shift, reflect, stretch — how one function becomes a whole family" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 3 · Chapter 49</p>
+        <h1>Transformations of Functions</h1>
+        <p class="hero-copy">Shift, reflect, stretch — how one function becomes a whole family</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>core</span>
+          
+          <span>1800s–present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Apply vertical and horizontal shifts to function graphs</li><li>Reflect functions across axes</li><li>Apply vertical and horizontal stretches</li><li>Describe transformations from equation or graph</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Close your eyes and imagine a composer at the piano. She plays a simple, beautiful melody—just five notes. Now listen as she transforms it: plays it higher (shift up), plays it backwards (reflection), plays it faster (horizontal compression). It&#x27;s the same melody, yet completely different.</p>
+<p>Mathematicians do exactly this with functions. Imagine the parent function $f(x) = x^2$, the simplest parabola. From this one starting point, you can create an infinite family of parabolas by shifting, stretching, and reflecting. Understanding these transformations means you understand not one function, but an entire family.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Why learn transformations? Because they let you:</p>
+<ul><li><strong>Predict shapes:</strong> See $y = (x-2)^2 + 3$ and instantly know it&#x27;s a parabola shifted right 2 and up 3.</li><li><strong>Build complex models:</strong> Real-world functions are rarely simple. Transformations let you start with what you know and build what you need.</li><li><strong>Recognize patterns:</strong> Data from earthquakes, populations, and investment growth all follow transformed parent functions.</li><li><strong>Work efficiently:</strong> Master one function, and you&#x27;ve mastered a thousand variations.</li></ul>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>In the 1800s, mathematicians like Jean-Baptiste Fourier studied how simple wave functions could be combined and transformed to model heat, sound, and vibration. But the concept of transforming a single parent function into a family emerged fully in the 20th century, as mathematicians developed clearer language for describing shifts and stretches. Today, transformations are central to computer graphics, where programmers scale, rotate, and translate images by transforming their underlying function descriptions.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>transformation</strong> is a systematic change applied to a function. Start with a parent function—something simple like $f(x) = x^2$ or $f(x) = \sqrt{x}$. Then apply changes. The power of transformations is that you don&#x27;t need to memorize hundreds of functions. Master a handful of parent functions and all their transformations, and you can sketch and understand any function in those families.</p>
+<p><strong>Why transformations matter:</strong></p>
+<ul><li>Efficiency: Transform one parent function, get a whole family.</li><li>Recognition: See $g(x) = (x - 5)^2 + 3$? Instantly recognize it as a parabola shifted right 5 and up 3.</li><li>Modeling: Real data rarely fits a parent function exactly. Transformations let you adjust and adapt.</li></ul>
+<p><strong>Types of transformations:</strong></p>
+<ul><li><strong>Vertical shift up:</strong> Add a constant to the output. $f(x) + k$ shifts the graph up by $k$ units.</li><li><strong>Vertical shift down:</strong> Subtract a constant. $f(x) - k$ shifts down by $k$ units.</li><li><strong>Horizontal shift right:</strong> Replace $x$ with $x - h$. The function $f(x-h)$ shifts right by $h$ units.</li><li><strong>Horizontal shift left:</strong> Replace $x$ with $x + h$. The function $f(x+h)$ shifts left by $h$ units.</li><li><strong>Vertical reflection:</strong> Multiply the output by $-1$. $-f(x)$ flips over the $x$-axis.</li><li><strong>Horizontal reflection:</strong> Replace $x$ with $-x$. $f(-x)$ flips over the $y$-axis.</li><li><strong>Vertical stretch/compression:</strong> Multiply the output by a factor. $af(x)$ stretches vertically if $|a| &gt; 1$, compresses if $0 &lt; |a| &lt; 1$.</li><li><strong>Horizontal stretch/compression:</strong> Replace $x$ with $\frac{x}{b}$. The function $f\left(\frac{x}{b}\right)$ compresses if $|b| &gt; 1$, stretches if $0 &lt; |b| &lt; 1$.</li></ul>
+<p>The key insight: <strong>the order and combination of transformations matter</strong>. $2f(x) + 1$ is different from $2(f(x) + 1)$.</p>
+<ul><li>In $2f(x) + 1$: stretch the function vertically by 2, then shift up by 1.</li><li>In $2(f(x) + 1)$: shift the function up by 1, then stretch by 2 (which also stretches the shift!).</li></ul>
+<p>Let&#x27;s verify with $f(x) = x^2$ at $x = 0$:</p>
+<ul><li>$2f(0) + 1 = 2(0) + 1 = 1$</li><li>$2(f(0) + 1) = 2(0 + 1) = 2$</li></ul>
+<p>Different results! This illustrates why careful reading of the equation is essential.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Parent function:</strong> The simplest form of a family of functions. Examples:</p>
+<ul><li>Linear: $f(x) = x$</li><li>Quadratic: $f(x) = x^2$</li><li>Absolute value: $f(x) = |x|$</li><li>Square root: $f(x) = \sqrt{x}$</li><li>Reciprocal: $f(x) = \frac{1}{x}$</li></ul>
+<p><strong>Vertical translation:</strong> $g(x) = f(x) + k$. The graph moves up (if $k &gt; 0$) or down (if $k &lt; 0$) by $|k|$ units. The shape stays identical.</p>
+<p><strong>Horizontal translation:</strong> $g(x) = f(x - h)$. The graph moves right (if $h &gt; 0$) or left (if $h &lt; 0$) by $|h|$ units. The shape stays identical. Note: this is often the most confusing transformation. The sign inside is opposite to the direction of movement. $f(x - 3)$ moves RIGHT by 3, not left.</p>
+<p><strong>Reflection over the $x$-axis:</strong> $g(x) = -f(x)$. Each point $(x, y)$ becomes $(x, -y)$.</p>
+<p><strong>Reflection over the $y$-axis:</strong> $g(x) = f(-x)$. Each point $(x, y)$ becomes $(-x, y)$.</p>
+<p><strong>Vertical scaling:</strong> $g(x) = af(x)$ where $a &gt; 0$. If $a &gt; 1$, points move away from the $x$-axis (stretch). If $0 &lt; a &lt; 1$, points move toward the $x$-axis (compression).</p>
+<p><strong>Horizontal scaling:</strong> $g(x) = f(bx)$ where $b &gt; 0$. If $b &gt; 1$, the graph compresses horizontally (gets narrower; the function grows faster). If $0 &lt; b &lt; 1$, the graph stretches horizontally (gets wider; the function grows slower).</p>
+<p><strong>Order of transformations:</strong> When combining transformations, the order matters. A helpful approach is to apply transformations in this order:</p>
+<ol><li>Reflections and horizontal changes (inside the function).</li><li>Vertical changes (outside the function).</li></ol>
+<p>This reduces confusion about which direction shifts move.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Transforming the parent function $f(x) = x^2$</strong></p>
+<p>Describe the transformations and sketch the graph of $g(x) = -(x + 2)^2 + 3$.</p>
+<p>Rewrite as $g(x) = -[(x + 2)^2] + 3 = -(x - (-2))^2 + 3$.</p>
+<p>The transformations in order:</p>
+<ol><li>Shift left by 2: $(x+2)^2$ moves the parabola left.</li><li>Reflect over the $x$-axis: the negative sign flips it upside down.</li><li>Shift up by 3: $+3$ moves it up.</li></ol>
+<p>The vertex of $f(x) = x^2$ is at $(0, 0)$. After transformations, the vertex is at $(-2, 3)$. The parabola opens downward.</p>
+<p><strong>Example 2: Finding the equation from a description</strong></p>
+<p>A graph shows the parent function $f(x) = \sqrt{x}$, which starts at the origin and curves upward. If we shift this function right by 4 units and up by 1 unit, what is the equation?</p>
+<p>Start with $f(x) = \sqrt{x}$. Shift right by 4: $f(x - 4) = \sqrt{x - 4}$. Shift up by 1: $\sqrt{x - 4} + 1$.</p>
+<p>The equation is $g(x) = \sqrt{x - 4} + 1$.</p>
+<p><strong>Example 3: Combining vertical stretch and reflection</strong></p>
+<p>The parent function is $f(x) = |x|$. Write the equation for the transformed function that is stretched vertically by a factor of 3 and reflected over the $x$-axis.</p>
+<p>Vertical stretch by 3: $3|x|$. Reflect over the $x$-axis: $-3|x|$.</p>
+<p>The equation is $g(x) = -3|x|$.</p>
+<p>Check with points: At $x = 1$, the parent gives $f(1) = 1$. The transformed function gives $g(1) = -3|1| = -3$. The point $(1, 1)$ became $(1, -3)$—stretched down by 3 times. ✓</p>
+<p><strong>Example 4: Horizontal compression</strong></p>
+<p>The parent function is $f(x) = \sqrt{x}$. Write the equation for the function compressed horizontally by a factor of 4 (meaning points move toward the $y$-axis, so the function rises faster).</p>
+<p>A horizontal compression by factor $c$ replaces $x$ with $cx$: $f(cx) = \sqrt{4x}$.</p>
+<p>The equation is $g(x) = \sqrt{4x} = 2\sqrt{x}$.</p>
+<p>Notice this also affects the vertical scaling! Simplifying reveals the stretch. At $x = 4$, the parent gives $f(4) = 2$. The compressed version gives $g(4) = 2\sqrt{4} = 4$. The compression made the function taller.</p>
+<p><strong>Example 5: Combining multiple transformations</strong></p>
+<p>The parent function is $f(x) = |x|$. Transform it by:</p>
+<ol><li>Shifting left 3 units.</li><li>Stretching vertically by factor 2.</li><li>Reflecting over the $x$-axis.</li><li>Shifting up 1 unit.</li></ol>
+<p><strong>Step-by-step:</strong></p>
+<p>Start: $f(x) = |x|$</p>
+<p>Shift left 3: $f(x + 3) = |x + 3|$</p>
+<p>Stretch vertically by 2: $2|x + 3|$</p>
+<p>Reflect over $x$-axis: $-2|x + 3|$</p>
+<p>Shift up 1: $g(x) = -2|x + 3| + 1$</p>
+<p><strong>Key feature:</strong> The vertex of $f(x) = |x|$ is at $(0, 0)$. After all transformations, the vertex is at $(-3, 1)$. The graph opens downward (because of the reflection), and it&#x27;s twice as steep.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<p>For each of the following, describe all transformations and sketch or describe the resulting graph.</p>
+<ol><li>$g(x) = (x - 3)^2 + 2$ (parent: $f(x) = x^2$)</li></ol>
+<ul><li>Identify each transformation step by step.</li><li>Locate the vertex of the parabola.</li></ul>
+<ol><li>$h(x) = -\sqrt{x} + 4$ (parent: $f(x) = \sqrt{x}$)</li></ol>
+<ul><li>Describe the reflection and shift.</li><li>What is the starting point of the curve?</li></ul>
+<ol><li>$p(x) = 2|x - 1| - 3$ (parent: $f(x) = |x|$)</li></ol>
+<ul><li>Identify the vertex, direction, and vertical stretch.</li><li>Find two points on the graph.</li></ul>
+<ol><li>$q(x) = \frac{1}{x + 2}$ (parent: $f(x) = \frac{1}{x}$)</li></ol>
+<ul><li>Where is the vertical asymptote?</li><li>Describe the horizontal shift.</li></ul>
+<ol><li>$r(x) = -3(x + 1)^2 + 5$ (parent: $f(x) = x^2$)</li></ol>
+<ul><li>Identify vertex, reflection, and stretch factor.</li><li>Does the parabola open up or down?</li></ul>
+<ol><li>Write an equation for the function obtained by shifting $f(x) = x^2$ left 5 units, stretching vertically by a factor of 2, and shifting down 6 units.</li></ol>
+<ul><li>Apply transformations in order.</li><li>Verify your equation by checking a test point.</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Music Box Problem:</strong></p>
+<p>A music box plays a note that follows the function $f(t) = \sin(t)$, where $t$ is time, ranging from $-\infty$ to $+\infty$. The manufacturer wants to:</p>
+<ul><li>Play the same note but 2 seconds later (delay it). This is a horizontal shift right by 2: $f(t - 2)$.</li><li>Make it twice as loud (double the amplitude). This is a vertical stretch by factor 2: $2 \cdot f(t - 2)$.</li><li>Lower the pitch by shifting down 0.5 units. This is a vertical shift down: $2 \cdot f(t - 2) - 0.5$.</li></ul>
+<p>Write the equation for the transformed function: $g(t) = 2\sin(t - 2) - 0.5$.</p>
+<p><strong>Why the order of transformations doesn&#x27;t matter here:</strong></p>
+<p>If you apply transformations in a different order, you get a different result. For instance:</p>
+<ul><li>If you shift down FIRST: $f(t) - 0.5 = \sin(t) - 0.5$.</li><li>Then stretch: $2(\sin(t) - 0.5) = 2\sin(t) - 1$ (the shift is also stretched!).</li><li>This is different from shifting the stretched version down.</li></ul>
+<p>The lesson: horizontal shifts and vertical shifts commute (order doesn&#x27;t matter), but stretches and shifts do NOT commute. Always think carefully about the order.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Real-world example:</strong> A viral video starts with 100 views on Monday. The number of views follows an exponential growth pattern: $V(t) = 100 \cdot 2^t$, where $t$ is days after Monday.</p>
+<p>On Wednesday, a celebrity shares the link, adding 500 bonus views and speeding up the growth. The new function is $V(t) = 100 \cdot 2^{t+1} + 500$.</p>
+<ul><li>Vertical shift: $+500$ views (the celebrity boost).</li><li>Horizontal shift: $+1$ in the exponent (the growth speeds up, equivalent to starting 1 day earlier).</li></ul>
+<p>Understanding these transformations helps content creators predict when a video will go viral and plan their release strategy.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Transformations let you build complex functions from simple parent functions. Remember:</p>
+<ul><li><strong>Vertical changes (add/subtract, multiply output):</strong> Affect the $y$-values.</li><li><strong>Horizontal changes (subtract inside, multiply $x$):</strong> Affect the $x$-values.</li><li><strong>Reflections:</strong> Mirror across axes.</li><li><strong>Stretches and compressions:</strong> Scale in one direction.</li></ul>
+<p>Master the parent functions, master the transformations, and you can sketch and understand any function in the family.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> The parent function $f(x) = x^2$ is transformed to $g(x) = (x + 1)^2 - 4$. Which direction does it shift?</p>
+<ul><li>Shift left 1 and down 4</li><li>Shift right 1 and down 4</li><li>Shift left 1 and up 4</li><li>Shift right 1 and up 4</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Shift left 1 and down 4</p>
+</details>
+<p><strong>Question 2:</strong> The equation $h(x) = -3\sqrt{x - 2} + 5$ describes transformations of $f(x) = \sqrt{x}$. Which statement is true?</p>
+<ul><li>The graph is compressed vertically and shifted right</li><li>The graph is stretched vertically, reflected, and shifted right and up</li><li>The graph is stretched horizontally and shifted down</li><li>The graph is reflected, stretched vertically, but shifted down 2</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The graph is stretched vertically, reflected, and shifted right and up</p>
+</details>
+<p><strong>Question 3:</strong> If $f(x) = |x|$ and $g(x) = f(2x)$, what happens to the graph?</p>
+<ul><li>It stretches horizontally by a factor of 2</li><li>It compresses horizontally by a factor of 2</li><li>It stretches vertically by a factor of 2</li><li>It reflects over the $x$-axis</li></ul>
+<details>
+<summary>Answer</summary>
+<p>It compresses horizontally by a factor of 2</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Khan Academy: &quot;Transformations of Functions&quot; — https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:transformations</li><li>Wikipedia: &quot;Function (mathematics)&quot; — https://en.wikipedia.org/wiki/Function_(mathematics)</li><li>OpenStax: &quot;Precalculus&quot; Chapter 1.5 — https://openstax.org/books/precalculus/pages/1-5-transformation-of-functions</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-03-coordination-space-and-functions/ch-048-logarithms/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Logarithms — The Inverse of Exponential</span></a><a class="pager-link pager-link--next" href="../../world-03-coordination-space-and-functions/ch-050-inverse-functions/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Inverse Functions</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

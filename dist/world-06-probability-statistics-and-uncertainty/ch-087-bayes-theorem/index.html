@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bayes&#x27; Theorem — Updating Beliefs with Evidence — Math Journey</title>
+    <meta name="description" content="How to change your mind rationally — the mathematics of learning from experience" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 6 · Chapter 87</p>
+        <h1>Bayes&#x27; Theorem — Updating Beliefs with Evidence</h1>
+        <p class="hero-copy">How to change your mind rationally — the mathematics of learning from experience</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1763 CE (published posthumously)</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>State and apply Bayes&#x27; Theorem</li><li>Distinguish prior and posterior probability</li><li>Solve medical testing problems using Bayes</li><li>Interpret the theorem as updating beliefs</li><li>Compare Bayesian and frequentist reasoning</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#beyond-a-single-hypothesis-comparing-multiple-possibilities">Beyond a Single Hypothesis: Comparing Multiple Possibilities</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#the-power-of-priors">The Power of Priors</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Thomas Bayes was an English Presbyterian minister living in the 18th century. In the 1750s, he wrote a mathematical paper on a seemingly arcane question: if you observe a sequence of events, what can you infer about the underlying probability generating them?</p>
+<p>The paper was brilliant but obscure. Bayes died in 1761. Two years later, his friend Richard Price edited and published it posthumously. For 200 years, it remained a footnote in probability theory.</p>
+<p>Then, in the late 20th century, computers became powerful enough to apply Bayes&#x27; ideas widely. Suddenly, Bayesian methods exploded. Today, Bayes&#x27; Theorem underlies email spam filters, medical diagnosis, autonomous vehicles, AI systems, and weather forecasts.</p>
+<p>A theorem published after a man&#x27;s death, ignored for two centuries, has become one of the most powerful ideas in modern science. Its power is simple: it is how we rationally update our beliefs in the face of new evidence.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Every day, you encounter evidence and update your beliefs. You hear a weather forecast (prior belief about rain: 10%), then look outside at dark clouds (new evidence), and update: maybe there is a 70% chance now.</p>
+<p>But how exactly should you update? Should you double your probability? Triple it? Ignore the forecast entirely?</p>
+<p>Bayes&#x27; Theorem tells you the mathematically correct way to revise beliefs when you get evidence. It is not just a statistical tool—it is a guide to rational thought.</p>
+<p>In medicine, Bayes&#x27; Theorem is crucial. A patient tests positive for a disease. But the test is not perfect. What is the actual probability the patient has the disease? The test&#x27;s sensitivity (true positive rate) and specificity (true negative rate) are not enough to answer; Bayes&#x27; Theorem connects them to the prevalence of disease and gives the true probability.</p>
+<p>In machine learning and AI, Bayesian methods help systems learn from data by updating probability distributions (priors) as they see new evidence (the data).</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Thomas Bayes (1702–1761) lived during the Age of Enlightenment, when probability was young and philosophical. Bayes was not primarily a mathematician—he was a minister—but he was mathematically gifted and interested in using mathematics to understand uncertainty and evidence.</p>
+<p>His paper, &quot;An Essay towards solving a Problem in the Doctrine of Chances,&quot; was not published in his lifetime. It appeared in the Philosophical Transactions of the Royal Society in 1763, two years after his death, thanks to his friend Richard Price.</p>
+<p>For over a century, Bayes&#x27; Theorem remained obscure. Statisticians like Fisher, Neyman, and Pearson developed <strong>frequentist</strong> approaches to statistics, which became dominant in the 20th century. Frequentism uses p-values, hypothesis tests, and confidence intervals—methods that do not explicitly model prior beliefs.</p>
+<p>In the late 1950s and 1960s, with the advent of computers, <strong>Bayesian inference</strong> began a renaissance. By the 1980s and 1990s, as computational power exploded, Bayesian methods became practical for complex problems. Today, Bayesian statistics is woven into machine learning, AI, astronomy, physics, and more.</p>
+<p>The irony: the 250-year-old theorem from an 18th-century minister is more relevant to 21st-century AI than anything developed since.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Bayes&#x27; Theorem</strong> states: $$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$</p>
+<p>Let&#x27;s decode each term:</p>
+<p><strong>$P(A|B)$ (posterior):</strong> The probability of event $A$ given evidence $B$. This is what we want to know after observing evidence.</p>
+<p><strong>$P(B|A)$ (likelihood):</strong> The probability of observing evidence $B$ if event $A$ is true. This comes from the test&#x27;s accuracy.</p>
+<p><strong>$P(A)$ (prior):</strong> Our belief about $A$ <em>before</em> seeing evidence $B$. This is what we thought before the evidence.</p>
+<p><strong>$P(B)$ (normalizing constant):</strong> The total probability of observing evidence $B$ under all scenarios. This ensures probabilities sum to 1.</p>
+<p><strong>Intuition.</strong> You start with a prior belief about something. Then you get evidence. Bayes&#x27; Theorem tells you how much to revise your belief, proportional to how likely that evidence would be under each scenario.</p>
+<p><strong>A medical example.</strong> A disease affects 1 in 1,000 people (prior $P(\text{Disease}) = 0.001$). A test has 99% sensitivity (if you have the disease, it catches you 99% of the time, $P(\text{Positive}|\text{Disease}) = 0.99$) and 98% specificity (if you don&#x27;t have the disease, it correctly clears you 98% of the time, $P(\text{Negative}|\text{No Disease}) = 0.98$, so $P(\text{Positive}|\text{No Disease}) = 0.02$).</p>
+<p>You test positive. What is the probability you actually have the disease?</p>
+<p>Many people guess around 99%, because the test is 99% accurate. But Bayes&#x27; Theorem gives a different answer. Let&#x27;s compute:</p>
+<p>$$P(\text{Disease}|\text{Positive}) = \frac{P(\text{Positive}|\text{Disease}) \cdot P(\text{Disease})}{P(\text{Positive})}$$</p>
+<p>We need $P(\text{Positive})$: $$P(\text{Positive}) = P(\text{Positive}|\text{Disease}) \cdot P(\text{Disease}) + P(\text{Positive}|\text{No Disease}) \cdot P(\text{No Disease})$$ $$= 0.99 \times 0.001 + 0.02 \times 0.999 = 0.00099 + 0.01998 = 0.02097$$</p>
+<p>Now: $$P(\text{Disease}|\text{Positive}) = \frac{0.99 \times 0.001}{0.02097} = \frac{0.00099}{0.02097} \approx 0.047$$</p>
+<p>Only about 4.7% chance you have the disease! Even though the test is 99% accurate and you tested positive, the disease is so rare that most positive tests are false positives.</p>
+<p>This is the base rate fallacy: ignoring prior probability when evaluating evidence.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Prior probability $P(A)$:</strong> Your belief before seeing evidence. It can come from historical data, domain expertise, or represent total ignorance (a &quot;flat&quot; or &quot;uninformed&quot; prior).</p>
+<p><strong>Likelihood $P(B|A)$:</strong> The probability of the evidence under hypothesis $A$. In medical testing, this is the test&#x27;s sensitivity or false positive rate.</p>
+<p><strong>Posterior probability $P(A|B)$:</strong> Your updated belief after evidence. This is what we compute using Bayes&#x27; Theorem.</p>
+<p><strong>Bayesian vs. frequentist.</strong> A frequentist would say: &quot;The p-value is 0.03, so if the null hypothesis were true, we&#x27;d see data this extreme 3% of the time. The null hypothesis is probably false.&quot; A Bayesian would say: &quot;Given the data and my prior belief, my posterior probability that the null is false is 95%. I update my belief accordingly.&quot;</p>
+<p>Both approaches use Bayes&#x27; Theorem implicitly, but Bayesians make prior beliefs explicit.</p>
+<p><strong>Positive predictive value (PPV):</strong> In medical testing, $P(\text{Disease}|\text{Positive})$ is the positive predictive value—the probability someone with a positive test actually has the disease. Bayes&#x27; Theorem computes PPV:</p>
+<p>$$\text{PPV} = \frac{\text{Sensitivity} \times \text{Prevalence}}{\text{Sensitivity} \times \text{Prevalence} + (1 - \text{Specificity}) \times (1 - \text{Prevalence})}$$</p>
+<p>This is Bayes&#x27; Theorem applied to medical testing.</p>
+<p><strong>Iterative updating.</strong> Bayes&#x27; Theorem is powerful because it works iteratively. Your posterior after one piece of evidence becomes the prior for the next. Observe a lot of data, updating repeatedly, and your posterior converges toward the truth—even if your initial prior was wrong.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: A drug test.</strong></p>
+<p>A drug screening test has:</p>
+<ul><li>Sensitivity: 95% (detects drugs 95% of the time if present)</li><li>Specificity: 90% (correctly clears non-users 90% of the time)</li><li>Population prevalence of drug use: 5%</li></ul>
+<p>An employee tests positive. What is the probability they actually use drugs?</p>
+<p>Prior: $P(\text{Use}) = 0.05$ Likelihood: $P(\text{Positive}|\text{Use}) = 0.95$ False positive rate: $P(\text{Positive}|\text{No Use}) = 0.10$</p>
+<p>$$P(\text{Use}|\text{Positive}) = \frac{0.95 \times 0.05}{0.95 \times 0.05 + 0.10 \times 0.95}$$ $$= \frac{0.0475}{0.0475 + 0.095} = \frac{0.0475}{0.1425} \approx 0.333$$</p>
+<p>Only about 33% probability the employee actually uses drugs. The false positive rate (10%) is high enough that many positives are false alarms.</p>
+<p><strong>Example 2: Updating with multiple pieces of evidence.</strong></p>
+<p>Suppose the employee from Example 1 takes a second test and tests positive again. Now what?</p>
+<p>His posterior from the first test (33%) becomes the prior for the second test. (Assume the tests are independent.)</p>
+<p>$$P(\text{Use}|\text{Two Positives}) = \frac{0.95 \times 0.333}{0.95 \times 0.333 + 0.10 \times 0.667}$$ $$= \frac{0.316}{0.316 + 0.067} = \frac{0.316}{0.383} \approx 0.825$$</p>
+<p>After two positive tests, the probability rises to about 82.5%. Repeated evidence narrows down the truth.</p>
+<p><strong>Example 3: A cancer screening.</strong></p>
+<p>A mammogram screening for breast cancer has:</p>
+<ul><li>Sensitivity: 87% (detects 87% of actual cancers)</li><li>Specificity: 97% (correctly clears 97% of non-cancer cases)</li><li>Prevalence of breast cancer in the screened population: 0.5%</li></ul>
+<p>A woman tests positive. What is the probability she has cancer?</p>
+<p>$$P(\text{Cancer}|\text{Positive}) = \frac{0.87 \times 0.005}{0.87 \times 0.005 + 0.03 \times 0.995}$$ $$= \frac{0.00435}{0.00435 + 0.02985} = \frac{0.00435}{0.0342} \approx 0.127$$</p>
+<p>About 12.7% probability. Even with a highly specific test, when cancer is rare, most positives are false alarms. This is why follow-up tests are essential.</p>
+</section><section class="lesson-section lesson-section--generic"><h2 id="beyond-a-single-hypothesis-comparing-multiple-possibilities">Beyond a Single Hypothesis: Comparing Multiple Possibilities</h2>
+<p>Bayes&#x27; Theorem is especially powerful when there are multiple competing explanations. Suppose a patient has symptoms that could be caused by disease A, disease B, or disease C. Each disease has a different prevalence (prior), and tests have different sensitivity and specificity for each.</p>
+<p>As the patient undergoes tests, the posterior probability of each disease is updated using Bayes&#x27; Theorem. The disease with the highest posterior probability is the leading diagnosis. Additional tests narrow it further.</p>
+<p>This is how doctors diagnose: starting with differential diagnosis (multiple possibilities), gathering evidence, and updating beliefs. Bayes&#x27; Theorem formalizes this intuitive process.</p>
+<p><strong>Example: A patient has a rash.</strong> Initial differentials: measles (prior 0.05), chickenpox (prior 0.10), allergic reaction (prior 0.30), heat rash (prior 0.55). A test for measles is positive. Update the posterior for measles. It rises, but chickenpox and other causes still have meaningful probability. Examine the rash more closely. The pattern is consistent with measles (likelihood boost). Order a serology test. Posterior for measles rises further. Eventually, measles probability reaches 90%, and the diagnosis is confident.</p>
+<p>This iterative process is reasoning under uncertainty—precisely what Bayes&#x27; Theorem enables.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>A spam filter has:</li></ol>
+<ul><li>Sensitivity: 95% (catches 95% of spam emails)</li><li>Specificity: 99% (lets 99% of legitimate emails through, so flags 1% as spam)</li><li>Prior: 80% of incoming emails are spam</li></ul>
+<p>If an email is flagged as spam, what is the probability it actually is spam?</p>
+<ol><li>A rare genetic disease affects 0.01% of the population. A genetic test has 98% sensitivity and 99% specificity. If a person tests positive, what is the probability they have the disease?</li></ol>
+<ol><li>Two hospitals use the same screening test for a condition. Hospital A serves a population where 10% have the condition; Hospital B serves a population where 1% have the condition. Both use a test with 90% sensitivity and 85% specificity. If a patient at each hospital tests positive, whose positive predictive value is higher?</li></ol>
+<ol><li>Explain the base rate fallacy: why is a 99% accurate test not 99% reliable at detecting a rare disease?</li></ol>
+<ol><li>A weather forecaster has a prior belief that tomorrow&#x27;s high will be 72°F (with some uncertainty). Overnight, they receive new model data (evidence) suggesting a cooler pattern. How would Bayes&#x27; Theorem guide them in updating their forecast?</li></ol>
+</section><section class="lesson-section lesson-section--generic"><h2 id="the-power-of-priors">The Power of Priors</h2>
+<p>One criticism of Bayesian inference is that it requires a prior: a statement of your initial belief. Frequentists argue that priors are subjective; different people might choose different priors and reach different conclusions.</p>
+<p>This is a fair point. Bayesian inference is not &quot;objective&quot; in the sense of being prior-free.</p>
+<p>But there is a counterargument: all inference is subjective in some sense. A frequentist chooses a null hypothesis (why that one?), chooses a significance level (why $p &lt; 0.05$?), chooses a sample size (why that n?). These are also choices, reflecting prior beliefs and values.</p>
+<p>Bayesian inference makes assumptions explicit. You state your prior openly. Others can see it, critique it, modify it. Over time, with sufficient data, the posterior converges toward the truth regardless of the initial prior. Reasonable people with different priors will converge to similar conclusions.</p>
+<p>In fact, in many practical applications, the choice of prior matters less than many think. With large samples and strong data, the prior is &quot;washed out&quot; by the likelihood. The posterior becomes dominated by evidence, not prior belief.</p>
+<p>The real power of priors is in settings with limited data, where domain expertise (your prior) can meaningfully improve inference.</p>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Monty Hall Problem (Bayesian version).</strong> You choose a door in a three-door game. Behind one is a prize; behind two are goats. The host, who knows what is behind each door, opens a door with a goat.</p>
+<p>Initially, $P(\text{Prize behind your door}) = 1/3$.</p>
+<p>The host opens a door. Now you know:</p>
+<ul><li>It is not the door you chose.</li><li>It has a goat.</li></ul>
+<p>Should you switch? Use Bayes&#x27; Theorem to update your belief. (Hint: compute $P(\text{Prize}|\text{host opens goat door})$ using the likelihoods that the host would open that particular door under each scenario.)</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Email spam filtering.</strong> Modern email systems use Bayesian methods to classify messages as spam or legitimate. Each word in an email has a prior probability of appearing in spam vs. legitimate mail. When the system sees a word (evidence), it updates the probability the entire message is spam. Words like &quot;free,&quot; &quot;click,&quot; and &quot;buy now&quot; heavily bias toward spam; words like &quot;meeting,&quot; &quot;deadline,&quot; and &quot;attached&quot; bias toward legitimate.</p>
+<p>The system computes: $$P(\text{Spam}|\text{Words}) = \frac{P(\text{Words}|\text{Spam}) \cdot P(\text{Spam})}{P(\text{Words})}$$</p>
+<p>Combining evidence from all words, it assigns a spam probability to each message.</p>
+<p><strong>Medical diagnosis.</strong> A doctor observes a patient&#x27;s symptoms (evidence). She begins with a prior—the prevalence of various diseases in the population. She then updates her belief using diagnostic tests. Each test result (positive or negative) updates her belief via Bayes&#x27; Theorem. As evidence accumulates, the posterior probability of the true diagnosis rises, while competing diagnoses fall.</p>
+<p>This is why doctors order multiple tests: each new test (evidence) narrows down the diagnosis.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p><strong>Bayes&#x27; Theorem</strong> is a formula for updating beliefs rationally when you get evidence: $$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$</p>
+<p>The theorem distinguishes four key quantities: prior belief (what you thought before), likelihood (how likely the evidence is under each scenario), posterior (updated belief), and the normalizing constant.</p>
+<p>A crucial insight is the <strong>base rate fallacy</strong>: even if a test is highly accurate, if the underlying condition is rare, most positive tests are false alarms. You must account for prior probability.</p>
+<p><strong>Bayesian inference</strong> is fundamentally about learning from data. You start with a prior (initial belief), observe evidence, update to a posterior, then use that posterior as a new prior when more evidence arrives.</p>
+<p>This iterative updating is why Bayesian methods excel at learning from streams of data—a core challenge in machine learning and AI.</p>
+<p>Bayes&#x27; Theorem connects the known (prior, likelihood) to the unknown (posterior), making it one of the most powerful and broadly applicable ideas in mathematics.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>In Bayes&#x27; Theorem, $P(A)$ is called:</li></ol>
+<ul><li>The posterior probability</li><li>The prior probability</li><li>The likelihood</li><li>The normalizing constant</li></ul>
+<ol><li>A disease has prevalence 0.1% and a test has sensitivity 99% and specificity 99%. If someone tests positive, the probability they have the disease is approximately:</li></ol>
+<ul><li>99%</li><li>50%</li><li>9%</li><li>1%</li></ul>
+<ol><li>The base rate fallacy is:</li></ol>
+<ul><li>Ignoring the prevalence of a condition when interpreting a test result</li><li>Confusing sensitivity and specificity</li><li>Using a test that is not accurate enough</li><li>Believing that correlation implies causation</li></ul>
+<ol><li>If a posterior probability becomes the prior for the next test, this illustrates:</li></ol>
+<ul><li>Frequentist inference</li><li>Iterative Bayesian updating</li><li>Hypothesis testing</li><li>The law of large numbers</li></ul>
+<ol><li>Why is Bayes&#x27; Theorem called &quot;how to change your mind rationally&quot;?</li></ol>
+<ul><li>It provides a mathematical formula for updating beliefs based on evidence</li><li>It prevents bias in statistical testing</li><li>It ensures that priors are always correct</li><li>It proves the null hypothesis is false</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li><strong>B — The prior probability.</strong> $P(A)$ is the probability of event $A$ before seeing evidence. It represents your initial belief.</li></ol>
+<ol><li><strong>C — 9%.</strong> Even though the test is 99% accurate, the disease is so rare (0.1%) that false positives (from the 99.9% who don&#x27;t have it) outnumber true positives. Bayes&#x27; Theorem gives approximately 9% probability.</li></ol>
+<ol><li><strong>A — Ignoring the prevalence of a condition when interpreting a test result.</strong> The base rate (prevalence) is crucial. A test that is 99% accurate is not 99% reliable if the condition is rare.</li></ol>
+<ol><li><strong>B — Iterative Bayesian updating.</strong> In Bayesian inference, after observing evidence and computing a posterior, that posterior serves as the prior when new evidence arrives. This iterative process is central to learning from data.</li></ol>
+<ol><li><strong>A — It provides a mathematical formula for updating beliefs based on evidence.</strong> Bayes&#x27; Theorem tells you exactly how much to adjust your belief when you observe new evidence, ensuring rationality and consistency.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><strong>Thomas Bayes:</strong> <a href="https://en.wikipedia.org/wiki/Thomas_Bayes" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Thomas_Bayes</a></li><li><strong>Bayes&#x27; Theorem:</strong> <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Bayes%27_theorem</a></li><li><strong>Bayesian inference:</strong> <a href="https://en.wikipedia.org/wiki/Bayesian_inference" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Bayesian_inference</a></li><li><strong>Base rate fallacy:</strong> <a href="https://en.wikipedia.org/wiki/Base_rate_fallacy" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Base_rate_fallacy</a></li><li><strong>Medical testing and Bayes:</strong> <a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Sensitivity_and_specificity</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-086-central-limit-theorem/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Central Limit Theorem — Why Normality Appears Everywhere</span></a><a class="pager-link pager-link--next" href="../../world-06-probability-statistics-and-uncertainty/ch-088-what-statistics-opened-up/index.html"><span class="pager-dir">Next →</span><span class="pager-title">What Statistics Opened Up</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

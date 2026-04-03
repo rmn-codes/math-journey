@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exponential Functions — Growth and Decay — Math Journey</title>
+    <meta name="description" content="When things double and halve — the mathematics of pandemics, savings, and radioactivity" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 3 · Chapter 47</p>
+        <h1>Exponential Functions — Growth and Decay</h1>
+        <p class="hero-copy">When things double and halve — the mathematics of pandemics, savings, and radioactivity</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1600s–present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Identify and evaluate exponential functions</li><li>Distinguish growth from decay</li><li>Apply compound interest and half-life formulas</li><li>Graph exponential functions and identify key features</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>There is a legend told in many lands, stretching back to ancient India. A clever inventor comes to the king with a board game — chess. The king is delighted and offers a reward.</p>
+<p>&quot;I ask for grain,&quot; says the inventor. &quot;One grain of rice on the first square of the chessboard. Two grains on the second square. Double the amount on each next square.&quot;</p>
+<p>The king laughs. &quot;You ask for so little! Guards, bring him rice!&quot;</p>
+<p>But the mathematician in the king&#x27;s court goes pale. They whisper: &quot;Sire, the last square alone requires $2^{63}$ grains. More rice than has ever been grown in all your kingdom. More than in all the world.&quot;</p>
+<p>The king had discovered the secret of exponential growth. What looks modest at first — just doubling — becomes unimaginably vast.</p>
+<p>This is the story told from India to Persia to medieval Europe. It contains a profound truth: <em>exponential functions grow (or shrink) faster than any other mathematical pattern in nature</em>.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>The COVID-19 pandemic taught the world about exponential growth in weeks. A virus that doubles every few days moves from 100 infections to 1,000 to 10,000 to 1 million in just days. This is why &quot;flattening the curve&quot; mattered — it was about turning an exponential curve into something slower.</p>
+<p>But exponential functions are not just about catastrophe. A dollar in a retirement account earning 7% interest per year doesn&#x27;t grow by 7 cents. It earns interest on the interest, compounding exponentially. Over 30 years, this turns thousands into millions. Exponential growth is also how life accumulates wealth and opportunity.</p>
+<p>Understanding exponential functions is understanding how the world accelerates, multiplies, and sometimes collapses.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The word &quot;exponential&quot; emerged slowly from mathematics. What we now call exponential functions were studied by mathematicians like Michael Stifel in the 1500s, who noticed the patterns in powers. But the real revolution came with the number $e$.</p>
+<p>In the 1600s, Leonhard Euler discovered that many natural processes — population growth, radioactive decay, cooling of hot objects — all follow a special exponential curve: $f(t) = Pe^{rt}$, where $e \approx 2.71828...$</p>
+<p>The number $e$ is as fundamental to mathematics as $\pi$. It appears everywhere in nature, from the spiral of a nautilus shell to the decay of atomic nuclei. Euler&#x27;s insight transformed calculus and science.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>An <strong>exponential function</strong> has the form:</p>
+<p>$$f(x) = a \cdot b^x$$</p>
+<p>where $a &gt; 0$, $b &gt; 0$, and $b \neq 1$.</p>
+<ul><li>$a$ is the initial value (the starting amount).</li><li>$b$ is the base (the growth or decay factor).</li><li>Each time $x$ increases by 1, the output is multiplied by $b$.</li></ul>
+<p><strong>If $b &gt; 1$:</strong> The function grows exponentially. Examples: bacteria doubling, money earning interest, pandemic spread.</p>
+<p><strong>If $0 &lt; b &lt; 1$:</strong> The function decays exponentially. Examples: radioactive materials losing mass, medicine leaving your bloodstream, light intensity decreasing with distance.</p>
+<p><strong>The Natural Base $e$:</strong></p>
+<p>The most important exponential base is $e \approx 2.71828...$, called Euler&#x27;s number. The continuous growth formula is:</p>
+<p>$$A(t) = Pe^{rt}$$</p>
+<p>where:</p>
+<ul><li>$P$ is the initial amount</li><li>$r$ is the growth rate (or decay rate if negative)</li><li>$t$ is time</li></ul>
+<p>This formula describes how nature actually behaves. A population does not grow in discrete jumps; it grows continuously.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Exponential Growth and Decay:</strong></p>
+<p>General form: $f(x) = a \cdot b^x$</p>
+<p>For growth: $b &gt; 1$ (base is larger than 1).</p>
+<p>For decay: $0 &lt; b &lt; 1$ (base is between 0 and 1).</p>
+<p><strong>Example of growth:</strong> $f(x) = 100 \cdot (1.05)^x$ might represent an investment starting at \$100 growing at 5% per year.</p>
+<p>After 1 year: $f(1) = 100 \cdot 1.05 = 105$ dollars.</p>
+<p>After 2 years: $f(2) = 100 \cdot (1.05)^2 = 110.25$ dollars.</p>
+<p>After 10 years: $f(10) = 100 \cdot (1.05)^{10} \approx 162.89$ dollars.</p>
+<p><strong>Compound Interest:</strong></p>
+<p>Money invested at interest grows exponentially. The formula depends on how often interest compounds:</p>
+<p>$$A = P\left(1 + \frac{r}{n}\right)^{nt}$$</p>
+<p>where:</p>
+<ul><li>$P$ = principal (initial amount)</li><li>$r$ = annual interest rate (as a decimal)</li><li>$n$ = number of times interest compounds per year</li><li>$t$ = time in years</li><li>$A$ = final amount</li></ul>
+<p><strong>Continuous Compounding:</strong></p>
+<p>$$A = Pe^{rt}$$</p>
+<p><strong>Half-Life:</strong></p>
+<p>The time it takes for a decaying quantity to reduce to half its original amount. If a substance has a half-life of $\tau$, then:</p>
+<p>$$A(t) = A_0 \left(\frac{1}{2}\right)^{t/\tau}$$</p>
+<p><strong>Doubling Time:</strong></p>
+<p>The time it takes for a growing quantity to double. For exponential growth with rate $r$:</p>
+<p>$$\text{Doubling time} \approx \frac{0.693}{r}$$</p>
+<p>(This is $\frac{\ln 2}{r}$, but we&#x27;ll learn about logarithms next chapter.)</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Evaluating an Exponential Function</strong></p>
+<p>The population of bacteria in a culture is $P(t) = 50 \cdot (2)^t$, where $t$ is hours. What is the population after 5 hours?</p>
+<p>$$P(5) = 50 \cdot 2^5 = 50 \cdot 32 = 1600 \text{ bacteria}$$</p>
+<p><strong>Example 2: Compound Interest</strong></p>
+<p>You invest \$5,000 in an account earning 6% annual interest, compounded quarterly. How much will you have after 3 years?</p>
+<p>$$A = P\left(1 + \frac{r}{n}\right)^{nt}$$</p>
+<p>$$A = 5000\left(1 + \frac{0.06}{4}\right)^{4 \cdot 3}$$</p>
+<p>$$A = 5000(1.015)^{12}$$</p>
+<p>$$A \approx 5000 \cdot 1.1956 \approx 5978 \text{ dollars}$$</p>
+<p><strong>Example 3: Half-Life Calculation</strong></p>
+<p>Carbon-14 has a half-life of 5,730 years. A fossil contains 25% of its original carbon-14. How old is it?</p>
+<p>Using $A(t) = A_0 \left(\frac{1}{2}\right)^{t/\tau}$:</p>
+<p>$$0.25 = 1 \cdot \left(\frac{1}{2}\right)^{t/5730}$$</p>
+<p>$$\left(\frac{1}{4}\right) = \left(\frac{1}{2}\right)^{t/5730}$$</p>
+<p>$$\left(\frac{1}{2}\right)^2 = \left(\frac{1}{2}\right)^{t/5730}$$</p>
+<p>$$2 = \frac{t}{5730}$$</p>
+<p>$$t = 11,460 \text{ years}$$</p>
+<p><strong>Example 4: Continuous Growth</strong></p>
+<p>A bacterial colony grows according to $A(t) = 1000e^{0.3t}$, where $t$ is in hours. What is the population after 4 hours?</p>
+<p>$$A(4) = 1000e^{0.3 \cdot 4} = 1000e^{1.2} \approx 1000 \cdot 3.32 \approx 3320 \text{ bacteria}$$</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Evaluate $f(x) = 2 \cdot (3)^x$ at $x = 2$.</strong></li></ol>
+<ul><li>6</li><li>12</li><li>18</li><li>9</li></ul>
+<ol><li><strong>Which function represents exponential decay?</strong></li></ol>
+<ul><li>$f(x) = 5 \cdot (2)^x$</li><li>$f(x) = 100 \cdot (0.8)^x$</li><li>$f(x) = 3x^2$</li><li>$f(x) = 10 + 2x$</li></ul>
+<ol><li><strong>A savings account has \$2,000 earning 4% annual interest, compounded annually. How much is in the account after 5 years?</strong></li></ol>
+<ul><li>\$2,400</li><li>\$2,433.31</li><li>\$2,500</li><li>\$2,832.43</li></ul>
+<ol><li><strong>Carbon-14 has a half-life of 5,730 years. If a sample starts with 100 grams, how much remains after 11,460 years?</strong></li></ol>
+<ul><li>50 grams</li><li>25 grams</li><li>12.5 grams</li><li>5 grams</li></ul>
+<ol><li><strong>What is the initial value (at $x = 0$) for $f(x) = 200 \cdot (1.1)^x$?</strong></li></ol>
+<ul><li>0</li><li>200</li><li>220</li><li>1.1</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>The global population in 2026 is approximately 8 billion. Suppose it continues to grow at 0.9% per year. Using the exponential growth formula, estimate the global population in 2050 (24 years later). Then explain: at what time in the future, if this growth continues unchanged, would the population reach 10 billion?</p>
+<p>(Hint: For the second part, you will need logarithms, which we learn next chapter. But try to estimate using the exponential function.)</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>The Spread of a Virus</strong></p>
+<p>A virus infects a small group initially. With each day, the number of infected people is multiplied by a factor (say, 1.3 — each infected person infects 1.3 others on average). The number of infected people is:</p>
+<p>$$I(t) = I_0 \cdot (1.3)^t$$</p>
+<p>If we start with 100 infected people:</p>
+<ul><li>After 5 days: $I(5) = 100 \cdot (1.3)^5 \approx 371$ infected</li><li>After 10 days: $I(10) = 100 \cdot (1.3)^{10} \approx 1,378$ infected</li><li>After 15 days: $I(15) = 100 \cdot (1.3)^{15} \approx 5,124$ infected</li></ul>
+<p>This exponential explosion is why public health officials worry about pandemic spread. Early intervention can change the base from 1.3 to 1.1, which saves thousands of lives.</p>
+<p><strong>Investment Growth</strong></p>
+<p>A young person invests \$200 per month starting at age 25, earning an average 7% annual return. Using the compound interest formula repeatedly, they accumulate wealth exponentially. By age 65:</p>
+<p>$$A \approx 200 \cdot \frac{(1.0058)^{480} - 1}{0.0058} \approx 850,000 \text{ dollars}$$</p>
+<p>This is why starting early is so powerful — exponential growth works hardest over long time periods.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>An <strong>exponential function</strong> has the form $f(x) = a \cdot b^x$, where $a$ is the initial value and $b$ is the growth or decay factor. If $b &gt; 1$, the function grows; if $0 &lt; b &lt; 1$, it decays.</p>
+<p>The natural base $e \approx 2.718$ appears in the continuous growth formula: $A(t) = Pe^{rt}$.</p>
+<p><strong>Compound interest</strong>, <strong>viral spread</strong>, <strong>radioactive decay</strong>, and <strong>population growth</strong> all follow exponential patterns. The defining feature of exponential functions is that they multiply by a constant factor with each unit increase in input, leading to explosive growth or decay.</p>
+<p>Exponential functions model the chess legend perfectly: what seems small at first becomes vast beyond imagination.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>1. In the exponential function $f(x) = a \cdot b^x$, which value determines whether the function grows or decays?</strong></p>
+<ul><li>$a$</li><li>$b$</li><li>$x$</li><li>The product $ab$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$b$</p>
+</details>
+<p><strong>2. What is the initial value of $f(x) = 50 \cdot (1.2)^x$ at $x = 0$?</strong></p>
+<ul><li>0</li><li>1.2</li><li>50</li><li>60</li></ul>
+<details>
+<summary>Answer</summary>
+<p>50</p>
+</details>
+<p><strong>3. A substance has a half-life of 10 days. After 30 days, what fraction of the original amount remains?</strong></p>
+<ul><li>1/2</li><li>1/4</li><li>1/8</li><li>1/16</li></ul>
+<details>
+<summary>Answer</summary>
+<p>1/8</p>
+</details>
+<p><strong>4. Which describes the graph of $f(x) = 5 \cdot (0.7)^x$?</strong></p>
+<ul><li>Increases as $x$ increases</li><li>Decreases as $x$ increases, approaching 0</li><li>A straight line</li><li>A parabola</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Decreases as $x$ increases, approaching 0</p>
+</details>
+<p><strong>5. You deposit \$1,000 in an account earning 5% annual interest, compounded annually. Which formula gives the amount after $t$ years?</strong></p>
+<ul><li>$A = 1000(0.05)^t$</li><li>$A = 1000(1.05)^t$</li><li>$A = 1000 + 0.05t$</li><li>$A = 1000 + 1.05t$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$A = 1000(1.05)^t$</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Euler, L. (1748). <em>Introductio in analysin infinitorum</em>. https://en.wikipedia.org/wiki/Leonhard_Euler</li><li>https://en.wikipedia.org/wiki/Exponential_function</li><li>https://en.wikipedia.org/wiki/E_(mathematical_constant)</li><li>https://en.wikipedia.org/wiki/Half-life</li><li>https://en.wikipedia.org/wiki/Compound_interest</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-03-coordination-space-and-functions/ch-046-quadratic-functions-and-parabolas/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Quadratic Functions and Parabolas</span></a><a class="pager-link pager-link--next" href="../../world-03-coordination-space-and-functions/ch-048-logarithms/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Logarithms — The Inverse of Exponential</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

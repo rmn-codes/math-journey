@@ -1,0 +1,291 @@
+---
+worldNumber: 6
+world: world-06-probability-statistics-and-uncertainty
+chapterNumber: 87
+title: "Bayes' Theorem — Updating Beliefs with Evidence"
+subtitle: "How to change your mind rationally — the mathematics of learning from experience"
+historicalPeriod: "1763 CE (published posthumously)"
+estimatedTimeMinutes: 40
+mainConcepts: ["Bayes' Theorem", "prior", "likelihood", "posterior", "positive predictive value", "Bayesian inference"]
+learningObjectives:
+  - "State and apply Bayes' Theorem"
+  - "Distinguish prior and posterior probability"
+  - "Solve medical testing problems using Bayes"
+  - "Interpret the theorem as updating beliefs"
+  - "Compare Bayesian and frequentist reasoning"
+---
+
+# Bayes' Theorem — Updating Beliefs with Evidence
+
+## Story Hook
+
+Thomas Bayes was an English Presbyterian minister living in the 18th century. In the 1750s, he wrote a mathematical paper on a seemingly arcane question: if you observe a sequence of events, what can you infer about the underlying probability generating them?
+
+The paper was brilliant but obscure. Bayes died in 1761. Two years later, his friend Richard Price edited and published it posthumously. For 200 years, it remained a footnote in probability theory.
+
+Then, in the late 20th century, computers became powerful enough to apply Bayes' ideas widely. Suddenly, Bayesian methods exploded. Today, Bayes' Theorem underlies email spam filters, medical diagnosis, autonomous vehicles, AI systems, and weather forecasts.
+
+A theorem published after a man's death, ignored for two centuries, has become one of the most powerful ideas in modern science. Its power is simple: it is how we rationally update our beliefs in the face of new evidence.
+
+## Why It Matters
+
+Every day, you encounter evidence and update your beliefs. You hear a weather forecast (prior belief about rain: 10%), then look outside at dark clouds (new evidence), and update: maybe there is a 70% chance now.
+
+But how exactly should you update? Should you double your probability? Triple it? Ignore the forecast entirely?
+
+Bayes' Theorem tells you the mathematically correct way to revise beliefs when you get evidence. It is not just a statistical tool—it is a guide to rational thought.
+
+In medicine, Bayes' Theorem is crucial. A patient tests positive for a disease. But the test is not perfect. What is the actual probability the patient has the disease? The test's sensitivity (true positive rate) and specificity (true negative rate) are not enough to answer; Bayes' Theorem connects them to the prevalence of disease and gives the true probability.
+
+In machine learning and AI, Bayesian methods help systems learn from data by updating probability distributions (priors) as they see new evidence (the data).
+
+## Historical Context
+
+Thomas Bayes (1702–1761) lived during the Age of Enlightenment, when probability was young and philosophical. Bayes was not primarily a mathematician—he was a minister—but he was mathematically gifted and interested in using mathematics to understand uncertainty and evidence.
+
+His paper, "An Essay towards solving a Problem in the Doctrine of Chances," was not published in his lifetime. It appeared in the Philosophical Transactions of the Royal Society in 1763, two years after his death, thanks to his friend Richard Price.
+
+For over a century, Bayes' Theorem remained obscure. Statisticians like Fisher, Neyman, and Pearson developed **frequentist** approaches to statistics, which became dominant in the 20th century. Frequentism uses p-values, hypothesis tests, and confidence intervals—methods that do not explicitly model prior beliefs.
+
+In the late 1950s and 1960s, with the advent of computers, **Bayesian inference** began a renaissance. By the 1980s and 1990s, as computational power exploded, Bayesian methods became practical for complex problems. Today, Bayesian statistics is woven into machine learning, AI, astronomy, physics, and more.
+
+The irony: the 250-year-old theorem from an 18th-century minister is more relevant to 21st-century AI than anything developed since.
+
+## Core Concept
+
+**Bayes' Theorem** states:
+$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+
+Let's decode each term:
+
+**$P(A|B)$ (posterior):** The probability of event $A$ given evidence $B$. This is what we want to know after observing evidence.
+
+**$P(B|A)$ (likelihood):** The probability of observing evidence $B$ if event $A$ is true. This comes from the test's accuracy.
+
+**$P(A)$ (prior):** Our belief about $A$ *before* seeing evidence $B$. This is what we thought before the evidence.
+
+**$P(B)$ (normalizing constant):** The total probability of observing evidence $B$ under all scenarios. This ensures probabilities sum to 1.
+
+**Intuition.** You start with a prior belief about something. Then you get evidence. Bayes' Theorem tells you how much to revise your belief, proportional to how likely that evidence would be under each scenario.
+
+**A medical example.** A disease affects 1 in 1,000 people (prior $P(\text{Disease}) = 0.001$). A test has 99% sensitivity (if you have the disease, it catches you 99% of the time, $P(\text{Positive}|\text{Disease}) = 0.99$) and 98% specificity (if you don't have the disease, it correctly clears you 98% of the time, $P(\text{Negative}|\text{No Disease}) = 0.98$, so $P(\text{Positive}|\text{No Disease}) = 0.02$).
+
+You test positive. What is the probability you actually have the disease?
+
+Many people guess around 99%, because the test is 99% accurate. But Bayes' Theorem gives a different answer. Let's compute:
+
+$$P(\text{Disease}|\text{Positive}) = \frac{P(\text{Positive}|\text{Disease}) \cdot P(\text{Disease})}{P(\text{Positive})}$$
+
+We need $P(\text{Positive})$:
+$$P(\text{Positive}) = P(\text{Positive}|\text{Disease}) \cdot P(\text{Disease}) + P(\text{Positive}|\text{No Disease}) \cdot P(\text{No Disease})$$
+$$= 0.99 \times 0.001 + 0.02 \times 0.999 = 0.00099 + 0.01998 = 0.02097$$
+
+Now:
+$$P(\text{Disease}|\text{Positive}) = \frac{0.99 \times 0.001}{0.02097} = \frac{0.00099}{0.02097} \approx 0.047$$
+
+Only about 4.7% chance you have the disease! Even though the test is 99% accurate and you tested positive, the disease is so rare that most positive tests are false positives.
+
+This is the base rate fallacy: ignoring prior probability when evaluating evidence.
+
+## Definitions and Formal Lesson
+
+**Prior probability $P(A)$:** Your belief before seeing evidence. It can come from historical data, domain expertise, or represent total ignorance (a "flat" or "uninformed" prior).
+
+**Likelihood $P(B|A)$:** The probability of the evidence under hypothesis $A$. In medical testing, this is the test's sensitivity or false positive rate.
+
+**Posterior probability $P(A|B)$:** Your updated belief after evidence. This is what we compute using Bayes' Theorem.
+
+**Bayesian vs. frequentist.** A frequentist would say: "The p-value is 0.03, so if the null hypothesis were true, we'd see data this extreme 3% of the time. The null hypothesis is probably false." A Bayesian would say: "Given the data and my prior belief, my posterior probability that the null is false is 95%. I update my belief accordingly."
+
+Both approaches use Bayes' Theorem implicitly, but Bayesians make prior beliefs explicit.
+
+**Positive predictive value (PPV):** In medical testing, $P(\text{Disease}|\text{Positive})$ is the positive predictive value—the probability someone with a positive test actually has the disease. Bayes' Theorem computes PPV:
+
+$$\text{PPV} = \frac{\text{Sensitivity} \times \text{Prevalence}}{\text{Sensitivity} \times \text{Prevalence} + (1 - \text{Specificity}) \times (1 - \text{Prevalence})}$$
+
+This is Bayes' Theorem applied to medical testing.
+
+**Iterative updating.** Bayes' Theorem is powerful because it works iteratively. Your posterior after one piece of evidence becomes the prior for the next. Observe a lot of data, updating repeatedly, and your posterior converges toward the truth—even if your initial prior was wrong.
+
+## Worked Examples
+
+**Example 1: A drug test.**
+
+A drug screening test has:
+- Sensitivity: 95% (detects drugs 95% of the time if present)
+- Specificity: 90% (correctly clears non-users 90% of the time)
+- Population prevalence of drug use: 5%
+
+An employee tests positive. What is the probability they actually use drugs?
+
+Prior: $P(\text{Use}) = 0.05$
+Likelihood: $P(\text{Positive}|\text{Use}) = 0.95$
+False positive rate: $P(\text{Positive}|\text{No Use}) = 0.10$
+
+$$P(\text{Use}|\text{Positive}) = \frac{0.95 \times 0.05}{0.95 \times 0.05 + 0.10 \times 0.95}$$
+$$= \frac{0.0475}{0.0475 + 0.095} = \frac{0.0475}{0.1425} \approx 0.333$$
+
+Only about 33% probability the employee actually uses drugs. The false positive rate (10%) is high enough that many positives are false alarms.
+
+**Example 2: Updating with multiple pieces of evidence.**
+
+Suppose the employee from Example 1 takes a second test and tests positive again. Now what?
+
+His posterior from the first test (33%) becomes the prior for the second test. (Assume the tests are independent.)
+
+$$P(\text{Use}|\text{Two Positives}) = \frac{0.95 \times 0.333}{0.95 \times 0.333 + 0.10 \times 0.667}$$
+$$= \frac{0.316}{0.316 + 0.067} = \frac{0.316}{0.383} \approx 0.825$$
+
+After two positive tests, the probability rises to about 82.5%. Repeated evidence narrows down the truth.
+
+**Example 3: A cancer screening.**
+
+A mammogram screening for breast cancer has:
+- Sensitivity: 87% (detects 87% of actual cancers)
+- Specificity: 97% (correctly clears 97% of non-cancer cases)
+- Prevalence of breast cancer in the screened population: 0.5%
+
+A woman tests positive. What is the probability she has cancer?
+
+$$P(\text{Cancer}|\text{Positive}) = \frac{0.87 \times 0.005}{0.87 \times 0.005 + 0.03 \times 0.995}$$
+$$= \frac{0.00435}{0.00435 + 0.02985} = \frac{0.00435}{0.0342} \approx 0.127$$
+
+About 12.7% probability. Even with a highly specific test, when cancer is rare, most positives are false alarms. This is why follow-up tests are essential.
+
+## Beyond a Single Hypothesis: Comparing Multiple Possibilities
+
+Bayes' Theorem is especially powerful when there are multiple competing explanations. Suppose a patient has symptoms that could be caused by disease A, disease B, or disease C. Each disease has a different prevalence (prior), and tests have different sensitivity and specificity for each.
+
+As the patient undergoes tests, the posterior probability of each disease is updated using Bayes' Theorem. The disease with the highest posterior probability is the leading diagnosis. Additional tests narrow it further.
+
+This is how doctors diagnose: starting with differential diagnosis (multiple possibilities), gathering evidence, and updating beliefs. Bayes' Theorem formalizes this intuitive process.
+
+**Example: A patient has a rash.** Initial differentials: measles (prior 0.05), chickenpox (prior 0.10), allergic reaction (prior 0.30), heat rash (prior 0.55). A test for measles is positive. Update the posterior for measles. It rises, but chickenpox and other causes still have meaningful probability. Examine the rash more closely. The pattern is consistent with measles (likelihood boost). Order a serology test. Posterior for measles rises further. Eventually, measles probability reaches 90%, and the diagnosis is confident.
+
+This iterative process is reasoning under uncertainty—precisely what Bayes' Theorem enables.
+
+## Practice Set
+
+1. A spam filter has:
+   - Sensitivity: 95% (catches 95% of spam emails)
+   - Specificity: 99% (lets 99% of legitimate emails through, so flags 1% as spam)
+   - Prior: 80% of incoming emails are spam
+
+   If an email is flagged as spam, what is the probability it actually is spam?
+
+2. A rare genetic disease affects 0.01% of the population. A genetic test has 98% sensitivity and 99% specificity. If a person tests positive, what is the probability they have the disease?
+
+3. Two hospitals use the same screening test for a condition. Hospital A serves a population where 10% have the condition; Hospital B serves a population where 1% have the condition. Both use a test with 90% sensitivity and 85% specificity. If a patient at each hospital tests positive, whose positive predictive value is higher?
+
+4. Explain the base rate fallacy: why is a 99% accurate test not 99% reliable at detecting a rare disease?
+
+5. A weather forecaster has a prior belief that tomorrow's high will be 72°F (with some uncertainty). Overnight, they receive new model data (evidence) suggesting a cooler pattern. How would Bayes' Theorem guide them in updating their forecast?
+
+## The Power of Priors
+
+One criticism of Bayesian inference is that it requires a prior: a statement of your initial belief. Frequentists argue that priors are subjective; different people might choose different priors and reach different conclusions.
+
+This is a fair point. Bayesian inference is not "objective" in the sense of being prior-free.
+
+But there is a counterargument: all inference is subjective in some sense. A frequentist chooses a null hypothesis (why that one?), chooses a significance level (why $p < 0.05$?), chooses a sample size (why that n?). These are also choices, reflecting prior beliefs and values.
+
+Bayesian inference makes assumptions explicit. You state your prior openly. Others can see it, critique it, modify it. Over time, with sufficient data, the posterior converges toward the truth regardless of the initial prior. Reasonable people with different priors will converge to similar conclusions.
+
+In fact, in many practical applications, the choice of prior matters less than many think. With large samples and strong data, the prior is "washed out" by the likelihood. The posterior becomes dominated by evidence, not prior belief.
+
+The real power of priors is in settings with limited data, where domain expertise (your prior) can meaningfully improve inference.
+
+## Reasoning Task
+
+**The Monty Hall Problem (Bayesian version).** You choose a door in a three-door game. Behind one is a prize; behind two are goats. The host, who knows what is behind each door, opens a door with a goat.
+
+Initially, $P(\text{Prize behind your door}) = 1/3$.
+
+The host opens a door. Now you know:
+- It is not the door you chose.
+- It has a goat.
+
+Should you switch? Use Bayes' Theorem to update your belief. (Hint: compute $P(\text{Prize}|\text{host opens goat door})$ using the likelihoods that the host would open that particular door under each scenario.)
+
+## Application
+
+**Email spam filtering.** Modern email systems use Bayesian methods to classify messages as spam or legitimate. Each word in an email has a prior probability of appearing in spam vs. legitimate mail. When the system sees a word (evidence), it updates the probability the entire message is spam. Words like "free," "click," and "buy now" heavily bias toward spam; words like "meeting," "deadline," and "attached" bias toward legitimate.
+
+The system computes:
+$$P(\text{Spam}|\text{Words}) = \frac{P(\text{Words}|\text{Spam}) \cdot P(\text{Spam})}{P(\text{Words})}$$
+
+Combining evidence from all words, it assigns a spam probability to each message.
+
+**Medical diagnosis.** A doctor observes a patient's symptoms (evidence). She begins with a prior—the prevalence of various diseases in the population. She then updates her belief using diagnostic tests. Each test result (positive or negative) updates her belief via Bayes' Theorem. As evidence accumulates, the posterior probability of the true diagnosis rises, while competing diagnoses fall.
+
+This is why doctors order multiple tests: each new test (evidence) narrows down the diagnosis.
+
+## Recap
+
+**Bayes' Theorem** is a formula for updating beliefs rationally when you get evidence:
+$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+
+The theorem distinguishes four key quantities: prior belief (what you thought before), likelihood (how likely the evidence is under each scenario), posterior (updated belief), and the normalizing constant.
+
+A crucial insight is the **base rate fallacy**: even if a test is highly accurate, if the underlying condition is rare, most positive tests are false alarms. You must account for prior probability.
+
+**Bayesian inference** is fundamentally about learning from data. You start with a prior (initial belief), observe evidence, update to a posterior, then use that posterior as a new prior when more evidence arrives.
+
+This iterative updating is why Bayesian methods excel at learning from streams of data—a core challenge in machine learning and AI.
+
+Bayes' Theorem connects the known (prior, likelihood) to the unknown (posterior), making it one of the most powerful and broadly applicable ideas in mathematics.
+
+## Unlock Quiz
+
+1. In Bayes' Theorem, $P(A)$ is called:
+   - The posterior probability
+   - The prior probability
+   - The likelihood
+   - The normalizing constant
+
+2. A disease has prevalence 0.1% and a test has sensitivity 99% and specificity 99%. If someone tests positive, the probability they have the disease is approximately:
+   - 99%
+   - 50%
+   - 9%
+   - 1%
+
+3. The base rate fallacy is:
+   - Ignoring the prevalence of a condition when interpreting a test result
+   - Confusing sensitivity and specificity
+   - Using a test that is not accurate enough
+   - Believing that correlation implies causation
+
+4. If a posterior probability becomes the prior for the next test, this illustrates:
+   - Frequentist inference
+   - Iterative Bayesian updating
+   - Hypothesis testing
+   - The law of large numbers
+
+5. Why is Bayes' Theorem called "how to change your mind rationally"?
+   - It provides a mathematical formula for updating beliefs based on evidence
+   - It prevents bias in statistical testing
+   - It ensures that priors are always correct
+   - It proves the null hypothesis is false
+
+<details>
+<summary>Unlock Quiz Answers</summary>
+
+1. **B — The prior probability.** $P(A)$ is the probability of event $A$ before seeing evidence. It represents your initial belief.
+
+2. **C — 9%.** Even though the test is 99% accurate, the disease is so rare (0.1%) that false positives (from the 99.9% who don't have it) outnumber true positives. Bayes' Theorem gives approximately 9% probability.
+
+3. **A — Ignoring the prevalence of a condition when interpreting a test result.** The base rate (prevalence) is crucial. A test that is 99% accurate is not 99% reliable if the condition is rare.
+
+4. **B — Iterative Bayesian updating.** In Bayesian inference, after observing evidence and computing a posterior, that posterior serves as the prior when new evidence arrives. This iterative process is central to learning from data.
+
+5. **A — It provides a mathematical formula for updating beliefs based on evidence.** Bayes' Theorem tells you exactly how much to adjust your belief when you observe new evidence, ensuring rationality and consistency.
+
+</details>
+
+## Source Notes
+
+- **Thomas Bayes:** [https://en.wikipedia.org/wiki/Thomas_Bayes](https://en.wikipedia.org/wiki/Thomas_Bayes)
+- **Bayes' Theorem:** [https://en.wikipedia.org/wiki/Bayes%27_theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem)
+- **Bayesian inference:** [https://en.wikipedia.org/wiki/Bayesian_inference](https://en.wikipedia.org/wiki/Bayesian_inference)
+- **Base rate fallacy:** [https://en.wikipedia.org/wiki/Base_rate_fallacy](https://en.wikipedia.org/wiki/Base_rate_fallacy)
+- **Medical testing and Bayes:** [https://en.wikipedia.org/wiki/Sensitivity_and_specificity](https://en.wikipedia.org/wiki/Sensitivity_and_specificity)

@@ -1,0 +1,317 @@
+---
+chapterNumber: 046
+worldNumber: 3
+world: world-03-coordination-space-and-functions
+title: "Quadratic Functions and Parabolas"
+subtitle: "Why thrown objects trace a perfect curve — and the mathematics behind it"
+estimatedTimeMinutes: 40
+historicalPeriod: "Ancient–1600s"
+mainConcepts:
+  - quadratic function
+  - parabola
+  - vertex
+  - axis of symmetry
+  - maximum/minimum
+learningObjectives:
+  - "Identify and graph quadratic functions"
+  - "Find the vertex and axis of symmetry"
+  - "Determine maximum or minimum values"
+  - "Apply parabolas to projectile motion"
+---
+
+## Story Hook
+
+Galileo Galilei stands in a tower in 1608, watching a ball roll down a ramp and fly off a table's edge. He has an idea no one before has tried: he will time it.
+
+Using a water clock, he measures how long the ball takes to fall different distances. He marks where the ball lands. He records everything. And from these measurements emerges a truth about the world that had always been hidden in plain sight.
+
+Every thrown object — every cannonball, every fountain arc, every baseball pitched toward home plate — follows the exact same curved path. Not a circle, not an ellipse, but a shape the ancient Greeks had defined only as an abstract geometry. Galileo gave it life: the parabola.
+
+The path of a falling object is described by:
+
+$$h = -16t^2 + v_0 t + h_0$$
+
+where $t$ is time, $v_0$ is initial velocity, and $h_0$ is starting height. This is a quadratic function, and it is gravity's own mathematics.
+
+## Why It Matters
+
+Understanding parabolas means understanding how the physical world behaves. Engineers design parabolic bridges that distribute weight perfectly. Architects create parabolic domes that echo sound beautifully. Satellite dishes focus signals along parabolic paths. Searchlights project beams in parabolic patterns.
+
+But more than this: quadratic functions teach us how to find maximum and minimum values. When does profit peak? When is cost lowest? When will the missile reach its target? Where should you angle a water fountain to make the arc most beautiful? These are all parabola problems, and they shape civilization.
+
+## Historical Context
+
+The ancient Greeks, around 350 BCE, studied conic sections — the shapes you get by slicing a cone with a plane. One of these shapes is the parabola. They defined it purely geometrically: the set of all points equidistant from a fixed point (focus) and a fixed line (directrix).
+
+For two thousand years, the parabola remained an elegant but abstract shape studied by mathematicians. Then Galileo discovered that nature had been using parabolas all along — they are the paths of projectiles. This discovery bridged the gap between pure mathematics and the physical world, and it changed science forever.
+
+By the 1600s, Newton and Leibniz built calculus on functions like these. Today, quadratic functions are among the most practical and important tools in mathematics.
+
+## Core Concept
+
+A **quadratic function** is a function of the form:
+
+$$f(x) = ax^2 + bx + c$$
+
+where $a$, $b$, and $c$ are constants and $a \neq 0$. (If $a = 0$, it would not be quadratic; it would be linear.)
+
+The graph of a quadratic function is a **parabola** — a smooth, U-shaped curve that is symmetric about a vertical line.
+
+**Key features of a parabola:**
+
+1. **Direction of opening:** If $a > 0$, the parabola opens upward (like a smile). If $a < 0$, it opens downward (like a frown).
+
+2. **Vertex:** The point where the parabola reaches its minimum (if opening upward) or maximum (if opening downward). This is the "turning point" of the curve.
+
+3. **Axis of symmetry:** A vertical line through the vertex, dividing the parabola into two mirror-image halves. Every point on one side has a matching point on the other.
+
+4. **$y$-intercept:** The point where the parabola crosses the $y$-axis, found by setting $x = 0$: $(0, c)$.
+
+5. **$x$-intercepts (roots):** The points where the parabola crosses the $x$-axis. These are found by solving $f(x) = 0$.
+
+## Definitions and Formal Lesson
+
+**Standard Form:** $f(x) = ax^2 + bx + c$
+
+To find the $x$-coordinate of the vertex, use:
+
+$$x = -\frac{b}{2a}$$
+
+Then substitute back into the function to find the $y$-coordinate.
+
+**Example:** For $f(x) = x^2 - 4x + 3$, we have $a = 1$, $b = -4$, $c = 3$.
+
+$$x = -\frac{(-4)}{2(1)} = 2$$
+
+$$f(2) = (2)^2 - 4(2) + 3 = 4 - 8 + 3 = -1$$
+
+Vertex: $(2, -1)$
+
+**Vertex Form:** $f(x) = a(x - h)^2 + k$
+
+This form immediately shows the vertex $(h, k)$ and the axis of symmetry $x = h$.
+
+**Converting to vertex form:** Complete the square.
+
+$f(x) = x^2 - 4x + 3$
+
+$= (x^2 - 4x + 4) - 4 + 3$
+
+$= (x - 2)^2 - 1$
+
+Vertex: $(2, -1)$ ✓ (matches our earlier calculation)
+
+**Axis of symmetry:** The vertical line $x = h$ (or $x = -\frac{b}{2a}$ in standard form).
+
+For our example: $x = 2$
+
+**Maximum or Minimum Value:**
+- If $a > 0$: minimum value is the $y$-coordinate of the vertex.
+- If $a < 0$: maximum value is the $y$-coordinate of the vertex.
+
+For $f(x) = x^2 - 4x + 3$, since $a = 1 > 0$, the minimum value is $-1$, occurring at $x = 2$.
+
+**Finding $x$-intercepts:** Solve $ax^2 + bx + c = 0$ using factoring, completing the square, or the quadratic formula:
+
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+For $x^2 - 4x + 3 = 0$:
+
+$$(x - 1)(x - 3) = 0$$
+
+$x$-intercepts: $(1, 0)$ and $(3, 0)$
+
+## Worked Examples
+
+**Example 1: Graphing a Quadratic Function**
+
+Graph $f(x) = -2x^2 + 8x - 6$.
+
+Step 1: Identify $a = -2$, $b = 8$, $c = -6$.
+
+Since $a < 0$, the parabola opens downward.
+
+Step 2: Find the vertex.
+
+$$x = -\frac{8}{2(-2)} = -\frac{8}{-4} = 2$$
+
+$$f(2) = -2(2)^2 + 8(2) - 6 = -8 + 16 - 6 = 2$$
+
+Vertex: $(2, 2)$
+
+Step 3: $y$-intercept: $f(0) = -6$, so $(0, -6)$.
+
+Step 4: Axis of symmetry: $x = 2$.
+
+Step 5: Find $x$-intercepts.
+
+$$-2x^2 + 8x - 6 = 0$$
+
+$$x^2 - 4x + 3 = 0$$
+
+$$(x - 1)(x - 3) = 0$$
+
+$x$-intercepts: $(1, 0)$ and $(3, 0)$.
+
+**Example 2: Projectile Motion**
+
+A soccer ball is kicked from the ground with an initial velocity of 40 feet per second at a 45° angle. Its height after $t$ seconds is:
+
+$$h(t) = -16t^2 + 28t$$
+
+What is the maximum height?
+
+The vertex gives the maximum. Using $t = -\frac{b}{2a}$:
+
+$$t = -\frac{28}{2(-16)} = \frac{28}{32} = 0.875 \text{ seconds}$$
+
+$$h(0.875) = -16(0.875)^2 + 28(0.875) = -12.25 + 24.5 = 12.25 \text{ feet}$$
+
+Maximum height: 12.25 feet.
+
+**Example 3: Finding the Domain and Range**
+
+For $f(x) = (x - 3)^2 + 1$:
+
+- Domain: all real numbers (you can input any $x$).
+- Range: $[1, \infty)$. The minimum value is 1 (the $y$-coordinate of the vertex), and the function increases without bound as you move away from the vertex.
+
+## Practice Set
+
+1. **What is the vertex of $f(x) = x^2 - 6x + 5$?**
+   - $(3, -4)$
+   - $(6, 5)$
+   - $(-3, 14)$
+   - $(0, 5)$
+
+2. **Which parabola opens downward?**
+   - $f(x) = x^2 + 2x - 1$
+   - $f(x) = -3x^2 + x + 4$
+   - $f(x) = 2(x - 1)^2 + 3$
+   - $f(x) = \frac{1}{2}(x + 2)^2$
+
+3. **What is the axis of symmetry for $g(x) = 4x^2 - 16x + 7$?**
+   - $x = 2$
+   - $x = -2$
+   - $x = 4$
+   - $x = -4$
+
+4. **Find the $y$-intercept of $h(x) = -2x^2 + 5x + 3$.**
+   - $(0, 3)$
+   - $(0, -2)$
+   - $(0, 5)$
+   - $(3, 0)$
+
+5. **A ball is thrown upward with an initial height of 10 feet and initial velocity of 20 feet per second. Using $h(t) = -16t^2 + 20t + 10$, what is the maximum height?**
+   - 6.25 feet
+   - 16.25 feet
+   - 10 feet
+   - 20 feet
+
+## Reasoning Task
+
+An engineer is designing a suspension bridge. The main cable hangs in a parabolic shape from two towers that are 1000 feet apart and 200 feet tall. The lowest point of the cable is at the center of the bridge, 50 feet above the water.
+
+Set up a coordinate system with the origin at the lowest point of the cable. Write an equation for the parabolic cable, and explain what values of $a$, $h$, and $k$ you use and why.
+
+## Application
+
+**Water Fountains**
+
+A fountain shoots water upward from ground level with an initial velocity of 32 feet per second. The height of the water is:
+
+$$h(t) = -16t^2 + 32t$$
+
+When does the water reach its maximum height?
+
+$$t = -\frac{32}{2(-16)} = 1 \text{ second}$$
+
+$$h(1) = -16(1)^2 + 32(1) = 16 \text{ feet}$$
+
+The water reaches a maximum height of 16 feet after 1 second. This is exactly the information you need to design a beautiful fountain.
+
+**Profit Optimization**
+
+A company sells widgets at $p$ dollars per unit. The profit is:
+
+$$P(p) = -100p^2 + 5000p - 40000$$
+
+This is a downward-opening parabola. Its maximum occurs at:
+
+$$p = -\frac{5000}{2(-100)} = 25 \text{ dollars}$$
+
+$$P(25) = -100(25)^2 + 5000(25) - 40000 = 22500 \text{ dollars}$$
+
+The company maximizes profit by setting the price at \$25 per widget, earning a maximum profit of \$22,500.
+
+## Recap
+
+A **quadratic function** has the form $f(x) = ax^2 + bx + c$ and graphs as a parabola — a symmetric U-shaped curve. The **vertex** is the turning point, located at $x = -\frac{b}{2a}$. The parabola opens upward if $a > 0$ and downward if $a < 0$.
+
+The **axis of symmetry** is a vertical line through the vertex. The **maximum or minimum value** of the function is the $y$-coordinate of the vertex. The **$x$-intercepts** are found by solving the quadratic equation, and the **$y$-intercept** is at $(0, c)$.
+
+Quadratic functions describe projectile motion, profit optimization, and countless other real-world phenomena. Mastering them opens doors to understanding how the world moves and changes.
+
+## Unlock Quiz
+
+**1. In the quadratic function $f(x) = ax^2 + bx + c$, what does the value of $a$ determine?**
+   - The direction and width of the parabola
+   - The location of the vertex
+   - The $y$-intercept
+   - The number of $x$-intercepts
+
+<details>
+<summary>Answer</summary>
+The direction and width of the parabola
+</details>
+
+**2. A parabola has vertex $(4, -3)$ and opens upward. What is its minimum value?**
+   - 4
+   - -3
+   - 0
+   - Cannot determine without more information
+
+<details>
+<summary>Answer</summary>
+-3
+</details>
+
+**3. What is the axis of symmetry for $f(x) = 2(x + 5)^2 - 7$?**
+   - $x = 5$
+   - $x = -5$
+   - $x = -7$
+   - $x = 2$
+
+<details>
+<summary>Answer</summary>
+$x = -5$
+</details>
+
+**4. A ball is thrown from the ground. Its height equation is $h(t) = -16t^2 + 64t$. At what time does it reach maximum height?**
+   - 2 seconds
+   - 4 seconds
+   - 8 seconds
+   - 16 seconds
+
+<details>
+<summary>Answer</summary>
+2 seconds
+</details>
+
+**5. Which statement is true about the parabola $f(x) = -5(x - 3)^2 + 8$?**
+   - It has a minimum value of 8
+   - It opens downward and has vertex $(3, 8)$
+   - Its axis of symmetry is $x = -3$
+   - Its $y$-intercept is $(0, 8)$
+
+<details>
+<summary>Answer</summary>
+It opens downward and has vertex $(3, 8)$
+</details>
+
+## Source Notes
+
+- Galilei, G. (1638). *Discourses and Mathematical Demonstrations Relating to Two New Sciences*. https://en.wikipedia.org/wiki/Galileo_Galilei
+- https://en.wikipedia.org/wiki/Parabola
+- https://en.wikipedia.org/wiki/Quadratic_function
+- https://en.wikipedia.org/wiki/Projectile_motion

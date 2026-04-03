@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Variables and Expressions — Math Journey</title>
+    <meta name="description" content="What it means to name the unknown — and how to compute with it" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 2 · Chapter 31</p>
+        <h1>Variables and Expressions</h1>
+        <p class="hero-copy">What it means to name the unknown — and how to compute with it</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>foundational</span>
+          <span>Europe</span>
+          <span>1600s – present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Define variable, expression, term, coefficient, and constant</li><li>Write algebraic expressions from word descriptions</li><li>Evaluate algebraic expressions by substituting numerical values</li><li>Simplify expressions by combining like terms</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#writing-expressions-from-words">Writing Expressions from Words</a></li><li class="toc-level-3"><a href="#combining-like-terms">Combining Like Terms</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Picture yourself at a bustling market in 17th-century Europe. A stall-keeper sells dates and figs—beautiful fruit, expensive and coveted. She charges 3 coins per date and 5 coins per fig, but here&#x27;s the problem: she doesn&#x27;t know how many of each she&#x27;ll sell today.</p>
+<p>Will someone buy 10 dates and 8 figs? Or 20 dates and 3 figs? Or nothing at all? She can&#x27;t know in advance, yet she needs to plan her profits.</p>
+<p>So she takes a piece of chalk and writes on a slate:</p>
+<p>$$3d + 5f$$</p>
+<p>Two letters—<em>d</em> for dates, <em>f</em> for figs—representing quantities she doesn&#x27;t yet know. With this one simple notation, she can calculate her earnings for <em>any</em> combination of sales. This is the birth of variables: a way to name the unknown and work with it as if we already know what it is.</p>
+<p>Variables are among the most powerful inventions in the history of thought. They let us write rules, not just for one situation, but for <em>all</em> situations of the same kind.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Before variables, mathematics was trapped in specific numbers. A baker might write: &quot;If I mix 2 cups of flour with 1 cup of water, I get dough.&quot; That&#x27;s true, but only for those exact quantities.</p>
+<p>With variables, the baker writes: &quot;If I mix $f$ cups of flour with $w$ cups of water, I get dough.&quot; Now the formula applies to <em>any</em> batch—small or large, and the baker can adjust quantities while keeping proportions correct.</p>
+<p>Variables are the reason we can write formulas, solve puzzles, build bridges that won&#x27;t collapse, design medicines that actually work, and launch rockets to the moon. They let us think in generalities rather than special cases.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The letter <em>x</em> for the unknown didn&#x27;t appear by accident. In the 9th century, mathematicians in the Islamic world solved equations but expressed them in words—no symbols at all. An equation might read: &quot;A quantity, when increased by five, equals twelve.&quot;</p>
+<p>François Viète (1540–1603), a French mathematician, was among the first to use letters consistently to represent unknowns. His work opened a new era. Then René Descartes (1596–1650) popularized the convention of using letters <em>near the end</em> of the alphabet ($x$, $y$, $z$) for unknowns and letters <em>near the beginning</em> ($a$, $b$, $c$) for known quantities.</p>
+<p>This seemingly small choice—which letters to use—made algebra readable, shareable, and powerful. A mathematician in Rome could now read Descartes&#x27; work from France without learning a different verbal tradition.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>variable</strong> is a symbol (usually a letter) that represents an unknown or changeable quantity.</p>
+<p>An <strong>algebraic expression</strong> is a collection of numbers, variables, and operations (like $+$, $-$, $\times$, $\div$) combined together.</p>
+<p>When we write $3d + 5f$, we&#x27;re building an expression from:</p>
+<ul><li><strong>Terms</strong>: the parts being added or subtracted</li><li><strong>Coefficients</strong>: the numbers multiplying the variables</li><li><strong>Constants</strong>: numbers that stand alone</li></ul>
+<p>In $3d + 5f$:</p>
+<ul><li>First term: $3d$ (coefficient 3, variable $d$)</li><li>Second term: $5f$ (coefficient 5, variable $f$)</li><li>No constant term here</li></ul>
+<p>In the expression $2x + 7$:</p>
+<ul><li>First term: $2x$ (coefficient 2, variable $x$)</li><li>Second term: $7$ (this is the constant—a number with no variable)</li></ul>
+<p><strong>Like terms</strong> are terms that have the same variable raised to the same power. In $3x + 5x$, both terms are &quot;like terms&quot; because they&#x27;re both $x$ to the first power. We can combine them: $3x + 5x = 8x$.</p>
+<p>But $3x$ and $5x^2$ are <em>not</em> like terms—the variables have different powers.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Variable</strong>: A symbol representing a number whose value is unknown or can change.</p>
+<p><strong>Algebraic Expression</strong>: A mathematical phrase using numbers, variables, and operations.</p>
+<p><strong>Term</strong>: A single part of an expression, consisting of a coefficient and its variables (or just a constant).</p>
+<p><strong>Coefficient</strong>: The numerical factor in a term. In $7y$, the coefficient is 7. In $-3a$, the coefficient is $-3$. If we write just $x$, the coefficient is 1.</p>
+<p><strong>Constant</strong>: A term that contains only a number, no variables.</p>
+<p><strong>Like Terms</strong>: Terms that have identical variable parts (same letter, same exponent). Examples: $5a$ and $3a$, or $2xy$ and $-7xy$.</p>
+<p><strong>Evaluating an Expression</strong>: Finding the value of an expression by replacing variables with specific numbers and performing the arithmetic.</p>
+<h3 id="writing-expressions-from-words">Writing Expressions from Words</h3>
+<ul><li>&quot;Three more than $x$&quot; → $x + 3$</li><li>&quot;Five times $y$&quot; → $5y$</li><li>&quot;Four less than twice $p$&quot; → $2p - 4$</li><li>&quot;The sum of $m$ and $n$&quot; → $m + n$</li><li>&quot;The product of $a$, $b$, and $c$&quot; → $abc$</li></ul>
+<h3 id="combining-like-terms">Combining Like Terms</h3>
+<p>$$5x + 3x = 8x$$</p>
+<p>$$2y + 6 + 3y - 2 = (2y + 3y) + (6 - 2) = 5y + 4$$</p>
+<p>$$4a + 2b + 3a - b = (4a + 3a) + (2b - b) = 7a + b$$</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Evaluate $3x + 5$ when $x = 2$</strong></p>
+<p>Substitute $x = 2$: $$3(2) + 5 = 6 + 5 = 11$$</p>
+<p><strong>Example 2: Evaluate $2a - 3b$ when $a = 4$ and $b = 1$</strong></p>
+<p>Substitute $a = 4$ and $b = 1$: $$2(4) - 3(1) = 8 - 3 = 5$$</p>
+<p><strong>Example 3: Simplify $4m + 2 - m + 5$</strong></p>
+<p>Group like terms: $$(4m - m) + (2 + 5) = 3m + 7$$</p>
+<p><strong>Example 4: Write an expression for the perimeter of a rectangle with length $l$ and width $w$</strong></p>
+<p>Perimeter = $l + w + l + w = 2l + 2w$</p>
+<p><strong>Example 5: A coffee shop charges $3 per latte and $2 per pastry. Write an expression for the cost of $c$ lattes and $p$ pastries. Then find the cost if you order 2 lattes and 3 pastries.</strong></p>
+<p>Expression: $3c + 2p$</p>
+<p>Substitute $c = 2$ and $p = 3$: $$3(2) + 2(3) = 6 + 6 = 12$$</p>
+<p>The cost is 12 dollars.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Evaluate $5x + 3$ when $x = 4$.</li></ol>
+<ol><li>Evaluate $2a - b$ when $a = 6$ and $b = 3$.</li></ol>
+<ol><li>Simplify $7y + 2 + 3y - 5$.</li></ol>
+<ol><li>Write an expression: &quot;Six times $n$, minus 4.&quot;</li></ol>
+<ol><li>Write an expression for the perimeter of a square with side length $s$.</li></ol>
+<ol><li>Simplify $4x + 3x + 2$.</li></ol>
+<ol><li>Evaluate $6 - 2t$ when $t = 1.5$.</li></ol>
+<ol><li>A taxi charges $2.50 per mile plus a $5 flat fee. Write an expression for the cost of a ride of $m$ miles. What is the cost of a 10-mile ride?</li></ol>
+<p>---</p>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Mystery Stall-Keeper</strong></p>
+<p>A merchant sells pens ($0.75 each) and notebooks ($2 each). At the end of the day, they sold 15 pens and some number of notebooks, earning $25 total.</p>
+<ul><li>Write an expression for the total earnings if $n$ notebooks were sold.</li><li>How many notebooks did they sell?</li></ul>
+<p>(Hint: Set up the expression, then think: what value of $n$ makes the earnings equal $25?)</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Real-World Scenario: Planning a School Trip</strong></p>
+<p>Your class is planning a trip. The bus costs $300 total. Each student pays an equal share. If there are $s$ students, the cost per student is:</p>
+<p>$$\frac{300}{s}$$</p>
+<ul><li>If there are 25 students, what is the cost per student?</li><li>If there are 30 students, what is the cost per student?</li><li>Why does increasing $s$ make the cost per student go down?</li></ul>
+<p>This is how real planners use expressions: to understand how changing one quantity affects another.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>A <strong>variable</strong> is a letter representing a number we don&#x27;t yet know. An <strong>expression</strong> combines variables with numbers and operations. By substituting numerical values for variables, we can <strong>evaluate</strong> the expression to find a specific answer.</p>
+<p>Variables let us write rules that work in many situations. The stall-keeper&#x27;s formula $3d + 5f$ works for any number of dates and figs. A builder&#x27;s formula for materials works for any size structure. Doctors use expressions to calculate medicines for patients of different weights.</p>
+<p>Learning to write and work with expressions is learning to think mathematically—to see patterns, to generalize, and to describe the world in a language that numbers and symbols understand.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is a variable?</li></ol>
+<ul><li>A number we already know</li><li>A symbol representing an unknown or changeable quantity</li><li>An operation like addition or subtraction</li><li>A type of equation</li></ul>
+<ol><li>In the expression $4x + 5$, what is the coefficient of $x$?</li></ol>
+<ul><li>1</li><li>4</li><li>5</li><li>9</li></ul>
+<ol><li>Evaluate $2a + 3b$ when $a = 5$ and $b = 2$.</li></ol>
+<ul><li>10</li><li>16</li><li>12</li><li>20</li></ul>
+<ol><li>Which of these are like terms?</li></ol>
+<ul><li>$3x$ and $5y$</li><li>$2x^2$ and $4x^2$</li><li>$x$ and $x^2$</li><li>$5$ and $5x$</li></ul>
+<ol><li>Simplify $6m + 4 - 2m + 1$.</li></ol>
+<ul><li>$4m + 5$</li><li>$8m + 5$</li><li>$4m + 3$</li><li>$6m + 1$</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>A symbol representing an unknown or changeable quantity</li><li>4</li><li>16</li><li>$2x^2$ and $4x^2$</li><li>$4m + 5$</li></ol>
+</details>
+<p>---</p>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Descartes, René. <em>La Géométrie</em> (1637). The foundational text introducing coordinate geometry and the $x$, $y$, $z$ convention.</li><li>Viète, François. <em>In Artem Analyticam Isagoge</em> (1591). Pioneered the systematic use of letters for unknowns.</li><li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Variable_(mathematics" target="_blank" rel="noopener">Variable (mathematics)</a>)</li><li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Algebraic_expression" target="_blank" rel="noopener">Algebraic expression</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-02-algebra-is-born/ch-030-from-words-to-symbols/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">From Words to Symbols</span></a><a class="pager-link pager-link--next" href="../../world-02-algebra-is-born/ch-032-the-equation-and-the-balance/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Equation and the Balance</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

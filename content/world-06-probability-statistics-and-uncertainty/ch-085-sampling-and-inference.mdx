@@ -1,0 +1,292 @@
+---
+worldNumber: 6
+world: world-06-probability-statistics-and-uncertainty
+chapterNumber: 85
+title: "Sampling and Statistical Inference"
+subtitle: "How a sample of 1,000 can tell you about 300 million — if done carefully"
+historicalPeriod: "1900s–present"
+estimatedTimeMinutes: 40
+mainConcepts: ["sampling", "bias", "Central Limit Theorem", "confidence interval", "margin of error", "hypothesis testing intro"]
+learningObjectives:
+  - "Distinguish population parameters from sample statistics"
+  - "Identify sampling methods and potential biases"
+  - "State and apply the Central Limit Theorem"
+  - "Interpret confidence intervals and margin of error"
+  - "Understand the logic of hypothesis testing"
+---
+
+# Sampling and Statistical Inference
+
+## Story Hook
+
+It's election night, November 3, 1936. The Literary Digest, a prestigious magazine, publishes its presidential poll results with great confidence. Their headline predicts a landslide victory for Republican challenger Alf Landon over Franklin D. Roosevelt.
+
+The magazine did not take a casual poll. They had mailed questionnaires to 10 million Americans and received responses from 2.4 million. That is the largest political sample ever collected at that time.
+
+The night's results told a different story. Roosevelt won decisively, carrying 46 of 48 states.
+
+Meanwhile, a young statistician named George Gallup had released his own poll prediction. He surveyed only 50,000 people carefully selected to represent the nation. He predicted Roosevelt's victory, nearly perfectly.
+
+How did the smaller, cheaper poll beat the massive one?
+
+The answer is sampling bias.
+
+## Why It Matters
+
+You cannot always ask everyone a question. You cannot interview all 300 million Americans about their voting plans. You cannot test every lightbulb a factory produces. You cannot measure the lead content in every grain of rice shipped to the country.
+
+So we sample. We ask a subset and infer about the whole.
+
+But sampling is delicate. If your sample is not truly representative, your inference will be wrong—sometimes spectacularly so. The Literary Digest mailed questionnaires to people who owned cars and telephones and subscribed to magazines. In 1936, during the Great Depression, those people skewed wealthy and Republican. People without cars, phones, and subscriptions—poorer Americans, who favored Roosevelt—barely heard the poll.
+
+This chapter is about how to sample well, how to measure what you learn from samples, and how to use that learning to make statements about populations we cannot fully observe.
+
+It is foundational to modern science, medicine, marketing, and democracy itself.
+
+## Historical Context
+
+Sampling theory emerged slowly. For centuries, if you wanted to know something about a population, you tried to count everyone. The census, conducted every ten years in the United States since 1790, is the oldest attempt at a complete population count for democratic purposes.
+
+But completeness is expensive, slow, and imperfect. In the early 1900s, statisticians began asking whether we could do better by being smarter, not bigger.
+
+Karl Pearson, Ronald Fisher, and Jerzy Neyman developed the mathematical foundations of sampling theory in the 1920s and 1930s. Their work showed that a carefully chosen small sample could be more reliable than a careless large one.
+
+George Gallup and Elmo Roper applied these ideas to commercial polling in the 1930s. Their success—especially in the 1936 election—made sampling the standard tool for opinion research, market research, and scientific studies.
+
+Today, sampling underlies virtually every statement you hear about national averages, prevalence of disease, consumer preferences, and social trends.
+
+## Core Concept
+
+**Population and Sample.** A population is the entire group you want to learn about. A sample is the subset you actually observe.
+
+When we measure a characteristic of a population—say, the average height of all American adults—we call it a **parameter**. We rarely know the true parameter, but we can estimate it using a **statistic** computed from a sample.
+
+For example:
+- The true average height of all American adults (parameter) is unknown.
+- The average height of 1,000 randomly surveyed Americans (statistic) estimates the parameter.
+
+**Sampling Methods.** How you select your sample determines whether your statistic is likely to estimate the parameter well.
+
+**Simple random sampling:** Every person (or item) in the population has an equal chance of being selected. This is the gold standard when it is feasible. Draw names from a hat; use a random number generator; both are simple random sampling.
+
+**Stratified sampling:** Divide the population into groups (strata) based on a characteristic (age, region, income), then randomly sample within each stratum. If you want to poll across rural and urban America equally, stratify by location first, then randomly sample each.
+
+**Cluster sampling:** Divide the population into clusters (perhaps geographic), randomly select clusters, then sample everyone (or everyone in a sample) within those clusters. Useful when a complete list is unavailable but clusters are easy to identify.
+
+**Systematic sampling:** Select every $k$-th item from a list. Simple, used in quality control.
+
+**Convenience sampling:** Take whatever sample is easy to get—poll people at a mall, survey your classroom. Fast, but often biased. Avoid for statistical inference about populations.
+
+**Sampling Bias.** A sample can be large and still give systematically wrong estimates if it is biased.
+
+**Voluntary response bias:** People who respond are more motivated than non-responders, skewing results. "Call 1-800-POLL-NOW to vote on tonight's question!"—only passionate people call.
+
+**Non-response bias:** People who don't answer differ from those who do. Richer, healthier, busier people may refuse surveys; poorer, sicker, less busy people may respond.
+
+**Undercoverage:** Some population members cannot be selected. The Literary Digest's questionnaires never reached millions of poor Americans. Telephone polls undercover the phoneless. Online surveys undercover the internet-less.
+
+**Convenience bias:** Your sample is too easily reached. "Everyone I know agrees with me" is not evidence that everyone does.
+
+## Definitions and Formal Lesson
+
+**Parameter:** A numerical characteristic of the population, usually denoted $\mu$ (mean), $\sigma$ (standard deviation), $p$ (proportion), or $\rho$ (correlation).
+
+**Statistic:** A numerical characteristic of the sample, usually denoted $\bar{x}$ (sample mean), $s$ (sample standard deviation), $\hat{p}$ (sample proportion), $r$ (sample correlation).
+
+**Sampling distribution:** The probability distribution of a statistic across all possible samples of size $n$ from the population.
+
+**Standard error:** The standard deviation of the sampling distribution, denoted $SE = \frac{\sigma}{\sqrt{n}}$ for the sample mean. It measures the typical difference between the sample statistic and the population parameter.
+
+**Central Limit Theorem (CLT):** If we draw a large random sample ($n \geq 30$ is a useful rule of thumb) from *any* population with mean $\mu$ and standard deviation $\sigma$, the sample mean $\bar{X}$ is approximately normally distributed with mean $\mu$ and standard deviation $\frac{\sigma}{\sqrt{n}}$.
+
+Mathematically:
+$$\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right) \quad \text{for large } n$$
+
+**Confidence Interval:** A range that likely contains the true parameter. A 95% confidence interval for the population mean is:
+$$\bar{x} \pm z^* \cdot \frac{\sigma}{\sqrt{n}}$$
+where $z^* = 1.96$ for 95% confidence.
+
+We say: "I am 95% confident that the true population mean lies between [lower bound] and [upper bound]."
+
+**Margin of Error:** Half the width of the confidence interval, $z^* \cdot \frac{\sigma}{\sqrt{n}}$. A margin of ±3 percentage points means our estimate could be off by up to 3 points in either direction.
+
+**Hypothesis Testing (Conceptual):** We assume a null hypothesis $H_0$ (a statement about the parameter—often "no effect, no difference"). We collect data. We compute a test statistic and a $p$-value: the probability of observing data at least as extreme as what we got, if $H_0$ were true. If the $p$-value is very small (typically $p < 0.05$), we reject $H_0$ and conclude the alternative hypothesis $H_a$ is plausible.
+
+## Worked Examples
+
+**Example 1: Sample size and standard error.**
+
+A factory manufactures bolts. The population standard deviation is $\sigma = 0.5$ mm. We draw a sample of $n = 100$ bolts and measure the average length as $\bar{x} = 25.1$ mm. What is the standard error?
+
+$$SE = \frac{\sigma}{\sqrt{n}} = \frac{0.5}{\sqrt{100}} = \frac{0.5}{10} = 0.05 \text{ mm}$$
+
+The standard error is 0.05 mm. Our sample mean is typically about 0.05 mm away from the true population mean.
+
+**Example 2: Confidence interval.**
+
+Continuing Example 1, construct a 95% confidence interval for the true population mean.
+
+$$\bar{x} \pm 1.96 \cdot SE = 25.1 \pm 1.96(0.05) = 25.1 \pm 0.098$$
+
+The 95% confidence interval is $(25.002, 25.198)$ mm.
+
+We are 95% confident the true population mean bolt length is between 25.002 and 25.198 mm.
+
+**Example 3: Margin of error in polling.**
+
+A poll of 1,000 registered voters finds that 52% support a candidate. What is the approximate margin of error at 95% confidence?
+
+Here $n = 1000$, $\hat{p} = 0.52$, $\hat{q} = 0.48$.
+
+$$SE_{\hat{p}} = \sqrt{\frac{\hat{p}\hat{q}}{n}} = \sqrt{\frac{(0.52)(0.48)}{1000}} = \sqrt{0.0002496} \approx 0.0158$$
+
+Margin of error $= 1.96 \times 0.0158 \approx 0.031$, or about 3.1 percentage points.
+
+The 95% confidence interval is $52\% \pm 3.1\%$, or $(48.9\%, 55.1\%)$.
+
+**Example 4: Identifying bias.**
+
+A survey recruits participants through a Facebook ad: "Tell us what you think about social media!" Who responds? People who (a) use Facebook, (b) see the ad, (c) feel strongly enough to click. This is voluntary response bias combined with undercoverage (no non-Facebook users). Any inference to "what the general population thinks" will be biased.
+
+## Common Sampling Scenarios and Pitfalls
+
+**Online surveys.** A website offers a survey: "Tell us what you think! Click here." Who responds? People with internet access, time to spend on surveys, and strong opinions. People who are busy, offline, or neutral skip it. The result is skewed.
+
+To improve: use random sampling from a defined population (e.g., a pre-recruited panel) rather than open participation.
+
+**Telephone polling.** For decades, pollsters called landlines. But younger people use cell phones, and some use neither. People who screen calls are systematically excluded. Non-response bias—people who refuse to talk—correlates with politics and education.
+
+Modern polls use multiple modes (landline, cell, online) and weight results to match census demographics.
+
+**Workplace surveys.** A company surveys employees about morale. Employees who are unhappy might skip it (thinking it is pointless) or complete it with exaggerated negativity (hoping to spur change). Satisfied employees might also skip it (feeling their input does not matter). The respondents are a biased subset.
+
+To improve: make surveys anonymous, emphasize that responses are taken seriously, and use multiple methods to reach all groups.
+
+## Practice Set
+
+1. Define the population and sample in each scenario:
+   - a) A quality inspector tests 50 light bulbs from a batch of 10,000 to estimate how many are defective.
+   - b) A political scientist surveys 800 registered voters to estimate the proportion who will vote in the upcoming election.
+
+2. Name the sampling method:
+   - a) To survey customer satisfaction, a bank calls every 50th customer from their customer database.
+   - b) A researcher wants to survey high school students across the state. She randomly selects 5 schools, then randomly samples 40 students from each.
+
+3. Identify the type of bias:
+   - a) A survey asks: "Do you agree that the government wastes too much money?" (hint: leading question bias, but also think about who responds)
+   - b) A health survey conducted at a gym has higher rates of exercise than a survey of the general population.
+
+4. If a population has $\mu = 100$ and $\sigma = 15$, what is the standard error of the sample mean when $n = 25$?
+
+5. A researcher surveys 400 people about household income and finds $\bar{x} = \$65,000$ with $s = \$20,000$. Approximate the 95% confidence interval for the population mean household income.
+
+## Thinking Critically About Samples
+
+When you encounter a study or poll, ask yourself:
+
+**How was the sample selected?** Random selection is best. Convenience sampling (whoever is easiest to reach) is suspect. Voluntary response (people choose whether to participate) is highly biased.
+
+**Is there potential undercoverage?** Are some population members systematically missed? Internet polls miss the offline population. Telephone polls miss the phoneless. In-person surveys miss the homebound. A sample that misses entire groups is unreliable.
+
+**What is the non-response rate?** If 100 people are surveyed and 50 respond, the 50 who responded might differ systematically from the 50 who declined. If 100 are surveyed and 95 respond, the sample is more credible.
+
+**Is the sample size adequate?** Bigger is generally better (narrower confidence intervals), but a biased sample of 10,000 is worse than an unbiased sample of 500. Quality matters more than quantity.
+
+**What is the margin of error?** This tells you the range of plausible values for the population parameter. A margin of ±3 percentage points is typical for 1,000-person polls. A margin of ±10 percentage points (from a smaller sample) is much wider.
+
+**Are there relevant subgroups?** A poll of "likely voters" might differ from "registered voters" or "all adults." A study of hospital patients might not represent healthy people. Check whether the sample matches the population of interest.
+
+## Reasoning Task
+
+**The Replication Problem.** A team of researchers publishes a study: "Drinking coffee reduces the risk of heart disease." The study surveyed 10,000 people and found a statistically significant association ($p = 0.03$). The result makes the news.
+
+Three years later, a larger, better-controlled study of 50,000 people finds no association ($p = 0.65$).
+
+Why might the first study have found an effect that does not truly exist? (Hint: think about sampling variability, multiple comparisons, and publication bias. If the team tested 20 different beverages, what do you expect by chance alone?)
+
+## Application
+
+**Election polling:** News outlets commission polls of 1,000–2,000 voters before elections. How is the sampling done to avoid the fate of the Literary Digest? Modern polls stratify by age, education, race, and region, and use random digit dialing (for phone) or online panel recruitment. They weight results to match census data. The margin of error is typically ±3 percentage points for a sample of 1,000. Yet polls often differ from each other and from final results. Why? Sampling variability, non-response, and late-deciding voters all play a role.
+
+**Medical trials:** Before a new drug is approved, it is tested on thousands of participants in randomized controlled trials. Why? To use sampling and statistical inference to estimate the drug's true effect on the population. A treatment group receives the drug; a control group receives a placebo. Randomization ensures both groups are representative of the population.
+
+## The Modern Sampling Landscape
+
+Today's sampling challenges differ from those of the 20th century. In the era of big surveys (Gallup, Pew Research), the cost of sampling was high; people were hired to call households or conduct in-person interviews. Precision mattered because each additional response was expensive.
+
+The internet changed that. Now it is cheap to collect responses from thousands. Companies conduct rapid A/B tests with millions of users. But new problems emerged:
+
+**Selection bias in online settings:** People who respond to online surveys are self-selected (they chose to participate). Algorithms can adjust statistically, but the bias is real. A survey of "website visitors" never reaches people who don't visit the site.
+
+**The proliferation of data.** Companies like Google, Facebook, and Amazon have access to massive datasets. Sampling becomes less necessary; they observe entire populations of users. But new challenges arise: the population is all internet users (biased toward wealthy, educated populations), and privacy concerns limit how data can be used.
+
+**Synthetic populations.** With powerful computers, researchers can simulate populations and sample from them. If you know the distribution of a variable, you can generate billions of samples to understand its properties. This computational approach complements traditional sampling.
+
+The principles remain: representative samples are more informative than larger biased samples, variability decreases with $\sqrt{n}$, and understanding bias is critical.
+
+## Recap
+
+Population parameters are usually unknown. We use statistics from random samples to estimate them. The *method* of sampling—random, stratified, etc.—matters more than the *size* of the sample; a biased sample of millions is worse than an unbiased sample of thousands.
+
+The **Central Limit Theorem** guarantees that for large samples, the sample mean is approximately normally distributed with standard error $SE = \sigma/\sqrt{n}$. This justifies confidence intervals and hypothesis tests.
+
+A **confidence interval** gives a range likely to contain the true parameter. A **margin of error** quantifies our uncertainty.
+
+**Hypothesis testing** asks: if a null hypothesis were true, how likely is the data we observed? Small p-values suggest the null hypothesis is false.
+
+Sampling is not easy—it is a craft, honed over a century, and still prone to mistakes. But when done right, it lets us learn about vast populations from small, manageable samples.
+
+## Unlock Quiz
+
+1. The Literary Digest poll in 1936 had 2.4 million responses but predicted incorrectly. George Gallup's poll had 50,000 responses and predicted correctly. The key difference was:
+   - A majority of the Literary Digest respondents were wealthy people with cars and phones
+   - Gallup's sample was selected to be representative of the entire population
+   - The Literary Digest used convenience sampling
+   - All of the above
+
+2. A coffee shop wants to estimate the average daily revenue. Rather than checking revenue every day for a year, they randomly choose 30 days and average the revenue. What is the 30-day selection an example of?
+   - A parameter
+   - A sample
+   - A population
+   - A statistic (once computed)
+
+3. A hospital wants to survey patient satisfaction across its five departments. It randomly selects 10 patients from each department. This is an example of:
+   - Simple random sampling
+   - Stratified sampling
+   - Cluster sampling
+   - Convenience sampling
+
+4. If a population has standard deviation $\sigma = 10$ and we draw a sample of size $n = 100$, the standard error of the sample mean is:
+   - 10
+   - 1
+   - 0.1
+   - 100
+
+5. A poll of 1,000 people finds 60% support a policy. The margin of error at 95% confidence is approximately 3 percentage points. What does this mean?
+   - We are 95% sure the true proportion is between 57% and 63%
+   - The poll might be off by as much as 3 points
+   - There is a 95% chance that anywhere from 57% to 63% of the population supports the policy
+   - All of the above
+
+<details>
+<summary>Unlock Quiz Answers</summary>
+
+1. **D — All of the above.** The Literary Digest suffered from undercoverage and non-response bias; its sample was systematically skewed toward wealthy, Republican respondents. Gallup deliberately ensured his sample was representative.
+
+2. **B — A sample.** The 30 randomly chosen days form a sample. Once you compute the average, that average is a statistic.
+
+3. **B — Stratified sampling.** The hospital divided the population (all patients) into strata (five departments), then randomly sampled from each stratum.
+
+4. **B — 1.** $SE = \frac{10}{\sqrt{100}} = \frac{10}{10} = 1$.
+
+5. **D — All of the above.** A 95% confidence interval means we are 95% confident the true proportion is in the interval [0.57, 0.63]. This is equivalent to saying the estimate could be off by as much as 3 percentage points.
+
+</details>
+
+## Source Notes
+
+- **Literary Digest Election Poll, 1936:** [https://en.wikipedia.org/wiki/Literary_Digest](https://en.wikipedia.org/wiki/Literary_Digest)
+- **George Gallup and polling:** [https://en.wikipedia.org/wiki/George_Gallup](https://en.wikipedia.org/wiki/George_Gallup)
+- **Sampling methods and bias:** [https://en.wikipedia.org/wiki/Sampling_(statistics)](https://en.wikipedia.org/wiki/Sampling_(statistics))
+- **Central Limit Theorem:** [https://en.wikipedia.org/wiki/Central_limit_theorem](https://en.wikipedia.org/wiki/Central_limit_theorem)
+- **Confidence intervals:** [https://en.wikipedia.org/wiki/Confidence_interval](https://en.wikipedia.org/wiki/Confidence_interval)

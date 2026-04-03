@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Non-Euclidean Geometry — When Parallel Lines Meet — Math Journey</title>
+    <meta name="description" content="What happens if Euclid&#x27;s fifth postulate is false — and why Einstein needed it" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 7 · Chapter 91</p>
+        <h1>Non-Euclidean Geometry — When Parallel Lines Meet</h1>
+        <p class="hero-copy">What happens if Euclid&#x27;s fifth postulate is false — and why Einstein needed it</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1830s–1900s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>State Euclid&#x27;s parallel postulate and explain why it is independent of the other four</li><li>Describe the properties of spherical and hyperbolic geometries</li><li>Compute angle sums in non-Euclidean triangles</li><li>Connect curved geometry to general relativity</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Two thousand years of mathematics rests on a single line in Euclid&#x27;s <em>Elements</em>, written in 300 BCE. It is the fifth postulate:</p>
+<p><em>If a straight line meets two other straight lines so as to make the two interior angles on the same side less than two right angles, then the two lines, being continually extended, shall meet on that side on which the angles are less than two right angles.</em></p>
+<p>Translated to modern language: through a point not on a line, there exists exactly one parallel line.</p>
+<p>This seems obvious. Picture a line, pick a point off the line, and draw a line through the point that never touches the first line. You&#x27;ve done it. There is only one such line (at a given angle). This is the geometry we learn in school. Euclidean geometry.</p>
+<p>For 2,000 years, mathematicians believed they could prove this fifth postulate from the other four. It seemed too obvious not to be derivable. Hundreds of attempts failed. Finally, in the 1820s, three mathematicians—Carl Friedrich Gauss, János Bolyai, and Nikolai Lobachevsky—realized something astonishing: the fifth postulate cannot be proved. It is independent.</p>
+<p>And if it is independent, then you can replace it with a different postulate and still build a consistent geometry.</p>
+<p>What if no parallel exists? Then you get spherical geometry, the geometry of a sphere&#x27;s surface. What if infinitely many parallels exist? Then you get hyperbolic geometry, a universe shaped like a saddle.</p>
+<p>For decades, these geometries seemed like curiosities—mathematical games with no connection to reality. Euclidean geometry described the world. Then Einstein arrived.</p>
+<p>In 1915, Einstein published the field equations of general relativity. They describe spacetime itself as curved. Near a massive object like the Sun, spacetime is not flat. It is curved in a non-Euclidean way. Light does not travel in straight lines; it follows the curves. The geometry of the universe is not Euclidean.</p>
+<p>The impossible geometry turned out to be how the universe actually works.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>For centuries, we thought geometry was a discovery, not an invention. We thought parallel lines were a fact about the world, not a choice. General relativity revealed the profound truth: the geometry of space and time is not given. It is determined by the distribution of matter and energy. Different regions of spacetime have different geometries.</p>
+<p>This realization changed physics forever. It means gravity is not a force pulling objects toward each other (Newton&#x27;s view). Instead, massive objects curve the spacetime around them, and other objects follow the natural paths (geodesics) through that curved space. An orbiting planet or a falling apple is not being pulled; it is traveling in a straight line through curved spacetime.</p>
+<p>Understanding non-Euclidean geometry is essential for understanding the universe at scales both cosmic (the expanding universe, black holes, the big bang) and quantum (where spacetime itself may be quantized and discrete).</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>From Euclid to the 19th century, the parallel postulate gnawed at mathematicians. It seemed less obvious than the other four. It was longer, more complex, more assertion than postulate.</p>
+<p>In the 1700s, mathematicians tried to prove it by contradiction: assume the fifth postulate is false and derive a logical contradiction. But every attempt led to strange, non-intuitive geometries—not contradictions.</p>
+<p>Johann Lambert, in the 1760s, explored what would happen if the parallel postulate were false. He derived properties of triangles in this strange geometry but could not find a logical flaw. Adrien-Marie Legendre spent years on the problem and nearly succeeded, but every proof had a subtle gap.</p>
+<p>By the 1820s, Gauss had begun to suspect the truth: the fifth postulate might be independent. He worked out the consequences of its negation but published nothing, worried about the reaction.</p>
+<p>János Bolyai, a Hungarian military officer and mathematician, was bolder. His father had worked on the postulate for years without success. János realized the key insight: the parallel postulate is not a logical consequence of the other four. You can build a consistent geometry where through a point not on a line, infinitely many parallels exist.</p>
+<p>At the same time, Nikolai Lobachevsky, a Russian mathematician, reached the same conclusion independently and published his results. Lobachevsky called his new geometry &quot;imaginary geometry.&quot;</p>
+<p>In the 1850s, Bernhard Riemann generalized the ideas further. He imagined abstract spaces of any dimension with varying curvature. He introduced the notion of a Riemannian manifold, a space that is locally Euclidean but globally curved.</p>
+<p>When Einstein needed a mathematical language to describe gravity, Riemannian geometry was waiting.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Euclid&#x27;s parallel postulate</strong> states: Through a point not on a line, exactly one parallel line exists.</p>
+<p>This is independent of Euclid&#x27;s other four postulates. You can replace it with a different axiom and get a different, but equally consistent, geometry.</p>
+<p><strong>Spherical geometry</strong> is the geometry of a sphere&#x27;s surface. In this space:</p>
+<ul><li>There are no parallel lines. Any two great circles (the analogs of straight lines on a sphere) intersect.</li><li>The sum of angles in a triangle is greater than 180°.</li><li>The &quot;shortest path&quot; between two points (a geodesic) is an arc of a great circle.</li><li>Examples: the surface of Earth, the celestial sphere.</li></ul>
+<p>In spherical geometry, if you draw a triangle with one vertex at the North Pole and the other two on the equator, the two angles at the equator are both 90°, and the angle at the pole is also close to 90°. The sum exceeds 180°.</p>
+<p><strong>Hyperbolic geometry</strong> is the geometry of a saddle-shaped surface or, more generally, any space with constant negative curvature. In this space:</p>
+<ul><li>Infinitely many parallel lines exist through a point not on a line.</li><li>The sum of angles in a triangle is less than 180°.</li><li>Geodesics are still the shortest paths.</li><li>Space &quot;expands&quot; faster as you move away from a point, unlike Euclidean space.</li></ul>
+<p><strong>Curvature</strong> is the key property distinguishing these geometries:</p>
+<ul><li><strong>Zero curvature:</strong> Euclidean space. Flat. The geometry of a plane.</li><li><strong>Positive curvature:</strong> Spherical space. Curved like a ball.</li><li><strong>Negative curvature:</strong> Hyperbolic space. Curved like a saddle or a Pringle chip.</li></ul>
+<p><strong>Geodesics</strong> are the analogs of straight lines in curved space. A geodesic is the shortest path between two points on a curved surface. On a plane, geodesics are straight lines. On a sphere, geodesics are arcs of great circles. On a hyperbolic surface, geodesics are curves that look locally straight but globally curved.</p>
+<p><strong>Riemannian geometry</strong> is the general theory of curved spaces. It allows the curvature to vary from place to place. A Riemannian manifold is a space that is locally Euclidean (looks flat when you zoom in) but globally curved.</p>
+<p><strong>General relativity</strong> tells us that spacetime itself is a Riemannian manifold. The curvature is determined by the distribution of matter and energy via Einstein&#x27;s field equations: $$G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$</p>
+<p>The left side describes the curvature of spacetime; the right side describes matter and energy. Objects follow geodesics through this curved spacetime.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<ul><li><strong>Euclid&#x27;s parallel postulate:</strong> Through a point not on a line, exactly one parallel line exists.</li><li><strong>Spherical geometry:</strong> The geometry of a sphere&#x27;s surface, where great circles are the analogs of lines.</li><li><strong>Hyperbolic geometry:</strong> A geometry with constant negative curvature, where infinitely many parallels exist.</li><li><strong>Great circle:</strong> The largest circle that can be drawn on a sphere (e.g., the equator, meridians).</li><li><strong>Curvature:</strong> A measure of how much a space deviates from being flat. Positive (sphere), zero (plane), or negative (saddle).</li><li><strong>Geodesic:</strong> The shortest path between two points on a curved surface or manifold.</li><li><strong>Riemannian manifold:</strong> An abstract space with a metric (notion of distance) that varies smoothly.</li><li><strong>General relativity:</strong> Einstein&#x27;s theory describing gravity as curvature of spacetime caused by mass and energy.</li><li><strong>Spacetime:</strong> The 4-dimensional continuum of space and time treated as a unified entity.</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Angle Sum in Spherical Geometry</strong> On a sphere, consider a triangle with one vertex at the North Pole and the other two vertices on the equator, separated by 90°.</p>
+<p>Solution:</p>
+<ul><li>The angle at the North Pole is 90° (the two meridians are perpendicular).</li><li>Each angle at the equator is also 90° (meridians meet the equator perpendicularly).</li><li>Total angle sum: $90° + 90° + 90° = 270° &gt; 180°$.</li></ul>
+<p>This violates Euclidean geometry but is consistent with spherical geometry.</p>
+<p><strong>Example 2: Parallels in Hyperbolic Geometry</strong> In Euclidean geometry through a point $P$ not on line $\ell$, exactly one parallel exists. In hyperbolic geometry, infinitely many exist.</p>
+<p>Explanation:</p>
+<ul><li>Consider the set of lines through $P$ that do not intersect $\ell$.</li><li>In Euclidean space, only the unique parallel satisfies this.</li><li>In hyperbolic space, a whole &quot;cone&quot; of lines through $P$ never meets $\ell$.</li><li>The boundary lines between those that meet $\ell$ and those that don&#x27;t are called the <em>limiting parallel lines</em>.</li></ul>
+<p><strong>Example 3: Angle Sum in Hyperbolic Geometry</strong> In hyperbolic space, a triangle has angle sum less than 180°. For instance, an equilateral triangle might have angles of 50° each, summing to 150°.</p>
+<p>Explanation:</p>
+<ul><li>This is possible in hyperbolic geometry because space &quot;expands&quot; as you move outward.</li><li>The sides of the triangle can remain equidistant yet diverge, creating smaller angles.</li></ul>
+<p><strong>Example 4: Curvature and Geometry</strong> A sphere of radius $R$ has constant curvature $K = 1/R^2$. A plane has curvature $K = 0$. A hyperbolic saddle has negative curvature $K &lt; 0$.</p>
+<p>Relationship to angle sums:</p>
+<p>$$\text{angle sum} = \pi + KA$$</p>
+<ul><li>For a triangle in a space with constant curvature $K$, if the area is $A$, then:</li><li>When $K = 0$ (Euclidean): angle sum $= \pi = 180°$.</li><li>When $K &gt; 0$ (spherical): angle sum $&gt; 180°$.</li><li>When $K &lt; 0$ (hyperbolic): angle sum $&lt; 180°$.</li></ul>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>State Euclid&#x27;s parallel postulate in your own words.</li></ol>
+<ol><li>Describe what happens to parallel lines on the surface of a sphere.</li></ol>
+<ol><li>In hyperbolic geometry, what is the relationship between the number of parallel lines through a point and Euclidean geometry?</li></ol>
+<ol><li>A triangle on a sphere has angles 100°, 80°, and 110°. What is the angle sum? Is this possible in Euclidean geometry?</li></ol>
+<ol><li>What is a geodesic? Give examples in Euclidean, spherical, and hyperbolic spaces.</li></ol>
+<ol><li>On Earth (approximately a sphere), the shortest route between two cities is along what type of path?</li></ol>
+<ol><li>In general relativity, what role does curvature play in describing gravity?</li></ol>
+<ol><li>Why is it impossible to draw a perfect map of Earth on a flat piece of paper without distortion?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Problem:</strong> In a hyperbolic plane, the sum of angles in a triangle is less than 180°. Explain geometrically why this makes sense given that the space curves inward (negative curvature).</p>
+<p><strong>Hint:</strong> Think about what happens to parallel lines in a hyperbolic space. If lines diverge as you move outward, how does that affect the angles in a triangle?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Navigation and Cartography:</strong> Commercial airline pilots and ship captains navigate along great circles on Earth&#x27;s surface, not along lines of constant latitude. A great circle is a geodesic on the sphere. Flying from New York to Tokyo along a great circle is shorter than flying along a path of constant latitude, even though the latitude path looks more direct on a standard (Mercator) map. This is an application of spherical geometry.</p>
+<p><strong>General Relativity and Cosmology:</strong> The universe itself may be described as a 4-dimensional Riemannian manifold (spacetime). Near massive objects like stars and black holes, spacetime is highly curved. Light bends around the Sun, as Einstein predicted in 1919 and observations confirmed. On cosmological scales, the universe&#x27;s curvature determines its past and future: a positively curved universe will eventually contract; a flat or negatively curved universe will expand forever. Measuring the curvature of the universe is one of the fundamental questions of cosmology.</p>
+<p><strong>Black Holes:</strong> A black hole is a region where spacetime is so severely curved that nothing, not even light, can escape. The event horizon is the boundary—the point of no return. Black holes are predictions of general relativity and have been observed astronomically.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>For 2,000 years, mathematicians tried to prove Euclid&#x27;s parallel postulate from the other axioms and failed. In the 1820s, Gauss, Bolyai, and Lobachevsky realized the postulate is independent: you can construct valid geometries where it is false. On a sphere, no parallels exist (spherical geometry); in a hyperbolic space, infinitely many do. These geometries have different curvatures and different rules for angle sums in triangles. Gauss and Riemann generalized these ideas into the theory of Riemannian geometry—spaces with variable curvature. When Einstein developed general relativity in 1915, he discovered that spacetime itself is curved, with the curvature determined by matter and energy. The &quot;impossible&quot; geometry turned out to describe the universe.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>Euclid&#x27;s parallel postulate states that...</li></ol>
+<ul><li>Any two lines eventually intersect</li><li>Through a point not on a line, exactly one parallel exists</li><li>Through a point not on a line, infinitely many parallels exist</li><li>No parallel lines exist</li></ul>
+<ol><li>In spherical geometry, what is the sum of angles in a triangle?</li></ol>
+<ul><li>Always less than 180°</li><li>Always exactly 180°</li><li>Always greater than 180°</li><li>Depends on the specific triangle</li></ul>
+<ol><li>A geodesic is...</li></ol>
+<ul><li>The longest path between two points</li><li>The shortest path between two points on a curved surface</li><li>A line that never curves</li><li>A path that always maintains constant distance from a reference point</li></ul>
+<ol><li>General relativity describes gravity as...</li></ol>
+<ul><li>A force pulling objects together</li><li>Curvature of spacetime caused by mass and energy</li><li>A quantum field interaction</li><li>A wave propagating through space</li></ul>
+<ol><li>Which of the following is an application of non-Euclidean geometry?</li></ol>
+<ul><li>Designing a computer program</li><li>Navigation along great circles on Earth</li><li>Adding numbers</li><li>Writing a novel</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>Through a point not on a line, exactly one parallel exists</li></ol>
+<ol><li>Always greater than 180°</li></ol>
+<ol><li>The shortest path between two points on a curved surface</li></ol>
+<ol><li>Curvature of spacetime caused by mass and energy</li></ol>
+<ol><li>Navigation along great circles on Earth</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Euclid and the parallel postulate: <a href="https://en.wikipedia.org/wiki/Parallel_postulate" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Parallel_postulate</a></li><li>Gauss, Bolyai, and Lobachevsky: <a href="https://en.wikipedia.org/wiki/Non-Euclidean_geometry" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Non-Euclidean_geometry</a></li><li>Bernhard Riemann and Riemannian geometry: <a href="https://en.wikipedia.org/wiki/Riemannian_geometry" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Riemannian_geometry</a></li><li>Spherical geometry: <a href="https://en.wikipedia.org/wiki/Spherical_geometry" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Spherical_geometry</a></li><li>Hyperbolic geometry: <a href="https://en.wikipedia.org/wiki/Hyperbolic_geometry" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Hyperbolic_geometry</a></li><li>Einstein and general relativity: <a href="https://en.wikipedia.org/wiki/General_relativity" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/General_relativity</a></li><li>Spacetime curvature: <a href="https://en.wikipedia.org/wiki/Spacetime" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Spacetime</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-090-vectors-and-matrices/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Vectors and Matrices</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-092-symmetry-and-groups/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Mathematics of Symmetry — Groups</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

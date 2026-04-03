@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Points, Lines, and Angles — Math Journey</title>
+    <meta name="description" content="The basic objects of geometry, and how to measure direction and rotation" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 1 · Chapter 17</p>
+        <h1>Points, Lines, and Angles</h1>
+        <p class="hero-copy">The basic objects of geometry, and how to measure direction and rotation</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>foundational</span>
+          <span>Greece</span>
+          <span>Ancient Greece, ~300 BCE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Understand points, lines, and rays as geometric primitives.</li><li>Classify angles by measure and type.</li><li>Calculate missing angles using complementary, supplementary, and vertical angle relationships.</li><li>Apply angle reasoning to real geometric situations.</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#key-terms">Key Terms</a></li><li class="toc-level-3"><a href="#naming-angles-and-line-segments">Naming Angles and Line Segments</a></li><li class="toc-level-3"><a href="#classifying-angles-by-measure">Classifying Angles by Measure</a></li><li class="toc-level-3"><a href="#complementary-and-supplementary-angles">Complementary and Supplementary Angles</a></li><li class="toc-level-3"><a href="#vertical-angles">Vertical Angles</a></li><li class="toc-level-3"><a href="#the-angle-sum-at-a-point">The Angle Sum at a Point</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-identifying-angle-types">Example 1: Identifying Angle Types</a></li><li class="toc-level-3"><a href="#example-2-finding-complementary-and-supplementary-angles">Example 2: Finding Complementary and Supplementary Angles</a></li><li class="toc-level-3"><a href="#example-3-vertical-angles-and-missing-angles">Example 3: Vertical Angles and Missing Angles</a></li><li class="toc-level-3"><a href="#example-4-using-complementary-angles">Example 4: Using Complementary Angles</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-3"><a href="#warm-up">Warm-Up</a></li><li class="toc-level-3"><a href="#core-practice">Core Practice</a></li><li class="toc-level-3"><a href="#stretch">Stretch</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>A surveyor stands on the edge of a valley at dawn. She has no compass, no instruments—only a stick, two markers, and her knowledge. She plants the stick upright and watches the shadow it casts. She measures the angle between the shadow and a distant peak. By that single angle, and others like it, she can measure a distance she can never walk.</p>
+<p>Angles are how we measure direction, rotation, and separation. They are invisible, yet as measurable as distance. To understand them, we must first understand the simplest shapes: the point, the line, and the angle itself.</p>
+<p>This chapter begins where the Greeks began: with the building blocks of all geometry.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Angles and lines matter because they:</p>
+<ul><li>allow you to measure direction and rotation without walking or traveling</li><li>let you describe the tilt and shape of everything you see</li><li>form the basis for all polygons, which are made of line segments and angles</li><li>appear everywhere in surveying, building, navigation, and astronomy</li><li>connect geometry to trigonometry and advanced mathematics</li></ul>
+<p>If you understand points, lines, and angles, you have the foundation for everything else in geometry. Without them, shapes are just vague pictures. With them, shapes become measurable.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Around 300 BCE, the Greek mathematician Euclid compiled the <em>Elements</em>, a 13-book compendium of geometry that would define mathematics for over 2000 years. He began not with complicated shapes but with definitions. The first definitions of the <em>Elements</em> are:</p>
+<ul><li>A point is that which has no part.</li><li>A line is a length without breadth.</li></ul>
+<p>These are idealized objects. A point on paper has a tiny dot with size. A line drawn on paper has width. But in geometry, we imagine perfect points with zero size and perfect lines with zero width extending infinitely in both directions.</p>
+<p>This habit—of imagining ideal objects sharper and purer than anything we can draw—is central to how Greek geometry worked. The Greeks were not trying to describe drawings. They were describing ideas.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>Geometry begins with two things that seem like nothing: <strong>the point</strong> and <strong>the line</strong>.</p>
+<p>A <strong>point</strong> is a location with no size. It has no length, width, or height. When you mark a dot on paper to represent a point, the dot itself is too big—it is just our way of pointing at the invisible location.</p>
+<p>A <strong>line</strong> is straight and extends infinitely in both directions. It has length but no width or height. If you imagine a laser beam made infinitely thin, extending forever forward and forever backward, you have the idea of a line.</p>
+<p>From these two primitives, we build everything else.</p>
+<p><strong>Rays</strong> and <strong>line segments</strong> are parts of a line:</p>
+<ul><li>A <strong>line segment</strong> is the part of a line between two points, including those endpoints. It has finite length.</li><li>A <strong>ray</strong> is a line that begins at a point and extends infinitely in one direction.</li></ul>
+<p>An <strong>angle</strong> is formed when two rays share the same starting point (called the <strong>vertex</strong>). The angle measures the rotation or separation between those rays.</p>
+<p><strong>Angles are measured in degrees</strong> (°). A full rotation is 360°. A rotation halfway around is 180°. A quarter rotation is 90°.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="key-terms">Key Terms</h3>
+<p><strong>Point</strong> A location with no size, no length, no width, no height. Represented by a dot on paper or the intersection of two lines.</p>
+<p><strong>Line</strong> A straight path extending infinitely in both directions, with no thickness. Defined by any two points on it.</p>
+<p><strong>Line Segment</strong> The part of a line between two points, including the endpoints. Has finite length.</p>
+<p><strong>Ray</strong> A part of a line that begins at a point and extends infinitely in one direction.</p>
+<p><strong>Plane</strong> A flat surface extending infinitely in all directions, with no thickness. All of Euclidean geometry happens on a plane.</p>
+<p><strong>Angle</strong> The measure of rotation between two rays that share a starting point (the vertex). Measured in degrees.</p>
+<p><strong>Vertex</strong> The point where two rays or line segments meet to form an angle.</p>
+<p><strong>Degree (°)</strong> A unit of angle measurement. One full rotation = 360°.</p>
+<h3 id="naming-angles-and-line-segments">Naming Angles and Line Segments</h3>
+<p>When three points are collinear (on the same line), we can name an angle using three letters:</p>
+<ul><li>The middle letter is the vertex.</li><li>The first and third letters are points on the two rays.</li></ul>
+<p>Example: angle ABC is the angle at point B, formed by ray BA and ray BC.</p>
+<p>We can also name an angle with a single letter or number: angle B, or ∠1.</p>
+<h3 id="classifying-angles-by-measure">Classifying Angles by Measure</h3>
+<h4 id="acute-angle">Acute Angle</h4>
+<p>An angle that measures more than 0° and less than 90°.</p>
+<p>Example: 45°, 60°, 89°</p>
+<h4 id="right-angle">Right Angle</h4>
+<p>An angle that measures exactly 90°. Often marked with a small square in the corner.</p>
+<h4 id="obtuse-angle">Obtuse Angle</h4>
+<p>An angle that measures more than 90° and less than 180°.</p>
+<p>Example: 100°, 135°, 179°</p>
+<h4 id="straight-angle">Straight Angle</h4>
+<p>An angle that measures exactly 180°. The two rays form a straight line.</p>
+<h4 id="reflex-angle">Reflex Angle</h4>
+<p>An angle that measures more than 180° and less than 360°.</p>
+<p>Example: 200°, 270°, 359°</p>
+<h3 id="complementary-and-supplementary-angles">Complementary and Supplementary Angles</h3>
+<p><strong>Complementary Angles</strong> Two angles that add up to 90°.</p>
+<p>If angle A = 35°, then its complement is 90° − 35° = 55°.</p>
+<p><strong>Supplementary Angles</strong> Two angles that add up to 180°.</p>
+<p>If angle A = 100°, then its supplement is 180° − 100° = 80°.</p>
+<h3 id="vertical-angles">Vertical Angles</h3>
+<p>When two lines intersect, they form four angles. The angles opposite each other (not touching) are called <strong>vertical angles</strong>, and they are always equal.</p>
+<p>Example: If two lines cross, and one angle is 50°, then the angle directly opposite it is also 50°. The other two angles are each 130°.</p>
+<h3 id="the-angle-sum-at-a-point">The Angle Sum at a Point</h3>
+<p>All angles formed around a single point on one side of a line add up to 180°. All angles formed around a complete point add up to 360°.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-identifying-angle-types">Example 1: Identifying Angle Types</h3>
+<p>Classify each angle by its measure:</p>
+<ul><li>Angle 1: 35°</li><li>Angle 2: 90°</li><li>Angle 3: 145°</li><li>Angle 4: 180°</li></ul>
+<p><strong>Solution</strong></p>
+<ul><li>Angle 1 (35°): acute (less than 90°)</li><li>Angle 2 (90°): right (exactly 90°)</li><li>Angle 3 (145°): obtuse (more than 90°, less than 180°)</li><li>Angle 4 (180°): straight (exactly 180°)</li></ul>
+<h3 id="example-2-finding-complementary-and-supplementary-angles">Example 2: Finding Complementary and Supplementary Angles</h3>
+<p>One angle measures 42°.</p>
+<p>a) Find its complement. b) Find its supplement.</p>
+<p><strong>Solution</strong> a) Complement: 90° − 42° = 48°</p>
+<p>b) Supplement: 180° − 42° = 138°</p>
+<h3 id="example-3-vertical-angles-and-missing-angles">Example 3: Vertical Angles and Missing Angles</h3>
+<p>Two lines intersect. One of the angles formed is 65°. Find all four angles.</p>
+<p><strong>Solution</strong> When two lines intersect, they form two pairs of vertical angles.</p>
+<ul><li>Angle 1: 65° (given)</li><li>Angle 2: 65° (vertical to Angle 1)</li><li>Angle 3: 180° − 65° = 115° (supplementary to Angle 1)</li><li>Angle 4: 115° (vertical to Angle 3)</li></ul>
+<p>Check: 65° + 115° + 65° + 115° = 360° ✓</p>
+<h3 id="example-4-using-complementary-angles">Example 4: Using Complementary Angles</h3>
+<p>Two angles are complementary. One angle is twice the other. Find both angles.</p>
+<p><strong>Solution</strong> Let the smaller angle = x Then the larger angle = 2x</p>
+<p>Since they are complementary: x + 2x = 90° 3x = 90° x = 30°</p>
+<p>The smaller angle is 30°. The larger angle is 2(30°) = 60°.</p>
+<p>Check: 30° + 60° = 90° ✓</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<h3 id="warm-up">Warm-Up</h3>
+<ol><li>Name the angle at vertex B in the figure where ray BA and ray BC form an angle.</li><li>A right angle measures how many degrees?</li></ol>
+<h3 id="core-practice">Core Practice</h3>
+<ol><li>An angle measures 38°. Find its complement and its supplement.</li><li>Two lines intersect. One angle is 72°. Find the measures of the other three angles.</li><li>Two complementary angles are equal. What does each angle measure?</li><li>An obtuse angle is 125°. Is it possible for this angle to have a complement? Explain.</li></ol>
+<h3 id="stretch">Stretch</h3>
+<ol><li>Two lines intersect, and the four angles have a special property: two angles are 2x degrees and two angles are 3x degrees. Find the value of x.</li></ol>
+<details>
+<summary>Practice Answer Guide</summary>
+<ol><li>Angle ABC (or ∠ABC)</li><li>90 degrees</li><li>Complement: 90° − 38° = 52°. Supplement: 180° − 38° = 142°.</li><li>If one angle is 72°, then: the vertical angle is 72°, and the other two angles are each 180° − 72° = 108°.</li><li>Since they are equal and complementary: x + x = 90°, so 2x = 90°, so x = 45°. Each angle is 45°.</li><li>No. An obtuse angle is greater than 90°. A complement adds to 90°, so there is no positive angle that complements an obtuse angle.</li><li>Two angles of 2x° and two angles of 3x°. The angles around a point sum to 360°: 2(2x) + 2(3x) = 360°, so 4x + 6x = 360°, so 10x = 360°, so x = 36°.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>Two angles are supplementary. The first angle is three times larger than the second angle. Write 4 to 6 sentences explaining:</p>
+<ul><li>How you would set up the problem using a variable</li><li>What equation you would write</li><li>What the angles are</li><li>How you know your answer is correct</li></ul>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>Angles appear everywhere in the real world:</p>
+<p><strong>Surveying and Navigation:</strong> A surveyor uses angles to measure land and distances. By measuring angles to distant peaks or buildings, a surveyor can determine distances without traveling them.</p>
+<p><strong>Architecture and Construction:</strong> A builder must measure angles to ensure walls are perpendicular (90° angles) and roofs slope correctly. A leaning roof collapses; the angles must be precise.</p>
+<p><strong>Astronomy:</strong> Astronomers measure the angles between stars to map the sky and predict celestial motion.</p>
+<p><strong>Sports and Games:</strong> In billiards, golf, or bowling, the angle of impact determines where an object will go. Players understand angles intuitively, even if they do not think of degrees.</p>
+<p><strong>Clock and Time:</strong> The hands of a clock form angles that change as time passes. At 3:00, the hands form a 90° angle. At 6:00, they form a 180° angle.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li>A <strong>point</strong> is a location with no size.</li><li>A <strong>line</strong> extends infinitely in both directions.</li><li>A <strong>line segment</strong> is a finite piece of a line.</li><li>A <strong>ray</strong> begins at a point and extends infinitely in one direction.</li><li>An <strong>angle</strong> measures the rotation between two rays that share a vertex.</li><li>Angles are measured in <strong>degrees</strong>, where a full rotation is 360°.</li><li><strong>Acute angles</strong> measure less than 90°; <strong>right angles</strong> measure exactly 90°; <strong>obtuse angles</strong> measure between 90° and 180°.</li><li><strong>Complementary angles</strong> add to 90°; <strong>supplementary angles</strong> add to 180°.</li><li><strong>Vertical angles</strong> (opposite angles formed by intersecting lines) are always equal.</li><li>Understanding angles is the foundation for measuring direction, rotation, and all geometric shapes.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is the best definition of a point in geometry?</li></ol>
+<ul><li>A small dot drawn on paper</li><li>A location with no size, length, or width</li><li>The intersection of two line segments</li><li>A physical object with tiny dimensions</li></ul>
+<ol><li>Two complementary angles have measures of 35° and 55°. What is their sum?</li></ol>
+<ul><li>90°</li><li>145°</li><li>180°</li><li>360°</li></ul>
+<ol><li>Two lines intersect and form four angles. If one angle is 73°, what is the measure of an adjacent angle?</li></ol>
+<ul><li>73°</li><li>107°</li><li>180°</li><li>290°</li></ul>
+<ol><li>An angle measures 120°. How would you classify this angle?</li></ol>
+<ul><li>Acute</li><li>Right</li><li>Obtuse</li><li>Straight</li></ul>
+<ol><li>Vertical angles are formed when two lines intersect. What is always true about vertical angles?</li></ol>
+<ul><li>They add up to 180°</li><li>They are supplementary</li><li>They are equal in measure</li><li>They form right angles</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>A location with no size, length, or width</li><li>90°</li><li>107°</li><li>Obtuse</li><li>They are equal in measure</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" target="_blank" rel="noopener">Euclid&#x27;s Elements</a> provides the foundational definitions of points, lines, and angles that shaped geometry for over two millennia.</li><li><a href="https://en.wikipedia.org/wiki/Angle" target="_blank" rel="noopener">Angle</a> on Wikipedia covers angle measurement, classification, and properties including complementary and supplementary angles.</li><li><a href="https://en.wikipedia.org/wiki/Vertical_angles" target="_blank" rel="noopener">Vertical angles</a> explains the theorem that vertical angles are congruent.</li><li><a href="https://en.wikipedia.org/wiki/Line_(geometry" target="_blank" rel="noopener">Line (geometry)</a>) covers the geometric definitions of points, lines, line segments, and rays.</li><li><a href="https://en.wikipedia.org/wiki/Degree_(angle" target="_blank" rel="noopener">Degree (angle)</a>) explains the historical and mathematical basis for dividing a full rotation into 360°.</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-01-shape-measure-greek-project/ch-016-euclid-and-the-axiomatic-method/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Euclid and the Axiomatic Method</span></a><a class="pager-link pager-link--next" href="../../world-01-shape-measure-greek-project/ch-018-triangles/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Triangles</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

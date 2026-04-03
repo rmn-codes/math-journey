@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polar Coordinates and Complex Plane — Math Journey</title>
+    <meta name="description" content="Another way to describe every point — and why circles become simple" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 4 · Chapter ?</p>
+        <h1>Polar Coordinates and Complex Plane</h1>
+        <p class="hero-copy">Another way to describe every point — and why circles become simple</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1600s–1800s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Plot and identify points in polar coordinates</li><li>Convert between polar and Cartesian forms</li><li>Sketch simple polar curves</li><li>Connect polar form to complex number representation</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>A lighthouse keeper stands at the top of her tower, trying to warn an approaching ship about a dangerous reef. She doesn&#x27;t say, &quot;The reef is 2 km east and 3 km north of you.&quot; Instead, she radios, &quot;Reef bearing 53°, distance 3.6 km.&quot;</p>
+<p>That&#x27;s polar coordinates. Distance and angle, not x and y. For a navigator, this is exactly how the world looks: everything is described relative to where they are, in terms of how far away and which direction.</p>
+<p>But polar coordinates are more than just practical. They reveal something profound: some shapes that look complicated in rectangular coordinates become stunningly simple when you switch systems. A spiral that would take a messy equation in the x-y plane becomes a single line in polar space. A rose flower&#x27;s curve becomes one elegant equation. The choice of coordinate system is itself a mathematical tool—and sometimes the right choice makes the problem nearly solve itself.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>You&#x27;ve been thinking in Cartesian coordinates—x and y—since algebra class. They&#x27;re intuitive and universal. But they&#x27;re not the only way to describe the world, and sometimes they&#x27;re the hardest way.</p>
+<p>Polar coordinates are essential in fields where rotation and distance from a center matter more than left-right positioning. Radar systems use polar coordinates. Orbital mechanics for satellites. The analysis of rotating machinery. Electrical engineers studying alternating currents. Antennas broadcasting signals in patterns that are perfect circles or roses when described in polar form, but nightmarish equations in Cartesian form.</p>
+<p>More than that, polar coordinates connect trigonometry directly to complex numbers. A complex number can be written as $a + bi$ (rectangular form) or as a distance and angle (polar form). This connection reveals that multiplication of complex numbers is rotation and scaling—a profound geometric insight.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The development of polar coordinates was gradual. <strong>Grégoire de Saint-Vincent</strong> (1584–1667) used distance and angle implicitly when studying spirals. <strong>Isaac Newton</strong> (1642–1727) worked with what we&#x27;d now call polar equations when analyzing orbits and curves.</p>
+<p>But the systematic development came later. <strong>Leonhard Euler</strong> (1707–1783), perhaps the most prolific mathematician ever, formalized polar coordinates in the 1720s. He showed how to convert between rectangular and polar forms, and he discovered that many natural curves—especially those arising in physics—have elegant polar equations.</p>
+<p><strong>Complex numbers</strong> entered mathematics reluctantly. Mathematicians in the 1500s grudgingly used them to solve cubic equations, but they seemed artificial—&quot;imaginary,&quot; as they were dismissively called. The breakthrough came in the 1800s when <strong>Carl Friedrich Gauss</strong> (1777–1855) and others realized that complex numbers could be visualized as points in a 2D plane, with the real part on the x-axis and the imaginary part on the y-axis. Suddenly, complex numbers were geometric. And once you apply polar coordinates to this complex plane, multiplication becomes rotation—a miraculous connection between algebra and geometry.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Polar coordinates</strong> describe a point by two values: $r$ (the distance from the origin) and $\theta$ (the angle from the positive x-axis, measured counterclockwise).</p>
+<p>Imagine a point in the plane. In Cartesian coordinates, it&#x27;s at $(x, y) = (3, 4)$. In polar coordinates, it&#x27;s at $(r, \theta)$ where $r = \sqrt{3^2 + 4^2} = 5$ and $\theta = \arctan(4/3) \approx 53.1°$.</p>
+<p><strong>Converting between systems:</strong></p>
+<p>From Cartesian to polar: $$r = \sqrt{x^2 + y^2}$$ $$\theta = \arctan\left(\frac{y}{x}\right)$$ (with care for signs to get the right quadrant)</p>
+<p>From polar to Cartesian: $$x = r\cos\theta$$ $$y = r\sin\theta$$</p>
+<p>These conversions are just the definitions of sine and cosine on the unit circle, scaled by $r$.</p>
+<p><strong>Simple polar curves:</strong></p>
+<ul><li><strong>Circle:</strong> $r = a$ (all points at distance $a$ from the origin)</li><li><strong>Line through origin:</strong> $\theta = c$ (all points along a ray at angle $c$)</li><li><strong>Rose curves:</strong> $r = \cos(n\theta)$ or $r = \sin(n\theta)$ (petals radiating from the origin)</li><li><strong>Archimedean spiral:</strong> $r = \theta$ (a spiral that moves outward as it rotates)</li><li><strong>Logarithmic spiral:</strong> $r = ae^{b\theta}$ (a spiral found throughout nature)</li></ul>
+<p>What&#x27;s remarkable: these curves are <em>easy</em> in polar form. A rose with 5 petals is just $r = \cos(5\theta)$. In Cartesian form, it would be a mess.</p>
+<p><strong>Complex numbers in polar form:</strong></p>
+<p>A complex number $z = a + bi$ corresponds to the point $(a, b)$ in the complex plane. Its modulus (magnitude) is:</p>
+<p>$$|z| = \sqrt{a^2 + b^2} = r$$</p>
+<p>Its argument (angle) is:</p>
+<p>$$\arg(z) = \arctan(b/a) = \theta$$</p>
+<p>So we can write: $$z = r(\cos\theta + i\sin\theta) = r e^{i\theta}$$</p>
+<p>(The last form is Euler&#x27;s formula: $e^{i\theta} = \cos\theta + i\sin\theta$.)</p>
+<p>When you multiply two complex numbers in polar form: $$z_1 z_2 = (r_1 e^{i\theta_1})(r_2 e^{i\theta_2}) = r_1 r_2 e^{i(\theta_1 + \theta_2)}$$</p>
+<p>The magnitudes multiply and the angles add. Geometrically, multiplication is a rotation and a scaling.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Polar coordinates $(r, \theta)$:</strong></p>
+<ul><li>$r$: distance from the origin (the pole). Can be positive or negative (negative $r$ means the opposite direction).</li><li>$\theta$: angle measured counterclockwise from the positive x-axis. Can be given in degrees or radians.</li></ul>
+<p><strong>Multiple representations:</strong> A single point has infinitely many polar coordinates. For example, $(5, 53°)$ is the same as $(5, 413°)$ (add 360°) and $(5, -307°)$ (subtract 360°).</p>
+<p><strong>Conversion formulas:</strong></p>
+<p>$$r = \sqrt{x^2 + y^2}, \quad \theta = \arctan2(y, x)$$</p>
+<p>(The function $\arctan2(y, x)$ automatically handles all four quadrants.)</p>
+<p>$$x = r\cos\theta, \quad y = r\sin\theta$$</p>
+<p><strong>Polar equations:</strong> An equation in $r$ and $\theta$ is called a <em>polar equation</em>. Plotting it means finding all points $(r, \theta)$ satisfying the equation and drawing them in the polar coordinate system.</p>
+<p><strong>Complex number operations in polar form:</strong></p>
+<p>If $z_1 = r_1 e^{i\theta_1}$ and $z_2 = r_2 e^{i\theta_2}$, then:</p>
+<p>$$z_1 z_2 = r_1 r_2 e^{i(\theta_1 + \theta_2)}$$</p>
+<p>$$\frac{z_1}{z_2} = \frac{r_1}{r_2} e^{i(\theta_1 - \theta_2)}$$</p>
+<p>$$z_1^n = r_1^n e^{in\theta_1}$$</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Convert from Cartesian to polar</strong></p>
+<p>Convert $(x, y) = (-3, 4)$ to polar coordinates.</p>
+<p><em>Solution:</em></p>
+<p>$$r = \sqrt{(-3)^2 + 4^2} = \sqrt{9 + 16} = 5$$</p>
+<p>$$\theta = \arctan\left(\frac{4}{-3}\right)$$</p>
+<p>Since $x &lt; 0$ and $y &gt; 0$, we&#x27;re in the second quadrant. $\arctan(4/(-3)) \approx -53.1°$, but we add 180° to get the correct angle:</p>
+<p>$$\theta = 180° - 53.1° = 126.9°$$</p>
+<p>So $(x, y) = (-3, 4) \iff (r, \theta) = (5, 126.9°)$.</p>
+<p><strong>Example 2: Convert from polar to Cartesian</strong></p>
+<p>Convert $(r, \theta) = (3, 120°)$ to Cartesian coordinates.</p>
+<p><em>Solution:</em></p>
+<p>$$x = 3\cos 120° = 3 \cdot (-0.5) = -1.5$$</p>
+<p>$$y = 3\sin 120° = 3 \cdot \frac{\sqrt{3}}{2} = \frac{3\sqrt{3}}{2} \approx 2.6$$</p>
+<p>So $(r, \theta) = (3, 120°) \iff (x, y) = (-1.5, 2.6)$.</p>
+<p><strong>Example 3: Plot a rose curve</strong></p>
+<p>Sketch the polar curve $r = 2\cos(3\theta)$.</p>
+<p><em>Solution:</em></p>
+<p>As $\theta$ goes from $0°$ to $360°$, the angle $3\theta$ goes from $0°$ to $1080°$. The function $\cos(3\theta)$ completes three full cycles, creating three petals. The maximum distance is $r = 2$ (when $\cos(3\theta) = 1$). The curve is symmetric. By plotting points:</p>
+<ul><li>$\theta = 0°$: $r = 2\cos 0 = 2$ (petal pointing right)</li><li>$\theta = 30°$: $r = 2\cos 90° = 0$ (at origin)</li><li>$\theta = 60°$: $r = 2\cos 180° = -2$ (in opposite direction, maps to a second petal)</li><li>And so on...</li></ul>
+<p>The result is a three-petaled flower, symmetric and beautiful.</p>
+<p><strong>Example 4: Complex number multiplication</strong></p>
+<p>Let $z_1 = 2e^{i\pi/4}$ and $z_2 = 3e^{i\pi/6}$. Find $z_1 z_2$ in polar form.</p>
+<p><em>Solution:</em></p>
+<p>$$z_1 z_2 = (2)(3) e^{i(\pi/4 + \pi/6)} = 6 e^{i(3\pi/12 + 2\pi/12)} = 6 e^{i5\pi/12}$$</p>
+<p>In degrees: $6 e^{i \cdot 75°}$, or in rectangular form:</p>
+<p>$$z_1 z_2 = 6(\cos 75° + i\sin 75°) = 6(0.259 + 0.966i) \approx 1.55 + 5.79i$$</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Convert to polar:</strong> $(x, y) = (5, 5)$. Give both degrees and radians for $\theta$.</li></ol>
+<ol><li><strong>Convert to Cartesian:</strong> $(r, \theta) = (4, 210°)$.</li></ol>
+<ol><li><strong>Plot the curve</strong> $r = 1 + \cos\theta$ (a cardioid). Describe the shape.</li></ol>
+<ol><li><strong>Spiral:</strong> For $r = 0.5\theta$ (Archimedean spiral, with $\theta$ in radians), find $(x, y)$ when $\theta = \pi$. How many times has the spiral wrapped around?</li></ol>
+<ol><li><strong>Complex numbers:</strong> Write $z = 1 + i\sqrt{3}$ in polar form. What is $|z|$ and $\arg(z)$?</li></ol>
+<ol><li><strong>Multiplication:</strong> If $z_1 = 2e^{i\pi/3}$ and $z_2 = 3e^{-i\pi/6}$, find $z_1 z_2$ in polar and rectangular forms.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Challenge:</strong> A radar antenna broadcasts a signal in a pattern described by the polar equation $r = 2 + \sin(3\theta)$.</p>
+<ol><li>What is the farthest distance the signal travels?</li><li>What is the closest distance to the origin?</li><li>How many &quot;lobes&quot; (local maxima in distance) does the pattern have?</li><li>If the antenna rotates 90° clockwise (from the diagram&#x27;s perspective), how does the equation change?</li></ol>
+<p>(Hint: Rotating the pattern by angle $\phi$ clockwise means replacing $\theta$ with $\theta + \phi$.)</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Radar and Navigation Systems:</strong></p>
+<p>Military and civilian radar systems inherently use polar coordinates. A radar screen shows distance (radius) and bearing (angle). Air traffic controllers describe the location of aircraft to pilots using these terms: &quot;Traffic is 2 miles, bearing 090° (due east), altitude 5,000 feet.&quot; The conversion to and from Cartesian coordinates happens invisibly in the computer, but the human interface is fundamentally polar.</p>
+<p><strong>Orbital Mechanics:</strong></p>
+<p>The orbit of a satellite around Earth is naturally described in polar coordinates, with Earth at the origin. The famous equation for an ellipse is far simpler in polar form: $r = \frac{l}{1 + e\cos\theta}$, where $l$ is the semi-latus rectum and $e$ is the eccentricity. This elegance led to centuries of advances in understanding planetary motion.</p>
+<p><strong>Complex Analysis and Electrical Engineering:</strong></p>
+<p>Alternating current (AC) circuits are analyzed using complex numbers. The impedance of a circuit is a complex number, and AC voltage and current are often represented as $V = V_0 e^{i\omega t}$ (rotating in the complex plane). This polar representation makes it trivial to understand phase relationships and power transfer—concepts that would be algebraic nightmares in rectangular form.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>Polar coordinates</strong> $(r, \theta)$ describe points by distance and angle—intuitive for contexts where rotation and distance matter.</li><li><strong>Conversion formulas</strong> connect polar and Cartesian systems: $x = r\cos\theta$, $y = r\sin\theta$, $r = \sqrt{x^2+y^2}$.</li><li><strong>Polar curves</strong> like roses, spirals, and circles are often simpler and more elegant in polar form than in Cartesian form.</li><li><strong>Complex numbers</strong> in polar form $z = re^{i\theta}$ reveal that multiplication is rotation and scaling—a deep connection between algebra and geometry.</li><li>Polar coordinates are essential in radar, navigation, orbital mechanics, and electrical engineering.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Q1: In polar coordinates, a point is described by:</strong></p>
+<ul><li>Distance from the origin and distance along the x-axis</li><li>Distance from the origin and angle from the positive x-axis</li><li>Angle from the origin and angle from the positive x-axis</li><li>Two distances from perpendicular axes</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Distance from the origin and angle from the positive x-axis</p>
+</details>
+<p><strong>Q2: The Cartesian coordinates of</strong> $(r, \theta) = (5, 60°)$ <strong>are:</strong></p>
+<ul><li>$(3.5, 2.5)$</li><li>$(2.5, 4.3)$</li><li>$(4.3, 2.5)$</li><li>$(5, 5)$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$(2.5, 4.3)$</p>
+</details>
+<p><strong>Q3: The polar equation</strong> $r = 3$ <strong>describes:</strong></p>
+<ul><li>A line through the origin</li><li>A circle centered at the origin with radius 3</li><li>A spiral</li><li>A rose curve with 3 petals</li></ul>
+<details>
+<summary>Answer</summary>
+<p>A circle centered at the origin with radius 3</p>
+</details>
+<p><strong>Q4: When two complex numbers are multiplied in polar form, their:</strong></p>
+<ul><li>Moduli add and their arguments add</li><li>Moduli multiply and their arguments add</li><li>Moduli add and their arguments multiply</li><li>Moduli and arguments both multiply</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Moduli multiply and their arguments add</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Leonhard Euler and polar coordinates: https://en.wikipedia.org/wiki/Leonhard_Euler</li><li>Polar coordinate system: https://en.wikipedia.org/wiki/Polar_coordinate_system</li><li>Complex numbers and Gauss: https://en.wikipedia.org/wiki/Complex_number</li><li>Rose curves in mathematics: https://en.wikipedia.org/wiki/Rose_curve</li><li>Archimedean spiral: https://en.wikipedia.org/wiki/Archimedean_spiral</li><li>Euler&#x27;s formula: https://en.wikipedia.org/wiki/Euler%27s_formula</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-064-what-trig-opened-up/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">What Trigonometry Opened Up</span></a><a class="pager-link pager-link--next" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-058-law-of-sines-and-cosines/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Law of Sines and the Law of Cosines</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

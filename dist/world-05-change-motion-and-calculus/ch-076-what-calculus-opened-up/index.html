@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ch-076-what-calculus-opened-up — Math Journey</title>
+    <meta name="description" content="From Newton&#x27;s apple to quantum mechanics — the science calculus made possible" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 5 · Chapter 76</p>
+        <h1>ch-076-what-calculus-opened-up</h1>
+        <p class="hero-copy">From Newton&#x27;s apple to quantum mechanics — the science calculus made possible</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>core</span>
+          
+          <span>1680s–present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#the-arc-of-world-05">The Arc of World 05</a></li><li class="toc-level-3"><a href="#calculus-in-classical-mechanics">Calculus in Classical Mechanics</a></li><li class="toc-level-3"><a href="#maxwell-s-equations">Maxwell&#x27;s Equations</a></li><li class="toc-level-3"><a href="#quantum-mechanics-the-schr-dinger-equation">Quantum Mechanics: The Schrödinger Equation</a></li><li class="toc-level-3"><a href="#general-relativity">General Relativity</a></li><li class="toc-level-3"><a href="#machine-learning-and-gradient-descent">Machine Learning and Gradient Descent</a></li><li class="toc-level-3"><a href="#medicine-and-pharmacokinetics">Medicine and Pharmacokinetics</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>October 1845. The British astronomer John Couch Adams sits at his desk and does something that seems impossible: he <em>predicts</em> the existence of a planet no one has ever seen. Not by pointing a telescope at the sky. By doing calculus.</p>
+<p>Here&#x27;s what happened. Uranus, discovered in 1781, moved in a slightly wrong orbit. Something was tugging it gravitationally. Adams took Newton&#x27;s laws — which are differential equations — and worked backward. <em>If</em> there were an eighth planet, <em>where</em> would it need to be to cause Uranus&#x27;s orbital perturbations?</p>
+<p>Independently, the French astronomer Urbain Le Verrier did the same calculation.</p>
+<p>On September 23, 1846, astronomers pointed their telescopes to the position Adams and Le Verrier predicted. Within one degree — in a sky of 360 degrees — they found <strong>Neptune</strong>. A planet discovered not by observation, but by mathematics.</p>
+<p>This is what calculus opened up. The ability to predict the unseen. The ability to turn laws into predictions. The ability to understand a universe governed by differential equations.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Calculus is not a decorative part of mathematics. It&#x27;s the language in which the physical laws are written. Without calculus:</p>
+<ul><li>You cannot design a bridge (structural mechanics is differential equations).</li><li>You cannot predict the weather (fluid dynamics is differential equations).</li><li>You cannot cure diseases (drug pharmacokinetics uses differential equations).</li><li>You cannot land on the Moon (orbital mechanics is calculus).</li><li>You cannot build modern electronics (Maxwell&#x27;s equations are differential equations).</li><li>You cannot understand light, atoms, or the universe (quantum mechanics is differential equations).</li></ul>
+<p>The calculus you&#x27;ve learned in World 05 is not an intellectual luxury. It&#x27;s the foundational language of science and engineering.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Newton developed calculus to solve problems in mechanics. He wrote the Principia Mathematica (1687) — a work so mathematically advanced that only a handful of people in Europe could understand it initially — to explain planetary motion, tides, and the shape of the Earth using calculus.</p>
+<p>Leibniz developed calculus independently and his notation was cleaner. For two centuries, the British and Continental mathematicians competed over who deserved credit. (Both did.)</p>
+<p>The 1700s saw calculus applied to everything: vibrating strings (the wave equation), heat flow (the heat equation), electricity and magnetism (Maxwell&#x27;s equations in the 1860s). By the 1800s, calculus was the engine driving scientific progress.</p>
+<p>The 1900s brought new territory: quantum mechanics (Schrödinger, 1926), relativity (Einstein, 1915), and in recent decades, machine learning and artificial intelligence. All built on calculus.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>Calculus is the mathematics of <strong>continuous change and accumulation</strong>. It gives us tools to answer:</p>
+<ul><li><em>How fast is something changing?</em> (Derivatives)</li><li><em>What is the total accumulation?</em> (Integrals)</li><li><em>If I know the rate of change, can I recover the original quantity?</em> (The Fundamental Theorem)</li></ul>
+<p>These questions appear everywhere in the real world. By answering them, calculus makes science possible.</p>
+<h3 id="the-arc-of-world-05">The Arc of World 05</h3>
+<p>You&#x27;ve journeyed through the major landmarks of calculus:</p>
+<ol><li><strong>Limits</strong> (World 05 preview): The rigorous foundation. What does it mean for a function to approach a value?</li></ol>
+<ol><li><strong>Derivatives</strong> (Chapters 63–65): The instantaneous rate of change. How fast is something changing <em>right now</em>?</li></ol>
+<ol><li><strong>Differentiation Rules</strong> (Chapter 66–72): Techniques to compute derivatives. Power rule, product rule, chain rule, and applications to optimization and motion.</li></ol>
+<ol><li><strong>Integration</strong> (Chapters 68–73): The inverse of differentiation. Finding the antiderivative. Techniques: substitution, by parts, standard forms.</li></ol>
+<ol><li><strong>The Fundamental Theorem</strong> (Chapter 71): The crown jewel. Derivatives and integrals are inverse operations. $\frac{d}{dx} \int_a^x f(t) \, dt = f(x)$.</li></ol>
+<ol><li><strong>Differential Equations</strong> (Chapter 74): Equations involving rates of change. Separable equations model growth, decay, cooling, and more.</li></ol>
+<ol><li><strong>Series and Infinite Sums</strong> (Chapter 75): Functions as infinite power series. Computing to arbitrary precision.</li></ol>
+<p>This is the architecture of calculus. Each piece builds on the previous. And all of it opens doors.</p>
+<h3 id="calculus-in-classical-mechanics">Calculus in Classical Mechanics</h3>
+<p>Newton&#x27;s Second Law is $F = ma$, but $a = \frac{d^2x}{dt^2}$. So: $$F = m \frac{d^2x}{dt^2}$$</p>
+<p>This is a differential equation. If you know the force (perhaps gravity, or springs, or friction), you can predict the motion. This is how we:</p>
+<ul><li>Calculate planetary orbits</li><li>Predict tides</li><li>Design roller coasters and bridges</li><li>Navigate spacecraft</li><li>Understand pendulums and oscillators</li></ul>
+<p>The entire framework of classical mechanics is differential equations. Calculus is mechanism.</p>
+<h3 id="maxwell-s-equations">Maxwell&#x27;s Equations</h3>
+<p>In the 1860s, James Clerk Maxwell unified electricity and magnetism into a single framework using four differential equations (in differential form):</p>
+<p>$$\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}$$ $$\nabla \cdot \mathbf{B} = 0$$ $$\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}$$ $$\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}$$</p>
+<p>(Don&#x27;t worry about the notation. The point is: they are differential equations.)</p>
+<p>From these equations, you can <em>derive</em> that light is an electromagnetic wave traveling at a fixed speed. Maxwell predicted the speed of light <em>mathematically</em>, before it was precisely measured. His equations led to radio, television, and all wireless communication.</p>
+<h3 id="quantum-mechanics-the-schr-dinger-equation">Quantum Mechanics: The Schrödinger Equation</h3>
+<p>In 1926, Erwin Schrödinger wrote: $$i\hbar \frac{\partial \Psi}{\partial t} = H \Psi$$</p>
+<p>where $\Psi$ is the <strong>wavefunction</strong> (describing a particle), $H$ is the <strong>Hamiltonian</strong> (total energy), $\hbar$ is Planck&#x27;s constant, and $i$ is the imaginary unit.</p>
+<p>This is a partial differential equation (the derivative is with respect to multiple variables). It governs all quantum phenomena. Atoms, electrons, photons, chemistry, materials — all described by Schrödinger&#x27;s equation.</p>
+<p>Without calculus, quantum mechanics — and thus modern technology (semiconductors, lasers, nuclear energy) — would not exist.</p>
+<h3 id="general-relativity">General Relativity</h3>
+<p>In 1915, Einstein showed that gravity is not a force, but the curvature of spacetime. The curvature is described by the <strong>Riemann curvature tensor</strong>, and it satisfies differential equations: $$G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$</p>
+<p>(Einstein&#x27;s field equations. Again, don&#x27;t parse the notation — the point is differential equations.)</p>
+<p>These equations predict black holes, gravitational waves, the expansion of the universe, and the Big Bang. All from differential equations.</p>
+<h3 id="machine-learning-and-gradient-descent">Machine Learning and Gradient Descent</h3>
+<p>Modern artificial intelligence — neural networks, large language models — relies on <strong>gradient descent</strong>. The gradient is the vector of partial derivatives. To train a network on billions of parameters, you compute: $$\mathbf{w}_{n+1} = \mathbf{w}_n - \alpha \nabla L(\mathbf{w}_n)$$</p>
+<p>where $\nabla L$ is the gradient of the loss function (first derivatives) and $\alpha$ is the learning rate.</p>
+<p>This is calculus applied to billions of variables simultaneously. Without derivatives, modern AI would be impossible.</p>
+<h3 id="medicine-and-pharmacokinetics">Medicine and Pharmacokinetics</h3>
+<p>How does a drug move through your body? It&#x27;s absorbed, distributed to organs, metabolized, and excreted. The rate of each process follows differential equations: $$\frac{dC}{dt} = -k_e C$$</p>
+<p>(where $C$ is concentration and $k_e$ is elimination rate). Doctors use this to design dosing regimens: when to give the next dose, and how much, so the drug concentration stays in the therapeutic window.</p>
+<p>Without differential equations, drug dosing would be guesswork, and medicine would be dangerous.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Calculus:</strong> The mathematics of continuous change. Two main operations:</p>
+<ul><li><strong>Derivative:</strong> Instantaneous rate of change; $\frac{d}{dx}$</li><li><strong>Integral:</strong> Accumulation; $\int$</li></ul>
+<p><strong>Fundamental Theorem of Calculus:</strong> These operations are inverses of each other.</p>
+<p><strong>Differential equation:</strong> An equation relating a function to its derivatives.</p>
+<p><strong>Partial derivative:</strong> A derivative with respect to one variable while holding others fixed; $\frac{\partial}{\partial x}$</p>
+<p><strong>Vector calculus:</strong> Calculus in multiple dimensions. Gradient ($\nabla$), divergence, curl.</p>
+<p><strong>Series:</strong> Infinite sums of functions, enabling precise computation.</p>
+<p>These tools, together, form the language of quantitative science.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Projectile motion</strong></p>
+<p>A ball is thrown upward with initial velocity $v_0 = 20$ m/s. Using Newton&#x27;s Second Law, $F = ma$, where the only force is gravity ($F = -mg$): $$m\frac{d^2y}{dt^2} = -mg$$ $$\frac{d^2y}{dt^2} = -g$$</p>
+<p>Integrating twice with initial conditions $y(0) = 0$ and $\frac{dy}{dt}(0) = 20$: $$\frac{dy}{dt} = -gt + 20$$ $$y(t) = -\frac{1}{2}gt^2 + 20t$$</p>
+<p>With $g = 10$ m/s², the ball reaches maximum height when $\frac{dy}{dt} = 0$: $$0 = -10t + 20 \Rightarrow t = 2 \text{ s}$$ $$y(2) = -5(4) + 20(2) = 20 \text{ m}$$</p>
+<p>Calculus predicts the trajectory exactly.</p>
+<p><strong>Example 2: Exponential growth (bacteria)</strong></p>
+<p>A bacterial culture grows at a rate proportional to its size: $\frac{dP}{dt} = kP$ with $k = 0.3$ and $P(0) = 100$.</p>
+<p>The solution is $P(t) = 100 e^{0.3t}$.</p>
+<p>After 10 hours: $P(10) = 100 e^3 \approx 2000$ bacteria.</p>
+<p>Without calculus, you&#x27;d have no way to predict population growth.</p>
+<p><strong>Example 3: Wave equation</strong></p>
+<p>A vibrating string satisfies: $$\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$$</p>
+<p>(where $u$ is displacement, $t$ is time, $x$ is position, $c$ is wave speed). Solutions are standing waves, sines and cosines. This equation appears in acoustics, optics, seismology, and quantum mechanics.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Newton&#x27;s Law:</strong> A falling object experiences acceleration $a = g = 10$ m/s². If dropped from rest, find its position $y(t)$ and velocity $v(t)$.</li></ol>
+<ol><li><strong>Heat equation:</strong> A rod cools according to $\frac{dT}{dt} = -k(T - T_s)$ with $T(0) = 100$ and $T_s = 20$. Find $T(t)$.</li></ol>
+<p>$$\frac{dB}{dt} = rB - 12P$$ Write down this differential equation and describe what it means.</p>
+<ol><li><strong>Loan amortization:</strong> You borrow $D$ dollars at annual interest rate $r$ and make monthly payments $P$. The balance $B(t)$ satisfies:</li></ol>
+<ol><li><strong>Light intensity:</strong> Light passing through a medium is absorbed at a rate proportional to intensity: $\frac{dI}{dx} = -\alpha I$ (where $x$ is distance). If $I(0) = I_0$, find $I(x)$.</li></ol>
+<ol><li><strong>Review:</strong> What is the relationship between limits (World 05 preview) and the definition of a derivative?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Neptune Discovery:</strong> Two independent astronomers (Adams and Le Verrier) predicted Neptune&#x27;s location in 1845 using calculus.</p>
+<ul><li>How is this feat an example of the power of differential equations?</li><li>What assumptions did they need to make?</li><li>Could this prediction have been made without calculus?</li><li>Why is mathematical prediction powerful?</li></ul>
+<p>(Reflect on how science moves from observation to theory to prediction — and how calculus enables that journey.)</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Climate Modeling:</strong> Scientists model global temperature using energy balance equations (differential equations involving heat flow, radiation, and atmospheric circulation). These equations, solved numerically on supercomputers, underpin climate science and policy.</p>
+<p>A simplified version: the rate of temperature change depends on the balance between incoming solar energy and outgoing thermal radiation: $$\frac{dT}{dt} = \frac{S(1-a)}{4} - \sigma T^4$$</p>
+<p>(where $S$ is solar constant, $a$ is albedo, $\sigma$ is Stefan-Boltzmann constant). Solving this (or more realistic versions) tells us how temperature will change if $CO_2$ increases.</p>
+<p>Without calculus, climate science would be impossible. Without climate science, informed policy on a critical issue is impossible.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li><strong>Calculus is the mathematics of change.</strong> Derivatives measure rates; integrals measure accumulation.</li><li><strong>The Fundamental Theorem</strong> connects them: they&#x27;re inverse operations.</li><li><strong>Classical mechanics</strong> is Newton&#x27;s laws expressed as differential equations.</li><li><strong>Electromagnetism</strong> is Maxwell&#x27;s four differential equations.</li><li><strong>Quantum mechanics</strong> is the Schrödinger equation, a partial differential equation.</li><li><strong>General relativity</strong> is Einstein&#x27;s field equations, relating spacetime curvature to mass-energy.</li><li><strong>Machine learning</strong> is optimization via gradient descent (calculus on billions of variables).</li><li><strong>Medicine, engineering, climate science, economics</strong> — all rely on differential equations.</li></ul>
+<p>Calculus opened the door to understanding a universe in motion. It revealed that laws of nature can be expressed precisely, predicted rigorously, and tested experimentally. It is the language of quantitative science itself.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> What is Newton&#x27;s Second Law expressed as a differential equation?</p>
+<ul><li>$F = m a = m \frac{dv}{dt}$</li><li>$F = m a = m \frac{d^2x}{dt^2}$</li><li>$a = \frac{F}{m}$</li><li>All of the above</li></ul>
+<details>
+<summary>Answer</summary>
+<p>All of the above</p>
+</details>
+<p><strong>Question 2:</strong> Which of the following is a partial differential equation?</p>
+<ul><li>$\frac{dy}{dt} = ky$</li><li>$\frac{\partial u}{\partial t} = c^2 \frac{\partial^2 u}{\partial x^2}$ (wave equation)</li><li>$\frac{d^2y}{dx^2} + 2\frac{dy}{dx} = 0$</li><li>$\frac{dP}{dt} = rP(1 - P/K)$ (logistic)</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\frac{\partial u}{\partial t} = c^2 \frac{\partial^2 u}{\partial x^2}$ (wave equation)</p>
+</details>
+<p><strong>Question 3:</strong> In the context of calculus, what is a &quot;gradient&quot;?</p>
+<ul><li>A curve&#x27;s slope</li><li>A vector of partial derivatives</li><li>The solution to a differential equation</li><li>An infinite series</li></ul>
+<details>
+<summary>Answer</summary>
+<p>A vector of partial derivatives</p>
+</details>
+<p><strong>Question 4:</strong> Which physicist first wrote down the equation governing all quantum mechanical systems?</p>
+<ul><li>Isaac Newton</li><li>James Clerk Maxwell</li><li>Erwin Schrödinger</li><li>Albert Einstein</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Erwin Schrödinger</p>
+</details>
+<p><strong>Question 5:</strong> What is the Fundamental Theorem of Calculus (in essence)?</p>
+<ul><li>Derivatives and integrals are inverse operations</li><li>All functions can be expressed as series</li><li>Limits are the foundation of calculus</li><li>Continuous functions are differentiable</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Derivatives and integrals are inverse operations</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><strong>Neptune discovery:</strong> Adams and Le Verrier (1845–1846). <a href="https://en.wikipedia.org/wiki/Neptune_(planet" target="_blank" rel="noopener">Wikipedia: Neptune</a>#History)</li><li><strong>Newton&#x27;s laws and calculus:</strong> Newton (1687), Principia Mathematica. <a href="https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion" target="_blank" rel="noopener">Wikipedia: Newton&#x27;s laws of motion</a></li><li><strong>Maxwell&#x27;s equations:</strong> Maxwell (1865). <a href="https://en.wikipedia.org/wiki/Maxwell%27s_equations" target="_blank" rel="noopener">Wikipedia: Maxwell&#x27;s equations</a></li><li><strong>Schrödinger equation:</strong> Schrödinger (1926). <a href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation" target="_blank" rel="noopener">Wikipedia: Schrödinger equation</a></li><li><strong>Einstein&#x27;s field equations:</strong> Einstein (1915). <a href="https://en.wikipedia.org/wiki/Einstein_field_equations" target="_blank" rel="noopener">Wikipedia: Einstein field equations</a></li><li><strong>Gradient descent in machine learning:</strong> <a href="https://en.wikipedia.org/wiki/Gradient_descent" target="_blank" rel="noopener">Wikipedia: Gradient descent</a></li><li><strong>Pharmacokinetics:</strong> <a href="https://en.wikipedia.org/wiki/Pharmacokinetics" target="_blank" rel="noopener">Wikipedia: Pharmacokinetics</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-075-sequences-and-series/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">ch-075-sequences-and-series</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-069-applications-of-derivatives/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Applications of Derivatives</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

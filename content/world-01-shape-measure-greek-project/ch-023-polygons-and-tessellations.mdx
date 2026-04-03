@@ -1,0 +1,310 @@
+---
+id: ch-023
+slug: polygons-and-tessellations
+title: Polygons and Tessellations
+subtitle: "When shapes fit perfectly, and why only some shapes do"
+world: world-01-shape-measure-greek-project
+worldNumber: 1
+chapterNumber: 23
+level: foundational
+estimatedTimeMinutes: 35
+core: true
+prerequisites: [ch-018]
+historicalPeriod: "Ancient Greece, 8th–15th centuries Islamic Golden Age"
+historicalRegions:
+  - Greece
+  - Persia
+  - Al-Andalus
+mainFigures: []
+mainConcepts:
+  - polygon
+  - regular polygon
+  - interior angle
+  - exterior angle
+  - tessellation
+  - angle sum formula
+learningObjectives:
+  - Classify polygons by the number of sides and regularity of angles.
+  - Use the angle sum formula to calculate interior angles of polygons.
+  - Understand why only three regular polygons tessellate the plane.
+  - Recognize tessellations in art and nature.
+unlockCriteria:
+  quizMinScore: 0.8
+  practiceRequired: true
+  reasoningRequired: true
+status: draft
+tags:
+  - geometry
+  - symmetry
+  - art
+keyTerms:
+  - polygon
+  - regular polygon
+  - interior angle
+  - exterior angle
+  - tessellation
+  - angle sum formula
+  - diagonal
+review:
+  mathChecked: false
+  historicalChecked: false
+  editorialChecked: false
+---
+
+# Polygons and Tessellations
+
+## Story Hook
+Imagine a tile maker in 9th-century Cordoba, sitting in the workshops of the Great Mosque. She has a batch of identical clay tiles—all the same shape, all the same size. Her task is to cover a floor with no gaps and no overlaps. She can use triangles, squares, or hexagons, but when she tries pentagons, something strange happens: there is always a gap. Always. No matter how she arranges them, the floor stays unfinished.
+
+She doesn't know algebra or formal proof. But she knows, from trying, that not all shapes fit together. Some shapes are democratic: they play well with others. Some shapes are rebels. Understanding why is the work of this chapter.
+
+## Why It Matters
+Tessellations are not just pretty patterns. They matter because:
+- architects and builders need to know which tiles fit together without waste
+- honeycombs, snake skin, and rock formations all show tessellations in nature
+- Islamic geometric art relied on deep understanding of which shapes work
+- later mathematics—crystallography, coding theory, even quantum mechanics—depends on understanding how shapes pack together
+- interior angles and angle sums connect to fundamental truths about flat space itself
+
+When you understand polygons and tessellations, you see order hidden in everyday walls, pavements, and mosaics.
+
+## Historical Context
+The ancient Greeks classified shapes by the number of sides and studied their angles. Euclid, in his *Elements*, discussed regular polygons, though not with the explicit angle-sum formula we use today. That formula became clearer with later mathematicians.
+
+But the deepest exploration of tessellations came during the Islamic Golden Age. From the 8th to 15th centuries, Muslim artisans and mathematicians created geometric patterns of extraordinary complexity. Palaces like the Alhambra in Granada, Spain, use intricate tessellations—not randomly, but based on deep geometric knowledge. Islamic tradition did not permit figurative images in religious spaces, so geometry and tessellation became a language of beauty and mathematical thought.
+
+These artisans knew, through experimentation and reasoning, which shapes could tile a plane and which could not. Whether their understanding was written down algebraically or held as craft knowledge remains debated, but the patterns themselves are evidence of systematic geometric thinking.
+
+## Core Concept
+A **polygon** is a closed shape made of straight line segments. A **regular polygon** is a polygon where all sides are equal and all interior angles are equal.
+
+A **tessellation** is a pattern of shapes that covers a flat surface completely, with no gaps and no overlaps.
+
+The key question is: which regular polygons can tessellate the plane?
+
+The answer depends on the interior angles. If the interior angles of a shape can be combined to make 360° exactly (a full turn around a point), then that shape can tessellate. If not, there will always be gaps.
+
+## Definitions and Formal Lesson
+
+### Polygon Types
+
+**Polygon**
+A closed, flat shape with straight sides. Examples: triangle (3 sides), quadrilateral (4 sides), pentagon (5 sides), hexagon (6 sides).
+
+**Regular Polygon**
+A polygon with all sides of equal length and all interior angles of equal measure.
+
+**Irregular Polygon**
+A polygon where sides or angles are not all equal.
+
+### Interior and Exterior Angles
+
+**Interior Angle**
+An angle inside a polygon, formed by two adjacent sides.
+
+**Exterior Angle**
+An angle formed between one side of a polygon and the extension of an adjacent side. The exterior angle and its neighboring interior angle always sum to 180°.
+
+**Diagonal**
+A line segment connecting two non-adjacent vertices of a polygon.
+
+### The Angle Sum Formula
+
+For any polygon with *n* sides, the sum of all interior angles is:
+
+**(n − 2) × 180°**
+
+This formula works because any polygon can be divided into triangles, and each triangle has angles summing to 180°.
+
+For a triangle (n = 3): (3 − 2) × 180° = 180°
+For a quadrilateral (n = 4): (4 − 2) × 180° = 360°
+For a pentagon (n = 5): (5 − 2) × 180° = 540°
+For a hexagon (n = 6): (6 − 2) × 180° = 720°
+
+### Interior Angle of a Regular Polygon
+
+If a regular polygon has *n* sides, each interior angle measures:
+
+**Interior angle = [(n − 2) × 180°] ÷ n**
+
+For a regular triangle: (180°) ÷ 3 = 60°
+For a regular quadrilateral (square): (360°) ÷ 4 = 90°
+For a regular pentagon: (540°) ÷ 5 = 108°
+For a regular hexagon: (720°) ÷ 6 = 120°
+
+### Exterior Angles
+
+The exterior angles of any polygon always sum to 360°, regardless of the number of sides. For a regular polygon with *n* sides:
+
+**Exterior angle = 360° ÷ n**
+
+### Which Regular Polygons Tessellate?
+
+A regular polygon can tessellate the plane if its interior angle divides evenly into 360°.
+
+- **Equilateral triangle**: interior angle = 60°. Since 360° ÷ 60° = 6, six triangles fit perfectly around one point. ✓ Tessellates
+- **Square**: interior angle = 90°. Since 360° ÷ 90° = 4, four squares fit perfectly around one point. ✓ Tessellates
+- **Regular pentagon**: interior angle = 108°. Since 360° ÷ 108° = 3.33..., pentagons cannot fit exactly around one point. ✗ Does not tessellate
+- **Regular hexagon**: interior angle = 120°. Since 360° ÷ 120° = 3, three hexagons fit perfectly around one point. ✓ Tessellates
+- **Regular heptagons and beyond**: As *n* increases, the interior angle grows and approaches 180°. None of these produce whole-number divisions of 360°. ✗ Do not tessellate
+
+**Only three regular polygons tessellate the plane: equilateral triangles, squares, and regular hexagons.**
+
+## Worked Examples
+
+### Example 1: Find the Interior Angle Sum of a Hexagon
+
+A regular hexagon tile is to be used in a floor. Find the sum of all interior angles in one hexagon.
+
+**Solution**
+
+Use the formula: (n − 2) × 180°
+
+For a hexagon, n = 6.
+
+(6 − 2) × 180° = 4 × 180° = **720°**
+
+The sum of all six interior angles is 720°.
+
+### Example 2: Find Each Interior Angle of a Regular Octagon
+
+A regular octagon has 8 equal sides and 8 equal angles. Find the measure of each interior angle.
+
+**Solution**
+
+First, find the sum of all interior angles.
+
+(n − 2) × 180° = (8 − 2) × 180° = 6 × 180° = 1080°
+
+Now divide by the number of angles:
+
+1080° ÷ 8 = **135°**
+
+Each interior angle of a regular octagon measures 135°.
+
+Can a regular octagon tessellate alone? Check: 360° ÷ 135° = 2.67..., which is not a whole number. So regular octagons alone do not tessellate. (However, octagons and squares together *can* tessellate, a pattern called the truncated square tiling.)
+
+### Example 3: Verify Why Pentagons Don't Tessellate
+
+Show why regular pentagons cannot tessellate by themselves.
+
+**Solution**
+
+Interior angle of a regular pentagon: [(5 − 2) × 180°] ÷ 5 = 540° ÷ 5 = 108°
+
+Around a single point, place pentagons edge to edge:
+- 1 pentagon: 108°
+- 2 pentagons: 216°
+- 3 pentagons: 324°
+- 4 pentagons: 432° (too much!)
+
+Three pentagons give 324°, leaving a gap of 36°. Four pentagons give 432°, which overlaps by 72°. There is no way to fit an exact whole number of pentagons around a point.
+
+**Pentagons cannot tessellate alone.**
+
+## Practice Set
+
+### Warm-Up
+1. A polygon has 7 sides. Use the angle sum formula to find the sum of all interior angles.
+2. Which of these shapes tessellates the plane: equilateral triangle, regular hexagon, regular pentagon? List them.
+
+### Core Practice
+3. Find the measure of each interior angle in a regular decagon (10-sided polygon).
+4. A regular polygon has interior angles of 120°. How many sides does it have? (Hint: work backward from the formula.)
+5. Explain why the exterior angles of any polygon always sum to 360°.
+6. A square has interior angles of 90°. Show algebraically why squares tessellate the plane.
+
+### Stretch
+7. Regular octagons have interior angles of 135°. Octagons do not tessellate alone, but octagons and squares together do (called the truncated square tiling). Explain why the combination works when octagons alone do not.
+
+<details>
+<summary>Practice Answer Guide</summary>
+
+1. (7 − 2) × 180° = 5 × 180° = 900°
+2. Equilateral triangle and regular hexagon. (Pentagon does not.)
+3. [(10 − 2) × 180°] ÷ 10 = 1440° ÷ 10 = 144° per angle
+4. Use the formula: interior angle = [(n − 2) × 180°] ÷ n = 120°. Solve: (n − 2) × 180° = 120n → 180n − 360 = 120n → 60n = 360 → n = 6. The polygon is a hexagon.
+5. As you walk around any polygon and turn at each vertex, the exterior angles add up to one complete rotation, which is 360°.
+6. Interior angle of square = 90°. Since 360° ÷ 90° = 4, exactly four squares fit around one point with no gap or overlap. This pattern repeats across the entire plane.
+7. Interior angle of octagon: 135°. Interior angle of square: 90°. At a vertex: 135° + 135° + 90° = 360°. One octagon, one octagon, and one square fit exactly around a point, creating a consistent pattern with no gaps.
+
+</details>
+
+## Reasoning Task
+The artisans of the Alhambra created intricate tessellations centuries before the modern angle-sum formula was written down. Write 5–7 sentences explaining:
+- How they might have discovered which shapes tessellate, using only tools like rulers, string, and physical tiles
+- What limitations their method might have had compared to using a formula
+- Whether you think their knowledge was less valid because it was not algebraic
+
+## Application
+Tessellations appear everywhere in human design and nature:
+
+**In Architecture and Art**
+The Alhambra in Granada uses tessellations in tilework, mosaics, and decorative patterns. Honeycomb ceilings mimic the hexagonal structure of bee nests. Modern buildings use tessellations in flooring and wall panels.
+
+**In Nature**
+Honeycomb cells are hexagons—a shape that tessellates and uses the minimum material for maximum storage. Turtle shells, dragonfly wings, and certain rock formations show tessellation patterns. Even at the atomic level, some crystals arrange in tessellating patterns.
+
+**In Coding and Computer Graphics**
+Tessellation is used to render curved surfaces on computers by breaking them into many small polygons. Video games and 3D modeling rely on tessellation algorithms.
+
+The tile maker of Cordoba may not have known these modern applications, but she understood something fundamental: the geometry of fit. When you understand which shapes tessellate and why, you see order built into the fabric of flat space itself.
+
+## Recap
+- A **polygon** is a closed shape with straight sides.
+- A **regular polygon** has all equal sides and all equal angles.
+- The sum of interior angles of an *n*-sided polygon is **(n − 2) × 180°**.
+- Each interior angle of a regular *n*-sided polygon is **[(n − 2) × 180°] ÷ n**.
+- **Only three regular polygons tessellate the plane: equilateral triangles (60°), squares (90°), and regular hexagons (120°).**
+- A shape tessellates if its interior angle divides 360° evenly.
+- Tessellations appear in art, nature, and architecture.
+
+## Unlock Quiz
+
+1. What is the sum of interior angles in a regular hexagon?
+   - 360°
+   - 540°
+   - 720°
+   - 900°
+
+2. How many sides does a regular polygon have if each interior angle measures 144°?
+   - 8
+   - 9
+   - 10
+   - 12
+
+3. Which of the following can tessellate the plane by itself?
+   - Regular pentagon
+   - Regular hexagon
+   - Regular heptagon
+   - Regular octagon
+
+4. Why do regular pentagons not tessellate the plane?
+   - Their sides are too long
+   - Their interior angle (108°) does not divide evenly into 360°
+   - They are not symmetrical
+   - They are curved
+
+5. What is the interior angle of a regular square?
+   - 60°
+   - 90°
+   - 120°
+   - 180°
+
+<details>
+<summary>Unlock Quiz Answers</summary>
+
+1. 720°
+2. 10
+3. Regular hexagon
+4. Their interior angle (108°) does not divide evenly into 360°
+5. 90°
+
+</details>
+
+## Source Notes
+- [Polygon](https://en.wikipedia.org/wiki/Polygon) — overview of polygon classification, properties, and types
+- [Tessellation](https://en.wikipedia.org/wiki/Tessellation) — comprehensive coverage of regular and semi-regular tessellations, and why only certain polygons tile the plane
+- [Alhambra](https://en.wikipedia.org/wiki/Alhambra) — detailed history of the Alhambra's architecture and the mathematical sophistication of its geometric patterns
+- [Interior angle](https://en.wikipedia.org/wiki/Interior_angle) — definition and formula for interior angles and angle sums
+- [Islamic geometric patterns](https://en.wikipedia.org/wiki/Islamic_geometric_patterns) — overview of the mathematical and artistic traditions of Islamic tessellations and tile work

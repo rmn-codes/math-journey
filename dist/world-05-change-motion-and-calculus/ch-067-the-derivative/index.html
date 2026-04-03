@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Derivative — Measuring Instantaneous Change — Math Journey</title>
+    <meta name="description" content="The slope of a curve at a single point — and how to find it exactly" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 5 · Chapter 67</p>
+        <h1>The Derivative — Measuring Instantaneous Change</h1>
+        <p class="hero-copy">The slope of a curve at a single point — and how to find it exactly</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1660s–1680s, Newton and Leibniz</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Compute derivatives using the limit definition</li><li>Interpret the derivative as slope of tangent and instantaneous rate of change</li><li>Write equations of tangent lines</li><li>Distinguish differentiability from continuity</li><li>Use both Leibniz and prime notations</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Oxford, England. December 1665. A plague sweeps across the country, and Cambridge University closes its doors. A young man of 23, Isaac Newton, returns to his family home in Woolsthorpe. Over the next 18 months, in isolation, he will invent three revolutionary ideas: the calculus, the theory of light, and the law of universal gravitation.</p>
+<p>Meanwhile, across the Channel in Germany, Gottfried Leibniz is working independently on the same problem: how to measure instantaneous change. He too invents calculus. He publishes first (1675) and gives us the notation we use today: $\frac{dy}{dx}$.</p>
+<p>Newton is furious. He believes he thought of it first. For 30 years, until his death in 1727, the two greatest mathematicians of the age fight bitterly over priority. History&#x27;s verdict: both deserve full credit. They discovered something real and deep—the derivative, the most powerful tool in mathematics.</p>
+<p>Today we use <em>both</em> their notations. We write $f&#x27;(x)$ (Newton&#x27;s style) and $\frac{dy}{dx}$ (Leibniz&#x27;s style) interchangeably, two languages for the same profound idea.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Every time you optimize something—finding the minimum cost, maximum profit, or fastest route—you use derivatives. Every time a doctor adjusts a drug dose, an engineer designs a structure, or a physicist predicts motion, the derivative is working behind the scenes.</p>
+<p>The derivative is the instantaneous rate of change. It is how we measure <em>right now</em>, at this moment, in a world of continuous motion. Without derivatives, modern civilization could not exist.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Newton (1642–1727) developed calculus in the late 1660s using intuitive geometric ideas and his method of &quot;fluxions.&quot; Leibniz (1646–1716) developed calculus in the mid-1670s using infinitesimals and created more elegant notation. Neither man published immediately.</p>
+<p>In 1684, Leibniz publishes his <em>Nova methodus</em>, introducing the derivative symbol $\frac{dy}{dx}$ and the integral symbol $\int$. The calculus, in Leibniz&#x27;s notation, begins to spread through Europe. Bernoulli, Euler, and Lagrange build on Leibniz&#x27;s work.</p>
+<p>Newton, hearing of Leibniz&#x27;s publication, becomes convinced Leibniz stole his ideas. The priority dispute becomes intense and personal. Both men are brilliant, both are correct, and both deserve recognition. The mathematical community splits: British mathematicians defend Newton, Continental mathematicians follow Leibniz. This split delays the development of calculus in England by generations.</p>
+<p>By the early 1800s, historians and mathematicians recognize that both Newton and Leibniz independently invented calculus. The conflict was one of the most bitter intellectual disputes in the history of science.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>The <strong>derivative</strong> of a function $f$ at a point $x = a$ is the slope of the tangent line at that point. It measures the instantaneous rate of change.</p>
+<p><strong>Definition (using limits):</strong></p>
+<p>$$f&#x27;(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$$</p>
+<p>This formula says: take two nearby points on the curve (separated by a small distance $h$), compute the slope of the secant line between them, then let $h$ shrink to zero. The slope of the secant line approaches the slope of the tangent line.</p>
+<p><strong>Leibniz notation:</strong> If $y = f(x)$, the derivative is written:</p>
+<p>$$\frac{dy}{dx} \quad \text{or} \quad \frac{df}{dx}$$</p>
+<p>This notation emphasizes the idea of a ratio: an infinitesimal change in $y$ divided by an infinitesimal change in $x$.</p>
+<p><strong>Prime notation:</strong> The derivative of $f$ at $x$ is written $f&#x27;(x)$. At a specific point $x = a$, we write $f&#x27;(a)$.</p>
+<p>Both notations mean the same thing. You can use either, and mathematicians use both interchangeably.</p>
+<p><strong>Differentiability:</strong> A function is differentiable at $x = a$ if the derivative $f&#x27;(a)$ exists. This requires that the limit $\lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$ converges to a single real number.</p>
+<p><strong>Important truth:</strong> If $f$ is differentiable at $a$, then $f$ is continuous at $a$. But the converse is not true: a function can be continuous without being differentiable (if the tangent line is vertical or if there&#x27;s a sharp corner).</p>
+<p><strong>Tangent Line Equation:</strong> Once you know the derivative $f&#x27;(a)$ at a point $a$, you can write the equation of the tangent line:</p>
+<p>$$y - f(a) = f&#x27;(a)(x - a)$$</p>
+<p>This is point-slope form, where the slope is $f&#x27;(a)$ and the point is $(a, f(a))$.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>The Derivative as a Function:</strong></p>
+<p>If you compute the derivative at every point in the domain, you get a new function $f&#x27;(x)$, called &quot;the derivative of $f$&quot; or &quot;f prime.&quot;</p>
+<p><strong>Tangent Line:</strong> A line that touches a curve at one point and has the same slope as the curve at that point. The slope of the tangent line equals $f&#x27;(a)$.</p>
+<p><strong>Higher Derivatives:</strong> You can take the derivative of a derivative. The second derivative, written $f&#x27;&#x27;(x)$ or $\frac{d^2y}{dx^2}$, measures how the rate of change is itself changing. It quantifies acceleration.</p>
+<p>The third derivative, $f&#x27;&#x27;&#x27;(x)$, measures how acceleration changes, and so on.</p>
+<p><strong>Units of the Derivative:</strong> If $y$ represents distance and $x$ represents time, then $\frac{dy}{dx}$ represents speed (distance per unit time). If $y$ represents cost and $x$ represents quantity, then $\frac{dy}{dx}$ represents cost per unit.</p>
+<p>The derivative always has units: output units divided by input units.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Computing a Derivative from the Definition</strong></p>
+<p>Let $f(x) = x^2$. Find $f&#x27;(2)$ using the limit definition.</p>
+<p>$$f&#x27;(2) = \lim_{h \to 0} \frac{f(2+h) - f(2)}{h} = \lim_{h \to 0} \frac{(2+h)^2 - 4}{h}$$</p>
+<p>Expand $(2+h)^2 = 4 + 4h + h^2$:</p>
+<p>$$= \lim_{h \to 0} \frac{4 + 4h + h^2 - 4}{h} = \lim_{h \to 0} \frac{4h + h^2}{h}$$</p>
+<p>Factor out $h$:</p>
+<p>$$= \lim_{h \to 0} \frac{h(4 + h)}{h} = \lim_{h \to 0} (4 + h) = 4$$</p>
+<p>So $f&#x27;(2) = 4$. The instantaneous rate of change of $f(x) = x^2$ at $x = 2$ is 4.</p>
+<p><strong>Example 2: Finding the Equation of a Tangent Line</strong></p>
+<p>Using the same function $f(x) = x^2$ and the result $f&#x27;(2) = 4$:</p>
+<p>The tangent line at $(2, f(2)) = (2, 4)$ has slope $m = 4$. Using point-slope form:</p>
+<p>$$y - 4 = 4(x - 2)$$ $$y - 4 = 4x - 8$$ $$y = 4x - 4$$</p>
+<p><strong>Example 3: Computing a Derivative from the Definition (Another Function)</strong></p>
+<p>Let $f(x) = 3x + 1$. Find $f&#x27;(x)$ (the derivative at any point $x$).</p>
+<p>$$f&#x27;(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = \lim_{h \to 0} \frac{[3(x+h) + 1] - [3x + 1]}{h}$$</p>
+<p>$$= \lim_{h \to 0} \frac{3x + 3h + 1 - 3x - 1}{h} = \lim_{h \to 0} \frac{3h}{h} = \lim_{h \to 0} 3 = 3$$</p>
+<p>So $f&#x27;(x) = 3$ for all $x$. This makes sense: $f(x) = 3x + 1$ is a straight line with slope 3, so the instantaneous rate of change is constantly 3.</p>
+<p><strong>Example 4: Continuity vs. Differentiability</strong></p>
+<p>Consider $f(x) = |x|$ (absolute value). This function is continuous everywhere (no breaks or jumps). But is it differentiable everywhere?</p>
+<p>At $x = 0$, the graph has a sharp corner. From the left, the tangent line has slope $-1$. From the right, the tangent line has slope $+1$. These don&#x27;t match, so there is no single tangent line at $x = 0$.</p>
+<p>Therefore, $f(x) = |x|$ is continuous at $x = 0$ but not differentiable at $x = 0$.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Using the limit definition, what is $f&#x27;(3)$ for $f(x) = x^2$?</strong></li></ol>
+<ul><li>3</li><li>6</li><li>9</li><li>12</li></ul>
+<ol><li><strong>If $f(x) = 5x - 2$, what is $f&#x27;(x)$?</strong></li></ol>
+<ul><li>5</li><li>2</li><li>$5x$</li><li>$-2$</li></ul>
+<ol><li><strong>Which notation represents the second derivative?</strong></li></ol>
+<ul><li>$f&#x27;(x)$</li><li>$f&#x27;&#x27;(x)$ or $\frac{d^2y}{dx^2}$</li><li>$\frac{dy}{dx}$</li><li>$f(x)$</li></ul>
+<ol><li><strong>The equation of the tangent line at $(a, f(a))$ is:</strong></li></ol>
+<ul><li>$y = f(a)$</li><li>$y = f&#x27;(a)$</li><li>$y - f(a) = f&#x27;(a)(x - a)$</li><li>$x = a$</li></ul>
+<ol><li><strong>Which statement is true?</strong></li></ol>
+<ul><li>All continuous functions are differentiable</li><li>All differentiable functions are continuous</li><li>Some functions are both continuous and differentiable</li><li>Continuity and differentiability are unrelated</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>A friend is confused about the difference between Newton&#x27;s notation $f&#x27;(x)$ and Leibniz&#x27;s notation $\frac{dy}{dx}$. Your friend asks: &quot;Are these two different things, or the same thing with different names?&quot;</p>
+<p>Explain to your friend that they represent the same concept—the derivative, or instantaneous rate of change—but emphasize that Leibniz&#x27;s notation, as a fraction-like symbol, can be very useful for understanding rates and for applying the chain rule later. Give an example where you use both notations for the same function.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Velocity and Acceleration</strong></p>
+<p>A car&#x27;s position (in meters) as a function of time (in seconds) is $s(t) = 2t^2 + 3t + 1$.</p>
+<p>The velocity is the derivative: $v(t) = \frac{ds}{dt}$. Using the limit definition or rules (which we&#x27;ll learn next chapter):</p>
+<p>$$v(t) = 4t + 3$$</p>
+<p>At $t = 2$ seconds, the instantaneous velocity is $v(2) = 4(2) + 3 = 11$ m/s.</p>
+<p>The acceleration is the derivative of velocity (the second derivative of position):</p>
+<p>$$a(t) = \frac{dv}{dt} = \frac{d^2s}{dt^2} = 4 \text{ m/s}^2$$</p>
+<p>The car accelerates at a constant 4 meters per second squared.</p>
+<p><strong>Marginal Cost in Economics</strong></p>
+<p>A manufacturer&#x27;s total cost (in dollars) to produce $x$ units is $C(x) = 1000 + 50x + 0.1x^2$.</p>
+<p>The marginal cost—the instantaneous rate of change of cost—is:</p>
+<p>$$\frac{dC}{dx} = 50 + 0.2x$$</p>
+<p>At $x = 100$ units, the marginal cost is $50 + 0.2(100) = 70$ dollars per unit. The 101st unit costs approximately \$70 to produce. This guides production decisions.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>The <strong>derivative</strong> is the instantaneous rate of change of a function. It is the slope of the tangent line at a point on the curve.</p>
+<p>Mathematically, the derivative of $f$ at $x = a$ is:</p>
+<p>$$f&#x27;(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$$</p>
+<p>We use <strong>two notations</strong> interchangeably: prime notation $f&#x27;(x)$ (Newton&#x27;s style) and Leibniz notation $\frac{dy}{dx}$ (Leibniz&#x27;s style).</p>
+<p>A function is <strong>differentiable</strong> at a point if its derivative exists there. Differentiability implies continuity, but not vice versa.</p>
+<p>The <strong>tangent line</strong> at $(a, f(a))$ has equation $y - f(a) = f&#x27;(a)(x - a)$.</p>
+<p>The <strong>second derivative</strong> $f&#x27;&#x27;(x)$ measures how the rate of change is changing (acceleration).</p>
+<p>Newton and Leibniz independently invented the derivative in the late 1600s. Though they fought bitterly over priority, both names live on in the notation we use every day.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>1. What does the derivative measure?</strong></p>
+<ul><li>The average rate of change over an interval</li><li>The instantaneous rate of change at a point</li><li>The distance traveled</li><li>The slope of a vertical line</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The instantaneous rate of change at a point</p>
+</details>
+<p><strong>2. In the limit definition $f&#x27;(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$, what does $h$ represent?</strong></p>
+<ul><li>The point at which we find the derivative</li><li>A small distance between two points on the curve</li><li>The slope of the tangent line</li><li>The x-coordinate</li></ul>
+<details>
+<summary>Answer</summary>
+<p>A small distance between two points on the curve</p>
+</details>
+<p><strong>3. If $f(x) = 2x + 7$, what is $f&#x27;(x)$?</strong></p>
+<ul><li>2</li><li>7</li><li>$2x$</li><li>Does not exist</li></ul>
+<details>
+<summary>Answer</summary>
+<p>2</p>
+</details>
+<p><strong>4. Newton and Leibniz independently invented calculus, but their priority dispute lasted:</strong></p>
+<ul><li>5 years</li><li>15 years</li><li>30 years</li><li>60 years</li></ul>
+<details>
+<summary>Answer</summary>
+<p>30 years</p>
+</details>
+<p><strong>5. A function that is continuous at a point is always differentiable there. True or false?</strong></p>
+<ul><li>True</li><li>False</li></ul>
+<details>
+<summary>Answer</summary>
+<p>False</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Newton, I. (1666). <em>Method of Fluxions</em>. https://en.wikipedia.org/wiki/Isaac_Newton</li><li>Leibniz, G.W. (1684). &quot;Nova methodus pro maximis et minimis.&quot; <em>Acta Eruditorum</em>. https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz</li><li>Hall, A.R. (1980). <em>Philosophers at War: The Quarrel between Newton and Leibniz</em>. https://en.wikipedia.org/wiki/History_of_calculus</li><li>https://en.wikipedia.org/wiki/Derivative</li><li>https://en.wikipedia.org/wiki/Tangent</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-066-limits/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Limits — The Foundation of Calculus</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-068-differentiation-rules/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Differentiation Rules</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

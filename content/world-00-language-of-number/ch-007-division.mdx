@@ -1,0 +1,391 @@
+---
+id: ch-007
+slug: division
+title: Division
+subtitle: "Sharing equally — and what happens when things don't divide evenly"
+world: world-00-language-of-number
+worldNumber: 0
+chapterNumber: 7
+level: foundational
+estimatedTimeMinutes: 40
+core: true
+prerequisites: [ch-006]
+historicalPeriod: "Ancient – present"
+historicalRegions:
+  - Egypt
+  - Greece
+  - Islamic world
+mainConcepts:
+  - division
+  - quotient
+  - dividend
+  - divisor
+  - remainder
+  - long division
+  - inverse operations
+  - integer division
+learningObjectives:
+  - Understand division as equal sharing and as repeated subtraction
+  - Identify dividend, divisor, quotient, and remainder
+  - Perform long division with single and multi-digit divisors
+  - Verify division using multiplication
+  - Interpret remainders in context
+  - Solve word problems requiring division
+unlockCriteria:
+  quizMinScore: 0.8
+  practiceRequired: true
+status: draft
+tags:
+  - arithmetic
+  - number
+  - operations
+keyTerms:
+  - division
+  - quotient
+  - remainder
+  - dividend
+  - divisor
+  - long division
+  - inverse operations
+review:
+  mathChecked: false
+  historicalChecked: false
+  editorialChecked: false
+---
+
+## Story Hook
+
+Picture an ancient Egyptian bakery, around 1650 BCE. A scribe holds the famous Rhind Mathematical Papyrus, a scroll containing problems and solutions. One problem reads:
+
+*"Divide 9 loaves of bread equally among 10 men. What does each man receive?"*
+
+This seems simple, but it isn't. You can't give each man a whole loaf—there aren't enough. The Egyptian scribe's solution involves fractions: each man gets $\frac{9}{10}$ of a loaf. But the question itself is fundamentally about division: *How do I share what I have, fairly?*
+
+This problem, recorded 3,650 years ago, reveals a deep truth: division forces us to think about parts of a whole. It's why the Egyptians eventually invented fractions. Division isn't just arithmetic—it's the gateway to understanding that numbers can break into pieces.
+
+## Why It Matters
+
+Division is multiplication's inverse. If $5 \times 6 = 30$, then $30 \div 6 = 5$. This relationship lets us solve problems we haven't directly calculated: if we know the product and one factor, we can find the missing factor.
+
+But division is more than an inverse. It's about sharing, grouping, rates, and proportions. Whenever we ask "How many per person?", "How many groups?", or "How much each?", we're dividing.
+
+In the modern world, division is everywhere. Calculating unit prices at the grocery store (total cost ÷ quantity). Determining average speed (total distance ÷ total time). Computing heart rate (beats ÷ minutes). The sooner you master division, the more sense the world makes.
+
+## Historical Context
+
+Division is perhaps the trickiest of the four operations. Ancient Egyptians, as evidenced by the Rhind Papyrus (circa 1650 BCE), understood division but had no standard algorithm. Instead, they used repeated subtraction and doubling—slow, methodical, but reliable.
+
+Greek mathematicians, particularly Euclid (around 300 BCE), studied division deeply in their work on number theory and proportions. They asked profound questions: What happens when division doesn't come out evenly? What are the properties of divisibility?
+
+Medieval Islamic scholars, building on Greek and Indian mathematics, developed algorithmic methods for division. Al-Khwarizmi's work (around 830 CE) included division algorithms that bore striking similarity to long division as we know it.
+
+By the time long division algorithms reached medieval Europe (around the 1200s), they were viewed as exotic, difficult knowledge. Mastering long division was a marker of mathematical prowess. Only over centuries did long division become what it is today: a standard skill taught to every child.
+
+## Core Concept
+
+### Division as Equal Sharing
+
+Division answers: "If I share something equally, how much does each person get?"
+
+$$a \div b = c$$
+
+We read this as "$a$ divided by $b$ equals $c$."
+
+- $a$ is the *dividend* (the thing being divided)
+- $b$ is the *divisor* (how many parts we're dividing into)
+- $c$ is the *quotient* (what each part gets)
+
+**Example:** Share 12 cookies among 3 children.
+
+$$12 \div 3 = 4$$
+
+Each child gets 4 cookies.
+
+### Division as Repeated Subtraction
+
+Another way to think about division: "How many times can I subtract the divisor from the dividend?"
+
+$$12 \div 3 = 4$$
+
+because
+
+$$12 - 3 - 3 - 3 - 3 = 0$$
+
+We subtracted 3 a total of 4 times.
+
+### The Remainder
+
+What happens when things don't divide evenly?
+
+$$13 \div 3 = 4 \text{ remainder } 1$$
+
+We write this as $13 \div 3 = 4 \text{ R} 1$ or $13 = 3 \times 4 + 1$.
+
+The *remainder* is what's left over after equal division. It's always smaller than the divisor.
+
+### Division as the Inverse of Multiplication
+
+Subtraction undoes addition; division undoes multiplication.
+
+If $6 \times 4 = 24$, then $24 \div 6 = 4$ and $24 \div 4 = 6$.
+
+Formally: If $a \times b = c$, then $c \div a = b$ and $c \div b = a$.
+
+This relationship is the foundation of checking division. To verify $24 \div 6 = 4$, we compute $6 \times 4 = 24$. If we get the original dividend back, our division was correct.
+
+With remainders: dividend = divisor × quotient + remainder
+
+$$13 = 3 \times 4 + 1$$
+
+## Definitions and Formal Lesson
+
+### Long Division Algorithm
+
+To divide 456 by 12:
+
+```
+       38
+    ------
+12 | 456
+     36    (12 × 3 = 36)
+    ----
+      96
+      96   (12 × 8 = 96)
+    ----
+       0
+```
+
+**Step-by-step:**
+
+1. Does 12 go into 4? No.
+2. Does 12 go into 45? Yes, 3 times (12 × 3 = 36).
+3. Subtract: 45 − 36 = 9.
+4. Bring down the 6, making 96.
+5. Does 12 go into 96? Yes, 8 times (12 × 8 = 96).
+6. Subtract: 96 − 96 = 0.
+
+The quotient is 38. There is no remainder.
+
+**With a remainder:**
+
+To divide 457 by 12:
+
+```
+       38
+    ------
+12 | 457
+     36
+    ----
+      97
+      96
+    ----
+       1
+```
+
+The quotient is 38 and the remainder is 1.
+
+We verify: $12 \times 38 + 1 = 456 + 1 = 457$. Correct.
+
+### Interpreting Remainders
+
+The same remainder can mean different things depending on context.
+
+**Discard the remainder:** "How many full boxes of 6 can we fill with 47 items?"
+$$47 \div 6 = 7 \text{ R} 5$$
+Answer: 7 full boxes.
+
+**Round up:** "How many buses do we need for 47 students if each bus holds 6?"
+$$47 \div 6 = 7 \text{ R} 5$$
+Answer: 8 buses (the 5 remaining students need one more bus).
+
+**Express as a fraction:** "If we share 9 loaves among 10 people, what does each get?"
+$$9 \div 10 = \frac{9}{10}$$
+Answer: $\frac{9}{10}$ of a loaf each. (This is division leading to fractions.)
+
+### Division by Zero is Undefined
+
+What is $10 \div 0$?
+
+There is no answer. Division by zero is undefined. Why? Because if we could divide by zero, we'd be saying "$0 \times ? = 10$", which is impossible. Zero times anything is always zero.
+
+## Worked Examples
+
+**Example 1: Long Division (No Remainder)**
+
+Divide $624 \div 13$.
+
+```
+       48
+    ------
+13 | 624
+     52   (13 × 4 = 52)
+    ----
+     104
+     104  (13 × 8 = 104)
+    ----
+       0
+```
+
+The quotient is 48.
+
+Verify: $13 \times 48 = 624$. Correct.
+
+**Example 2: Long Division (With Remainder)**
+
+Divide $625 \div 13$.
+
+```
+       48
+    ------
+13 | 625
+     52
+    ----
+     105
+     104
+    ----
+       1
+```
+
+The quotient is 48 and the remainder is 1.
+
+Verify: $13 \times 48 + 1 = 624 + 1 = 625$. Correct.
+
+**Example 3: Word Problem (Discard Remainder)**
+
+A candy store receives 156 pieces of candy and packages them into bags of 12. How many full bags can they make?
+
+$$156 \div 12 = 13$$
+
+They can make 13 full bags with no candy left over.
+
+**Example 4: Word Problem (Round Up)**
+
+A camp has 157 campers and wants to assign them to cabins with 12 per cabin. How many cabins do they need?
+
+$$157 \div 12 = 13 \text{ R} 1$$
+
+They need 14 cabins (13 full cabins plus 1 cabin for the remaining camper).
+
+**Example 5: Long Division (Multi-digit Divisor)**
+
+Divide $1,848 \div 24$.
+
+```
+        77
+    --------
+24 | 1,848
+     168   (24 × 7 = 168)
+    -----
+      168
+      168  (24 × 7 = 168)
+    -----
+        0
+```
+
+The quotient is 77.
+
+## Practice Set
+
+1. Divide the following (no remainder):
+   - $36 \div 6 = ?$
+   - $144 \div 12 = ?$
+   - $256 \div 16 = ?$
+
+2. Divide the following (with remainder):
+   - $37 \div 5 = ?$ R ?
+   - $158 \div 12 = ?$ R ?
+   - $327 \div 14 = ?$ R ?
+
+3. Verify each division using multiplication:
+   - If $63 \div 7 = 9$, then $7 \times 9 = ?$
+   - If $125 \div 8 = 15$ R $5$, then $8 \times 15 + 5 = ?$
+
+4. Interpret the remainder in context:
+   - A baker has 47 cookies and packages them 6 per box. How many full boxes can she make?
+   - A school needs to transport 95 students in vans that hold 8 each. How many vans are needed?
+
+5. Use the relationship between multiplication and division:
+   - If $9 \times 7 = 63$, then $63 \div 7 = ?$ and $63 \div 9 = ?$
+
+## Reasoning Task
+
+**Challenge:** A farmer has 450 pounds of grain to store in bags. Each bag holds 20 pounds.
+
+First, find how many bags are needed. Then, suppose the farmer later sells some grain, and now needs only 18 bags. How many pounds of grain remain? Show your work and verify your answer.
+
+## Application
+
+**Scenario:** You're planning a road trip of 480 miles with friends. You'll drive in a car that averages 30 miles per gallon. Gas costs $3 per gallon.
+
+1. How many gallons of gas do you need?
+2. What is the total cost of gas?
+3. If you divide the cost equally among 4 friends, how much does each person pay?
+
+Solve step by step using division where needed.
+
+## Recap
+
+Division is the inverse of multiplication. It answers questions about sharing, grouping, and rates. The dividend is divided by the divisor to produce a quotient; when division doesn't come out evenly, there's a remainder. The long division algorithm, developed over centuries by Egyptians, Greeks, and Islamic mathematicians, breaks large divisions into manageable steps. Remainders must be interpreted based on context: sometimes discarded, sometimes rounded up, sometimes expressed as a fraction. Checking division with multiplication ensures accuracy. Division by zero is undefined. Understanding division completes the circle of arithmetic: addition, subtraction, multiplication, and division form the foundation upon which all higher mathematics rests.
+
+## Unlock Quiz
+
+1. What is $56 \div 7$?
+   - 7
+   - 8
+   - 9
+   - 10
+
+<details>
+<summary>Answer</summary>
+8
+</details>
+
+2. Divide $75 \div 9$. What is the quotient and remainder?
+   - $8$ R $2$
+   - $8$ R $3$
+   - $9$ R $0$
+   - $9$ R $1$
+
+<details>
+<summary>Answer</summary>
+$8$ R $3$
+</details>
+
+3. Which equation verifies that $144 \div 12 = 12$?
+   - $12 \times 12 = 144$
+   - $12 + 12 = 144$
+   - $144 - 12 = 132$
+   - $144 \div 2 = 72$
+
+<details>
+<summary>Answer</summary>
+$12 \times 12 = 144$
+</details>
+
+4. A store receives 364 cans of soup. They display them on shelves that hold 13 cans each. How many shelves do they fill completely?
+   - 27
+   - 28
+   - 29
+   - 30
+
+<details>
+<summary>Answer</summary>
+28
+</details>
+
+5. What is $625 \div 25$?
+   - 24
+   - 25
+   - 26
+   - 27
+
+<details>
+<summary>Answer</summary>
+25
+</details>
+
+## Source Notes
+
+- Robbins, Gay. *The Rhind Mathematical Papyrus: An Ancient Egyptian Text*. Dover Publications. https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus
+- Boyer, Carl B. *A History of Mathematics*. Wiley. https://en.wikipedia.org/wiki/History_of_mathematics
+- Katz, Victor J. *A History of Mathematics*. Addison-Wesley. https://en.wikipedia.org/wiki/Al-Khwarizmi

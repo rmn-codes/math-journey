@@ -1,0 +1,488 @@
+---
+id: ch-038
+slug: the-quadratic-formula
+title: The Quadratic Formula
+subtitle: "A formula for every quadratic — and the secret of the discriminant"
+world: world-02-algebra-is-born
+worldNumber: 2
+chapterNumber: 38
+level: foundational
+estimatedTimeMinutes: 45
+core: true
+prerequisites: [ch-037]
+historicalPeriod: "628 CE – 1600 CE"
+historicalRegions:
+  - India
+  - Islamic world
+  - Europe
+mainConcepts:
+  - completing the square
+  - quadratic formula
+  - discriminant
+  - real and complex roots
+  - nature of solutions
+learningObjectives:
+  - Complete the square to transform a quadratic into vertex form
+  - Derive and apply the quadratic formula $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+  - Use the discriminant $b^2 - 4ac$ to determine the number and type of solutions
+  - Choose the best method (factoring vs. formula) for a given quadratic
+unlockCriteria:
+  quizMinScore: 0.8
+  practiceRequired: true
+status: draft
+tags:
+  - algebra
+  - quadratics
+  - formulas
+keyTerms:
+  - completing the square
+  - quadratic formula
+  - discriminant
+  - real roots
+  - complex roots
+  - vertex form
+review:
+  mathChecked: false
+  historicalChecked: false
+  editorialChecked: false
+---
+
+## Story Hook
+
+In 628 CE, the Indian mathematician **Brahmagupta** wrote a Sanskrit verse that described, in poetic prose, the solution to a general quadratic equation. Translated into English, it reads approximately:
+
+"To the absolute number multiplied by four times the square, add the square of the middle term; the square root of the same, less the middle term, being divided by twice the square is the value."
+
+This is cryptic—almost incomprehensible without explanation. But unwrap it, translate it to modern symbols, and you get:
+
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+The quadratic formula. One of the most important equations in all of mathematics.
+
+It means: **For any quadratic equation, there is a formula that gives the solution.** No guessing, no geometry, no clever tricks. Just plug in the numbers and calculate. This is the power and elegance of algebra.
+
+---
+
+## Why It Matters
+
+Not every quadratic factors nicely over the integers. Sometimes factoring is slow or impossible. But the quadratic formula *always works*—for any quadratic, real or imaginary solutions included.
+
+This is why it's one of the most important formulas in mathematics:
+
+- **Physics:** Calculating when a projectile lands.
+- **Economics:** Finding break-even points.
+- **Engineering:** Designing optimal structures.
+- **Medicine:** Dosage and response curves.
+
+And here's a bonus: the **discriminant**—the part under the square root, $b^2 - 4ac$—tells you *before* you solve whether solutions exist, and *how many*.
+
+---
+
+## Historical Context
+
+Ancient Babylonians (1800 BCE) had procedures for solving specific types of quadratics geometrically. They couldn't generalize because they lacked symbolic notation.
+
+Greek mathematicians (Euclid, ~300 BCE) solved quadratics using geometric constructions—exact and beautiful, but impractical for large numbers.
+
+Islamic scholars refined the algebraic approach. Al-Khwarizmi (~820 CE) classified quadratics into six cases and gave solving procedures for each. Al-Karaji (~1000 CE) made progress on more complex equations.
+
+The breakthrough came with **Indian mathematicians**. Brahmagupta (628 CE) and later Bhaskara II (1114–1185 CE) gave solutions that were *general*—they worked for any quadratic. Bhaskara explicitly acknowledged that quadratics can have two solutions, even negative ones (though he debated their validity).
+
+Islamic mathematicians in the medieval period refined these ideas further. By the 1500s–1600s, European mathematicians (Cardano, Vieta, Descartes) had fully developed the formula and recognized the role of the discriminant.
+
+---
+
+## Core Concept
+
+### Completing the Square
+
+Before we state the formula, let's see where it comes from. The method is called **completing the square**, and it's a beautiful algebraic technique.
+
+**Goal:** Rewrite $ax^2 + bx + c = 0$ in the form $(x - h)^2 = k$.
+
+**Steps (for $x^2 + bx + c = 0$):**
+
+1. Move $c$ to the right: $x^2 + bx = -c$
+
+2. Take half of $b$, square it, and add to both sides:
+   $$x^2 + bx + \left(\frac{b}{2}\right)^2 = -c + \left(\frac{b}{2}\right)^2$$
+
+3. The left side is now a perfect square:
+   $$\left(x + \frac{b}{2}\right)^2 = -c + \frac{b^2}{4}$$
+
+4. Simplify the right side:
+   $$\left(x + \frac{b}{2}\right)^2 = \frac{b^2 - 4c}{4}$$
+
+5. Take the square root:
+   $$x + \frac{b}{2} = \pm\frac{\sqrt{b^2 - 4c}}{2}$$
+
+6. Solve for $x$:
+   $$x = \frac{-b \pm \sqrt{b^2 - 4c}}{2}$$
+
+When $a \neq 1$, divide the entire equation by $a$ first. The result is the **quadratic formula**.
+
+---
+
+### The Quadratic Formula
+
+For any quadratic equation in the form $ax^2 + bx + c = 0$:
+
+$$\boxed{x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}}$$
+
+The $\pm$ means there are typically *two solutions*:
+$$x_1 = \frac{-b + \sqrt{b^2 - 4ac}}{2a} \quad \text{and} \quad x_2 = \frac{-b - \sqrt{b^2 - 4ac}}{2a}$$
+
+---
+
+### The Discriminant
+
+The expression under the square root is called the **discriminant**:
+
+$$\Delta = b^2 - 4ac$$
+
+The discriminant tells us crucial information *before* we solve:
+
+| Discriminant | Meaning | Solutions |
+|---|---|---|
+| $\Delta > 0$ | Positive | Two distinct real solutions |
+| $\Delta = 0$ | Zero | One real solution (repeated root) |
+| $\Delta < 0$ | Negative | No real solutions (two complex conjugates) |
+
+---
+
+### Vertex Form
+
+Completing the square gives us the **vertex form** of a quadratic:
+
+$$y = a(x - h)^2 + k$$
+
+where $(h, k)$ is the vertex (the turning point of the parabola).
+
+For example, $y = (x - 2)^2 + 3$ has vertex at $(2, 3)$.
+
+---
+
+## Definitions and Formal Lesson
+
+**Completing the Square:** A technique to rewrite a quadratic in the form $(x - h)^2 = k$ by adding a constant to both sides.
+
+**Quadratic Formula:** $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$, which gives solutions to $ax^2 + bx + c = 0$.
+
+**Discriminant:** $\Delta = b^2 - 4ac$; determines the number and type of solutions.
+
+**Vertex Form:** $y = a(x - h)^2 + k$, where $(h, k)$ is the vertex.
+
+**Real Roots:** Solutions that are real numbers.
+
+**Complex Roots:** Solutions involving imaginary numbers (occur when $\Delta < 0$).
+
+---
+
+## Worked Examples
+
+### Example 1: Using the Quadratic Formula (Two Real Solutions)
+
+**Solve:** $x^2 + 5x + 6 = 0$
+
+**Identify:** $a = 1$, $b = 5$, $c = 6$
+
+**Calculate the discriminant:**
+$$\Delta = 5^2 - 4(1)(6) = 25 - 24 = 1$$
+
+Since $\Delta > 0$, there are two real solutions.
+
+**Apply the formula:**
+$$x = \frac{-5 \pm \sqrt{1}}{2(1)} = \frac{-5 \pm 1}{2}$$
+
+**Two solutions:**
+$$x_1 = \frac{-5 + 1}{2} = \frac{-4}{2} = -2$$
+$$x_2 = \frac{-5 - 1}{2} = \frac{-6}{2} = -3$$
+
+**Check:**
+- $(-2)^2 + 5(-2) + 6 = 4 - 10 + 6 = 0$ ✓
+- $(-3)^2 + 5(-3) + 6 = 9 - 15 + 6 = 0$ ✓
+
+(Note: This quadratic factors as $(x + 2)(x + 3) = 0$, so we could have solved it by factoring.)
+
+---
+
+### Example 2: One Real Solution (Perfect Square)
+
+**Solve:** $x^2 - 6x + 9 = 0$
+
+**Identify:** $a = 1$, $b = -6$, $c = 9$
+
+**Discriminant:**
+$$\Delta = (-6)^2 - 4(1)(9) = 36 - 36 = 0$$
+
+Since $\Delta = 0$, there is one repeated real solution.
+
+**Apply the formula:**
+$$x = \frac{-(-6) \pm \sqrt{0}}{2(1)} = \frac{6 \pm 0}{2} = 3$$
+
+**Solution:** $x = 3$ (a repeated root)
+
+**Note:** This factors as $(x - 3)^2 = 0$.
+
+---
+
+### Example 3: More Complex Quadratic
+
+**Solve:** $2x^2 - 7x + 3 = 0$
+
+**Identify:** $a = 2$, $b = -7$, $c = 3$
+
+**Discriminant:**
+$$\Delta = (-7)^2 - 4(2)(3) = 49 - 24 = 25$$
+
+Since $\Delta > 0$ and is a perfect square, there are two rational solutions.
+
+**Apply the formula:**
+$$x = \frac{-(-7) \pm \sqrt{25}}{2(2)} = \frac{7 \pm 5}{4}$$
+
+**Two solutions:**
+$$x_1 = \frac{7 + 5}{4} = \frac{12}{4} = 3$$
+$$x_2 = \frac{7 - 5}{4} = \frac{2}{4} = \frac{1}{2}$$
+
+**Check:**
+- When $x = 3$: $2(3)^2 - 7(3) + 3 = 18 - 21 + 3 = 0$ ✓
+- When $x = 1/2$: $2(1/4) - 7/2 + 3 = 1/2 - 7/2 + 3 = 0$ ✓
+
+(This factors as $(x - 3)(2x - 1) = 0$.)
+
+---
+
+### Example 4: Irrational Solutions
+
+**Solve:** $x^2 - 4x - 2 = 0$
+
+**Identify:** $a = 1$, $b = -4$, $c = -2$
+
+**Discriminant:**
+$$\Delta = (-4)^2 - 4(1)(-2) = 16 + 8 = 24$$
+
+Since $\Delta > 0$ but is not a perfect square, there are two irrational solutions.
+
+**Apply the formula:**
+$$x = \frac{-(-4) \pm \sqrt{24}}{2(1)} = \frac{4 \pm \sqrt{24}}{2}$$
+
+**Simplify:** $\sqrt{24} = \sqrt{4 \cdot 6} = 2\sqrt{6}$
+
+$$x = \frac{4 \pm 2\sqrt{6}}{2} = 2 \pm \sqrt{6}$$
+
+**Solutions:** $x = 2 + \sqrt{6}$ or $x = 2 - \sqrt{6}$
+
+(Approximately $x \approx 4.45$ or $x \approx -0.45$)
+
+---
+
+### Example 5: No Real Solutions
+
+**Solve:** $x^2 + 2x + 5 = 0$
+
+**Identify:** $a = 1$, $b = 2$, $c = 5$
+
+**Discriminant:**
+$$\Delta = 2^2 - 4(1)(5) = 4 - 20 = -16$$
+
+Since $\Delta < 0$, there are no real solutions. The parabola doesn't cross the x-axis.
+
+**Conclusion:** This equation has no real solutions. (It has complex solutions: $x = -1 \pm 2i$, but those are beyond this course.)
+
+---
+
+### Example 6: Completing the Square
+
+**Rewrite in vertex form:** $y = x^2 - 6x + 8$
+
+**Steps:**
+
+1. Group the first two terms: $y = (x^2 - 6x) + 8$
+
+2. Complete the square inside the parentheses:
+   - Take half the coefficient of $x$: $-6 / 2 = -3$
+   - Square it: $(-3)^2 = 9$
+   - Add and subtract: $y = (x^2 - 6x + 9) - 9 + 8$
+
+3. Write as a perfect square: $y = (x - 3)^2 - 1$
+
+**Vertex form:** $y = (x - 3)^2 - 1$
+
+**Vertex:** $(3, -1)$ (the parabola's turning point)
+
+---
+
+### Example 7: Physical Application
+
+**Problem:** An object is launched upward from the ground with initial velocity 48 ft/s. Its height at time $t$ is:
+$$h(t) = -16t^2 + 48t$$
+
+When does it hit the ground?
+
+**Solution:**
+
+The object hits the ground when $h(t) = 0$:
+$$-16t^2 + 48t = 0$$
+
+**Identify:** $a = -16$, $b = 48$, $c = 0$
+
+**Discriminant:**
+$$\Delta = 48^2 - 4(-16)(0) = 2304 - 0 = 2304$$
+$$\sqrt{\Delta} = 48$$
+
+**Apply the formula:**
+$$t = \frac{-48 \pm 48}{2(-16)} = \frac{-48 \pm 48}{-32}$$
+
+**Two solutions:**
+$$t_1 = \frac{-48 + 48}{-32} = \frac{0}{-32} = 0 \quad \text{(launch time)}$$
+$$t_2 = \frac{-48 - 48}{-32} = \frac{-96}{-32} = 3 \quad \text{(landing time)}$$
+
+**Answer:** The object lands after 3 seconds.
+
+(Note: We could have factored: $-16t(t - 3) = 0$.)
+
+---
+
+## Practice Set
+
+### Finding Discriminant and Number of Solutions
+
+1. For $x^2 + 4x + 4 = 0$, find $\Delta$ and determine the number of real solutions without solving.
+
+2. For $x^2 - 3x + 5 = 0$, find $\Delta$ and describe the solutions.
+
+### Solving with the Quadratic Formula
+
+3. Solve $x^2 - 8x + 15 = 0$
+
+4. Solve $2x^2 + 3x - 2 = 0$
+
+5. Solve $x^2 + x + 1 = 0$
+
+6. Solve $3x^2 - 6x - 2 = 0$
+
+### Completing the Square
+
+7. Rewrite $y = x^2 + 4x + 1$ in vertex form.
+
+8. Rewrite $y = 2x^2 - 8x + 3$ in vertex form.
+
+### Applications
+
+9. A ball is thrown from a height of 5 feet with initial upward velocity 20 ft/s. Using $h(t) = -16t^2 + 20t + 5$, find when the ball reaches a height of 10 feet.
+
+---
+
+## Reasoning Task
+
+**Problem:** For the quadratic $ax^2 + bx + c = 0$, you're told that the discriminant is 0.
+
+**Your task:**
+
+1. What does $\Delta = 0$ mean graphically? (How does the parabola relate to the x-axis?)
+2. Explain why the quadratic formula simplifies to $x = \frac{-b}{2a}$ when $\Delta = 0$.
+3. What is the relationship between this $x$-value and the vertex of the parabola $y = ax^2 + bx + c$?
+4. Give a specific example of a quadratic with $\Delta = 0$ and verify your reasoning.
+
+---
+
+## Application
+
+**Real-world scenario:** A company's profit (in dollars) as a function of the number of units produced ($x$) is:
+
+$$P(x) = -x^2 + 100x - 1200$$
+
+(Profit increases at first due to economies of scale, then decreases due to production costs.)
+
+1. At what production levels is profit zero (break-even points)?
+2. Set up the equation $P(x) = 0$ and solve using the quadratic formula.
+3. What does each solution mean in context?
+4. At what production level is profit maximum? (Hint: use the vertex formula $x = \frac{-b}{2a}$.)
+
+---
+
+## Recap
+
+The quadratic formula $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$ is the universal tool for solving quadratic equations. It's derived by completing the square—a technique that also reveals the vertex form of a parabola.
+
+**Key insights:**
+
+- **Discriminant ($\Delta = b^2 - 4ac$) tells you:**
+  - If $\Delta > 0$: two distinct real solutions
+  - If $\Delta = 0$: one repeated real solution
+  - If $\Delta < 0$: no real solutions (complex solutions exist)
+
+- **Choose your method:**
+  - If the quadratic factors nicely: factor and use zero product property (faster).
+  - Otherwise: use the quadratic formula (always works).
+
+- **Completing the square:**
+  - Rewrites the quadratic in vertex form.
+  - Shows the geometric center of the parabola.
+  - Is the foundation for deriving the quadratic formula itself.
+
+From ancient Babylonian clay tablets to modern applications in physics and economics, the quadratic formula is one of humanity's most important mathematical discoveries. It represents the power of algebra: a single formula that solves *any* quadratic, for any values of $a$, $b$, and $c$.
+
+---
+
+## Unlock Quiz
+
+**Question 1:** What does the discriminant $b^2 - 4ac$ tell you?
+
+- The exact values of the solutions
+- The number and type of solutions without solving
+- Whether the parabola opens upward or downward
+
+<details>
+<summary>Answer</summary>
+The number and type of solutions without solving
+</details>
+
+---
+
+**Question 2:** For the equation $x^2 - 4x + 4 = 0$, what is the discriminant?
+
+- $-4$
+- $0$
+- $4$
+
+<details>
+<summary>Answer</summary>
+$0$
+</details>
+
+---
+
+**Question 3:** When you complete the square on $x^2 + 6x + 5$, what constant do you add?
+
+- $3$
+- $6$
+- $9$
+
+<details>
+<summary>Answer</summary>
+$9$
+</details>
+
+---
+
+**Question 4:** What is the vertex form of $y = x^2 - 4x + 3$?
+
+- $y = (x - 2)^2 + 3$
+- $y = (x - 2)^2 - 1$
+- $y = (x + 2)^2 - 1$
+
+<details>
+<summary>Answer</summary>
+$y = (x - 2)^2 - 1$
+</details>
+
+---
+
+## Source Notes
+
+- [Quadratic formula - Wikipedia](https://en.wikipedia.org/wiki/Quadratic_formula)
+- [Brahmagupta - Wikipedia](https://en.wikipedia.org/wiki/Brahmagupta)
+- [Bhaskara II - Wikipedia](https://en.wikipedia.org/wiki/Bhaskara_II)
+- [History of quadratic equations - Wikipedia](https://en.wikipedia.org/wiki/Quadratic_equation#History)
+- [Completing the square - Wikipedia](https://en.wikipedia.org/wiki/Completing_the_square)

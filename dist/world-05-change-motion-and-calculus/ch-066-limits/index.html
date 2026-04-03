@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Limits — The Foundation of Calculus — Math Journey</title>
+    <meta name="description" content="Approaching without arriving — the rigorous idea beneath all of calculus" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 5 · Chapter 66</p>
+        <h1>Limits — The Foundation of Calculus</h1>
+        <p class="hero-copy">Approaching without arriving — the rigorous idea beneath all of calculus</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1800s (Cauchy, Weierstrass)</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Evaluate limits using substitution, factoring, and limit laws</li><li>Distinguish one-sided limits</li><li>Identify where limits do not exist</li><li>Determine continuity at a point</li><li>Compute limits at infinity</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>The year is 1824. Augustin-Louis Cauchy, a French mathematician of formidable rigor, is sitting in his study in Paris. For nearly 150 years, calculus has worked—brilliantly. Newton&#x27;s law of gravitation explains the heavens. Euler&#x27;s work on infinite series unlocks new mathematics. Engineers build bridges. Ships navigate oceans using calculus.</p>
+<p>But nobody can really explain <em>why</em> it works.</p>
+<p>Bishop George Berkeley, decades earlier, had mocked Newton&#x27;s method mercilessly, asking about &quot;the ghosts of departed quantities&quot;—the mysterious infinitesimals that Newton used but never quite defined. How can you divide by a quantity, then pretend it&#x27;s zero? How can you approach a value without actually reaching it?</p>
+<p>Cauchy decides to put calculus on solid ground. He defines, with great care, what it means for a function to <em>approach</em> a value as the input approaches another value. No ghosts. No vague handwaving. Pure logic.</p>
+<p>Two decades later, in the 1850s, Karl Weierstrass refines Cauchy&#x27;s idea into the $\epsilon$-$\delta$ definition, the rigorous bedrock on which modern calculus rests. Finally, the mystery is solved. Approaching a value is not mystical—it&#x27;s precise and logical.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Limits are the foundation of calculus, and calculus is the language of change. Without rigorous limits, we cannot confidently compute derivatives, integrals, or limits at infinity. Without limits, we cannot trust our calculations in physics, engineering, medicine, or finance.</p>
+<p>A doctor using pharmacokinetics to calculate drug dosages relies on limits. A civil engineer designing a dam relies on limits. An economist modeling inflation relies on limits. The word &quot;limit&quot; rarely appears in these fields, but the concept is everywhere—the idea of approaching a value, settling on a reliable answer even when perfection is impossible.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Newton and Leibniz invented calculus in the 1660s–1680s using intuitive ideas about infinitesimals—quantities that are &quot;infinitely small&quot; but not zero. This made sense intuitively but was logically fuzzy. For 150 years, mathematicians used calculus without fully understanding why it worked.</p>
+<p>By the early 1800s, mathematics had grown more rigorous. Cauchy (1789–1857) pioneered a rigorous definition of limits based on how close you could get to a value. Weierstrass (1815–1897) formalized this with the $\epsilon$-$\delta$ definition: for every acceptable error margin ($\epsilon$), you can find an interval ($\delta$) around the input where the output stays within that error margin.</p>
+<p>This might sound technical. But the insight is simple: <em>to approach a value means you can get as close as you want—not just infinitely small, but arbitrarily close.</em></p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>A limit</strong> is a value that a function approaches as the input approaches some number.</p>
+<p>Notation: $\lim_{x \to a} f(x) = L$ means &quot;as $x$ approaches $a$, the value $f(x)$ approaches $L$.&quot;</p>
+<p><strong>The crucial point:</strong> The function doesn&#x27;t have to <em>reach</em> $L$. It doesn&#x27;t even have to be <em>defined</em> at $a$. The limit only cares about what happens <em>near</em> $a$, as you approach it from either side.</p>
+<p><strong>Example:</strong> Let $f(x) = \frac{x^2 - 1}{x - 1}$. This function is undefined at $x = 1$ (because we&#x27;d divide by zero). But what happens as $x$ approaches 1?</p>
+<p>Let&#x27;s make a table:</p>
+<p>| $x$ | 0.9 | 0.99 | 0.999 | 1.0 | 1.001 | 1.01 | 1.1 | |---|---|---|---|---|---|---|---| | $f(x)$ | 1.9 | 1.99 | 1.999 | undefined | 2.001 | 2.01 | 2.1 |</p>
+<p>From both sides, $f(x)$ approaches 2. So $\lim_{x \to 1} \frac{x^2-1}{x-1} = 2$, even though $f(1)$ is undefined.</p>
+<p><strong>One-sided limits:</strong> Sometimes you approach from the left or the right.</p>
+<p>$\lim_{x \to a^-} f(x)$ means &quot;as $x$ approaches $a$ from the left.&quot; $\lim_{x \to a^+} f(x)$ means &quot;as $x$ approaches $a$ from the right.&quot;</p>
+<p>If both one-sided limits equal $L$, then the two-sided limit $\lim_{x \to a} f(x) = L$.</p>
+<p>If the one-sided limits are different, the limit does not exist (DNE).</p>
+<p><strong>Limits at infinity:</strong> $\lim_{x \to \infty} f(x) = L$ means &quot;as $x$ gets arbitrarily large, $f(x)$ approaches $L$.&quot;</p>
+<p>Example: $\lim_{x \to \infty} \frac{1}{x} = 0$. As $x$ grows without bound, $\frac{1}{x}$ shrinks toward zero.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>The Limit Definition (Informal):</strong> $\lim_{x \to a} f(x) = L$ if $f(x)$ gets arbitrarily close to $L$ as $x$ gets arbitrarily close to $a$ (from either side).</p>
+<p><strong>Direct Substitution:</strong> If $f$ is continuous at $a$, you can find the limit by plugging in:</p>
+<p>$$\lim_{x \to a} f(x) = f(a)$$</p>
+<p>For polynomials and many other &quot;nice&quot; functions, this always works. Example: $\lim_{x \to 3} (x^2 + 2x) = 9 + 6 = 15$.</p>
+<p><strong>Factoring and Canceling:</strong> If direct substitution gives $\frac{0}{0}$ (an indeterminate form), try factoring:</p>
+<p>$$\lim_{x \to 1} \frac{x^2 - 1}{x - 1} = \lim_{x \to 1} \frac{(x-1)(x+1)}{x-1} = \lim_{x \to 1} (x+1) = 2$$</p>
+<p><strong>One-Sided Limits:</strong> Evaluate by approaching from one direction only.</p>
+<p><strong>Limit Does Not Exist (DNE):</strong> A limit DNE if:</p>
+<ul><li>The one-sided limits are different, OR</li><li>The function oscillates or approaches $\pm\infty$</li></ul>
+<p><strong>Limit Laws:</strong> If $\lim_{x \to a} f(x) = L$ and $\lim_{x \to a} g(x) = M$, then:</p>
+<ul><li>$\lim_{x \to a} [f(x) + g(x)] = L + M$ (sum rule)</li><li>$\lim_{x \to a} [f(x) - g(x)] = L - M$ (difference rule)</li><li>$\lim_{x \to a} [f(x) \cdot g(x)] = L \cdot M$ (product rule)</li><li>$\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{M}$, provided $M \neq 0$ (quotient rule)</li><li>$\lim_{x \to a} [f(x)]^n = L^n$ (power rule)</li></ul>
+<p><strong>Squeeze Theorem (Intuitive):</strong> If $h(x) \leq f(x) \leq g(x)$ near $a$, and $\lim_{x \to a} h(x) = \lim_{x \to a} g(x) = L$, then $\lim_{x \to a} f(x) = L$. If $f$ is &quot;squeezed&quot; between two functions that both approach $L$, then $f$ must also approach $L$.</p>
+<p><strong>Continuity:</strong> A function $f$ is continuous at $a$ if $\lim_{x \to a} f(x) = f(a)$. Intuitively, there are no breaks, jumps, or holes in the graph at that point.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Direct Substitution</strong></p>
+<p>Evaluate $\lim_{x \to 2} (3x^2 - 5x + 1)$.</p>
+<p>The function is a polynomial, so it&#x27;s continuous everywhere. Substitute $x = 2$:</p>
+<p>$$3(2)^2 - 5(2) + 1 = 12 - 10 + 1 = 3$$</p>
+<p><strong>Example 2: Factoring to Remove a Zero in the Denominator</strong></p>
+<p>Evaluate $\lim_{x \to 3} \frac{x^2 - 9}{x - 3}$.</p>
+<p>Direct substitution gives $\frac{0}{0}$, so factor:</p>
+<p>$$\lim_{x \to 3} \frac{x^2 - 9}{x - 3} = \lim_{x \to 3} \frac{(x-3)(x+3)}{x-3} = \lim_{x \to 3} (x+3) = 6$$</p>
+<p><strong>Example 3: One-Sided Limits</strong></p>
+<p>Let $f(x) = \begin{cases} x + 1 &amp; \text{if } x &lt; 2 \\ 5 &amp; \text{if } x = 2 \\ 2x - 1 &amp; \text{if } x &gt; 2 \end{cases}$</p>
+<p>Find $\lim_{x \to 2^-} f(x)$, $\lim_{x \to 2^+} f(x)$, and $\lim_{x \to 2} f(x)$.</p>
+<p>From the left: $\lim_{x \to 2^-} f(x) = 2 + 1 = 3$ From the right: $\lim_{x \to 2^+} f(x) = 2(2) - 1 = 3$ The two-sided limit: $\lim_{x \to 2} f(x) = 3$ (even though $f(2) = 5$—the function is discontinuous at $x = 2$)</p>
+<p><strong>Example 4: Limit at Infinity</strong></p>
+<p>Evaluate $\lim_{x \to \infty} \frac{2x + 1}{5x - 3}$.</p>
+<p>Divide numerator and denominator by the highest power of $x$ (which is $x$):</p>
+<p>$$\lim_{x \to \infty} \frac{2x + 1}{5x - 3} = \lim_{x \to \infty} \frac{2 + \frac{1}{x}}{5 - \frac{3}{x}} = \frac{2 + 0}{5 - 0} = \frac{2}{5}$$</p>
+<p>As $x \to \infty$, the terms $\frac{1}{x}$ and $\frac{3}{x}$ approach 0.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Evaluate $\lim_{x \to 4} (x^2 - 3x + 2)$.</strong></li></ol>
+<ul><li>2</li><li>4</li><li>6</li><li>8</li></ul>
+<ol><li><strong>For $f(x) = \frac{x^2 - 4}{x - 2}$, what is $\lim_{x \to 2} f(x)$?</strong></li></ol>
+<ul><li>0</li><li>2</li><li>4</li><li>Does not exist</li></ul>
+<ol><li><strong>If $\lim_{x \to a^-} f(x) = 5$ but $\lim_{x \to a^+} f(x) = 7$, what can you say?</strong></li></ol>
+<ul><li>The limit equals 5</li><li>The limit equals 7</li><li>The limit does not exist</li><li>The function is continuous at $a$</li></ul>
+<ol><li><strong>Which describes the Squeeze Theorem?</strong></li></ol>
+<ul><li>If a function is between two functions with the same limit, it has that limit too</li><li>A function squeezed cannot exist</li><li>All functions can be squeezed</li><li>Limits always exist</li></ul>
+<ol><li><strong>Evaluate $\lim_{x \to \infty} \frac{3}{x}$.</strong></li></ol>
+<ul><li>0</li><li>1</li><li>3</li><li>Does not exist</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>Your classmate is confused by the definition of a limit. She says: &quot;If the limit of $f(x)$ as $x \to a$ equals $L$, does that mean $f(a) = L$?&quot;</p>
+<p>Explain to her why the answer is sometimes yes and sometimes no. Give an example of each.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Drug Concentration in the Bloodstream</strong></p>
+<p>A patient takes a medication. The concentration $C(t)$ in mg/mL at time $t$ (in hours) is:</p>
+<p>$$C(t) = \frac{10t}{t^2 + 1}$$</p>
+<p>What is the long-term concentration as $t \to \infty$?</p>
+<p>$$\lim_{t \to \infty} \frac{10t}{t^2 + 1} = \lim_{t \to \infty} \frac{10}{t + \frac{1}{t}} = \frac{10}{\infty} = 0$$</p>
+<p>As time goes on, the drug is metabolized and its concentration approaches zero. This limit tells the doctor when the drug has essentially left the body.</p>
+<p><strong>Modeling Population Growth</strong></p>
+<p>A population $P(t)$ of bacteria grows according to:</p>
+<p>$$P(t) = \frac{5000}{1 + 9e^{-t}}$$</p>
+<p>As $t \to \infty$, the population approaches the carrying capacity:</p>
+<p>$$\lim_{t \to \infty} \frac{5000}{1 + 9e^{-t}} = \frac{5000}{1 + 0} = 5000$$</p>
+<p>The exponential term $e^{-t}$ approaches 0, so the population stabilizes at 5000. This is the maximum population the environment can support.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>A <strong>limit</strong> is a value that a function approaches as the input approaches some number. The notation $\lim_{x \to a} f(x) = L$ means the output gets arbitrarily close to $L$ as the input gets arbitrarily close to $a$.</p>
+<p>You can evaluate limits by <strong>direct substitution</strong> (if the function is continuous), by <strong>factoring and canceling</strong> (to remove indeterminate forms), or by using <strong>limit laws</strong> (addition, subtraction, multiplication, division, power).</p>
+<p><strong>One-sided limits</strong> approach from one direction. If the one-sided limits are different, the two-sided limit does not exist (DNE).</p>
+<p><strong>Limits at infinity</strong> describe the long-term behavior of a function. <strong>Continuity</strong> at a point means the limit equals the function value at that point.</p>
+<p>For 150 years after Newton and Leibniz, calculus worked but lacked rigorous foundation. Cauchy and Weierstrass solved this by defining limits precisely. Today, limits are the bedrock on which all of calculus rests.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>1. Why did Bishop Berkeley mock Newton&#x27;s calculus?</strong></p>
+<ul><li>He didn&#x27;t understand multiplication</li><li>He was jealous of Newton&#x27;s success</li><li>Newton used &quot;ghosts of departed quantities&quot;—infinitesimals that were never clearly defined</li><li>Calculus was invented in France, not England</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Newton used &quot;ghosts of departed quantities&quot;—infinitesimals that were never clearly defined</p>
+</details>
+<p><strong>2. If direct substitution into a limit gives $\frac{0}{0}$, what should you try?</strong></p>
+<ul><li>Give up; the limit does not exist</li><li>Factor and cancel common terms</li><li>Multiply by a constant</li><li>Take the derivative</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Factor and cancel common terms</p>
+</details>
+<p><strong>3. What is the relationship between the two one-sided limits and the two-sided limit?</strong></p>
+<ul><li>The two-sided limit must equal one of them</li><li>If both one-sided limits equal $L$, then the two-sided limit equals $L$</li><li>One-sided limits and two-sided limits are unrelated</li><li>There is no two-sided limit</li></ul>
+<details>
+<summary>Answer</summary>
+<p>If both one-sided limits equal $L$, then the two-sided limit equals $L$</p>
+</details>
+<p><strong>4. A function $f$ is continuous at $a$ if:</strong></p>
+<ul><li>$f$ is defined at $a$</li><li>$\lim_{x \to a} f(x) = f(a)$</li><li>The function is increasing at $a$</li><li>The function is smooth at $a$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\lim_{x \to a} f(x) = f(a)$</p>
+</details>
+<p><strong>5. Who formalized the $\epsilon$-$\delta$ definition of a limit in the 1850s?</strong></p>
+<ul><li>Newton</li><li>Leibniz</li><li>Cauchy</li><li>Weierstrass</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Weierstrass</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Cauchy, A.-L. (1821). <em>Cours d&#x27;Analyse de l&#x27;École Royale Polytechnique</em>. https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy</li><li>Weierstrass, K. (1870s). Lectures on the Theory of Functions. https://en.wikipedia.org/wiki/Karl_Weierstrass</li><li>Berkeley, G. (1734). <em>The Analyst</em>. https://en.wikipedia.org/wiki/The_Analyst</li><li>https://en.wikipedia.org/wiki/Limit_(mathematics)</li><li>https://en.wikipedia.org/wiki/Continuous_function</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-065-the-problem-of-instantaneous-change/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Problem of Instantaneous Change</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-067-the-derivative/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Derivative — Measuring Instantaneous Change</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

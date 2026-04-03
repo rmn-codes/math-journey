@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Decimals and the Metric System — Math Journey</title>
+    <meta name="description" content="Fractions in base ten — and the beautiful simplicity of the metric system" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 0 · Chapter 11</p>
+        <h1>Decimals and the Metric System</h1>
+        <p class="hero-copy">Fractions in base ten — and the beautiful simplicity of the metric system</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>foundational</span>
+          <span>F, l, a, n, d, e, r, s,  , (, B, e, l, g, i, u, m, ), ,,  , F, r, a, n, c, e</span>
+          <span>1585 CE – present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Read and write decimal numbers, identifying the value of each decimal place</li><li>Convert between fractions and decimals</li><li>Compare and order decimal numbers</li><li>Add, subtract, multiply, and divide decimals</li><li>Understand the metric system as a base-ten measurement system</li><li>Use metric prefixes to convert between units</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>In 1585, a Flemish mathematician named Simon Stevin published a small pamphlet that would change how the world thinks about measurement. He called it <em>De Thiende</em> — &quot;The Tenth&quot; — and in its pages, he argued something radical: everyone in Europe should abandon their patchwork of fractions and embrace decimal notation instead.</p>
+<p>But here&#x27;s what made Stevin different from most scholars of his time. He didn&#x27;t dedicate his work to kings or to the ivory tower. Instead, he wrote directly to working people: &quot;Astronomers, Land-surveyors, Measurers of Tapestries, Gaugers, Stereometers, Mint-Masters, and to all Merchants.&quot; Stevin believed that decimals weren&#x27;t an abstract mathematical curiosity — they were a <em>tool</em>. A practical, elegant tool that anyone could learn and use.</p>
+<p>He was right. Two centuries later, during the French Revolution, mathematicians and scientists across France decided to build an entirely new system of measurement from the ground up. What did they build it on? Base ten. Powers of ten. Simon Stevin&#x27;s vision. And that&#x27;s how we got the metric system — and why today, when you measure a liter of milk or weigh 75 kilograms, you&#x27;re using an idea that started in a pamphlet in 1585.</p>
+<p>This chapter is about why Stevin&#x27;s vision was so powerful, and why decimals and metrics are still the language of precise measurement.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Imagine trying to build a bridge, or split a recipe among twelve people, or price goods in a market — using fractions like $\frac{17}{24}$ and $\frac{5}{12}$. You&#x27;d have to add them, multiply them, compare them. That&#x27;s hard. Now imagine doing all of that with numbers like 0.708 and 0.417. Much easier.</p>
+<p>Decimals are fractions written in a way that lets us <em>use</em> the same algorithms we know for whole numbers. You can add 2.5 and 1.3 almost as easily as 25 and 13. Multiply 0.6 by 7 using the same method you&#x27;d use for 6 times 7. Decimals are the bridge between fractions and the computational power of place value.</p>
+<p>And the metric system? It&#x27;s the most successful application of decimal thinking ever built. When you convert 5 kilometers to meters, you multiply by 1000 — the same kind of power-of-ten shift that happens when you move from hundreds to thousands. No weird conversion factors. No &quot;divide by 12&quot; or &quot;multiply by 5280.&quot; Just powers of ten, over and over. That consistency is why every scientist, engineer, and doctor on Earth uses it.</p>
+<p>In this chapter, we&#x27;ll see how decimals work, and then how they unlock the metric system&#x27;s elegant simplicity.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>For thousands of years, people measured and recorded using different bases. The Babylonians loved base 60 — which is why we still have 60 seconds in a minute. The Romans used fractions based on 12 — which is why we still say &quot;inch&quot; (from the Latin <em>uncia</em>, meaning one-twelfth). Every culture had its own system, and conversion between them was a nightmare.</p>
+<p>By the 1500s, European mathematicians and merchants were drowning in this complexity. A Flemish engineer named Simon Stevin looked at this chaos and thought: why not just extend place value downward, the same way Hindus and Arabs had extended it upward centuries before? If we can have tens, hundreds, and thousands, why not tenths, hundredths, and thousandths?</p>
+<p>Stevin published <em>De Thiende</em> in 1585, but — as is often the case — the idea didn&#x27;t immediately take over. It took another century of advocacy by mathematicians like John Napier (of logarithm fame) to spread decimal fractions through the scientific world.</p>
+<p>Then, in 1789, the French Revolution happened. In the chaos of reimagining society, French scientists and mathematicians got an extraordinary opportunity: redesign measurement from scratch. They chose base ten throughout. One meter. One liter. One kilogram. And prefixes — kilo for 1000 times, centi for 1/100, milli for 1/1000 — all built on powers of ten.</p>
+<p>The metric system was officially adopted in France in 1799. It spread slowly at first, but eventually became the global standard in science, medicine, and engineering. Today, almost every country uses it (the main holdouts are the United States, Liberia, and Myanmar — a tiny fraction of the world).</p>
+<p>The reason? Decimals work. Stevin was right.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A decimal is a fraction written in base ten, using place value. Just as a whole number like 523 means:</p>
+<p>$$5 \times 100 + 2 \times 10 + 3 \times 1$$</p>
+<p>a decimal like 5.23 means:</p>
+<p>$$5 \times 1 + 2 \times \frac{1}{10} + 3 \times \frac{1}{100}$$</p>
+<p>The decimal point is just a marker — it tells us where the &quot;ones place&quot; is. Everything to the left is worth 1 or more. Everything to the right is a fraction — a part of 1.</p>
+<p>Each position to the right represents a power of ten in the denominator:</p>
+<ul><li>The first place after the decimal point is <strong>tenths</strong>: $\frac{1}{10} = 10^{-1}$</li><li>The second is <strong>hundredths</strong>: $\frac{1}{100} = 10^{-2}$</li><li>The third is <strong>thousandths</strong>: $\frac{1}{1000} = 10^{-3}$</li><li>And so on.</li></ul>
+<p>This is why decimals are so powerful: they <em>extend place value</em> in a natural way. Your brain already understands place value. Now you&#x27;re just using it to talk about parts, too.</p>
+<p>The metric system takes this one step further. It says: let&#x27;s measure <em>everything</em> in base ten too. Not just numbers — but distance, weight, volume, temperature. A kilometer is $1000 \times 1 \text{ meter}$. A centimeter is $\frac{1}{100} \text{ meter}$. A milligram is $\frac{1}{1000} \text{ gram}$. The whole system is built on powers of ten, which means converting between units is just moving a decimal point.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Decimal Notation</strong>: A way of writing fractions and mixed numbers using place value and a decimal point. The decimal point separates the whole number part (on the left) from the fractional part (on the right).</p>
+<p><strong>Place Value in Decimals</strong>: Each position represents a power of 10. For 3.456:</p>
+<ul><li>3 is in the ones place: $3 \times 1$</li><li>4 is in the tenths place: $4 \times 0.1$</li><li>5 is in the hundredths place: $5 \times 0.01$</li><li>6 is in the thousandths place: $6 \times 0.001$</li></ul>
+<p><strong>Reading Decimals</strong>: Say the whole number part, then &quot;point,&quot; then read each digit separately. So 3.456 is &quot;three point four five six.&quot; Or, more formally, &quot;three and four hundred fifty-six thousandths.&quot;</p>
+<p><strong>Converting Fractions to Decimals</strong>: Divide the numerator by the denominator.</p>
+<ul><li>$\frac{1}{2} = 1 \div 2 = 0.5$</li><li>$\frac{3}{4} = 3 \div 4 = 0.75$</li><li>$\frac{1}{3} = 1 \div 3 = 0.333\ldots = 0.\overline{3}$</li></ul>
+<p><strong>Comparing Decimals</strong>: Align the decimal points and compare digit by digit from left to right, just like comparing whole numbers.</p>
+<p><strong>Rounding Decimals</strong>: Round to a specific place value by looking at the digit to the right. If it&#x27;s 5 or more, round up. If it&#x27;s less than 5, round down.</p>
+<p><strong>Adding and Subtracting Decimals</strong>: Align the decimal points, then add or subtract as if they were whole numbers.</p>
+<p><strong>Multiplying Decimals</strong>: Ignore the decimal points, multiply as whole numbers, then place the decimal point so the total number of decimal places in the product equals the sum of decimal places in the factors.</p>
+<p><strong>Dividing Decimals</strong>: Move the decimal point in the divisor to make it a whole number, move the decimal point in the dividend the same number of places, then divide.</p>
+<p><strong>Metric Prefixes</strong>: Standard multipliers based on powers of 10:</p>
+<ul><li><strong>kilo-</strong> (k): 1000 times larger, $10^3$</li><li><strong>hecto-</strong> (h): 100 times larger, $10^2$</li><li><strong>deca-</strong> (da): 10 times larger, $10^1$</li><li><em>base unit</em> (meter, gram, liter)</li><li><strong>deci-</strong> (d): 1/10, $10^{-1}$</li><li><strong>centi-</strong> (c): 1/100, $10^{-2}$</li><li><strong>milli-</strong> (m): 1/1000, $10^{-3}$</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Converting a Fraction to a Decimal</strong></p>
+<p>Convert $\frac{7}{8}$ to a decimal.</p>
+<p>Divide 7 by 8: $$7 \div 8 = 0.875$$</p>
+<p>Check: $0.875 = \frac{875}{1000} = \frac{7}{8}$ ✓</p>
+<p><strong>Example 2: Comparing Decimals</strong></p>
+<p>Which is larger: 0.305 or 0.35?</p>
+<p>Align and add zeros: 0.305 and 0.350</p>
+<p>Compare from left: both have 0 in the ones place. Both have 3 in the tenths place. In the hundredths place, 0 is less than 5. So <strong>0.35 is larger</strong>.</p>
+<p><strong>Example 3: Adding Decimals with Alignment</strong></p>
+<p>Find $2.47 + 1.68 + 0.5$.</p>
+<p>Align the decimal points:</p>
+<pre><code>  2.47
+  1.68
++ 0.50
+------
+  4.65</code></pre>
+<p><strong>Example 4: Multiplying Decimals</strong></p>
+<p>Find $0.6 \times 0.4$.</p>
+<p>Ignore decimals: $6 \times 4 = 24$</p>
+<p>Count decimal places: 0.6 has 1 decimal place, 0.4 has 1 decimal place. Total: 2 decimal places.</p>
+<p>Answer: $0.24$ (place the decimal point 2 places from the right)</p>
+<p><strong>Example 5: Converting Metric Units</strong></p>
+<p>Convert 3.5 kilometers to meters.</p>
+<p>&quot;Kilo-&quot; means 1000 times. So 1 kilometer = 1000 meters.</p>
+<p>$$3.5 \text{ km} = 3.5 \times 1000 \text{ m} = 3500 \text{ m}$$</p>
+<p>Or: move the decimal point 3 places to the right (since 1000 has 3 zeros).</p>
+<p><strong>Example 6: Dividing Decimals</strong></p>
+<p>Find $6.4 \div 0.8$.</p>
+<p>The divisor is 0.8. Move the decimal 1 place right: 8. Move the decimal in the dividend 1 place right too: 64.</p>
+<p>$$64 \div 8 = 8$$</p>
+<p>So $6.4 \div 0.8 = 8$.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Write 0.247 in words.</li></ol>
+<ol><li>Convert $\frac{5}{8}$ to a decimal.</li></ol>
+<ol><li>Which is larger: 0.089 or 0.098?</li></ol>
+<ol><li>Calculate: $3.2 + 1.45 + 0.8$</li></ol>
+<ol><li>Calculate: $0.7 \times 0.9$</li></ol>
+<ol><li>Calculate: $12.6 \div 0.6$</li></ol>
+<ol><li>Round 4.783 to the nearest hundredth.</li></ol>
+<ol><li>A recipe calls for 0.25 liters of milk. How many milliliters is that? (Hint: milli- means 1/1000.)</li></ol>
+<ol><li>Convert 850 centimeters to meters.</li></ol>
+<ol><li>A meteorologist records temperatures as 18.3°C, 18.29°C, and 18.32°C. List them in order from least to greatest.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>A fabric store sells cloth by the meter. A dress requires 1.5 meters of fabric, and the store charges €3.50 per meter. A customer gives €10 to the cashier.</p>
+<p><strong>Part A</strong>: How much will the fabric cost?</p>
+<p><strong>Part B</strong>: How much change should the customer receive?</p>
+<p><strong>Part C</strong>: A second customer wants to buy 2.25 meters of the same fabric. How much should they pay?</p>
+<p><strong>Part D</strong>: If the store receives a shipment of 47.5 meters of fabric, and it&#x27;s divided equally among 5 employees to cut and organize, how many meters does each employee get?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Real-World Metric Conversions</strong></p>
+<p>Understanding decimals and the metric system is essential for daily life in most countries:</p>
+<ul><li><strong>Medicine</strong>: A doctor prescribes 0.5 milliliters of medication three times a day. How many milliliters total over 7 days? (Hint: calculate daily, then multiply by 7.)</li></ul>
+<ul><li><strong>Cooking</strong>: A recipe says to use 0.25 liters of olive oil. You know that 1 liter = 1000 milliliters. How many milliliters is 0.25 liters?</li></ul>
+<ul><li><strong>Sports</strong>: A runner&#x27;s times in four races are 12.34 seconds, 12.45 seconds, 12.38 seconds, and 12.41 seconds. What is their average time? (Add them up and divide by 4.)</li></ul>
+<ul><li><strong>Travel</strong>: A car&#x27;s fuel tank holds 50 liters. The fuel gauge shows it&#x27;s 0.75 full. How many liters are in the tank?</li></ul>
+<p>These aren&#x27;t abstract problems — they&#x27;re the real world, where decimals matter.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Decimals are fractions written in base ten, extending the place-value system downward past the ones place. Each position to the right of the decimal point represents a negative power of ten: tenths ($10^{-1}$), hundredths ($10^{-2}$), thousandths ($10^{-3}$), and so on.</p>
+<p>Simon Stevin&#x27;s brilliant insight — that we could use place value for parts of a whole — took nearly 200 years to become standard, but when France revolutionized its measurement system in 1799, they built it entirely on base ten. This created the metric system: kilo, centi, milli, and all the other prefixes are just powers of ten in disguise.</p>
+<p>Because decimals and metrics are both based on powers of ten, they&#x27;re compatible, intuitive, and powerful. Converting between milliliters and liters is just moving a decimal point. Adding 0.5 + 0.3 uses the same mental moves as adding 5 + 3.</p>
+<p>With decimals and the metric system under your belt, you can measure, compare, and calculate with precision — and without the confusion that plagued merchants and engineers before Stevin&#x27;s time.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> What do we call the first digit position to the right of the decimal point?</p>
+<ul><li>Ones place</li><li>Tenths place</li><li>Hundredths place</li><li>Thousands place</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Tenths place</p>
+</details>
+<p><strong>Question 2:</strong> Which fraction equals 0.125?</p>
+<ul><li>$\frac{1}{8}$</li><li>$\frac{1}{4}$</li><li>$\frac{1}{5}$</li><li>$\frac{1}{10}$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\frac{1}{8}$</p>
+</details>
+<p><strong>Question 3:</strong> What does the prefix &quot;centi-&quot; mean?</p>
+<ul><li>1000 times</li><li>100 times</li><li>1/100</li><li>1/1000</li></ul>
+<details>
+<summary>Answer</summary>
+<p>1/100</p>
+</details>
+<p><strong>Question 4:</strong> How many milliliters are in 2.5 liters?</p>
+<ul><li>250 mL</li><li>2500 mL</li><li>25 mL</li><li>0.25 mL</li></ul>
+<details>
+<summary>Answer</summary>
+<p>2500 mL</p>
+</details>
+<p><strong>Question 5:</strong> Who published &quot;De Thiende&quot; and advocated for decimal fractions?</p>
+<ul><li>John Napier</li><li>Simon Stevin</li><li>The French Revolution</li><li>Enrico Fermi</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Simon Stevin</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Stevin, Simon. <em>De Thiende</em> (The Tenth). 1585. Translated and annotated in <em>The Principal Works of Simon Stevin</em>, Vol. III. Amsterdam: Swets &amp; Zeitlinger, 1958.</li><li>https://en.wikipedia.org/wiki/Simon_Stevin</li><li>https://en.wikipedia.org/wiki/Decimal</li><li>https://en.wikipedia.org/wiki/Metric_system</li><li>https://en.wikipedia.org/wiki/Metric_prefix</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-00-language-of-number/ch-010-fractions/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Fractions — Parts of a Whole</span></a><a class="pager-link pager-link--next" href="../../world-00-language-of-number/ch-012-estimation-and-number-sense/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Estimation and Number Sense</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

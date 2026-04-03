@@ -1,0 +1,341 @@
+---
+chapterNumber: 048
+worldNumber: 3
+world: world-03-coordination-space-and-functions
+title: "Logarithms — The Inverse of Exponential"
+subtitle: "The operation that turns multiplication into addition — and made astronomy possible"
+estimatedTimeMinutes: 40
+historicalPeriod: "1614 CE, Scotland"
+mainConcepts:
+  - logarithm
+  - common logarithm
+  - natural logarithm
+  - logarithm properties
+  - change of base
+learningObjectives:
+  - "Convert between exponential and logarithmic form"
+  - "Apply logarithm properties"
+  - "Solve exponential and logarithmic equations"
+  - "Graph logarithmic functions"
+---
+
+## Story Hook
+
+John Napier sits in his study in Edinburgh, 1614. The year is 1614. Astronomers across Europe are struggling with an impossible task: they must multiply vast numbers together. A star's distance, its brightness, its position — all calculations require multiplying numbers with many digits.
+
+Tycho Brahe, the great astronomer, makes observations. Johannes Kepler tries to understand planetary motion. But without electronic calculators, multiplying numbers like 456,782 by 234,567 by hand takes hours, and one small mistake ruins everything.
+
+Napier has an idea that will transform science. He publishes tables. In those tables, every number has been paired with a companion number — what we now call its logarithm. With these tables, multiplication becomes addition. Kepler receives Napier's tables and is astonished. He writes: "You have contributed to astronomy a wonderful instrument."
+
+From one publication, the world of calculation changes forever. Napier has not just invented a mathematical tool. He has liberated astronomers and engineers from tedium, freeing their minds for discovery.
+
+## Why It Matters
+
+Before calculators, logarithm tables were how scientists multiplied. They used them to solve problems in surveying, navigation, astronomy, and engineering. A navigator at sea could determine longitude using logarithms. An engineer could calculate a bridge's load distribution. A chemist could work with exponential reactions.
+
+Today, even with computers, logarithms remain fundamental. They help us understand scale — why the Richter scale for earthquakes is logarithmic, why we measure sound in decibels (logarithmic), why the pH scale for acidity is logarithmic. Anywhere we deal with quantities that span many orders of magnitude — from atomic nuclei to galaxy clusters — logarithms appear.
+
+Logarithms are how we think about growth, decay, and change in the real world.
+
+## Historical Context
+
+The genius of Napier was recognizing a connection: if you convert multiplication into addition, calculations become feasible. He spent twenty years creating tables of logarithms by hand.
+
+In 1624, Henry Briggs published tables of common logarithms (base 10), which became the standard. Every student from then until the 1970s used logarithm tables to multiply. Slide rules, which work on the principle of logarithms, were the engineer's constant companion for 70 years.
+
+But Napier's innovation was deeper than mere calculation. Logarithms are the inverse of exponential functions. This relationship — between $b^y = x$ and $\log_b(x) = y$ — became central to calculus, differential equations, and modern science. When physicists model radioactive decay or economists model inflation, they use logarithms without always knowing Napier's story.
+
+## Core Concept
+
+The **logarithm** is the inverse function of exponentiation. If:
+
+$$b^y = x$$
+
+then:
+
+$$\log_b(x) = y$$
+
+Read this as: "log base $b$ of $x$ equals $y$."
+
+**Example:**
+
+$2^3 = 8$ (exponential form)
+
+$\log_2(8) = 3$ (logarithmic form)
+
+These say the same thing, just rearranged.
+
+**The Common Logarithm:**
+
+$\log(x)$ or $\log_{10}(x)$ is the logarithm base 10. Used in the Richter scale, decibels, and by Napier.
+
+$\log_{10}(100) = 2$ because $10^2 = 100$.
+
+$\log_{10}(1000) = 3$ because $10^3 = 1000$.
+
+**The Natural Logarithm:**
+
+$\ln(x)$ or $\log_e(x)$ is the logarithm base $e \approx 2.718$. Used in calculus and continuous processes.
+
+$\ln(e) = 1$ because $e^1 = e$.
+
+$\ln(e^2) = 2$ because $e^2 = e^2$.
+
+## Definitions and Formal Lesson
+
+**Definition of Logarithm:**
+
+For $b > 0$, $b \neq 1$, and $x > 0$:
+
+$$\log_b(x) = y \text{ if and only if } b^y = x$$
+
+The logarithm base $b$ of $x$ is the exponent $y$ to which you must raise $b$ to get $x$.
+
+**Key Properties:**
+
+1. **Product Rule:** $\log_b(xy) = \log_b(x) + \log_b(y)$
+
+   This is Napier's genius: multiplication becomes addition.
+
+2. **Quotient Rule:** $\log_b(x/y) = \log_b(x) - \log_b(y)$
+
+3. **Power Rule:** $\log_b(x^n) = n \log_b(x)$
+
+4. **Change of Base Formula:** $\log_b(x) = \frac{\log(x)}{\log(b)} = \frac{\ln(x)}{\ln(b)}$
+
+   This lets you convert between any bases.
+
+5. **Identity:** $\log_b(b) = 1$ and $\log_b(1) = 0$
+
+6. **Inverse Property:** $b^{\log_b(x)} = x$ and $\log_b(b^x) = x$
+
+**Domain and Range of Logarithmic Functions:**
+
+The function $f(x) = \log_b(x)$ has:
+- Domain: $(0, \infty)$ (only positive numbers)
+- Range: all real numbers
+
+**Graphs:**
+
+The graph of $y = \log_b(x)$ (for $b > 1$):
+- Passes through $(1, 0)$ because $\log_b(1) = 0$
+- Passes through $(b, 1)$ because $\log_b(b) = 1$
+- Increases as $x$ increases (slowly at first, then faster)
+- Has a vertical asymptote at $x = 0$
+
+## Worked Examples
+
+**Example 1: Converting Between Forms**
+
+Rewrite $5^3 = 125$ in logarithmic form.
+
+$$\log_5(125) = 3$$
+
+Rewrite $\log_3(27) = 3$ in exponential form.
+
+$$3^3 = 27$$
+
+**Example 2: Evaluating Logarithms**
+
+Find $\log_2(32)$.
+
+We ask: 2 to what power equals 32?
+
+$2^5 = 32$, so $\log_2(32) = 5$.
+
+Find $\log_{10}(0.01)$.
+
+We ask: 10 to what power equals 0.01?
+
+$10^{-2} = 0.01$, so $\log_{10}(0.01) = -2$.
+
+**Example 3: Using Logarithm Properties**
+
+Simplify $\log_5(25) + \log_5(5)$.
+
+$$\log_5(25) + \log_5(5) = \log_5(25 \cdot 5) = \log_5(125) = 3$$
+
+(Because $5^3 = 125$.)
+
+**Example 4: Solving an Exponential Equation**
+
+Solve $3^x = 81$ for $x$.
+
+Take the logarithm of both sides:
+
+$$\log(3^x) = \log(81)$$
+
+$$x \log(3) = \log(81)$$
+
+$$x = \frac{\log(81)}{\log(3)} = \frac{\log(3^4)}{\log(3)} = \frac{4\log(3)}{\log(3)} = 4$$
+
+Check: $3^4 = 81$ ✓
+
+**Example 5: Solving a Logarithmic Equation**
+
+Solve $\log_2(x) = 5$ for $x$.
+
+By definition:
+
+$$x = 2^5 = 32$$
+
+**Example 6: Half-Life Problem Revisited**
+
+From the last chapter: Carbon-14 has a half-life of 5,730 years. A fossil contains 25% of its original carbon-14. How old is it?
+
+We had: $0.25 = (0.5)^{t/5730}$
+
+Take logarithms:
+
+$$\ln(0.25) = \ln\left((0.5)^{t/5730}\right)$$
+
+$$\ln(0.25) = \frac{t}{5730} \ln(0.5)$$
+
+$$t = 5730 \cdot \frac{\ln(0.25)}{\ln(0.5)} = 5730 \cdot \frac{-1.386}{-0.693} \approx 11,460 \text{ years}$$
+
+Now we can solve it exactly.
+
+## Practice Set
+
+1. **Convert $6^2 = 36$ to logarithmic form.**
+   - $\log_6(36) = 2$
+   - $\log_2(6) = 36$
+   - $\log_2(36) = 6$
+   - $\log_{36}(6) = 2$
+
+2. **Evaluate $\log_3(27)$.**
+   - 2
+   - 3
+   - 9
+   - 27
+
+3. **Simplify $\log_2(8) + \log_2(4)$.**
+   - 3
+   - 5
+   - 12
+   - 32
+
+4. **Solve $5^x = 125$ for $x$.**
+   - 2
+   - 3
+   - 5
+   - 25
+
+5. **Solve $\log_4(x) = 2$ for $x$.**
+   - 2
+   - 4
+   - 8
+   - 16
+
+## Reasoning Task
+
+A chemist is working with a substance that decays exponentially. After 1 hour, 80% of the substance remains. After how many hours will only 10% remain?
+
+Set up the exponential decay equation: $A(t) = A_0 (0.8)^t$.
+
+Use logarithms to solve for the time $t$ when $A(t) = 0.1 A_0$.
+
+## Application
+
+**The Richter Scale**
+
+Earthquake magnitude is measured on the Richter scale, which is logarithmic:
+
+$$M = \log_{10}(A)$$
+
+where $A$ is the amplitude of seismic waves. An earthquake of magnitude 5 has amplitude $10^5$ units. An earthquake of magnitude 6 has amplitude $10^6$ units — ten times stronger, even though 6 is only slightly more than 5.
+
+This is why a magnitude-7 earthquake is devastatingly more powerful than a magnitude-6 earthquake. The difference is not 1 — it is a factor of 10.
+
+**Sound Intensity (Decibels)**
+
+Sound intensity is measured in decibels:
+
+$$L = 10 \log_{10}\left(\frac{I}{I_0}\right)$$
+
+where $I$ is the sound intensity and $I_0$ is a reference intensity.
+
+A whisper is about 30 dB. Normal conversation is about 60 dB. A rock concert is about 120 dB. Notice that 120 is not twice 60, but the rock concert is vastly, painfully louder because the scale is logarithmic.
+
+**Astronomy and Stellar Magnitude**
+
+When Napier published his tables, astronomers immediately used them to measure the brightness of stars. The apparent magnitude of a star is logarithmic, which is why the brightest stars have the smallest (even negative) magnitudes, and faintest naked-eye stars have magnitude 6. The scale matches how human eyes perceive brightness — logarithmically.
+
+## Recap
+
+A **logarithm** $\log_b(x) = y$ means $b^y = x$. Logarithms are the inverse of exponentiation.
+
+The **common logarithm** is base 10; the **natural logarithm** is base $e$.
+
+**Logarithm properties** transform multiplication (product rule), division (quotient rule), and powers (power rule) into addition and multiplication. The **change of base formula** lets you convert between any logarithmic bases.
+
+Logarithmic functions have domain $(0, \infty)$, range all real numbers, and pass through $(1, 0)$ and $(b, 1)$.
+
+**Logarithms solve exponential equations.** When bacteria double every hour and you ask "when will there be 1 million?" you take a logarithm.
+
+From Napier's tables to today's seismic measurements, sound levels, and stellar magnitudes, logarithms are how we navigate a world of exponential scale.
+
+## Unlock Quiz
+
+**1. What does $\log_7(49) = 2$ mean?**
+   - $7 \cdot 2 = 49$
+   - $49^2 = 7$
+   - $7^2 = 49$
+   - $2 \cdot 7 = 49$
+
+<details>
+<summary>Answer</summary>
+$7^2 = 49$
+</details>
+
+**2. What is the domain of the function $f(x) = \log_5(x)$?**
+   - All real numbers
+   - $x > 0$
+   - $x \geq 0$
+   - $x > 1$
+
+<details>
+<summary>Answer</summary>
+$x > 0$
+</details>
+
+**3. Which property of logarithms is $\log_b(xy) = \log_b(x) + \log_b(y)$?**
+   - Product rule
+   - Quotient rule
+   - Power rule
+   - Change of base rule
+
+<details>
+<summary>Answer</summary>
+Product rule
+</details>
+
+**4. Solve for $x$: $\log_2(x) = 4$**
+   - 2
+   - 4
+   - 8
+   - 16
+
+<details>
+<summary>Answer</summary>
+16
+</details>
+
+**5. If $\log_{10}(1000) = 3$, what is $\log_{10}(10)$?**
+   - 1
+   - 2
+   - 3
+   - 10
+
+<details>
+<summary>Answer</summary>
+1
+</details>
+
+## Source Notes
+
+- Napier, J. (1614). *Mirifici Logarithmorum Canonis Descriptio*. https://en.wikipedia.org/wiki/John_Napier
+- Briggs, H. (1624). *Arithmetica Logarithmica*. https://en.wikipedia.org/wiki/Henry_Briggs
+- https://en.wikipedia.org/wiki/Logarithm
+- https://en.wikipedia.org/wiki/Natural_logarithm
+- https://en.wikipedia.org/wiki/Richter_scale

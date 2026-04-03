@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Information Theory — The Mathematics of Communication — Math Journey</title>
+    <meta name="description" content="Claude Shannon and the bit — how mathematics learned to measure surprise" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 7 · Chapter 94</p>
+        <h1>Information Theory — The Mathematics of Communication</h1>
+        <p class="hero-copy">Claude Shannon and the bit — how mathematics learned to measure surprise</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1948 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>It is 1948. World War II has ended. At Bell Telephone Laboratories in New Jersey, a young engineer named Claude Shannon publishes a paper with a modest title: <em>&quot;A Mathematical Theory of Communication.&quot;</em></p>
+<p>The paper is 55 pages. It contains equations, diagrams, and theorems. It invents the <strong>bit</strong> — the fundamental unit of information. It defines information mathematically. It proves that you can send information reliably over a noisy telephone line. It explains data compression. It lays the mathematical foundation for the entire digital age.</p>
+<p>Decades later, scientists would call it the most important paper of the 20th century.</p>
+<p>Shannon&#x27;s insight was radical: <strong>Information is not about the message itself. Information is about surprise.</strong></p>
+<p>A common event carries little information. A rare event carries a lot. The letter &quot;e&quot; appears constantly in English text — saying &quot;the next letter is e&quot; is unsurprising and carries little information. But &quot;the next letter is z&quot; is rare and shocking — it carries more information.</p>
+<p>From this simple idea, Shannon built an entire mathematics of communication. That mathematics is now inside every device you own: your phone compresses your voice using Shannon&#x27;s ideas. Your music files use them. Your internet connection uses them. The code that detects and corrects errors in your hard drive uses them. Shannon showed us how to measure surprise and turn it into mathematics.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Before Shannon, communication engineering was an art. You designed telephone lines, chose signal strengths, and hoped for the best. There was no theory.</p>
+<p>Shannon answered crucial questions:</p>
+<ul><li><strong>What is information?</strong> How do you measure it mathematically?</li><li><strong>How much can you compress a file?</strong> Why do ZIP files get smaller?</li><li><strong>How fast can you send data over a noisy channel?</strong> What&#x27;s the absolute speed limit?</li><li><strong>Can you correct errors without re-sending?</strong> How do error-correcting codes work?</li></ul>
+<p>The answers power the modern world:</p>
+<ul><li><strong>Data compression</strong>: ZIP, MP3, JPEG, MPEG — all are built on Shannon&#x27;s theorems.</li><li><strong>Cryptography</strong>: Secure communication relies on Shannon&#x27;s concept of entropy.</li><li><strong>Error correction</strong>: Every hard drive, every QR code, every deep-space probe uses Shannon&#x27;s error-correcting codes.</li><li><strong>Machine learning</strong>: Modern AI relies on Shannon entropy and information measures.</li><li><strong>Telecommunications</strong>: Every phone call, video stream, and wireless signal uses Shannon&#x27;s channel capacity theorem.</li></ul>
+<p>Shannon proved that the digital revolution was not just possible — it was inevitable. The mathematics was already there, waiting to be discovered.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Claude Shannon (1916–2001) was an unusual engineer. He loved mathematics and played with mechanical toys. At Bell Labs, he was solving practical problems: how to send the most information down a telephone line without errors?</p>
+<p>The war had ended, but information warfare had not. The military needed secure communication. Industries needed to compress messages. Shannon&#x27;s mathematics addressed all of it.</p>
+<p>Before 1948, there was <strong>no definition of information</strong>. Philosophers debated it. Physicists studied it. But no one had a formula. Shannon proposed:</p>
+<p>$$H = -\sum p_i \log_2 p_i$$</p>
+<p>Here $H$ is the <strong>entropy</strong> — the average information content, measured in <strong>bits</strong>. For each possible message outcome $i$, you multiply the probability $p_i$ by $\log_2(1/p_i)$ (the &quot;surprise&quot; of that outcome), then sum.</p>
+<p>A coin flip (two equally likely outcomes) has entropy 1 bit. You need one yes/no question to identify which outcome occurred. A six-sided die has entropy $\log_2(6) \approx 2.585$ bits. You need about 2.6 yes/no questions to identify which face appeared.</p>
+<p>The formula is beautiful because it measures exactly what information means: <strong>the minimum number of yes/no questions you need to identify an outcome.</strong></p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Information Theory</strong> studies how to measure, store, transmit, and protect information.</p>
+<p>Core ideas:</p>
+<ol><li><strong>Entropy</strong>: A measure of uncertainty. High entropy = surprising, information-rich. Low entropy = predictable, boring.</li></ol>
+<ol><li><strong>Data compression</strong>: Remove redundancy. Frequent symbols use fewer bits. Rare symbols use more. The average length approaches the entropy.</li></ol>
+<ol><li><strong>Channel capacity</strong>: Even a noisy channel has a speed limit. Shannon&#x27;s theorem says you can approach this limit with the right code, but never exceed it.</li></ol>
+<ol><li><strong>Error correction</strong>: Add redundancy strategically. If errors are rare, a bit of extra information can identify and fix them, without asking the sender to re-transmit.</li></ol>
+<p>All modern digital technology rests on these ideas.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Bit</strong>: A unit of information. One bit = the information in one fair coin flip.</p>
+<p><strong>Shannon Entropy</strong> (for a discrete distribution): $$H = -\sum_{i=1}^{n} p_i \log_2 p_i$$</p>
+<p>where $p_i$ is the probability of outcome $i$. Units: bits. (If using natural logarithm: nats.)</p>
+<p><strong>Properties</strong>:</p>
+<ul><li>Maximum when all outcomes equally likely: $H_{\max} = \log_2 n$ bits for $n$ outcomes.</li><li>Zero when outcome is certain: if $p_1 = 1$, then $H = 0$.</li><li>Always non-negative: $H \geq 0$.</li></ul>
+<p><strong>Binary Entropy Function</strong> $H(p)$: For a single binary choice with probability $p$ for success: $$H(p) = -p \log_2 p - (1-p) \log_2(1-p)$$</p>
+<p><strong>Data Compression</strong>: Huffman coding assigns variable-length codes: frequent symbols get short codes, rare get long. The average code length approaches the entropy.</p>
+<p><strong>Channel Capacity</strong> (Shannon-Hartley theorem, for additive white Gaussian noise): $$C = B \log_2(1 + S/N) \text{ bits per second}$$</p>
+<p>where $B$ is bandwidth, $S$ is signal power, $N$ is noise power. This is the maximum reliable transmission rate.</p>
+<p><strong>Noisy Channel Coding Theorem</strong>: Any transmission rate below the channel capacity can be achieved with arbitrarily low error using the right code. Rates above it cannot.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Entropy of a Fair Die</strong></p>
+<p>A six-sided die, each face equally likely: $p_i = 1/6$ for $i = 1, 2, \ldots, 6$.</p>
+<p>$$H = -6 \times \frac{1}{6} \log_2\left(\frac{1}{6}\right) = -\log_2\left(\frac{1}{6}\right) = \log_2(6) \approx 2.585 \text{ bits}$$</p>
+<p>Meaning: you need about 2.6 yes/no questions to identify which face appeared (on average).</p>
+<p><strong>Example 2: Huffman Coding</strong></p>
+<p>Suppose a message uses four symbols with probabilities: A (50%), B (25%), C (15%), D (10%).</p>
+<p>Huffman&#x27;s algorithm assigns codes:</p>
+<ul><li>A: 0 (1 bit)</li><li>B: 10 (2 bits)</li><li>C: 110 (3 bits)</li><li>D: 111 (3 bits)</li></ul>
+<p>Average code length: $0.5(1) + 0.25(2) + 0.15(3) + 0.1(3) = 1.85$ bits per symbol.</p>
+<p>Entropy: $H \approx 1.846$ bits. The code is near-optimal!</p>
+<p><strong>Example 3: Channel Capacity</strong></p>
+<p>A telephone line has bandwidth $B = 3000$ Hz and signal-to-noise ratio $S/N = 100$ (20 dB).</p>
+<p>$$C = 3000 \log_2(1 + 100) = 3000 \log_2(101) \approx 3000 \times 6.658 \approx 19,974 \text{ bits per second}$$</p>
+<p>You cannot reliably transmit faster than ~20 kbps, no matter what code you use. But with the right code, you can get arbitrarily close.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Binary Entropy</strong>: A coin is biased. It lands heads with probability 0.3 and tails with probability 0.7. What is its Shannon entropy? Is it larger or smaller than a fair coin? Compute both values.</li></ol>
+<ol><li><strong>Maximum Entropy</strong>: Four equally likely events (A, B, C, D). What is the entropy? What if events had probabilities 0.5, 0.3, 0.15, 0.05? Why does the distribution matter?</li></ol>
+<ol><li><strong>Code Length</strong>: You want to send a message using two symbols, X (60% of characters) and Y (40%). Design a Huffman code. What is the average code length? Compare to entropy. Can you do better?</li></ol>
+<ol><li><strong>Channel Capacity</strong>: A wireless channel has bandwidth 1 MHz and $S/N = 10$ (10 dB). What is the maximum achievable transmission rate? If you tried to send at 1.5 times this rate, what would happen?</li></ol>
+<ol><li><strong>Error Correction</strong>: In Morse code, a single bit error could change a dash to a dot. Describe conceptually how adding extra bits (redundancy) could help detect and correct such errors. What is the tradeoff?</li></ol>
+<ol><li><strong>Compression Limits</strong>: You have a file containing 1 million characters drawn from an alphabet of 256 symbols. Theoretical minimum size (by Shannon)? Can ZIP achieve this? Why or why not?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Why is the Internet Fast?</strong></p>
+<p>Shannon&#x27;s theorem says that <strong>any</strong> channel has a capacity limit. But the internet carries billions of simultaneous conversations at high speed. How?</p>
+<p>Consider:</p>
+<ul><li>Fiber optic cables have huge bandwidth (billions of Hz).</li><li>$S/N$ ratios can be made very good with modern equipment.</li><li>Multiple channels (wavelength division multiplexing) send multiple signals simultaneously.</li></ul>
+<p>Discuss: What is the relationship between Shannon capacity and actual internet speed? Why did the internet explode in the 1990s when fiber optics became common? How does compression (ZIP, JPEG, MP3) fit into Shannon&#x27;s theory?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>MP3 and Data Compression</strong></p>
+<p>When you compress an MP3 music file:</p>
+<ol><li><strong>Fourier analysis</strong> (World 07 chapter) breaks the audio into frequency components.</li><li><strong>Perceptual modeling</strong>: Your ear cannot hear very quiet sounds masked by loud ones. Discard those frequencies.</li><li><strong>Entropy coding</strong>: Use Huffman coding (or similar) on the remaining data.</li><li><strong>Result</strong>: A song that took 50 MB as WAV now fits in 5 MB as MP3 — a 10x compression.</li></ol>
+<p>This is Shannon&#x27;s theory in action. The original audio has high entropy (lots of independent frequency components). After removing imperceptible parts and entropy coding, the file is much smaller.</p>
+<p>Similarly:</p>
+<ul><li><strong>JPEG images</strong>: Discard high-frequency details you can&#x27;t see, then entropy-code.</li><li><strong>ZIP files</strong>: Use Huffman and dictionary methods.</li><li><strong>Error-correcting codes</strong>: Spacecraft use Hamming codes and Reed-Solomon codes to survive radiation and distance.</li></ul>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Claude Shannon revolutionized communication in 1948 by defining information mathematically using entropy. The Shannon entropy formula measures the average information content in bits. Huffman coding compresses data by assigning variable-length codes. Shannon&#x27;s channel capacity theorem states the maximum reliable transmission rate over a noisy channel. These ideas underpin data compression (ZIP, MP3, JPEG), error correction, cryptography, and the digital revolution. Shannon showed that the ability to transmit information reliably is not a gift of nature — it is a mathematical necessity.</p>
+<p>Information theory changed how we think about communication. Before Shannon, engineers designed communication systems by trial and error. After Shannon, they could design them knowing the theoretical limits. Every hard drive, every wireless network, every deep-space probe uses Shannon&#x27;s theorems. The human genome is information written in DNA. The brain processes information through networks of neurons. Modern machine learning is built on information-theoretic principles. Shannon&#x27;s mathematical framework unified all of these domains under one set of equations. From a 55-page paper at Bell Labs emerged the conceptual foundation for the information age itself.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>Shannon entropy measures the average _____ in a message.</li></ol>
+<ul><li>length</li><li>information content</li><li>noise level</li><li>compression ratio</li></ul>
+<ol><li>What is the Shannon entropy of a fair coin flip?</li></ol>
+<ul><li>0 bits</li><li>0.5 bits</li><li>1 bit</li><li>2 bits</li></ul>
+<ol><li>In Huffman coding, frequent symbols get _____ codes and rare symbols get _____ codes.</li></ol>
+<ul><li>longer, shorter</li><li>shorter, longer</li><li>equal, equal</li><li>unpredictable, unpredictable</li></ul>
+<ol><li>Shannon&#x27;s channel capacity theorem says that the maximum transmission rate depends on:</li></ol>
+<ul><li>Only the bandwidth</li><li>Only the signal-to-noise ratio</li><li>Both bandwidth and signal-to-noise ratio</li><li>Neither; all channels are equal</li></ul>
+<ol><li>Which of the following does NOT rely on Shannon&#x27;s information theory?</li></ol>
+<ul><li>MP3 audio compression</li><li>Error-correcting codes on hard drives</li><li>Handwritten letter writing</li><li>JPEG image compression</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>information content</li><li>1 bit</li><li>shorter, longer</li><li>Both bandwidth and signal-to-noise ratio</li><li>Handwritten letter writing</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Shannon, C. E. (1948). &quot;A Mathematical Theory of Communication.&quot; <em>Bell System Technical Journal</em>, 27(3), 379–423. The foundational paper.</li><li>https://en.wikipedia.org/wiki/Information_theory</li><li>https://en.wikipedia.org/wiki/Claude_Shannon</li><li>https://en.wikipedia.org/wiki/Shannon_entropy</li><li>https://en.wikipedia.org/wiki/Huffman_coding</li><li>https://en.wikipedia.org/wiki/Channel_capacity</li><li>https://en.wikipedia.org/wiki/Noisy-channel_coding_theorem</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-093-graph-theory-and-networks/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Graph Theory and Networks</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-095-fourier-analysis/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Fourier Analysis — Decomposing Signals</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

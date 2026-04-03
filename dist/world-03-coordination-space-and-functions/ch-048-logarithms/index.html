@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Logarithms — The Inverse of Exponential — Math Journey</title>
+    <meta name="description" content="The operation that turns multiplication into addition — and made astronomy possible" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 3 · Chapter 48</p>
+        <h1>Logarithms — The Inverse of Exponential</h1>
+        <p class="hero-copy">The operation that turns multiplication into addition — and made astronomy possible</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1614 CE, Scotland</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Convert between exponential and logarithmic form</li><li>Apply logarithm properties</li><li>Solve exponential and logarithmic equations</li><li>Graph logarithmic functions</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>John Napier sits in his study in Edinburgh, 1614. The year is 1614. Astronomers across Europe are struggling with an impossible task: they must multiply vast numbers together. A star&#x27;s distance, its brightness, its position — all calculations require multiplying numbers with many digits.</p>
+<p>Tycho Brahe, the great astronomer, makes observations. Johannes Kepler tries to understand planetary motion. But without electronic calculators, multiplying numbers like 456,782 by 234,567 by hand takes hours, and one small mistake ruins everything.</p>
+<p>Napier has an idea that will transform science. He publishes tables. In those tables, every number has been paired with a companion number — what we now call its logarithm. With these tables, multiplication becomes addition. Kepler receives Napier&#x27;s tables and is astonished. He writes: &quot;You have contributed to astronomy a wonderful instrument.&quot;</p>
+<p>From one publication, the world of calculation changes forever. Napier has not just invented a mathematical tool. He has liberated astronomers and engineers from tedium, freeing their minds for discovery.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Before calculators, logarithm tables were how scientists multiplied. They used them to solve problems in surveying, navigation, astronomy, and engineering. A navigator at sea could determine longitude using logarithms. An engineer could calculate a bridge&#x27;s load distribution. A chemist could work with exponential reactions.</p>
+<p>Today, even with computers, logarithms remain fundamental. They help us understand scale — why the Richter scale for earthquakes is logarithmic, why we measure sound in decibels (logarithmic), why the pH scale for acidity is logarithmic. Anywhere we deal with quantities that span many orders of magnitude — from atomic nuclei to galaxy clusters — logarithms appear.</p>
+<p>Logarithms are how we think about growth, decay, and change in the real world.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The genius of Napier was recognizing a connection: if you convert multiplication into addition, calculations become feasible. He spent twenty years creating tables of logarithms by hand.</p>
+<p>In 1624, Henry Briggs published tables of common logarithms (base 10), which became the standard. Every student from then until the 1970s used logarithm tables to multiply. Slide rules, which work on the principle of logarithms, were the engineer&#x27;s constant companion for 70 years.</p>
+<p>But Napier&#x27;s innovation was deeper than mere calculation. Logarithms are the inverse of exponential functions. This relationship — between $b^y = x$ and $\log_b(x) = y$ — became central to calculus, differential equations, and modern science. When physicists model radioactive decay or economists model inflation, they use logarithms without always knowing Napier&#x27;s story.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>The <strong>logarithm</strong> is the inverse function of exponentiation. If:</p>
+<p>$$b^y = x$$</p>
+<p>then:</p>
+<p>$$\log_b(x) = y$$</p>
+<p>Read this as: &quot;log base $b$ of $x$ equals $y$.&quot;</p>
+<p><strong>Example:</strong></p>
+<p>$2^3 = 8$ (exponential form)</p>
+<p>$\log_2(8) = 3$ (logarithmic form)</p>
+<p>These say the same thing, just rearranged.</p>
+<p><strong>The Common Logarithm:</strong></p>
+<p>$\log(x)$ or $\log_{10}(x)$ is the logarithm base 10. Used in the Richter scale, decibels, and by Napier.</p>
+<p>$\log_{10}(100) = 2$ because $10^2 = 100$.</p>
+<p>$\log_{10}(1000) = 3$ because $10^3 = 1000$.</p>
+<p><strong>The Natural Logarithm:</strong></p>
+<p>$\ln(x)$ or $\log_e(x)$ is the logarithm base $e \approx 2.718$. Used in calculus and continuous processes.</p>
+<p>$\ln(e) = 1$ because $e^1 = e$.</p>
+<p>$\ln(e^2) = 2$ because $e^2 = e^2$.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Definition of Logarithm:</strong></p>
+<p>For $b &gt; 0$, $b \neq 1$, and $x &gt; 0$:</p>
+<p>$$\log_b(x) = y \text{ if and only if } b^y = x$$</p>
+<p>The logarithm base $b$ of $x$ is the exponent $y$ to which you must raise $b$ to get $x$.</p>
+<p><strong>Key Properties:</strong></p>
+<ol><li><strong>Product Rule:</strong> $\log_b(xy) = \log_b(x) + \log_b(y)$</li></ol>
+<p>This is Napier&#x27;s genius: multiplication becomes addition.</p>
+<ol><li><strong>Quotient Rule:</strong> $\log_b(x/y) = \log_b(x) - \log_b(y)$</li></ol>
+<ol><li><strong>Power Rule:</strong> $\log_b(x^n) = n \log_b(x)$</li></ol>
+<ol><li><strong>Change of Base Formula:</strong> $\log_b(x) = \frac{\log(x)}{\log(b)} = \frac{\ln(x)}{\ln(b)}$</li></ol>
+<p>This lets you convert between any bases.</p>
+<ol><li><strong>Identity:</strong> $\log_b(b) = 1$ and $\log_b(1) = 0$</li></ol>
+<ol><li><strong>Inverse Property:</strong> $b^{\log_b(x)} = x$ and $\log_b(b^x) = x$</li></ol>
+<p><strong>Domain and Range of Logarithmic Functions:</strong></p>
+<p>The function $f(x) = \log_b(x)$ has:</p>
+<ul><li>Domain: $(0, \infty)$ (only positive numbers)</li><li>Range: all real numbers</li></ul>
+<p><strong>Graphs:</strong></p>
+<p>The graph of $y = \log_b(x)$ (for $b &gt; 1$):</p>
+<ul><li>Passes through $(1, 0)$ because $\log_b(1) = 0$</li><li>Passes through $(b, 1)$ because $\log_b(b) = 1$</li><li>Increases as $x$ increases (slowly at first, then faster)</li><li>Has a vertical asymptote at $x = 0$</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Converting Between Forms</strong></p>
+<p>Rewrite $5^3 = 125$ in logarithmic form.</p>
+<p>$$\log_5(125) = 3$$</p>
+<p>Rewrite $\log_3(27) = 3$ in exponential form.</p>
+<p>$$3^3 = 27$$</p>
+<p><strong>Example 2: Evaluating Logarithms</strong></p>
+<p>Find $\log_2(32)$.</p>
+<p>We ask: 2 to what power equals 32?</p>
+<p>$2^5 = 32$, so $\log_2(32) = 5$.</p>
+<p>Find $\log_{10}(0.01)$.</p>
+<p>We ask: 10 to what power equals 0.01?</p>
+<p>$10^{-2} = 0.01$, so $\log_{10}(0.01) = -2$.</p>
+<p><strong>Example 3: Using Logarithm Properties</strong></p>
+<p>Simplify $\log_5(25) + \log_5(5)$.</p>
+<p>$$\log_5(25) + \log_5(5) = \log_5(25 \cdot 5) = \log_5(125) = 3$$</p>
+<p>(Because $5^3 = 125$.)</p>
+<p><strong>Example 4: Solving an Exponential Equation</strong></p>
+<p>Solve $3^x = 81$ for $x$.</p>
+<p>Take the logarithm of both sides:</p>
+<p>$$\log(3^x) = \log(81)$$</p>
+<p>$$x \log(3) = \log(81)$$</p>
+<p>$$x = \frac{\log(81)}{\log(3)} = \frac{\log(3^4)}{\log(3)} = \frac{4\log(3)}{\log(3)} = 4$$</p>
+<p>Check: $3^4 = 81$ ✓</p>
+<p><strong>Example 5: Solving a Logarithmic Equation</strong></p>
+<p>Solve $\log_2(x) = 5$ for $x$.</p>
+<p>By definition:</p>
+<p>$$x = 2^5 = 32$$</p>
+<p><strong>Example 6: Half-Life Problem Revisited</strong></p>
+<p>From the last chapter: Carbon-14 has a half-life of 5,730 years. A fossil contains 25% of its original carbon-14. How old is it?</p>
+<p>We had: $0.25 = (0.5)^{t/5730}$</p>
+<p>Take logarithms:</p>
+<p>$$\ln(0.25) = \ln\left((0.5)^{t/5730}\right)$$</p>
+<p>$$\ln(0.25) = \frac{t}{5730} \ln(0.5)$$</p>
+<p>$$t = 5730 \cdot \frac{\ln(0.25)}{\ln(0.5)} = 5730 \cdot \frac{-1.386}{-0.693} \approx 11,460 \text{ years}$$</p>
+<p>Now we can solve it exactly.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Convert $6^2 = 36$ to logarithmic form.</strong></li></ol>
+<ul><li>$\log_6(36) = 2$</li><li>$\log_2(6) = 36$</li><li>$\log_2(36) = 6$</li><li>$\log_{36}(6) = 2$</li></ul>
+<ol><li><strong>Evaluate $\log_3(27)$.</strong></li></ol>
+<ul><li>2</li><li>3</li><li>9</li><li>27</li></ul>
+<ol><li><strong>Simplify $\log_2(8) + \log_2(4)$.</strong></li></ol>
+<ul><li>3</li><li>5</li><li>12</li><li>32</li></ul>
+<ol><li><strong>Solve $5^x = 125$ for $x$.</strong></li></ol>
+<ul><li>2</li><li>3</li><li>5</li><li>25</li></ul>
+<ol><li><strong>Solve $\log_4(x) = 2$ for $x$.</strong></li></ol>
+<ul><li>2</li><li>4</li><li>8</li><li>16</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>A chemist is working with a substance that decays exponentially. After 1 hour, 80% of the substance remains. After how many hours will only 10% remain?</p>
+<p>Set up the exponential decay equation: $A(t) = A_0 (0.8)^t$.</p>
+<p>Use logarithms to solve for the time $t$ when $A(t) = 0.1 A_0$.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>The Richter Scale</strong></p>
+<p>Earthquake magnitude is measured on the Richter scale, which is logarithmic:</p>
+<p>$$M = \log_{10}(A)$$</p>
+<p>where $A$ is the amplitude of seismic waves. An earthquake of magnitude 5 has amplitude $10^5$ units. An earthquake of magnitude 6 has amplitude $10^6$ units — ten times stronger, even though 6 is only slightly more than 5.</p>
+<p>This is why a magnitude-7 earthquake is devastatingly more powerful than a magnitude-6 earthquake. The difference is not 1 — it is a factor of 10.</p>
+<p><strong>Sound Intensity (Decibels)</strong></p>
+<p>Sound intensity is measured in decibels:</p>
+<p>$$L = 10 \log_{10}\left(\frac{I}{I_0}\right)$$</p>
+<p>where $I$ is the sound intensity and $I_0$ is a reference intensity.</p>
+<p>A whisper is about 30 dB. Normal conversation is about 60 dB. A rock concert is about 120 dB. Notice that 120 is not twice 60, but the rock concert is vastly, painfully louder because the scale is logarithmic.</p>
+<p><strong>Astronomy and Stellar Magnitude</strong></p>
+<p>When Napier published his tables, astronomers immediately used them to measure the brightness of stars. The apparent magnitude of a star is logarithmic, which is why the brightest stars have the smallest (even negative) magnitudes, and faintest naked-eye stars have magnitude 6. The scale matches how human eyes perceive brightness — logarithmically.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>A <strong>logarithm</strong> $\log_b(x) = y$ means $b^y = x$. Logarithms are the inverse of exponentiation.</p>
+<p>The <strong>common logarithm</strong> is base 10; the <strong>natural logarithm</strong> is base $e$.</p>
+<p><strong>Logarithm properties</strong> transform multiplication (product rule), division (quotient rule), and powers (power rule) into addition and multiplication. The <strong>change of base formula</strong> lets you convert between any logarithmic bases.</p>
+<p>Logarithmic functions have domain $(0, \infty)$, range all real numbers, and pass through $(1, 0)$ and $(b, 1)$.</p>
+<p><strong>Logarithms solve exponential equations.</strong> When bacteria double every hour and you ask &quot;when will there be 1 million?&quot; you take a logarithm.</p>
+<p>From Napier&#x27;s tables to today&#x27;s seismic measurements, sound levels, and stellar magnitudes, logarithms are how we navigate a world of exponential scale.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>1. What does $\log_7(49) = 2$ mean?</strong></p>
+<ul><li>$7 \cdot 2 = 49$</li><li>$49^2 = 7$</li><li>$7^2 = 49$</li><li>$2 \cdot 7 = 49$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$7^2 = 49$</p>
+</details>
+<p><strong>2. What is the domain of the function $f(x) = \log_5(x)$?</strong></p>
+<ul><li>All real numbers</li><li>$x &gt; 0$</li><li>$x \geq 0$</li><li>$x &gt; 1$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$x &gt; 0$</p>
+</details>
+<p><strong>3. Which property of logarithms is $\log_b(xy) = \log_b(x) + \log_b(y)$?</strong></p>
+<ul><li>Product rule</li><li>Quotient rule</li><li>Power rule</li><li>Change of base rule</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Product rule</p>
+</details>
+<p><strong>4. Solve for $x$: $\log_2(x) = 4$</strong></p>
+<ul><li>2</li><li>4</li><li>8</li><li>16</li></ul>
+<details>
+<summary>Answer</summary>
+<p>16</p>
+</details>
+<p><strong>5. If $\log_{10}(1000) = 3$, what is $\log_{10}(10)$?</strong></p>
+<ul><li>1</li><li>2</li><li>3</li><li>10</li></ul>
+<details>
+<summary>Answer</summary>
+<p>1</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Napier, J. (1614). <em>Mirifici Logarithmorum Canonis Descriptio</em>. https://en.wikipedia.org/wiki/John_Napier</li><li>Briggs, H. (1624). <em>Arithmetica Logarithmica</em>. https://en.wikipedia.org/wiki/Henry_Briggs</li><li>https://en.wikipedia.org/wiki/Logarithm</li><li>https://en.wikipedia.org/wiki/Natural_logarithm</li><li>https://en.wikipedia.org/wiki/Richter_scale</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-03-coordination-space-and-functions/ch-047-exponential-functions/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Exponential Functions — Growth and Decay</span></a><a class="pager-link pager-link--next" href="../../world-03-coordination-space-and-functions/ch-049-transformations-of-functions/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Transformations of Functions</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

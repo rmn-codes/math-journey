@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What Proof Is — Math Journey</title>
+    <meta name="description" content="Why one example is never enough, and how we know something is always true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 1 · Chapter 26</p>
+        <h1>What Proof Is</h1>
+        <p class="hero-copy">Why one example is never enough, and how we know something is always true</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>foundational</span>
+          <span>Greece, Italy</span>
+          <span>Ancient Greece, classical antiquity</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Understand the difference between an example and a proof.</li><li>Distinguish between direct proof and proof by contradiction.</li><li>Know why one counterexample disproves a claim.</li><li>Follow the step-by-step proof that √2 is irrational.</li><li>Understand why proof is the foundation of mathematical knowledge.</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#proof-vs-evidence">Proof vs. Evidence</a></li><li class="toc-level-3"><a href="#direct-proof">Direct Proof</a></li><li class="toc-level-3"><a href="#proof-by-contradiction-reductio-ad-absurdum">Proof by Contradiction (Reductio ad Absurdum)</a></li><li class="toc-level-3"><a href="#counterexample">Counterexample</a></li><li class="toc-level-3"><a href="#conjecture-vs-theorem">Conjecture vs. Theorem</a></li><li class="toc-level-3"><a href="#rational-and-irrational-numbers">Rational and Irrational Numbers</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-recognize-evidence-vs-proof">Example 1: Recognize Evidence vs. Proof</a></li><li class="toc-level-3"><a href="#example-2-find-a-counterexample">Example 2: Find a Counterexample</a></li><li class="toc-level-3"><a href="#example-3-direct-proof">Example 3: Direct Proof</a></li><li class="toc-level-2"><a href="#worked-example-the-proof-that-2-is-irrational">Worked Example: The Proof That √2 Is Irrational</a></li><li class="toc-level-3"><a href="#the-proof-by-contradiction">The Proof by Contradiction</a></li><li class="toc-level-3"><a href="#why-this-proof-works">Why This Proof Works</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-3"><a href="#warm-up">Warm-Up</a></li><li class="toc-level-3"><a href="#core-practice">Core Practice</a></li><li class="toc-level-3"><a href="#stretch">Stretch</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>A farmer notices that his apple trees tend to produce more fruit in years when it rains heavily in spring. He observes this pattern for 10 years. It happens all 10 times. Is he certain that rain in spring always causes a larger apple harvest?</p>
+<p>Most people would say: &quot;Probably, but not definitely.&quot;</p>
+<p>A mathematician sees 10 examples where a statement is true and asks a different question: &quot;Is there a logical argument that shows it <em>must</em> be true in every case, without any exception?&quot;</p>
+<p>This is the difference between pattern and proof. A pattern is what you notice. A proof is a logical argument that shows why something cannot be otherwise.</p>
+<p>A person in ancient Greece, whose name may have been Hippasus, discovered something that shocked the mathematical world: the square root of 2 cannot be written as a fraction. Not because no one had found such a fraction. But because it is <em>logically impossible</em>. A proof showed this. The proof did not check a million numbers. It showed that <em>any</em> fraction would lead to a logical contradiction.</p>
+<p>This chapter is about that kind of certainty. It is the capstone of World 01.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Proof matters because it is how we know something is true not just today, but forever.</p>
+<p>This matters because:</p>
+<ul><li>a bridge built on gut feeling or luck will eventually collapse; it must be built on principles that are logically certain</li><li>science makes predictions by reasoning from proven principles</li><li>in a world of disagreement, proof is a way to resolve disputes with logic instead of opinion</li><li>proof separated mathematics from measurement and guesswork</li><li>proof is the only way to know that no counterexample will ever appear</li></ul>
+<p>When you understand proof, you understand the foundation of all mathematical knowledge.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The ancient Greeks elevated proof to the heart of mathematics. Euclid&#x27;s <em>Elements</em>, written around 300 BCE, is a towering example: it begins with simple statements (axioms) and builds more complex truths through logical argument. Every claim is either an axiom or a proof.</p>
+<p>But one discovery shook this beautiful edifice: the Pythagoreans had believed all numbers were rational (could be written as fractions). Then came the proof that √2 is irrational. The legend, which may or may not be true, says that Hippasus of Metapontum discovered this proof. Some accounts claim the Pythagoreans were so disturbed by this discovery that they made him swear to secrecy. Others say they drowned him.</p>
+<p>The proof itself survived, and it is elegant. It uses a logical technique called <em>reductio ad absurdum</em>—proof by contradiction. You assume the opposite of what you want to prove, and show that this assumption leads to an impossible conclusion. Since the assumption is contradictory, it must be false.</p>
+<p>This method became central to mathematics. It is not the only way to prove something, but it is a powerful one. And the proof that √2 is irrational is one of the most beautiful proofs in all of mathematics.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>proof</strong> is a logical argument that shows why something must be true.</p>
+<p>A <strong>theorem</strong> is a statement that has been proven.</p>
+<p>A <strong>conjecture</strong> is a statement that might be true but has not been proven.</p>
+<p>A <strong>counterexample</strong> is a single example that shows a statement is false.</p>
+<p>The deepest difference: checking 1 million examples is not a proof. One single counterexample can disprove a claim.</p>
+<p>A proof works for all cases, forever. It uses logic to show that something cannot be otherwise. Once you have a proof, you are certain. No future discovery will overturn it.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="proof-vs-evidence">Proof vs. Evidence</h3>
+<p><strong>Evidence</strong> (Checking many examples) If I check 10 cases and a statement is true in all of them, that is evidence the statement might be true in general. But it is not proof. The 11th case might be different.</p>
+<p><strong>Proof</strong> (Logical argument) A step-by-step logical argument that shows a statement must be true in <em>all</em> cases. Once a proof exists, no exception is possible.</p>
+<h3 id="direct-proof">Direct Proof</h3>
+<p>A <strong>direct proof</strong> assumes the starting conditions and uses logical steps to reach the conclusion.</p>
+<p>Example structure:</p>
+<ul><li>Assume: X is true.</li><li>Therefore: Y is true (following logically from X).</li><li>Therefore: Z is true (following logically from Y).</li><li>Conclusion: Z must be true.</li></ul>
+<h3 id="proof-by-contradiction-reductio-ad-absurdum">Proof by Contradiction (Reductio ad Absurdum)</h3>
+<p>A <strong>proof by contradiction</strong> assumes the opposite of what you want to prove, then shows this assumption leads to a logical impossibility.</p>
+<p>Example structure:</p>
+<ul><li>We want to prove: Statement A is true.</li><li>Instead, assume: Statement A is false.</li><li>Following the logic of this assumption, we arrive at: Something impossible (like 2 = 3, or a number is both even and odd).</li><li>Since the assumption leads to impossibility, the assumption must be wrong.</li><li>Therefore: Statement A must be true.</li></ul>
+<h3 id="counterexample">Counterexample</h3>
+<p>A <strong>counterexample</strong> is a single example that contradicts a claim.</p>
+<p>If someone claims &quot;All odd numbers are prime,&quot; one counterexample—9, which is odd but not prime—disproves the claim entirely.</p>
+<h3 id="conjecture-vs-theorem">Conjecture vs. Theorem</h3>
+<p><strong>Conjecture</strong> A statement believed to be true but not yet proven. Famous examples: Goldbach&#x27;s Conjecture (every even number greater than 2 is the sum of two primes—true for trillions of numbers but still not proven).</p>
+<p><strong>Theorem</strong> A proven statement. Once proven, it is true forever.</p>
+<h3 id="rational-and-irrational-numbers">Rational and Irrational Numbers</h3>
+<p><strong>Rational number</strong> A number that can be written as a fraction of two integers: a/b, where a and b are integers and b ≠ 0. Examples: 1/2, 3/4, 5, −7/3, 0.25</p>
+<p><strong>Irrational number</strong> A number that cannot be written as a fraction of two integers. Examples: √2, π, e, φ (the golden ratio)</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-recognize-evidence-vs-proof">Example 1: Recognize Evidence vs. Proof</h3>
+<p><strong>Scenario</strong>: A student checks 100 numbers and finds that the sum of any two prime numbers (except 2 + 2 = 4) is even.</p>
+<p>Is this evidence? Is this a proof?</p>
+<p><strong>Answer</strong></p>
+<p>This is evidence, not proof. The student has found a pattern in 100 cases. But this does not prove the statement is true for all prime numbers. To prove it, you would need a logical argument that works for any two primes, not just the ones tested.</p>
+<p>(In fact, the statement is true—the proof is: all primes except 2 are odd; the sum of two odd numbers is even—but checking examples alone is not the proof.)</p>
+<h3 id="example-2-find-a-counterexample">Example 2: Find a Counterexample</h3>
+<p><strong>Claim</strong>: &quot;If a number is divisible by 6, then it is divisible by 4.&quot;</p>
+<p>Is this true? If not, give a counterexample.</p>
+<p><strong>Answer</strong></p>
+<p>This claim is false. A counterexample is 6 itself:</p>
+<ul><li>6 is divisible by 6 (6 ÷ 6 = 1).</li><li>6 is not divisible by 4 (6 ÷ 4 = 1.5).</li></ul>
+<p>One example is enough to disprove the claim entirely.</p>
+<h3 id="example-3-direct-proof">Example 3: Direct Proof</h3>
+<p><strong>Claim</strong>: If n is an even integer, then n² is even.</p>
+<p><strong>Proof</strong></p>
+<ul><li>Assume n is an even integer.</li><li>By definition, an even integer can be written as n = 2k, where k is some integer.</li><li>Then n² = (2k)² = 4k² = 2(2k²).</li><li>Since n² = 2(2k²), and 2k² is an integer, n² is even (it is a multiple of 2).</li><li>Therefore: If n is even, then n² is even.</li></ul>
+</section><section class="lesson-section lesson-section--generic"><h2 id="worked-example-the-proof-that-2-is-irrational">Worked Example: The Proof That √2 Is Irrational</h2>
+<p>This is the centerpiece of this chapter. We will prove that √2 cannot be written as a fraction.</p>
+<h3 id="the-proof-by-contradiction">The Proof by Contradiction</h3>
+<p><strong>What we want to prove</strong>: √2 is irrational (cannot be written as a fraction a/b where a and b are integers).</p>
+<p><strong>The proof</strong>:</p>
+<p><strong>Step 1: Make an assumption (the opposite of what we want to prove)</strong></p>
+<p>Assume, for the sake of contradiction, that √2 <em>can</em> be written as a fraction.</p>
+<p>Assume: √2 = a/b, where a and b are integers, and the fraction is in lowest terms (meaning a and b share no common factors; we have reduced it as far as possible).</p>
+<p><strong>Step 2: Square both sides</strong></p>
+<p>√2 = a/b</p>
+<p>Square both sides:</p>
+<p>(√2)² = (a/b)²</p>
+<p>2 = a²/b²</p>
+<p>Multiply both sides by b²:</p>
+<p>2b² = a²</p>
+<p><strong>Step 3: Observe what we have</strong></p>
+<p>We now have: 2b² = a²</p>
+<p>This means a² is even (it equals 2 times something).</p>
+<p>If a² is even, then a itself must be even. (We can prove this: if a were odd, then a² would be odd, since the square of an odd number is odd. But a² = 2b², which is even. So a must be even.)</p>
+<p><strong>Step 4: Write a in its simplest form</strong></p>
+<p>Since a is even, we can write: a = 2m, where m is some integer.</p>
+<p><strong>Step 5: Substitute back</strong></p>
+<p>Substitute a = 2m into 2b² = a²:</p>
+<p>2b² = (2m)²</p>
+<p>2b² = 4m²</p>
+<p>Divide both sides by 2:</p>
+<p>b² = 2m²</p>
+<p><strong>Step 6: Reach a contradiction</strong></p>
+<p>We now have: b² = 2m²</p>
+<p>This means b² is even. By the same reasoning as before, if b² is even, then b itself must be even.</p>
+<p>So we have concluded:</p>
+<ul><li>a is even (from Step 3)</li><li>b is even (from Step 6)</li></ul>
+<p><strong>But we assumed at the start that a/b was in lowest terms, meaning a and b share no common factors.</strong></p>
+<p>If both a and b are even, then both are divisible by 2. They share a common factor of 2. This contradicts our assumption.</p>
+<p><strong>Step 7: Conclusion</strong></p>
+<p>Since our assumption that &quot;√2 = a/b (in lowest terms)&quot; leads to a logical contradiction, the assumption must be false.</p>
+<p>Therefore: <strong>√2 cannot be written as a fraction. √2 is irrational.</strong></p>
+<h3 id="why-this-proof-works">Why This Proof Works</h3>
+<p>The proof does not check a million numbers. It shows that <em>any attempt</em> to write √2 as a fraction leads to a logical impossibility. There is no escape. The proof covers all fractions, all at once, by showing that the very concept of &quot;√2 as a fraction in lowest terms&quot; is self-contradictory.</p>
+<p>This is the power of proof by contradiction.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<h3 id="warm-up">Warm-Up</h3>
+<ol><li>Define the difference between a conjecture and a theorem.</li><li>Give an example of evidence that is not a proof.</li></ol>
+<h3 id="core-practice">Core Practice</h3>
+<ol><li><strong>Counterexample</strong>: The claim is &quot;All prime numbers are odd.&quot; Find a counterexample to disprove it.</li><li><strong>Understanding the √2 proof</strong>: In the proof above, why did we assume that √2 = a/b was &quot;in lowest terms&quot;? What would have been different if we had not made this assumption?</li><li><strong>Logical reasoning</strong>: In the proof that √2 is irrational, we concluded that if a² is even, then a is even. Write a brief explanation of why this must be true.</li><li>A student checks 50 examples and finds that (n + 1)² = n² + 2n + 1 in all cases. Is this a proof? Explain your answer.</li></ol>
+<h3 id="stretch">Stretch</h3>
+<ol><li>Think of a different statement (not one in this chapter) that you believe is true. Describe what kind of proof you would need to convince someone it is true: Would you use direct proof, proof by contradiction, or something else? Why?</li></ol>
+<details>
+<summary>Practice Answer Guide</summary>
+<ol><li>A conjecture is a statement believed to be true but not yet proven. A theorem is a statement that has been proven with a logical argument.</li><li>Example: &quot;I have checked 100 websites and all use the Internet. Therefore, the entire Internet is made of websites.&quot; This is evidence based on examples, not a logical proof of how the Internet works.</li><li>2 is a prime number (divisible only by 1 and 2) but it is even, not odd. So &quot;All prime numbers are odd&quot; is false.</li><li>We assumed the fraction was in lowest terms so that we could reach a contradiction. If a and b both had a common factor, we could have reduced the fraction further. By assuming it was fully reduced, we made the contradiction unavoidable—if both a and b turned out to be even, it contradicted the assumption of lowest terms. Without this assumption, the proof would not have forced a contradiction.</li><li>If a is odd, then a = 2k + 1 for some integer k. Then a² = (2k + 1)² = 4k² + 4k + 1 = 2(2k² + 2k) + 1, which is odd. Since a² = 2b² (from the proof), which is even, a cannot be odd. Therefore, a must be even.</li><li>This is not a proof. Checking 50 examples is evidence that the relationship holds in those cases, but it is not a logical argument covering all values of n. A real proof would show that the formula (n + 1)² = n² + 2n + 1 holds for <em>any</em> integer n by expanding (n + 1)² algebraically: (n + 1)² = (n + 1)(n + 1) = n² + n + n + 1 = n² + 2n + 1.</li><li>Answer will vary. A good response should identify whether a direct proof (assuming starting conditions and reasoning to a conclusion) or a proof by contradiction (assuming the opposite and finding a logical impossibility) would be appropriate.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>The legend says that the Pythagoreans were so disturbed by the proof that √2 is irrational that they kept it secret or even drowned the discoverer. Write 5–7 sentences explaining:</p>
+<ul><li>Why this discovery might have been philosophically disturbing to the Pythagoreans (who believed numbers and their ratios explained everything)</li><li>Whether you think a mathematical truth can be &quot;dangerous&quot; or unwelcome</li><li>Why proof, as a method, is more powerful than hiding or suppressing information</li></ul>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>Proof is the foundation of everything mathematics builds:</p>
+<p><strong>In Engineering</strong> A bridge or building is not designed by guessing or testing materials randomly. It is designed using proven principles of physics and mathematics. The safety of millions depends on proofs that were written centuries ago.</p>
+<p><strong>In Computer Science</strong> When cryptography secures your bank account or online communications, it relies on proofs that certain mathematical problems are &quot;hard&quot;—that no shortcut exists. Algorithms are proven to be correct before they are trusted with your data.</p>
+<p><strong>In Medicine</strong> Drug trials test thousands of cases, but doctors do not use a drug just because it worked in 1,000 examples. They demand statistical proofs that the drug works better than a placebo, accounting for probability and chance.</p>
+<p><strong>In Law and Justice</strong> In legal reasoning, one piece of contradictory evidence can overturn a claim—like a counterexample in mathematics. The principle is the same: a single fact that contradicts an assertion can prove the assertion false.</p>
+<p><strong>The Deeper Truth</strong> Proof separated mathematics from measurement. Before proof, you could measure and record. After proof, you could <em>know</em> something in a way that measurement alone never allows. A million correct measurements might be wrong on the 1,000,001st case. But a proof is certain. It is this certainty that gave humanity the confidence to build mathematics, science, and the modern world.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li>A <strong>proof</strong> is a logical argument showing why something must be true in all cases.</li><li>A <strong>theorem</strong> is a proven statement; a <strong>conjecture</strong> is unproven.</li><li><strong>Direct proof</strong>: assume the starting conditions and reason to the conclusion.</li><li><strong>Proof by contradiction</strong>: assume the opposite, find a logical impossibility, conclude the original statement must be true.</li><li>A single <strong>counterexample</strong> disproves a claim.</li><li><strong>√2 is irrational</strong>: proven by showing that assuming √2 = a/b (in lowest terms) leads to the logical impossibility that both a and b are even.</li><li>Proof is the foundation of mathematical knowledge. It gives certainty in a way that checking examples never can.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is the difference between checking many examples and a proof?</li></ol>
+<ul><li>Examples prove a claim; proofs only suggest it</li><li>A proof covers all cases logically; checking examples covers only those checked</li><li>There is no difference</li><li>Proofs are less reliable than examples</li></ul>
+<ol><li>In the proof that √2 is irrational, why did we assume √2 = a/b was in lowest terms?</li></ol>
+<ul><li>To make the proof shorter</li><li>To set up a contradiction that would disprove the assumption</li><li>Because lowest terms are always required</li><li>To make the problem easier</li></ul>
+<ol><li>What is a counterexample?</li></ol>
+<ul><li>An example that supports a claim</li><li>A single example that disproves a claim</li><li>A claim that is almost true</li><li>A proof written backwards</li></ul>
+<ol><li>In the proof that √2 is irrational, what logical contradiction did we reach?</li></ol>
+<ul><li>√2 was both rational and irrational</li><li>Both a and b were even, contradicting the assumption that a/b was in lowest terms</li><li>All numbers are irrational</li><li>2 = 1</li></ul>
+<ol><li>Which statement best describes a theorem?</li></ol>
+<ul><li>A claim that seems probably true</li><li>A statement that has been proven with a logical argument</li><li>A guess about mathematics</li><li>A statement that is true for some numbers but not others</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>A proof covers all cases logically; checking examples covers only those checked</li><li>To set up a contradiction that would disprove the assumption</li><li>A single example that disproves a claim</li><li>Both a and b were even, contradicting the assumption that a/b was in lowest terms</li><li>A statement that has been proven with a logical argument</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Mathematical_proof" target="_blank" rel="noopener">Mathematical proof</a> — overview of different types of proofs, their role in mathematics, and historical development</li><li><a href="https://en.wikipedia.org/wiki/Proof_by_contradiction" target="_blank" rel="noopener">Proof by contradiction</a> — detailed explanation of reductio ad absurdum and famous examples</li><li><a href="https://en.wikipedia.org/wiki/Irrational_number" target="_blank" rel="noopener">Irrational number</a> — history and examples of irrational numbers, including the discovery that √2 is irrational</li><li><a href="https://en.wikipedia.org/wiki/Square_root_of_2" target="_blank" rel="noopener">Square root of 2</a> — comprehensive coverage of the proof that √2 is irrational and its historical significance to the Pythagoreans</li><li><a href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" target="_blank" rel="noopener">Euclid&#x27;s Elements</a> — the foundational mathematical text based entirely on axioms and logical proof, setting the standard for mathematical rigor</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-01-shape-measure-greek-project/ch-025-geometric-construction/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Geometric Construction</span></a><a class="pager-link pager-link--next" href="../../world-02-algebra-is-born/ch-027-the-problem-of-the-unknown/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Problem of the Unknown</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

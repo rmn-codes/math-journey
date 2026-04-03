@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Linear Functions and Their Equations — Math Journey</title>
+    <meta name="description" content="Three ways to write a line — and why each form tells you something different" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 3 · Chapter 44</p>
+        <h1>Linear Functions and Their Equations</h1>
+        <p class="hero-copy">Three ways to write a line — and why each form tells you something different</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>foundational</span>
+          <span>Europe</span>
+          <span>1700s–1800s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Write linear equations in slope-intercept, point-slope, and standard form</li><li>Convert between forms</li><li>Write equations from given information</li><li>Interpret linear models in context</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#slope-intercept-form">Slope-Intercept Form</a></li><li class="toc-level-3"><a href="#point-slope-form">Point-Slope Form</a></li><li class="toc-level-3"><a href="#standard-form">Standard Form</a></li><li class="toc-level-3"><a href="#converting-between-forms">Converting Between Forms</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>A shopkeeper in 18th-century Paris keeps careful records of her business. She buys fabric and sells it by the bolt.</p>
+<p>For every bolt sold, she earns 4 gold coins after costs. But to open her shop each morning, she must pay 20 coins for rent and supplies.</p>
+<p>On a day when she sells zero bolts, she is down 20 coins. After selling 5 bolts, she has broken even. After 10 bolts, she has earned 20 coins profit.</p>
+<p>She notices a pattern and draws a line on paper: the horizontal axis is bolts sold, the vertical axis is profit. The line starts at the point $(0, -20)$ and climbs steadily.</p>
+<p>She realizes something profound: <em>This line is my business. Its slope is my earnings rate. Its starting point is my cost. If I know the equation, I can predict the future.</em></p>
+<p>By writing the equation $y = 4x - 20$, she can answer any question about profit and planning. This is the power of linear functions: they are models of the world, tools for prediction and understanding.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Linear equations are the first truly powerful mathematical models you&#x27;ll learn. They describe relationships in business (profit, revenue, cost), science (distance and time, temperature and heating), medicine (drug concentration over time), and countless other fields.</p>
+<p>There are three standard ways to write a linear equation, and each form is useful in different contexts. Slope-intercept form is perfect for graphing. Point-slope form is perfect when you know one point and the slope. Standard form is often used in systems of equations.</p>
+<p>Being fluent in all three forms — and converting between them — is like being fluent in multiple languages. It gives you flexibility, insight, and power. It is the professional mathematician&#x27;s approach.</p>
+<p>Moreover, a linear equation is often called a linear function, and this chapter bridges algebra and the concept of functions, which will become central as your mathematical journey continues.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>By the 1700s, the coordinate plane was well established, and mathematicians had developed systematic ways to represent lines algebraically. The three main forms emerged organically from different problem contexts.</p>
+<p>Slope-intercept form ($y = mx + b$) became the standard for graphing and visualization, especially as calculus developed and the focus shifted to understanding functions.</p>
+<p>Point-slope form ($y - y_1 = m(x - x_1)$) proved invaluable in calculus and advanced analysis, where you often know a point on a curve and its rate of change (slope) at that point.</p>
+<p>Standard form ($Ax + By = C$) remained useful in systems of linear equations and linear algebra, which became fundamental tools in engineering, economics, and the social sciences by the 20th century.</p>
+<p>All three forms coexist today because all three are useful. There is no single &quot;best&quot; form — context determines which to use.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>linear function</strong> is a function of the form $f(x) = mx + b$ (or $y = mx + b$) where $m$ and $b$ are numbers. It is called a function because for every input $x$, there is exactly one output $y$.</p>
+<p>There are three standard forms for writing linear equations:</p>
+<h3 id="slope-intercept-form">Slope-Intercept Form</h3>
+<p>$$y = mx + b$$</p>
+<p>where:</p>
+<ul><li>$m$ is the slope</li><li>$b$ is the y-intercept (the value of $y$ when $x = 0$)</li></ul>
+<p>This form is ideal for graphing because you immediately see the y-intercept (plot it first) and the slope (which tells you how the line rises or falls).</p>
+<h3 id="point-slope-form">Point-Slope Form</h3>
+<p>$$y - y_1 = m(x - x_1)$$</p>
+<p>where:</p>
+<ul><li>$(x_1, y_1)$ is a point on the line</li><li>$m$ is the slope</li></ul>
+<p>This form is ideal when you know a specific point on the line and the slope. It&#x27;s also the natural form in calculus when studying rates of change.</p>
+<h3 id="standard-form">Standard Form</h3>
+<p>$$Ax + By = C$$</p>
+<p>where $A$, $B$, and $C$ are integers (whole numbers), and typically $A$ and $B$ are not both zero. Often, $A$ is positive.</p>
+<p>This form is useful in systems of equations and in situations where both variables are treated symmetrically (neither one is explicitly isolated).</p>
+<h3 id="converting-between-forms">Converting Between Forms</h3>
+<p><strong>From slope-intercept to standard form:</strong></p>
+<p>$y = 2x + 3$</p>
+<p>Rearrange: $2x - y = -3$ or $-2x + y = 3$ (standard form allows multiple equivalent representations).</p>
+<p><strong>From standard form to slope-intercept:</strong></p>
+<p>$3x + 2y = 6$</p>
+<p>Solve for $y$: $2y = -3x + 6 \Rightarrow y = -\frac{3}{2}x + 3$</p>
+<p><strong>From point-slope to slope-intercept:</strong></p>
+<p>$y - 4 = 2(x - 1)$</p>
+<p>Expand: $y - 4 = 2x - 2$</p>
+<p>Rearrange: $y = 2x + 2$ (slope-intercept form)</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Linear Function:</strong> A function of the form $f(x) = mx + b$ where $m$ and $b$ are constants; the graph is a straight line.</p>
+<p><strong>Slope-Intercept Form:</strong> The form $y = mx + b$, where $m$ is the slope and $b$ is the y-intercept. Ideal for graphing and identifying these two key values.</p>
+<p><strong>Point-Slope Form:</strong> The form $y - y_1 = m(x - x_1)$, where $(x_1, y_1)$ is a known point on the line and $m$ is the slope. Ideal when you have a point and slope.</p>
+<p><strong>Standard Form:</strong> The form $Ax + By = C$, where $A$, $B$, and $C$ are real numbers (often integers). Useful for systems of equations and when variables need equal treatment.</p>
+<p><strong>y-Intercept:</strong> The value $b$ in $y = mx + b$; the point where the line crosses the y-axis; the output when input is zero.</p>
+<p><strong>Linear Model:</strong> A linear equation or function used to represent a real-world relationship or make predictions.</p>
+<p><strong>Function Notation:</strong> Writing $f(x)$ instead of $y$; $f(x)$ represents the output of function $f$ when the input is $x$.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Writing Equation from Slope and y-Intercept</strong></p>
+<p>Write the equation of the line with slope $\frac{1}{2}$ and y-intercept $-3$.</p>
+<p><em>Solution:</em></p>
+<p>Use slope-intercept form directly:</p>
+<p>$$y = \frac{1}{2}x - 3$$</p>
+<p><strong>Example 2: Writing Equation from Slope and One Point</strong></p>
+<p>A line has slope 3 and passes through the point $(2, 5)$. Write its equation in slope-intercept form.</p>
+<p><em>Solution:</em></p>
+<p>Use point-slope form first:</p>
+<p>$$y - 5 = 3(x - 2)$$</p>
+<p>Expand:</p>
+<p>$$y - 5 = 3x - 6$$</p>
+<p>Solve for $y$:</p>
+<p>$$y = 3x - 1$$</p>
+<p>In slope-intercept form: $y = 3x - 1$.</p>
+<p><strong>Example 3: Writing Equation from Two Points</strong></p>
+<p>Write the equation of the line through $(1, 4)$ and $(3, 10)$.</p>
+<p><em>Solution:</em></p>
+<p>First, find the slope:</p>
+<p>$$m = \frac{10 - 4}{3 - 1} = \frac{6}{2} = 3$$</p>
+<p>Use point-slope form with point $(1, 4)$ and slope 3:</p>
+<p>$$y - 4 = 3(x - 1)$$</p>
+<p>$$y - 4 = 3x - 3$$</p>
+<p>$$y = 3x + 1$$</p>
+<p>In slope-intercept form: $y = 3x + 1$.</p>
+<p><strong>Example 4: Converting Between Forms</strong></p>
+<p>Convert $y = -\frac{1}{2}x + 4$ to standard form.</p>
+<p><em>Solution:</em></p>
+<p>Multiply both sides by 2 to eliminate fractions:</p>
+<p>$$2y = -x + 8$$</p>
+<p>Rearrange to standard form:</p>
+<p>$$x + 2y = 8$$</p>
+<p><strong>Example 5: Interpreting a Linear Model</strong></p>
+<p>A cell phone plan charges $15 per month for unlimited texting plus $0.10 per data gigabyte used. Write the equation and interpret its parts.</p>
+<p><em>Solution:</em></p>
+<p>Let $x$ = gigabytes of data, $y$ = total monthly cost.</p>
+<p>$$y = 0.10x + 15$$</p>
+<p>Interpretation:</p>
+<ul><li>The slope is $0.10$: each gigabyte costs $0.10$.</li><li>The y-intercept is $15$: even if you use zero data, you pay $15 per month (the base fee).</li><li>If you use 50 GB, the cost is $y = 0.10(50) + 15 = 5 + 15 = 20$ dollars.</li></ul>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Write the equation of the line with slope 2 and y-intercept 5 in slope-intercept form.</li></ol>
+<ol><li>A line has slope 4 and passes through $(1, 3)$. Write the equation in slope-intercept form.</li></ol>
+<ol><li>Find the equation of the line through $(0, -2)$ and $(4, 6)$.</li></ol>
+<ol><li>Convert $y = 3x - 7$ to standard form.</li></ol>
+<ol><li>Convert $2x + 5y = 20$ to slope-intercept form.</li></ol>
+<ol><li>Use point-slope form to write the equation of the line through $(-1, 2)$ with slope $-3$.</li></ol>
+<ol><li>Two points on a line are $(2, 1)$ and $(5, 7)$. Write the equation of the line.</li></ol>
+<ol><li>A line is horizontal and passes through $(3, 4)$. What is its equation?</li></ol>
+<ol><li>A line is vertical and passes through $(-2, 5)$. What is its equation? (Hint: This is a special case.)</li></ol>
+<ol><li>A cafe&#x27;s daily revenue is $R = 12c + 50$, where $c$ is the number of customers and $R$ is revenue in dollars. Interpret the slope and intercept.</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Business Model</strong></p>
+<p>A photographer charges $150 for a shoot plus $5 per printed photo.</p>
+<ol><li>Write the equation $C = 5p + 150$ relating total cost to photos, then identify the slope (cost per photo) and y-intercept (session fee).</li></ol>
+<ol><li>If a customer&#x27;s budget is $400, how many photos can they order?</li></ol>
+<ol><li>Suppose a discount changes the price to $4 per photo. How does the slope change, and what does this mean? At what photo count are both models equal in cost?</li></ol>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Smartphone Adoption Forecast</strong></p>
+<p>A study shows smartphone adoption was 5% in 2010 and 35% in 2015. Assuming linear growth, find the equation $P = mt + b$ where $t$ = years since 2010.</p>
+<p><strong>Slope:</strong> $m = \frac{35 - 5}{5} = 6$ percent per year.</p>
+<p><strong>Equation:</strong> $P = 6t + 5$</p>
+<p><strong>Predictions:</strong> In 2012 ($t=2$): $P = 17\%$. For 65% adoption: $65 = 6t + 5 \Rightarrow t = 10$, so year 2020.</p>
+<p>Linear models work well in a limited range but eventually fail (percentages can&#x27;t exceed 100%).</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>A linear function is any relationship of the form $y = mx + b$. There are three standard ways to write such equations:</p>
+<ul><li><strong>Slope-intercept form</strong> ($y = mx + b$) reveals the slope and y-intercept at a glance, ideal for graphing.</li><li><strong>Point-slope form</strong> ($y - y_1 = m(x - x_1)$) is useful when you know a point and the slope.</li><li><strong>Standard form</strong> ($Ax + By = C$) is useful for systems of equations and other applications.</li></ul>
+<p>You can convert freely between these forms. You can write the equation of a line given:</p>
+<ul><li>A slope and y-intercept</li><li>A slope and one point</li><li>Two points</li></ul>
+<p>In real-world contexts, a linear equation becomes a linear model: a tool to describe, predict, and understand relationships. The slope tells the rate of change; the intercepts tell you starting values.</p>
+<p>Master these three forms, and you have a powerful toolkit for problem-solving in mathematics and beyond.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>Write the equation of a line with slope 5 and y-intercept 2.</li></ol>
+<ul><li>$y = 5x + 2$</li><li>$y = 2x + 5$</li><li>$5x + y = 2$</li><li>$y = 5 + 2x$ (same as first)</li></ul>
+<ol><li>What is the slope of the line $3x + 2y = 12$?</li></ol>
+<ul><li>3</li><li>2</li><li>$-\frac{3}{2}$</li><li>$\frac{3}{2}$</li></ul>
+<ol><li>A line passes through $(1, 2)$ and has slope 4. Which form is best to write the equation first?</li></ol>
+<ul><li>Slope-intercept form</li><li>Point-slope form</li><li>Standard form</li><li>No form is better</li></ul>
+<ol><li>Convert $y = -2x + 7$ to standard form.</li></ol>
+<ul><li>$2x + y = 7$</li><li>$-2x + y = 7$</li><li>$2x - y = -7$</li><li>$x + 2y = 7$</li></ul>
+<ol><li>The equation $C = 25h + 100$ represents the cost $C$ of renting equipment for $h$ hours. What does 25 represent?</li></ol>
+<ul><li>The hourly rate</li><li>The setup fee</li><li>The total cost</li><li>The number of hours</li></ul>
+<ol><li>A line has equation $y = 3x - 5$. What is the y-intercept?</li></ol>
+<ul><li>3</li><li>$-5$</li><li>$(0, -5)$</li><li>$(3, -5)$</li></ul>
+<details>
+<summary>Answer Key</summary>
+<ol><li>$y = 5x + 2$</li></ol>
+<ol><li>$-\frac{3}{2}$</li></ol>
+<ol><li>Point-slope form</li></ol>
+<ol><li>$2x + y = 7$</li></ol>
+<ol><li>The hourly rate</li></ol>
+<ol><li>$(0, -5)$</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<p>https://en.wikipedia.org/wiki/Linear_function</p>
+<ul><li>Linear functions and equations in algebra:</li></ul>
+<p>https://en.wikipedia.org/wiki/Linear_equation</p>
+<ul><li>Slope-intercept form and graphing:</li></ul>
+<p>https://en.wikipedia.org/wiki/Function_(mathematics)</p>
+<ul><li>Function notation and functions:</li></ul>
+<p>https://en.wikipedia.org/wiki/Linear_algebra</p>
+<ul><li>History of linear algebra and systems of equations:</li></ul>
+<p>https://en.wikipedia.org/wiki/Mathematical_modeling</p>
+<ul><li>Real-world applications of linear models in business and science:</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-03-coordination-space-and-functions/ch-043-slope/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Slope — The Measure of Steepness</span></a><a class="pager-link pager-link--next" href="../../world-03-coordination-space-and-functions/ch-045-what-is-a-function/index.html"><span class="pager-dir">Next →</span><span class="pager-title">What Is a Function?</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

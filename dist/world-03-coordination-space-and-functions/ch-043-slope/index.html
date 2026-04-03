@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slope — The Measure of Steepness — Math Journey</title>
+    <meta name="description" content="Rise over run — the single number that captures a line&#x27;s character" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 3 · Chapter 43</p>
+        <h1>Slope — The Measure of Steepness</h1>
+        <p class="hero-copy">Rise over run — the single number that captures a line&#x27;s character</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>foundational</span>
+          <span>Rome, Europe</span>
+          <span>Ancient–1800s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Calculate slope from two points or a graph</li><li>Interpret slope as a rate of change</li><li>Identify parallel and perpendicular slopes</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#interpreting-slope">Interpreting Slope</a></li><li class="toc-level-3"><a href="#parallel-and-perpendicular-lines">Parallel and Perpendicular Lines</a></li><li class="toc-level-3"><a href="#slope-as-rate-of-change">Slope as Rate of Change</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Picture the Roman roads that still crisscross Europe today. They are marvels of engineering — straight, durable, and cleverly designed to handle rain and traffic.</p>
+<p>But the Romans never called them &quot;roads with slope 0.02.&quot; They simply built roads with a consistent, gentle incline. Too flat, and rainwater pooled, rotting the surface. Too steep, and wheeled carts struggled to climb. They needed exactly right.</p>
+<p>The Roman engineers had surveying tools that allowed them to measure this incline precisely. They would measure how much the road rose (vertically) for every unit of distance traveled (horizontally). They didn&#x27;t have the word &quot;slope,&quot; but they understood the concept perfectly.</p>
+<p>Centuries later, mathematicians would name this ratio: <strong>slope</strong>. It would become one of the most useful numbers in all of mathematics. It appears in physics (velocity), economics (marginal cost), medicine (disease spread rates), and architecture (roof pitch).</p>
+<p>A single number — rise divided by run — that captures a line&#x27;s entire character.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Slope is how we measure change. When a doctor says a patient&#x27;s temperature is &quot;rising by 0.5 degrees per hour,&quot; that&#x27;s a slope. When a business reports &quot;profits are increasing by 2% per quarter,&quot; that&#x27;s a slope. When a engineer specifies a roof pitch of 6-in-12 (rise 6 inches for every 12 inches of run), that&#x27;s a slope.</p>
+<p>Slope tells you the <em>rate</em> at which one quantity changes with respect to another. It is the fundamental tool for understanding motion, growth, decay, and relationships.</p>
+<p>Moreover, slope is a comparison tool. Two lines with the same slope are parallel — they&#x27;ll never meet. Two lines with slopes whose product is $-1$ are perpendicular — they meet at a right angle. These relationships, based on slope, form the backbone of geometry and are used in construction, design, and analysis every single day.</p>
+<p>Understanding slope is understanding change itself.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Ancient Roman engineers were practical mathematicians. They measured angles with groma (surveying instruments) and used geometry to plan roads, aqueducts, and buildings. The concept of rise over run was implicit in their work, even if not formally named.</p>
+<p>In the 17th and 18th centuries, as the calculus was developing, slope took on new importance. Slope became the instantaneous rate of change — the derivative, as Newton and Leibniz would call it. This transformed mathematics and science.</p>
+<p>By the 1800s, slope was standard terminology in schools and universities across Europe. The notation we use today — the letter $m$ for slope — comes from the French word &quot;montée&quot; (meaning &quot;climbing&quot; or &quot;mounting&quot;).</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Slope</strong> is a measure of how steep a line is. It answers the question: &quot;As I move right along the line, how much do I move up (or down)?&quot;</p>
+<p>Mathematically, slope is the ratio of the <strong>rise</strong> (vertical change) to the <strong>run</strong> (horizontal change):</p>
+<p>$$m = \frac{\text{rise}}{\text{run}} = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$$</p>
+<p>To find the slope between two points $(x_1, y_1)$ and $(x_2, y_2)$:</p>
+<ol><li>Calculate the rise: $y_2 - y_1$ (how much $y$ changes).</li><li>Calculate the run: $x_2 - x_1$ (how much $x$ changes).</li><li>Divide: $m = \frac{y_2 - y_1}{x_2 - x_1}$.</li></ol>
+<h3 id="interpreting-slope">Interpreting Slope</h3>
+<p><strong>Positive slope</strong> ($m &gt; 0$): As you move right, the line goes up. The line is rising.</p>
+<p><strong>Negative slope</strong> ($m &lt; 0$): As you move right, the line goes down. The line is falling.</p>
+<p><strong>Zero slope</strong> ($m = 0$): As you move right, the $y$-value doesn&#x27;t change. The line is horizontal.</p>
+<p><strong>Undefined slope</strong>: The line is vertical. You cannot divide by zero because the run is zero. Vertical lines have no slope (or &quot;infinite slope&quot; in some contexts).</p>
+<h3 id="parallel-and-perpendicular-lines">Parallel and Perpendicular Lines</h3>
+<p><strong>Parallel lines</strong> have the same slope. If two lines never intersect and are both non-vertical, they are parallel if and only if their slopes are equal.</p>
+<p><strong>Perpendicular lines</strong> meet at right angles. If two lines are perpendicular and neither is vertical, their slopes are negative reciprocals of each other:</p>
+<p>$$m_1 \cdot m_2 = -1$$</p>
+<p>or</p>
+<p>$$m_2 = -\frac{1}{m_1}$$</p>
+<p>For example, a line with slope 2 is perpendicular to a line with slope $-\frac{1}{2}$.</p>
+<h3 id="slope-as-rate-of-change">Slope as Rate of Change</h3>
+<p>In real-world contexts, slope represents a rate of change. If you&#x27;re graphing distance versus time, the slope is speed (miles per hour, for instance). If you&#x27;re graphing profit versus items sold, the slope is the profit per item. The slope tells you how one quantity responds to changes in another.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Slope:</strong> The ratio of the vertical change to the horizontal change between two points on a line, calculated as $m = \frac{y_2 - y_1}{x_2 - x_1}$.</p>
+<p><strong>Rise:</strong> The vertical change between two points; calculated as $y_2 - y_1$ or $\Delta y$.</p>
+<p><strong>Run:</strong> The horizontal change between two points; calculated as $x_2 - x_1$ or $\Delta x$.</p>
+<p><strong>Positive Slope:</strong> A slope greater than zero; the line goes up from left to right.</p>
+<p><strong>Negative Slope:</strong> A slope less than zero; the line goes down from left to right.</p>
+<p><strong>Zero Slope:</strong> A slope equal to zero; a horizontal line.</p>
+<p><strong>Undefined Slope:</strong> The slope of a vertical line, which cannot be calculated because the run (denominator) is zero.</p>
+<p><strong>Rate of Change:</strong> How much one quantity changes with respect to another; represented by slope in linear relationships.</p>
+<p><strong>Parallel Lines:</strong> Lines that never intersect; they have equal slopes (and are non-vertical).</p>
+<p><strong>Perpendicular Lines:</strong> Lines that intersect at right angles; their slopes are negative reciprocals ($m_1 \cdot m_2 = -1$).</p>
+<p><strong>Negative Reciprocal:</strong> The opposite sign and flipped fraction of a slope. The negative reciprocal of $\frac{a}{b}$ is $-\frac{b}{a}$.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Finding Slope from Two Points</strong></p>
+<p>Find the slope of the line passing through $A = (1, 2)$ and $B = (4, 8)$.</p>
+<p><em>Solution:</em></p>
+<p>$$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{8 - 2}{4 - 1} = \frac{6}{3} = 2$$</p>
+<p>The slope is <strong>2</strong>. For every 1 unit right, the line goes 2 units up.</p>
+<p><strong>Example 2: Negative Slope</strong></p>
+<p>Find the slope of the line passing through $P = (-2, 5)$ and $Q = (3, 0)$.</p>
+<p><em>Solution:</em></p>
+<p>$$m = \frac{0 - 5}{3 - (-2)} = \frac{-5}{5} = -1$$</p>
+<p>The slope is <strong>-1</strong>. For every 1 unit right, the line goes 1 unit down.</p>
+<p><strong>Example 3: Reading Slope from a Graph</strong></p>
+<p>A line passes through $(0, 1)$ and $(3, 7)$. What is its slope?</p>
+<p><em>Solution:</em></p>
+<p>$$m = \frac{7 - 1}{3 - 0} = \frac{6}{3} = 2$$</p>
+<p>The slope is <strong>2</strong>.</p>
+<p><strong>Example 4: Interpreting Slope in Context</strong></p>
+<p>A taxi charges $2 per mile. If the fare is plotted as distance (x-axis) versus cost (y-axis), what is the slope?</p>
+<p><em>Solution:</em></p>
+<p>At 0 miles, the cost is $0 (ignoring base fare for this exercise). At 5 miles, the cost is $10.</p>
+<p>$$m = \frac{10 - 0}{5 - 0} = \frac{10}{5} = 2$$</p>
+<p>The slope is <strong>2</strong>, meaning the cost increases by $2 per mile.</p>
+<p><strong>Example 5: Identifying Perpendicular Slopes</strong></p>
+<p>A line has slope $\frac{3}{4}$. What is the slope of a line perpendicular to it?</p>
+<p><em>Solution:</em></p>
+<p>If $m_1 = \frac{3}{4}$, then $m_2 = -\frac{1}{m_1} = -\frac{1}{\frac{3}{4}} = -\frac{4}{3}$.</p>
+<p>The perpendicular slope is $-\frac{4}{3}$.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>Find the slope of the line through $(0, 0)$ and $(2, 8)$.</li></ol>
+<ol><li>Find the slope of the line through $(1, 3)$ and $(5, 1)$.</li></ol>
+<ol><li>A line passes through $(-3, 2)$ and $(1, 10)$. Find its slope.</li></ol>
+<ol><li>Is the point $(6, 9)$ on the line through $(0, 3)$ and $(2, 5)$? (Find the slope first, then check if the point fits.)</li></ol>
+<ol><li>A line has slope $\frac{2}{5}$. What is the slope of a parallel line? What is the slope of a perpendicular line?</li></ol>
+<ol><li>Find the slope of the line $2x + 3y = 12$ by finding its x- and y-intercepts and calculating the slope between them.</li></ol>
+<ol><li>A baker&#x27;s profit increases by $15 for every cake sold. What is the slope of the profit line?</li></ol>
+<ol><li>A marathon runner&#x27;s distance from the finish line decreases by 0.2 miles every minute. What is the slope of the distance-time graph?</li></ol>
+<ol><li>Two lines are perpendicular. One has slope 4. What is the slope of the other?</li></ol>
+<ol><li>A road has a rise of 20 meters over a horizontal run of 400 meters. What is the slope?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Roof Pitch</strong></p>
+<p>A house has a roof with a pitch of &quot;6 in 12.&quot; This means for every 12 inches of horizontal run, the roof rises 6 inches vertically.</p>
+<ol><li>What is the slope of this roof?</li></ol>
+<ol><li>The roof extends 30 feet horizontally (from eave to peak). How much does it rise?</li></ol>
+<ol><li>A steeper roof has a pitch of &quot;10 in 12.&quot; Compare the two slopes. Which is steeper?</li></ol>
+<ol><li>If you&#x27;re designing gutters for the 6-in-12 roof, would they be parallel to the roofline? What slope would the gutters need to be horizontal?</li></ol>
+<ol><li>Challenge: If a ladder leans against the house perpendicular to the 6-in-12 roofline, what is the slope of the ladder?</li></ol>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Population Growth</strong></p>
+<p>A town&#x27;s population is tracked over several years:</p>
+<p>| Year | Population | |------|---| | 2000 | 5,000 | | 2010 | 7,500 |</p>
+<p>Assuming linear growth:</p>
+<ol><li>What is the rate of change of the population (slope) per year?</li></ol>
+<ol><li>What was the population in 2005?</li></ol>
+<ol><li>In what year will the population reach 12,500?</li></ol>
+<p><em>Solution:</em></p>
+<p>$$m = \frac{7500 - 5000}{2010 - 2000} = \frac{2500}{10} = 250 \text{ people per year}$$</p>
+<p>The population grows by 250 people per year. From year 2000, with slope 250, the equation is:</p>
+<p>$$\text{Population} = 5000 + 250(x)$$</p>
+<p>where $x$ is years since 2000.</p>
+<p>In 2005 ($x = 5$): Population $= 5000 + 250(5) = 5000 + 1250 = 6250$.</p>
+<p>For population 12,500: $12500 = 5000 + 250x \Rightarrow 7500 = 250x \Rightarrow x = 30$ years after 2000, so year <strong>2030</strong>.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Slope is the ratio of rise to run: how much a line goes up (or down) for each unit of horizontal movement. It is the single number that captures a line&#x27;s steepness and direction.</p>
+<p>Positive slope indicates a rising line; negative slope indicates a falling line; zero slope is horizontal; undefined slope is vertical.</p>
+<p>Slope reveals rate of change in real-world contexts: speed, cost per unit, population growth, and countless other relationships.</p>
+<p>Parallel lines have equal slopes. Perpendicular lines have slopes whose product is $-1$. These relationships are essential in design, engineering, and geometry.</p>
+<p>Understanding slope is understanding how quantities change with respect to one another — the language of motion and growth.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is the slope of the line through $(1, 2)$ and $(3, 6)$?</li></ol>
+<ul><li>1</li><li>2</li><li>3</li><li>4</li></ul>
+<ol><li>A line has slope $-\frac{2}{3}$. What is the slope of a perpendicular line?</li></ol>
+<ul><li>$-\frac{3}{2}$</li><li>$\frac{2}{3}$</li><li>$\frac{3}{2}$</li><li>$-2$</li></ul>
+<ol><li>Which line is steeper: slope 3 or slope $-5$?</li></ol>
+<ul><li>Slope 3</li><li>Slope -5</li><li>They are equally steep</li><li>Cannot be determined</li></ul>
+<ol><li>A horizontal line has what slope?</li></ol>
+<ul><li>Positive</li><li>Negative</li><li>Zero</li><li>Undefined</li></ul>
+<ol><li>Two parallel lines have slopes $m_1 = 4$ and $m_2 = 4$. What is their relationship?</li></ol>
+<ul><li>They are the same line</li><li>They never intersect</li><li>They are perpendicular</li><li>They intersect at one point</li></ul>
+<ol><li>If a line goes down as you move right, what is true about its slope?</li></ol>
+<ul><li>It is positive</li><li>It is negative</li><li>It is zero</li><li>It is undefined</li></ul>
+<details>
+<summary>Answer Key</summary>
+<ol><li>2</li></ol>
+<ol><li>$\frac{3}{2}$</li></ol>
+<ol><li>Slope -5</li></ol>
+<ol><li>Zero</li></ol>
+<ol><li>They never intersect</li></ol>
+<ol><li>It is negative</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<p>https://en.wikipedia.org/wiki/Slope</p>
+<ul><li>Slope in mathematics and coordinate geometry:</li></ul>
+<p>https://en.wikipedia.org/wiki/Derivative</p>
+<ul><li>Rate of change and derivatives in calculus:</li></ul>
+<p>https://en.wikipedia.org/wiki/Roman_road</p>
+<ul><li>Roman road engineering and surveying:</li></ul>
+<p>https://en.wikipedia.org/wiki/Perpendicular</p>
+<ul><li>Perpendicular lines and negative reciprocals:</li></ul>
+<p>https://en.wikipedia.org/wiki/Mathematical_notation</p>
+<ul><li>History of mathematical notation and slope (letter m):</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-03-coordination-space-and-functions/ch-042-graphing-linear-equations/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Graphing Linear Equations</span></a><a class="pager-link pager-link--next" href="../../world-03-coordination-space-and-functions/ch-044-linear-functions-and-equations/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Linear Functions and Their Equations</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

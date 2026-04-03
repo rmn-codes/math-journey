@@ -1,0 +1,193 @@
+---
+worldNumber: 4
+world: world-04-trigonometry-astronomy-and-the-heavens
+chapterNumber: 53
+filename: ch-053-angles-and-measurement.mdx
+title: "Angles and the Language of Turning"
+subtitle: "Degrees, radians, and why a circle has 360 degrees — and also 2π"
+historicalPeriod: "2000 BCE – 1700 CE"
+estimatedTimeMinutes: 35
+mainConcepts: ["degree", "radian", "arc length", "conversion", "coterminal angles", "standard position"]
+learningObjectives:
+  - "Convert between degrees and radians"
+  - "Find arc length using s = rθ"
+  - "Identify coterminal angles"
+  - "Place angles in standard position"
+---
+
+## Story Hook
+
+Imagine you're standing in Babylon around 2000 BCE. The sky is clear, and above you, stars trace an invisible path. A team of astronomers is working on a problem: how do we measure this circular dance? How do we divide up the circle so that our measurements are useful?
+
+They choose 360 degrees. Why 360? Because 360 is beautifully divisible. It's close to the number of days in a year (about 365), and it divides evenly by 2, 3, 4, 5, 6, 8, 9, 10, and 12. For a civilization doing astronomy and surveying without computers, that divisibility is gold.
+
+For nearly 4,000 years, degrees ruled. Every navigator, surveyor, and engineer used them. But then mathematicians discovered something more elegant: a way to measure angles using the circle's own radius as the unit. This is the radian, and it's so powerful that modern physics, calculus, and engineering rely on it almost exclusively.
+
+Today, both systems live side by side. Degrees dominate everyday life: navigation, geography, sports. Radians dominate mathematics and science. By the end of this chapter, you'll understand both, and why each one matters.
+
+## Why It Matters
+
+Measuring angles is like having a universal language. Whether you're steering a ship, designing a bridge, tracking a planet, or writing code for a 3D video game, you need to talk about turning and rotation. But turning can be measured in different ways — and choosing the right unit makes calculations easier or harder.
+
+Think of it this way: if you're building a wheel and you only think in degrees, you might do fine. But if you're designing a pendulum, calculating wave motion, or writing physics simulations, radians fit the mathematics so naturally that the physics equations simplify. That's why we learn both.
+
+## Historical Context
+
+The Babylonians (circa 2000 BCE) established the 360-degree system. They were brilliant astronomers and mathematicians, but not for abstract reasons: they needed to predict when rivers would flood, when to plant crops, and where stars would appear. A circle of 360 degrees was their gift to us.
+
+For two millennia, this system was unchallenged. Then, in the 1600s and 1700s, as calculus was being invented, mathematicians realized that angles measured in terms of arc length divided by radius (the radian) made derivative and integral formulas dramatically simpler. By the 1800s, the radian was standard in advanced mathematics.
+
+Leonhard Euler, in the 1700s, formalized much of trigonometry and showed how deeply the radian fits into the mathematical fabric of waves, circles, and periodic motion. Today, his insights shape everything from signal processing to quantum mechanics.
+
+## Core Concept
+
+An angle measures rotation. At its simplest, an angle describes how far we've turned from a starting direction.
+
+**Degrees** divide a full rotation into 360 equal parts. Why 360? Tradition and divisibility. A right angle is 90 degrees. A straight angle (half rotation) is 180 degrees.
+
+**Radians** divide a full rotation into $2\pi$ equal parts. One radian is the angle at the center of a circle when the arc length equals the radius. This definition sounds abstract until you see how perfectly it works in calculus and physics.
+
+The relationship:
+$$360° = 2\pi \text{ radians}$$
+
+Therefore:
+$$1° = \frac{\pi}{180} \text{ radians} \quad \text{and} \quad 1 \text{ radian} = \frac{180}{\pi}°$$
+
+**Standard Position**: An angle in standard position has its vertex at the origin, its initial side along the positive x-axis, and its terminal side rotated by the angle. If the rotation is counterclockwise, the angle is positive. Clockwise rotations are negative.
+
+**Coterminal Angles**: Two angles that have the same terminal side. For example, $45°$ and $405°$ are coterminal (because $405° = 45° + 360°$). Any angle $\theta$ has coterminal angles at $\theta + 360°k$ for any integer $k$ (in degrees) or $\theta + 2\pi k$ (in radians).
+
+## Definitions and Formal Lesson
+
+### Converting Between Degrees and Radians
+
+$$\text{degrees} = \text{radians} \times \frac{180°}{\pi}$$
+
+$$\text{radians} = \text{degrees} \times \frac{\pi}{180°}$$
+
+### Common Angle Conversions
+
+| Degrees | Radians |
+|---------|---------|
+| $30°$ | $\pi/6$ |
+| $45°$ | $\pi/4$ |
+| $60°$ | $\pi/3$ |
+| $90°$ | $\pi/2$ |
+| $180°$ | $\pi$ |
+| $360°$ | $2\pi$ |
+
+### Arc Length Formula
+
+For a circle of radius $r$ and a central angle $\theta$ (in radians):
+
+$$s = r\theta$$
+
+where $s$ is the arc length. This is one of the most important formulas in trigonometry — and it only works when $\theta$ is in radians, which shows why radians are so natural.
+
+### Coterminal Angles
+
+Angles $\alpha$ and $\beta$ are coterminal if $\alpha = \beta + 360°k$ (or $\beta + 2\pi k$ in radians) for some integer $k$.
+
+To find a coterminal angle between $0°$ and $360°$, repeatedly add or subtract $360°$ until the result falls in that range.
+
+## Worked Examples
+
+**Example 1: Convert $120°$ to radians.**
+
+$$120° \times \frac{\pi}{180°} = \frac{120\pi}{180} = \frac{2\pi}{3} \text{ radians}$$
+
+**Example 2: Convert $\frac{5\pi}{4}$ radians to degrees.**
+
+$$\frac{5\pi}{4} \times \frac{180°}{\pi} = \frac{5 \times 180°}{4} = \frac{900°}{4} = 225°$$
+
+**Example 3: A circle has radius $5$ cm. Find the arc length of a central angle of $\frac{\pi}{3}$ radians.**
+
+$$s = r\theta = 5 \times \frac{\pi}{3} = \frac{5\pi}{3} \text{ cm} \approx 5.24 \text{ cm}$$
+
+**Example 4: Find a coterminal angle to $-60°$ that lies between $0°$ and $360°$.**
+
+$$-60° + 360° = 300°$$
+
+So $300°$ is coterminal with $-60°$.
+
+**Example 5: A wheel rotates through an angle of $\frac{3\pi}{2}$ radians. Through how many degrees did it rotate?**
+
+$$\frac{3\pi}{2} \times \frac{180°}{\pi} = \frac{3 \times 180°}{2} = 270°$$
+
+## Practice Set
+
+1. Convert $45°$ to radians.
+2. Convert $\frac{\pi}{6}$ radians to degrees.
+3. A circle has radius $8$ inches. Find the arc length of a central angle of $\frac{\pi}{4}$ radians.
+4. Find a coterminal angle to $450°$ that lies between $0°$ and $360°$.
+5. An angle in standard position has its terminal side in the third quadrant. Is the angle positive or negative? Explain.
+6. Convert $-240°$ to radians.
+7. A pendulum swings through an angle of $\frac{5\pi}{6}$ radians. What is this angle in degrees?
+8. Two coterminal angles are $100°$ and another angle $\beta$ where $\beta$ is between $100°$ and $500°$. Find $\beta$.
+
+## Reasoning Task
+
+**Explain why the formula $s = r\theta$ only works when $\theta$ is in radians, not degrees.** Start by thinking about what happens when $\theta = 360°$ (or $\theta = 2\pi$ radians). What should the arc length be? Then consider the relationship between radians and arc length.
+
+## Application
+
+A bicycle wheel has radius $0.35$ meters. The wheel rotates $24$ times. How far does the bicycle travel?
+
+**Solution:**
+- One complete rotation is $2\pi$ radians, or arc length $s = r \times 2\pi = 0.35 \times 2\pi = 0.7\pi$ meters.
+- For 24 rotations: total distance $= 24 \times 0.7\pi = 16.8\pi \approx 52.8$ meters.
+
+## Recap
+
+- A **degree** is $\frac{1}{360}$ of a full rotation. A **radian** is the angle at the center of a circle when the arc equals the radius.
+- Full circle: $360° = 2\pi$ radians.
+- Convert using: degrees $\times \frac{\pi}{180} =$ radians; radians $\times \frac{180}{\pi} =$ degrees.
+- **Arc length**: $s = r\theta$ (θ in radians).
+- **Coterminal angles** share the same terminal side; they differ by multiples of $360°$ (or $2\pi$ radians).
+- **Standard position**: vertex at origin, initial side on positive x-axis.
+
+## Unlock Quiz
+
+1. Convert $\frac{2\pi}{3}$ radians to degrees.
+   - 60°
+   - 90°
+   - 120°
+   - 150°
+
+2. A circle has radius 6 cm and a central angle of $\frac{\pi}{2}$ radians. What is the arc length?
+   - $3\pi$ cm
+   - $6\pi$ cm
+   - $9\pi$ cm
+   - $12\pi$ cm
+
+3. Which angle is coterminal with $-45°$?
+   - $45°$
+   - $135°$
+   - $315°$
+   - $360°$
+
+4. Convert $270°$ to radians.
+   - $\frac{\pi}{2}$
+   - $\pi$
+   - $\frac{3\pi}{2}$
+   - $2\pi$
+
+<details>
+<summary>Answers</summary>
+
+1. **120°** — Multiply: $\frac{2\pi}{3} \times \frac{180}{\pi} = \frac{2 \times 180}{3} = 120°$
+
+2. **$3\pi$ cm** — Use $s = r\theta = 6 \times \frac{\pi}{2} = 3\pi$ cm
+
+3. **$315°$** — Add $360°$ to $-45°$: $-45° + 360° = 315°$
+
+4. **$\frac{3\pi}{2}$** — Multiply: $270° \times \frac{\pi}{180°} = \frac{3\pi}{2}$
+
+</details>
+
+## Source Notes
+
+- [Babylonian Mathematics - Wikipedia](https://en.wikipedia.org/wiki/Babylonian_mathematics)
+- [History of Trigonometry - Wikipedia](https://en.wikipedia.org/wiki/History_of_trigonometry)
+- [Radian - Wikipedia](https://en.wikipedia.org/wiki/Radian)
+- [Circle - Wikipedia](https://en.wikipedia.org/wiki/Circle)

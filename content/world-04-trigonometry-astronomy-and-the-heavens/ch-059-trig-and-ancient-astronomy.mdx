@@ -1,0 +1,255 @@
+---
+title: "Trigonometry and Ancient Astronomy"
+subtitle: "How the Greeks measured the sky — and the mathematics that let them"
+worldNumber: 4
+world: world-04-trigonometry-astronomy-and-the-heavens
+chapter: 59
+estimatedTimeMinutes: 35
+historicalPeriod: "300 BCE – 200 CE"
+mainConcepts:
+  - "Parallax and angle measurement"
+  - "Eratosthenes' method"
+  - "Measuring astronomical distances"
+  - "Indirect measurement"
+learningObjectives:
+  - "Explain Eratosthenes' method for measuring Earth's circumference"
+  - "Apply angular measurement to estimate astronomical distances"
+  - "Appreciate the role of trigonometry in ancient science"
+  - "Apply indirect measurement using angles"
+---
+
+## Story Hook
+
+Around 240 BCE, an Egyptian librarian named **Eratosthenes** stood in the sun at midday in the city of Alexandria. He held a stick pointing straight up. No shadow. Meanwhile, 800 kilometers south in the city of Syene, at the exact same moment, a stick cast a shadow that made a 7° angle with the sun's rays.
+
+Eratosthenes had never traveled south. He never climbed a mountain to see the curvature of the Earth. Yet from two sticks, two shadows, and the geometry of a circle, he calculated the circumference of the Earth. His answer: 250,000 stadia (about 46,000 kilometers). The true circumference is about 40,000 kilometers. He was off by less than 15%.
+
+This is the power of trigonometry applied to astronomy. You don't need to visit distant places to measure them. You need angles, distances, and the mathematics to connect them.
+
+## Why It Matters
+
+For most of human history, the cosmos seemed utterly beyond reach. The stars appeared as fixed lights on a dome. The Moon seemed close but unreachable. The Sun was beyond comprehension. Then mathematicians realized something revolutionary: you could measure things *indirectly*, using angles.
+
+If you measure the angle to an object from two different positions, you can calculate its distance—without ever reaching it. This principle, called **parallax**, let ancient astronomers do something extraordinary: they began to map the universe. They measured the circumference of the Earth, estimated the distance to the Moon and Sun, and began to understand that the universe had a structure and scale.
+
+This wasn't just academic. Navigators used these measurements to cross oceans. Calendars depended on accurate knowledge of the Moon's position. The foundations of modern science—the idea that the universe could be measured and understood—began here.
+
+## Historical Context
+
+**Eratosthenes** (c. 276–194 BCE) was the chief librarian of the great Library of Alexandria, one of the wonders of the ancient world. He was a polymath: poet, geographer, mathematician, astronomer. His measurement of Earth's circumference used simple geometry and observations available to anyone.
+
+But the problem of measuring astronomical distances—to the Moon, to the Sun, to the planets—was harder. **Aristarchus of Samos** (c. 310–230 BCE), a contemporary of Eratosthenes, developed a method using lunar eclipses. During a lunar eclipse, the Moon passes through Earth's shadow. By observing the rate at which the Moon crosses the shadow and how long it spends in darkness, Aristarchus could estimate the relative sizes of the Earth, Moon, and Sun. His method was sound; his calculations were off because his input measurements were imprecise. But conceptually, he was doing something astonishing: using the geometry of shadows to map the solar system.
+
+**Hipparchus** (c. 190–120 BCE), perhaps the greatest astronomer of antiquity, built the first star catalogue with positions for 850 stars. He used trigonometry (in the form of chord tables, the ancient equivalent of sine tables) to convert observational data into a three-dimensional model of the sky. Every star got two angles—latitude and longitude on the celestial sphere—determined using trigonometry.
+
+**Ptolemy** (c. 90–168 CE) synthesized all earlier work in his *Almagest*, a comprehensive treatise on planetary motion. It combined trigonometry, geometry, and observational data into the most sophisticated model of the cosmos yet. For nearly 1500 years, Ptolemy's model was accepted as truth. It worked because the trigonometry was correct, even though the Earth-centered assumption was wrong.
+
+## Core Concept
+
+**Parallax** is the apparent shift in position of an object when viewed from two different locations. It's the key to indirect measurement.
+
+Hold your finger at arm's length in front of your face. Close one eye, then the other. Your finger seems to jump. That's parallax. The distance between your eyes is the *baseline*. The angle your finger moves through is the *parallax angle*. Combined, these let you judge the distance to your finger—something your brain does automatically.
+
+Astronomers use the same principle, but with the diameter of Earth's orbit as the baseline. When they observe a star from Earth in January, then again in July (when Earth is on the opposite side of the Sun), the star appears to shift slightly against more distant background stars. The size of this shift (measured as an angle) lets them calculate the distance.
+
+**Eratosthenes' method** is the simplest and most elegant application of trigonometry to astronomy.
+
+1. The Sun is so far away that its rays are essentially parallel when they hit Earth.
+2. At noon on the summer solstice in Alexandria, the sun is high but not directly overhead (the stick casts a shadow).
+3. At the same moment in Syene (directly south), the sun is directly overhead (the stick casts no shadow).
+4. The angle of the shadow in Alexandria is the same as the angle between the two cities as seen from Earth's center.
+5. If the angle is 7° and the distance between the cities is 800 km, then the arc length formula gives the circumference.
+
+**The arc length formula:** If an arc of angle $\theta$ (in degrees) spans a distance $d$ on a circle of radius $r$, then:
+
+$$\frac{\theta}{360°} = \frac{d}{2\pi r}$$
+
+Solving for $r$: $r = \frac{360° \cdot d}{2\pi \theta}$
+
+For Eratosthenes: $\theta = 7°$, $d = 800$ km.
+
+$$r = \frac{360 \times 800}{2\pi \times 7} \approx 6576 \text{ km}$$
+
+The circumference is $2\pi r \approx 41,300$ km. (The true value is about 40,075 km.)
+
+## Definitions and Formal Lesson
+
+**Parallax:** The apparent shift in the position of a nearby object relative to distant background objects, caused by a change in the observer's position.
+
+**Angular measurement:** The angle subtended by an object as seen from the observer, typically measured in degrees or radians.
+
+**Baseline:** The distance between two observation points; used to calculate distance to a distant object via parallax.
+
+**The parallax formula (for small angles):**
+
+If an object at distance $d$ has a parallax angle of $p$ (in arcseconds), then:
+
+$$d = \frac{1 \text{ parsec}}{p}$$
+
+(A parsec is the distance at which parallax is exactly 1 arcsecond—about 3.26 light-years.)
+
+For larger angles, use the Law of Sines directly. If the baseline is $b$ and the parallax angle is $p$, and you observe from a point such that the angle to one end of the baseline is 90°:
+
+$$d = \frac{b}{2\sin(p/2)}$$
+
+**Angular diameter:** The angle subtended by the diameter of an object. If an object of actual diameter $D$ is at distance $d$, its angular diameter $\alpha$ (in radians) is approximately:
+
+$$\alpha \approx \frac{D}{d}$$ (for small angles)
+
+## Worked Examples
+
+**Example 1: Eratosthenes' calculation (detailed)**
+
+Two cities are 800 km apart on a meridian (same longitude). At solar noon on the solstice, the sun is directly overhead in the southern city and casts a shadow making a 7° angle with the vertical in the northern city. Find Earth's radius.
+
+*Solution:*
+
+The angle subtended at Earth's center equals the shadow angle: 7°.
+
+Using the arc formula:
+
+$$\text{Circumference} = \frac{360°}{7°} \times 800 \text{ km} = 51.43 \times 800 \approx 41,143 \text{ km}$$
+
+$$\text{Radius} = \frac{41,143}{2\pi} \approx 6,550 \text{ km}$$
+
+(True value: 6,371 km. Error: about 3%.)
+
+**Example 2: Aristarchus' method (lunar eclipse)**
+
+During a lunar eclipse, the Moon takes 1 hour to cross Earth's shadow. The Moon's own diameter takes 0.25 hours to pass a fixed point. Find the ratio of Earth's radius to the Moon's radius.
+
+*Solution:*
+
+The Moon crosses Earth's shadow in 1 hour, and the shadow's width (at the Moon's distance) is some angle $\phi$. The Moon itself subtends the same angle as its diameter, which takes 0.25 hours to pass:
+
+$$\frac{\text{Shadow angle}}{\text{Moon's angle}} = \frac{1}{0.25} = 4$$
+
+So the shadow is 4 times the Moon's diameter wide. The shadow is roughly 2.6 times Earth's radius (accounting for light diffraction). Thus:
+
+$$2.6 \times R_E \approx 4 \times D_M = 4 \times 2R_M$$
+
+$$\frac{R_E}{R_M} \approx 2.7$$
+
+(True value: about 3.7. Aristarchus' measurements were imperfect, but the method was sound.)
+
+**Example 3: Distance using parallax**
+
+A star has a parallax of 0.5 arcseconds. How far away is it?
+
+*Solution:*
+
+Using the parallax formula:
+
+$$d = \frac{1 \text{ parsec}}{0.5} = 2 \text{ parsecs} \approx 6.5 \text{ light-years}$$
+
+**Example 4: Angular diameter**
+
+The Moon has a diameter of 3,474 km and is about 384,000 km away. What angle does it subtend in the sky?
+
+*Solution:*
+
+$$\alpha = \frac{D}{d} = \frac{3474}{384000} \approx 0.00905 \text{ radians}$$
+
+Converting to degrees: $0.00905 \times \frac{180°}{\pi} \approx 0.52°$ (about half a degree—which matches observation).
+
+## Practice Set
+
+1. **Eratosthenes revisited:** If two cities are 1000 km apart and the shadow angle is 5°, what is Earth's circumference and radius?
+
+2. **Lunar eclipse observation:** If the Moon takes 1.5 hours to cross Earth's shadow and 0.5 hours for its own diameter to pass a point, estimate the ratio of Earth's radius to the Moon's radius.
+
+3. **Parallax distance:** A star has a parallax of 0.1 arcseconds. How many parsecs away is it? How many light-years? (1 parsec ≈ 3.26 light-years)
+
+4. **Hipparchus' star catalogue:** Two stars have angular separation of 2°. They are observed 12 hours apart (Earth rotates 180°). Explain why Earth's rotation helps determine their three-dimensional positions.
+
+5. **Angular diameter problem:** Jupiter has a diameter of 142,984 km and appears to subtend an angle of about 0.05° from Earth. Estimate Earth-Jupiter distance at that moment.
+
+6. **Combining methods:** If you know Earth's radius (6,371 km) and observe the Moon's angular diameter (0.52°), find the Moon-Earth distance.
+
+## Reasoning Task
+
+**Challenge:** Imagine you're an ancient astronomer. You have no telescopes—only a stick, a shadow, and careful measurement.
+
+You observe that the Moon's angular diameter equals the Sun's angular diameter (which is why total solar eclipses are possible). You also observe that during a lunar eclipse, the Moon passes through Earth's shadow in about 1 hour, while the Sun takes 12 hours to cross the sky (180° in 12 hours = 15° per hour).
+
+1. What does it mean for the Moon and Sun to have the same angular diameter if they're different sizes?
+2. Estimate the ratio of the Sun's actual diameter to the Moon's.
+3. Why can't you use the parallax method easily for the Sun, but you can for the Moon?
+
+## Application
+
+**Navigation and Mapmaking:**
+
+In the 15th and 16th centuries, explorers used triangulation (a consequence of parallax and angle measurement) to create accurate maps. A ship's navigator could determine latitude by measuring the angle of the North Star above the horizon. Longitude was harder, but by combining angle measurements to known celestial objects with dead reckoning (tracking distance traveled), explorers could navigate with surprising accuracy.
+
+**Calendars and Time:**
+
+Accurate knowledge of the Moon's motion—determined using the same trigonometric methods Hipparchus used—was essential for calendars. Many ancient and medieval calendars were lunar-based, tracking the phases of the Moon. Without trigonometry, these calendars would have drifted relative to the seasons.
+
+**Modern Astronomy:**
+
+Modern parallax measurements, refined from Hipparchus' and Aristarchus' techniques, let astronomers measure distances to nearby stars. NASA's Gaia satellite measures parallax angles to billions of stars, creating a three-dimensional map of the galaxy. The principle is identical to what Eratosthenes did 2000 years ago: observe from two positions and measure the angle shift.
+
+## Recap
+
+- **Parallax** is the apparent shift in position of an object when viewed from different locations. It's the foundation of indirect distance measurement.
+- **Eratosthenes' method** used the angle of shadows and the known distance between two cities to calculate Earth's circumference—brilliantly simple and impressively accurate.
+- **Aristarchus** used lunar eclipses and angular measurements to estimate distances to the Moon and ratios of sizes—the method was sound even when observations were imperfect.
+- **Hipparchus** applied trigonometry systematically to create the first star catalogue, establishing astronomy as a quantitative science.
+- **Angular diameter** lets you relate the size and distance of distant objects—a key concept linking observation to calculation.
+- These methods show that vast distances need not be traveled to be measured; angles and geometry suffice.
+
+## Unlock Quiz
+
+**Q1: Eratosthenes' method for measuring Earth's circumference relied on:**
+- Traveling to distant places and measuring distances directly
+- Observing shadows at different locations at the same time
+- Measuring the angle of the North Star from different latitudes
+- Observing parallax of nearby stars
+
+<details>
+<summary>Answer</summary>
+Observing shadows at different locations at the same time
+</details>
+
+**Q2: If a shadow makes a 10° angle with the vertical and the cities are 1000 km apart, approximately how large is Earth's circumference?**
+- 10,000 km
+- 36,000 km
+- 40,000 km
+- 100,000 km
+
+<details>
+<summary>Answer</summary>
+36,000 km
+</details>
+
+**Q3: Aristarchus used the following observation to estimate distances and sizes:**
+- The position of stars from two sides of Earth's orbit
+- The time the Moon spends in Earth's shadow during a lunar eclipse
+- The brightness of distant stars
+- The height of the North Star above the horizon
+
+<details>
+<summary>Answer</summary>
+The time the Moon spends in Earth's shadow during a lunar eclipse
+</details>
+
+**Q4: The apparent shift in position of a nearby object relative to distant backgrounds when viewed from two positions is called:**
+- Refraction
+- Parallax
+- Aberration
+- Precession
+
+<details>
+<summary>Answer</summary>
+Parallax
+</details>
+
+## Source Notes
+
+- Eratosthenes and measurement of Earth: https://en.wikipedia.org/wiki/Eratosthenes
+- Aristarchus of Samos and distance estimates: https://en.wikipedia.org/wiki/Aristarchus_of_Samos
+- Hipparchus and the star catalogue: https://en.wikipedia.org/wiki/Hipparchus
+- Ptolemy's Almagest: https://en.wikipedia.org/wiki/Almagest
+- Parallax in astronomy: https://en.wikipedia.org/wiki/Parallax
+- History of trigonometry: https://en.wikipedia.org/wiki/History_of_trigonometry

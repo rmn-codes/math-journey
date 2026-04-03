@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chaos Theory and Dynamical Systems — Math Journey</title>
+    <meta name="description" content="Tiny changes, wildly different outcomes — why the future cannot always be predicted" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 7 · Chapter 99</p>
+        <h1>Chaos Theory and Dynamical Systems</h1>
+        <p class="hero-copy">Tiny changes, wildly different outcomes — why the future cannot always be predicted</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1963 CE – present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Describe sensitive dependence on initial conditions</li><li>Apply the logistic map and trace period doubling</li><li>Explain why chaos limits predictability</li><li>Describe strange attractors and fractals</li><li>Identify real-world chaotic systems</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>April 1961. Edward Lorenz, a meteorologist at MIT, re-runs a weather simulation on an ENIAC computer. The previous run had stopped partway through, and Lorenz wants to continue from where it left off. Instead of restarting from the original data, he loads in values from a printout of an intermediate state.</p>
+<p>The printout shows six decimal places: 0.506127.</p>
+<p>Lorenz enters 0.506 instead—a difference of less than 0.01%.</p>
+<p>He starts the simulation.</p>
+<p>Within moments, the weather forecast diverges wildly. The two runs, which should be nearly identical, show completely different outcomes. After simulated months, one forecast predicts rain in one location; the other predicts clear skies. The tiny rounding error has exploded into a completely different solution.</p>
+<p>Lorenz realizes he has stumbled upon something profound: <strong>sensitive dependence on initial conditions</strong>. In weather, unlike in mechanics (where Newton&#x27;s laws govern everything), a microscopic change in starting conditions can lead to macroscopically different futures. The system is deterministic—the equations are fully known—yet unpredictable beyond a short horizon.</p>
+<p>Years later, a journalist asks Lorenz: &quot;If the flap of a butterfly&#x27;s wings in Brazil could cause a tornado in Texas, would we care?&quot; Lorenz, inspired, publishes a paper titled &quot;Does the Flap of a Butterfly&#x27;s Wings in Brazil Set Off a Tornado in Texas?&quot; The phrase <em>butterfly effect</em> enters the scientific vocabulary forever.</p>
+<p>This discovery launched chaos theory—the study of deterministic but unpredictable systems. It explains why weather forecasts beyond two weeks are fundamentally unreliable, not because our computers are slow, but because the mathematics forbids it.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Chaos theory revealed that determinism and predictability are not the same thing. A system can be fully determined by its equations yet impossible to predict in practice. This distinction has profound implications.</p>
+<p>In weather prediction, it means there is a limit to how far into the future we can reliably forecast. In population biology, it explains the boom-and-bust cycles of species. In medicine, chaotic dynamics appear in heart rhythms—an irregular heartbeat may be chaotic rather than random, suggesting new therapies. In finance, market crashes have the signature of chaotic transitions.</p>
+<p>More fundamentally, chaos theory explains how complexity arises from simplicity. A single nonlinear equation can generate intricate, beautiful, infinitely complex fractal patterns. Order and chaos are not separate—they are intimately connected.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>For three centuries, physics was dominated by Newton&#x27;s vision: a deterministic universe. Given the position and velocity of every particle at one moment, the laws of motion determine everything that happens next. This reductionist worldview was incredibly powerful. It led to the development of calculus, the theory of differential equations, and a sense that the universe was a vast clockwork.</p>
+<p>But there were hints of something deeper. In the late 1800s, the mathematician Henri Poincaré studied the three-body problem (the motion of three gravitating bodies—Earth, Moon, Sun). Unlike the two-body problem, which has an exact solution, the three-body problem seemed to have no closed-form answer. Poincaré discovered that the trajectories were extremely complicated, exhibiting wild oscillations. He called them &quot;chaotic.&quot;</p>
+<p>In the 1960s, with computers becoming faster, scientists could simulate nonlinear systems numerically. Lorenz&#x27;s weather simulation was one of the first. He studied the Lorenz equations—a simple system of three coupled differential equations:</p>
+<p>$$\frac{dx}{dt} = \sigma(y - x), \quad \frac{dy}{dt} = x(\rho - z) - y, \quad \frac{dz}{dt} = xy - \beta z$$</p>
+<p>These equations, derived from a simplified model of convection in the atmosphere, exhibited stunning chaos. The trajectory spiraled around two &quot;wings&quot; without ever repeating, sensitive to initial conditions.</p>
+<p>In the 1970s, Mitchell Feigenbaum discovered the period-doubling route to chaos. The logistic map—the simplest chaotic system—showed how a stable fixed point bifurcates into a periodic cycle, which bifurcates again and again, accumulating toward chaos. This universal behavior appeared in many systems.</p>
+<p>By the 1980s, fractals—infinite self-similar geometric objects—became central to chaos theory. The Mandelbrot set, discovered by Benoit Mandelbrot, revealed infinitely complex structure at all scales.</p>
+<p>Today, chaos theory is mature. It explains weather, turbulence, population dynamics, and much else. Yet it still teaches humility: there are limits to prediction that no amount of computation can overcome.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>A dynamical system</strong> is a system that evolves over time according to a rule. Mathematically, it is either:</p>
+<ul><li>Continuous: governed by differential equations $\frac{d\mathbf{x}}{dt} = \mathbf{F}(\mathbf{x}, t)$</li><li>Discrete: governed by iteration $\mathbf{x}_{n+1} = \mathbf{F}(\mathbf{x}_n)$</li></ul>
+<p>where $\mathbf{x}$ is the state and $\mathbf{F}$ is the rule.</p>
+<p><strong>Fixed points</strong> and <strong>stability</strong>: A fixed point is a state $\mathbf{x}^<em>$ where $\mathbf{F}(\mathbf{x}^</em>) = \mathbf{x}^<em>$ (in discrete time) or $\mathbf{F}(\mathbf{x}^</em>) = \mathbf{0}$ (in continuous time). If a system starts near $\mathbf{x}^*$ and remains near it, the point is stable. Otherwise, it is unstable.</p>
+<p><strong>Chaos</strong> is characterized by three properties:</p>
+<ol><li><strong>Deterministic:</strong> The system follows definite rules; no randomness.</li><li><strong>Sensitive dependence on initial conditions:</strong> Two nearby states diverge exponentially over time. After a critical time, their futures become uncorrelated.</li><li><strong>Aperiodic:</strong> The trajectory never repeats exactly; it seems random even though it is deterministic.</li></ol>
+<p><strong>The logistic map</strong> is the simplest chaotic system: $$x_{n+1} = r x_n(1 - x_n)$$</p>
+<p>where $x_n \in [0, 1]$ and $r$ is a parameter. As $r$ increases:</p>
+<ul><li>For $r &lt; 1$: The system converges to $x = 0$ (extinction).</li><li>For $1 &lt; r &lt; 3$: The system converges to a fixed point $x^* = (r-1)/r$ (stable equilibrium).</li><li>For $3 &lt; r &lt; 1 + \sqrt{6} \approx 3.45$: The system oscillates between two values (period-2 cycle).</li><li>For $3.45 &lt; r &lt; 3.57$: Period-doubling: 4 values, 8 values, 16 values, etc., accumulating faster and faster.</li><li>For $r &gt; 3.57$: <strong>Chaos</strong>. The system jumps around erratically, with sensitive dependence on initial conditions.</li></ul>
+<p><strong>Bifurcation</strong> is the phenomenon where a stable state becomes unstable and splits into multiple states. The bifurcation diagram—a plot of all long-term behaviors as $r$ varies—is one of the most beautiful images in mathematics. It shows the cascade to chaos.</p>
+<p><strong>Strange attractors</strong> are geometric objects in the state space toward which chaotic trajectories converge. The <strong>Lorenz attractor</strong> is a famous example: it looks like a butterfly with two wings. The trajectory spirals chaotically around the two wings, never settling, but confined to a bounded region.</p>
+<p><strong>Fractals</strong> are self-similar geometric structures: they look the same at all scales. A coastline, a mountain range, a cloud—these exhibit fractal properties. The <strong>Mandelbrot set</strong> is the most famous fractal: the set of complex numbers $c$ for which the iteration $z_{n+1} = z_n^2 + c$ (starting from $z_0 = 0$) does not diverge. Its boundary is infinitely intricate, with an infinite perimeter and finite area.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<ul><li><strong>Dynamical system:</strong> A system evolving according to a deterministic rule, either continuously (differential equations) or discretely (iteration).</li><li><strong>State space:</strong> The space of all possible states of a system.</li><li><strong>Fixed point:</strong> A state $\mathbf{x}^*$ that does not change under the dynamics.</li><li><strong>Stable/Unstable:</strong> A fixed point is stable if nearby states converge to it; unstable if they diverge.</li><li><strong>Chaos:</strong> Deterministic but aperiodic behavior with sensitive dependence on initial conditions.</li><li><strong>Lyapunov exponent:</strong> A measure of the rate at which nearby trajectories diverge. Positive exponent indicates chaos.</li><li><strong>Bifurcation:</strong> A qualitative change in the long-term behavior as a parameter varies.</li><li><strong>Period-doubling:</strong> The cascade of bifurcations in which the period (the number of repeating states) doubles: 1 → 2 → 4 → 8 → ... → ∞ (chaos).</li><li><strong>Attractor:</strong> A set to which trajectories converge. Strange attractors have fractal structure.</li><li><strong>Fractal:</strong> A self-similar structure with detail at all scales.</li><li><strong>Mandelbrot set:</strong> The set of complex numbers $c$ for which the iteration $z_{n+1} = z_n^2 + c$ remains bounded.</li></ul>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: The Logistic Map - Computing Iterates</strong></p>
+<p>Let $r = 3.2$ (stable fixed point regime). Starting from $x_0 = 0.5$:</p>
+<p>$$x_1 = 3.2 \cdot 0.5 \cdot 0.5 = 0.8$$ $$x_2 = 3.2 \cdot 0.8 \cdot 0.2 = 0.512$$ $$x_3 = 3.2 \cdot 0.512 \cdot 0.488 = 0.799...$$</p>
+<p>The trajectory oscillates and converges to the fixed point $x^* = (3.2 - 1)/3.2 = 0.6875$.</p>
+<p><strong>Example 2: Sensitive Dependence</strong></p>
+<p>Now let $r = 3.8$ (chaotic regime). Starting from two nearby initial conditions:</p>
+<ul><li>$x_0 = 0.5000$: $x_1 = 0.950$, $x_2 = 0.0950$, $x_3 = 0.3237$, ...</li><li>$x_0 = 0.5001$: $x_1 = 0.9506$, $x_2 = 0.0908$, $x_3 = 0.3099$, ...</li></ul>
+<p>By iteration 3, the difference has grown from $0.0001$ to $0.0138$—a 100-fold amplification. After more iterations, the two trajectories become completely uncorrelated.</p>
+<p><strong>Example 3: The Butterfly Effect in Weather</strong></p>
+<p>Suppose a weather model has a critical timescale of 10 days. Beyond this time, small errors in initial conditions grow and dominate the forecast. If we measure the initial atmosphere to 6 decimal places (as Lorenz did), the uncertainty is about $10^{-6}$. The Lyapunov exponent for weather is roughly $0.07$ per day, so after 10 days the error grows by a factor of $e^{0.07 \times 10} \approx 2$. After 20 days it grows by a factor of $4$. After 60 days: $e^{4.2} \approx 67$. The forecast becomes useless.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li>What is sensitive dependence on initial conditions? Give an example from a chaotic system.</li></ol>
+<ol><li>Compute the first four iterates of the logistic map $x_{n+1} = 4x_n(1 - x_n)$ starting from $x_0 = 0.3$. (Note: $r = 4$ is chaotic.)</li></ol>
+<ol><li>What is a fixed point? How does stability affect the long-term behavior of a system?</li></ol>
+<ol><li>Explain bifurcation and period-doubling. What happens as the parameter increases toward the chaotic regime?</li></ol>
+<ol><li>What is a strange attractor? Why is the Lorenz attractor called a &quot;strange&quot; attractor?</li></ol>
+<ol><li>Define a fractal. How are fractals related to chaos?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Problem:</strong> The logistic map shows that a simple, one-dimensional system can be chaotic. Yet weather, which involves billions of variables, is somehow more predictable short-term. Why? Consider the timescale of chaos, the dimension of the system, and the role of measurement uncertainty in your answer.</p>
+<p><strong>Hint:</strong> In low-dimensional chaos, all the complexity is compressed into a few degrees of freedom. In weather, there are many modes of motion, some slow and some fast. The fast modes mix information quickly, but the slow modes remain organized longer.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Weather Prediction:</strong> Meteorologists know that deterministic forecasts become unreliable beyond 10–14 days, not because of computational limits but because of chaotic amplification. Modern forecasting uses ensemble methods: run many simulations with slightly different initial conditions, then look at the spread of outcomes. This gives a probabilistic forecast rather than a single &quot;most likely&quot; scenario.</p>
+<p><strong>Heart Rhythms:</strong> A chaotic heartbeat is not the same as a random one. Doctors are learning to detect chaotic rhythms (arrhythmias) and distinguish them from other abnormalities. Some therapies use small interventions to nudge chaotic dynamics back to regularity—a subtle application of chaos theory to medicine.</p>
+<p><strong>Population Biology:</strong> Predator-prey systems, epidemiology, and ecology all exhibit chaotic dynamics. The logistic map models population growth; different growth rates lead to stable, oscillating, or chaotic behavior. Understanding the route to chaos helps ecologists predict when ecosystems might undergo sudden, dramatic shifts.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Chaos theory revealed that deterministic systems can be unpredictable. The Lorenz discovery of sensitive dependence on initial conditions—the butterfly effect—explained why weather forecasts have a limited horizon. The logistic map showed how chaos arises through period-doubling bifurcations. Strange attractors are geometric structures that chaotic trajectories approach. Fractals are infinitely complex self-similar shapes, exemplified by the Mandelbrot set. These ideas transformed our understanding of complexity, weather, ecology, and medicine. Determinism does not guarantee predictability; some systems are fundamentally unpredictable beyond a critical timescale, no matter how much computation we throw at them.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>Sensitive dependence on initial conditions means...</li></ol>
+<ul><li>The system is random and unpredictable</li><li>Tiny differences in starting state lead to wildly different outcomes</li><li>The system is unstable and will explode</li><li>The system is perfectly predictable if we are careful</li></ul>
+<ol><li>The butterfly effect refers to...</li></ol>
+<ul><li>Butterflies causing environmental change</li><li>The existence of a chaotic attractor shaped like a butterfly</li><li>How a small perturbation can lead to a large change (the Lorenz discovery)</li><li>The pattern of colors on butterfly wings</li></ul>
+<ol><li>In the logistic map $x_{n+1} = rx_n(1 - x_n)$, as $r$ increases from 1 to 4, the behavior goes...</li></ol>
+<ul><li>Directly from stable to chaotic</li><li>From extinction to stable fixed point to periodic oscillations to chaos</li><li>From chaotic to stable (reverse of other systems)</li><li>Randomly, with no pattern</li></ul>
+<ol><li>A strange attractor is...</li></ol>
+<ul><li>A repelling fixed point</li><li>A geometric structure with fractal properties to which chaotic trajectories converge</li><li>A stable equilibrium surrounded by chaos</li><li>An object that has never been observed in real systems</li></ul>
+<ol><li>Why is weather prediction limited to about 2 weeks?</li></ol>
+<ul><li>Computers are not fast enough</li><li>There are not enough weather stations</li><li>The chaotic nature of the atmosphere amplifies initial errors beyond predictability</li><li>Mathematicians have not found the right equations</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>Tiny differences in starting state lead to wildly different outcomes</li></ol>
+<ol><li>How a small perturbation can lead to a large change (the Lorenz discovery)</li></ol>
+<ol><li>From extinction to stable fixed point to periodic oscillations to chaos</li></ol>
+<ol><li>A geometric structure with fractal properties to which chaotic trajectories converge</li></ol>
+<ol><li>The chaotic nature of the atmosphere amplifies initial errors beyond predictability</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Lorenz, E. N. (1963). &quot;Deterministic Nonperiodic Flow.&quot; <em>Journal of the Atmospheric Sciences</em>, 20(2), 130-141. <a href="https://en.wikipedia.org/wiki/Lorenz_system" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Lorenz_system</a></li><li>Feigenbaum, M. J. (1978). &quot;Quantitative Universality for a Class of Nonlinear Transformations.&quot; <a href="https://en.wikipedia.org/wiki/Period-doubling_bifurcation" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Period-doubling_bifurcation</a></li><li>Mandelbrot, B. (1980). &quot;Fractal Aspects of the Iteration of $z \mapsto \lambda z(1-z)$.&quot; <a href="https://en.wikipedia.org/wiki/Mandelbrot_set" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Mandelbrot_set</a></li><li>Chaos theory overview: <a href="https://en.wikipedia.org/wiki/Chaos_theory" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Chaos_theory</a></li><li>Butterfly effect: <a href="https://en.wikipedia.org/wiki/Butterfly_effect" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Butterfly_effect</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-098-godels-incompleteness/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Gödel&#x27;s Incompleteness — The Limits of Mathematics</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

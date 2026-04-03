@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Binomial Distribution — Math Journey</title>
+    <meta name="description" content="Counting successes in repeated trials — from coin flips to clinical trials" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 6 · Chapter 81</p>
+        <h1>The Binomial Distribution</h1>
+        <p class="hero-copy">Counting successes in repeated trials — from coin flips to clinical trials</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1700s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Identify binomial experiments</li><li>Apply the binomial probability formula</li><li>Compute mean and standard deviation</li><li>Find cumulative probabilities</li><li>Interpret results in context</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#the-binomial-probability-formula">The Binomial Probability Formula</a></li><li class="toc-level-3"><a href="#mean-and-standard-deviation">Mean and Standard Deviation</a></li><li class="toc-level-3"><a href="#cumulative-probability">Cumulative Probability</a></li><li class="toc-level-3"><a href="#connection-to-pascal-s-triangle">Connection to Pascal&#x27;s Triangle</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>A pharmaceutical company runs a clinical trial. They give a new vaccine to 100 volunteers. Each person either develops immunity (success) or doesn&#x27;t (failure). The scientists count: 87 developed immunity.</p>
+<p>But here&#x27;s the mystery: if we run a different trial with the same vaccine on 100 <em>different</em> volunteers, will we always get exactly 87 successes? Almost certainly not. Maybe we&#x27;ll get 85, maybe 91, maybe 79. The exact number bounces around — yet it bounces around in a <em>pattern</em>.</p>
+<p>That pattern is the binomial distribution. It&#x27;s the answer to a fundamental question: <em>In a series of independent yes-or-no experiments, how many times should we expect success?</em></p>
+<p>Before statistics formalized this, drug testing was guesswork and politics. Now it&#x27;s science — because we can model, predict, and test the distribution of successes. This chapter teaches you how.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Every time you:</p>
+<ul><li>Flip a coin 50 times and count heads</li><li>Give a test with multiple-choice questions and guess randomly</li><li>Screen 500 people for a disease and count how many test positive</li><li>Run a manufacturing process 200 times and count defects</li><li>Survey 1000 people about a yes-or-no question</li></ul>
+<p>...you&#x27;re performing binomial experiments. The binomial distribution lets you:</p>
+<ul><li>Predict the most likely outcome</li><li>Calculate the probability of &quot;exactly k successes&quot;</li><li>Assess whether a product is working reliably</li><li>Decide if a sample result is statistically significant</li><li>Design experiments with the right sample size</li></ul>
+<p>Without it, pharmaceutical companies couldn&#x27;t prove drugs work. Quality-control engineers couldn&#x27;t catch defects. Elections couldn&#x27;t be called from early returns.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The binomial distribution emerged in the 1700s as mathematicians studied probability. <strong>Blaise Pascal</strong> and <strong>Pierre de Fermat</strong> (1650s) solved the &quot;problem of points&quot; — dividing winnings in an unfinished game — which led to the binomial formula.</p>
+<p><strong>Isaac Newton</strong> (1665) discovered the binomial theorem: how to expand $(a+b)^n$. The connection to probability came soon after.</p>
+<p><strong>Daniel Bernoulli</strong> formalised the &quot;Bernoulli trial&quot; (a single experiment with probability $p$ of success). String many together, and you get a binomial distribution.</p>
+<p>By the 1800s, statisticians were using the binomial distribution to study everything from death rates to election outcomes. Today it&#x27;s the foundation of hypothesis testing, clinical trials, and quality assurance.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>Imagine a single coin flip. Probability of heads (success) = 0.5. That&#x27;s one trial.</p>
+<p>Now flip it 10 times. You might get 7 heads. Or 5. Or 9. The <em>number</em> of heads varies. But it varies predictably.</p>
+<p>A <strong>binomial experiment</strong> has four properties:</p>
+<ol><li><strong>n</strong> independent trials (e.g., 10 flips)</li><li>Each trial has two outcomes: success or failure</li><li>Probability of success <strong>p</strong> is constant (e.g., 0.5 for a fair coin)</li><li>We count the total number of successes</li></ol>
+<p>The <strong>binomial random variable</strong> $X$ = the total count of successes out of $n$ trials.</p>
+<p>Key insight: $X$ can take any integer value from 0 to $n$. A binomial distribution tells us the <em>probability</em> of each value.</p>
+<p>For example: Flip a fair coin 3 times. $X$ = number of heads.</p>
+<ul><li>$P(X = 0) = P(\text{TTT}) = 0.125$</li><li>$P(X = 1) = P(\text{HTT, THT, TTH}) = 0.375$</li><li>$P(X = 2) = P(\text{HHT, HTH, THH}) = 0.375$</li><li>$P(X = 3) = P(\text{HHH}) = 0.125$</li></ul>
+<p>Notice: these probabilities sum to 1. Also notice symmetry (0 and 3 have equal probability, 1 and 2 have equal probability). That&#x27;s because $p = 0.5$.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="the-binomial-probability-formula">The Binomial Probability Formula</h3>
+<p>If $X$ follows a binomial distribution with $n$ trials and success probability $p$, then:</p>
+<p>$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$</p>
+<p>where $k = 0, 1, 2, \ldots, n$ and $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ (the binomial coefficient, &quot;n choose k&quot;).</p>
+<p><strong>Interpretation:</strong></p>
+<ul><li>$\binom{n}{k}$ = number of ways to arrange $k$ successes among $n$ trials</li><li>$p^k$ = probability of getting exactly $k$ successes</li><li>$(1-p)^{n-k}$ = probability of getting exactly $n-k$ failures</li><li>Multiply them together: probability of exactly $k$ successes</li></ul>
+<p><strong>Example:</strong> Vaccine trial. $n = 100$, $p = 0.87$ (probability of immunity). What&#x27;s $P(X = 87)$?</p>
+<p>$$P(X = 87) = \binom{100}{87} (0.87)^{87} (0.13)^{13}$$</p>
+<p>This is tedious to compute by hand — use a calculator or software. But the formula shows the logic.</p>
+<h3 id="mean-and-standard-deviation">Mean and Standard Deviation</h3>
+<p>If $X \sim \text{Binomial}(n, p)$, then:</p>
+<p>$$\mu = np$$</p>
+<p>$$\sigma = \sqrt{np(1-p)}$$</p>
+<p>These tell us the <em>centre</em> and <em>spread</em> of the distribution.</p>
+<p><strong>Example:</strong> Flip a fair coin 100 times. $n = 100$, $p = 0.5$.</p>
+<ul><li>Mean: $\mu = 100 \times 0.5 = 50$ heads</li><li>Std Dev: $\sigma = \sqrt{100 \times 0.5 \times 0.5} = \sqrt{25} = 5$ heads</li></ul>
+<p>So we expect about 50 heads, but with a standard deviation of 5. That means we&#x27;d typically see between 45 and 55 heads.</p>
+<h3 id="cumulative-probability">Cumulative Probability</h3>
+<p>Sometimes we want $P(X \leq k)$, not $P(X = k)$.</p>
+<p>$$P(X \leq k) = \sum_{i=0}^{k} P(X = i)$$</p>
+<p><strong>Example:</strong> What&#x27;s the probability of getting <em>at most</em> 3 heads in 10 flips?</p>
+<p>$$P(X \leq 3) = P(X=0) + P(X=1) + P(X=2) + P(X=3)$$</p>
+<p>Again, use a calculator or binomial table for large $n$.</p>
+<h3 id="connection-to-pascal-s-triangle">Connection to Pascal&#x27;s Triangle</h3>
+<p>The binomial coefficients appear in Pascal&#x27;s triangle:</p>
+<pre><code>Row 0:                    1
+Row 1:                  1   1
+Row 2:                1   2   1
+Row 3:              1   3   3   1
+Row 4:            1   4   6   4   1
+Row 5:          1   5  10  10   5   1</code></pre>
+<p>Row $n$, position $k$ gives $\binom{n}{k}$. This geometric pattern encodes all the probabilities.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Quality Control</strong></p>
+<p>A factory makes light bulbs. 95% pass quality inspection (success probability $p = 0.95$). A random sample of 20 bulbs is tested. What&#x27;s the probability that exactly 19 pass?</p>
+<p>$$P(X = 19) = \binom{20}{19} (0.95)^{19} (0.05)^{1}$$</p>
+<p>$$= 20 \times (0.95)^{19} \times 0.05$$</p>
+<p>$$\approx 20 \times 0.3585 \times 0.05 \approx 0.358$$</p>
+<p>So about a 35.8% chance. That&#x27;s reasonably likely — not surprising.</p>
+<p><strong>Example 2: Guessing on a Test</strong></p>
+<p>You randomly guess on a 10-question multiple-choice test (each question has 4 options, so $p = 0.25$). What&#x27;s the probability you get at least 5 correct?</p>
+<p>$$P(X \geq 5) = P(X=5) + P(X=6) + \cdots + P(X=10)$$</p>
+<p>Using a binomial calculator: $P(X \geq 5) \approx 0.078$ (about 7.8%).</p>
+<p>So you&#x27;d expect to fail — getting 5 or more correct by pure chance is rare.</p>
+<p><strong>Example 3: Mean and Spread</strong></p>
+<p>A survey asks 500 people: &quot;Do you support the new policy?&quot; Suppose 60% say yes ($p = 0.6$). What are the mean and standard deviation of the number of &quot;yes&quot; responses?</p>
+<p>$$\mu = np = 500 \times 0.6 = 300$$</p>
+<p>$$\sigma = \sqrt{500 \times 0.6 \times 0.4} = \sqrt{120} \approx 10.95$$</p>
+<p>We expect about 300 &quot;yes&quot; answers, give or take 11. So we&#x27;d typically see between 289 and 311 &quot;yes&quot; responses.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Coin Flips (Fair Coin):</strong> Flip a fair coin 12 times. Let $X$ = number of heads.</li></ol>
+<ul><li>What is $P(X = 6)$?</li><li>What is $\mu$ and $\sigma$?</li><li>Is $X = 10$ an unusual outcome? Why?</li></ul>
+<ol><li><strong>Disease Screening:</strong> A test correctly identifies a disease 98% of the time (true positive rate). 50 people with the disease are tested. Let $X$ = number correctly identified.</li></ol>
+<ul><li>What is the mean of $X$?</li><li>What is $\sigma$?</li><li>Find $P(X = 49)$ (all but one correctly identified).</li></ul>
+<ol><li><strong>Customer Satisfaction:</strong> A call centre finds that 75% of customers are satisfied with service. In a sample of 30 calls, let $X$ = number of satisfied customers.</li></ol>
+<ul><li>Find $\mu$ and $\sigma$.</li><li>What&#x27;s the probability that $X \geq 25$ (at least 25 satisfied)?</li><li>Would $X = 15$ be surprising? Explain.</li></ul>
+<ol><li><strong>Vaccine Effectiveness:</strong> A vaccine is 85% effective. It&#x27;s given to 200 people. Let $X$ = number who develop immunity.</li></ol>
+<ul><li>What are $\mu$ and $\sigma$?</li><li>Approximately how many people should we expect to <em>not</em> develop immunity?</li></ul>
+<ol><li><strong>Manufacturing Defect Rate:</strong> A process produces defects at a 2% rate. A batch of 500 items is made. Let $X$ = number of defects.</li></ol>
+<ul><li>Find $\mu$ and $\sigma$.</li><li>Would observing 20 defects be unusual? (Compare to $\mu + 3\sigma$.)</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Rare Event Rule:</strong> If something has probability less than 5%, we call it &quot;rare&quot; or &quot;unlikely.&quot;</p>
+<p>A student takes a 20-question true/false test by guessing randomly ($p = 0.5$). The student gets 17 correct. Should the teacher suspect cheating?</p>
+<p>Find:</p>
+<ul><li>Mean and standard deviation of $X$ (correct answers if guessing).</li><li>Is 17 correct within 2 standard deviations of the mean? Within 3?</li><li>What&#x27;s $P(X \geq 17)$ (probability of 17 or more correct by guessing)?</li><li>Should the teacher suspect cheating? Explain your reasoning.</li></ul>
+<p><em>Hint:</em> The rare event rule suggests we should be suspicious if an outcome has probability less than 5%.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Real-World Scenario: Clinical Trials and FDA Approval</strong></p>
+<p>The FDA evaluates new drugs using binomial distributions. Suppose a company claims their medication helps 70% of patients. The FDA tests it on 100 patients. They&#x27;ll approve it only if:</p>
+<ol><li>The number of successes is &quot;unusually high&quot; compared to a lower baseline (say, 50% success rate for existing treatments).</li><li>The result is statistically significant (probability less than 5%, if the drug only matched the baseline).</li></ol>
+<p><strong>Your Task:</strong></p>
+<p>Using binomial formulas, suppose the baseline success rate is 50% and the company&#x27;s drug achieves success in 63 out of 100 patients.</p>
+<ul><li>What would $\mu$ and $\sigma$ be if the drug only matched the baseline (50% success)?</li><li>What&#x27;s $P(X \geq 63)$ under the baseline hypothesis?</li><li>Is 63 successes enough to recommend approval? Why or why not?</li></ul>
+<p>This is the foundation of hypothesis testing — comparing observed data to a null hypothesis using probability.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>The <strong>binomial distribution</strong> models the number of successes in $n$ independent trials, each with probability $p$ of success.</p>
+<p><strong>Key Formula:</strong> $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$</p>
+<p><strong>Key Facts:</strong></p>
+<ul><li>Mean: $\mu = np$</li><li>Standard Deviation: $\sigma = \sqrt{np(1-p)}$</li><li>Cumulative probabilities use sums</li></ul>
+<p><strong>When to Use It:</strong></p>
+<ul><li>Counting yes/no outcomes in repeated trials</li><li>Clinical trials, quality control, surveys, games, genetics</li><li>Assessing whether an outcome is &quot;rare&quot; or &quot;typical&quot;</li></ul>
+<p><strong>Historical Significance:</strong></p>
+<ul><li>Formalised probability and counting in the 1700s–1800s</li><li>Enabled scientific drug testing and quality assurance</li><li>Led to hypothesis testing and statistical inference</li></ul>
+<p>The binomial distribution is your first powerful tool for answering: <em>&quot;If this experiment were repeated many times, what patterns would emerge?&quot;</em></p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> A fair die is rolled 8 times. Let $X$ = number of times a 6 appears. Which of the following is true?</p>
+<ul><li>$X$ follows a binomial distribution with $n = 8$ and $p = 1/6$</li><li>$X$ follows a binomial distribution with $n = 8$ and $p = 1/2$</li><li>$X$ cannot be modeled with the binomial distribution because rolling a die has more than two outcomes</li><li>$\mu = 8 \times 1/6 \approx 1.33$ and $\sigma \approx 1.04$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The first and fourth statements are correct. $X$ counts successes (rolling a 6) in 8 independent trials, each with probability 1/6. The die has six outcomes, but we&#x27;re counting one specific outcome (success = rolling a 6), so it fits the binomial model. Mean: $\mu = 8 \times (1/6) = 4/3 \approx 1.33$. Std Dev: $\sigma = \sqrt{8 \times (1/6) \times (5/6)} = \sqrt{40/36} \approx 1.05$.</p>
+</details>
+<p><strong>Question 2:</strong> Suppose $X \sim \text{Binomial}(100, 0.3)$. What are $\mu$ and $\sigma$?</p>
+<ul><li>$\mu = 30$, $\sigma = \sqrt{21} \approx 4.58$</li><li>$\mu = 30$, $\sigma \approx 4.35$</li><li>$\mu = 70$, $\sigma = \sqrt{21} \approx 4.58$</li><li>$\mu = 0.3$, $\sigma = 0.45$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\mu = np = 100 \times 0.3 = 30$. $\sigma = \sqrt{np(1-p)} = \sqrt{100 \times 0.3 \times 0.7} = \sqrt{21} \approx 4.58$. The first option is correct.</p>
+</details>
+<p><strong>Question 3:</strong> A company manufactures USB drives with a 3% defect rate. A batch of 50 drives is produced. Let $X$ = number of defective drives. What is $P(X = 0)$ (no defects)?</p>
+<ul><li>$(0.03)^{50}$</li><li>$(0.97)^{50}$</li><li>$\binom{50}{0} (0.03)^0 (0.97)^{50} = (0.97)^{50}$</li><li>$(0.03)^0 (0.97)^0 = 1$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$P(X = 0) = \binom{50}{0} (0.03)^0 (0.97)^{50} = 1 \times 1 \times (0.97)^{50} = (0.97)^{50}$. This is the third option.</p>
+</details>
+<p><strong>Question 4:</strong> Which scenario is <em>not</em> a binomial experiment?</p>
+<ul><li>Rolling a standard die 20 times and counting how many times you roll exactly a 3</li><li>Drawing cards from a deck (with replacement) 15 times and counting how many are red</li><li>Measuring the heights of 100 people and noting how many are above 180 cm</li><li>Flipping a weighted coin 50 times where the probability of heads is 0.6, counting the number of heads</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The third option is not a binomial experiment because we are not performing &quot;repeated trials&quot; in the binomial sense — we&#x27;re measuring a population characteristic (height) once per person. In the other three, we repeat the same trial multiple times and count successes.</p>
+</details>
+<p><strong>Question 5:</strong> You take a quiz with 15 multiple-choice questions (4 options each) and guess on all questions. Your success probability is $p = 0.25$ per question. What&#x27;s the expected number of correct answers?</p>
+<ul><li>3.75</li><li>5</li><li>7.5</li><li>11.25</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\mu = np = 15 \times 0.25 = 3.75$. The first option is correct.</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Binomial_distribution" target="_blank" rel="noopener">Binomial distribution — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Bernoulli_trial" target="_blank" rel="noopener">Bernoulli trial — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Blaise_Pascal" target="_blank" rel="noopener">Blaise Pascal — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Probability" target="_blank" rel="noopener">Probability — Wikipedia</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-070-the-integral/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Integral — Measuring Accumulation</span></a><a class="pager-link pager-link--next" href="../../world-06-probability-statistics-and-uncertainty/ch-082-the-normal-distribution/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Normal Distribution</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

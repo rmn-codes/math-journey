@@ -1,0 +1,285 @@
+---
+chapterNumber: 065
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+title: "The Problem of Instantaneous Change"
+subtitle: "How fast is something moving right now? — the question that created calculus"
+estimatedTimeMinutes: 35
+historicalPeriod: "1600s, Europe"
+mainConcepts:
+  - average rate of change
+  - secant line
+  - limit
+  - instantaneous rate of change
+  - tangent line
+learningObjectives:
+  - "Compute average rates of change from tables and equations"
+  - "Interpret average rate of change as a slope"
+  - "Informally describe a limit"
+  - "Distinguish average from instantaneous rate of change"
+  - "Understand the motivating problem of calculus"
+---
+
+## Story Hook
+
+Picture the summer of 1589. Galileo Galilei stands on the Leaning Tower of Pisa, holding two spheres—one of lead, heavy and dense, and one of iron, equally weighty. Medieval scholars below watch, expecting the heavier ball to fall faster (as Aristotle taught for nearly 2,000 years). But Galileo releases them together. They fall in silence. And they hit the ground at the same moment.
+
+The crowd gasps. Aristotle was wrong.
+
+But then Galileo asks himself a harder question—one that would haunt him for decades and eventually consume the intellectual energy of the greatest mathematicians in Europe: *How fast is each ball moving at the exact moment it strikes the ground?*
+
+You might think: measure the distance it fell, measure the time it took, divide one by the other. Average speed: $\frac{\text{distance}}{\text{time}}$. But that's not instantaneous speed—that's the speed *over the whole fall*. The ball was moving slower near the top and faster near the bottom. What is its speed *right now*, at this instant?
+
+You cannot measure instantaneous speed directly. You cannot pause time at a single moment and measure. So how do you find it?
+
+This question—seemingly simple, actually profound—led mathematicians on a 60-year journey and ultimately forced them to invent an entirely new branch of mathematics: calculus.
+
+## Why It Matters
+
+Every time a car's speedometer reads "45 mph," you are witnessing an instantaneous rate of change. Not your average speed from home to destination—your speed *right now*, at this moment. Without calculus, we could not define this. Without understanding instantaneous change, we could not design bridges that don't collapse, predict planetary orbits, optimize drug dosages, or understand how a virus spreads through a population.
+
+The problem of instantaneous change is not abstract. It is how we describe reality in motion.
+
+## Historical Context
+
+Galileo (1564–1642) performed his tower experiment and discovered the laws of falling motion. He proved that distance fallen is proportional to time squared: $d = \frac{1}{2}gt^2$. But he could not answer his own question about instantaneous speed. The mathematics didn't exist.
+
+For 60 years, the question lingered. In the 1660s, Isaac Newton (in England) and Gottfried Leibniz (in Germany) independently solved it by inventing calculus. Newton's insight came first (1666), but Leibniz published first (1675) and gave us notation we still use today. The bitter priority dispute lasted decades. Both men were right: they discovered something real and deep, and both deserved credit.
+
+Before Newton and Leibniz, we had arithmetic, algebra, geometry, and trigonometry. After them, we had calculus—the mathematics of change, motion, and rates that transformed science forever.
+
+## Core Concept
+
+Imagine you are driving a car. Your position as a function of time is given by $s(t)$, measured in miles from your starting point.
+
+**Average rate of change** is easy to understand:
+
+$$\text{Average speed} = \frac{\Delta s}{\Delta t} = \frac{s(\text{final time}) - s(\text{initial time})}{\text{final time} - \text{initial time}}$$
+
+If you travel 100 miles in 2 hours, your average speed is $\frac{100}{2} = 50$ mph.
+
+But the speedometer shows 45 mph, not 50 mph. That's because your actual speed varied throughout the trip. Near the city, you drove slowly. On the highway, you drove fast.
+
+**The secant line** is the geometric picture of average rate of change. If you plot position $s(t)$ on a graph, a secant line connects two points on the curve. The slope of the secant line is the average rate of change:
+
+$$\text{slope of secant} = \frac{s(b) - s(a)}{b - a}$$
+
+where $a$ and $b$ are two different times.
+
+**The instantaneous rate of change** is the slope of the curve *right at one point*. Geometrically, it's the slope of the **tangent line**—a line that just barely touches the curve without crossing it.
+
+But here's the puzzle: how do you find the slope of a tangent line when a tangent line touches the curve at only one point? You need two points to find a slope.
+
+**The answer: limits.**
+
+You imagine the second point sliding closer and closer to the first point. The secant line, which connects the two points, gets closer and closer to the tangent line. The slope of the secant approaches the slope of the tangent. The slope approaches a single value—we say it *approaches a limit*.
+
+This is the central idea of calculus: **an instantaneous rate of change is what you get when you let the time interval shrink to zero, approaching (but not reaching) the limit.**
+
+## Definitions and Formal Lesson
+
+**Average Rate of Change:** The slope of the secant line connecting two points on a curve:
+
+$$\frac{\Delta y}{\Delta x} = \frac{f(b) - f(a)}{b - a}$$
+
+This measures how much the output changes per unit change in the input, *on average* over the interval $[a, b]$.
+
+**Secant Line:** A line through two distinct points on a curve. Its slope is the average rate of change.
+
+**Limit:** An informal definition: a value that a quantity approaches as an operation is repeated or continued. Notation: $\lim_{x \to a} f(x) = L$ means "as $x$ approaches $a$, the value $f(x)$ approaches $L$."
+
+For now, we don't need the rigorous $\epsilon$-$\delta$ definition. We can evaluate limits by making a table of values and observing what number they approach.
+
+**Instantaneous Rate of Change:** The limiting value of the average rate of change as the interval shrinks to zero:
+
+$$\text{instantaneous rate at } a = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$$
+
+This is also called the **derivative** of $f$ at $a$, written $f'(a)$.
+
+**Tangent Line:** A line that touches a curve at one point and has the same slope as the curve at that point. The slope of the tangent line equals the instantaneous rate of change.
+
+## Worked Examples
+
+**Example 1: Average Rate of Change from a Table**
+
+A ball is dropped from a building. Here is its height $h(t)$ in feet above the ground at time $t$ in seconds:
+
+| $t$ (seconds) | $h(t)$ (feet) |
+|---|---|
+| 0 | 400 |
+| 1 | 384 |
+| 2 | 336 |
+| 3 | 256 |
+
+What is the average rate of change of height between $t = 1$ and $t = 3$?
+
+$$\frac{\Delta h}{\Delta t} = \frac{h(3) - h(1)}{3 - 1} = \frac{256 - 384}{2} = \frac{-128}{2} = -64 \text{ feet per second}$$
+
+The negative sign indicates the ball is falling (height is decreasing).
+
+**Example 2: Average Rate of Change from an Equation**
+
+Let $f(x) = x^2$. Find the average rate of change between $x = 2$ and $x = 5$.
+
+$$\frac{\Delta f}{\Delta x} = \frac{f(5) - f(2)}{5 - 2} = \frac{25 - 4}{3} = \frac{21}{3} = 7$$
+
+**Example 3: Approaching a Limit Numerically**
+
+Let $f(x) = x^2$. We want to find the instantaneous rate of change at $x = 2$—that is, we want to evaluate:
+
+$$\lim_{h \to 0} \frac{f(2+h) - f(2)}{h} = \lim_{h \to 0} \frac{(2+h)^2 - 4}{h}$$
+
+Let's make a table as $h$ gets smaller:
+
+| $h$ | $\frac{(2+h)^2 - 4}{h}$ |
+|---|---|
+| 1 | 5 |
+| 0.5 | 4.5 |
+| 0.1 | 4.1 |
+| 0.01 | 4.01 |
+| 0.001 | 4.001 |
+
+As $h$ approaches 0, the expression approaches 4. So $\lim_{h \to 0} \frac{(2+h)^2 - 4}{h} = 4$.
+
+The instantaneous rate of change of $f(x) = x^2$ at $x = 2$ is 4.
+
+## Practice Set
+
+1. **A car travels 240 miles in 4 hours. What is the average rate of change of position?**
+   - 40 mph
+   - 50 mph
+   - 60 mph
+   - 80 mph
+
+2. **A function $f(x) = 3x + 2$. What is the average rate of change between $x = 1$ and $x = 4$?**
+   - 2
+   - 3
+   - 5
+   - 9
+
+3. **What does a secant line represent geometrically?**
+   - A line tangent to a curve
+   - A line connecting two points on a curve
+   - A vertical line on a graph
+   - A line parallel to the x-axis
+
+4. **In Galileo's tower experiment, what was the unsolved problem?**
+   - How long it took the balls to fall
+   - How far the balls fell
+   - The instantaneous speed at the moment of impact
+   - Whether the balls were different weights
+
+5. **Using the table, estimate the instantaneous rate of change of $h(t)$ at $t = 2$.**
+
+   | $t$ | 1 | 2 | 3 |
+   |---|---|---|---|
+   | $h(t)$ | 10 | 15 | 18 |
+
+   - 2.5
+   - 5
+   - 7.5
+   - 4
+
+## Reasoning Task
+
+Your younger sibling is confused about the difference between average speed and instantaneous speed. She says: "My speedometer reads 60 mph, but I've driven 180 miles in 3 hours. That's also 60 mph. Are these the same thing?"
+
+Explain to her why your speedometer reading is instantaneous speed and the calculation 180 miles in 3 hours is average speed. Give an example of a trip where these would be different.
+
+## Application
+
+**Velocity in Physics**
+
+Imagine a ball thrown straight up. Its height (in feet) at time $t$ (in seconds) is:
+
+$$s(t) = 64t - 16t^2$$
+
+The average velocity between $t = 1$ and $t = 2$ seconds:
+
+$$\frac{s(2) - s(1)}{2 - 1} = \frac{(64 \cdot 2 - 16 \cdot 4) - (64 - 16)}{1} = \frac{64 - 48}{1} = 16 \text{ feet per second}$$
+
+But the instantaneous velocity at $t = 1$ requires a limit—which we'll calculate in the next chapter using derivatives.
+
+**Business Application: Revenue Change**
+
+A company's revenue (in thousands of dollars) as a function of units sold ($x$) is $R(x) = 50x - 0.1x^2$.
+
+The average rate of change of revenue between selling 100 and 200 units:
+
+$$\frac{R(200) - R(100)}{200 - 100} = \frac{(10000 - 4000) - (5000 - 1000)}{100} = \frac{6000 - 4000}{100} = 20$$
+
+The revenue increases by an average of \$20,000 per additional unit sold (in that range). But the instantaneous rate of change at exactly 150 units sold—that requires calculus.
+
+## Recap
+
+The problem of instantaneous change asks: *How fast is something changing at this exact moment?*
+
+**Average rate of change** is the slope of a secant line connecting two points on a curve: $\frac{\Delta y}{\Delta x}$. This is easy to compute but misses what happens within the interval.
+
+**Instantaneous rate of change** is what you get when you shrink the interval to zero—it's the slope of the tangent line at a single point. To find it, you use a **limit**, imagining one point sliding toward another until the secant line becomes a tangent line.
+
+Galileo asked this question in 1589 but couldn't answer it. For 60 years, the greatest minds in Europe puzzled over it. In the 1660s–1680s, Newton and Leibniz solved it by inventing calculus. The instantaneous rate of change is the **derivative**, and it is the foundation of modern science, engineering, and mathematics.
+
+## Unlock Quiz
+
+**1. Which best explains why you cannot measure instantaneous speed directly?**
+   - Speed is always measured over an interval of time
+   - Speedometers are not accurate
+   - The ball moves too fast
+   - Time cannot be divided into smaller pieces
+
+<details>
+<summary>Answer</summary>
+Speed is always measured over an interval of time
+</details>
+
+**2. If $f(x) = 2x^2$ and you want the average rate of change between $x = 1$ and $x = 3$, which calculation is correct?**
+   - $\frac{f(3) - f(1)}{3 - 1} = \frac{18 - 2}{2} = 8$
+   - $\frac{f(3)}{f(1)} = \frac{18}{2} = 9$
+   - $f(3) - f(1) = 16$
+   - $3 - 1 = 2$
+
+<details>
+<summary>Answer</summary>
+$\frac{f(3) - f(1)}{3 - 1} = \frac{18 - 2}{2} = 8$
+</details>
+
+**3. What does a secant line represent?**
+   - The tangent to a curve at one point
+   - A line connecting two points on a curve
+   - The x-axis of a graph
+   - A line perpendicular to the curve
+
+<details>
+<summary>Answer</summary>
+A line connecting two points on a curve
+</details>
+
+**4. As $h$ approaches 0 in the expression $\frac{f(a+h) - f(a)}{h}$, what does the secant line approach?**
+   - The tangent line
+   - The horizontal axis
+   - The vertical axis
+   - A perpendicular line
+
+<details>
+<summary>Answer</summary>
+The tangent line
+</details>
+
+**5. Newton and Leibniz solved the problem of instantaneous change by inventing:**
+   - Geometry
+   - Calculus
+   - Algebra
+   - Trigonometry
+
+<details>
+<summary>Answer</summary>
+Calculus
+</details>
+
+## Source Notes
+
+- Galilei, G. (1638). *Discorsi e dimostrazioni matematiche, relativa à due nuove scienze*. https://en.wikipedia.org/wiki/Galileo_Galilei
+- Newton, I. (1687). *Philosophiæ Naturalis Principia Mathematica*. https://en.wikipedia.org/wiki/Isaac_Newton
+- https://en.wikipedia.org/wiki/Derivative
+- https://en.wikipedia.org/wiki/History_of_calculus

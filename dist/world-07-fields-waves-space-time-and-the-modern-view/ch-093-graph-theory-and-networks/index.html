@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Graph Theory and Networks — Math Journey</title>
+    <meta name="description" content="The bridges of Königsberg, the internet, and the mathematics of connection" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 7 · Chapter 93</p>
+        <h1>Graph Theory and Networks</h1>
+        <p class="hero-copy">The bridges of Königsberg, the internet, and the mathematics of connection</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>core</span>
+          
+          <span>1736 CE – present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Picture Königsberg in 1736 — a beautiful Prussian city built on both sides of the Pregel River, with seven bridges connecting its islands. On leisure walks, citizens pose a puzzle: <strong>Can you walk across all seven bridges exactly once and return home?</strong></p>
+<p>No one can do it. Not because they&#x27;re not clever enough, but because it&#x27;s mathematically impossible.</p>
+<p>Enter Leonhard Euler, one of history&#x27;s most prolific mathematicians. Instead of trying to cross the bridges, he does something radical: he <strong>abstracts the problem</strong>. He ignores the city&#x27;s beauty, the river&#x27;s flow, the trees. He draws just four dots (representing the four land regions) and seven lines (the bridges).</p>
+<p>From that simple drawing, using pure logic, Euler proves the walk is impossible. More importantly, he invents an entirely new language of mathematics: <strong>graph theory</strong> — the mathematics of networks, connections, and structure.</p>
+<p>Today, the same theorems that solved the Königsberg bridge problem describe how packets travel across the internet, how diseases spread through populations, how airline routes connect cities, and how proteins interact in your cells. Every network is a graph.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Graphs are everywhere:</p>
+<ul><li><strong>The internet</strong>: Your laptop is a node. Every website is a node. Every connection between them is an edge. Packets find the shortest path using Euler and graph algorithms.</li><li><strong>Social networks</strong>: You are a vertex. Your friends are vertices. The connections are edges. &quot;Six degrees of separation&quot; is a graph property.</li><li><strong>Epidemiology</strong>: When a disease spreads, it travels along edges in the network of human contact. Understanding the graph structure helps predict and contain outbreaks.</li><li><strong>GPS and navigation</strong>: Roads are edges. Intersections are vertices. Finding the fastest route home uses Dijkstra&#x27;s algorithm — a graph algorithm.</li><li><strong>Biology</strong>: Proteins interact with other proteins. The interaction network (a graph) reveals how life works at the molecular level.</li></ul>
+<p>The beauty of graph theory is its abstraction. By stripping away details and focusing on <strong>what connects to what</strong>, we discover universal patterns that apply from cities to the brain to the cosmos.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Leonhard Euler (1707–1783) was one of the most prolific mathematicians ever. He published over 800 papers — so many that after his death, the St. Petersburg Academy took decades just to print them all.</p>
+<p>In 1736, Euler received a letter from Carl Ehler, a Prussian mathematician, asking about the seven bridges of Königsberg. Euler didn&#x27;t know the city, but he recognized the structure. In his response, he invented graph theory in a single stroke.</p>
+<p>For over a century, graph theory remained a mathematical curiosity. Then, in the late 1800s and 1900s, scientists realized that the same abstract patterns appeared everywhere: in chemistry (atoms and bonds), in electricity (circuits), in biology (food webs), in sociology (relationships).</p>
+<p>By the 20th century, graph theory became essential. The invention of computers made it practical: algorithms like Dijkstra&#x27;s shortest path (1956) and more recent methods power every routing system on Earth.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>graph</strong> is the simplest and most powerful abstraction:</p>
+<ul><li><strong>Vertices</strong> (or nodes): Points, labeled or unlabeled.</li><li><strong>Edges</strong> (or links): Connections between vertices.</li></ul>
+<p>That&#x27;s it. Everything else builds from there.</p>
+<p>A graph can be:</p>
+<ul><li><strong>Undirected</strong>: Edges work both ways. Friendship is typically undirected.</li><li><strong>Directed</strong>: Edges have arrows showing direction. &quot;Follows on Twitter&quot; is directed.</li><li><strong>Weighted</strong>: Each edge has a number (distance, cost, strength). Road maps are weighted.</li></ul>
+<p>Two key ideas:</p>
+<ol><li><strong>Degree of a vertex</strong>: How many edges connect to it. In the Königsberg bridge problem, each region has a certain degree. Euler proved that a walk crossing each edge exactly once exists <strong>only if</strong> every vertex has even degree, or exactly two have odd degree.</li></ol>
+<ol><li><strong>Trees</strong>: A special graph with no cycles (loops). A tree with $n$ vertices always has exactly $n-1$ edges. Trees are everywhere: family trees, decision trees, the hierarchy of life.</li></ol>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Graph</strong>: A pair $G = (V, E)$ where $V$ is a set of vertices and $E$ is a set of edges (pairs of vertices).</p>
+<p><strong>Undirected edge</strong>: Unordered pair $\{u, v\}$. Connection goes both ways.</p>
+<p><strong>Directed edge</strong>: Ordered pair $(u, v)$. Arrow points from $u$ to $v$.</p>
+<p><strong>Degree</strong> (undirected): $\deg(v)$ = number of edges touching $v$.</p>
+<p><strong>In-degree</strong> and <strong>out-degree</strong> (directed): In-degree = edges coming in. Out-degree = edges going out.</p>
+<p><strong>Euler&#x27;s Theorem</strong>: An undirected graph has an <strong>Eulerian circuit</strong> (a walk that crosses every edge exactly once and returns to start) <strong>if and only if</strong> every vertex has even degree. An <strong>Eulerian path</strong> (walk crossing each edge exactly once, but not returning) exists iff exactly 0 or 2 vertices have odd degree.</p>
+<p><strong>Path</strong>: A sequence of vertices where consecutive vertices are connected by edges. Length = number of edges.</p>
+<p><strong>Tree</strong>: A connected graph with no cycles. Properties: $n$ vertices $\Rightarrow$ $n-1$ edges.</p>
+<p><strong>Complete graph</strong> $K_n$: Every vertex connects to every other vertex. Has $\frac{n(n-1)}{2}$ edges.</p>
+<p><strong>Bipartite graph</strong>: Vertices split into two groups; edges only connect across groups.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Königsberg Bridges</strong></p>
+<p>The four regions have degrees: 3, 3, 2, 2. Two regions have odd degree. By Euler&#x27;s theorem, an Eulerian circuit does not exist (circuit requires all even). An Eulerian path exists (we need 0 or 2 odd; we have exactly 2). But you cannot start and end at the same place. The puzzle is impossible.</p>
+<p><strong>Example 2: Shortest Path with Dijkstra&#x27;s Algorithm</strong></p>
+<p>You&#x27;re in a city with intersections (vertices) and roads (weighted edges showing distance). To find the shortest route from home to work:</p>
+<ol><li>Mark home with distance 0. All others are infinite.</li><li>Visit the unvisited vertex closest to home. Mark your neighbors with updated distances.</li><li>Repeat: always visit the closest unvisited vertex, updating neighbors.</li><li>Stop when you reach work. Backtrack to find the route.</li></ol>
+<p>This greedy approach guarantees the shortest path.</p>
+<p><strong>Example 3: Tree Structure</strong></p>
+<p>A family tree with 8 people (vertices) has exactly 7 parent-child edges. You cannot have cycles (your parent cannot also be your child). The structure is a tree.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Degrees and Euler</strong>: Sketch a graph with 5 vertices where each has degree 2. Does an Eulerian circuit exist? Why or why not? What if you added one edge?</li></ol>
+<ol><li><strong>Complete Graph</strong>: $K_4$ has 4 vertices. Each connects to all others. How many edges does it have? What is the degree of each vertex? Compute the total sum of all degrees and verify it equals twice the number of edges.</li></ol>
+<ol><li><strong>Tree Counting</strong>: A tree has 20 vertices. How many edges? Can you add one edge without creating a cycle? What happens if you remove one edge from a tree?</li></ol>
+<ol><li><strong>Bipartite Graph</strong>: Create a bipartite graph with two groups (3 people, 3 jobs). Draw edges showing which people can do which jobs. Can a person take multiple jobs? Is this bipartite structure realistic for job assignments?</li></ol>
+<ol><li><strong>Real Network</strong>: Sketch a simplified social network of yourself and 6 friends. Who connects to whom? Is there a &quot;bottleneck&quot; person whose removal would disconnect the graph? How does this relate to network resilience?</li></ol>
+<ol><li><strong>Path Finding</strong>: In a grid city (like Manhattan), vertices are intersections and edges are streets. Design a simple grid graph with 9 vertices (3×3). Find three different shortest paths from the top-left corner to the bottom-right corner. How many such shortest paths exist?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Small-World Phenomenon</strong></p>
+<p>Your grandmother knows a friend who knows a doctor who knows someone in Japan. Studies show the average path between two random people on Earth is about 6 edges (&quot;six degrees of separation&quot;).</p>
+<p>Why is the world &quot;small&quot; in a graph sense? Consider:</p>
+<ul><li>Graphs can be dense (many edges) or sparse (few edges).</li><li>Small-world networks have low average path length even with relatively few edges.</li><li>Social networks have clustering (your friends are also friends with each other).</li></ul>
+<p>Discuss: Is a small-world network more like a complete graph or a tree? What real networks exhibit small-world properties?</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>GPS Navigation and Routing</strong></p>
+<p>When you ask your phone for directions, it:</p>
+<ol><li>Represents the road network as a weighted graph (vertices = intersections, edges = roads, weights = distance or estimated time).</li><li>Runs Dijkstra&#x27;s algorithm or a similar method to find the shortest path.</li><li>Sends you turn-by-turn instructions.</li></ol>
+<p>Graph algorithms also power:</p>
+<ul><li><strong>Internet routing</strong>: Packets hop from router to router, finding paths to their destination.</li><li><strong>Delivery networks</strong>: UPS and FedEx solve variants of the &quot;traveling salesman problem&quot; (find a short route visiting many destinations).</li><li><strong>Flight paths</strong>: Airlines use graph algorithms to assign planes and crews efficiently.</li></ul>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Graphs are abstract networks of vertices and edges. Euler proved that crossing each bridge exactly once is impossible if too many regions have odd degree. Today, graph theory powers the internet, social networks, navigation, and molecular biology. Key concepts include the degree of a vertex, Eulerian paths and circuits, trees, and shortest-path algorithms. A single idea — what connects to what — unifies the study of connections across science.</p>
+<p>Graph theory reveals hidden structure. A social network is not just people; it is a pattern of who influences whom. The internet is not just cables and routers; it is a topology that determines how robust and efficient routing can be. A protein interaction network is not just molecular chaos; it is a system of connections that explains how life maintains itself. Every such system can be modeled as a graph, analyzed with Euler&#x27;s theorems, and optimized with algorithms developed since his time. The abstraction that Euler invented to solve a puzzle about bridges became the language of modern complexity.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>In the Königsberg bridge problem, which of the following describes the four regions?</li></ol>
+<ul><li>They are vertices, and bridges are edges</li><li>They are edges, and bridges are vertices</li><li>They are weights on vertices</li><li>They are directed connections</li></ul>
+<ol><li>Euler&#x27;s theorem states that an Eulerian circuit exists if and only if:</li></ol>
+<ul><li>No cycles are present in the graph</li><li>Every vertex has even degree</li><li>The graph is bipartite</li><li>Every vertex has degree at least 2</li></ul>
+<ol><li>A tree with 50 vertices has how many edges?</li></ol>
+<ul><li>50</li><li>49</li><li>51</li><li>48</li></ul>
+<ol><li>Which real-world network is best modeled as a directed graph?</li></ol>
+<ul><li>Friendships on Facebook</li><li>Twitter followers (who follows whom)</li><li>Road networks with two-way streets</li><li>Protein interactions</li></ul>
+<ol><li>Dijkstra&#x27;s algorithm finds the _____ path between two vertices in a weighted graph.</li></ol>
+<ul><li>longest</li><li>shortest</li><li>cheapest</li><li>most connected</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>They are vertices, and bridges are edges</li><li>Every vertex has even degree</li><li>49</li><li>Twitter followers (who follows whom)</li><li>shortest</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Euler, L. (1736). &quot;Solutio problematis ad geometriam situs pertinentis.&quot; <em>Commentarii academiae scientiarum Petropolitanae</em>, 8, 128–140. The original paper solving the Königsberg bridge problem.</li><li>https://en.wikipedia.org/wiki/Graph_theory</li><li>https://en.wikipedia.org/wiki/Leonhard_Euler</li><li>https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm</li><li>https://en.wikipedia.org/wiki/Eulerian_path</li><li>https://en.wikipedia.org/wiki/Small-world_network</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-092-symmetry-and-groups/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Mathematics of Symmetry — Groups</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-094-information-theory/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Information Theory — The Mathematics of Communication</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

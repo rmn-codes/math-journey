@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Circles and Arcs — Math Journey</title>
+    <meta name="description" content="Pi, rotation, and the most perfect shape" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 1 · Chapter 22</p>
+        <h1>Circles and Arcs</h1>
+        <p class="hero-copy">Pi, rotation, and the most perfect shape</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>foundational</span>
+          <span>Babylon, Egypt, Greece</span>
+          <span>2000 BCE to 300 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Understand what a circle is and its basic properties.</li><li>Use the formulas for circumference and area of a circle.</li><li>Understand pi as a ratio, not just a number.</li><li>Calculate arc length and sector area.</li><li>Apply circles to real-world and scientific problems.</li><li>Appreciate the historical hunt for the value of pi.</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#key-terms">Key Terms</a></li><li class="toc-level-3"><a href="#circumference">Circumference</a></li><li class="toc-level-3"><a href="#area-of-a-circle">Area of a Circle</a></li><li class="toc-level-3"><a href="#arc-length">Arc Length</a></li><li class="toc-level-3"><a href="#sector-area">Sector Area</a></li><li class="toc-level-3"><a href="#pi-a-special-number">Pi: A Special Number</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-calculate-circumference-from-radius">Example 1: Calculate Circumference from Radius</a></li><li class="toc-level-3"><a href="#example-2-calculate-area-from-diameter">Example 2: Calculate Area from Diameter</a></li><li class="toc-level-3"><a href="#example-3-calculate-arc-length">Example 3: Calculate Arc Length</a></li><li class="toc-level-3"><a href="#example-4-calculate-sector-area">Example 4: Calculate Sector Area</a></li><li class="toc-level-3"><a href="#example-5-compare-circumference-and-diameter">Example 5: Compare Circumference and Diameter</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-3"><a href="#warm-up">Warm-Up</a></li><li class="toc-level-3"><a href="#core-practice">Core Practice</a></li><li class="toc-level-3"><a href="#stretch">Stretch</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Imagine you are a builder creating a stone well for a village. The well must be circular, strong, and large enough to draw water from. You lay out the stones in a perfect circle, one by one. But how do you know when your circle is complete and balanced?</p>
+<p>One approach: tie a rope to a central post, keep it taut as you walk around, and mark the edge. Every point is the same distance from the post. That is a circle—the set of all points equidistant from a center.</p>
+<p>But now measure that rope. Measure the diameter of the well (straight across the center). You notice something remarkable: the rope length (circumference) is always about 3.14 times the diameter. This ratio is not 3, not 3.1, not even 3.14159—it continues forever, never settling into a simple pattern.</p>
+<p>This is pi, one of the most fascinating numbers in mathematics. Circles and the constant pi appear throughout nature, physics, and engineering. Understanding circles is essential to understanding the shape of wheels, planets, atoms, and the universe itself.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Circles matter because they:</p>
+<ul><li>describe rotation and periodic motion</li><li>appear everywhere in nature (ripples, orbits, cells)</li><li>are the most efficient shape for many purposes (wheels, containers, wheels)</li><li>connect geometry to the mysterious constant pi</li><li>provide formulas for calculating circumference, area, and arc length</li><li>enable calculations in astronomy, engineering, and physics</li></ul>
+<p>Without circles and the value of pi, modern engineering, physics, and navigation would be impossible. Circles are one of the most fundamental shapes in mathematics.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Ancient civilizations knew circles well—they are one of the most natural shapes, drawn by a rope or the rotation of a potter&#x27;s wheel. But determining the relationship between a circle&#x27;s circumference and its diameter proved challenging.</p>
+<p>The Babylonians (circa 1800 BCE) estimated pi as approximately 3.125, close to the true value. They used circles in astronomy and construction.</p>
+<p>Egyptians used the formula A = (8/9 × d)² for the area of a circle, where _d_ is the diameter. This gives an estimate of pi ≈ 3.16, quite accurate for practical purposes.</p>
+<p>Archimedes of Syracuse (c. 287–212 BCE) made the first rigorous mathematical attack on pi. He used the method of exhaustion: inscribing and circumscribing regular polygons inside and outside a circle. By increasing the number of sides, he squeezed pi between narrower and narrower bounds. He showed that pi was between 3 + 1/7 (≈ 3.14286) and 3 + 10/71 (≈ 3.14085). This was a remarkable achievement—he did not just guess; he proved a mathematical bound.</p>
+<p>Centuries later, mathematicians proved that pi is irrational (it cannot be expressed as a ratio of two integers) and transcendental (it is not the solution to any polynomial equation with integer coefficients). The search for the digits of pi continues to this day, not for practical reasons, but because pi is fundamental to the structure of mathematics itself.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>circle</strong> is the set of all points in a plane that are the same distance from a fixed point, called the <strong>center</strong>.</p>
+<p>The key measurements of a circle are:</p>
+<ul><li><strong>Radius (_r_):</strong> the distance from the center to any point on the circle</li><li><strong>Diameter (_d_):</strong> the distance across the circle through the center; always _d_ = 2_r_</li><li><strong>Circumference (_C_):</strong> the distance around the circle; always _C_ = π_d_ = 2π_r_</li><li><strong>Area (_A_):</strong> the space inside the circle; always _A_ = π_r_²</li></ul>
+<p>The most important constant in the circle is <strong>pi (π)</strong>, which represents the ratio of a circle&#x27;s circumference to its diameter:</p>
+<p><strong>π = C / d</strong></p>
+<p>This ratio is the same for every circle, no matter how large or small. It is approximately 3.14159265..., but the digits continue forever without repeating.</p>
+<p>Two fundamental formulas:</p>
+<p><strong>Circumference: C = πd = 2πr</strong></p>
+<p><strong>Area: A = πr²</strong></p>
+<p>These formulas connect the measurements of a circle to the constant pi. They are among the most important formulas in mathematics.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="key-terms">Key Terms</h3>
+<p><strong>Circle</strong> The set of all points in a plane that are equidistant from a fixed point (the center).</p>
+<p><strong>Center</strong> The fixed point from which all points on a circle are equidistant.</p>
+<p><strong>Radius</strong> The distance from the center of a circle to any point on the circle.</p>
+<p><strong>Diameter</strong> The distance across a circle through the center; equal to twice the radius.</p>
+<p><strong>Circumference</strong> The distance around a circle; the perimeter of the circle.</p>
+<p><strong>Pi (π)</strong> The ratio of a circle&#x27;s circumference to its diameter, approximately 3.14159265... (irrational and transcendental).</p>
+<p><strong>Arc</strong> A portion of a circle&#x27;s circumference.</p>
+<p><strong>Chord</strong> A line segment connecting any two points on a circle.</p>
+<p><strong>Sector</strong> A region inside a circle bounded by two radii and an arc, shaped like a slice of pie.</p>
+<p><strong>Central angle</strong> The angle at the center of a circle formed by two radii.</p>
+<h3 id="circumference">Circumference</h3>
+<p>The circumference is the distance around a circle. It is directly proportional to the diameter:</p>
+<p><strong>C = πd</strong></p>
+<p>Or, using radius:</p>
+<p><strong>C = 2πr</strong></p>
+<p>The constant of proportionality is pi. This means that no matter the size of the circle, the ratio of circumference to diameter is always π ≈ 3.14159...</p>
+<p><strong>Example:</strong> A circle with diameter 10 cm has circumference: C = π × 10 ≈ 3.14159 × 10 ≈ 31.4 cm</p>
+<h3 id="area-of-a-circle">Area of a Circle</h3>
+<p>The area of a circle is proportional to the square of its radius:</p>
+<p><strong>A = πr²</strong></p>
+<p>This formula derives from the fact that you can divide a circle into infinitely many thin triangles, each with its base on the circumference and its height as the radius. The sum of the areas of all these triangles equals πr².</p>
+<p><strong>Example:</strong> A circle with radius 5 cm has area: A = π × 5² = π × 25 ≈ 3.14159 × 25 ≈ 78.54 cm²</p>
+<h3 id="arc-length">Arc Length</h3>
+<p>An arc is a portion of the circumference. If the arc corresponds to a central angle of θ degrees (or θ radians), the arc length is proportional to that angle.</p>
+<p><strong>Arc length (in degrees): L = (θ / 360°) × 2πr</strong></p>
+<p><strong>Arc length (in radians): L = θ × r</strong></p>
+<p>This formula says: the arc length is the fraction of the full circle (θ / 360°) times the entire circumference (2πr).</p>
+<p><strong>Example:</strong> A circle with radius 10 cm has an arc corresponding to a central angle of 90°: L = (90° / 360°) × 2π × 10 = (1/4) × 20π ≈ 15.7 cm</p>
+<h3 id="sector-area">Sector Area</h3>
+<p>A sector is a &quot;pie slice&quot; of a circle, bounded by two radii and an arc. Its area is proportional to its central angle:</p>
+<p><strong>Sector area (in degrees): A = (θ / 360°) × πr²</strong></p>
+<p><strong>Sector area (in radians): A = (1/2) × θ × r²</strong></p>
+<p>This formula says: the sector area is the fraction of the full circle (θ / 360°) times the entire area (πr²).</p>
+<p><strong>Example:</strong> A circle with radius 10 cm has a sector with central angle 90°: A = (90° / 360°) × π × 10² = (1/4) × 100π ≈ 78.54 cm²</p>
+<h3 id="pi-a-special-number">Pi: A Special Number</h3>
+<p>Pi is unique among constants in mathematics:</p>
+<ul><li><strong>It is irrational:</strong> π cannot be expressed as the ratio of two integers.</li><li><strong>It is transcendental:</strong> π is not the solution to any polynomial equation with integer coefficients.</li><li><strong>It is universal:</strong> the same value of π appears in circles, spheres, waves, and many other contexts.</li><li><strong>It is infinite:</strong> the decimal expansion of π never repeats and never ends.</li></ul>
+<p>The first few decimal places of π are: π ≈ 3.1415926535897932384626433832795...</p>
+<p>For most practical purposes, π ≈ 3.14159 or even π ≈ 3.14 or π ≈ 22/7 is sufficient.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-calculate-circumference-from-radius">Example 1: Calculate Circumference from Radius</h3>
+<p>A circular garden has a radius of 8 meters. What is its circumference?</p>
+<p><strong>Solution</strong></p>
+<p>Using the circumference formula: C = 2πr C = 2 × π × 8 C = 16π C ≈ 16 × 3.14159 ≈ 50.27 m</p>
+<p>The circumference is approximately 50.27 meters, or exactly 16π meters.</p>
+<h3 id="example-2-calculate-area-from-diameter">Example 2: Calculate Area from Diameter</h3>
+<p>A circular pond has a diameter of 14 feet. What is its area?</p>
+<p><strong>Solution</strong></p>
+<p>First, find the radius from the diameter: r = d / 2 = 14 / 2 = 7 feet</p>
+<p>Then calculate area: A = πr² A = π × 7² A = 49π A ≈ 49 × 3.14159 ≈ 153.94 square feet</p>
+<p>The area is approximately 153.94 square feet, or exactly 49π square feet.</p>
+<h3 id="example-3-calculate-arc-length">Example 3: Calculate Arc Length</h3>
+<p>A circle has radius 6 cm. What is the length of an arc that subtends a central angle of 60°?</p>
+<p><strong>Solution</strong></p>
+<p>Using the arc length formula: L = (θ / 360°) × 2πr L = (60° / 360°) × 2π × 6 L = (1/6) × 12π L = 2π L ≈ 2 × 3.14159 ≈ 6.28 cm</p>
+<p>The arc length is approximately 6.28 cm, or exactly 2π cm.</p>
+<h3 id="example-4-calculate-sector-area">Example 4: Calculate Sector Area</h3>
+<p>A circle has radius 5 m. What is the area of a sector with a central angle of 144°?</p>
+<p><strong>Solution</strong></p>
+<p>Using the sector area formula: A = (θ / 360°) × πr² A = (144° / 360°) × π × 5² A = (144° / 360°) × 25π A = (2/5) × 25π A = 10π A ≈ 10 × 3.14159 ≈ 31.42 m²</p>
+<p>The sector area is approximately 31.42 m², or exactly 10π m².</p>
+<h3 id="example-5-compare-circumference-and-diameter">Example 5: Compare Circumference and Diameter</h3>
+<p>A wheel has circumference 88 cm. What is its diameter? Use π ≈ 22/7.</p>
+<p><strong>Solution</strong></p>
+<p>Rearrange the circumference formula to solve for diameter: C = πd 88 = (22/7) × d d = 88 × (7/22) d = 616 / 22 d = 28 cm</p>
+<p>The diameter is 28 cm. Note that using π ≈ 22/7 (an approximation used in many cultures) gives an exact answer here.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<h3 id="warm-up">Warm-Up</h3>
+<ol><li>A circle has radius 4 cm. What is its circumference?</li><li>A circle has diameter 10 m. What is its area?</li></ol>
+<h3 id="core-practice">Core Practice</h3>
+<ol><li>A circular track has a radius of 50 meters. An athlete runs around the track once. How far does the athlete run?</li><li>A circle has radius 3 inches. What is the length of an arc corresponding to a central angle of 120°?</li><li>A sector of a circle has a central angle of 90° and radius 8 cm. What is the area of the sector?</li><li>A circular garden has area 100π m². What is its radius?</li></ol>
+<h3 id="stretch">Stretch</h3>
+<ol><li>Two circles have radii 3 cm and 5 cm. What is the difference in their circumferences?</li></ol>
+<details>
+<summary>Practice Answer Guide</summary>
+<ol><li>C = 2πr = 2π × 4 = 8π ≈ 25.13 cm</li><li>A = πr² = π × 5² = 25π ≈ 78.54 m²</li><li>C = 2πr = 2π × 50 = 100π ≈ 314.16 meters</li><li>L = (120° / 360°) × 2πr = (1/3) × 2π × 3 = 2π ≈ 6.28 inches</li><li>A = (90° / 360°) × πr² = (1/4) × π × 64 = 16π ≈ 50.27 cm²</li><li>A = πr², so 100π = πr², so r² = 100, so r = 10 m</li><li>Circumference of circle 1: C₁ = 2π × 3 = 6π. Circumference of circle 2: C₂ = 2π × 5 = 10π. Difference: 10π − 6π = 4π ≈ 12.57 cm</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>Explain why the formula for the area of a circle is A = πr² by describing how a circle can be thought of as many thin triangles. Write 5 to 7 sentences describing:</p>
+<ul><li>how you would divide a circle into triangles</li><li>what the base and height of each triangle would be</li><li>how the sum of all the triangle areas relates to the circumference and radius</li><li>why this leads to the formula A = πr²</li></ul>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>Circles appear everywhere in practical and scientific contexts:</p>
+<ul><li><strong>Wheels and rotation:</strong> Wheels, pulleys, gears, and rotating machinery all depend on circles. The circumference determines how far something travels in one rotation.</li></ul>
+<ul><li><strong>Astronomy:</strong> Planets orbit in roughly circular paths. The radius determines orbital speed and period using circular motion principles.</li></ul>
+<ul><li><strong>Engineering and design:</strong> Pipes, tanks, bearings, and countless mechanical parts are circular. Knowing circumference and area is essential to engineering.</li></ul>
+<ul><li><strong>Medicine:</strong> CT and MRI scans create circular cross-sections. Understanding circles helps doctors interpret imaging.</li></ul>
+<ul><li><strong>Food and cooking:</strong> Pizzas, cakes, and dishes are circular. Recipes use area to calculate servings per size.</li></ul>
+<ul><li><strong>Sports:</strong> Tracks, fields, and courts often have circular components. Athletes&#x27; trajectories and field dimensions depend on circle geometry.</li></ul>
+<ul><li><strong>Nature:</strong> Tree rings, ripples in water, cells, and planetary orbits are all circular or involve circular motion.</li></ul>
+<p>Pi itself appears in the normal distribution in statistics, in the formulas for waves and oscillations in physics, and in the geometry of everything from atoms to galaxies.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li>A <strong>circle</strong> is defined as all points equidistant from a center.</li><li>The <strong>radius</strong> is the distance from center to edge; the <strong>diameter</strong> is twice the radius.</li><li><strong>Circumference</strong> (the distance around) equals π times the diameter: C = πd = 2πr.</li><li><strong>Area</strong> (the space inside) equals π times the radius squared: A = πr².</li><li><strong>Pi (π)</strong> is the universal ratio of circumference to diameter, approximately 3.14159..., infinite and non-repeating.</li><li><strong>Arc length</strong> is a fraction of the circumference based on central angle: L = (θ / 360°) × 2πr.</li><li><strong>Sector area</strong> is a fraction of the total area based on central angle: A = (θ / 360°) × πr².</li><li>Ancient civilizations (Babylonians, Egyptians, Greeks) approximated and studied pi for thousands of years.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>What is pi (π) in the context of circles?</li></ol>
+<ul><li>The area of a circle with radius 1</li><li>The ratio of circumference to diameter</li><li>The distance around a circle</li><li>A number equal to exactly 3.14</li></ul>
+<ol><li>What is the formula for the circumference of a circle with radius r?</li></ol>
+<ul><li>C = πr</li><li>C = 2πr</li><li>C = πr²</li><li>C = πd²</li></ul>
+<ol><li>A circle has radius 3 cm. What is its area?</li></ol>
+<ul><li>3π cm²</li><li>6π cm²</li><li>9π cm²</li><li>12π cm²</li></ul>
+<ol><li>What is an arc?</li></ol>
+<ul><li>A straight line through the center of a circle</li><li>A region shaped like a pie slice</li><li>A portion of the circumference</li><li>A chord that passes through the center</li></ul>
+<ol><li>Archimedes&#x27; method of exhaustion for finding pi involved:</li></ol>
+<ul><li>Inscribing and circumscribing polygons to squeeze pi between narrow bounds</li><li>Using the formula C = πd directly</li><li>Measuring very large circles</li><li>Dividing a circle into smaller circles</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>The ratio of circumference to diameter</li><li>C = 2πr</li><li>9π cm²</li><li>A portion of the circumference</li><li>Inscribing and circumscribing polygons to squeeze pi between narrow bounds</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>The history of pi and ancient approximations by Babylonian and Egyptian mathematicians are documented in <a href="https://en.wikipedia.org/wiki/Pi" target="_blank" rel="noopener">Pi</a> and <a href="https://en.wikipedia.org/wiki/History_of_pi" target="_blank" rel="noopener">History of pi</a> on Wikipedia.</li><li>Archimedes&#x27; method of exhaustion and his bounds on pi are detailed in <a href="https://en.wikipedia.org/wiki/Archimedes" target="_blank" rel="noopener">Archimedes</a> and <a href="https://en.wikipedia.org/wiki/Method_of_exhaustion" target="_blank" rel="noopener">Method of exhaustion</a>.</li><li>The proof that pi is irrational and transcendental is discussed in <a href="https://en.wikipedia.org/wiki/Irrational_number" target="_blank" rel="noopener">Irrational number</a> and <a href="https://en.wikipedia.org/wiki/Transcendental_number" target="_blank" rel="noopener">Transcendental number</a> on Wikipedia.</li><li>For a comprehensive overview of circle geometry and formulas, see <a href="https://en.wikipedia.org/wiki/Circle" target="_blank" rel="noopener">Circle</a> on Wikipedia.</li><li>The appearance of pi and circular motion in natural phenomena is covered in <a href="https://en.wikipedia.org/wiki/Circular_motion" target="_blank" rel="noopener">Circular motion</a> and broader physics and mathematics references.</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-01-shape-measure-greek-project/ch-021-the-pythagorean-theorem/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Pythagorean Theorem</span></a><a class="pager-link pager-link--next" href="../../world-01-shape-measure-greek-project/ch-023-polygons-and-tessellations/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Polygons and Tessellations</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

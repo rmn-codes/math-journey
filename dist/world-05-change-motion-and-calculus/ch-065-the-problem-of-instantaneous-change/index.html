@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Problem of Instantaneous Change — Math Journey</title>
+    <meta name="description" content="How fast is something moving right now? — the question that created calculus" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 5 · Chapter 65</p>
+        <h1>The Problem of Instantaneous Change</h1>
+        <p class="hero-copy">How fast is something moving right now? — the question that created calculus</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>core</span>
+          
+          <span>1600s, Europe</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Compute average rates of change from tables and equations</li><li>Interpret average rate of change as a slope</li><li>Informally describe a limit</li><li>Distinguish average from instantaneous rate of change</li><li>Understand the motivating problem of calculus</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Picture the summer of 1589. Galileo Galilei stands on the Leaning Tower of Pisa, holding two spheres—one of lead, heavy and dense, and one of iron, equally weighty. Medieval scholars below watch, expecting the heavier ball to fall faster (as Aristotle taught for nearly 2,000 years). But Galileo releases them together. They fall in silence. And they hit the ground at the same moment.</p>
+<p>The crowd gasps. Aristotle was wrong.</p>
+<p>But then Galileo asks himself a harder question—one that would haunt him for decades and eventually consume the intellectual energy of the greatest mathematicians in Europe: <em>How fast is each ball moving at the exact moment it strikes the ground?</em></p>
+<p>You might think: measure the distance it fell, measure the time it took, divide one by the other. Average speed: $\frac{\text{distance}}{\text{time}}$. But that&#x27;s not instantaneous speed—that&#x27;s the speed <em>over the whole fall</em>. The ball was moving slower near the top and faster near the bottom. What is its speed <em>right now</em>, at this instant?</p>
+<p>You cannot measure instantaneous speed directly. You cannot pause time at a single moment and measure. So how do you find it?</p>
+<p>This question—seemingly simple, actually profound—led mathematicians on a 60-year journey and ultimately forced them to invent an entirely new branch of mathematics: calculus.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Every time a car&#x27;s speedometer reads &quot;45 mph,&quot; you are witnessing an instantaneous rate of change. Not your average speed from home to destination—your speed <em>right now</em>, at this moment. Without calculus, we could not define this. Without understanding instantaneous change, we could not design bridges that don&#x27;t collapse, predict planetary orbits, optimize drug dosages, or understand how a virus spreads through a population.</p>
+<p>The problem of instantaneous change is not abstract. It is how we describe reality in motion.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Galileo (1564–1642) performed his tower experiment and discovered the laws of falling motion. He proved that distance fallen is proportional to time squared: $d = \frac{1}{2}gt^2$. But he could not answer his own question about instantaneous speed. The mathematics didn&#x27;t exist.</p>
+<p>For 60 years, the question lingered. In the 1660s, Isaac Newton (in England) and Gottfried Leibniz (in Germany) independently solved it by inventing calculus. Newton&#x27;s insight came first (1666), but Leibniz published first (1675) and gave us notation we still use today. The bitter priority dispute lasted decades. Both men were right: they discovered something real and deep, and both deserved credit.</p>
+<p>Before Newton and Leibniz, we had arithmetic, algebra, geometry, and trigonometry. After them, we had calculus—the mathematics of change, motion, and rates that transformed science forever.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>Imagine you are driving a car. Your position as a function of time is given by $s(t)$, measured in miles from your starting point.</p>
+<p><strong>Average rate of change</strong> is easy to understand:</p>
+<p>$$\text{Average speed} = \frac{\Delta s}{\Delta t} = \frac{s(\text{final time}) - s(\text{initial time})}{\text{final time} - \text{initial time}}$$</p>
+<p>If you travel 100 miles in 2 hours, your average speed is $\frac{100}{2} = 50$ mph.</p>
+<p>But the speedometer shows 45 mph, not 50 mph. That&#x27;s because your actual speed varied throughout the trip. Near the city, you drove slowly. On the highway, you drove fast.</p>
+<p><strong>The secant line</strong> is the geometric picture of average rate of change. If you plot position $s(t)$ on a graph, a secant line connects two points on the curve. The slope of the secant line is the average rate of change:</p>
+<p>$$\text{slope of secant} = \frac{s(b) - s(a)}{b - a}$$</p>
+<p>where $a$ and $b$ are two different times.</p>
+<p><strong>The instantaneous rate of change</strong> is the slope of the curve <em>right at one point</em>. Geometrically, it&#x27;s the slope of the <strong>tangent line</strong>—a line that just barely touches the curve without crossing it.</p>
+<p>But here&#x27;s the puzzle: how do you find the slope of a tangent line when a tangent line touches the curve at only one point? You need two points to find a slope.</p>
+<p><strong>The answer: limits.</strong></p>
+<p>You imagine the second point sliding closer and closer to the first point. The secant line, which connects the two points, gets closer and closer to the tangent line. The slope of the secant approaches the slope of the tangent. The slope approaches a single value—we say it <em>approaches a limit</em>.</p>
+<p>This is the central idea of calculus: <strong>an instantaneous rate of change is what you get when you let the time interval shrink to zero, approaching (but not reaching) the limit.</strong></p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Average Rate of Change:</strong> The slope of the secant line connecting two points on a curve:</p>
+<p>$$\frac{\Delta y}{\Delta x} = \frac{f(b) - f(a)}{b - a}$$</p>
+<p>This measures how much the output changes per unit change in the input, <em>on average</em> over the interval $[a, b]$.</p>
+<p><strong>Secant Line:</strong> A line through two distinct points on a curve. Its slope is the average rate of change.</p>
+<p><strong>Limit:</strong> An informal definition: a value that a quantity approaches as an operation is repeated or continued. Notation: $\lim_{x \to a} f(x) = L$ means &quot;as $x$ approaches $a$, the value $f(x)$ approaches $L$.&quot;</p>
+<p>For now, we don&#x27;t need the rigorous $\epsilon$-$\delta$ definition. We can evaluate limits by making a table of values and observing what number they approach.</p>
+<p><strong>Instantaneous Rate of Change:</strong> The limiting value of the average rate of change as the interval shrinks to zero:</p>
+<p>$$\text{instantaneous rate at } a = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$$</p>
+<p>This is also called the <strong>derivative</strong> of $f$ at $a$, written $f&#x27;(a)$.</p>
+<p><strong>Tangent Line:</strong> A line that touches a curve at one point and has the same slope as the curve at that point. The slope of the tangent line equals the instantaneous rate of change.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Average Rate of Change from a Table</strong></p>
+<p>A ball is dropped from a building. Here is its height $h(t)$ in feet above the ground at time $t$ in seconds:</p>
+<p>| $t$ (seconds) | $h(t)$ (feet) | |---|---| | 0 | 400 | | 1 | 384 | | 2 | 336 | | 3 | 256 |</p>
+<p>What is the average rate of change of height between $t = 1$ and $t = 3$?</p>
+<p>$$\frac{\Delta h}{\Delta t} = \frac{h(3) - h(1)}{3 - 1} = \frac{256 - 384}{2} = \frac{-128}{2} = -64 \text{ feet per second}$$</p>
+<p>The negative sign indicates the ball is falling (height is decreasing).</p>
+<p><strong>Example 2: Average Rate of Change from an Equation</strong></p>
+<p>Let $f(x) = x^2$. Find the average rate of change between $x = 2$ and $x = 5$.</p>
+<p>$$\frac{\Delta f}{\Delta x} = \frac{f(5) - f(2)}{5 - 2} = \frac{25 - 4}{3} = \frac{21}{3} = 7$$</p>
+<p><strong>Example 3: Approaching a Limit Numerically</strong></p>
+<p>Let $f(x) = x^2$. We want to find the instantaneous rate of change at $x = 2$—that is, we want to evaluate:</p>
+<p>$$\lim_{h \to 0} \frac{f(2+h) - f(2)}{h} = \lim_{h \to 0} \frac{(2+h)^2 - 4}{h}$$</p>
+<p>Let&#x27;s make a table as $h$ gets smaller:</p>
+<p>| $h$ | $\frac{(2+h)^2 - 4}{h}$ | |---|---| | 1 | 5 | | 0.5 | 4.5 | | 0.1 | 4.1 | | 0.01 | 4.01 | | 0.001 | 4.001 |</p>
+<p>As $h$ approaches 0, the expression approaches 4. So $\lim_{h \to 0} \frac{(2+h)^2 - 4}{h} = 4$.</p>
+<p>The instantaneous rate of change of $f(x) = x^2$ at $x = 2$ is 4.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>A car travels 240 miles in 4 hours. What is the average rate of change of position?</strong></li></ol>
+<ul><li>40 mph</li><li>50 mph</li><li>60 mph</li><li>80 mph</li></ul>
+<ol><li><strong>A function $f(x) = 3x + 2$. What is the average rate of change between $x = 1$ and $x = 4$?</strong></li></ol>
+<ul><li>2</li><li>3</li><li>5</li><li>9</li></ul>
+<ol><li><strong>What does a secant line represent geometrically?</strong></li></ol>
+<ul><li>A line tangent to a curve</li><li>A line connecting two points on a curve</li><li>A vertical line on a graph</li><li>A line parallel to the x-axis</li></ul>
+<ol><li><strong>In Galileo&#x27;s tower experiment, what was the unsolved problem?</strong></li></ol>
+<ul><li>How long it took the balls to fall</li><li>How far the balls fell</li><li>The instantaneous speed at the moment of impact</li><li>Whether the balls were different weights</li></ul>
+<ol><li><strong>Using the table, estimate the instantaneous rate of change of $h(t)$ at $t = 2$.</strong></li></ol>
+<p>| $t$ | 1 | 2 | 3 | |---|---|---|---| | $h(t)$ | 10 | 15 | 18 |</p>
+<ul><li>2.5</li><li>5</li><li>7.5</li><li>4</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>Your younger sibling is confused about the difference between average speed and instantaneous speed. She says: &quot;My speedometer reads 60 mph, but I&#x27;ve driven 180 miles in 3 hours. That&#x27;s also 60 mph. Are these the same thing?&quot;</p>
+<p>Explain to her why your speedometer reading is instantaneous speed and the calculation 180 miles in 3 hours is average speed. Give an example of a trip where these would be different.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Velocity in Physics</strong></p>
+<p>Imagine a ball thrown straight up. Its height (in feet) at time $t$ (in seconds) is:</p>
+<p>$$s(t) = 64t - 16t^2$$</p>
+<p>The average velocity between $t = 1$ and $t = 2$ seconds:</p>
+<p>$$\frac{s(2) - s(1)}{2 - 1} = \frac{(64 \cdot 2 - 16 \cdot 4) - (64 - 16)}{1} = \frac{64 - 48}{1} = 16 \text{ feet per second}$$</p>
+<p>But the instantaneous velocity at $t = 1$ requires a limit—which we&#x27;ll calculate in the next chapter using derivatives.</p>
+<p><strong>Business Application: Revenue Change</strong></p>
+<p>A company&#x27;s revenue (in thousands of dollars) as a function of units sold ($x$) is $R(x) = 50x - 0.1x^2$.</p>
+<p>The average rate of change of revenue between selling 100 and 200 units:</p>
+<p>$$\frac{R(200) - R(100)}{200 - 100} = \frac{(10000 - 4000) - (5000 - 1000)}{100} = \frac{6000 - 4000}{100} = 20$$</p>
+<p>The revenue increases by an average of \$20,000 per additional unit sold (in that range). But the instantaneous rate of change at exactly 150 units sold—that requires calculus.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>The problem of instantaneous change asks: <em>How fast is something changing at this exact moment?</em></p>
+<p><strong>Average rate of change</strong> is the slope of a secant line connecting two points on a curve: $\frac{\Delta y}{\Delta x}$. This is easy to compute but misses what happens within the interval.</p>
+<p><strong>Instantaneous rate of change</strong> is what you get when you shrink the interval to zero—it&#x27;s the slope of the tangent line at a single point. To find it, you use a <strong>limit</strong>, imagining one point sliding toward another until the secant line becomes a tangent line.</p>
+<p>Galileo asked this question in 1589 but couldn&#x27;t answer it. For 60 years, the greatest minds in Europe puzzled over it. In the 1660s–1680s, Newton and Leibniz solved it by inventing calculus. The instantaneous rate of change is the <strong>derivative</strong>, and it is the foundation of modern science, engineering, and mathematics.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>1. Which best explains why you cannot measure instantaneous speed directly?</strong></p>
+<ul><li>Speed is always measured over an interval of time</li><li>Speedometers are not accurate</li><li>The ball moves too fast</li><li>Time cannot be divided into smaller pieces</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Speed is always measured over an interval of time</p>
+</details>
+<p><strong>2. If $f(x) = 2x^2$ and you want the average rate of change between $x = 1$ and $x = 3$, which calculation is correct?</strong></p>
+<ul><li>$\frac{f(3) - f(1)}{3 - 1} = \frac{18 - 2}{2} = 8$</li><li>$\frac{f(3)}{f(1)} = \frac{18}{2} = 9$</li><li>$f(3) - f(1) = 16$</li><li>$3 - 1 = 2$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\frac{f(3) - f(1)}{3 - 1} = \frac{18 - 2}{2} = 8$</p>
+</details>
+<p><strong>3. What does a secant line represent?</strong></p>
+<ul><li>The tangent to a curve at one point</li><li>A line connecting two points on a curve</li><li>The x-axis of a graph</li><li>A line perpendicular to the curve</li></ul>
+<details>
+<summary>Answer</summary>
+<p>A line connecting two points on a curve</p>
+</details>
+<p><strong>4. As $h$ approaches 0 in the expression $\frac{f(a+h) - f(a)}{h}$, what does the secant line approach?</strong></p>
+<ul><li>The tangent line</li><li>The horizontal axis</li><li>The vertical axis</li><li>A perpendicular line</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The tangent line</p>
+</details>
+<p><strong>5. Newton and Leibniz solved the problem of instantaneous change by inventing:</strong></p>
+<ul><li>Geometry</li><li>Calculus</li><li>Algebra</li><li>Trigonometry</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Calculus</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Galilei, G. (1638). <em>Discorsi e dimostrazioni matematiche, relativa à due nuove scienze</em>. https://en.wikipedia.org/wiki/Galileo_Galilei</li><li>Newton, I. (1687). <em>Philosophiæ Naturalis Principia Mathematica</em>. https://en.wikipedia.org/wiki/Isaac_Newton</li><li>https://en.wikipedia.org/wiki/Derivative</li><li>https://en.wikipedia.org/wiki/History_of_calculus</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-059-trig-and-ancient-astronomy/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Trigonometry and Ancient Astronomy</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-066-limits/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Limits — The Foundation of Calculus</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

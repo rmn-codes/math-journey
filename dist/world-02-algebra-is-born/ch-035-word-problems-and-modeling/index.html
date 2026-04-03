@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Word Problems and Mathematical Modeling — Math Journey</title>
+    <meta name="description" content="Translating the messy world into clean mathematics — and back again" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 2 · Chapter 35</p>
+        <h1>Word Problems and Mathematical Modeling</h1>
+        <p class="hero-copy">Translating the messy world into clean mathematics — and back again</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>foundational</span>
+          <span>Babylon, Greece, Islamic world</span>
+          <span>Ancient – present</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Define variables to represent unknown quantities in a problem</li><li>Translate a word problem into an algebraic equation</li><li>Solve the equation and interpret the answer in context</li><li>Recognize common problem types (age, rate-time-distance, mixture)</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#the-modeling-process-5-steps">The Modeling Process (5 steps)</a></li><li class="toc-level-3"><a href="#signal-words">Signal Words</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#common-problem-types">Common Problem Types</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-a-simple-age-problem">Example 1: A Simple Age Problem</a></li><li class="toc-level-3"><a href="#example-2-rate-time-distance">Example 2: Rate-Time-Distance</a></li><li class="toc-level-3"><a href="#example-3-consecutive-integer-problem">Example 3: Consecutive Integer Problem</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Imagine an archaeologist holding a clay tablet from ancient Babylon, circa 2000 BCE. On it, cuneiform script reads: &quot;I have two fields. The total area is 1800 square cubits. One field is 3 times the other. Find each field.&quot;</p>
+<p>This isn&#x27;t a riddle in a book. This is a real farmer&#x27;s problem — the kind that kept ancient civilizations fed. And the scribe who solved it did something extraordinary: they <em>translated</em> the messy world into clean symbols, solved a puzzle in that symbolic realm, and translated the answer back to reality.</p>
+<p>That translation is the heart of every word problem. It&#x27;s also the birth of algebra as a practical tool.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Word problems are where mathematics <em>comes alive</em>. They answer the question every student asks: &quot;When am I ever going to use this?&quot;</p>
+<p>Every time an engineer designs a bridge, a pharmacist measures a dose, or a business owner breaks even, they&#x27;re solving a word problem. But here&#x27;s the secret: the problem-solving method is always the same. Once you master the <em>translation process</em>, any new scenario becomes manageable.</p>
+<p>Word problems teach you to:</p>
+<ul><li><strong>Think clearly</strong> under uncertainty</li><li><strong>Organize information</strong> from messy situations</li><li><strong>Communicate</strong> your thinking in equations</li><li><strong>Check</strong> whether your answer makes sense</li></ul>
+<p>This is the real mathematician&#x27;s work.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The Babylonians (1800–1600 BCE) left us clay tablets with dozens of word problems. They had no symbolic algebra — no $x$ or $=$. Yet they solved problems about fields, water clocks, and brick production using procedures that <em>were</em> algebraic in spirit.</p>
+<p>The Greeks (Euclid, ~300 BCE) translated many Babylonian problems into geometry, proving answers with diagrams rather than equations.</p>
+<p>Islamic scholars like al-Khwarizmi (~820 CE) refined the methods into the systematic <em>al-jabr</em> (restoration) — which gave us the name &quot;algebra.&quot; They solved word problems about inheritance, trade, and land with prose but also with a logical structure we&#x27;d recognize today.</p>
+<p>By the medieval period, European mathematicians had adopted symbolic notation and turned word problems into the centerpiece of arithmetic education — where they remain today.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>Every word problem follows the same <strong>modeling process</strong>:</p>
+<h3 id="the-modeling-process-5-steps">The Modeling Process (5 steps)</h3>
+<p><strong>1. Read and understand</strong></p>
+<ul><li>Read the problem twice.</li><li>Underline the question.</li><li>Identify what you&#x27;re looking for.</li></ul>
+<p><strong>2. Define variables</strong></p>
+<ul><li>Choose a letter (usually $x$, $y$, $a$) for each unknown quantity.</li><li>Write it down clearly: &quot;Let $x$ = the width of the field (in cubits).&quot;</li></ul>
+<p><strong>3. Write an equation (or equations)</strong></p>
+<ul><li>Use the facts given to build an equation.</li><li>Pay attention to <em>signal words</em> (below).</li></ul>
+<p><strong>4. Solve</strong></p>
+<ul><li>Solve the equation using all the algebra you&#x27;ve learned.</li></ul>
+<p><strong>5. Check and interpret</strong></p>
+<ul><li>Does your answer <em>make sense</em> in the original story?</li><li>Is it the right units? Is it positive when it should be?</li><li>State your answer in words.</li></ul>
+<p>---</p>
+<h3 id="signal-words">Signal Words</h3>
+<p>When you see these words, they&#x27;re signaling an operation:</p>
+<p>| Word(s) | Operation | Example | |---------|-----------|---------| | more than, added to, sum | addition | &quot;5 more than $x$&quot; = $x + 5$ | | less than, subtract, fewer | subtraction | &quot;3 fewer than $x$&quot; = $x - 3$ | | times, product, of | multiplication | &quot;3 times $x$&quot; = $3x$ | | divided by, half, per | division | &quot;$x$ divided by 2&quot; = $\frac{x}{2}$ | | is, equals, was | equals | &quot;is 10&quot; = $= 10$ |</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Word Problem:</strong> A real-world situation described in words, where you must find one or more unknown quantities using mathematical reasoning.</p>
+<p><strong>Mathematical Model:</strong> The equation (or system of equations) that represents the relationship described in words. It&#x27;s a <em>translation</em>.</p>
+<p><strong>Variable:</strong> A letter representing an unknown quantity. It must be defined clearly.</p>
+<p><strong>Constraint:</strong> A fact from the problem that limits the value of the variables. It becomes an equation.</p>
+<p>---</p>
+<h3 id="common-problem-types">Common Problem Types</h3>
+<p><strong>Type 1: Age Problems</strong></p>
+<p>Setup: Two people&#x27;s ages are related.</p>
+<p>Example: &quot;Maria is 4 years older than her brother. Together, they are 26. How old is each?&quot;</p>
+<p>Let $m$ = Maria&#x27;s age, $b$ = brother&#x27;s age.</p>
+<p>$$m = b + 4$$ $$m + b = 26$$</p>
+<p>Substitute: $(b + 4) + b = 26$, so $2b + 4 = 26$, thus $b = 11$ and $m = 15$.</p>
+<p><strong>Type 2: Rate-Time-Distance</strong></p>
+<p>Core formula: $d = rt$ (distance = rate × time)</p>
+<p>Example: &quot;A train leaves at 60 mph. A car leaves the same place 2 hours later at 75 mph. How long until the car catches up?&quot;</p>
+<p>Let $t$ = time the train travels.</p>
+<ul><li>Train distance: $60t$</li><li>Car time: $t - 2$</li><li>Car distance: $75(t - 2)$</li></ul>
+<p>When they meet: $60t = 75(t - 2)$</p>
+<p>Solve: $60t = 75t - 150$, so $-15t = -150$, thus $t = 10$ hours.</p>
+<p><strong>Type 3: Mixture Problems</strong></p>
+<p>Setup: Two substances with different properties are mixed.</p>
+<p>Example: &quot;How much 20% salt solution and 50% salt solution should we mix to make 10 liters of 35% solution?&quot;</p>
+<p>Let $x$ = liters of 20% solution.</p>
+<p>Then $10 - x$ = liters of 50% solution.</p>
+<p>Salt from first: $0.20x$</p>
+<p>Salt from second: $0.50(10 - x)$</p>
+<p>Total salt: $0.35(10)$</p>
+<p>Equation: $0.20x + 0.50(10 - x) = 0.35(10)$</p>
+<p>Simplify: $0.20x + 5 - 0.50x = 3.5$, so $-0.30x = -1.5$, thus $x = 5$ liters.</p>
+<p><strong>Type 4: Number Problems</strong></p>
+<p>Setup: Relationships between numbers.</p>
+<p>Example: &quot;A number is 5 more than another. Their product is 24. Find the numbers.&quot;</p>
+<p>Let $x$ = first number.</p>
+<p>Then $x + 5$ = second number.</p>
+<p>Equation: $x(x + 5) = 24$, which is $x^2 + 5x - 24 = 0$. (We&#x27;ll solve this type in the quadratic chapters.)</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-a-simple-age-problem">Example 1: A Simple Age Problem</h3>
+<p><strong>Problem:</strong> Anna is 12 years old. Her mother is 3 times as old. In how many years will Anna be half her mother&#x27;s age?</p>
+<p><strong>Step 1: Define variables</strong></p>
+<ul><li>Let $y$ = number of years from now.</li></ul>
+<p><strong>Step 2: Set up ages after $y$ years</strong></p>
+<ul><li>Anna&#x27;s age then: $12 + y$</li><li>Mother&#x27;s age then: $36 + y$</li></ul>
+<p><strong>Step 3: Write the condition</strong></p>
+<p>$$12 + y = \frac{1}{2}(36 + y)$$</p>
+<ul><li>&quot;Anna will be half her mother&#x27;s age&quot;</li></ul>
+<p><strong>Step 4: Solve</strong> $$12 + y = 18 + \frac{y}{2}$$ $$y - \frac{y}{2} = 18 - 12$$ $$\frac{y}{2} = 6$$ $$y = 12$$</p>
+<p><strong>Step 5: Check and interpret</strong></p>
+<ul><li>In 12 years, Anna will be $12 + 12 = 24$.</li><li>Her mother will be $36 + 12 = 48$.</li><li>Is 24 half of 48? Yes. ✓</li></ul>
+<p><strong>Answer:</strong> In 12 years.</p>
+<p>---</p>
+<h3 id="example-2-rate-time-distance">Example 2: Rate-Time-Distance</h3>
+<p><strong>Problem:</strong> Two cyclists start from the same point. One travels at 12 mph, the other at 15 mph, in the same direction. After how long are they 12 miles apart?</p>
+<p><strong>Step 1: Define</strong></p>
+<ul><li>Let $t$ = time (in hours).</li></ul>
+<p><strong>Step 2: Set up distances</strong></p>
+<ul><li>Slower cyclist: $12t$ miles</li><li>Faster cyclist: $15t$ miles</li></ul>
+<p><strong>Step 3: Difference condition</strong> $$15t - 12t = 12$$</p>
+<p><strong>Step 4: Solve</strong> $$3t = 12$$ $$t = 4$$</p>
+<p><strong>Step 5: Check</strong></p>
+<ul><li>In 4 hours: slow cyclist goes $12 \times 4 = 48$ miles, fast goes $15 \times 4 = 60$ miles.</li><li>Difference: $60 - 48 = 12$. ✓</li></ul>
+<p><strong>Answer:</strong> After 4 hours.</p>
+<p>---</p>
+<h3 id="example-3-consecutive-integer-problem">Example 3: Consecutive Integer Problem</h3>
+<p><strong>Problem:</strong> The sum of three consecutive integers is 48. Find them.</p>
+<p><strong>Step 1: Define</strong></p>
+<ul><li>Let $n$ = the first integer.</li><li>Then $n + 1$ and $n + 2$ are the next two.</li></ul>
+<p><strong>Step 2: Write the equation</strong> $$n + (n + 1) + (n + 2) = 48$$</p>
+<p><strong>Step 3: Solve</strong> $$3n + 3 = 48$$ $$3n = 45$$ $$n = 15$$</p>
+<p><strong>Step 4: Answer and check</strong></p>
+<ul><li>The integers are 15, 16, and 17.</li><li>Sum: $15 + 16 + 17 = 48$. ✓</li></ul>
+<p>---</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<p>Solve each problem completely. Define your variable, write your equation, solve, and check.</p>
+<ol><li><strong>Age problem:</strong> Tom is 5 years younger than Jade. Together they are 31 years old. How old is each?</li></ol>
+<ol><li><strong>Simple arithmetic:</strong> When you add 8 to a number and then divide by 2, you get 10. What is the number?</li></ol>
+<ol><li><strong>Rate-time-distance:</strong> A cyclist travels at 18 mph. How far does she travel in 2.5 hours?</li></ol>
+<ol><li><strong>Consecutive integers:</strong> The sum of two consecutive even integers is 66. What are they?</li></ol>
+<ol><li><strong>Money problem:</strong> Tickets cost $5 for adults and $3 for children. A group spent $100 on 24 tickets total. How many adult tickets were sold? (Let $a$ = adult tickets.)</li></ol>
+<ol><li><strong>Mixture:</strong> A 30% juice solution is mixed with a 70% juice solution. How much of each is needed to make 20 liters of a 50% solution?</li></ol>
+<p>---</p>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Problem:</strong> A rectangle has a perimeter of 56 cm. Its length is 4 cm more than twice its width. Find the dimensions.</p>
+<p><strong>Your task:</strong></p>
+<ol><li>Define variables for length and width.</li><li>Write two equations (one for perimeter, one for the relationship).</li><li>Solve the system. (Hint: use substitution.)</li><li>Verify your answer makes geometric sense.</li><li>Explain why you chose the variable(s) you did.</li></ol>
+<p>---</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Real-world scenario:</strong> A small business sells handmade candles for $15 each. The owner&#x27;s monthly costs are $300 (materials, supplies, etc.). How many candles must they sell to make $200 profit in a month?</p>
+<p>Set this up as a word problem:</p>
+<ul><li>Define a variable.</li><li>Write an equation for profit.</li><li>Solve.</li><li>Interpret: what does your answer tell the owner?</li></ul>
+<p>---</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Word problems are where algebra meets reality. The <strong>modeling process</strong>—read, define, write, solve, check, interpret—is your toolkit for turning messy situations into clean mathematics and back again.</p>
+<p>Key steps:</p>
+<ol><li><strong>Understand</strong> what you&#x27;re looking for.</li><li><strong>Define variables</strong> for unknowns.</li><li><strong>Use signal words</strong> to translate to equations.</li><li><strong>Solve</strong> carefully.</li><li><strong>Check</strong> your answer in the original context.</li></ol>
+<p>Every problem type (age, rate-distance, mixture, money) follows this same structure. Once you master the process, new problems become manageable puzzles rather than mysteries.</p>
+<p>---</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> Which of the following is the <em>correct variable definition</em> for this problem: &quot;A book costs $8 less than a video game&quot;?</p>
+<ul><li>Let $b$ = the cost of the book; Let $v$ = the cost of the game</li><li>The equation is $b = v - 8$</li><li>The equation is $v = b - 8$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Let $b$ = the cost of the book; Let $v$ = the cost of the game; The equation is $b = v - 8$</p>
+</details>
+<p>---</p>
+<p><strong>Question 2:</strong> In the word &quot;4 times a number is 20 less than the number,&quot; which operation appears first?</p>
+<ul><li>Multiplication (the &quot;4 times&quot;)</li><li>Subtraction (the &quot;20 less&quot;)</li><li>They happen simultaneously</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Multiplication (the &quot;4 times&quot;)</p>
+</details>
+<p>---</p>
+<p><strong>Question 3:</strong> A train travels 300 miles in 5 hours. Which formula should you use?</p>
+<ul><li>$d = rt$ (distance = rate × time)</li><li>$A = lw$ (area = length × width)</li><li>$I = prt$ (simple interest)</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$d = rt$ (distance = rate × time)</p>
+</details>
+<p>---</p>
+<p><strong>Question 4:</strong> When you solve a word problem and get an answer, what must you always do before you&#x27;re finished?</p>
+<ul><li>Check that the answer makes sense in the original situation</li><li>Write down the equation you used</li><li>Calculate it a second time</li><li>Ask someone else if it&#x27;s right</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Check that the answer makes sense in the original situation</p>
+</details>
+<p>---</p>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Babylonian_mathematics" target="_blank" rel="noopener">Babylonian mathematics - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/History_of_algebra" target="_blank" rel="noopener">History of algebra - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Mathematical_model" target="_blank" rel="noopener">Mathematical modeling - Wikipedia</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-02-algebra-is-born/ch-034-ratio-proportion-and-percent/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Ratio, Proportion, and Percent</span></a><a class="pager-link pager-link--next" href="../../world-02-algebra-is-born/ch-036-systems-of-two-equations/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Systems of Two Equations</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

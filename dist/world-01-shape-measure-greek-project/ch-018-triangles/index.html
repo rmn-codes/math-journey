@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Triangles — Math Journey</title>
+    <meta name="description" content="The simplest polygon, the strongest shape, and the foundation of all geometry" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 1 · Chapter 18</p>
+        <h1>Triangles</h1>
+        <p class="hero-copy">The simplest polygon, the strongest shape, and the foundation of all geometry</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>foundational</span>
+          <span>Greece, Egypt</span>
+          <span>Ancient Greece, Egypt; ~300 BCE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Understand the triangle as the simplest polygon.</li><li>Classify triangles by sides and by angles.</li><li>Apply the angle sum theorem to find missing angles.</li><li>Use the triangle inequality to determine if three lengths can form a triangle.</li><li>Understand why triangles are structurally important in engineering and design.</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#key-terms">Key Terms</a></li><li class="toc-level-3"><a href="#the-angle-sum-theorem">The Angle Sum Theorem</a></li><li class="toc-level-3"><a href="#classification-by-sides">Classification by Sides</a></li><li class="toc-level-3"><a href="#classification-by-angles">Classification by Angles</a></li><li class="toc-level-3"><a href="#the-exterior-angle-theorem">The Exterior Angle Theorem</a></li><li class="toc-level-3"><a href="#the-triangle-inequality">The Triangle Inequality</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-3"><a href="#example-1-finding-a-missing-angle">Example 1: Finding a Missing Angle</a></li><li class="toc-level-3"><a href="#example-2-classifying-a-triangle-by-sides-and-angles">Example 2: Classifying a Triangle by Sides and Angles</a></li><li class="toc-level-3"><a href="#example-3-using-the-triangle-inequality">Example 3: Using the Triangle Inequality</a></li><li class="toc-level-3"><a href="#example-4-using-the-exterior-angle-theorem">Example 4: Using the Exterior Angle Theorem</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-3"><a href="#warm-up">Warm-Up</a></li><li class="toc-level-3"><a href="#core-practice">Core Practice</a></li><li class="toc-level-3"><a href="#stretch">Stretch</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Build a square frame from four sticks. Push on one corner, and it collapses. The square is not rigid.</p>
+<p>Build a triangle frame from three sticks. Push on any corner, and the structure holds. The triangle is rigid.</p>
+<p>This is why ancient builders understood triangles before they understood them mathematically. A three-legged stool does not wobble. A tripod is stable. An isosceles roof does not sag. When engineers need strength and stability—a bridge, a crane, a building—they frame it with triangles.</p>
+<p>The triangle is not just the simplest polygon. It is the strongest.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Triangles matter because they:</p>
+<ul><li>are the only polygon rigid enough to hold its shape under pressure</li><li>can be broken down into simpler pieces to measure complex shapes</li><li>appear in all advanced geometry and trigonometry</li><li>determine the angles and proportions of all other polygons</li><li>are the basis for engineering, surveying, and architecture</li></ul>
+<p>Every other polygon can be divided into triangles. If you understand triangles deeply, you can understand all shapes.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>The ancient Greeks and Egyptians were master builders and surveyors. They knew from experience that triangles were special. But it was the Greek mathematician Euclid who proved why.</p>
+<p>In his <em>Elements</em> (Book I, Proposition 32), Euclid proved that the sum of the angles in any triangle is always 180°. This is not a rule of thumb or an observation—it is a logical proof that follows from the definitions and axioms of geometry.</p>
+<p>Egyptian surveyors had used triangles to measure land and find distances they could not walk. The legend says that Thales of Miletus (c. 600 BCE) used similar triangles to measure the height of a pyramid by comparing the shadow of a stick to the shadow of the pyramid. Whether or not the story is true, it illustrates a real idea: you can measure things indirectly using triangles.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>triangle</strong> is a polygon with three vertices and three sides.</p>
+<p>That is the simplest definition. But from this simple shape, a vast world of geometry unfolds.</p>
+<p>Every triangle has three interior angles. These angles have a remarkable property: they always add to 180°. This is true for a tiny triangle drawn on paper, a massive triangular field, and any triangle ever drawn.</p>
+<p><strong>All triangles can be classified in two ways:</strong></p>
+<p>By their <strong>sides:</strong></p>
+<ul><li>Scalene: all three sides have different lengths</li><li>Isosceles: two sides have equal length</li><li>Equilateral: all three sides have equal length</li></ul>
+<p>By their <strong>angles:</strong></p>
+<ul><li>Acute: all three angles are less than 90°</li><li>Right: one angle is exactly 90°</li><li>Obtuse: one angle is greater than 90°</li></ul>
+<p>A triangle can be both. A triangle can be isosceles and acute, scalene and right, or equilateral and acute.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="key-terms">Key Terms</h3>
+<p><strong>Triangle</strong> A polygon with three vertices, three sides, and three interior angles.</p>
+<p><strong>Vertex</strong> (plural: vertices) A corner point of the triangle where two sides meet.</p>
+<p><strong>Side</strong> A line segment connecting two vertices of the triangle.</p>
+<p><strong>Interior Angle</strong> An angle inside the triangle, formed by two sides meeting at a vertex.</p>
+<p><strong>Angle Sum Theorem</strong> The sum of the three interior angles of any triangle is always 180°.</p>
+<p><strong>Acute Triangle</strong> A triangle where all three angles are less than 90°.</p>
+<p><strong>Right Triangle</strong> A triangle with one angle equal to 90°. The side opposite the right angle is called the <strong>hypotenuse</strong>.</p>
+<p><strong>Obtuse Triangle</strong> A triangle with one angle greater than 90°.</p>
+<p><strong>Scalene Triangle</strong> A triangle with no two sides of equal length.</p>
+<p><strong>Isosceles Triangle</strong> A triangle with exactly two sides of equal length. The angles opposite the equal sides are also equal.</p>
+<p><strong>Equilateral Triangle</strong> A triangle with all three sides of equal length. All three angles are also equal, measuring 60° each.</p>
+<p><strong>Exterior Angle</strong> An angle formed between one side of a triangle and the extension of another side, outside the triangle.</p>
+<p><strong>Triangle Inequality</strong> For any three lengths to form a triangle, the sum of any two sides must be greater than the third side.</p>
+<h3 id="the-angle-sum-theorem">The Angle Sum Theorem</h3>
+<p>In any triangle, if the three angles are A, B, and C, then:</p>
+<p>A + B + C = 180°</p>
+<p>This is true regardless of the size or shape of the triangle.</p>
+<h3 id="classification-by-sides">Classification by Sides</h3>
+<h4 id="scalene">Scalene</h4>
+<p>No two sides are equal. No two angles are equal.</p>
+<h4 id="isosceles">Isosceles</h4>
+<p>Exactly two sides are equal. These are called the <strong>legs</strong>. The third side is called the <strong>base</strong>. The two angles at the base are equal (called <strong>base angles</strong>). The angle between the legs is called the <strong>vertex angle</strong>.</p>
+<h4 id="equilateral">Equilateral</h4>
+<p>All three sides are equal. All three angles are equal. Each angle measures 60°.</p>
+<h3 id="classification-by-angles">Classification by Angles</h3>
+<h4 id="acute-triangle">Acute Triangle</h4>
+<p>All three angles measure less than 90°. The sum of the three angles still equals 180°.</p>
+<h4 id="right-triangle">Right Triangle</h4>
+<p>One angle measures exactly 90°. The other two angles are acute and add to 90° (they are complementary). The side opposite the right angle (the longest side) is called the <strong>hypotenuse</strong>.</p>
+<h4 id="obtuse-triangle">Obtuse Triangle</h4>
+<p>One angle measures greater than 90°. The other two angles are acute and sum to less than 90°.</p>
+<h3 id="the-exterior-angle-theorem">The Exterior Angle Theorem</h3>
+<p>An exterior angle of a triangle equals the sum of the two non-adjacent interior angles (the two interior angles not touching that exterior angle).</p>
+<h3 id="the-triangle-inequality">The Triangle Inequality</h3>
+<p>For three lengths a, b, and c to form a triangle:</p>
+<ul><li>a + b &gt; c</li><li>b + c &gt; a</li><li>a + c &gt; b</li></ul>
+<p>All three conditions must be true. If any one fails, the three lengths cannot form a triangle.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<h3 id="example-1-finding-a-missing-angle">Example 1: Finding a Missing Angle</h3>
+<p>In triangle ABC, angle A = 50° and angle B = 65°. Find angle C.</p>
+<p><strong>Solution</strong> Using the angle sum theorem: A + B + C = 180°</p>
+<p>50° + 65° + C = 180° 115° + C = 180° C = 180° − 115° C = 65°</p>
+<p>Angle C measures 65°. ✓</p>
+<h3 id="example-2-classifying-a-triangle-by-sides-and-angles">Example 2: Classifying a Triangle by Sides and Angles</h3>
+<p>A triangle has sides measuring 5 cm, 5 cm, and 8 cm.</p>
+<p>a) Classify it by sides. b) If the two equal sides form a 40° angle, find the other two angles. c) Classify it by angles.</p>
+<p><strong>Solution</strong> a) Two sides are equal (5 cm and 5 cm), so this is an <strong>isosceles triangle</strong>.</p>
+<p>b) The angle between the equal sides is the vertex angle = 40°. The other two angles are the base angles, and they are equal. Let each base angle = x</p>
+<p>40° + x + x = 180° 40° + 2x = 180° 2x = 140° x = 70°</p>
+<p>Each base angle measures 70°.</p>
+<p>c) All three angles are less than 90° (40°, 70°, 70°), so this is an <strong>acute triangle</strong>.</p>
+<p>Classification: <strong>isosceles acute triangle</strong></p>
+<h3 id="example-3-using-the-triangle-inequality">Example 3: Using the Triangle Inequality</h3>
+<p>Determine whether three line segments with lengths 6, 8, and 15 can form a triangle.</p>
+<p><strong>Solution</strong> Check all three conditions:</p>
+<ul><li>6 + 8 &gt; 15? → 14 &gt; 15? <strong>No.</strong> ✗</li></ul>
+<p>Since the first condition fails, these three lengths cannot form a triangle.</p>
+<p>If you try to connect three sides of lengths 6, 8, and 15, the two shorter sides (6 + 8 = 14) are not long enough to reach across the longest side (15). The triangle would be deformed and open.</p>
+<h3 id="example-4-using-the-exterior-angle-theorem">Example 4: Using the Exterior Angle Theorem</h3>
+<p>In triangle DEF, an exterior angle at vertex F measures 120°. The two non-adjacent interior angles are D = 40° and E = 80°. Verify the exterior angle theorem.</p>
+<p><strong>Solution</strong> The exterior angle equals the sum of the two non-adjacent interior angles: D + E = 40° + 80° = 120° ✓</p>
+<p>This matches the exterior angle of 120°.</p>
+<p>As a bonus, the interior angle at F is: F = 180° − 120° = 60°</p>
+<p>Check: 40° + 80° + 60° = 180° ✓</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<h3 id="warm-up">Warm-Up</h3>
+<ol><li>The three angles of a triangle are 50°, 60°, and x°. Find x.</li><li>A triangle has two equal sides. What type of triangle is it?</li></ol>
+<h3 id="core-practice">Core Practice</h3>
+<ol><li>In an isosceles triangle, the two base angles are each 55°. Find the vertex angle.</li><li>An equilateral triangle has all three sides equal. What is the measure of each angle?</li><li>Can three line segments with lengths 3, 4, and 7 form a triangle? Show your work.</li><li>In triangle XYZ, the exterior angle at Z is 110°. The interior angle at X is 45°. Find the interior angle at Y.</li></ol>
+<h3 id="stretch">Stretch</h3>
+<ol><li>A right triangle has one angle of 35°. Find the other two angles and classify it by angle type.</li></ol>
+<details>
+<summary>Practice Answer Guide</summary>
+<ol><li>50° + 60° + x = 180°, so x = 70°.</li><li>Isosceles triangle.</li><li>55° + 55° + vertex angle = 180°, so vertex angle = 70°.</li><li>Since the angles are equal and sum to 180°, each angle = 180° ÷ 3 = 60°.</li><li>Check: 3 + 4 &gt; 7? → 7 &gt; 7? No. The three lengths cannot form a triangle because 3 + 4 = 7, which is not greater than 7.</li><li>The exterior angle at Z equals the sum of the non-adjacent interior angles: 110° = 45° + Y, so Y = 65°.</li><li>One angle is 90° (right angle). One angle is 35°. The third angle = 180° − 90° − 35° = 55°. This is a right triangle.</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>A builder is designing a triangular roof frame. One angle of the roof is 95°. The builder says, &quot;This roof will be an obtuse triangle because one angle is greater than 90°.&quot;</p>
+<p>Write 4 to 6 sentences that:</p>
+<ul><li>Confirm whether the builder is correct</li><li>Explain why a triangle can have at most one obtuse angle</li><li>Describe what happens to the other two angles in an obtuse triangle</li></ul>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p>Triangles are everywhere in the real world because they are structurally strong:</p>
+<p><strong>Building and Construction:</strong> Roof trusses, bridge beams, and crane structures use triangles for strength. A rectangle collapses under stress, but a triangle holds.</p>
+<p><strong>Surveying and Navigation:</strong> Surveyors divide land into triangles and use triangle properties to measure distances. Ships and airplanes navigate using triangular pathways.</p>
+<p><strong>Engineering:</strong> Every rigid structure—from bicycle frames to towers to spacecraft—uses triangles to maintain shape and withstand forces.</p>
+<p><strong>Art and Design:</strong> Triangles create visual balance and tension. Many logos and architectural features use triangular proportions.</p>
+<p><strong>Astronomy:</strong> Astronomers use triangles to measure the distance to stars. By observing the same star from two different positions on Earth&#x27;s orbit, they form a triangle and calculate stellar distance.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<ul><li>A <strong>triangle</strong> is a polygon with three vertices, three sides, and three angles.</li><li>The <strong>angle sum theorem</strong> states that the three interior angles of any triangle always sum to 180°.</li><li>Triangles are classified <strong>by sides</strong>: scalene (no equal sides), isosceles (two equal sides), equilateral (three equal sides).</li><li>Triangles are classified <strong>by angles</strong>: acute (all angles less than 90°), right (one 90° angle), obtuse (one angle greater than 90°).</li><li>In an <strong>isosceles triangle</strong>, the base angles (opposite the equal sides) are equal.</li><li>In an <strong>equilateral triangle</strong>, all three angles measure 60°.</li><li>The <strong>triangle inequality</strong> states that the sum of any two sides must be greater than the third side.</li><li>An <strong>exterior angle</strong> equals the sum of the two non-adjacent interior angles.</li><li>Triangles are rigid and structurally strong, which is why they appear in buildings, bridges, and engineering.</li></ul>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>The three angles of a triangle are 48°, 67°, and x°. What is x?</li></ol>
+<ul><li>65°</li><li>75°</li><li>85°</li><li>95°</li></ul>
+<ol><li>A triangle has two sides of equal length. What is this triangle called?</li></ol>
+<ul><li>Equilateral</li><li>Isosceles</li><li>Scalene</li><li>Right</li></ul>
+<ol><li>In an equilateral triangle, what is the measure of each angle?</li></ol>
+<ul><li>45°</li><li>60°</li><li>90°</li><li>120°</li></ul>
+<ol><li>Which set of lengths can form a triangle?</li></ol>
+<ul><li>2, 3, 6</li><li>3, 4, 5</li><li>1, 2, 5</li><li>2, 2, 5</li></ul>
+<ol><li>An exterior angle of a triangle measures 140°. One of the non-adjacent interior angles measures 60°. What is the measure of the other non-adjacent interior angle?</li></ol>
+<ul><li>80°</li><li>60°</li><li>40°</li><li>100°</li></ul>
+<details>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>65°</li><li>Isosceles</li><li>60°</li><li>3, 4, 5</li><li>80°</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" target="_blank" rel="noopener">Euclid&#x27;s Elements</a> Book I, Proposition 32, contains Euclid&#x27;s proof that the angles of a triangle sum to 180°.</li><li><a href="https://en.wikipedia.org/wiki/Triangle" target="_blank" rel="noopener">Triangle</a> on Wikipedia provides comprehensive coverage of triangle types, properties, and theorems.</li><li><a href="https://en.wikipedia.org/wiki/Triangle_inequality" target="_blank" rel="noopener">Triangle inequality</a> explains the conditions required for three lengths to form a valid triangle.</li><li><a href="https://en.wikipedia.org/wiki/Isosceles_triangle" target="_blank" rel="noopener">Isosceles triangle</a> and <a href="https://en.wikipedia.org/wiki/Equilateral_triangle" target="_blank" rel="noopener">Equilateral triangle</a> detail the special properties of these triangle types.</li><li><a href="https://en.wikipedia.org/wiki/Thales_of_Miletus" target="_blank" rel="noopener">Thales of Miletus</a> and his work with similar triangles in measurement and astronomy.</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-01-shape-measure-greek-project/ch-017-points-lines-and-angles/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Points, Lines, and Angles</span></a><a class="pager-link pager-link--next" href="../../world-01-shape-measure-greek-project/ch-019-congruence-and-similarity/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Congruence and Similarity</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

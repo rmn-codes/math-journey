@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What Is a Function? — Math Journey</title>
+    <meta name="description" content="One input, exactly one output — the most important idea in all of mathematics" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 3 · Chapter 45</p>
+        <h1>What Is a Function?</h1>
+        <p class="hero-copy">One input, exactly one output — the most important idea in all of mathematics</p>
+        <div class="hero-meta">
+          <span>35 min</span>
+          <span>core</span>
+          
+          <span>1600s–1800s, Europe</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Define a function and distinguish functions from non-functions</li><li>Identify domain and range</li><li>Use function notation f(x)</li><li>Apply the vertical line test</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>Picture Gottfried Leibniz standing in his study in Hanover, Germany, in 1694. The brilliant mathematician is thinking about how to describe relationships. A sundial catches the sunlight on his desk. He watches the shadow move as the sun climbs across the sky. Every possible angle of sunlight produces exactly one position for the shadow, which tells exactly one time of day.</p>
+<p>Leibniz writes down the word &quot;function&quot; for the first time in mathematical literature. He is naming something humans have always known but never formally called by name: <em>a rule that connects inputs to outputs in a reliable, one-to-one way</em>.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Functions are the language through which the universe speaks to mathematicians. A bridge engineer uses functions to show how stress distributes across a beam. A doctor uses functions to model how medicine concentration changes in the bloodstream. A climate scientist uses functions to predict temperature rises. Every single one of these describes a world where you know exactly what will happen next.</p>
+<p>When you learn to think like a function, you gain the power to predict, to build, and to understand patterns. This is not abstract dreaming — it is how we navigate reality.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>Before Leibniz, mathematicians understood relationships but lacked a formal definition. The ancient Greeks used geometric proportions. Medieval scholars tracked how speed changes with time. But nobody had named this concept or created notation to capture it precisely.</p>
+<p>Leonhard Euler, in the 1750s, refined Leibniz&#x27;s idea and gave us the notation we use today: $f(x)$. This small, mighty notation changed everything. It let mathematicians build a universal language. By the 1800s, functions had become the bedrock of calculus, physics, and engineering.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>A <strong>function</strong> is a rule that assigns to each input exactly one output.</p>
+<p>Think of it as a machine:</p>
+<ul><li>You feed in a number (the input).</li><li>The machine applies a rule.</li><li>Out comes exactly one number (the output).</li></ul>
+<p>The crucial word is <em>exactly</em>. Not zero outputs. Not two outputs. Exactly one.</p>
+<p>Here are four examples from life:</p>
+<p><strong>A sundial is a function.</strong> The input is the sun&#x27;s angle in the sky. The output is the time of day. For every angle, there is exactly one time.</p>
+<p><strong>A vending machine is a function.</strong> The input is a button you press. The output is the item that drops down. Press button B7, get exactly one bag of chips (or exactly nothing if you&#x27;re out of luck, but the machine is still a function — that&#x27;s just the rule that day).</p>
+<p><strong>A fortune-teller is NOT a function.</strong> The input is your question. But the output changes every time you ask the same question. Sometimes you hear you&#x27;ll find love. Sometimes you hear you&#x27;ll find adventure. This violates the fundamental rule: one input, one output.</p>
+<p><strong>A thermometer is a function.</strong> The input is the temperature of the air. The output is the height the mercury rises. Same temperature, same height. Always.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>Domain:</strong> The set of all possible inputs to a function.</p>
+<p>If your function is &quot;find the square root,&quot; the domain is all non-negative numbers (because you cannot take the square root of a negative number in the real numbers).</p>
+<p>If your function is &quot;divide 100 by this number,&quot; the domain is all numbers except zero (because you cannot divide by zero).</p>
+<p><strong>Range:</strong> The set of all possible outputs a function actually produces.</p>
+<p>If your function is $f(x) = x^2$, and the domain is all real numbers, what is the range? The range is all non-negative numbers, because squaring any number (positive or negative) gives a non-negative result.</p>
+<p><strong>Function Notation:</strong> We write $f(x)$ to mean &quot;the output of function $f$ when the input is $x$.&quot;</p>
+<p>If $f(x) = 2x + 3$, then:</p>
+<ul><li>$f(5) = 2(5) + 3 = 13$</li><li>$f(0) = 2(0) + 3 = 3$</li><li>$f(-2) = 2(-2) + 3 = -1$</li></ul>
+<p>The letter $f$ names the function. The letter $x$ is a placeholder for any input. You can use $g$, $h$, or $\phi$ — any letter works. What matters is that the notation shows: <em>this rule takes an input and produces an output</em>.</p>
+<p><strong>The Vertical Line Test:</strong></p>
+<p>To check if a graph shows a function, imagine drawing vertical lines through the graph. If every vertical line crosses the graph at most once, it&#x27;s a function. If any vertical line crosses twice or more, it&#x27;s not a function.</p>
+<p>Why? Because a vertical line represents all points with the same $x$-coordinate. If a vertical line hits the graph twice, that means one input produces two outputs. That violates the definition.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Recognizing a Function from a Table</strong></p>
+<p>Is this a function?</p>
+<p>| Input ($x$) | Output ($y$) | |---|---| | 2 | 7 | | 3 | 10 | | 2 | 7 | | 4 | 13 |</p>
+<p>Yes. Every input has exactly one output. The fact that we see the input 2 twice doesn&#x27;t matter — it always produces the same output (7).</p>
+<p><strong>Example 2: When a Table Is Not a Function</strong></p>
+<p>Is this a function?</p>
+<p>| Input ($x$) | Output ($y$) | |---|---| | 1 | 5 | | 1 | 6 | | 2 | 8 |</p>
+<p>No. The input 1 produces two different outputs (5 and 6). This violates the definition.</p>
+<p><strong>Example 3: Using Function Notation</strong></p>
+<p>Given $f(x) = -3x + 2$, find $f(-4)$.</p>
+<p>$$f(-4) = -3(-4) + 2 = 12 + 2 = 14$$</p>
+<p><strong>Example 4: Domain and Range from a Mapping Diagram</strong></p>
+<pre><code>Input  Output
+1  →  4
+2  →  5
+3  →  6</code></pre>
+<p>Domain: $\{1, 2, 3\}$ Range: $\{4, 5, 6\}$</p>
+<p>This is a function because each input points to exactly one output.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Which of the following is a function?</strong></li></ol>
+<ul><li>A person&#x27;s height given their name</li><li>A person&#x27;s name given their height</li><li>The date given the day of the week</li><li>A day of the week given the date</li></ul>
+<ol><li><strong>If $g(x) = x^2 - 4$, what is $g(5)$?</strong></li></ol>
+<ul><li>19</li><li>21</li><li>29</li><li>25</li></ul>
+<ol><li><strong>Which graph passes the vertical line test?</strong></li></ol>
+<ul><li>A parabola opening upward</li><li>A circle</li><li>A straight line that is not vertical</li><li>A V-shaped graph</li></ul>
+<ol><li><strong>What is the domain of $h(x) = \frac{10}{x-3}$?</strong></li></ol>
+<ul><li>All real numbers</li><li>All real numbers except 3</li><li>All positive numbers</li><li>All non-negative numbers</li></ul>
+<ol><li><strong>Determine if this represents a function:</strong></li></ol>
+<p>| $x$ | 0 | 1 | 2 | 3 | |---|---|---|---|---| | $y$ | 5 | 7 | 9 | 11 |</p>
+<ul><li>Yes</li><li>No</li><li>Cannot determine</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p>Your friend is building a machine that converts temperatures. She says:</p>
+<p>&quot;I&#x27;m building a function. You input Celsius, and it outputs Fahrenheit. But I&#x27;m confused because the same Celsius temperature always gives the same Fahrenheit temperature. Does that still count as a function?&quot;</p>
+<p>Explain to your friend why this is absolutely a function, and describe what the domain and range would be.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Temperature Conversion</strong></p>
+<p>The relationship between Celsius ($C$) and Fahrenheit ($F$) is:</p>
+<p>$$F(C) = \frac{9}{5}C + 32$$</p>
+<p>This is a function. The input is degrees Celsius. The output is degrees Fahrenheit.</p>
+<ul><li>Water freezes at $F(0) = 32°F$</li><li>Water boils at $F(100) = 212°F$</li><li>Room temperature: $F(20) = 68°F$</li></ul>
+<p>This function has domain: all real numbers (you can theoretically have any temperature), and range: all real numbers greater than $-459.67°F$ (absolute zero).</p>
+<p><strong>Bank Account Balance</strong></p>
+<p>Let $B(d)$ = your account balance on day $d$, starting with \$1000 and earning interest. Each day, your balance is a function of the day number. Day 1 has exactly one balance. Day 2 has exactly one balance. This is a function from &quot;day number&quot; to &quot;dollars,&quot; and it governs your life.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>A <strong>function</strong> is a relationship where each input produces exactly one output. We name functions with letters like $f$, $g$, or $h$, and write $f(x)$ to mean &quot;the output of $f$ when the input is $x$.&quot;</p>
+<p>The <strong>domain</strong> is the set of all possible inputs. The <strong>range</strong> is the set of all possible outputs.</p>
+<p>You can represent a function as a table, a graph, an equation, or a mapping diagram. To check if a graph is a function, use the <strong>vertical line test</strong>: if any vertical line crosses the graph more than once, it&#x27;s not a function.</p>
+<p>Functions are everywhere: thermometers, bank accounts, recipes, navigation systems, heartbeats. They are the language in which the universe encodes patterns and predictions.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>1. Which scenario best describes a function?</strong></p>
+<ul><li>A teacher assigns each student exactly one grade per class</li><li>A song has many notes that play at different volumes</li><li>A store has many items but customers buy randomly</li><li>A compass needle points to many directions throughout the day</li></ul>
+<details>
+<summary>Answer</summary>
+<p>A teacher assigns each student exactly one grade per class</p>
+</details>
+<p><strong>2. If $f(x) = 3x - 7$, what is $f(4)$?</strong></p>
+<ul><li>5</li><li>9</li><li>12</li><li>19</li></ul>
+<details>
+<summary>Answer</summary>
+<p>5</p>
+</details>
+<p><strong>3. What does the vertical line test check?</strong></p>
+<ul><li>Whether a graph is a straight line</li><li>Whether each input has exactly one output</li><li>Whether the function has a maximum value</li><li>Whether the domain is positive numbers</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Whether each input has exactly one output</p>
+</details>
+<p><strong>4. Which is NOT part of describing a function?</strong></p>
+<ul><li>The domain</li><li>The range</li><li>The color of the graph</li><li>The equation or rule</li></ul>
+<details>
+<summary>Answer</summary>
+<p>The color of the graph</p>
+</details>
+<p><strong>5. A library system catalogs books: each ISBN (barcode) matches exactly one book title. Is this a function?</strong></p>
+<ul><li>Yes, because each ISBN produces exactly one title</li><li>No, because books can have the same title</li><li>No, because ISBNs are numbers</li><li>Cannot determine from the information given</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Yes, because each ISBN produces exactly one title</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Leibniz, G.W. (1694). &quot;Nova methodus pro maximis et minimis.&quot; <em>Acta Eruditorum</em>. https://en.wikipedia.org/wiki/Leibniz</li><li>Euler, L. (1748). <em>Introductio in analysin infinitorum</em>. https://en.wikipedia.org/wiki/Leonhard_Euler</li><li>https://en.wikipedia.org/wiki/Function_(mathematics)</li><li>https://en.wikipedia.org/wiki/Vertical_line_test</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-03-coordination-space-and-functions/ch-044-linear-functions-and-equations/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Linear Functions and Their Equations</span></a><a class="pager-link pager-link--next" href="../../world-03-coordination-space-and-functions/ch-046-quadratic-functions-and-parabolas/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Quadratic Functions and Parabolas</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

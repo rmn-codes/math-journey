@@ -1,0 +1,280 @@
+---
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+chapter: 69
+title: Applications of Derivatives
+subtitle: Finding highest peaks and lowest valleys — the mathematics of optimisation
+slug: ch-069-applications-of-derivatives
+historicalPeriod: 1700s–present
+estimatedTimeMinutes: 40
+mainConcepts:
+  - critical points
+  - first derivative test
+  - second derivative test
+  - concavity
+  - inflection points
+  - optimisation
+  - velocity
+  - acceleration
+learningObjectives:
+  - Find critical points and classify them
+  - Apply first and second derivative tests
+  - Identify concavity and inflection points
+  - Solve optimisation problems
+  - Interpret derivatives as velocity and acceleration
+---
+
+## Story Hook
+
+In 1930, an economist sits at a desk in Chicago with a pencil and paper. She is solving a puzzle that matters deeply: *How high can a monopolist's profits go?*
+
+The answer, when she writes it down, looks almost magical: set marginal cost equal to marginal revenue.
+
+But "marginal" means *the derivative* — the rate of change. Without calculus, without the ability to find where a function reaches its peak, she could not have answered this question. Without derivatives, modern economics would not exist.
+
+Today, every algorithm that learns — every neural network that recognises your face, every recommendation system that suggests a video — relies on finding the minimum of an error function. They all use derivatives to optimise. Finding the best is calculus's most powerful gift.
+
+## Why It Matters
+
+When you plan a road trip, you want the fastest route. When a manufacturer designs a package, they want to minimise the cardboard while holding a fixed volume. When a farmer decides how much fertiliser to use, they want maximum yield at minimum cost. When an aeroplane climbs, pilots care about acceleration, the rate of change of velocity.
+
+All of these are optimisation problems — finding peaks, valleys, and the rates at which things change. Derivatives are the tool.
+
+## Historical Context
+
+In the 1700s, as calculus matured, mathematicians noticed an astonishing pattern: the same question — *where is a function at its peak?* — appeared in physics, engineering, economics, and astronomy. Johann Bernoulli, Leonhard Euler, and Joseph-Louis Lagrange developed systematic methods to find these extrema.
+
+By the 1800s, the techniques were formalised into the calculus we teach today. In the 1900s, they became the foundation of modern engineering and economics. In 1943, when Boeing engineers needed the wing shape that would minimise drag on their B-29 Superfortress bomber, they used derivatives. Today, every time a neural network learns to recognise faces, or recommend videos, or predict tomorrow's weather, it uses derivatives to optimise an error function. The method is the same as the one Euler used: set the derivative to zero and solve.
+
+## Core Concept
+
+The derivative tells us where a function is increasing and decreasing. A **critical point** is a place where $f'(x) = 0$ or $f'(x)$ is undefined. At critical points, the function "pauses" before changing direction — these are the candidates for peaks and valleys.
+
+**The First Derivative Test:** If $f'(x)$ changes from positive to negative at $c$, then $f(c)$ is a local maximum. If it changes from negative to positive, $f(c)$ is a local minimum. If it doesn't change sign, $c$ is neither.
+
+**The Second Derivative** tells us whether the function is curving upward or downward. If $f''(x) > 0$, the graph is concave up (curves like a smile); if $f''(x) < 0$, it's concave down (curves like a frown). An **inflection point** is where concavity changes.
+
+**The Second Derivative Test:** At a critical point $c$, if $f''(c) > 0$, then $f(c)$ is a local minimum. If $f''(c) < 0$, it's a local maximum. If $f''(c) = 0$, the test is inconclusive.
+
+For a continuous function on a closed interval $[a, b]$, the **Extreme Value Theorem** guarantees that absolute maximum and minimum exist — they occur either at critical points inside the interval or at the endpoints.
+
+## Definitions and Formal Lesson
+
+**Critical Point:** A value $c$ in the domain of $f$ where $f'(c) = 0$ or $f'(c)$ is undefined.
+
+**Local Maximum:** A point $(c, f(c))$ where $f(c) \geq f(x)$ for all $x$ in some open interval around $c$.
+
+**Local Minimum:** A point $(c, f(c))$ where $f(c) \leq f(x)$ for all $x$ in some open interval around $c$.
+
+**Concavity:** The function $f$ is concave up on an interval if $f''(x) > 0$; concave down if $f''(x) < 0$.
+
+**Inflection Point:** A point where the concavity of $f$ changes.
+
+**Velocity:** The instantaneous rate of change of position: $v(t) = s'(t)$.
+
+**Acceleration:** The instantaneous rate of change of velocity: $a(t) = v'(t) = s''(t)$.
+
+## Worked Examples
+
+**Example 1: Finding and Classifying Critical Points**
+
+Let $f(x) = x^3 - 3x^2 - 9x + 5$.
+
+First, find $f'(x) = 3x^2 - 6x - 9 = 3(x^2 - 2x - 3) = 3(x - 3)(x + 1)$.
+
+Setting $f'(x) = 0$: $x = 3$ and $x = -1$.
+
+Use the **first derivative test**. Test points in each region:
+- For $x < -1$: try $x = -2$. $f'(-2) = 3(-5)(-1) = 15 > 0$, so $f$ is increasing.
+- For $-1 < x < 3$: try $x = 0$. $f'(0) = 3(-3)(1) = -9 < 0$, so $f$ is decreasing.
+- For $x > 3$: try $x = 4$. $f'(4) = 3(1)(5) = 15 > 0$, so $f$ is increasing.
+
+At $x = -1$, $f'$ changes from positive to negative: **local maximum**.
+At $x = 3$, $f'$ changes from negative to positive: **local minimum**.
+
+Compute values: $f(-1) = -1 - 3 + 9 + 5 = 10$ and $f(3) = 27 - 27 - 27 + 5 = -22$.
+
+**Example 2: Optimisation — Maximising Area**
+
+A rectangular garden is to be built with one side against an existing wall. The gardener has 40 metres of fencing for the other three sides. What dimensions maximise the area?
+
+Let $x$ = width (perpendicular to wall) and $y$ = length (parallel to wall).
+
+Constraint: $2x + y = 40$, so $y = 40 - 2x$.
+
+Area: $A(x) = xy = x(40 - 2x) = 40x - 2x^2$.
+
+To maximise: $A'(x) = 40 - 4x = 0 \Rightarrow x = 10$.
+
+Check: $A''(x) = -4 < 0$, so $x = 10$ is a maximum.
+
+Then $y = 40 - 20 = 20$.
+
+**Maximum area = $10 \times 20 = 200$ m².**
+
+**Example 3: Velocity and Acceleration**
+
+A car's position is $s(t) = t^3 - 6t^2 + 9t$ kilometres, where $t$ is in hours.
+
+Velocity: $v(t) = s'(t) = 3t^2 - 12t + 9 = 3(t - 1)(t - 3)$ km/h.
+
+Acceleration: $a(t) = v'(t) = 6t - 12$ km/h².
+
+At $t = 2$: $v(2) = 3(1)(-1) = -3$ km/h (moving backward), $a(2) = 12 - 12 = 0$ km/h² (no change in speed at this instant).
+
+**Example 4: Finding Concavity and Inflection Points**
+
+Let $f(x) = x^4 - 8x^3 + 18x^2$.
+
+First derivative: $f'(x) = 4x^3 - 24x^2 + 36x = 4x(x^2 - 6x + 9) = 4x(x-3)^2$.
+
+Second derivative: $f''(x) = 12x^2 - 48x + 36 = 12(x^2 - 4x + 3) = 12(x-1)(x-3)$.
+
+Concavity: $f''(x) = 0$ at $x = 1$ and $x = 3$.
+- For $x < 1$: $f''(x) > 0$, concave up.
+- For $1 < x < 3$: $f''(x) < 0$, concave down.
+- For $x > 3$: $f''(x) > 0$, concave up.
+
+Inflection points are at $x = 1$ and $x = 3$.
+
+**Example 5: Second Derivative Test for Extrema**
+
+Given $f(x) = x^4 - 4x^3 + 4x^2$, find local extrema.
+
+$f'(x) = 4x^3 - 12x^2 + 8x = 4x(x^2 - 3x + 2) = 4x(x-1)(x-2)$.
+
+Critical points: $x = 0, 1, 2$.
+
+$f''(x) = 12x^2 - 24x + 8$.
+
+At $x = 0$: $f''(0) = 8 > 0$, so $f(0) = 0$ is a **local minimum**.
+
+At $x = 1$: $f''(1) = 12 - 24 + 8 = -4 < 0$, so $f(1) = 1$ is a **local maximum**.
+
+At $x = 2$: $f''(2) = 48 - 48 + 8 = 8 > 0$, so $f(2) = 0$ is a **local minimum**.
+
+**Example 6: Absolute Extrema on a Closed Interval**
+
+Find the absolute maximum and minimum of $f(x) = x^3 - 3x$ on the interval $[-2, 2]$.
+
+Critical points: $f'(x) = 3x^2 - 3 = 3(x-1)(x+1) = 0 \Rightarrow x = \pm 1$.
+
+Evaluate $f$ at critical points and endpoints:
+- $f(-2) = -8 + 6 = -2$
+- $f(-1) = -1 + 3 = 2$ (local max)
+- $f(1) = 1 - 3 = -2$ (local min)
+- $f(2) = 8 - 6 = 2$
+
+Absolute maximum: $f(-1) = f(2) = 2$.
+Absolute minimum: $f(-2) = f(1) = -2$.
+
+Both the critical point at $x = -1$ and the endpoint $x = 2$ yield the maximum value.
+
+## Practice Set
+
+1. Find the critical points of $f(x) = x^4 - 4x^3$.
+   - $x = 0$ and $x = 3$
+   - $x = 0$, $x = 3$, and $x = -1$
+   - $x = 3$ only
+   - No critical points exist
+
+2. For $f(x) = e^{-x^2}$, identify the concavity at $x = 0$.
+   - Concave up
+   - Concave down
+   - Neither; inflection point
+   - $f''(0)$ is undefined
+
+3. A projectile is launched with position $s(t) = 20t - 5t^2$ metres. Find its maximum height.
+   - 10 m at $t = 1$ s
+   - 20 m at $t = 2$ s
+   - 25 m at $t = 2$ s
+   - 20 m at $t = 1$ s
+
+4. For which $x$ is $g(x) = x^3 - 12x$ increasing?
+   - $x < -2$ and $x > 2$
+   - $-2 < x < 2$
+   - All real $x$
+   - Only at $x = 0$
+
+5. Find all inflection points of $h(x) = x^3 - 6x^2 + 9x$.
+   - $x = 1$
+   - $x = 2$
+   - $x = 3$
+   - No inflection points
+
+6. A company's profit function is $P(x) = -2x^2 + 100x - 500$ dollars when producing $x$ units. At what production level is profit maximised?
+   - $x = 25$ units
+   - $x = 50$ units
+   - $x = 100$ units
+   - Profit decreases for all positive $x$
+
+## Reasoning Task
+
+A rectangular box (with a lid) is to be made from a sheet of material. The base has length and width $x$ and $y$ respectively, and height $h$. If the total surface area is fixed at 600 cm², express the volume as a function of one variable. What dimensions maximise the volume? (Assume $x = y$ for symmetry.)
+
+**Hint:** Surface area = $2xy + 2xh + 2yh$. With $x = y$, this becomes $2x^2 + 4xh = 600$.
+
+## Application
+
+In machine learning, a neural network learns by minimising a loss function — a measure of how wrong its predictions are. The network computes the gradient (a multivariable derivative) of this loss function with respect to millions of parameters. It then moves each parameter in the direction that decreases the loss — the direction of steepest descent. Repeating this, the network finds a local minimum and improves its predictions. This process, called **gradient descent**, is calculus in action.
+
+## Recap
+
+Derivatives reveal where functions reach peaks and valleys. Critical points are where $f'(x) = 0$ or is undefined. The first derivative test uses sign changes to classify them. The second derivative tells us about concavity and provides an alternative test. Applications range from simple optimisation problems (maximising area or revenue) to the foundations of modern machine learning. Velocity and acceleration are the most natural interpretation of first and second derivatives in physics.
+
+## Unlock Quiz
+
+1. What is a critical point?
+   - A point where the derivative equals zero or is undefined
+   - A point on the $x$-axis
+   - A point where the function reaches its absolute maximum
+   - A point in the derivative's domain
+
+2. If $f'(x)$ changes from positive to negative at $x = c$, what can we conclude?
+   - $f$ has a local maximum at $c$
+   - $f$ has a local minimum at $c$
+   - $f$ has an inflection point at $c$
+   - No conclusion; we need more information
+
+3. What does $f''(x) > 0$ tell us?
+   - $f$ is increasing
+   - $f$ is concave up
+   - $f$ is at a critical point
+   - $f$ is at an inflection point
+
+4. A company produces $x$ units at cost $C(x) = 500 + 20x + 0.1x^2$. If each unit sells for $50, what production level maximises profit?
+   - $x = 100$
+   - $x = 200$
+   - $x = 300$
+   - $x = 150$
+
+5. Which test is more useful when $f''(c) = 0$ at a critical point?
+   - First derivative test
+   - Second derivative test
+   - Both are equally useful
+   - Neither test applies
+
+6. In the context of the Saturn V rocket, what physical quantity does acceleration represent?
+   - The rate of change of position
+   - The second derivative of velocity
+   - The first derivative of velocity
+   - Both (b) and (c)
+
+<details>
+<summary>Answers</summary>
+
+1. A point where the derivative equals zero or is undefined
+2. $f$ has a local maximum at $c$
+3. $f$ is concave up
+4. $x = 300$
+5. First derivative test
+6. Both (b) and (c)
+
+</details>
+
+## Source Notes
+
+- Stewart, J. (2015). *Calculus: Early Transcendentals* (8th ed.). Cengage Learning.
+- Archimedes and the method of exhaustion: https://en.wikipedia.org/wiki/Method_of_exhaustion
+- Optimisation in engineering: https://en.wikipedia.org/wiki/Mathematical_optimization
+- Gradient descent and machine learning: https://en.wikipedia.org/wiki/Gradient_descent

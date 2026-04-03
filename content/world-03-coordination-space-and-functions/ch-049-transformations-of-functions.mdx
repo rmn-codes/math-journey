@@ -1,0 +1,280 @@
+---
+worldNumber: 3
+world: world-03-coordination-space-and-functions
+chapterNumber: 49
+title: Transformations of Functions
+subtitle: Shift, reflect, stretch — how one function becomes a whole family
+historicalPeriod: 1800s–present
+estimatedTimeMinutes: 35
+mainConcepts:
+  - vertical shift
+  - horizontal shift
+  - reflection
+  - stretch
+  - compression
+  - parent function
+learningObjectives:
+  - Apply vertical and horizontal shifts to function graphs
+  - Reflect functions across axes
+  - Apply vertical and horizontal stretches
+  - Describe transformations from equation or graph
+---
+
+## Story Hook
+
+Close your eyes and imagine a composer at the piano. She plays a simple, beautiful melody—just five notes. Now listen as she transforms it: plays it higher (shift up), plays it backwards (reflection), plays it faster (horizontal compression). It's the same melody, yet completely different.
+
+Mathematicians do exactly this with functions. Imagine the parent function $f(x) = x^2$, the simplest parabola. From this one starting point, you can create an infinite family of parabolas by shifting, stretching, and reflecting. Understanding these transformations means you understand not one function, but an entire family.
+
+## Why It Matters
+
+Why learn transformations? Because they let you:
+
+- **Predict shapes:** See $y = (x-2)^2 + 3$ and instantly know it's a parabola shifted right 2 and up 3.
+- **Build complex models:** Real-world functions are rarely simple. Transformations let you start with what you know and build what you need.
+- **Recognize patterns:** Data from earthquakes, populations, and investment growth all follow transformed parent functions.
+- **Work efficiently:** Master one function, and you've mastered a thousand variations.
+
+## Historical Context
+
+In the 1800s, mathematicians like Jean-Baptiste Fourier studied how simple wave functions could be combined and transformed to model heat, sound, and vibration. But the concept of transforming a single parent function into a family emerged fully in the 20th century, as mathematicians developed clearer language for describing shifts and stretches. Today, transformations are central to computer graphics, where programmers scale, rotate, and translate images by transforming their underlying function descriptions.
+
+## Core Concept
+
+A **transformation** is a systematic change applied to a function. Start with a parent function—something simple like $f(x) = x^2$ or $f(x) = \sqrt{x}$. Then apply changes. The power of transformations is that you don't need to memorize hundreds of functions. Master a handful of parent functions and all their transformations, and you can sketch and understand any function in those families.
+
+**Why transformations matter:**
+- Efficiency: Transform one parent function, get a whole family.
+- Recognition: See $g(x) = (x - 5)^2 + 3$? Instantly recognize it as a parabola shifted right 5 and up 3.
+- Modeling: Real data rarely fits a parent function exactly. Transformations let you adjust and adapt.
+
+**Types of transformations:**
+
+- **Vertical shift up:** Add a constant to the output. $f(x) + k$ shifts the graph up by $k$ units.
+- **Vertical shift down:** Subtract a constant. $f(x) - k$ shifts down by $k$ units.
+- **Horizontal shift right:** Replace $x$ with $x - h$. The function $f(x-h)$ shifts right by $h$ units.
+- **Horizontal shift left:** Replace $x$ with $x + h$. The function $f(x+h)$ shifts left by $h$ units.
+- **Vertical reflection:** Multiply the output by $-1$. $-f(x)$ flips over the $x$-axis.
+- **Horizontal reflection:** Replace $x$ with $-x$. $f(-x)$ flips over the $y$-axis.
+- **Vertical stretch/compression:** Multiply the output by a factor. $af(x)$ stretches vertically if $|a| > 1$, compresses if $0 < |a| < 1$.
+- **Horizontal stretch/compression:** Replace $x$ with $\frac{x}{b}$. The function $f\left(\frac{x}{b}\right)$ compresses if $|b| > 1$, stretches if $0 < |b| < 1$.
+
+The key insight: **the order and combination of transformations matter**. $2f(x) + 1$ is different from $2(f(x) + 1)$.
+
+- In $2f(x) + 1$: stretch the function vertically by 2, then shift up by 1.
+- In $2(f(x) + 1)$: shift the function up by 1, then stretch by 2 (which also stretches the shift!).
+
+Let's verify with $f(x) = x^2$ at $x = 0$:
+- $2f(0) + 1 = 2(0) + 1 = 1$
+- $2(f(0) + 1) = 2(0 + 1) = 2$
+
+Different results! This illustrates why careful reading of the equation is essential.
+
+## Definitions and Formal Lesson
+
+**Parent function:** The simplest form of a family of functions. Examples:
+- Linear: $f(x) = x$
+- Quadratic: $f(x) = x^2$
+- Absolute value: $f(x) = |x|$
+- Square root: $f(x) = \sqrt{x}$
+- Reciprocal: $f(x) = \frac{1}{x}$
+
+**Vertical translation:** $g(x) = f(x) + k$. The graph moves up (if $k > 0$) or down (if $k < 0$) by $|k|$ units. The shape stays identical.
+
+**Horizontal translation:** $g(x) = f(x - h)$. The graph moves right (if $h > 0$) or left (if $h < 0$) by $|h|$ units. The shape stays identical. Note: this is often the most confusing transformation. The sign inside is opposite to the direction of movement. $f(x - 3)$ moves RIGHT by 3, not left.
+
+**Reflection over the $x$-axis:** $g(x) = -f(x)$. Each point $(x, y)$ becomes $(x, -y)$.
+
+**Reflection over the $y$-axis:** $g(x) = f(-x)$. Each point $(x, y)$ becomes $(-x, y)$.
+
+**Vertical scaling:** $g(x) = af(x)$ where $a > 0$. If $a > 1$, points move away from the $x$-axis (stretch). If $0 < a < 1$, points move toward the $x$-axis (compression).
+
+**Horizontal scaling:** $g(x) = f(bx)$ where $b > 0$. If $b > 1$, the graph compresses horizontally (gets narrower; the function grows faster). If $0 < b < 1$, the graph stretches horizontally (gets wider; the function grows slower).
+
+**Order of transformations:** When combining transformations, the order matters. A helpful approach is to apply transformations in this order:
+1. Reflections and horizontal changes (inside the function).
+2. Vertical changes (outside the function).
+
+This reduces confusion about which direction shifts move.
+
+## Worked Examples
+
+**Example 1: Transforming the parent function $f(x) = x^2$**
+
+Describe the transformations and sketch the graph of $g(x) = -(x + 2)^2 + 3$.
+
+Rewrite as $g(x) = -[(x + 2)^2] + 3 = -(x - (-2))^2 + 3$.
+
+The transformations in order:
+1. Shift left by 2: $(x+2)^2$ moves the parabola left.
+2. Reflect over the $x$-axis: the negative sign flips it upside down.
+3. Shift up by 3: $+3$ moves it up.
+
+The vertex of $f(x) = x^2$ is at $(0, 0)$. After transformations, the vertex is at $(-2, 3)$. The parabola opens downward.
+
+**Example 2: Finding the equation from a description**
+
+A graph shows the parent function $f(x) = \sqrt{x}$, which starts at the origin and curves upward. If we shift this function right by 4 units and up by 1 unit, what is the equation?
+
+Start with $f(x) = \sqrt{x}$.
+Shift right by 4: $f(x - 4) = \sqrt{x - 4}$.
+Shift up by 1: $\sqrt{x - 4} + 1$.
+
+The equation is $g(x) = \sqrt{x - 4} + 1$.
+
+**Example 3: Combining vertical stretch and reflection**
+
+The parent function is $f(x) = |x|$. Write the equation for the transformed function that is stretched vertically by a factor of 3 and reflected over the $x$-axis.
+
+Vertical stretch by 3: $3|x|$.
+Reflect over the $x$-axis: $-3|x|$.
+
+The equation is $g(x) = -3|x|$.
+
+Check with points: At $x = 1$, the parent gives $f(1) = 1$. The transformed function gives $g(1) = -3|1| = -3$. The point $(1, 1)$ became $(1, -3)$—stretched down by 3 times. ✓
+
+**Example 4: Horizontal compression**
+
+The parent function is $f(x) = \sqrt{x}$. Write the equation for the function compressed horizontally by a factor of 4 (meaning points move toward the $y$-axis, so the function rises faster).
+
+A horizontal compression by factor $c$ replaces $x$ with $cx$: $f(cx) = \sqrt{4x}$.
+
+The equation is $g(x) = \sqrt{4x} = 2\sqrt{x}$.
+
+Notice this also affects the vertical scaling! Simplifying reveals the stretch. At $x = 4$, the parent gives $f(4) = 2$. The compressed version gives $g(4) = 2\sqrt{4} = 4$. The compression made the function taller.
+
+**Example 5: Combining multiple transformations**
+
+The parent function is $f(x) = |x|$. Transform it by:
+1. Shifting left 3 units.
+2. Stretching vertically by factor 2.
+3. Reflecting over the $x$-axis.
+4. Shifting up 1 unit.
+
+**Step-by-step:**
+
+Start: $f(x) = |x|$
+
+Shift left 3: $f(x + 3) = |x + 3|$
+
+Stretch vertically by 2: $2|x + 3|$
+
+Reflect over $x$-axis: $-2|x + 3|$
+
+Shift up 1: $g(x) = -2|x + 3| + 1$
+
+**Key feature:** The vertex of $f(x) = |x|$ is at $(0, 0)$. After all transformations, the vertex is at $(-3, 1)$. The graph opens downward (because of the reflection), and it's twice as steep.
+
+## Practice Set
+
+For each of the following, describe all transformations and sketch or describe the resulting graph.
+
+1. $g(x) = (x - 3)^2 + 2$ (parent: $f(x) = x^2$)
+   - Identify each transformation step by step.
+   - Locate the vertex of the parabola.
+
+2. $h(x) = -\sqrt{x} + 4$ (parent: $f(x) = \sqrt{x}$)
+   - Describe the reflection and shift.
+   - What is the starting point of the curve?
+
+3. $p(x) = 2|x - 1| - 3$ (parent: $f(x) = |x|$)
+   - Identify the vertex, direction, and vertical stretch.
+   - Find two points on the graph.
+
+4. $q(x) = \frac{1}{x + 2}$ (parent: $f(x) = \frac{1}{x}$)
+   - Where is the vertical asymptote?
+   - Describe the horizontal shift.
+
+5. $r(x) = -3(x + 1)^2 + 5$ (parent: $f(x) = x^2$)
+   - Identify vertex, reflection, and stretch factor.
+   - Does the parabola open up or down?
+
+6. Write an equation for the function obtained by shifting $f(x) = x^2$ left 5 units, stretching vertically by a factor of 2, and shifting down 6 units.
+   - Apply transformations in order.
+   - Verify your equation by checking a test point.
+
+## Reasoning Task
+
+**The Music Box Problem:**
+
+A music box plays a note that follows the function $f(t) = \sin(t)$, where $t$ is time, ranging from $-\infty$ to $+\infty$. The manufacturer wants to:
+- Play the same note but 2 seconds later (delay it). This is a horizontal shift right by 2: $f(t - 2)$.
+- Make it twice as loud (double the amplitude). This is a vertical stretch by factor 2: $2 \cdot f(t - 2)$.
+- Lower the pitch by shifting down 0.5 units. This is a vertical shift down: $2 \cdot f(t - 2) - 0.5$.
+
+Write the equation for the transformed function: $g(t) = 2\sin(t - 2) - 0.5$.
+
+**Why the order of transformations doesn't matter here:**
+
+If you apply transformations in a different order, you get a different result. For instance:
+- If you shift down FIRST: $f(t) - 0.5 = \sin(t) - 0.5$.
+- Then stretch: $2(\sin(t) - 0.5) = 2\sin(t) - 1$ (the shift is also stretched!).
+- This is different from shifting the stretched version down.
+
+The lesson: horizontal shifts and vertical shifts commute (order doesn't matter), but stretches and shifts do NOT commute. Always think carefully about the order.
+
+## Application
+
+**Real-world example:** A viral video starts with 100 views on Monday. The number of views follows an exponential growth pattern: $V(t) = 100 \cdot 2^t$, where $t$ is days after Monday.
+
+On Wednesday, a celebrity shares the link, adding 500 bonus views and speeding up the growth. The new function is $V(t) = 100 \cdot 2^{t+1} + 500$.
+
+- Vertical shift: $+500$ views (the celebrity boost).
+- Horizontal shift: $+1$ in the exponent (the growth speeds up, equivalent to starting 1 day earlier).
+
+Understanding these transformations helps content creators predict when a video will go viral and plan their release strategy.
+
+## Recap
+
+Transformations let you build complex functions from simple parent functions. Remember:
+
+- **Vertical changes (add/subtract, multiply output):** Affect the $y$-values.
+- **Horizontal changes (subtract inside, multiply $x$):** Affect the $x$-values.
+- **Reflections:** Mirror across axes.
+- **Stretches and compressions:** Scale in one direction.
+
+Master the parent functions, master the transformations, and you can sketch and understand any function in the family.
+
+## Unlock Quiz
+
+**Question 1:** The parent function $f(x) = x^2$ is transformed to $g(x) = (x + 1)^2 - 4$. Which direction does it shift?
+
+- Shift left 1 and down 4
+- Shift right 1 and down 4
+- Shift left 1 and up 4
+- Shift right 1 and up 4
+
+<details>
+<summary>Answer</summary>
+Shift left 1 and down 4
+</details>
+
+**Question 2:** The equation $h(x) = -3\sqrt{x - 2} + 5$ describes transformations of $f(x) = \sqrt{x}$. Which statement is true?
+
+- The graph is compressed vertically and shifted right
+- The graph is stretched vertically, reflected, and shifted right and up
+- The graph is stretched horizontally and shifted down
+- The graph is reflected, stretched vertically, but shifted down 2
+
+<details>
+<summary>Answer</summary>
+The graph is stretched vertically, reflected, and shifted right and up
+</details>
+
+**Question 3:** If $f(x) = |x|$ and $g(x) = f(2x)$, what happens to the graph?
+
+- It stretches horizontally by a factor of 2
+- It compresses horizontally by a factor of 2
+- It stretches vertically by a factor of 2
+- It reflects over the $x$-axis
+
+<details>
+<summary>Answer</summary>
+It compresses horizontally by a factor of 2
+</details>
+
+## Source Notes
+
+- Khan Academy: "Transformations of Functions" — https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:transformations
+- Wikipedia: "Function (mathematics)" — https://en.wikipedia.org/wiki/Function_(mathematics)
+- OpenStax: "Precalculus" Chapter 1.5 — https://openstax.org/books/precalculus/pages/1-5-transformation-of-functions

@@ -1,0 +1,321 @@
+---
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+chapter: 72
+title: Applications of Integration
+subtitle: Area between curves, accumulated distance, and the volume of a solid
+slug: ch-072-applications-of-integration
+historicalPeriod: 1700s–present
+estimatedTimeMinutes: 40
+mainConcepts:
+  - area between curves
+  - net displacement
+  - total distance
+  - work
+  - volume of revolution (intro)
+  - accumulation
+learningObjectives:
+  - Find area between two curves
+  - Distinguish net displacement from total distance
+  - Compute work done by a variable force
+  - Apply integration to accumulation problems
+  - Introduce volume of revolution
+---
+
+## Story Hook
+
+In the 1960s, engineers at NASA face a puzzle. The Saturn V rocket that will carry astronauts to the Moon has a fuel tank with curved walls. The tank does not have a simple geometric shape — neither a cylinder nor a cone nor a sphere.
+
+They must know the volume to the litre. Too little fuel, and the rocket doesn't reach the Moon. Too much, and the rocket cannot accelerate fast enough.
+
+How do you find the volume of a curved tank?
+
+Integration.
+
+If you know the cross-sectional area at each height, you can integrate those areas along the height to get the total volume. The method is exactly the same as finding area under a curve, extended to three dimensions.
+
+Without this technique, the Saturn V could not have been designed. Without integration, humans would not have walked on the Moon.
+
+## Why It Matters
+
+Integration is not just for finding areas. It measures any quantity that accumulates from a changing rate.
+
+When a doctor needs the total dose of a drug that accumulates in a patient's bloodstream, integration computes it. When an engineer designs a bridge and needs to know the total weight of a non-uniform beam, integration gives the answer. When an economist calculates consumer surplus — the total benefit consumers receive beyond what they pay — integration is the tool.
+
+Every time something accumulates at a non-constant rate, integration is there.
+
+## Historical Context
+
+Early calculus textbooks focused on abstract problems: find the area under $y = x^2$ from 0 to 1. But as engineers and scientists began applying calculus in the 1700s and 1800s, they found that the real world demanded more.
+
+Volumes of revolution were studied by Pappus in ancient times using geometry. But with integration, Euler and others showed that these volumes could be computed using integrals — a much more systematic approach. Work, a fundamental concept in physics, was formalised using integration by scientists studying mechanics. Applications multiplied as calculus became the language of science and engineering.
+
+## Core Concept
+
+**Area Between Two Curves:**
+
+If two functions $f(x) \geq g(x)$ on an interval $[a, b]$, the area between them is:
+$$A = \int_a^b [f(x) - g(x)]\,dx$$
+
+First, find where the curves intersect by solving $f(x) = g(x)$. Then split the integration into regions where one curve is consistently above the other.
+
+**Net Displacement vs. Total Distance:**
+
+If an object moves with velocity $v(t)$, the **net displacement** is:
+$$s = \int_a^b v(t)\,dt$$
+
+This is positive or negative depending on direction. The **total distance** is:
+$$d = \int_a^b |v(t)|\,dt$$
+
+For example, a car that goes 10 km north, then 10 km south has zero net displacement but 20 km of total distance.
+
+**Work:**
+
+When a variable force $F(x)$ acts on an object, moving it from $x = a$ to $x = b$, the work done is:
+$$W = \int_a^b F(x)\,dx$$
+
+If the force is in Newtons and position is in metres, work is in joules.
+
+**Volume of Revolution (Introduction):**
+
+When a region is rotated around an axis, it sweeps out a solid. The volume can be found using the **disk method**: slice the solid perpendicular to the axis of rotation, each slice being a disk of radius $r(x)$ and thickness $dx$. The volume is:
+$$V = \pi \int_a^b [r(x)]^2\,dx$$
+
+**Accumulation:**
+
+When a quantity has a rate of change $r(t)$, the total accumulated quantity from $t = a$ to $t = b$ is:
+$$Q = \int_a^b r(t)\,dt$$
+
+## Definitions and Formal Lesson
+
+**Area Between Curves:** The integral of the difference between two functions, where the upper function minus the lower function is integrated across the interval where both are defined.
+
+**Net Displacement:** The integral of velocity, accounting for direction. Positive velocity adds to displacement; negative velocity subtracts.
+
+**Total Distance:** The integral of the absolute value of velocity, always non-negative, measuring total path length regardless of direction.
+
+**Work:** The integral of force with respect to position, measuring the energy transferred when a force acts over a distance.
+
+**Disk Method:** A technique for finding volumes of revolution by integrating the areas of cross-sectional disks perpendicular to the axis of rotation.
+
+**Consumer Surplus:** The difference between what consumers are willing to pay and what they actually pay; equals $\int_0^{q^*} [D(q) - p^*]\,dq$ where $D(q)$ is demand, $q^*$ is equilibrium quantity, and $p^*$ is equilibrium price.
+
+**Producer Surplus:** The difference between what producers receive and their minimum willingness to sell; equals $\int_0^{q^*} [p^* - S(q)]\,dq$ where $S(q)$ is supply.
+
+## Worked Examples
+
+**Example 1: Area Between Two Curves**
+
+Find the area between $f(x) = 4 - x^2$ and $g(x) = x + 2$ from $x = -2$ to $x = 2$.
+
+First, determine which is on top. At $x = 0$: $f(0) = 4$ and $g(0) = 2$, so $f(x) > g(x)$.
+
+Check intersection: $4 - x^2 = x + 2 \Rightarrow x^2 + x - 2 = 0 \Rightarrow (x+2)(x-1) = 0$.
+
+So they intersect at $x = -2$ and $x = 1$.
+
+On $[-2, 1]$: $f(x) \geq g(x)$. On $[1, 2]$: $g(x) > f(x)$.
+
+$$A = \int_{-2}^1 [(4-x^2) - (x+2)]\,dx + \int_1^2 [(x+2) - (4-x^2)]\,dx$$
+
+$$= \int_{-2}^1 (2 - x - x^2)\,dx + \int_1^2 (x^2 + x - 2)\,dx$$
+
+$$= \left[2x - \frac{x^2}{2} - \frac{x^3}{3}\right]_{-2}^1 + \left[\frac{x^3}{3} + \frac{x^2}{2} - 2x\right]_1^2$$
+
+At $x = 1$: $2 - \frac{1}{2} - \frac{1}{3} = \frac{7}{6}$.
+At $x = -2$: $-4 - 2 + \frac{8}{3} = \frac{-2}{3}$.
+First integral: $\frac{7}{6} - \left(\frac{-2}{3}\right) = \frac{11}{6}$.
+
+At $x = 2$: $\frac{8}{3} + 2 - 4 = \frac{2}{3}$.
+At $x = 1$: $\frac{1}{3} + \frac{1}{2} - 2 = \frac{-7}{6}$.
+Second integral: $\frac{2}{3} - \left(\frac{-7}{6}\right) = \frac{11}{6}$.
+
+Total area: $\frac{11}{6} + \frac{11}{6} = \frac{11}{3}$.
+
+**Example 2: Net Displacement vs. Total Distance**
+
+A particle's velocity is $v(t) = t^2 - 4$ m/s for $0 \leq t \leq 3$.
+
+Velocity is zero at $t = 2$.
+- For $0 \leq t < 2$: $v(t) < 0$ (moving backward).
+- For $2 < t \leq 3$: $v(t) > 0$ (moving forward).
+
+Net displacement:
+$$s = \int_0^3 (t^2 - 4)\,dt = \left[\frac{t^3}{3} - 4t\right]_0^3 = 9 - 12 = -3 \text{ m}$$
+
+Total distance (split at $t = 2$):
+$$d = \int_0^2 |t^2 - 4|\,dt + \int_2^3 |t^2 - 4|\,dt = \int_0^2 (4 - t^2)\,dt + \int_2^3 (t^2 - 4)\,dt$$
+
+$$= \left[4t - \frac{t^3}{3}\right]_0^2 + \left[\frac{t^3}{3} - 4t\right]_2^3 = \left(8 - \frac{8}{3}\right) + \left(9 - 12 - \frac{8}{3} + 8\right)$$
+
+$$= \frac{16}{3} + \frac{5}{3} = 7 \text{ m}$$
+
+The particle ends 3 metres behind where it started but travels a total of 7 metres.
+
+**Example 3: Work Done by a Variable Force**
+
+A spring requires force $F(x) = 3x$ Newtons to stretch it $x$ metres from its natural length. How much work is done to stretch the spring from $x = 0$ to $x = 2$ metres?
+
+$$W = \int_0^2 3x\,dx = \left[\frac{3x^2}{2}\right]_0^2 = 6 \text{ joules}$$
+
+**Example 4: Volume of a Cone (Disk Method)**
+
+A cone has height $h = 5$ and base radius $r = 3$. Find its volume using integration.
+
+At height $x$ from the tip, the radius is proportional to height: $r(x) = \frac{3x}{5}$.
+
+$$V = \pi \int_0^5 \left(\frac{3x}{5}\right)^2 dx = \pi \int_0^5 \frac{9x^2}{25}\,dx = \frac{9\pi}{25} \left[\frac{x^3}{3}\right]_0^5 = \frac{9\pi}{25} \cdot \frac{125}{3} = 15\pi$$
+
+This matches the geometric formula $V = \frac{1}{3}\pi r^2 h = \frac{1}{3}\pi(3)^2(5) = 15\pi$. ✓
+
+**Example 5: Total Distance with Multiple Sign Changes**
+
+A particle's velocity is $v(t) = \sin(t)$ m/s for $0 \leq t \leq 2\pi$.
+
+The velocity is zero at $t = 0, \pi, 2\pi$.
+
+Net displacement:
+$$s = \int_0^{2\pi} \sin(t)\,dt = [-\cos(t)]_0^{2\pi} = [-\cos(2\pi)] - [-\cos(0)] = -1 + 1 = 0$$
+
+The particle returns to its starting position.
+
+Total distance:
+$$d = \int_0^{\pi} \sin(t)\,dt + \int_{\pi}^{2\pi} |\sin(t)|\,dt = \int_0^{\pi} \sin(t)\,dt + \int_{\pi}^{2\pi} (-\sin(t))\,dt$$
+
+$$= [-\cos(t)]_0^{\pi} + [\cos(t)]_{\pi}^{2\pi} = [1 - (-1)] + [(-1) - 1] = 2 + (-2) = 4 \text{ m}$$
+
+Wait, let me recalculate: $\int_{\pi}^{2\pi} (-\sin t)\,dt = [\cos t]_{\pi}^{2\pi} = 1 - (-1) = 2$.
+
+Total: $2 + 2 = 4$ m.
+
+**Example 6: Applied Problem — Revenue and Profit**
+
+A company's marginal revenue is $MR(x) = 200 - 2x$ dollars per unit, where $x$ is the number of units sold.
+
+The total revenue from selling $x$ units (starting from 0 sales) is:
+$$R(x) = \int_0^x (200 - 2t)\,dt = [200t - t^2]_0^x = 200x - x^2$$
+
+At $x = 100$ units:
+$$R(100) = 200(100) - 100^2 = 20,000 - 10,000 = \$10,000$$
+
+This integral converts the rate of change (marginal revenue) into the total quantity (total revenue).
+
+## Practice Set
+
+1. Find the area between $y = x$ and $y = x^2$ from $x = 0$ to $x = 1$.
+   - $\frac{1}{6}$
+   - $\frac{1}{3}$
+   - $\frac{1}{2}$
+   - $1$
+
+2. A car's velocity is $v(t) = 3 - t$ m/s for $0 \leq t \leq 4$. What is its net displacement?
+   - 4 m
+   - 2 m
+   - -4 m
+   - 6 m
+
+3. Which integral correctly represents the total distance travelled for the car in question 2?
+   - $\int_0^4 (3-t)\,dt$
+   - $\int_0^4 |3-t|\,dt$
+   - $\int_0^3 (3-t)\,dt + \int_3^4 (t-3)\,dt$
+   - Both (b) and (c)
+
+4. A force of $F(x) = 2x + 1$ Newtons moves an object from $x = 0$ to $x = 3$ metres. What is the work done?
+   - 6 J
+   - 12 J
+   - 15 J
+   - 18 J
+
+5. When finding volume by the disk method, the term $\pi [r(x)]^2$ represents?
+   - The volume of a single disk
+   - The area of the circular cross-section at position $x$
+   - The radius of the solid at position $x$
+   - The circumference of the disk
+
+6. For a function that oscillates both above and below the $x$-axis on $[a, b]$, $\int_a^b f(x)\,dx$ is?
+   - Always the total area
+   - The net area (positive and negative areas can cancel)
+   - Always positive
+   - Undefined
+
+## Reasoning Task
+
+Water flows into a rectangular tank at a rate of $r(t) = 5 + 0.2t$ litres per minute.
+
+1. How much water is in the tank after 10 minutes (starting from empty)?
+2. If the tank has capacity 100 litres, when does it overflow?
+3. Set up (but do not solve) the integral that would give the average flow rate over the first 10 minutes.
+
+**Hint:** Average value of a function is $\frac{1}{b-a}\int_a^b f(t)\,dt$.
+
+## Application
+
+In medicine, pharmacokinetics uses integration to model drug concentration in the bloodstream. The rate at which a drug is metabolised depends on the current concentration, so doctors integrate this rate to predict when the drug level reaches therapeutic levels or dangerous thresholds.
+
+In economics, consumer and producer surplus — key measures of market efficiency — are defined as areas between curves. Policymakers use these integrals to evaluate the impact of price controls or subsidies.
+
+In physics, calculating the work done by friction, gravity, or elastic forces requires integrating non-constant forces. Engineers use these calculations to design systems that can withstand the forces they experience.
+
+In environmental science, computing total pollution accumulated over time requires integrating the emission rate. Policymakers use these calculations to plan remediation efforts.
+
+## Recap
+
+Integration extends from finding areas under curves to measuring all forms of accumulation. The area between two curves is the integral of the upper function minus the lower. Net displacement and total distance are distinguished by whether we integrate velocity or its absolute value. Work is the integral of force across a distance. Volumes of solid objects formed by rotating a curve can be found using the disk method. Accumulation problems — from drug levels to fuel volume to consumer surplus — all follow the pattern: integrate the rate to find the total. The Fundamental Theorem of Calculus connects all of these applications: compute an antiderivative, evaluate at endpoints, subtract.
+
+## Unlock Quiz
+
+1. What is the correct formula for area between curves $f(x) \geq g(x)$ on $[a,b]$?
+   - $\int_a^b f(x)\,dx - \int_a^b g(x)\,dx$
+   - $\int_a^b [f(x) - g(x)]\,dx$
+   - $\int_a^b f(x)g(x)\,dx$
+   - Both (a) and (b)
+
+2. When is net displacement not equal to total distance?
+   - When velocity is always positive
+   - When velocity changes sign during the interval
+   - When the object starts at the origin
+   - They are always equal
+
+3. In the disk method for volumes, what does $[r(x)]^2$ represent?
+   - The radius of each disk
+   - The area of each cross-sectional disk
+   - The height of each disk
+   - The volume of each disk
+
+4. Consumer surplus is the integral of?
+   - The demand curve alone
+   - The supply curve minus demand
+   - The demand curve minus equilibrium price
+   - Price times quantity
+
+5. For a conical water tank filled at a constant rate, the depth increases?
+   - Linearly with time
+   - At a decreasing rate
+   - At an increasing rate
+   - According to a cubic function
+
+6. Which scenario involves integrating a force function?
+   - Finding instantaneous velocity
+   - Computing work done by a variable force
+   - Determining the maximum speed of an object
+   - Measuring the acceleration of a particle
+
+<details>
+<summary>Answers</summary>
+
+1. Both (a) and (b)
+2. When velocity changes sign during the interval
+3. The area of each cross-sectional disk
+4. The demand curve minus equilibrium price
+5. At a decreasing rate
+6. Computing work done by a variable force
+
+</details>
+
+## Source Notes
+
+- Applications of integration: https://en.wikipedia.org/wiki/Applications_of_integration
+- Volume of revolution: https://en.wikipedia.org/wiki/Solid_of_revolution
+- Work (physics): https://en.wikipedia.org/wiki/Work_(physics)
+- Consumer surplus: https://en.wikipedia.org/wiki/Consumer_surplus
+- Saturn V and rocket design: https://en.wikipedia.org/wiki/Saturn_V

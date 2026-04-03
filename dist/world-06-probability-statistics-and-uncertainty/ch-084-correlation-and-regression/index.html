@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Correlation and Linear Regression — Math Journey</title>
+    <meta name="description" content="When two variables move together — and how to find the line that fits best" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 6 · Chapter 84</p>
+        <h1>Correlation and Linear Regression</h1>
+        <p class="hero-copy">When two variables move together — and how to find the line that fits best</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1880s–1900s</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"><li>Describe association from a scatter plot</li><li>Interpret the correlation coefficient r</li><li>Fit and interpret a least-squares regression line</li><li>Distinguish correlation from causation</li><li>Compute and interpret residuals and r²</li></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-3"><a href="#association-vs-causation">Association vs. Causation</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-3"><a href="#scatter-plot-and-association">Scatter Plot and Association</a></li><li class="toc-level-3"><a href="#correlation-coefficient">Correlation Coefficient</a></li><li class="toc-level-3"><a href="#least-squares-regression-line">Least-Squares Regression Line</a></li><li class="toc-level-3"><a href="#residuals">Residuals</a></li><li class="toc-level-3"><a href="#coefficient-of-determination-r-2">Coefficient of Determination ($r^2$)</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p><strong>Francis Galton</strong> (1886) studies a curious pattern: tall parents tend to have tall children, but the children aren&#x27;t <em>as tall</em> as the parents. Short parents tend to have short children, but not <em>as short</em>. There&#x27;s an association between parent height and child height, but it&#x27;s not perfect. The effect &quot;regresses&quot; toward the average height — hence the term <strong>regression</strong>.</p>
+<p>Galton quantifies this relationship and invents a tool: the <strong>correlation coefficient</strong>, measuring how strongly two variables move together.</p>
+<p>Soon after, his student <strong>Karl Pearson</strong> (1895–1896) formalises the mathematics. The <strong>Pearson correlation</strong> $r$ becomes standard in science. The <strong>regression line</strong> — a line that &quot;fits best&quot; through scattered data points — becomes a tool for prediction.</p>
+<p>Today, correlation and regression are everywhere: economists predict recessions, biologists model disease spread, machine learning systems predict from data. The story of two variables moving together, and how to find the line between them, is a story of modern prediction.</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Every analyst faces questions like:</p>
+<ul><li><strong>Economics:</strong> Does higher education spending correlate with higher student test scores? Can we predict future economic growth?</li><li><strong>Medicine:</strong> Does smoking correlate with lung cancer? How much does exercise reduce heart disease risk?</li><li><strong>Meteorology:</strong> How does ocean temperature correlate with hurricane intensity?</li><li><strong>Tech:</strong> Do more features correlate with higher user engagement? Can we predict churn?</li><li><strong>Sports:</strong> Does team payroll correlate with wins? Can we predict next season&#x27;s performance?</li></ul>
+<p>Correlation and regression let you:</p>
+<ul><li>Visualise relationships between two variables (scatter plots)</li><li>Quantify strength of association (correlation coefficient $r$)</li><li>Fit a predictive model (regression line $\hat{y} = a + bx$)</li><li>Assess goodness of fit (coefficient of determination $r^2$)</li><li><strong>Critically:</strong> distinguish correlation from causation (the most common statistical mistake)</li></ul>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p><strong>Francis Galton</strong> (1822–1911) was a polymath — statistician, explorer, geographer. His work on heredity led him to study parent-child heights. He noticed regression to the mean and invented regression analysis.</p>
+<p><strong>Karl Pearson</strong> (1857–1936) was Galton&#x27;s intellectual successor. He formalised the mathematics of correlation and regression. He also invented goodness-of-fit testing and developed the chi-squared test.</p>
+<p>Their work was motivated by a dangerous ideology: <strong>eugenics</strong> (the false belief that inherited traits could be &quot;improved&quot; through selective breeding). While we rightfully reject eugenics today, Pearson and Galton&#x27;s <em>statistical methods</em> — correlation and regression — are fundamental tools of modern science.</p>
+<p><strong>Least-squares regression</strong> (finding the best-fit line) was developed earlier by <strong>Carl Friedrich Gauss</strong> (1809) and <strong>Adrien-Marie Legendre</strong> (1805) for astronomy. Their method minimises the sum of squared deviations (residuals) — hence &quot;least squares.&quot;</p>
+<p>By the early 1900s, correlation and regression had become the language of quantitative analysis across all sciences.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p>Imagine you measure two variables on a group of people: height (X) and weight (Y). You plot each person as a point: height on the horizontal axis, weight on the vertical axis. You get a <strong>scatter plot</strong>.</p>
+<p>Do the points form a pattern? Often yes:</p>
+<ul><li><strong>Positive association:</strong> taller people tend to weigh more</li><li><strong>Negative association:</strong> students who study more tend to score higher (wait, that&#x27;s positive — less studying time leaves time to play video games)</li><li><strong>No association:</strong> eye colour and height — no pattern</li></ul>
+<p>The <strong>correlation coefficient</strong> $r$ quantifies this pattern. It ranges from $-1$ to $1$:</p>
+<ul><li>$r = 1$: perfect positive association (all points on a line with positive slope)</li><li>$r = -1$: perfect negative association (all points on a line with negative slope)</li><li>$r = 0$: no linear association (points scattered randomly)</li><li>$0 &lt; r &lt; 1$: positive association, strength depends on magnitude</li><li>$-1 &lt; r &lt; 0$: negative association, strength depends on magnitude</li></ul>
+<p>Once you&#x27;ve identified a strong association, the next question is: <em>can I predict $Y$ from $X$?</em> The <strong>regression line</strong> $\hat{y} = a + bx$ gives the best linear prediction.</p>
+<h3 id="association-vs-causation">Association vs. Causation</h3>
+<p><strong>Critical distinction:</strong></p>
+<p><strong>Correlation</strong> ($r$) measures association: do two variables move together?</p>
+<p><strong>Causation</strong> means: does one <em>cause</em> the other?</p>
+<p>Correlation <em>does not</em> imply causation. Classic examples:</p>
+<ul><li><strong>Ice cream sales and drowning deaths:</strong> both increase in summer (confounding variable: temperature)</li><li><strong>Shoe size and reading ability in children:</strong> both increase with age (age is the confounder)</li><li><strong>Coffee consumption and heart disease:</strong> <em>possibly</em> confounded by stress, weight, smoking, or reverse causation</li></ul>
+<p>Confounding variables (hidden factors) can create spurious correlations. Bad actors use this: &quot;X and Y correlate, therefore X causes Y&quot; — a common propaganda technique.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<h3 id="scatter-plot-and-association">Scatter Plot and Association</h3>
+<p>A <strong>scatter plot</strong> displays two quantitative variables:</p>
+<ul><li>Horizontal axis: independent variable (X)</li><li>Vertical axis: dependent variable (Y)</li><li>Each point: one observation</li></ul>
+<p><strong>Describing association:</strong></p>
+<ul><li><strong>Direction:</strong> positive (upward trend) or negative (downward trend)</li><li><strong>Form:</strong> linear (points cluster around a line) or non-linear (curved, etc.)</li><li><strong>Strength:</strong> strong (tight cluster), moderate, or weak (scattered)</li><li><strong>Outliers:</strong> unusual points far from the main pattern</li></ul>
+<h3 id="correlation-coefficient">Correlation Coefficient</h3>
+<p>The <strong>Pearson correlation coefficient</strong> is:</p>
+<p>$$r = \frac{1}{n-1} \sum_{i=1}^{n} \left(\frac{x_i - \bar{x}}{s_x}\right)\left(\frac{y_i - \bar{y}}{s_y}\right)$$</p>
+<p>where $s_x$ and $s_y$ are standard deviations.</p>
+<p><strong>Key properties:</strong></p>
+<ul><li>$-1 \leq r \leq 1$</li><li>$r &gt; 0$: positive association</li><li>$r &lt; 0$: negative association</li><li>$|r|$ close to 1: strong linear association</li><li>$|r|$ close to 0: weak linear association</li><li>$r = 0$: no linear association (but could have non-linear association!)</li></ul>
+<p><strong>Interpretation:</strong></p>
+<ul><li>$r = 0.9$: very strong positive association</li><li>$r = 0.5$: moderate positive association</li><li>$r = 0.2$: weak positive association</li><li>$r = 0$: no linear association</li><li>$r = -0.7$: strong negative association</li></ul>
+<p><strong>Do not memorise the formula.</strong> Use a calculator or software. Understand the interpretation.</p>
+<h3 id="least-squares-regression-line">Least-Squares Regression Line</h3>
+<p>The <strong>regression line</strong> $\hat{y} = a + bx$ predicts $Y$ from $X$.</p>
+<p>The <strong>slope</strong> is:</p>
+<p>$$b = r \frac{s_y}{s_x}$$</p>
+<p>The <strong>intercept</strong> is:</p>
+<p>$$a = \bar{y} - b\bar{x}$$</p>
+<p>The line passes through the point $(\bar{x}, \bar{y})$ (the centre of mass of the scatter plot).</p>
+<p><strong>Interpretation:</strong></p>
+<ul><li><strong>Slope $b$:</strong> for each unit increase in $X$, $Y$ increases (or decreases if $b &lt; 0$) by $b$ units</li><li><strong>Intercept $a$:</strong> predicted value of $Y$ when $X = 0$ (might not be meaningful if $X$ doesn&#x27;t approach 0)</li></ul>
+<p><strong>Example:</strong> Heights and weights. Regression line: $\widehat{\text{Weight}} = 50 + 0.8 \times \text{Height}$ (in crude units).</p>
+<ul><li>Slope 0.8 means: each cm of additional height predicts 0.8 kg more weight</li><li>Intercept 50 means: a person 0 cm tall would weigh 50 kg (not meaningful — no one is 0 cm tall)</li></ul>
+<h3 id="residuals">Residuals</h3>
+<p>A <strong>residual</strong> is the difference between observed and predicted:</p>
+<p>$$e_i = y_i - \hat{y}_i$$</p>
+<p>Residuals measure how far each point is from the regression line. Small residuals = good fit. Large residuals = poor fit or outliers.</p>
+<p><strong>Least-squares principle:</strong> the regression line minimises the sum of squared residuals $\sum e_i^2$. This makes it the &quot;best&quot; line in a specific mathematical sense.</p>
+<h3 id="coefficient-of-determination-r-2">Coefficient of Determination ($r^2$)</h3>
+<p>$$r^2 = \text{(correlation coefficient)}^2$$</p>
+<p>$r^2$ is the <strong>proportion of variance in $Y$ explained by $X$.</strong></p>
+<ul><li>$r^2 = 0.81$ means 81% of the variation in $Y$ is explained by $X$; 19% is unexplained (due to other factors, measurement error, randomness)</li><li>$r^2 = 0.25$ means only 25% is explained; the model leaves 75% unexplained</li><li>$r^2 = 0$ means $X$ explains none of the variation in $Y$</li><li>$r^2 = 1$ means $X$ perfectly explains $Y$ (all points exactly on the line)</li></ul>
+<p>$r^2$ is more useful than $r$ because it directly quantifies explanatory power.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Interpreting Correlation</strong></p>
+<p>Data: study hours (X) and exam scores (Y) for 20 students.</p>
+<ul><li>Scatter plot shows a clear upward trend</li><li>Correlation: $r = 0.82$</li><li>$r^2 = 0.67$</li></ul>
+<p><strong>Interpretation:</strong> There&#x27;s a strong positive association between study hours and exam scores ($r = 0.82$). Students who study more tend to score higher. The relationship explains 67% of the variation in exam scores ($r^2 = 0.67$). The remaining 33% is due to other factors (aptitude, sleep, nutrition, test anxiety, etc.).</p>
+<p><strong>Example 2: Regression Line and Prediction</strong></p>
+<p>Data: advertising spending (X, in thousands of dollars) and revenue (Y, in thousands of dollars) for 12 months.</p>
+<p>Regression line: $\hat{Y} = 50 + 8X$ with $r = 0.89$, $r^2 = 0.79$.</p>
+<p><strong>Predictions:</strong></p>
+<ul><li>If we spend $10,000 on ads: $\hat{Y} = 50 + 8(10) = 130$ thousand dollars revenue = $130,000</li><li>If we spend $20,000: $\hat{Y} = 50 + 8(20) = 210$ thousand dollars = $210,000</li></ul>
+<p><strong>Interpretation:</strong></p>
+<ul><li>Each additional $1,000 in advertising is predicted to increase revenue by $8,000 (slope = 8)</li><li>Base revenue (with no advertising) is estimated at $50,000 (intercept = 50)</li><li>The model explains 79% of revenue variation ($r^2 = 0.79$)</li><li>We&#x27;re reasonably confident in predictions <em>within the range of the data</em> (interpolation). Predicting outside (extrapolation) is risky</li></ul>
+<p><strong>Example 3: Causation vs. Correlation</strong></p>
+<p><strong>Claim:</strong> Ice cream sales and drowning deaths correlate ($r = 0.85$). Ice cream causes drowning!</p>
+<p><strong>Reality:</strong> Both increase in summer (confounding variable: temperature). Heat drives ice cream sales and increases swimming (and drowning risk). Temperature causes both.</p>
+<p><strong>Correct conclusion:</strong> There&#x27;s a strong positive association, but temperature confounds the relationship. Ice cream doesn&#x27;t cause drowning.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Scatter Plot Analysis:</strong> You have data on plant height (X, cm) and seed production (Y, number of seeds) for 15 plants.</li></ol>
+<ul><li>Scatter plot shows points clustering around a line (height ≈ 20 cm, seeds ≈ 50; height ≈ 40 cm, seeds ≈ 150)</li><li>Does the association appear positive, negative, or absent?</li><li>Does it appear strong or weak?</li><li>Would a linear regression be appropriate?</li></ul>
+<ol><li><strong>Interpreting Correlation:</strong> A study finds $r = -0.65$ between exercise frequency and resting heart rate.</li></ol>
+<ul><li>Describe the direction and strength of association</li><li>Compute $r^2$ and interpret</li><li>Does this suggest that exercise <em>causes</em> lower heart rates? (Consider confounders.)</li></ul>
+<ol><li><strong>Regression Calculation:</strong> Data: hours studied (X) and exam score (Y).</li></ol>
+<ul><li>$\bar{x} = 5$, $\bar{y} = 75$, $s_x = 2$, $s_y = 10$, $r = 0.8$</li><li>Calculate the regression line $\hat{y} = a + bx$</li><li>Predict the score for a student who studies 6 hours</li><li>Predict the score for a student who studies 20 hours (comment on reliability)</li></ul>
+<ol><li><strong>Residuals:</strong> A regression line is $\hat{y} = 10 + 3x$.</li></ol>
+<ul><li>A point has $x = 4$, actual $y = 23$, predicted $\hat{y} = 22$. What&#x27;s the residual?</li><li>Interpret the residual</li><li>If many residuals are large, what does that suggest about the model?</li></ul>
+<ol><li><strong>$r^2$ Interpretation:</strong> A model of house prices (Y) based on square footage (X) has $r^2 = 0.72$.</li></ol>
+<ul><li>What percentage of price variation is explained by square footage?</li><li>What percentage is unexplained?</li><li>List factors that might account for the unexplained variation</li></ul>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>Simpson&#x27;s Paradox and Confounding</strong></p>
+<p>A company finds that men, on average, receive higher salaries than women. The scatter plot shows a weak positive correlation between years of experience and salary ($r = 0.3$).</p>
+<p>But when they break down the data by <em>department</em>:</p>
+<ul><li>Engineering: men earn slightly less than women (confounding by experience)</li><li>Marketing: men earn slightly less than women</li><li>Sales: men earn slightly less than women</li></ul>
+<p>How can men earn <em>more</em> overall but less in every department? The answer: <strong>Simpson&#x27;s Paradox</strong>.</p>
+<p><strong>Your Task:</strong></p>
+<ol><li>Propose a confounding variable that explains this paradox</li><li>Draw two scatter plots: one combined (showing men earning more), one separated by department (showing women earning more)</li><li>Explain how aggregation can reverse the direction of association</li></ol>
+<p>This is why correlation analysis must account for confounding variables — a foundational principle of causal inference.</p>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Real-World Scenario: Climate Science</strong></p>
+<p>Researchers study the relationship between atmospheric CO₂ concentration (X, ppm) and global temperature anomaly (Y, °C relative to 1900s baseline).</p>
+<p>Data (simplified):</p>
+<ul><li>1960: X = 317 ppm, Y = 0.03°C</li><li>1980: X = 339 ppm, Y = 0.26°C</li><li>2000: X = 369 ppm, Y = 0.43°C</li><li>2020: X = 414 ppm, Y = 1.25°C</li></ul>
+<p>Analysis:</p>
+<ul><li>Scatter plot shows a clear upward trend</li><li>Correlation: $r = 0.99$, $r^2 = 0.98$</li><li>Regression line: $\hat{Y} = -3.89 + 0.011X$</li></ul>
+<p><strong>Questions:</strong></p>
+<ol><li>Describe the association between CO₂ and temperature</li><li>Interpret the slope: what does 0.011 mean in plain language?</li><li>Interpret $r^2 = 0.98$: what does this say about the relationship?</li><li>Predict the temperature anomaly if CO₂ reaches 500 ppm</li><li>Does correlation prove causation here? What evidence would support causation (greenhouse gas physics, isotope analysis, timing, etc.)?</li></ol>
+<p>This is a real example of how correlation and regression support causal inference in climate science.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p><strong>Correlation and regression quantify relationships between two variables.</strong></p>
+<p><strong>Correlation coefficient $r$:</strong></p>
+<ul><li>Measures strength and direction of <em>linear</em> association</li><li>Ranges from $-1$ to $1$</li><li>$r = 0$ does <em>not</em> mean no association (could be non-linear!)</li></ul>
+<p><strong>Causation vs. Correlation:</strong></p>
+<ul><li>Correlation means two variables move together</li><li>Causation means one causes the other</li><li><strong>Correlation does not imply causation</strong> — confounding variables are common</li></ul>
+<p><strong>Regression line $\hat{y} = a + bx$:</strong></p>
+<ul><li>Best linear prediction of $Y$ from $X$</li><li>Slope $b$: predicted change in $Y$ per unit change in $X$</li><li>Passes through $(\bar{x}, \bar{y})$</li><li>Use for prediction <em>within the range of observed data</em></li></ul>
+<p><strong>Coefficient of Determination $r^2$:</strong></p>
+<ul><li>Proportion of $Y$ variation explained by $X$</li><li>More interpretable than $r$</li><li>Remaining $(1 - r^2)$ is unexplained</li></ul>
+<p><strong>Historical Significance:</strong></p>
+<ul><li>Developed 1880s–1900s by Galton, Pearson, and others</li><li>Foundation of quantitative science and modern prediction</li><li>Misuse of correlation (forgetting the causation problem) is common in media and politics</li></ul>
+<p>The story of Galton and Pearson — finding patterns in inheritance data and inventing tools to quantify them — shows how correlation and regression reveal hidden structures in data. Master these tools, and you unlock the ability to predict, compare, and infer.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<p><strong>Question 1:</strong> Two variables have correlation $r = 0.5$. What does this indicate?</p>
+<ul><li>A perfect positive association</li><li>A moderate positive association</li><li>A weak negative association</li><li>No association</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$r = 0.5$ indicates a moderate positive association. The variables move together somewhat, but not strongly. The answer is &quot;A moderate positive association&quot;.</p>
+</details>
+<p><strong>Question 2:</strong> If $r = 0.7$, what is $r^2$?</p>
+<ul><li>0.49</li><li>0.7</li><li>1.4</li><li>Cannot be determined</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$r^2 = (0.7)^2 = 0.49$. This means 49% of the variation in one variable is explained by the other. The answer is 0.49.</p>
+</details>
+<p><strong>Question 3:</strong> A regression line is $\hat{y} = 10 + 2x$. What is the predicted $y$ when $x = 5$?</p>
+<ul><li>10</li><li>15</li><li>20</li><li>25</li></ul>
+<details>
+<summary>Answer</summary>
+<p>$\hat{y} = 10 + 2(5) = 10 + 10 = 20$. The answer is 20.</p>
+</details>
+<p><strong>Question 4:</strong> Which scenario demonstrates causation rather than just correlation?</p>
+<ul><li>Taller people play basketball more; therefore height causes basketball ability</li><li>In a randomised controlled trial, giving a drug reduces symptoms; therefore the drug causes symptom reduction</li><li>Students with more tutoring score higher; tutoring might correlate with prior ability</li><li>Countries with more television ownership have higher life expectancy; TV causes longer life</li></ul>
+<details>
+<summary>Answer</summary>
+<p>Only the second option demonstrates causation. A randomised controlled trial (RCT) controls for confounding variables and isolates the effect of the drug. The other options show correlation that could be due to confounding. The answer is &quot;In a randomised controlled trial, giving a drug reduces symptoms; therefore the drug causes symptom reduction&quot;.</p>
+</details>
+<p><strong>Question 5:</strong> A scatter plot shows points scattered randomly with no pattern. What would you expect?</p>
+<ul><li>$r \approx 1$</li><li>$r \approx -1$</li><li>$r \approx 0$</li><li>$r^2 \approx 1$</li></ul>
+<details>
+<summary>Answer</summary>
+<p>No pattern means no linear association, so $r \approx 0$. The answer is &quot;$r \approx 0$&quot;.</p>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient" target="_blank" rel="noopener">Pearson correlation coefficient — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Linear_regression" target="_blank" rel="noopener">Linear regression — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Francis_Galton" target="_blank" rel="noopener">Francis Galton — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Karl_Pearson" target="_blank" rel="noopener">Karl Pearson — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation" target="_blank" rel="noopener">Correlation does not imply causation — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Confounding" target="_blank" rel="noopener">Confounding — Wikipedia</a></li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-083-describing-data/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Describing Data — Centre, Spread, and Shape</span></a><a class="pager-link pager-link--next" href="../../world-06-probability-statistics-and-uncertainty/ch-085-sampling-and-inference/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Sampling and Statistical Inference</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

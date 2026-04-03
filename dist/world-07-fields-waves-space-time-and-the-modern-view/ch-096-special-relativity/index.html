@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Special Relativity — Space, Time, and the Speed of Light — Math Journey</title>
+    <meta name="description" content="What happens when nothing can travel faster than light — the mathematics of Einstein&#x27;s revolution" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+      onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+    
+  </head>
+  <body>
+    
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+          <span class="site-logo-mark">∑</span>
+          <span class="site-logo-text">Math Journey</span>
+        </a>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="../../index.html">Chapters</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="reading-progress" role="progressbar" aria-label="Reading progress">
+      <div class="reading-progress-bar" id="js-progress"></div>
+    </div>
+
+    <main class="page-shell chapter-shell">
+      <a class="back-link" href="../../index.html">← All chapters</a>
+
+      <section class="hero-panel chapter-hero">
+        <p class="eyebrow">World 7 · Chapter 96</p>
+        <h1>Special Relativity — Space, Time, and the Speed of Light</h1>
+        <p class="hero-copy">What happens when nothing can travel faster than light — the mathematics of Einstein&#x27;s revolution</p>
+        <div class="hero-meta">
+          <span>40 min</span>
+          <span>core</span>
+          
+          <span>1905 CE</span>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="chapter-sidebar">
+          <section class="sidebar-card">
+            <p class="eyebrow">Objectives</p>
+            <ul class="sidebar-list"></ul>
+          </section>
+          <section class="sidebar-card">
+            <p class="eyebrow">On This Page</p>
+            <ul class="toc-list"><li class="toc-level-2"><a href="#story-hook">Story Hook</a></li><li class="toc-level-2"><a href="#why-it-matters">Why It Matters</a></li><li class="toc-level-2"><a href="#historical-context">Historical Context</a></li><li class="toc-level-2"><a href="#core-concept">Core Concept</a></li><li class="toc-level-2"><a href="#definitions-and-formal-lesson">Definitions and Formal Lesson</a></li><li class="toc-level-2"><a href="#worked-examples">Worked Examples</a></li><li class="toc-level-2"><a href="#practice-set">Practice Set</a></li><li class="toc-level-2"><a href="#reasoning-task">Reasoning Task</a></li><li class="toc-level-2"><a href="#application">Application</a></li><li class="toc-level-2"><a href="#recap">Recap</a></li><li class="toc-level-2"><a href="#unlock-quiz">Unlock Quiz</a></li><li class="toc-level-2"><a href="#source-notes">Source Notes</a></li></ul>
+          </section>
+        </aside>
+
+        <article class="chapter-article">
+          <section class="lesson-section lesson-section--story"><h2 id="story-hook">Story Hook</h2>
+<p>June 1905. Bern, Switzerland. A young man works at the Federal Patent Office. His job is to examine patent applications. At night, he thinks about physics. His name is Albert Einstein. He is 26 years old.</p>
+<p>He publishes a paper titled &quot;On the Electrodynamics of Moving Bodies.&quot; The paper is just 30 pages. It contains no new experimental data, no complex equations, no references to earlier work. It is pure reasoning, starting from two simple postulates.</p>
+<p><strong>Postulate 1</strong>: The laws of physics are the same in every inertial (non-accelerating) frame of reference.</p>
+<p><strong>Postulate 2</strong>: The speed of light is the same ($c \approx 3 \times 10^8$ m/s) for every observer, regardless of how fast they&#x27;re moving.</p>
+<p>From these two ideas, using only algebra and calculus, Einstein derives consequences that shatter the 300-year-old worldview of Newton:</p>
+<ul><li><strong>Time is not absolute.</strong> Moving clocks tick slower than stationary ones.</li><li><strong>Length is not absolute.</strong> Moving objects are shorter than stationary ones.</li><li><strong>Mass and energy are equivalent.</strong> $E = mc^2$.</li></ul>
+<p>The universe, it turns out, is far stranger than anyone had imagined.</p>
+<p>This is the birth of <strong>special relativity</strong> — one of the greatest intellectual achievements in human history. From two postulates and mathematical reasoning alone, Einstein revolutionized physics. The paper would earn him the Nobel Prize decades later (though oddly, for the photoelectric effect, not relativity).</p>
+</section><section class="lesson-section lesson-section--motivation"><h2 id="why-it-matters">Why It Matters</h2>
+<p>Special relativity seems abstract — who cares if time dilates a tiny bit at high speeds?</p>
+<p>But the consequences are <strong>profound and practical</strong>:</p>
+<ul><li><strong>GPS satellites</strong>: Your phone&#x27;s location depends on signals from satellites orbiting at 14,000 km/h. Without relativistic corrections, GPS would drift by 7 km per day. Satellites must account for both special and general relativistic time dilation.</li></ul>
+<ul><li><strong>Particle physics</strong>: Electrons in lightning bolts travel at relativistic speeds. Muons created in cosmic rays can only reach Earth because of time dilation — in their &quot;own&quot; frame, Earth&#x27;s atmosphere is compressed, so they travel through it quickly. Without relativity, muons would decay before reaching the surface.</li></ul>
+<ul><li><strong>Nuclear power and weapons</strong>: The equivalence $E = mc^2$ explains why releasing mass releases enormous energy. A kilogram of matter converted to energy releases $9 \times 10^{16}$ joules — enough to power a city for a year.</li></ul>
+<ul><li><strong>Stars and black holes</strong>: The energy output of stars, the existence of black holes, the behavior of matter at extreme densities — all require relativistic equations.</li></ul>
+<ul><li><strong>Particle accelerators</strong>: To understand the Higgs boson, the nature of matter, physicists must use relativistic mechanics.</li></ul>
+<ul><li><strong>Modern technology</strong>: Relativistic effects appear in PET scan imaging (positron-electron annihilation), in high-energy particle detectors, in the engineering of fast spacecraft.</li></ul>
+<p>Without special relativity, modern physics, modern medicine, and modern technology would not exist.</p>
+</section><section class="lesson-section lesson-section--historical"><h2 id="historical-context">Historical Context</h2>
+<p>In the 1890s, physics seemed nearly complete. Newton&#x27;s laws worked beautifully for everyday objects. Maxwell&#x27;s equations described light and electromagnetism. Thermodynamics explained heat. The universe was a vast clockwork, deterministic and orderly.</p>
+<p>Then problems arose.</p>
+<p>Maxwell&#x27;s equations predicted that light travels at a fixed speed ($c$) relative to something. But relative to what? Scientists imagined a medium called the &quot;aether&quot; through which light propagates, like sound through air. Light should travel faster or slower depending on whether you move with or against the aether.</p>
+<p>In 1887, Michelson and Morley performed a famous experiment to measure the aether. Result: the speed of light is the same in all directions, regardless of Earth&#x27;s motion. No aether. The simplest explanation is that the speed of light is truly constant for all observers.</p>
+<p>But this contradicts Newton&#x27;s laws! If light travels at speed $c$ in one frame, and you move at speed $v$ toward the light, shouldn&#x27;t you see it approaching at speed $c + v$? No, Einstein said. You still see it at speed $c$. This requires completely rethinking space and time.</p>
+<p>Einstein published his theory in 1905. The physics community initially resisted — it was too radical. But by 1911, the theory was gaining acceptance. By the 1920s, it was confirmed experimentally. Today, it is as fundamental as the idea that the Earth orbits the Sun.</p>
+</section><section class="lesson-section lesson-section--concept"><h2 id="core-concept">Core Concept</h2>
+<p><strong>Special relativity</strong> describes the geometry of spacetime when gravity is negligible.</p>
+<p>Central ideas:</p>
+<ol><li><strong>The speed of light is constant</strong>: All observers measure light traveling at $c \approx 3 \times 10^8$ m/s, regardless of their motion.</li></ol>
+<ol><li><strong>Time dilation</strong>: A moving clock ticks slower than a stationary clock. The faster you go, the slower you age.</li></ol>
+<ol><li><strong>Length contraction</strong>: A moving object is shorter in the direction of motion.</li></ol>
+<ol><li><strong>Relativity of simultaneity</strong>: Two events that are simultaneous in one frame are not simultaneous in another.</li></ol>
+<ol><li><strong>Mass-energy equivalence</strong>: Mass and energy are interchangeable. $E = mc^2$.</li></ol>
+<p>All of these follow mathematically from the two postulates. They are not arbitrary; they are consequences of spacetime geometry.</p>
+</section><section class="lesson-section lesson-section--definitions"><h2 id="definitions-and-formal-lesson">Definitions and Formal Lesson</h2>
+<p><strong>The Lorentz factor</strong>: $$\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}$$</p>
+<p>where $v$ is speed and $c$ is the speed of light. When $v$ is small, $\gamma \approx 1$. As $v \to c$, $\gamma \to \infty$.</p>
+<p><strong>Time dilation</strong>: A moving clock runs slow. If a moving observer measures time interval $\Delta \tau$ on their clock, a stationary observer measures: $$\Delta t = \gamma \Delta \tau$$</p>
+<p>The moving clock appears to run slower by a factor of $\gamma$.</p>
+<p><strong>Length contraction</strong>: A moving object is shorter. If a moving object has length $L_0$ at rest, a stationary observer measures: $$L = \frac{L_0}{\gamma}$$</p>
+<p>Only the component parallel to motion is contracted.</p>
+<p><strong>Relativistic momentum</strong>: $$p = \gamma mv$$</p>
+<p>At low speeds, $p \approx mv$ (Newton&#x27;s second law). At high speeds, momentum increases without bound as $v \to c$.</p>
+<p><strong>Mass-energy equivalence</strong>: $$E = \gamma mc^2$$</p>
+<p>At rest ($v = 0$, $\gamma = 1$): $$E_0 = mc^2$$</p>
+<p>This is the <strong>rest energy</strong>. The kinetic energy is: $$K = (\gamma - 1) mc^2$$</p>
+<p><strong>Spacetime interval</strong> (invariant for all observers): $$s^2 = c^2 t^2 - x^2$$</p>
+<p>(In higher dimensions: $s^2 = c^2 t^2 - x^2 - y^2 - z^2$.)</p>
+<p>If $s^2 &gt; 0$, the interval is &quot;timelike&quot; (causal). If $s^2 &lt; 0$, it&#x27;s &quot;spacelike&quot; (causally disconnected). If $s^2 = 0$, light connects the events.</p>
+</section><section class="lesson-section lesson-section--examples"><h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Example 1: Muon Decay (Time Dilation)</strong></p>
+<p>Muons are particles created when cosmic rays hit the upper atmosphere. They decay with a half-life of 2.2 microseconds. The atmosphere is about 10 km thick. Muons travel at 0.99c (99% the speed of light).</p>
+<p>Without relativity: A muon would travel only $0.99 \times 3 \times 10^8 \text{ m/s} \times 2.2 \times 10^{-6} \text{ s} \approx 660$ meters before decaying. Most would never reach Earth.</p>
+<p>With relativity: At $v = 0.99c$, the Lorentz factor is $\gamma = 1/\sqrt{1 - 0.99^2} \approx 7.1$. The muon&#x27;s internal clock runs slow by a factor of 7.1. In the muon&#x27;s frame, it sees the atmosphere compressed by the same factor, so it can travel through. Many muons reach Earth. We detect them. This confirms time dilation experimentally.</p>
+<p><strong>Example 2: Energy Release</strong></p>
+<p>A uranium-235 nucleus splits, releasing 200 MeV of energy. This comes from a mass defect: the mass of the products is slightly less than the original nucleus. The missing mass converts to energy.</p>
+<p>$$\Delta E = \Delta m \cdot c^2 = (10^{-29} \text{ kg}) \times (3 \times 10^8 \text{ m/s})^2 = 9 \times 10^{-13} \text{ J}$$</p>
+<p>A single nucleus releases tiny energy. But a mole of nuclei ($6 \times 10^{23}$ atoms) releases $6 \times 10^{11}$ joules — energy equivalent to tons of TNT. This is why nuclear power is so potent.</p>
+<p><strong>Example 3: GPS Corrections</strong></p>
+<p>A GPS satellite orbits at $v \approx 4$ km/s at altitude $\approx 20,000$ km. Time dilation factor: $\gamma \approx 1 + 10^{-10}$ (tiny, but real).</p>
+<p>Also, the satellite is in a weaker gravitational field (general relativity effect), causing it to experience less time dilation than Earth&#x27;s surface — by about $5 \times 10^{-10}$.</p>
+<p>Net effect: The satellite&#x27;s clock ticks faster than clocks on Earth by about $4.5 \times 10^{-10}$ seconds per second. Over a day, this is 39 microseconds. If not corrected, GPS positions would drift by 10 km per day. Modern GPS systems apply these corrections automatically.</p>
+</section><section class="lesson-section lesson-section--practice"><h2 id="practice-set">Practice Set</h2>
+<ol><li><strong>Lorentz Factor</strong>: At what speed does $\gamma = 2$? (Solve for $v$ in terms of $c$.)</li></ol>
+<ol><li><strong>Time Dilation</strong>: An astronaut travels at 0.6c for 10 years (ship time). How much time passes on Earth?</li></ol>
+<ol><li><strong>Length Contraction</strong>: A spaceship is 100 meters long at rest. Traveling at 0.8c, how long does it appear to a stationary observer?</li></ol>
+<ol><li><strong>Kinetic Energy</strong>: An electron (mass 9.1 × 10^{-31} kg) travels at 0.9c. Compute its kinetic energy using $K = (\gamma - 1)mc^2$. Compare to non-relativistic estimate $K = \frac{1}{2}mv^2$.</li></ol>
+<ol><li><strong>Spacetime Interval</strong>: Two events occur at the same place but 1 second apart in one frame. What is their spacetime interval? Are they causally connected?</li></ol>
+</section><section class="lesson-section lesson-section--reasoning"><h2 id="reasoning-task">Reasoning Task</h2>
+<p><strong>The Relativity of Simultaneity</strong></p>
+<p>In Einstein&#x27;s theory, &quot;at the same time&quot; is not absolute. Two events simultaneous in one frame are not simultaneous in another.</p>
+<p>Consider two lightning strikes:</p>
+<ul><li>Strike A hits the front of a train at station.</li><li>Strike B hits the back of the train at station.</li><li>From the station&#x27;s viewpoint, they happen simultaneously.</li></ul>
+<p>But a passenger on the train sees differently: the train is moving toward strike A. Light from strike A reaches the passenger before light from strike B. The passenger says A happened first.</p>
+<p>Discuss:</p>
+<ul><li>Why doesn&#x27;t this contradict causality? (Neither event can cause the other.)</li><li>How does this challenge our intuition about &quot;now&quot;?</li><li>What does this tell us about the nature of time?</li></ul>
+</section><section class="lesson-section lesson-section--application"><h2 id="application">Application</h2>
+<p><strong>Particle Physics and the Higgs Boson</strong></p>
+<p>When physicists discovered the Higgs boson in 2012 at the Large Hadron Collider, they were colliding protons at energies of 7 TeV (trillion electron volts). At these energies, particles move at speeds extremely close to $c$, and relativistic effects are enormous.</p>
+<p>The Higgs boson has a tiny mass (125 GeV/$c^2$). But it decays almost instantly into lighter particles. To detect it, physicists must:</p>
+<ol><li><strong>Predict decay products</strong> using relativistic quantum mechanics (combining special relativity and quantum theory).</li><li><strong>Reconstruct the Higgs mass</strong> from the energy and momentum of decay products, using $E^2 = (pc)^2 + (mc^2)^2$ (the relativistic energy-momentum relation).</li><li><strong>Search for statistical excesses</strong> in the expected backgrounds.</li></ol>
+<p>Without special relativity, the entire field of high-energy particle physics would not exist.</p>
+</section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
+<p>Albert Einstein published special relativity in 1905, assuming only that the laws of physics are the same in all inertial frames and that light travels at constant speed $c$ for all observers. From these two postulates, he derived time dilation (moving clocks slow down), length contraction (moving objects shorten), and mass-energy equivalence ($E = mc^2$). The Lorentz factor $\gamma$ quantifies these effects. Spacetime intervals are invariant — the same for all observers. Special relativity is confirmed experimentally in particle physics, in muon decay, and in GPS satellites. It reveals that space and time are not separate; they form a unified &quot;spacetime.&quot; The theory revolutionized physics and remains the foundation of modern science.</p>
+</section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
+<ol><li>Einstein&#x27;s two postulates of special relativity are:</li></ol>
+<ul><li>The equivalence principle and gravitational curvature</li><li>The laws of physics are the same in all inertial frames, and light speed is constant</li><li>Energy is conserved, and momentum is conserved</li><li>Time is absolute, and distance is absolute</li></ul>
+<ol><li>The Lorentz factor $\gamma$ approaches infinity as:</li></ol>
+<ul><li>$v \to 0$</li><li>$v \to c$</li><li>$v$ becomes negative</li><li>$c \to 0$</li></ul>
+<ol><li>Time dilation means that a moving clock ticks _____ than a stationary clock.</li></ol>
+<ul><li>faster</li><li>slower</li><li>at the same rate</li><li>in reverse</li></ul>
+<ol><li>Length contraction occurs in the _____ direction of motion.</li></ol>
+<ul><li>perpendicular</li><li>parallel</li><li>radial</li><li>random</li></ul>
+<ol><li>The rest energy of an object of mass $m$ is:</li></ol>
+<ul><li>$mc$</li><li>$mc^2$</li><li>$\frac{1}{2}mc^2$</li><li>$\gamma mc^2$</li></ul>
+<details>
+<summary>Answers</summary>
+<ol><li>The laws of physics are the same in all inertial frames, and light speed is constant</li><li>$v \to c$</li><li>slower</li><li>parallel</li><li>$mc^2$</li></ol>
+</details>
+</section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
+<ul><li>Einstein, A. (1905). &quot;Zur Elektrodynamik bewegter Körper.&quot; <em>Annalen der Physik</em>, 17(10), 891–921. The foundational paper on special relativity.</li><li>https://en.wikipedia.org/wiki/Special_relativity</li><li>https://en.wikipedia.org/wiki/Albert_Einstein</li><li>https://en.wikipedia.org/wiki/Lorentz_transformation</li><li>https://en.wikipedia.org/wiki/Time_dilation</li><li>https://en.wikipedia.org/wiki/Length_contraction</li><li>https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence</li><li>https://en.wikipedia.org/wiki/Global_Positioning_System#Relativistic_effects</li></ul></section>
+        </article>
+      </div>
+
+      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-095-fourier-analysis/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Fourier Analysis — Decomposing Signals</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-097-quantum-mechanics-and-probability/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Quantum Mechanics and Probability</span></a></nav>
+    </main>
+    
+    
+    <script>
+      /* --- Reading progress bar --- */
+      (function () {
+        var bar = document.getElementById('js-progress');
+        if (!bar) return;
+        function update() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          bar.style.width = Math.min(100, pct) + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+
+      /* --- Interactive Quiz --- */
+      (function () {
+        var quiz = document.querySelector('.lesson-section--quiz');
+        if (!quiz) return;
+
+        /* 1. Extract correct answers from the <details> block */
+        var details = quiz.querySelector('details');
+        if (!details) return;
+        var answerItems = details.querySelectorAll('ol li');
+        var correctAnswers = [];
+        function normalize(s) {
+          return s.trim().toLowerCase().replace(/[.,;:!?]+$/g, '');
+        }
+        answerItems.forEach(function (li) {
+          correctAnswers.push(normalize(li.textContent));
+        });
+        details.remove(); /* hide the static answer key */
+
+        /* 2. Parse the alternating OL (question) + UL (options) pairs */
+        var ols = quiz.querySelectorAll(':scope > ol');
+        var uls = quiz.querySelectorAll(':scope > ul');
+        var questions = [];
+        for (var i = 0; i < ols.length && i < uls.length; i++) {
+          questions.push({ questionEl: ols[i], optionsEl: uls[i] });
+        }
+
+        /* 3. Build interactive quiz cards */
+        var selections = new Array(questions.length).fill(-1);
+        var quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-interactive';
+
+        questions.forEach(function (q, qi) {
+          var card = document.createElement('div');
+          card.className = 'quiz-card';
+
+          /* Question number + text */
+          var qLabel = document.createElement('div');
+          qLabel.className = 'quiz-q-label';
+          qLabel.textContent = 'Q' + (qi + 1);
+          card.appendChild(qLabel);
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-q-text';
+          qText.textContent = q.questionEl.querySelector('li').textContent;
+          card.appendChild(qText);
+
+          /* Options */
+          var optionsDiv = document.createElement('div');
+          optionsDiv.className = 'quiz-options';
+          var optionLis = q.optionsEl.querySelectorAll('li');
+          optionLis.forEach(function (li, oi) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-option';
+            btn.type = 'button';
+            btn.textContent = li.textContent;
+            btn.setAttribute('data-qi', qi);
+            btn.setAttribute('data-oi', oi);
+            btn.addEventListener('click', function () {
+              selections[qi] = oi;
+              var siblings = optionsDiv.querySelectorAll('.quiz-option');
+              siblings.forEach(function (s) { s.classList.remove('selected'); });
+              btn.classList.add('selected');
+              card.classList.add('answered');
+              /* Enable check button if all answered */
+              if (selections.every(function (s) { return s >= 0; })) {
+                checkBtn.disabled = false;
+                checkBtn.classList.add('ready');
+              }
+            });
+            optionsDiv.appendChild(btn);
+          });
+          card.appendChild(optionsDiv);
+
+          quizContainer.appendChild(card);
+
+          /* Remove the original OL and UL from the DOM */
+          q.questionEl.remove();
+          q.optionsEl.remove();
+        });
+
+        /* 4. Check Answers button */
+        var checkBtn = document.createElement('button');
+        checkBtn.className = 'quiz-check-btn';
+        checkBtn.type = 'button';
+        checkBtn.textContent = 'Check my answers';
+        checkBtn.disabled = true;
+
+        /* Results area */
+        var resultsDiv = document.createElement('div');
+        resultsDiv.className = 'quiz-results';
+
+        checkBtn.addEventListener('click', function () {
+          var score = 0;
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card, qi) {
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt, oi) {
+              var optText = normalize(opt.textContent);
+              var isCorrect = optText === correctAnswers[qi];
+              var isSelected = selections[qi] === oi;
+              opt.disabled = true;
+              if (isCorrect) {
+                opt.classList.add('correct');
+              }
+              if (isSelected && !isCorrect) {
+                opt.classList.add('incorrect');
+              }
+            });
+            var selectedText = '';
+            if (selections[qi] >= 0) {
+              selectedText = normalize(options[selections[qi]].textContent);
+            }
+            if (selectedText === correctAnswers[qi]) {
+              score++;
+              card.classList.add('quiz-card--correct');
+            } else {
+              card.classList.add('quiz-card--incorrect');
+            }
+          });
+
+          checkBtn.style.display = 'none';
+
+          var pct = Math.round((score / questions.length) * 100);
+          var passed = pct >= 80;
+          resultsDiv.innerHTML =
+            '<div class="quiz-score ' + (passed ? 'quiz-score--pass' : 'quiz-score--retry') + '">' +
+            '<span class="quiz-score-number">' + score + '/' + questions.length + '</span>' +
+            '<span class="quiz-score-label">' + (passed ? 'Chapter unlocked!' : 'Keep going — you need 80% to unlock.') + '</span>' +
+            '</div>';
+          resultsDiv.style.display = 'block';
+
+          /* Show "Try again" button */
+          retryBtn.style.display = '';
+        });
+
+        /* 5. Retry button */
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'quiz-check-btn ready';
+        retryBtn.type = 'button';
+        retryBtn.textContent = 'Try again';
+        retryBtn.style.display = 'none';
+
+        retryBtn.addEventListener('click', function () {
+          /* Reset all state */
+          selections = new Array(questions.length).fill(-1);
+          var cards = quizContainer.querySelectorAll('.quiz-card');
+          cards.forEach(function (card) {
+            card.classList.remove('answered', 'quiz-card--correct', 'quiz-card--incorrect');
+            var options = card.querySelectorAll('.quiz-option');
+            options.forEach(function (opt) {
+              opt.disabled = false;
+              opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+          });
+          checkBtn.disabled = true;
+          checkBtn.classList.remove('ready');
+          checkBtn.style.display = '';
+          retryBtn.style.display = 'none';
+          resultsDiv.style.display = 'none';
+          resultsDiv.innerHTML = '';
+
+          /* Scroll quiz into view */
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* 6. Insert everything into the quiz section */
+        var heading = quiz.querySelector('h2');
+        /* Clear remaining content after the heading */
+        while (heading.nextSibling) {
+          heading.nextSibling.remove();
+        }
+        quiz.appendChild(quizContainer);
+        quiz.appendChild(checkBtn);
+        quiz.appendChild(retryBtn);
+        quiz.appendChild(resultsDiv);
+      })();
+    </script>
+    
+  </body>
+</html>

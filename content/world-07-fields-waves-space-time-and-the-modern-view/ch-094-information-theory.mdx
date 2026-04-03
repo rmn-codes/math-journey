@@ -1,0 +1,239 @@
+---
+worldNumber: 7
+world: world-07-fields-waves-space-time-and-the-modern-view
+chapterNumber: 94
+title: Information Theory — The Mathematics of Communication
+subtitle: Claude Shannon and the bit — how mathematics learned to measure surprise
+historicalPeriod: 1948 CE
+estimatedTimeMinutes: 40
+---
+
+## Story Hook
+
+It is 1948. World War II has ended. At Bell Telephone Laboratories in New Jersey, a young engineer named Claude Shannon publishes a paper with a modest title: *"A Mathematical Theory of Communication."*
+
+The paper is 55 pages. It contains equations, diagrams, and theorems. It invents the **bit** — the fundamental unit of information. It defines information mathematically. It proves that you can send information reliably over a noisy telephone line. It explains data compression. It lays the mathematical foundation for the entire digital age.
+
+Decades later, scientists would call it the most important paper of the 20th century.
+
+Shannon's insight was radical: **Information is not about the message itself. Information is about surprise.**
+
+A common event carries little information. A rare event carries a lot. The letter "e" appears constantly in English text — saying "the next letter is e" is unsurprising and carries little information. But "the next letter is z" is rare and shocking — it carries more information.
+
+From this simple idea, Shannon built an entire mathematics of communication. That mathematics is now inside every device you own: your phone compresses your voice using Shannon's ideas. Your music files use them. Your internet connection uses them. The code that detects and corrects errors in your hard drive uses them. Shannon showed us how to measure surprise and turn it into mathematics.
+
+## Why It Matters
+
+Before Shannon, communication engineering was an art. You designed telephone lines, chose signal strengths, and hoped for the best. There was no theory.
+
+Shannon answered crucial questions:
+
+- **What is information?** How do you measure it mathematically?
+- **How much can you compress a file?** Why do ZIP files get smaller?
+- **How fast can you send data over a noisy channel?** What's the absolute speed limit?
+- **Can you correct errors without re-sending?** How do error-correcting codes work?
+
+The answers power the modern world:
+
+- **Data compression**: ZIP, MP3, JPEG, MPEG — all are built on Shannon's theorems.
+- **Cryptography**: Secure communication relies on Shannon's concept of entropy.
+- **Error correction**: Every hard drive, every QR code, every deep-space probe uses Shannon's error-correcting codes.
+- **Machine learning**: Modern AI relies on Shannon entropy and information measures.
+- **Telecommunications**: Every phone call, video stream, and wireless signal uses Shannon's channel capacity theorem.
+
+Shannon proved that the digital revolution was not just possible — it was inevitable. The mathematics was already there, waiting to be discovered.
+
+## Historical Context
+
+Claude Shannon (1916–2001) was an unusual engineer. He loved mathematics and played with mechanical toys. At Bell Labs, he was solving practical problems: how to send the most information down a telephone line without errors?
+
+The war had ended, but information warfare had not. The military needed secure communication. Industries needed to compress messages. Shannon's mathematics addressed all of it.
+
+Before 1948, there was **no definition of information**. Philosophers debated it. Physicists studied it. But no one had a formula. Shannon proposed:
+
+$$H = -\sum p_i \log_2 p_i$$
+
+Here $H$ is the **entropy** — the average information content, measured in **bits**. For each possible message outcome $i$, you multiply the probability $p_i$ by $\log_2(1/p_i)$ (the "surprise" of that outcome), then sum.
+
+A coin flip (two equally likely outcomes) has entropy 1 bit. You need one yes/no question to identify which outcome occurred. A six-sided die has entropy $\log_2(6) \approx 2.585$ bits. You need about 2.6 yes/no questions to identify which face appeared.
+
+The formula is beautiful because it measures exactly what information means: **the minimum number of yes/no questions you need to identify an outcome.**
+
+## Core Concept
+
+**Information Theory** studies how to measure, store, transmit, and protect information.
+
+Core ideas:
+
+1. **Entropy**: A measure of uncertainty. High entropy = surprising, information-rich. Low entropy = predictable, boring.
+
+2. **Data compression**: Remove redundancy. Frequent symbols use fewer bits. Rare symbols use more. The average length approaches the entropy.
+
+3. **Channel capacity**: Even a noisy channel has a speed limit. Shannon's theorem says you can approach this limit with the right code, but never exceed it.
+
+4. **Error correction**: Add redundancy strategically. If errors are rare, a bit of extra information can identify and fix them, without asking the sender to re-transmit.
+
+All modern digital technology rests on these ideas.
+
+## Definitions and Formal Lesson
+
+**Bit**: A unit of information. One bit = the information in one fair coin flip.
+
+**Shannon Entropy** (for a discrete distribution):
+$$H = -\sum_{i=1}^{n} p_i \log_2 p_i$$
+
+where $p_i$ is the probability of outcome $i$. Units: bits. (If using natural logarithm: nats.)
+
+**Properties**:
+- Maximum when all outcomes equally likely: $H_{\max} = \log_2 n$ bits for $n$ outcomes.
+- Zero when outcome is certain: if $p_1 = 1$, then $H = 0$.
+- Always non-negative: $H \geq 0$.
+
+**Binary Entropy Function** $H(p)$: For a single binary choice with probability $p$ for success:
+$$H(p) = -p \log_2 p - (1-p) \log_2(1-p)$$
+
+**Data Compression**: Huffman coding assigns variable-length codes: frequent symbols get short codes, rare get long. The average code length approaches the entropy.
+
+**Channel Capacity** (Shannon-Hartley theorem, for additive white Gaussian noise):
+$$C = B \log_2(1 + S/N) \text{ bits per second}$$
+
+where $B$ is bandwidth, $S$ is signal power, $N$ is noise power. This is the maximum reliable transmission rate.
+
+**Noisy Channel Coding Theorem**: Any transmission rate below the channel capacity can be achieved with arbitrarily low error using the right code. Rates above it cannot.
+
+## Worked Examples
+
+**Example 1: Entropy of a Fair Die**
+
+A six-sided die, each face equally likely: $p_i = 1/6$ for $i = 1, 2, \ldots, 6$.
+
+$$H = -6 \times \frac{1}{6} \log_2\left(\frac{1}{6}\right) = -\log_2\left(\frac{1}{6}\right) = \log_2(6) \approx 2.585 \text{ bits}$$
+
+Meaning: you need about 2.6 yes/no questions to identify which face appeared (on average).
+
+**Example 2: Huffman Coding**
+
+Suppose a message uses four symbols with probabilities: A (50%), B (25%), C (15%), D (10%).
+
+Huffman's algorithm assigns codes:
+- A: 0 (1 bit)
+- B: 10 (2 bits)
+- C: 110 (3 bits)
+- D: 111 (3 bits)
+
+Average code length: $0.5(1) + 0.25(2) + 0.15(3) + 0.1(3) = 1.85$ bits per symbol.
+
+Entropy: $H \approx 1.846$ bits. The code is near-optimal!
+
+**Example 3: Channel Capacity**
+
+A telephone line has bandwidth $B = 3000$ Hz and signal-to-noise ratio $S/N = 100$ (20 dB).
+
+$$C = 3000 \log_2(1 + 100) = 3000 \log_2(101) \approx 3000 \times 6.658 \approx 19,974 \text{ bits per second}$$
+
+You cannot reliably transmit faster than ~20 kbps, no matter what code you use. But with the right code, you can get arbitrarily close.
+
+## Practice Set
+
+1. **Binary Entropy**: A coin is biased. It lands heads with probability 0.3 and tails with probability 0.7. What is its Shannon entropy? Is it larger or smaller than a fair coin? Compute both values.
+
+2. **Maximum Entropy**: Four equally likely events (A, B, C, D). What is the entropy? What if events had probabilities 0.5, 0.3, 0.15, 0.05? Why does the distribution matter?
+
+3. **Code Length**: You want to send a message using two symbols, X (60% of characters) and Y (40%). Design a Huffman code. What is the average code length? Compare to entropy. Can you do better?
+
+4. **Channel Capacity**: A wireless channel has bandwidth 1 MHz and $S/N = 10$ (10 dB). What is the maximum achievable transmission rate? If you tried to send at 1.5 times this rate, what would happen?
+
+5. **Error Correction**: In Morse code, a single bit error could change a dash to a dot. Describe conceptually how adding extra bits (redundancy) could help detect and correct such errors. What is the tradeoff?
+
+6. **Compression Limits**: You have a file containing 1 million characters drawn from an alphabet of 256 symbols. Theoretical minimum size (by Shannon)? Can ZIP achieve this? Why or why not?
+
+## Reasoning Task
+
+**Why is the Internet Fast?**
+
+Shannon's theorem says that **any** channel has a capacity limit. But the internet carries billions of simultaneous conversations at high speed. How?
+
+Consider:
+
+- Fiber optic cables have huge bandwidth (billions of Hz).
+- $S/N$ ratios can be made very good with modern equipment.
+- Multiple channels (wavelength division multiplexing) send multiple signals simultaneously.
+
+Discuss: What is the relationship between Shannon capacity and actual internet speed? Why did the internet explode in the 1990s when fiber optics became common? How does compression (ZIP, JPEG, MP3) fit into Shannon's theory?
+
+## Application
+
+**MP3 and Data Compression**
+
+When you compress an MP3 music file:
+
+1. **Fourier analysis** (World 07 chapter) breaks the audio into frequency components.
+2. **Perceptual modeling**: Your ear cannot hear very quiet sounds masked by loud ones. Discard those frequencies.
+3. **Entropy coding**: Use Huffman coding (or similar) on the remaining data.
+4. **Result**: A song that took 50 MB as WAV now fits in 5 MB as MP3 — a 10x compression.
+
+This is Shannon's theory in action. The original audio has high entropy (lots of independent frequency components). After removing imperceptible parts and entropy coding, the file is much smaller.
+
+Similarly:
+- **JPEG images**: Discard high-frequency details you can't see, then entropy-code.
+- **ZIP files**: Use Huffman and dictionary methods.
+- **Error-correcting codes**: Spacecraft use Hamming codes and Reed-Solomon codes to survive radiation and distance.
+
+## Recap
+
+Claude Shannon revolutionized communication in 1948 by defining information mathematically using entropy. The Shannon entropy formula measures the average information content in bits. Huffman coding compresses data by assigning variable-length codes. Shannon's channel capacity theorem states the maximum reliable transmission rate over a noisy channel. These ideas underpin data compression (ZIP, MP3, JPEG), error correction, cryptography, and the digital revolution. Shannon showed that the ability to transmit information reliably is not a gift of nature — it is a mathematical necessity.
+
+Information theory changed how we think about communication. Before Shannon, engineers designed communication systems by trial and error. After Shannon, they could design them knowing the theoretical limits. Every hard drive, every wireless network, every deep-space probe uses Shannon's theorems. The human genome is information written in DNA. The brain processes information through networks of neurons. Modern machine learning is built on information-theoretic principles. Shannon's mathematical framework unified all of these domains under one set of equations. From a 55-page paper at Bell Labs emerged the conceptual foundation for the information age itself.
+
+## Unlock Quiz
+
+1. Shannon entropy measures the average _____ in a message.
+   - length
+   - information content
+   - noise level
+   - compression ratio
+
+2. What is the Shannon entropy of a fair coin flip?
+   - 0 bits
+   - 0.5 bits
+   - 1 bit
+   - 2 bits
+
+3. In Huffman coding, frequent symbols get _____ codes and rare symbols get _____ codes.
+   - longer, shorter
+   - shorter, longer
+   - equal, equal
+   - unpredictable, unpredictable
+
+4. Shannon's channel capacity theorem says that the maximum transmission rate depends on:
+   - Only the bandwidth
+   - Only the signal-to-noise ratio
+   - Both bandwidth and signal-to-noise ratio
+   - Neither; all channels are equal
+
+5. Which of the following does NOT rely on Shannon's information theory?
+   - MP3 audio compression
+   - Error-correcting codes on hard drives
+   - Handwritten letter writing
+   - JPEG image compression
+
+<details>
+<summary>Answers</summary>
+
+1. information content
+2. 1 bit
+3. shorter, longer
+4. Both bandwidth and signal-to-noise ratio
+5. Handwritten letter writing
+
+</details>
+
+## Source Notes
+
+- Shannon, C. E. (1948). "A Mathematical Theory of Communication." *Bell System Technical Journal*, 27(3), 379–423. The foundational paper.
+- https://en.wikipedia.org/wiki/Information_theory
+- https://en.wikipedia.org/wiki/Claude_Shannon
+- https://en.wikipedia.org/wiki/Shannon_entropy
+- https://en.wikipedia.org/wiki/Huffman_coding
+- https://en.wikipedia.org/wiki/Channel_capacity
+- https://en.wikipedia.org/wiki/Noisy-channel_coding_theorem

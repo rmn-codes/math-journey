@@ -1,0 +1,290 @@
+---
+chapterNumber: 066
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+title: "Limits — The Foundation of Calculus"
+subtitle: "Approaching without arriving — the rigorous idea beneath all of calculus"
+estimatedTimeMinutes: 40
+historicalPeriod: "1800s (Cauchy, Weierstrass)"
+mainConcepts:
+  - limit notation
+  - direct substitution
+  - one-sided limits
+  - continuity
+  - limits at infinity
+  - limit laws
+learningObjectives:
+  - "Evaluate limits using substitution, factoring, and limit laws"
+  - "Distinguish one-sided limits"
+  - "Identify where limits do not exist"
+  - "Determine continuity at a point"
+  - "Compute limits at infinity"
+---
+
+## Story Hook
+
+The year is 1824. Augustin-Louis Cauchy, a French mathematician of formidable rigor, is sitting in his study in Paris. For nearly 150 years, calculus has worked—brilliantly. Newton's law of gravitation explains the heavens. Euler's work on infinite series unlocks new mathematics. Engineers build bridges. Ships navigate oceans using calculus.
+
+But nobody can really explain *why* it works.
+
+Bishop George Berkeley, decades earlier, had mocked Newton's method mercilessly, asking about "the ghosts of departed quantities"—the mysterious infinitesimals that Newton used but never quite defined. How can you divide by a quantity, then pretend it's zero? How can you approach a value without actually reaching it?
+
+Cauchy decides to put calculus on solid ground. He defines, with great care, what it means for a function to *approach* a value as the input approaches another value. No ghosts. No vague handwaving. Pure logic.
+
+Two decades later, in the 1850s, Karl Weierstrass refines Cauchy's idea into the $\epsilon$-$\delta$ definition, the rigorous bedrock on which modern calculus rests. Finally, the mystery is solved. Approaching a value is not mystical—it's precise and logical.
+
+## Why It Matters
+
+Limits are the foundation of calculus, and calculus is the language of change. Without rigorous limits, we cannot confidently compute derivatives, integrals, or limits at infinity. Without limits, we cannot trust our calculations in physics, engineering, medicine, or finance.
+
+A doctor using pharmacokinetics to calculate drug dosages relies on limits. A civil engineer designing a dam relies on limits. An economist modeling inflation relies on limits. The word "limit" rarely appears in these fields, but the concept is everywhere—the idea of approaching a value, settling on a reliable answer even when perfection is impossible.
+
+## Historical Context
+
+Newton and Leibniz invented calculus in the 1660s–1680s using intuitive ideas about infinitesimals—quantities that are "infinitely small" but not zero. This made sense intuitively but was logically fuzzy. For 150 years, mathematicians used calculus without fully understanding why it worked.
+
+By the early 1800s, mathematics had grown more rigorous. Cauchy (1789–1857) pioneered a rigorous definition of limits based on how close you could get to a value. Weierstrass (1815–1897) formalized this with the $\epsilon$-$\delta$ definition: for every acceptable error margin ($\epsilon$), you can find an interval ($\delta$) around the input where the output stays within that error margin.
+
+This might sound technical. But the insight is simple: *to approach a value means you can get as close as you want—not just infinitely small, but arbitrarily close.*
+
+## Core Concept
+
+**A limit** is a value that a function approaches as the input approaches some number.
+
+Notation: $\lim_{x \to a} f(x) = L$ means "as $x$ approaches $a$, the value $f(x)$ approaches $L$."
+
+**The crucial point:** The function doesn't have to *reach* $L$. It doesn't even have to be *defined* at $a$. The limit only cares about what happens *near* $a$, as you approach it from either side.
+
+**Example:** Let $f(x) = \frac{x^2 - 1}{x - 1}$. This function is undefined at $x = 1$ (because we'd divide by zero). But what happens as $x$ approaches 1?
+
+Let's make a table:
+
+| $x$ | 0.9 | 0.99 | 0.999 | 1.0 | 1.001 | 1.01 | 1.1 |
+|---|---|---|---|---|---|---|---|
+| $f(x)$ | 1.9 | 1.99 | 1.999 | undefined | 2.001 | 2.01 | 2.1 |
+
+From both sides, $f(x)$ approaches 2. So $\lim_{x \to 1} \frac{x^2-1}{x-1} = 2$, even though $f(1)$ is undefined.
+
+**One-sided limits:** Sometimes you approach from the left or the right.
+
+$\lim_{x \to a^-} f(x)$ means "as $x$ approaches $a$ from the left."
+$\lim_{x \to a^+} f(x)$ means "as $x$ approaches $a$ from the right."
+
+If both one-sided limits equal $L$, then the two-sided limit $\lim_{x \to a} f(x) = L$.
+
+If the one-sided limits are different, the limit does not exist (DNE).
+
+**Limits at infinity:** $\lim_{x \to \infty} f(x) = L$ means "as $x$ gets arbitrarily large, $f(x)$ approaches $L$."
+
+Example: $\lim_{x \to \infty} \frac{1}{x} = 0$. As $x$ grows without bound, $\frac{1}{x}$ shrinks toward zero.
+
+## Definitions and Formal Lesson
+
+**The Limit Definition (Informal):** $\lim_{x \to a} f(x) = L$ if $f(x)$ gets arbitrarily close to $L$ as $x$ gets arbitrarily close to $a$ (from either side).
+
+**Direct Substitution:** If $f$ is continuous at $a$, you can find the limit by plugging in:
+
+$$\lim_{x \to a} f(x) = f(a)$$
+
+For polynomials and many other "nice" functions, this always works. Example: $\lim_{x \to 3} (x^2 + 2x) = 9 + 6 = 15$.
+
+**Factoring and Canceling:** If direct substitution gives $\frac{0}{0}$ (an indeterminate form), try factoring:
+
+$$\lim_{x \to 1} \frac{x^2 - 1}{x - 1} = \lim_{x \to 1} \frac{(x-1)(x+1)}{x-1} = \lim_{x \to 1} (x+1) = 2$$
+
+**One-Sided Limits:** Evaluate by approaching from one direction only.
+
+**Limit Does Not Exist (DNE):** A limit DNE if:
+- The one-sided limits are different, OR
+- The function oscillates or approaches $\pm\infty$
+
+**Limit Laws:** If $\lim_{x \to a} f(x) = L$ and $\lim_{x \to a} g(x) = M$, then:
+
+- $\lim_{x \to a} [f(x) + g(x)] = L + M$ (sum rule)
+- $\lim_{x \to a} [f(x) - g(x)] = L - M$ (difference rule)
+- $\lim_{x \to a} [f(x) \cdot g(x)] = L \cdot M$ (product rule)
+- $\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{M}$, provided $M \neq 0$ (quotient rule)
+- $\lim_{x \to a} [f(x)]^n = L^n$ (power rule)
+
+**Squeeze Theorem (Intuitive):** If $h(x) \leq f(x) \leq g(x)$ near $a$, and $\lim_{x \to a} h(x) = \lim_{x \to a} g(x) = L$, then $\lim_{x \to a} f(x) = L$. If $f$ is "squeezed" between two functions that both approach $L$, then $f$ must also approach $L$.
+
+**Continuity:** A function $f$ is continuous at $a$ if $\lim_{x \to a} f(x) = f(a)$. Intuitively, there are no breaks, jumps, or holes in the graph at that point.
+
+## Worked Examples
+
+**Example 1: Direct Substitution**
+
+Evaluate $\lim_{x \to 2} (3x^2 - 5x + 1)$.
+
+The function is a polynomial, so it's continuous everywhere. Substitute $x = 2$:
+
+$$3(2)^2 - 5(2) + 1 = 12 - 10 + 1 = 3$$
+
+**Example 2: Factoring to Remove a Zero in the Denominator**
+
+Evaluate $\lim_{x \to 3} \frac{x^2 - 9}{x - 3}$.
+
+Direct substitution gives $\frac{0}{0}$, so factor:
+
+$$\lim_{x \to 3} \frac{x^2 - 9}{x - 3} = \lim_{x \to 3} \frac{(x-3)(x+3)}{x-3} = \lim_{x \to 3} (x+3) = 6$$
+
+**Example 3: One-Sided Limits**
+
+Let $f(x) = \begin{cases} x + 1 & \text{if } x < 2 \\ 5 & \text{if } x = 2 \\ 2x - 1 & \text{if } x > 2 \end{cases}$
+
+Find $\lim_{x \to 2^-} f(x)$, $\lim_{x \to 2^+} f(x)$, and $\lim_{x \to 2} f(x)$.
+
+From the left: $\lim_{x \to 2^-} f(x) = 2 + 1 = 3$
+From the right: $\lim_{x \to 2^+} f(x) = 2(2) - 1 = 3$
+The two-sided limit: $\lim_{x \to 2} f(x) = 3$ (even though $f(2) = 5$—the function is discontinuous at $x = 2$)
+
+**Example 4: Limit at Infinity**
+
+Evaluate $\lim_{x \to \infty} \frac{2x + 1}{5x - 3}$.
+
+Divide numerator and denominator by the highest power of $x$ (which is $x$):
+
+$$\lim_{x \to \infty} \frac{2x + 1}{5x - 3} = \lim_{x \to \infty} \frac{2 + \frac{1}{x}}{5 - \frac{3}{x}} = \frac{2 + 0}{5 - 0} = \frac{2}{5}$$
+
+As $x \to \infty$, the terms $\frac{1}{x}$ and $\frac{3}{x}$ approach 0.
+
+## Practice Set
+
+1. **Evaluate $\lim_{x \to 4} (x^2 - 3x + 2)$.**
+   - 2
+   - 4
+   - 6
+   - 8
+
+2. **For $f(x) = \frac{x^2 - 4}{x - 2}$, what is $\lim_{x \to 2} f(x)$?**
+   - 0
+   - 2
+   - 4
+   - Does not exist
+
+3. **If $\lim_{x \to a^-} f(x) = 5$ but $\lim_{x \to a^+} f(x) = 7$, what can you say?**
+   - The limit equals 5
+   - The limit equals 7
+   - The limit does not exist
+   - The function is continuous at $a$
+
+4. **Which describes the Squeeze Theorem?**
+   - If a function is between two functions with the same limit, it has that limit too
+   - A function squeezed cannot exist
+   - All functions can be squeezed
+   - Limits always exist
+
+5. **Evaluate $\lim_{x \to \infty} \frac{3}{x}$.**
+   - 0
+   - 1
+   - 3
+   - Does not exist
+
+## Reasoning Task
+
+Your classmate is confused by the definition of a limit. She says: "If the limit of $f(x)$ as $x \to a$ equals $L$, does that mean $f(a) = L$?"
+
+Explain to her why the answer is sometimes yes and sometimes no. Give an example of each.
+
+## Application
+
+**Drug Concentration in the Bloodstream**
+
+A patient takes a medication. The concentration $C(t)$ in mg/mL at time $t$ (in hours) is:
+
+$$C(t) = \frac{10t}{t^2 + 1}$$
+
+What is the long-term concentration as $t \to \infty$?
+
+$$\lim_{t \to \infty} \frac{10t}{t^2 + 1} = \lim_{t \to \infty} \frac{10}{t + \frac{1}{t}} = \frac{10}{\infty} = 0$$
+
+As time goes on, the drug is metabolized and its concentration approaches zero. This limit tells the doctor when the drug has essentially left the body.
+
+**Modeling Population Growth**
+
+A population $P(t)$ of bacteria grows according to:
+
+$$P(t) = \frac{5000}{1 + 9e^{-t}}$$
+
+As $t \to \infty$, the population approaches the carrying capacity:
+
+$$\lim_{t \to \infty} \frac{5000}{1 + 9e^{-t}} = \frac{5000}{1 + 0} = 5000$$
+
+The exponential term $e^{-t}$ approaches 0, so the population stabilizes at 5000. This is the maximum population the environment can support.
+
+## Recap
+
+A **limit** is a value that a function approaches as the input approaches some number. The notation $\lim_{x \to a} f(x) = L$ means the output gets arbitrarily close to $L$ as the input gets arbitrarily close to $a$.
+
+You can evaluate limits by **direct substitution** (if the function is continuous), by **factoring and canceling** (to remove indeterminate forms), or by using **limit laws** (addition, subtraction, multiplication, division, power).
+
+**One-sided limits** approach from one direction. If the one-sided limits are different, the two-sided limit does not exist (DNE).
+
+**Limits at infinity** describe the long-term behavior of a function. **Continuity** at a point means the limit equals the function value at that point.
+
+For 150 years after Newton and Leibniz, calculus worked but lacked rigorous foundation. Cauchy and Weierstrass solved this by defining limits precisely. Today, limits are the bedrock on which all of calculus rests.
+
+## Unlock Quiz
+
+**1. Why did Bishop Berkeley mock Newton's calculus?**
+   - He didn't understand multiplication
+   - He was jealous of Newton's success
+   - Newton used "ghosts of departed quantities"—infinitesimals that were never clearly defined
+   - Calculus was invented in France, not England
+
+<details>
+<summary>Answer</summary>
+Newton used "ghosts of departed quantities"—infinitesimals that were never clearly defined
+</details>
+
+**2. If direct substitution into a limit gives $\frac{0}{0}$, what should you try?**
+   - Give up; the limit does not exist
+   - Factor and cancel common terms
+   - Multiply by a constant
+   - Take the derivative
+
+<details>
+<summary>Answer</summary>
+Factor and cancel common terms
+</details>
+
+**3. What is the relationship between the two one-sided limits and the two-sided limit?**
+   - The two-sided limit must equal one of them
+   - If both one-sided limits equal $L$, then the two-sided limit equals $L$
+   - One-sided limits and two-sided limits are unrelated
+   - There is no two-sided limit
+
+<details>
+<summary>Answer</summary>
+If both one-sided limits equal $L$, then the two-sided limit equals $L$
+</details>
+
+**4. A function $f$ is continuous at $a$ if:**
+   - $f$ is defined at $a$
+   - $\lim_{x \to a} f(x) = f(a)$
+   - The function is increasing at $a$
+   - The function is smooth at $a$
+
+<details>
+<summary>Answer</summary>
+$\lim_{x \to a} f(x) = f(a)$
+</details>
+
+**5. Who formalized the $\epsilon$-$\delta$ definition of a limit in the 1850s?**
+   - Newton
+   - Leibniz
+   - Cauchy
+   - Weierstrass
+
+<details>
+<summary>Answer</summary>
+Weierstrass
+</details>
+
+## Source Notes
+
+- Cauchy, A.-L. (1821). *Cours d'Analyse de l'École Royale Polytechnique*. https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy
+- Weierstrass, K. (1870s). Lectures on the Theory of Functions. https://en.wikipedia.org/wiki/Karl_Weierstrass
+- Berkeley, G. (1734). *The Analyst*. https://en.wikipedia.org/wiki/The_Analyst
+- https://en.wikipedia.org/wiki/Limit_(mathematics)
+- https://en.wikipedia.org/wiki/Continuous_function

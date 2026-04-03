@@ -1,0 +1,374 @@
+---
+id: ch-039
+slug: patterns-and-sequences
+title: Patterns and Sequences
+subtitle: "When numbers follow a rule — and how to find what comes next"
+world: world-02-algebra-is-born
+worldNumber: 2
+chapterNumber: 39
+level: foundational
+estimatedTimeMinutes: 40
+core: true
+prerequisites: [ch-031]
+historicalPeriod: "Ancient – present"
+historicalRegions:
+  - Greece
+  - Medieval Europe
+  - India
+mainConcepts:
+  - sequence
+  - term
+  - common difference
+  - arithmetic sequence
+  - common ratio
+  - geometric sequence
+  - nth term formula
+  - series
+learningObjectives:
+  - Identify arithmetic and geometric sequences
+  - Find the common difference or common ratio
+  - Write a formula for the nth term of an arithmetic sequence using $a_n = a_1 + (n-1)d$
+  - Write a formula for the nth term of a geometric sequence using $a_n = a_1 \cdot r^{n-1}$
+  - Calculate the sum of a finite arithmetic series
+unlockCriteria:
+  quizMinScore: 0.8
+  practiceRequired: true
+status: draft
+tags:
+  - algebra
+  - patterns
+  - sequences
+  - series
+keyTerms:
+  - sequence
+  - arithmetic sequence
+  - geometric sequence
+  - common difference
+  - common ratio
+  - term
+  - nth term
+  - series
+  - finite series
+  - Fibonacci
+review:
+  mathChecked: false
+  historicalChecked: false
+  editorialChecked: false
+---
+
+## Story Hook
+
+Picture a classroom in Brunswick, Germany, around 1785. A young boy with wild dark hair sits at a wooden desk, chalk dust falling around him. His teacher—annoyed at the noise and energy of the students—announces a punishment: "Add all the whole numbers from 1 to 100. Do not bother me until you have the answer."
+
+The other children groan and start scratching away, adding slowly: 1 + 2 = 3, then 3 + 3 = 6, then 6 + 4 = 10. This will take forever. But the boy—Carl Friedrich Gauss, who would grow up to be one of the greatest mathematicians in history—sits quietly, thinking.
+
+Suddenly, a moment of insight. He doesn't add from left to right. Instead, he looks at pairs:
+
+$$1 + 100 = 101$$
+$$2 + 99 = 101$$
+$$3 + 98 = 101$$
+
+There are fifty such pairs, each summing to 101. So the answer is $50 \times 101 = 5050$.
+
+The boy writes down one number and returns the slate to his teacher. The teacher glances at it, then looks twice. 5050. Correct. Gauss had discovered that when numbers follow a pattern, you don't have to brute-force your way through them. You can find a rule that reveals the whole truth at once.
+
+This chapter is about that insight: **patterns in numbers, and how algebra lets us capture them with a single formula**.
+
+---
+
+## Why It Matters
+
+Every day, your world is full of sequences:
+
+- **Your heartbeat.** A steady rhythm, the same interval again and again—that's a pattern.
+- **Money in a savings account.** If you deposit $10 each week, your balance follows a pattern: $10, $20, $30, $40...
+- **Viral spread.** In a pandemic, if each infected person infects 2 others, the count doubles each day: 1, 2, 4, 8, 16... That's a pattern too.
+- **Distances fallen.** An object dropped from a building falls 5 meters in the first second, 15 meters in the second, 25 meters in the third. Another pattern.
+
+When you can name the pattern, you can predict the future. You can know your bank balance after a year without counting week by week. You can estimate how far an object will fall. You can prepare for how quickly a virus spreads.
+
+Algebra gives us the language to say: "I see a pattern. Here is its rule. Using this rule, the 100th term is..."
+
+That's power.
+
+---
+
+## Historical Context
+
+The study of sequences is ancient. The Babylonians (around 1800 BCE) worked with arithmetic progressions when dividing fields. Euclid, the Greek geometer, studied arithmetic and geometric sequences as part of his theory of numbers.
+
+But the real hero of this story is an Indian mathematician named **Aryabhata** (476–550 CE). In his astronomical work, Aryabhata developed explicit formulas for arithmetic series—formulas for the sum of terms in a sequence. He was solving problems about planetary motion, and sequences gave him the tools.
+
+Later, in medieval Europe, scholars working on inheritance law and land division refined the formulas we use today. The sequence became a natural language for talking about change and repetition, which are everywhere in the world.
+
+By the 1700s—the time of young Gauss—sequences were woven into the fabric of mathematics. Engineers used them to calculate the strength of bridges. Surveyors used them to map land. Astronomers used them to predict the orbits of stars.
+
+And Gauss, with his clever pairing trick, showed that if you understand the pattern, you don't have to compute every term. The pattern itself is your shortcut.
+
+---
+
+## Core Concept
+
+A **sequence** is simply an ordered list of numbers, where each number is called a **term**.
+
+For example:
+- $2, 4, 6, 8, 10, ...$ is a sequence
+- $1, 1, 2, 3, 5, 8, 13, ...$ is the Fibonacci sequence (each term is the sum of the two before it)
+
+We often denote the $n$-th term as $a_n$. So in the sequence $2, 4, 6, 8, 10$:
+- $a_1 = 2$
+- $a_2 = 4$
+- $a_3 = 6$
+
+### Arithmetic Sequences
+
+An **arithmetic sequence** is one where each term differs from the previous by a constant amount called the **common difference**, usually written as $d$.
+
+**Example:** $3, 7, 11, 15, 19, ...$
+
+Here, $d = 4$, because each term is 4 more than the last.
+
+If the first term is $a_1$ and the common difference is $d$, then the $n$-th term is:
+
+$$a_n = a_1 + (n-1)d$$
+
+This is the formula Aryabhata discovered (in different notation). It lets you find any term without computing all the ones before it.
+
+**Example:** In the sequence $3, 7, 11, 15, ...$, find $a_{50}$.
+$$a_{50} = 3 + (50-1) \cdot 4 = 3 + 196 = 199$$
+
+### Geometric Sequences
+
+A **geometric sequence** is one where each term is a constant multiple of the previous, called the **common ratio**, written as $r$.
+
+**Example:** $2, 6, 18, 54, 162, ...$
+
+Here, $r = 3$, because each term is 3 times the previous.
+
+The formula for the $n$-th term is:
+
+$$a_n = a_1 \cdot r^{n-1}$$
+
+**Example:** In the sequence $2, 6, 18, 54, ...$, find $a_6$.
+$$a_6 = 2 \cdot 3^{6-1} = 2 \cdot 3^5 = 2 \cdot 243 = 486$$
+
+### Series and Sums
+
+When you add up the terms of a sequence, you get a **series**.
+
+For an **arithmetic series**, the sum of the first $n$ terms is:
+
+$$S_n = \frac{n}{2}(a_1 + a_n)$$
+
+or equivalently:
+
+$$S_n = \frac{n}{2}(2a_1 + (n-1)d)$$
+
+This is the formula Gauss used! With 100 terms, $a_1 = 1$, and $a_{100} = 100$:
+
+$$S_{100} = \frac{100}{2}(1 + 100) = 50 \cdot 101 = 5050$$
+
+---
+
+## Definitions and Formal Lesson
+
+**Sequence:** An ordered list of numbers where position matters. We label positions with $n = 1, 2, 3, ...$ and denote the term at position $n$ as $a_n$ or $a(n)$.
+
+**Arithmetic Sequence:** A sequence where $a_n - a_{n-1} = d$ (constant) for all $n > 1$.
+
+**Geometric Sequence:** A sequence where $\frac{a_n}{a_{n-1}} = r$ (constant) for all $n > 1$.
+
+**Common Difference ($d$):** The fixed amount added to each term in an arithmetic sequence.
+
+**Common Ratio ($r$):** The fixed factor multiplied by each term in a geometric sequence.
+
+**Series:** The sum of terms in a sequence.
+
+**Finite Series:** A series with a definite last term.
+
+**Fibonacci Sequence:** A special recursive sequence where $a_n = a_{n-1} + a_{n-2}$, starting with $a_1 = 1, a_2 = 1$, giving $1, 1, 2, 3, 5, 8, 13, ...$.
+
+---
+
+## Worked Examples
+
+**Example 1: Arithmetic Sequence**
+
+The sequence $5, 10, 15, 20, 25, ...$ has $a_1 = 5$ and $d = 5$. Find $a_{12}$ and the sum of the first 12 terms.
+
+*Solution:*
+
+$$a_{12} = 5 + (12-1) \cdot 5 = 5 + 55 = 60$$
+
+$$S_{12} = \frac{12}{2}(5 + 60) = 6 \cdot 65 = 390$$
+
+**Example 2: Geometric Sequence**
+
+The sequence $1, 2, 4, 8, 16, ...$ has $a_1 = 1$ and $r = 2$. Find $a_8$.
+
+*Solution:*
+
+$$a_8 = 1 \cdot 2^{8-1} = 2^7 = 128$$
+
+**Example 3: Real-World Arithmetic Sequence**
+
+You save $15 in week 1, $15 in week 2, and so on. How much will you have saved after 26 weeks?
+
+Here, $a_n$ represents the amount saved in week $n$, so $a_n = 15$ for all $n$ (it's constant). The total is an arithmetic series with $a_1 = 15$, $d = 0$... wait, that's not quite right.
+
+Actually, let's redefine: let $S_n$ be the total saved after $n$ weeks. Then:
+- $S_1 = 15$
+- $S_2 = 30$
+- $S_3 = 45$
+- $S_n = 15n$
+
+After 26 weeks: $S_{26} = 15 \cdot 26 = 390$ dollars.
+
+**Example 4: Population Growth (Geometric)**
+
+A bacterial culture doubles every hour. Starting with 100 bacteria, how many are there after 5 hours?
+
+$$a_n = 100 \cdot 2^{n-1}$$
+
+After 5 hours (at the end of hour 5):
+$$a_5 = 100 \cdot 2^{5-1} = 100 \cdot 16 = 1600$$
+
+---
+
+## Practice Set
+
+1. Find the common difference of the sequence $10, 7, 4, 1, -2, ...$
+
+2. Write the formula for the $n$-th term of the arithmetic sequence $20, 25, 30, 35, ...$
+
+3. In the geometric sequence $3, 6, 12, 24, ...$, what is $a_6$?
+
+4. Find the sum of the first 10 terms of the arithmetic sequence $2, 5, 8, 11, ...$
+
+5. A spiral of rope is wound with 100 coils. The first coil has a radius of 1 cm, and each coil has a radius 0.1 cm larger. What is the radius of the 50th coil?
+
+6. You invest $1000 and it grows at 10% per year (multiplied by 1.1 each year). What is the amount after 8 years?
+
+7. An arithmetic sequence has $a_5 = 20$ and $a_{10} = 40$. Find $a_1$ and $d$.
+
+8. The sum of the first $n$ terms of an arithmetic sequence is $S_n = 3n^2 + 2n$. Find $a_3$ and $a_4$.
+
+---
+
+## Reasoning Task
+
+**The Staircase Problem**
+
+Imagine you're climbing a staircase with 100 steps. On step 1, you burn 5 calories. On step 2, you burn 6 calories. On step 3, you burn 7 calories. Each step costs 1 more calorie than the last.
+
+How many total calories do you burn climbing all 100 steps?
+
+1. Write the sequence of calories per step.
+2. Identify $a_1$, $d$, and $a_{100}$.
+3. Use the arithmetic series formula to find the total.
+
+Then, think about this: *Why does the formula work? Can you explain Gauss's pairing trick in your own words for this staircase problem?*
+
+---
+
+## Application
+
+**Real Saving and Compound Interest**
+
+You start a savings account with $500. Each month, you deposit an additional $50. After one year, how much have you saved?
+
+This is an arithmetic sequence: $500, 550, 600, 650, ...$ with $a_1 = 500$, $d = 50$, and $n = 12$.
+
+$$a_{12} = 500 + (12-1) \cdot 50 = 500 + 550 = 1050$$
+
+The sum of the first 12 terms (which represents the total balance after 12 months of deposits):
+
+$$S_{12} = \frac{12}{2}(500 + 1050) = 6 \cdot 1550 = 9300$$
+
+But wait—if you're using a savings account with interest, the growth is *geometric*, not arithmetic. This is why understanding both types of sequences matters. Compound interest is one of the most important concepts in personal finance, and it's geometric.
+
+---
+
+## Recap
+
+A **sequence** is an ordered list of numbers following a pattern. Two main types:
+
+1. **Arithmetic sequences:** Each term differs by a constant $d$.
+   - Formula: $a_n = a_1 + (n-1)d$
+   - Sum: $S_n = \frac{n}{2}(a_1 + a_n)$
+
+2. **Geometric sequences:** Each term is a constant multiple $r$ of the previous.
+   - Formula: $a_n = a_1 \cdot r^{n-1}$
+
+These formulas let you find any term and calculate totals without listing every number. Young Gauss showed that when you see a pattern, you can find a shortcut. This is the gift of algebra: not brute force, but insight.
+
+---
+
+## Unlock Quiz
+
+**Answer 80% or better to unlock the next chapter.**
+
+1. Which sequence is arithmetic?
+   - $1, 2, 4, 8, 16$
+   - $2, 4, 6, 8, 10$
+   - $1, 1, 2, 3, 5$
+   - $1, 3, 9, 27$
+
+<details>
+<summary>Answer</summary>
+$2, 4, 6, 8, 10$ (common difference $d = 2$)
+</details>
+
+2. In the sequence $5, 10, 15, 20, ...$, what is $a_7$?
+   - 30
+   - 35
+   - 40
+   - 45
+
+<details>
+<summary>Answer</summary>
+35 (formula: $a_7 = 5 + (7-1) \cdot 5 = 5 + 30 = 35$)
+</details>
+
+3. Find the sum of the arithmetic series $1 + 2 + 3 + ... + 20$.
+   - 200
+   - 210
+   - 220
+   - 230
+
+<details>
+<summary>Answer</summary>
+210 (formula: $S_{20} = \frac{20}{2}(1 + 20) = 10 \cdot 21 = 210$)
+</details>
+
+4. In the geometric sequence $2, 6, 18, ...$, what is the common ratio?
+   - 2
+   - 3
+   - 4
+   - 6
+
+<details>
+<summary>Answer</summary>
+3 ($r = \frac{6}{2} = 3$)
+</details>
+
+5. What is $a_4$ in the geometric sequence with $a_1 = 3$ and $r = 2$?
+   - 12
+   - 24
+   - 27
+   - 48
+
+<details>
+<summary>Answer</summary>
+24 (formula: $a_4 = 3 \cdot 2^{4-1} = 3 \cdot 8 = 24$)
+</details>
+
+---
+
+## Source Notes
+
+- [Sequence (mathematics) - Wikipedia](https://en.wikipedia.org/wiki/Sequence)
+- [Arithmetic progression - Wikipedia](https://en.wikipedia.org/wiki/Arithmetic_progression)
+- [Geometric progression - Wikipedia](https://en.wikipedia.org/wiki/Geometric_progression)
+- [Aryabhata - Wikipedia](https://en.wikipedia.org/wiki/Aryabhata)
+- [Carl Friedrich Gauss - Wikipedia](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss)

@@ -1,0 +1,329 @@
+---
+worldNumber: 6
+world: world-06-probability-statistics-and-uncertainty
+chapterNumber: 81
+title: "The Binomial Distribution"
+subtitle: "Counting successes in repeated trials — from coin flips to clinical trials"
+historicalPeriod: "1700s"
+estimatedTimeMinutes: 40
+mainConcepts:
+  - binomial experiment
+  - binomial probability formula
+  - mean and SD of binomial
+  - cumulative probability
+learningObjectives:
+  - Identify binomial experiments
+  - Apply the binomial probability formula
+  - Compute mean and standard deviation
+  - Find cumulative probabilities
+  - Interpret results in context
+---
+
+## Story Hook
+
+A pharmaceutical company runs a clinical trial. They give a new vaccine to 100 volunteers. Each person either develops immunity (success) or doesn't (failure). The scientists count: 87 developed immunity.
+
+But here's the mystery: if we run a different trial with the same vaccine on 100 *different* volunteers, will we always get exactly 87 successes? Almost certainly not. Maybe we'll get 85, maybe 91, maybe 79. The exact number bounces around — yet it bounces around in a *pattern*.
+
+That pattern is the binomial distribution. It's the answer to a fundamental question: *In a series of independent yes-or-no experiments, how many times should we expect success?*
+
+Before statistics formalized this, drug testing was guesswork and politics. Now it's science — because we can model, predict, and test the distribution of successes. This chapter teaches you how.
+
+## Why It Matters
+
+Every time you:
+- Flip a coin 50 times and count heads
+- Give a test with multiple-choice questions and guess randomly
+- Screen 500 people for a disease and count how many test positive
+- Run a manufacturing process 200 times and count defects
+- Survey 1000 people about a yes-or-no question
+
+...you're performing binomial experiments. The binomial distribution lets you:
+- Predict the most likely outcome
+- Calculate the probability of "exactly k successes"
+- Assess whether a product is working reliably
+- Decide if a sample result is statistically significant
+- Design experiments with the right sample size
+
+Without it, pharmaceutical companies couldn't prove drugs work. Quality-control engineers couldn't catch defects. Elections couldn't be called from early returns.
+
+## Historical Context
+
+The binomial distribution emerged in the 1700s as mathematicians studied probability. **Blaise Pascal** and **Pierre de Fermat** (1650s) solved the "problem of points" — dividing winnings in an unfinished game — which led to the binomial formula.
+
+**Isaac Newton** (1665) discovered the binomial theorem: how to expand $(a+b)^n$. The connection to probability came soon after.
+
+**Daniel Bernoulli** formalised the "Bernoulli trial" (a single experiment with probability $p$ of success). String many together, and you get a binomial distribution.
+
+By the 1800s, statisticians were using the binomial distribution to study everything from death rates to election outcomes. Today it's the foundation of hypothesis testing, clinical trials, and quality assurance.
+
+## Core Concept
+
+Imagine a single coin flip. Probability of heads (success) = 0.5. That's one trial.
+
+Now flip it 10 times. You might get 7 heads. Or 5. Or 9. The *number* of heads varies. But it varies predictably.
+
+A **binomial experiment** has four properties:
+1. **n** independent trials (e.g., 10 flips)
+2. Each trial has two outcomes: success or failure
+3. Probability of success **p** is constant (e.g., 0.5 for a fair coin)
+4. We count the total number of successes
+
+The **binomial random variable** $X$ = the total count of successes out of $n$ trials.
+
+Key insight: $X$ can take any integer value from 0 to $n$. A binomial distribution tells us the *probability* of each value.
+
+For example: Flip a fair coin 3 times. $X$ = number of heads.
+- $P(X = 0) = P(\text{TTT}) = 0.125$
+- $P(X = 1) = P(\text{HTT, THT, TTH}) = 0.375$
+- $P(X = 2) = P(\text{HHT, HTH, THH}) = 0.375$
+- $P(X = 3) = P(\text{HHH}) = 0.125$
+
+Notice: these probabilities sum to 1. Also notice symmetry (0 and 3 have equal probability, 1 and 2 have equal probability). That's because $p = 0.5$.
+
+## Definitions and Formal Lesson
+
+### The Binomial Probability Formula
+
+If $X$ follows a binomial distribution with $n$ trials and success probability $p$, then:
+
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+
+where $k = 0, 1, 2, \ldots, n$ and $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ (the binomial coefficient, "n choose k").
+
+**Interpretation:**
+- $\binom{n}{k}$ = number of ways to arrange $k$ successes among $n$ trials
+- $p^k$ = probability of getting exactly $k$ successes
+- $(1-p)^{n-k}$ = probability of getting exactly $n-k$ failures
+- Multiply them together: probability of exactly $k$ successes
+
+**Example:** Vaccine trial. $n = 100$, $p = 0.87$ (probability of immunity). What's $P(X = 87)$?
+
+$$P(X = 87) = \binom{100}{87} (0.87)^{87} (0.13)^{13}$$
+
+This is tedious to compute by hand — use a calculator or software. But the formula shows the logic.
+
+### Mean and Standard Deviation
+
+If $X \sim \text{Binomial}(n, p)$, then:
+
+$$\mu = np$$
+
+$$\sigma = \sqrt{np(1-p)}$$
+
+These tell us the *centre* and *spread* of the distribution.
+
+**Example:** Flip a fair coin 100 times. $n = 100$, $p = 0.5$.
+- Mean: $\mu = 100 \times 0.5 = 50$ heads
+- Std Dev: $\sigma = \sqrt{100 \times 0.5 \times 0.5} = \sqrt{25} = 5$ heads
+
+So we expect about 50 heads, but with a standard deviation of 5. That means we'd typically see between 45 and 55 heads.
+
+### Cumulative Probability
+
+Sometimes we want $P(X \leq k)$, not $P(X = k)$.
+
+$$P(X \leq k) = \sum_{i=0}^{k} P(X = i)$$
+
+**Example:** What's the probability of getting *at most* 3 heads in 10 flips?
+
+$$P(X \leq 3) = P(X=0) + P(X=1) + P(X=2) + P(X=3)$$
+
+Again, use a calculator or binomial table for large $n$.
+
+### Connection to Pascal's Triangle
+
+The binomial coefficients appear in Pascal's triangle:
+```
+Row 0:                    1
+Row 1:                  1   1
+Row 2:                1   2   1
+Row 3:              1   3   3   1
+Row 4:            1   4   6   4   1
+Row 5:          1   5  10  10   5   1
+```
+
+Row $n$, position $k$ gives $\binom{n}{k}$. This geometric pattern encodes all the probabilities.
+
+## Worked Examples
+
+**Example 1: Quality Control**
+
+A factory makes light bulbs. 95% pass quality inspection (success probability $p = 0.95$). A random sample of 20 bulbs is tested. What's the probability that exactly 19 pass?
+
+$$P(X = 19) = \binom{20}{19} (0.95)^{19} (0.05)^{1}$$
+
+$$= 20 \times (0.95)^{19} \times 0.05$$
+
+$$\approx 20 \times 0.3585 \times 0.05 \approx 0.358$$
+
+So about a 35.8% chance. That's reasonably likely — not surprising.
+
+**Example 2: Guessing on a Test**
+
+You randomly guess on a 10-question multiple-choice test (each question has 4 options, so $p = 0.25$). What's the probability you get at least 5 correct?
+
+$$P(X \geq 5) = P(X=5) + P(X=6) + \cdots + P(X=10)$$
+
+Using a binomial calculator: $P(X \geq 5) \approx 0.078$ (about 7.8%).
+
+So you'd expect to fail — getting 5 or more correct by pure chance is rare.
+
+**Example 3: Mean and Spread**
+
+A survey asks 500 people: "Do you support the new policy?" Suppose 60% say yes ($p = 0.6$). What are the mean and standard deviation of the number of "yes" responses?
+
+$$\mu = np = 500 \times 0.6 = 300$$
+
+$$\sigma = \sqrt{500 \times 0.6 \times 0.4} = \sqrt{120} \approx 10.95$$
+
+We expect about 300 "yes" answers, give or take 11. So we'd typically see between 289 and 311 "yes" responses.
+
+## Practice Set
+
+1. **Coin Flips (Fair Coin):** Flip a fair coin 12 times. Let $X$ = number of heads.
+   - What is $P(X = 6)$?
+   - What is $\mu$ and $\sigma$?
+   - Is $X = 10$ an unusual outcome? Why?
+
+2. **Disease Screening:** A test correctly identifies a disease 98% of the time (true positive rate). 50 people with the disease are tested. Let $X$ = number correctly identified.
+   - What is the mean of $X$?
+   - What is $\sigma$?
+   - Find $P(X = 49)$ (all but one correctly identified).
+
+3. **Customer Satisfaction:** A call centre finds that 75% of customers are satisfied with service. In a sample of 30 calls, let $X$ = number of satisfied customers.
+   - Find $\mu$ and $\sigma$.
+   - What's the probability that $X \geq 25$ (at least 25 satisfied)?
+   - Would $X = 15$ be surprising? Explain.
+
+4. **Vaccine Effectiveness:** A vaccine is 85% effective. It's given to 200 people. Let $X$ = number who develop immunity.
+   - What are $\mu$ and $\sigma$?
+   - Approximately how many people should we expect to *not* develop immunity?
+
+5. **Manufacturing Defect Rate:** A process produces defects at a 2% rate. A batch of 500 items is made. Let $X$ = number of defects.
+   - Find $\mu$ and $\sigma$.
+   - Would observing 20 defects be unusual? (Compare to $\mu + 3\sigma$.)
+
+## Reasoning Task
+
+**The Rare Event Rule:** If something has probability less than 5%, we call it "rare" or "unlikely."
+
+A student takes a 20-question true/false test by guessing randomly ($p = 0.5$). The student gets 17 correct. Should the teacher suspect cheating?
+
+Find:
+- Mean and standard deviation of $X$ (correct answers if guessing).
+- Is 17 correct within 2 standard deviations of the mean? Within 3?
+- What's $P(X \geq 17)$ (probability of 17 or more correct by guessing)?
+- Should the teacher suspect cheating? Explain your reasoning.
+
+*Hint:* The rare event rule suggests we should be suspicious if an outcome has probability less than 5%.
+
+## Application
+
+**Real-World Scenario: Clinical Trials and FDA Approval**
+
+The FDA evaluates new drugs using binomial distributions. Suppose a company claims their medication helps 70% of patients. The FDA tests it on 100 patients. They'll approve it only if:
+1. The number of successes is "unusually high" compared to a lower baseline (say, 50% success rate for existing treatments).
+2. The result is statistically significant (probability less than 5%, if the drug only matched the baseline).
+
+**Your Task:**
+
+Using binomial formulas, suppose the baseline success rate is 50% and the company's drug achieves success in 63 out of 100 patients.
+
+- What would $\mu$ and $\sigma$ be if the drug only matched the baseline (50% success)?
+- What's $P(X \geq 63)$ under the baseline hypothesis?
+- Is 63 successes enough to recommend approval? Why or why not?
+
+This is the foundation of hypothesis testing — comparing observed data to a null hypothesis using probability.
+
+## Recap
+
+The **binomial distribution** models the number of successes in $n$ independent trials, each with probability $p$ of success.
+
+**Key Formula:** $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$
+
+**Key Facts:**
+- Mean: $\mu = np$
+- Standard Deviation: $\sigma = \sqrt{np(1-p)}$
+- Cumulative probabilities use sums
+
+**When to Use It:**
+- Counting yes/no outcomes in repeated trials
+- Clinical trials, quality control, surveys, games, genetics
+- Assessing whether an outcome is "rare" or "typical"
+
+**Historical Significance:**
+- Formalised probability and counting in the 1700s–1800s
+- Enabled scientific drug testing and quality assurance
+- Led to hypothesis testing and statistical inference
+
+The binomial distribution is your first powerful tool for answering: *"If this experiment were repeated many times, what patterns would emerge?"*
+
+## Unlock Quiz
+
+**Question 1:** A fair die is rolled 8 times. Let $X$ = number of times a 6 appears. Which of the following is true?
+
+- $X$ follows a binomial distribution with $n = 8$ and $p = 1/6$
+- $X$ follows a binomial distribution with $n = 8$ and $p = 1/2$
+- $X$ cannot be modeled with the binomial distribution because rolling a die has more than two outcomes
+- $\mu = 8 \times 1/6 \approx 1.33$ and $\sigma \approx 1.04$
+
+<details>
+<summary>Answer</summary>
+The first and fourth statements are correct. $X$ counts successes (rolling a 6) in 8 independent trials, each with probability 1/6. The die has six outcomes, but we're counting one specific outcome (success = rolling a 6), so it fits the binomial model. Mean: $\mu = 8 \times (1/6) = 4/3 \approx 1.33$. Std Dev: $\sigma = \sqrt{8 \times (1/6) \times (5/6)} = \sqrt{40/36} \approx 1.05$.
+</details>
+
+**Question 2:** Suppose $X \sim \text{Binomial}(100, 0.3)$. What are $\mu$ and $\sigma$?
+
+- $\mu = 30$, $\sigma = \sqrt{21} \approx 4.58$
+- $\mu = 30$, $\sigma \approx 4.35$
+- $\mu = 70$, $\sigma = \sqrt{21} \approx 4.58$
+- $\mu = 0.3$, $\sigma = 0.45$
+
+<details>
+<summary>Answer</summary>
+$\mu = np = 100 \times 0.3 = 30$. $\sigma = \sqrt{np(1-p)} = \sqrt{100 \times 0.3 \times 0.7} = \sqrt{21} \approx 4.58$. The first option is correct.
+</details>
+
+**Question 3:** A company manufactures USB drives with a 3% defect rate. A batch of 50 drives is produced. Let $X$ = number of defective drives. What is $P(X = 0)$ (no defects)?
+
+- $(0.03)^{50}$
+- $(0.97)^{50}$
+- $\binom{50}{0} (0.03)^0 (0.97)^{50} = (0.97)^{50}$
+- $(0.03)^0 (0.97)^0 = 1$
+
+<details>
+<summary>Answer</summary>
+$P(X = 0) = \binom{50}{0} (0.03)^0 (0.97)^{50} = 1 \times 1 \times (0.97)^{50} = (0.97)^{50}$. This is the third option.
+</details>
+
+**Question 4:** Which scenario is *not* a binomial experiment?
+
+- Rolling a standard die 20 times and counting how many times you roll exactly a 3
+- Drawing cards from a deck (with replacement) 15 times and counting how many are red
+- Measuring the heights of 100 people and noting how many are above 180 cm
+- Flipping a weighted coin 50 times where the probability of heads is 0.6, counting the number of heads
+
+<details>
+<summary>Answer</summary>
+The third option is not a binomial experiment because we are not performing "repeated trials" in the binomial sense — we're measuring a population characteristic (height) once per person. In the other three, we repeat the same trial multiple times and count successes.
+</details>
+
+**Question 5:** You take a quiz with 15 multiple-choice questions (4 options each) and guess on all questions. Your success probability is $p = 0.25$ per question. What's the expected number of correct answers?
+
+- 3.75
+- 5
+- 7.5
+- 11.25
+
+<details>
+<summary>Answer</summary>
+$\mu = np = 15 \times 0.25 = 3.75$. The first option is correct.
+</details>
+
+## Source Notes
+
+- [Binomial distribution — Wikipedia](https://en.wikipedia.org/wiki/Binomial_distribution)
+- [Bernoulli trial — Wikipedia](https://en.wikipedia.org/wiki/Bernoulli_trial)
+- [Blaise Pascal — Wikipedia](https://en.wikipedia.org/wiki/Blaise_Pascal)
+- [Probability — Wikipedia](https://en.wikipedia.org/wiki/Probability)

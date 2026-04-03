@@ -1,0 +1,399 @@
+---
+id: ch-004
+slug: place-value
+title: Place Value — Why Position Changes Everything
+subtitle: "The same digit means something completely different depending on where it stands"
+world: world-00-language-of-number
+worldNumber: 0
+chapterNumber: 4
+level: foundational
+estimatedTimeMinutes: 35
+core: true
+prerequisites: [ch-003]
+historicalPeriod: "600 CE – present"
+historicalRegions:
+  - India
+  - Islamic world
+mainFigures: []
+mainConcepts:
+  - place value
+  - base ten
+  - ones/tens/hundreds/thousands
+  - expanded form
+  - standard form
+  - digits vs. numbers
+  - comparing numbers
+  - rounding
+learningObjectives:
+  - Identify the place value of each digit in a multi-digit number
+  - Write numbers in expanded form and standard form
+  - Compare and order whole numbers using place value
+  - Round numbers to any given place
+  - Understand that our base-ten system relates to powers of ten
+unlockCriteria:
+  quizMinScore: 0.8
+  practiceRequired: true
+status: draft
+tags:
+  - place-value
+  - number-sense
+  - operations
+  - foundations
+keyTerms:
+  - place value
+  - standard form
+  - expanded form
+  - ones place
+  - tens place
+  - hundreds place
+  - thousands place
+  - ten thousands
+  - hundred thousands
+  - millions
+  - powers of ten
+  - rounding
+  - digit
+review:
+  mathChecked: false
+  historicalChecked: false
+  editorialChecked: false
+---
+
+## Story Hook
+
+Imagine a single digit: 5. It's just a mark, a shape. But look what happens when we change where it stands:
+
+- 5 = five
+- 50 = fifty
+- 500 = five hundred
+- 5,000 = five thousand
+- 5,000,000 = five million
+
+The shape hasn't changed. The digit is identical. But its meaning has shifted by a factor of ten each time. The *position* is doing all the work.
+
+This wasn't always obvious. For most of human history, you couldn't do this trick. In Roman numerals, you'd have to use different symbols: V for five, L for fifty, D for five hundred. Every different magnitude needed a new symbol. But in the Hindu-Arabic system, one digit can mean anything, depending on where you put it. This is the magic of **place value**, and it's the engine that drives all modern mathematics.
+
+This chapter is about understanding that magic—and once you do, you'll never look at a number the same way again.
+
+## Why It Matters
+
+Place value is the most important idea in arithmetic. It's the reason you can add and multiply using columns. It's why we can teach children to calculate with paper and pencil. It's why computers work with binary digits (0 and 1) just as easily as we work with base-10 digits (0–9).
+
+Without place value, every calculation is hard. With it, you have algorithms—step-by-step procedures that anyone can follow. This is the difference between mathematics being a mystery reserved for the brilliant and it being a tool that everyone can learn.
+
+When you understand place value deeply—not just how to identify it, but *why it works*—you'll have a foundation for algebra, decimals, fractions, and everything that comes after. Place value is where serious mathematics begins.
+
+## Historical Context
+
+For thousands of years, mathematicians in Mesopotamia, Egypt, Rome, China, and elsewhere could count, record numbers, and even solve practical problems. But they struggled with the same barrier: multiplication and division required specialist knowledge, often using an abacus or similar tool. A merchant might need to hire a skilled calculator to multiply two large numbers.
+
+In India, by around 600 CE, mathematicians had taken the insights of the Babylonian positional system, added the Mayan concept of zero, and refined them into the system we use today. Brahmagupta (628 CE) explicitly treated zero as a number in its own right and explained operations with it. The Indian mathematicians understood place value so thoroughly that they could teach multiplication and division to apprentices—the algorithms worked the same way every time.
+
+This system spread east along the Silk Road. By the 8th century, Islamic mathematicians in Baghdad adopted and refined it. Al-Khwarizmi (c. 780–850 CE), a mathematician in Baghdad, wrote *The Compendious Book on Calculation by Completion and Balancing*, which became the foundation for algebra. His name gave us the word "algorithm"—a step-by-step procedure that works without variation, a direct consequence of place value and positional notation.
+
+The system reached Europe through trade and the Crusades around the 12th century. Leonardo Fibonacci, an Italian mathematician, encountered it on a trading trip to North Africa and introduced it to Europe in his 1202 book *Liber Abaci* ("Book of Calculation"). Gradually, place-value notation replaced Roman numerals. By the Renaissance, it was universal.
+
+The power of place value transformed what humans could calculate. It made science possible. It enabled engineering, trade, and the expansion of knowledge. It still does today.
+
+## Core Concept
+
+Place value is beautifully simple in concept but deeply rich in implication. In the base-10 system, each position represents a power of ten.
+
+Here are the places, from right to left:
+
+$$\text{Ones place} = 10^0 = 1$$
+$$\text{Tens place} = 10^1 = 10$$
+$$\text{Hundreds place} = 10^2 = 100$$
+$$\text{Thousands place} = 10^3 = 1,000$$
+$$\text{Ten thousands place} = 10^4 = 10,000$$
+$$\text{Hundred thousands place} = 10^5 = 100,000$$
+$$\text{Millions place} = 10^6 = 1,000,000$$
+
+When you write a number, each digit is multiplied by the place value of its position. For example:
+
+$$4,637 = (4 \times 1,000) + (6 \times 100) + (3 \times 10) + (7 \times 1)$$
+
+This is called **expanded form**. The number itself, written as 4,637, is called **standard form**.
+
+The key insight: *You only need ten symbols (0, 1, 2, 3, 4, 5, 6, 7, 8, 9) to write any number, no matter how large.* A million-digit number uses only these ten symbols, repeated in different positions. A billion-digit number does the same. The position carries all the information about magnitude.
+
+This is why the decimal system is so powerful. It's not because 10 is a special number—you could build the same system in base-2 (binary), base-16 (hexadecimal), or any other base. It's because positional notation with place value works *for any base*.
+
+**Comparing Numbers Using Place Value:**
+
+When you compare two numbers, you don't need to count on your fingers. You use place value. To compare 4,283 and 4,195:
+
+- Both have 4 in the thousands place, so look at the next place
+- 4,283 has 2 in the hundreds place; 4,195 has 1 in the hundreds place
+- Since 2 > 1, we know 4,283 > 4,195
+
+You didn't need to understand the full magnitude—you used the structure of place value to compare efficiently.
+
+**Rounding Using Place Value:**
+
+To round 4,637 to the nearest hundred, you look at the tens place (which is 3). Since 3 < 5, you round down: 4,600. To round to the nearest ten, you look at the ones place (which is 7). Since 7 ≥ 5, you round up: 4,640.
+
+Rounding works because place value gives you a way to "zoom in" on any level of precision you need.
+
+## Definitions and Formal Lesson
+
+**Place Value**: The value assigned to the position a digit occupies in a number. In base-10, each place is worth ten times the place to its right.
+
+**Standard Form**: A number written using its digits without showing the place-value breakdown. Example: 5,432
+
+**Expanded Form**: A number written to show the value contributed by each digit. Example: $5,000 + 400 + 30 + 2$ or $5 \times 1,000 + 4 \times 100 + 3 \times 10 + 2 \times 1$
+
+**Digit**: One of the ten symbols (0, 1, 2, 3, 4, 5, 6, 7, 8, 9) used in base-10 notation.
+
+**Number**: An abstract quantity, conceptually distinct from its notation. The number "five" can be written as 5, V (Roman), or in many other ways.
+
+**Ones Place**: The rightmost position in a base-10 number, representing units of 1 ($10^0$).
+
+**Tens Place**: The position to the left of the ones place, representing units of 10 ($10^1$).
+
+**Hundreds Place**: Two positions to the left of the ones place, representing units of 100 ($10^2$).
+
+**Thousands Place**: Three positions to the left of the ones place, representing units of 1,000 ($10^3$), and so on.
+
+**Power of Ten**: A number written as $10^n$, where $n$ is the number of times 10 is multiplied by itself. $10^0 = 1$, $10^1 = 10$, $10^2 = 100$, $10^3 = 1,000$, etc.
+
+**Rounding**: Replacing a number with another number that is approximate but easier to work with. To round to a given place, you look at the digit to the right of that place. If it's 5 or greater, round up; if less than 5, round down.
+
+**Ordering Numbers**: Arranging numbers from least to greatest (or greatest to least) using place value to compare.
+
+## Worked Examples
+
+**Example 1: Identifying Place Value**
+
+In the number 347,982, identify the place value and actual value of each digit:
+
+| Digit | Position | Place Value | Actual Value |
+|-------|----------|-------------|--------------|
+| 3 | Hundred thousands | 100,000 | $3 \times 100,000 = 300,000$ |
+| 4 | Ten thousands | 10,000 | $4 \times 10,000 = 40,000$ |
+| 7 | Thousands | 1,000 | $7 \times 1,000 = 7,000$ |
+| 9 | Hundreds | 100 | $9 \times 100 = 900$ |
+| 8 | Tens | 10 | $8 \times 10 = 80$ |
+| 2 | Ones | 1 | $2 \times 1 = 2$ |
+
+**Example 2: Writing in Expanded Form**
+
+Write 24,506 in expanded form.
+
+Method 1 (using addition):
+$$24,506 = 20,000 + 4,000 + 500 + 0 + 6$$
+
+Method 2 (using multiplication):
+$$24,506 = (2 \times 10,000) + (4 \times 1,000) + (5 \times 100) + (0 \times 10) + (6 \times 1)$$
+
+Method 3 (using powers of ten):
+$$24,506 = 2 \times 10^4 + 4 \times 10^3 + 5 \times 10^2 + 0 \times 10^1 + 6 \times 10^0$$
+
+All three are expanded forms—they just emphasize place value in different ways.
+
+**Example 3: Comparing Numbers Using Place Value**
+
+Compare 35,820 and 35,794.
+
+- Start from the left (highest place value)
+- Both have 3 in the ten-thousands place and 5 in the thousands place
+- First difference: 8 in the hundreds place (first number) vs. 7 in the hundreds place (second number)
+- Since 8 > 7, we know $35,820 > 35,794$
+
+We didn't need to think about the full magnitude; place value let us compare efficiently.
+
+**Example 4: Rounding to Different Places**
+
+Round 26,347 to different places:
+
+- **Nearest ten:** Look at ones place (7). Since 7 ≥ 5, round up: $26,350$
+- **Nearest hundred:** Look at tens place (4). Since 4 < 5, round down: $26,300$
+- **Nearest thousand:** Look at hundreds place (3). Since 3 < 5, round down: $26,000$
+- **Nearest ten thousand:** Look at thousands place (6). Since 6 ≥ 5, round up: $30,000$
+
+**Example 5: The Digit 3 in Different Places**
+
+Show how the digit 3 changes value based on position:
+
+| Number | Digit 3 is in... | Actual value of the 3 |
+|--------|-----------------|----------------------|
+| 3 | Ones place | 3 |
+| 30 | Tens place | 30 |
+| 300 | Hundreds place | 300 |
+| 3,000 | Thousands place | 3,000 |
+| 30,000 | Ten thousands place | 30,000 |
+| 3,000,000 | Millions place | 3,000,000 |
+
+The digit doesn't change, but its value multiplies by 10 each time it moves left. This is place value in action.
+
+## Practice Set
+
+**1. Write each number in expanded form:**
+- 456
+- 3,082
+- 15,204
+- 100,007
+
+**2. Identify the place value and actual value of each digit:**
+- In 8,305: the digit 8, the digit 3, the digit 0, the digit 5
+- In 72,461: the digit 7, the digit 2, the digit 4, the digit 6, the digit 1
+
+**3. Compare these pairs using place value (without converting to other forms). Write <, >, or = :**
+- 4,892 ___ 4,928
+- 15,300 ___ 15,030
+- 9,999 ___ 10,001
+- 50,000 ___ 50,000
+
+**4. Round to the nearest place requested:**
+- 4,837 to the nearest ten: _____
+- 4,837 to the nearest hundred: _____
+- 4,837 to the nearest thousand: _____
+- 234,567 to the nearest ten thousand: _____
+- 234,567 to the nearest hundred thousand: _____
+
+**5. Order these numbers from least to greatest using place value:**
+- 45,203 / 45,023 / 45,320 / 45,032 / 54,203
+
+## Reasoning Task
+
+**The Power of Position**
+
+Look at this visual representation of place value:
+
+| Position | Millions | Hundred Thousands | Ten Thousands | Thousands | Hundreds | Tens | Ones |
+|----------|----------|------------------|---------------|-----------|----------|------|------|
+| Value | $10^6$ | $10^5$ | $10^4$ | $10^3$ | $10^2$ | $10^1$ | $10^0$ |
+| Example Number 347,529 | — | 3 | 4 | 7 | 5 | 2 | 9 |
+
+**Question 1:** If I move a digit one place to the left, by what factor does its value increase?
+
+**Question 2:** If I move a digit three places to the right, by what factor does its value decrease?
+
+**Question 3:** The digit 5 in 347,529 is in the hundreds place. If I want to double the value that this digit represents (from 500 to 1,000), where could I place the digit 5? (Hint: there are two answers.)
+
+**Question 4:** In ancient Egypt or Rome, they didn't have place value. To write "five," they wrote V or |||||. To write "fifty," they wrote L or a different symbol. Why would it be nearly impossible to develop an algorithm for multiplication in such a system, compared to our place-value system?
+
+**Challenge:** Invent a base-5 system using only the digits 0, 1, 2, 3, 4. What would "10" mean in base-5? What would "100" mean? How would you write "twelve" in base-5?
+
+## Application
+
+Place value is the hidden foundation of everything you do with numbers:
+
+- **Mental Math**: When you add 47 + 25 mentally, you might think "40 + 20 = 60, 7 + 5 = 12, so 60 + 12 = 72." You're using place value to break the problem into manageable pieces.
+
+- **Column Addition and Multiplication**: The reason we line up numbers by place value when we add or multiply on paper is that place value lets us work digit by digit. Column addition wouldn't exist without it.
+
+- **Estimation**: When you estimate that $47 \times 23 \approx 50 \times 20 = 1,000$, you're rounding to convenient place values, then multiplying. This saves time and helps you check if your answer is reasonable.
+
+- **Decimal Numbers**: When we later introduce decimals (3.14159...), the same principle applies. The digits to the right of the decimal point represent $10^{-1}$ (tenths), $10^{-2}$ (hundredths), and so on. Place value extends infinitely in both directions.
+
+- **Scientific Notation**: Writing very large numbers like 3,000,000,000 becomes $3 \times 10^9$. This is place value compressed.
+
+- **Computer Science**: Binary (base-2) uses the same place-value principle. In binary, each position represents a power of 2: $2^0, 2^1, 2^2, 2^3$, etc. Understanding base-10 place value makes binary easy to learn.
+
+Place value isn't just a way to write numbers—it's a gateway to understanding how quantities scale, how algorithms work, and why our number system is so powerful.
+
+## Recap
+
+**Place value** is the principle that the position of a digit in a number determines its value. In base-10:
+
+- The ones place is worth $10^0 = 1$
+- The tens place is worth $10^1 = 10$
+- The hundreds place is worth $10^2 = 100$
+- And so on...
+
+A single digit (0–9) can represent vastly different quantities depending on its position. The digit 5 means five in the ones place but five million in the millions place.
+
+**Standard form** is how we normally write numbers (5,432). **Expanded form** shows the value of each digit (5,000 + 400 + 30 + 2).
+
+Using place value, you can:
+- **Compare numbers** by looking at the highest place value first
+- **Round numbers** to any precision by looking at the next digit to the right
+- **Add and multiply** using simple column algorithms
+- **Build an intuition for magnitude** by understanding which place value has the most impact
+
+The Hindu-Arabic system, perfected in India and transmitted through the Islamic world, succeeded because it combined:
+1. A positional system (position matters)
+2. Zero as a placeholder and number
+3. Just ten digits (0–9)
+4. Consistent, learnable algorithms
+
+This system transformed mathematics from a specialist's skill into a universal tool. When you truly understand place value, you own the key to all arithmetic.
+
+## Unlock Quiz
+
+**1. In the number 5,639, what is the actual value of the digit 6?**
+- 6
+- 60
+- 600
+- 6,000
+
+<details>
+<summary>Correct answer</summary>
+600
+</details>
+
+**2. Which expanded form correctly represents 4,207?**
+- $4,000 + 200 + 0 + 7$
+- $4 + 2 + 0 + 7$
+- $4,000 + 20 + 0 + 7$
+- $4,000 + 200 + 7$
+
+<details>
+<summary>Correct answer</summary>
+$4,000 + 200 + 0 + 7$
+</details>
+
+**3. If you move a digit two places to the left (for example, from the tens place to the thousands place), by what factor does its value increase?**
+- 2
+- 10
+- 100
+- 1,000
+
+<details>
+<summary>Correct answer</summary>
+100
+</details>
+
+**4. To round 3,456 to the nearest hundred, which digit do you look at?**
+- 3
+- 4
+- 5
+- 6
+
+<details>
+<summary>Correct answer</summary>
+5
+</details>
+
+**5. Why does the digit 0 appear in numbers like 205 or 3,040, even though it doesn't add any value by itself?**
+- It makes the number look bigger
+- It acts as a placeholder, showing that no units are in that place value
+- It helps us count better
+- Zero is required in all numbers
+
+<details>
+<summary>Correct answer</summary>
+It acts as a placeholder, showing that no units are in that place value
+</details>
+
+**6. Compare 28,147 and 28,174 using place value. Which is larger?**
+- 28,147
+- 28,174
+- They are equal
+- Cannot be determined
+
+<details>
+<summary>Correct answer</summary>
+28,174
+</details>
+
+## Source Notes
+
+- https://en.wikipedia.org/wiki/Decimal — Explanation of base-10 and place value
+- https://en.wikipedia.org/wiki/Positional_notation — General principle of positional systems
+- https://en.wikipedia.org/wiki/Brahmagupta — Indian mathematician who formalized place value and zero (628 CE)
+- https://en.wikipedia.org/wiki/Al-Khwarizmi — Islamic mathematician who standardized algorithms ("algorithm" comes from his name)
+- Kaplan, R. (2000). *The Nothing That Is: A Natural History of Zero*. Oxford University Press. How zero completed the place-value system.
+- https://en.wikipedia.org/wiki/Fibonacci — Leonardo Fibonacci introduced Hindu-Arabic numerals to Europe via *Liber Abaci* (1202)
+- Ifrah, G. (1998). *The Universal History of Numbers*. Wiley. Comprehensive history of the development of place-value systems.

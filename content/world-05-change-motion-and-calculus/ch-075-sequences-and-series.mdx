@@ -1,0 +1,309 @@
+---
+worldNumber: 5
+world: world-05-change-motion-and-calculus
+chapterNumber: 75
+chapterTitle: Sequences and Series — Infinite Sums
+subtitle: What happens when you add infinitely many terms? — sometimes a finite answer
+historicalPeriod: Ancient–1800s
+estimatedTimeMinutes: 40
+---
+
+## Story Hook
+
+Around 450 BCE, the Greek philosopher Zeno of Elea poses a paradox that baffled mathematicians for two thousand years.
+
+You want to cross a room. First, you walk half the distance. Then you walk half of what's left. Then half of what's left again. And so on, forever.
+
+Zeno argues: you take infinitely many steps. How can you ever reach the other side?
+
+The resolution is beautiful: the infinite sum $\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \cdots$ actually equals exactly 1. Infinity plus infinity plus infinity... can add up to a finite number.
+
+This idea — that you can tame infinity, that an infinite sum can converge to something finite — is one of the deepest insights in mathematics. It's also essential to calculus. Many functions used in science are defined as infinite series: $e^x$, $\sin x$, $\cos x$. Understanding series is understanding the heart of modern mathematics.
+
+## Why It Matters
+
+Series appear everywhere:
+- **Physics:** Sound waves, light waves, and quantum wavefunctions are sums of infinitely many terms.
+- **Engineering:** Fourier series decompose signals into simpler components.
+- **Medicine:** Dosing accumulates from repeated injections; the total dose in your body is an infinite series.
+- **Finance:** The present value of an annuity (periodic payments forever) is an infinite series.
+- **Machine learning:** Neural networks use series expansions to approximate functions.
+
+Without series, we couldn't compute $e$, $\pi$, $\sin x$, or $\ln x$ numerically. Computers rely on Taylor series to evaluate these functions to billions of digits of precision.
+
+## Historical Context
+
+Zeno lived in ancient Greece, but his paradox wasn't truly resolved until the 1600s when mathematicians began thinking rigorously about infinity.
+
+Newton and Leibniz used Taylor series (power series) extensively in developing calculus. Brook Taylor formalized the idea in 1715. Euler loved series and used them to solve problems that seemed intractable otherwise.
+
+In the 1800s, mathematicians like Cauchy and Weierstrass made series theory rigorous. They asked: *When does an infinite sum actually converge?* and *How do we know?* These questions led to powerful **convergence tests** — techniques to determine whether a series converges or diverges without computing all the terms.
+
+## Core Concept
+
+A **sequence** is an ordered list of numbers: $\{a_n\} = a_1, a_2, a_3, \ldots$
+
+A **series** is the sum of a sequence: $\sum_{n=1}^{\infty} a_n = a_1 + a_2 + a_3 + \cdots$
+
+The crucial question: does this infinite sum have a finite value? If so, it **converges**. If not, it **diverges**.
+
+### Convergence via Partial Sums
+
+To make sense of an infinite sum, we use **partial sums**:
+$$S_N = \sum_{n=1}^{N} a_n = a_1 + a_2 + \cdots + a_N$$
+
+As $N$ grows, we compute $S_1, S_2, S_3, \ldots$ If this sequence of partial sums approaches a limit $L$, we say the series converges to $L$:
+$$\sum_{n=1}^{\infty} a_n = L$$
+
+If the partial sums don't approach a limit, the series diverges.
+
+### Geometric Series
+
+The simplest series is the **geometric series**:
+$$\sum_{n=0}^{\infty} ar^n = a + ar + ar^2 + ar^3 + \cdots$$
+
+where $a \neq 0$ is the first term and $r$ is the common ratio.
+
+The partial sum is:
+$$S_N = a \cdot \frac{1 - r^{N+1}}{1 - r}$$
+
+(If you remember the formula for a finite geometric series, this is it.)
+
+As $N \to \infty$:
+- If $|r| < 1$, then $r^{N+1} \to 0$, so $S_N \to \frac{a}{1-r}$. The series **converges**.
+- If $|r| \geq 1$, the partial sums don't approach a limit. The series **diverges**.
+
+**Formula:** $\sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}$ for $|r| < 1$.
+
+**Zeno's paradox resolved:** $\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \cdots = \sum_{n=1}^{\infty} \left(\frac{1}{2}\right)^n = \frac{1/2}{1 - 1/2} = 1$. You do cross the room.
+
+### The Harmonic Series
+
+Consider the **harmonic series**:
+$$\sum_{n=1}^{\infty} \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots$$
+
+The terms shrink to zero, but the series diverges. This seems counterintuitive! But if you group terms:
+$$1 + \left(\frac{1}{2}\right) + \left(\frac{1}{3} + \frac{1}{4}\right) + \left(\frac{1}{5} + \cdots + \frac{1}{8}\right) + \cdots$$
+
+each group sums to at least $\frac{1}{2}$. Since there are infinitely many groups, the total is infinite.
+
+### The Divergence Test
+
+If $\lim_{n \to \infty} a_n \neq 0$, the series $\sum a_n$ **must diverge**.
+
+Why? If the series converged to a finite sum, the terms would need to get arbitrarily small. If the terms don't approach zero, convergence is impossible.
+
+**Important:** If $a_n \to 0$, the series *might* converge, but you need to test further. (The harmonic series has $a_n = 1/n \to 0$, but it diverges.)
+
+### p-Series
+
+The **p-series** generalizes the harmonic series:
+$$\sum_{n=1}^{\infty} \frac{1}{n^p}$$
+
+- If $p > 1$, the series **converges**.
+- If $p \leq 1$, the series **diverges**.
+
+(The harmonic series is $p = 1$, the boundary case.)
+
+### Taylor Series
+
+A **Taylor series** expresses a function as an infinite power series:
+$$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^n$$
+
+where $f^{(n)}(a)$ is the $n$-th derivative of $f$ at $x = a$.
+
+For $a = 0$ (the **Maclaurin series**):
+$$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n$$
+
+**Examples:**
+$$e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$$
+
+$$\sin x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots$$
+
+$$\cos x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots$$
+
+These series converge for all $x$ (they have infinite radius of convergence).
+
+### Why Taylor Series Matter
+
+Computers cannot compute $\sin(0.5)$ using only geometry or algebra. But they can compute it using the Taylor series:
+$$\sin(0.5) = 0.5 - \frac{(0.5)^3}{6} + \frac{(0.5)^5}{120} - \cdots$$
+
+By adding enough terms, you get any precision you want. This is how calculators and computers evaluate transcendental functions.
+
+## Definitions and Formal Lesson
+
+**Sequence:** An ordered list $\{a_n\}$ where each term is labeled by a positive integer.
+
+**Series:** A sum of a sequence: $\sum_{n=1}^{\infty} a_n$.
+
+**Partial sum:** $S_N = a_1 + a_2 + \cdots + a_N$.
+
+**Convergence:** A series converges if its partial sums approach a finite limit.
+
+**Divergence:** A series diverges if its partial sums do not approach a finite limit.
+
+**Geometric series:** $\sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}$ if $|r| < 1$; diverges if $|r| \geq 1$.
+
+**p-series:** $\sum_{n=1}^{\infty} \frac{1}{n^p}$ converges if $p > 1$; diverges if $p \leq 1$.
+
+**Divergence test:** If $\lim_{n \to \infty} a_n \neq 0$, the series diverges.
+
+**Taylor series:** $f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n$ (centered at $x = 0$).
+
+**Radius of convergence:** The range of $x$ values for which a power series converges.
+
+## Worked Examples
+
+**Example 1: Geometric series**
+
+Find the sum of $\sum_{n=0}^{\infty} \left(\frac{1}{3}\right)^n$.
+
+*Solution:* This is geometric with $a = 1$ and $r = 1/3$. Since $|r| = 1/3 < 1$:
+$$\sum_{n=0}^{\infty} \left(\frac{1}{3}\right)^n = \frac{1}{1 - 1/3} = \frac{1}{2/3} = \frac{3}{2}$$
+
+**Example 2: Repeating decimal as a series**
+
+Express $0.\overline{7} = 0.777\ldots$ as a fraction.
+
+*Solution:* $0.\overline{7} = \frac{7}{10} + \frac{7}{100} + \frac{7}{1000} + \cdots = \sum_{n=1}^{\infty} \frac{7}{10^n}$.
+
+This is geometric with $a = 7/10$ and $r = 1/10$:
+$$\sum_{n=1}^{\infty} \frac{7}{10^n} = \frac{7/10}{1 - 1/10} = \frac{7/10}{9/10} = \frac{7}{9}$$
+
+**Example 3: Divergence test**
+
+Does the series $\sum_{n=1}^{\infty} \frac{n^2}{2n^2 + 1}$ converge?
+
+*Solution:* Check if $a_n = \frac{n^2}{2n^2+1} \to 0$ as $n \to \infty$.
+
+$$\lim_{n \to \infty} \frac{n^2}{2n^2+1} = \lim_{n \to \infty} \frac{1}{2 + 1/n^2} = \frac{1}{2} \neq 0$$
+
+Since the terms don't approach zero, the series **diverges** by the divergence test.
+
+**Example 4: Taylor series approximation**
+
+Use the first three terms of the Taylor series for $e^x$ to approximate $e^{0.1}$.
+
+*Solution:* $e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$
+
+$$e^{0.1} \approx 1 + 0.1 + \frac{(0.1)^2}{2} = 1 + 0.1 + 0.005 = 1.105$$
+
+(The exact value is $e^{0.1} \approx 1.10517$, so three terms give excellent accuracy.)
+
+**Example 5: p-series**
+
+Does $\sum_{n=1}^{\infty} \frac{1}{n^{3/2}}$ converge?
+
+*Solution:* This is a p-series with $p = 3/2 > 1$, so it **converges**.
+
+## Practice Set
+
+1. Find the sum of $\sum_{n=1}^{\infty} \left(\frac{2}{5}\right)^n$.
+
+2. Express $0.\overline{3} = 0.333\ldots$ as a fraction using a series.
+
+3. Use the divergence test to determine whether $\sum_{n=1}^{\infty} \frac{1}{n+1}$ converges or diverges.
+
+4. Does the p-series $\sum_{n=1}^{\infty} \frac{1}{n}$ converge or diverge? Why?
+
+5. Use the first four terms of the Taylor series for $\cos x$ to approximate $\cos(0.2)$.
+
+## Reasoning Task
+
+**The Bouncing Ball:** A ball is dropped from a height of 10 meters. After each bounce, it rises to 70% of its previous height.
+
+- What is the total distance traveled by the ball (up and down) before it stops?
+- Express this as a series.
+- Does the series converge? If so, to what value?
+
+(Hint: The ball falls 10 m, rises $7$ m, falls $7$ m, rises $4.9$ m, etc. Think about the distances as a geometric series.)
+
+## Application
+
+**Medicine: Drug Accumulation:** If a patient receives a dose of 100 mg of a drug every 24 hours, and the body eliminates half the drug each day, how much drug accumulates in the body in the long run?
+
+After dose 1: 100 mg in body.
+After dose 2: $100 + 100 \cdot \frac{1}{2} = 150$ mg.
+After dose 3: $100 + 100 \cdot \frac{1}{2} + 100 \cdot \left(\frac{1}{2}\right)^2 = 175$ mg.
+
+In the limit:
+$$\text{Total} = \sum_{n=0}^{\infty} 100 \cdot \left(\frac{1}{2}\right)^n = \frac{100}{1 - 1/2} = 200 \text{ mg}$$
+
+The drug concentration plateaus at 200 mg. Without series, doctors wouldn't be able to design safe repeated-dose regimens.
+
+## Recap
+
+- A **series** is an infinite sum. It **converges** if the partial sums approach a finite limit.
+- **Geometric series** $\sum ar^n$ converge to $\frac{a}{1-r}$ if $|r| < 1$.
+- **p-series** $\sum \frac{1}{n^p}$ converge if $p > 1$.
+- The **divergence test**: if $a_n \not\to 0$, the series diverges. (But $a_n \to 0$ doesn't guarantee convergence.)
+- **Taylor series** express functions as infinite power series, enabling precise numerical computation.
+- **Zeno's paradox** is resolved: $\sum_{n=1}^{\infty} \frac{1}{2^n} = 1$.
+- Series are everywhere in science, medicine, finance, and engineering. Understanding convergence is fundamental to modern mathematics.
+
+## Unlock Quiz
+
+**Question 1:** What is the sum of the geometric series $\sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^n$?
+- $\frac{1}{2}$
+- $1$
+- $2$
+- Does not converge
+
+<details>
+<summary>Answer</summary>
+$2$
+</details>
+
+**Question 2:** For a geometric series $\sum ar^n$ to converge, which condition must $r$ satisfy?
+- $r > 0$
+- $r < 1$
+- $|r| < 1$
+- $r \neq 0$
+
+<details>
+<summary>Answer</summary>
+$|r| < 1$
+</details>
+
+**Question 3:** Does the harmonic series $\sum_{n=1}^{\infty} \frac{1}{n}$ converge or diverge?
+- Converges to 1
+- Converges to 0
+- Diverges
+- Converges to $\pi$
+
+<details>
+<summary>Answer</summary>
+Diverges
+</details>
+
+**Question 4:** What is the first term of the Taylor series for $\sin x$ centered at $x = 0$?
+- $1$
+- $x$
+- $\frac{x^2}{2}$
+- $-\frac{x^3}{6}$
+
+<details>
+<summary>Answer</summary>
+$x$
+</details>
+
+**Question 5:** Which p-series converges?
+- $\sum \frac{1}{n}$
+- $\sum \frac{1}{\sqrt{n}}$
+- $\sum \frac{1}{n^2}$
+- All of the above
+
+<details>
+<summary>Answer</summary>
+$\sum \frac{1}{n^2}$
+</details>
+
+## Source Notes
+
+- **Zeno's paradoxes:** Ancient Greek philosophy. [Wikipedia: Zeno's paradoxes](https://en.wikipedia.org/wiki/Zeno%27s_paradoxes)
+- **Geometric series:** [Wikipedia: Geometric series](https://en.wikipedia.org/wiki/Geometric_series)
+- **Harmonic series:** [Wikipedia: Harmonic series](https://en.wikipedia.org/wiki/Harmonic_series)
+- **p-series:** [Wikipedia: Riemann zeta function](https://en.wikipedia.org/wiki/Riemann_zeta_function) (see p-series section)
+- **Taylor series:** Brook Taylor (1715). [Wikipedia: Taylor series](https://en.wikipedia.org/wiki/Taylor_series)
+- **Divergence test:** [Wikipedia: Divergence test](https://en.wikipedia.org/wiki/Divergence_test)

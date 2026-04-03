@@ -1,0 +1,438 @@
+---
+id: ch-036
+slug: systems-of-two-equations
+title: Systems of Two Equations
+subtitle: "Two unknowns, two conditions — how to pin down both at once"
+world: world-02-algebra-is-born
+worldNumber: 2
+chapterNumber: 36
+level: foundational
+estimatedTimeMinutes: 45
+core: true
+prerequisites: [ch-034, ch-035]
+historicalPeriod: "200 BCE – 1700 CE"
+historicalRegions:
+  - China
+  - Islamic world
+  - Europe
+mainConcepts:
+  - system of equations
+  - substitution method
+  - elimination method
+  - consistent/inconsistent/dependent systems
+  - solution as intersection
+learningObjectives:
+  - Understand why one equation with two unknowns has infinitely many solutions
+  - Solve systems of two linear equations using substitution
+  - Solve systems using elimination (addition method)
+  - Identify consistent, inconsistent, and dependent systems
+  - Apply systems to real-world problems with two unknowns
+unlockCriteria:
+  quizMinScore: 0.8
+  practiceRequired: true
+status: draft
+tags:
+  - algebra
+  - systems
+keyTerms:
+  - system of equations
+  - substitution method
+  - elimination method
+  - consistent system
+  - inconsistent system
+  - dependent system
+review:
+  mathChecked: false
+  historicalChecked: false
+  editorialChecked: false
+---
+
+## Story Hook
+
+Imagine a scribe in ancient China, around 200 BCE, consulting the "Nine Chapters on the Mathematical Art" — a mathematical masterpiece older than algebra as we know it. One problem: a farmer buys 2 roosters and 2 hens for 5 silver coins. Another farmer buys 1 rooster and 3 hens for 4 silver coins.
+
+How much does a rooster cost? How much does a hen?
+
+This is not one equation. This is *two* equations with *two* unknowns. And there's only one pair of prices that satisfies *both* conditions at the same time. The Chinese mathematicians had methods for finding that pair — long before Europeans invented the symbolic algebra we use today.
+
+---
+
+## Why It Matters
+
+Most interesting problems in the real world aren't about *one* unknown. They're about *two* or more.
+
+- A store carries two types of goods. Profit depends on how many of each to stock.
+- An engineer designs a structure with two forces acting on it.
+- A chemist mixes two solutions with different concentrations.
+- An economist studies supply and demand — two curves that must meet.
+
+One equation can't capture these situations. You need *two* equations to pin down *two* unknowns uniquely. And the methods for solving systems of equations are among the most powerful tools in mathematics and science.
+
+---
+
+## Historical Context
+
+The Chinese "Nine Chapters on the Mathematical Art" (成書 ~200 BCE) contains the oldest known systematic approach to systems of equations. Chinese mathematicians used a rectangular grid of numbers (a proto-matrix) to organize equations and solve them methodically.
+
+Islamic scholars like al-Khwarizmi and later al-Karaji refined methods for solving systems algebraically, using prose and poetic forms before symbolic notation existed.
+
+In medieval Europe, mathematicians like Cardano (1501–1576) and Vieta (1540–1603) developed systematic notations. By the 1600s, the substitution and elimination methods had become standard tools in every algebra text.
+
+The *graphical* interpretation—that the solution is where two lines intersect—emerged as symbolic and geometric approaches merged in the 1600s and 1700s.
+
+---
+
+## Core Concept
+
+### Why One Equation with Two Unknowns Isn't Enough
+
+Consider: $x + y = 10$
+
+This has *infinitely many solutions*:
+- $(0, 10)$, $(1, 9)$, $(2, 8)$, $(3, 7)$, $(5, 5)$, $(10, 0)$, etc.
+
+Graphically, this is a *line*. Any point on the line satisfies the equation.
+
+But if we add a *second* condition, say $x - y = 2$:
+
+Now we need *both* equations to be true. The solution is the point where the two lines *intersect*. For most pairs of lines, there's exactly *one* such point.
+
+$$x + y = 10$$
+$$x - y = 2$$
+
+Adding these: $2x = 12$, so $x = 6$. Then $y = 4$. Solution: $(6, 4)$.
+
+This is the core insight: **Two equations with two unknowns typically give us one unique solution.**
+
+---
+
+### The Three Cases
+
+**Case 1: Consistent (Unique Solution)**
+
+The two lines intersect at exactly one point.
+
+Example:
+$$x + y = 10$$
+$$x - y = 2$$
+
+Solution: $(6, 4)$.
+
+**Case 2: Inconsistent (No Solution)**
+
+The two lines are parallel (same slope, different y-intercepts). They never meet.
+
+Example:
+$$x + y = 10$$
+$$x + y = 5$$
+
+These equations contradict each other. No solution exists.
+
+**Case 3: Dependent (Infinitely Many Solutions)**
+
+The two equations describe the *same line*. Every point on the line is a solution.
+
+Example:
+$$x + y = 10$$
+$$2x + 2y = 20$$
+
+The second equation is just the first multiplied by 2. They're the same line. Infinitely many solutions: every point $(x, y)$ on the line $x + y = 10$.
+
+---
+
+## Definitions and Formal Lesson
+
+**System of Equations:** Two or more equations involving the same variables. A solution must satisfy *all* equations simultaneously.
+
+**Solution of a System:** Values for the variables that make every equation in the system true.
+
+**Consistent System:** A system with at least one solution.
+
+**Inconsistent System:** A system with no solution.
+
+**Dependent System:** A consistent system with infinitely many solutions (the equations represent the same line/plane/object).
+
+---
+
+### Method 1: Substitution
+
+Choose one equation and solve it for one variable. Substitute that expression into the other equation.
+
+**Steps:**
+1. Solve one equation for one variable.
+2. Substitute into the other equation.
+3. Solve the resulting single-variable equation.
+4. Back-substitute to find the other variable.
+
+---
+
+### Method 2: Elimination (Addition Method)
+
+Multiply one or both equations by a constant so that one variable has opposite coefficients. Add the equations to eliminate that variable.
+
+**Steps:**
+1. Arrange both equations in standard form.
+2. Multiply one or both equations so a variable has opposite coefficients.
+3. Add the equations to eliminate that variable.
+4. Solve the resulting equation.
+5. Substitute back to find the other variable.
+
+---
+
+## Worked Examples
+
+### Example 1: Substitution Method
+
+**Problem:** Solve the system:
+$$x + y = 7$$
+$$2x - y = 5$$
+
+**Step 1: Solve the first equation for $y$**
+$$y = 7 - x$$
+
+**Step 2: Substitute into the second equation**
+$$2x - (7 - x) = 5$$
+
+**Step 3: Solve for $x$**
+$$2x - 7 + x = 5$$
+$$3x = 12$$
+$$x = 4$$
+
+**Step 4: Find $y$**
+$$y = 7 - 4 = 3$$
+
+**Check:** $x + y = 4 + 3 = 7$ ✓ and $2x - y = 8 - 3 = 5$ ✓
+
+**Solution:** $(4, 3)$
+
+---
+
+### Example 2: Elimination Method
+
+**Problem:** Solve the system:
+$$3x + 2y = 13$$
+$$2x - 2y = 2$$
+
+**Step 1:** Notice that $2y$ and $-2y$ are opposites. Add directly.
+
+$$3x + 2y + 2x - 2y = 13 + 2$$
+$$5x = 15$$
+$$x = 3$$
+
+**Step 2: Substitute to find $y$**
+
+From the second equation: $2(3) - 2y = 2$
+
+$$6 - 2y = 2$$
+$$-2y = -4$$
+$$y = 2$$
+
+**Check:** $3(3) + 2(2) = 9 + 4 = 13$ ✓ and $2(3) - 2(2) = 6 - 4 = 2$ ✓
+
+**Solution:** $(3, 2)$
+
+---
+
+### Example 3: Systems Needing Multiplication
+
+**Problem:** Solve the system:
+$$2x + 3y = 11$$
+$$3x + 2y = 14$$
+
+**Step 1:** Multiply to create opposite coefficients. Multiply the first by 3 and the second by -2:
+
+$$6x + 9y = 33$$
+$$-6x - 4y = -28$$
+
+**Step 2: Add**
+$$5y = 5$$
+$$y = 1$$
+
+**Step 3: Substitute into the first original equation**
+$$2x + 3(1) = 11$$
+$$2x = 8$$
+$$x = 4$$
+
+**Check:** $2(4) + 3(1) = 8 + 3 = 11$ ✓ and $3(4) + 2(1) = 12 + 2 = 14$ ✓
+
+**Solution:** $(4, 1)$
+
+---
+
+### Example 4: Real-World Application (Two Prices)
+
+**Problem:** A store sells pens and notebooks. 3 pens and 2 notebooks cost $8. 1 pen and 4 notebooks cost $10. Find the price of each.
+
+**Step 1: Define variables**
+- Let $p$ = price of a pen
+- Let $n$ = price of a notebook
+
+**Step 2: Write equations**
+$$3p + 2n = 8$$
+$$p + 4n = 10$$
+
+**Step 3: Solve using substitution**
+
+From the second equation: $p = 10 - 4n$
+
+Substitute into the first:
+$$3(10 - 4n) + 2n = 8$$
+$$30 - 12n + 2n = 8$$
+$$-10n = -22$$
+$$n = 2.2$$
+
+Then: $p = 10 - 4(2.2) = 10 - 8.8 = 1.2$
+
+**Check:**
+- $3(1.2) + 2(2.2) = 3.6 + 4.4 = 8$ ✓
+- $1.2 + 4(2.2) = 1.2 + 8.8 = 10$ ✓
+
+**Answer:** A pen costs $1.20; a notebook costs $2.20.
+
+---
+
+### Example 5: Recognizing an Inconsistent System
+
+**Problem:** Solve the system:
+$$2x + y = 5$$
+$$4x + 2y = 8$$
+
+**Step 1:** Multiply the first equation by 2:
+$$4x + 2y = 10$$
+$$4x + 2y = 8$$
+
+**Step 2:** Subtract the second from the first:
+$$0 = 2$$
+
+This is a *contradiction*. No solution exists.
+
+**Reason:** The first equation says $4x + 2y = 10$. The second says $4x + 2y = 8$. These can't both be true.
+
+Graphically, these are parallel lines with the same slope but different y-intercepts.
+
+**Answer:** No solution (inconsistent system).
+
+---
+
+## Practice Set
+
+Solve each system using either substitution or elimination. State whether the system is consistent (and give the solution) or inconsistent/dependent.
+
+1. $$x + y = 8$$
+   $$x - y = 2$$
+
+2. $$2x + y = 7$$
+   $$x - y = 2$$
+
+3. $$3x - 2y = 5$$
+   $$x + y = 4$$
+
+4. $$2x + 3y = 6$$
+   $$4x + 6y = 12$$
+
+5. $$x + 2y = 10$$
+   $$x + 2y = 5$$
+
+6. $$3x + 4y = 24$$
+   $$2x - y = 5$$
+
+---
+
+## Reasoning Task
+
+**Problem:** A company manufactures two types of chairs: standard and deluxe. A standard chair requires 4 hours of labor and 2 units of wood. A deluxe chair requires 6 hours of labor and 3 units of wood.
+
+The company has 60 labor hours and 24 units of wood available per day. Let $s$ = number of standard chairs and $d$ = number of deluxe chairs.
+
+**Your task:**
+1. Write the system of equations for labor and wood constraints.
+2. Solve the system.
+3. Interpret: what does the solution tell the company?
+4. Is the solution realistic? Why or why not?
+
+---
+
+## Application
+
+**Scenario:** Two recipes use different proportions of ingredients. A smoothie recipe calls for 2 cups of fruit and 1 cup of yogurt. A parfait recipe calls for 1 cup of fruit and 2 cups of yogurt. You have 14 cups of fruit and 11 cups of yogurt. How many smoothies and parfaits can you make if you use all ingredients?
+
+Set this up as a system and solve. Interpret your answer.
+
+---
+
+## Recap
+
+When you have *two* unknowns and *two* conditions, a system of two equations lets you find a unique solution (or determine if no solution exists).
+
+**Key methods:**
+- **Substitution:** Solve one for a variable; substitute into the other.
+- **Elimination:** Multiply and add to eliminate one variable.
+
+**Three cases:**
+- **Consistent:** One solution (lines intersect at one point).
+- **Inconsistent:** No solution (parallel lines).
+- **Dependent:** Infinitely many solutions (same line).
+
+Systems are everywhere in applied mathematics. Once you master solving them, you can tackle real-world problems involving multiple constraints and unknowns.
+
+---
+
+## Unlock Quiz
+
+**Question 1:** In the system $x + y = 5$ and $x - y = 1$, which variable would be easiest to eliminate using the elimination method?
+
+- The variable $x$
+- The variable $y$
+- Either variable is equally easy
+
+<details>
+<summary>Answer</summary>
+The variable $y$
+</details>
+
+---
+
+**Question 2:** If you multiply the first equation in a system by 2, does that change the solution?
+
+- Yes, it always gives a different solution
+- No, because multiplying both sides by the same number preserves the equation
+- Yes, but only if the number is negative
+
+<details>
+<summary>Answer</summary>
+No, because multiplying both sides by the same number preserves the equation
+</details>
+
+---
+
+**Question 3:** What does it mean when you get $0 = 0$ while solving a system?
+
+- The system is inconsistent (no solution)
+- The system is dependent (infinitely many solutions)
+- The system has exactly one solution
+
+<details>
+<summary>Answer</summary>
+The system is dependent (infinitely many solutions)
+</details>
+
+---
+
+**Question 4:** Two lines are parallel. What can you say about the system formed by their equations?
+
+- It is consistent with one solution
+- It is inconsistent with no solution
+- It is dependent with infinitely many solutions
+
+<details>
+<summary>Answer</summary>
+It is inconsistent with no solution
+</details>
+
+---
+
+## Source Notes
+
+- [System of linear equations - Wikipedia](https://en.wikipedia.org/wiki/System_of_linear_equations)
+- [Nine Chapters on the Mathematical Art - Wikipedia](https://en.wikipedia.org/wiki/The_Nine_Chapters_on_the_Mathematical_Art)
+- [Al-Khwarizmi - Wikipedia](https://en.wikipedia.org/wiki/Al-Khwarizmi)

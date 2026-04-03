@@ -1,0 +1,237 @@
+---
+id: ch-009
+slug: prime-numbers
+title: Prime Numbers — The Atoms of Arithmetic
+worldNumber: 0
+world: world-00-language-of-number
+chapterNumber: 9
+level: foundational
+subtitle: "The building blocks of every number — and one of mathematics' deepest mysteries"
+historicalPeriod: "300 BCE – present"
+historicalRegions:
+  - Greece
+  - global
+estimatedTimeMinutes: 40
+mainConcepts:
+  - prime
+  - composite
+  - fundamental theorem of arithmetic
+  - Sieve of Eratosthenes
+  - prime factorization
+  - twin primes
+learningObjectives:
+  - Define prime and composite numbers and identify them
+  - Use the Sieve of Eratosthenes to find primes up to 100
+  - Write the prime factorization of any whole number
+  - State the Fundamental Theorem of Arithmetic
+  - Use prime factorization to find GCF and LCM
+  - Appreciate that prime numbers are still a source of open mathematical questions
+---
+
+## Story Hook
+
+Picture the great library of Alexandria, around 240 BCE. Eratosthenes, the chief librarian, sits at a wooden table with a wax tablet marked with numbers from 2 to 100. He begins a remarkable process: methodically crossing out numbers that *aren't* prime, the way a baker sieves flour to remove lumps. He crosses out all multiples of 2, then all multiples of 3, then 5, then 7. What remains? The primes — the numbers that cannot be divided by any number except 1 and themselves.
+
+His method, called the **Sieve of Eratosthenes**, is one of the oldest algorithms in human history. It's still one of the most elegant. And it tells us something profound: primes are like atoms. Every whole number above 1 is either prime itself or built from primes by multiplication. Nothing else is possible.
+
+## Why It Matters
+
+Prime numbers are the atoms of arithmetic. Just as physicists break matter down to atoms to understand it, mathematicians break numbers down to primes to understand their structure. This isn't abstract trivia — primes run through modern life invisibly.
+
+Every time you log into a website securely, your browser and the server negotiate using prime numbers. The encryption that protects your passwords, your bank account, and your medical records depends on the fact that very large numbers are extremely hard to factor (break into their prime pieces). Cryptographers choose two enormous primes, multiply them together, and use the result as part of a lock. Breaking the lock would require finding those original primes — a computation so hard that the most powerful computers in the world would take longer than the age of the universe.
+
+Primes also appear in the rhythms of nature: the mating cycles of certain insects, the spacing of petals on flowers, the tails of clock-mechanism design. They are far more than a classroom curiosity.
+
+## Historical Context
+
+Euclid proved around 300 BCE that there are infinitely many primes — a stunning result that told mathematicians: no matter how far you count, primes never run out. The proof is so elegant that students still study it thousands of years later.
+
+Eratosthenes' sieve, written down in his work on prime-finding, has been refined but never fundamentally replaced. For over two millennia, it remained the fastest way to find all primes up to a given number.
+
+The modern era brought surprises. In the 1640s, Marin Mersenne studied primes of a special form: $2^p - 1$ where $p$ is prime. Some of these *Mersenne primes* are spectacular — enormous numbers that push the boundaries of what mathematicians can compute. The largest known prime today is a Mersenne prime with nearly 25 million digits.
+
+Even more mysterious: **twin primes** — pairs of primes that differ by 2, like 3 and 5, or 11 and 13, or 29 and 31. Do they go on forever? Mathematicians still don't know. This is one of the greatest open questions in mathematics.
+
+## Core Concept
+
+A **prime number** is a whole number greater than 1 that has exactly two factors: 1 and itself. A **composite number** has more than two factors.
+
+- Prime: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ...
+- Composite: 4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20, ...
+- Special case: 1 is neither prime nor composite.
+
+Every composite number can be written as a product of primes. This is the **Fundamental Theorem of Arithmetic**: every integer greater than 1 is either prime itself or the unique product of prime numbers (ignoring order).
+
+For example:
+- $12 = 2^2 \times 3$
+- $100 = 2^2 \times 5^2$
+- $17 = 17$ (itself, since 17 is prime)
+
+This factorization is unique — there's exactly one way to write any composite number as a product of primes.
+
+## Definitions and Formal Lesson
+
+**Prime Number:** A natural number $p > 1$ with exactly two positive divisors: 1 and $p$ itself.
+
+**Composite Number:** A natural number $n > 1$ with more than two positive divisors.
+
+**Prime Factorization:** The expression of a composite number as a product of primes. Written in exponential form: $n = p_1^{a_1} \times p_2^{a_2} \times \cdots \times p_k^{a_k}$ where $p_1, p_2, \ldots, p_k$ are distinct primes and $a_i > 0$.
+
+**Fundamental Theorem of Arithmetic:** Every integer $n > 1$ is either prime or can be uniquely expressed as a product of prime numbers (up to order).
+
+**Sieve of Eratosthenes:** An algorithm to find all primes up to a given number $N$:
+1. Write all integers from 2 to $N$.
+2. Start with 2 (the smallest prime). Cross out all multiples of 2 (except 2 itself).
+3. Move to the next uncrossed number (3). Cross out all multiples of 3 (except 3 itself).
+4. Continue with 5, 7, and so on, until you've processed all primes up to $\sqrt{N}$.
+5. All uncrossed numbers are prime.
+
+## Worked Examples
+
+**Example 1: Identifying Primes and Composites**
+
+Is 23 prime or composite?
+
+Check divisibility by numbers up to $\sqrt{23} \approx 4.8$: So test 2, 3, 4.
+- $23 \div 2 = 11.5$ (not a whole number)
+- $23 \div 3 = 7.67...$ (not a whole number)
+- $23 \div 4 = 5.75$ (not a whole number)
+
+Since 23 has no divisors except 1 and itself, **23 is prime**.
+
+**Example 2: Prime Factorization Using a Factor Tree**
+
+Find the prime factorization of 60.
+
+```
+       60
+      /  \
+     6   10
+    / \   / \
+   2  3  2  5
+```
+
+Reading the bottom row: $60 = 2 \times 3 \times 2 \times 5 = 2^2 \times 3 \times 5$.
+
+**Example 3: Using Prime Factorization to Find GCF**
+
+Find GCF(72, 120) using prime factorization.
+
+$72 = 2^3 \times 3^2$
+$120 = 2^3 \times 3 \times 5$
+
+The common prime factors are $2^3$ (appears in both) and $3^1$ (lowest power).
+
+$$\text{GCF}(72, 120) = 2^3 \times 3 = 8 \times 3 = 24$$
+
+**Example 4: Using Prime Factorization to Find LCM**
+
+Find LCM(72, 120) using prime factorization.
+
+$72 = 2^3 \times 3^2$
+$120 = 2^3 \times 3 \times 5$
+
+For LCM, take each prime at its highest power: $2^3, 3^2, 5^1$.
+
+$$\text{LCM}(72, 120) = 2^3 \times 3^2 \times 5 = 8 \times 9 \times 5 = 360$$
+
+## Practice Set
+
+1. List all prime numbers between 10 and 30.
+
+2. Write the prime factorization of 84 using a factor tree.
+
+3. Is 91 prime? (Hint: test divisibility by small primes up to $\sqrt{91} \approx 9.5$.)
+
+4. Use the prime factorization to find GCF(36, 60).
+
+5. Use the prime factorization to find LCM(36, 60).
+
+6. The Sieve of Eratosthenes: Mark all multiples of 2, 3, 5, and 7 in the list 2 through 30. Which numbers remain?
+
+## Reasoning Task
+
+You're given two composite numbers: 40 and 75.
+
+a) Find the complete prime factorization of each using factor trees.
+
+b) Use your factorizations to find GCF(40, 75) and LCM(40, 75).
+
+c) Verify: multiply GCF × LCM. What do you notice about this product compared to $40 \times 75$?
+
+d) Is this relationship always true? Why might it be?
+
+## Application
+
+**Real-World Scenario: Secure Messaging**
+
+When you send a private message online, your device often uses **RSA encryption**, which works like this:
+
+1. A large prime number $p$ and another large prime number $q$ are chosen (each might have hundreds of digits).
+2. The product $n = p \times q$ is public, but $p$ and $q$ are secret.
+3. Someone wanting to send you a secret message uses $n$ to encrypt it.
+4. Only you, who know the original primes $p$ and $q$, can decrypt it.
+
+The security depends on a startling fact: while multiplying two primes is easy (even very large ones), **factoring** their product back to the original primes is fantastically hard. There is no known fast algorithm. A supercomputer attacking a 2048-bit RSA key would take centuries.
+
+This is why understanding primes became suddenly critical to modern security in the late 20th century. Primes, which seemed like pure mathematics with no application, became guardians of your personal information.
+
+## Recap
+
+Prime numbers are the irreducible building blocks of arithmetic. The Sieve of Eratosthenes is an ancient, elegant algorithm for finding all primes up to any given number. The Fundamental Theorem of Arithmetic guarantees that every composite number has a unique prime factorization. Prime factorizations give us powerful tools: finding GCF by taking common primes at minimum power, finding LCM by taking all primes at maximum power. Modern cryptography, which protects global digital security, rests on the difficulty of factoring products of large primes. And after thousands of years of study, primes still hold mysteries — open questions like the Twin Prime Conjecture remind us that mathematics is never finished.
+
+## Unlock Quiz
+
+1. Which of these is prime?
+   - 12
+   - 17
+   - 21
+   - 35
+
+2. What is the prime factorization of 20?
+   - $2 \times 10$
+   - $2^2 \times 5$
+   - $4 \times 5$
+   - $2 \times 2 \times 5$ (all equivalent to $2^2 \times 5$)
+
+3. Using prime factorization, find GCF(48, 80).
+   - 8
+   - 16
+   - 24
+   - 40
+
+4. Using prime factorization, find LCM(12, 18).
+   - 24
+   - 30
+   - 36
+   - 54
+
+5. In the Sieve of Eratosthenes, after crossing out all multiples of 2, 3, and 5, which numbers from 1 to 30 remain as primes?
+   - 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
+   - 7, 11, 13, 17, 19, 23, 29
+   - 1, 7, 11, 13, 17, 19, 23, 29
+   - 7, 11, 13, 17, 19, 23, 29, 31
+
+<details>
+<summary>Answers</summary>
+
+1. **17** — 17 has no divisors except 1 and 17. (12 = 2² × 3, 21 = 3 × 7, 35 = 5 × 7 are all composite.)
+
+2. **$2^2 \times 5$** — Prime factorization: 20 = 4 × 5 = 2 × 2 × 5 = $2^2 \times 5$.
+
+3. **16** — $48 = 2^4 \times 3$ and $80 = 2^4 \times 5$. Common prime factors: $2^4 = 16$.
+
+4. **36** — $12 = 2^2 \times 3$ and $18 = 2 \times 3^2$. LCM uses highest powers: $2^2 \times 3^2 = 4 \times 9 = 36$.
+
+5. **7, 11, 13, 17, 19, 23, 29** — After removing multiples of 2, 3, 5, the remaining numbers from 2 to 30 are the seven primes listed. (Note: 1 is not prime.)
+
+</details>
+
+## Source Notes
+
+- Euclid, *Elements*, Book IX, Proposition 20 (circa 300 BCE). Proof that infinitely many primes exist.
+- [Prime Number — Wikipedia](https://en.wikipedia.org/wiki/Prime_number)
+- [Fundamental Theorem of Arithmetic — Wikipedia](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic)
+- [Sieve of Eratosthenes — Wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+- [Mersenne Prime — Wikipedia](https://en.wikipedia.org/wiki/Mersenne_prime)
+- [Twin Prime — Wikipedia](https://en.wikipedia.org/wiki/Twin_prime)
