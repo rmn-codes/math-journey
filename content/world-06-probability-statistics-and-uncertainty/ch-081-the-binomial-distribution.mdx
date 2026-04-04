@@ -261,66 +261,46 @@ The binomial distribution is your first powerful tool for answering: *"If this e
 
 ## Unlock Quiz
 
-**Question 1:** A fair die is rolled 8 times. Let $X$ = number of times a 6 appears. Which of the following is true?
+1. A fair die is rolled 8 times. Let $X$ = number of times a 6 appears. Which of the following is true?
+   - The first and fourth statements are correct
+   - Only the first statement is correct
+   - Only the fourth statement is correct
+   - The first and third statements are correct
 
-- $X$ follows a binomial distribution with $n = 8$ and $p = 1/6$
-- $X$ follows a binomial distribution with $n = 8$ and $p = 1/2$
-- $X$ cannot be modeled with the binomial distribution because rolling a die has more than two outcomes
-- $\mu = 8 \times 1/6 \approx 1.33$ and $\sigma \approx 1.04$
+2. Suppose $X \sim \text{Binomial}(100, 0.3)$. What are $\mu$ and $\sigma$?
+   - $\mu = 30$, $\sigma = \sqrt{21} \approx 4.58$
+   - $\mu = 30$, $\sigma \approx 4.35$
+   - $\mu = 70$, $\sigma = \sqrt{21} \approx 4.58$
+   - $\mu = 0.3$, $\sigma = 0.45$
 
-<details>
-<summary>Answer</summary>
-The first and fourth statements are correct. $X$ counts successes (rolling a 6) in 8 independent trials, each with probability 1/6. The die has six outcomes, but we're counting one specific outcome (success = rolling a 6), so it fits the binomial model. Mean: $\mu = 8 \times (1/6) = 4/3 \approx 1.33$. Std Dev: $\sigma = \sqrt{8 \times (1/6) \times (5/6)} = \sqrt{40/36} \approx 1.05$.
-</details>
+3. A company manufactures USB drives with a 3% defect rate. A batch of 50 drives is produced. Let $X$ = number of defective drives. What is $P(X = 0)$ (no defects)?
+   - $(0.03)^{50}$
+   - $(0.97)^{50}$
+   - $\binom{50}{0} (0.03)^0 (0.97)^{50} = (0.97)^{50}$
+   - $(0.03)^0 (0.97)^0 = 1$
 
-**Question 2:** Suppose $X \sim \text{Binomial}(100, 0.3)$. What are $\mu$ and $\sigma$?
+4. Which scenario is *not* a binomial experiment?
+   - Rolling a standard die 20 times and counting how many times you roll exactly a 3
+   - Drawing cards from a deck (with replacement) 15 times and counting how many are red
+   - Measuring the heights of 100 people and noting how many are above 180 cm
+   - Flipping a weighted coin 50 times where the probability of heads is 0.6, counting the number of heads
 
-- $\mu = 30$, $\sigma = \sqrt{21} \approx 4.58$
-- $\mu = 30$, $\sigma \approx 4.35$
-- $\mu = 70$, $\sigma = \sqrt{21} \approx 4.58$
-- $\mu = 0.3$, $\sigma = 0.45$
-
-<details>
-<summary>Answer</summary>
-$\mu = np = 100 \times 0.3 = 30$. $\sigma = \sqrt{np(1-p)} = \sqrt{100 \times 0.3 \times 0.7} = \sqrt{21} \approx 4.58$. The first option is correct.
-</details>
-
-**Question 3:** A company manufactures USB drives with a 3% defect rate. A batch of 50 drives is produced. Let $X$ = number of defective drives. What is $P(X = 0)$ (no defects)?
-
-- $(0.03)^{50}$
-- $(0.97)^{50}$
-- $\binom{50}{0} (0.03)^0 (0.97)^{50} = (0.97)^{50}$
-- $(0.03)^0 (0.97)^0 = 1$
-
-<details>
-<summary>Answer</summary>
-$P(X = 0) = \binom{50}{0} (0.03)^0 (0.97)^{50} = 1 \times 1 \times (0.97)^{50} = (0.97)^{50}$. This is the third option.
-</details>
-
-**Question 4:** Which scenario is *not* a binomial experiment?
-
-- Rolling a standard die 20 times and counting how many times you roll exactly a 3
-- Drawing cards from a deck (with replacement) 15 times and counting how many are red
-- Measuring the heights of 100 people and noting how many are above 180 cm
-- Flipping a weighted coin 50 times where the probability of heads is 0.6, counting the number of heads
+5. You take a quiz with 15 multiple-choice questions (4 options each) and guess on all questions. Your success probability is $p = 0.25$ per question. What's the expected number of correct answers?
+   - 3.75
+   - 5
+   - 7.5
+   - 11.25
 
 <details>
-<summary>Answer</summary>
-The third option is not a binomial experiment because we are not performing "repeated trials" in the binomial sense — we're measuring a population characteristic (height) once per person. In the other three, we repeat the same trial multiple times and count successes.
+<summary>Unlock Quiz Answers</summary>
+
+1. The first and fourth statements are correct
+2. $\mu = 30$, $\sigma = \sqrt{21} \approx 4.58$
+3. $\binom{50}{0} (0.03)^0 (0.97)^{50} = (0.97)^{50}$
+4. Measuring the heights of 100 people and noting how many are above 180 cm
+5. 3.75
+
 </details>
-
-**Question 5:** You take a quiz with 15 multiple-choice questions (4 options each) and guess on all questions. Your success probability is $p = 0.25$ per question. What's the expected number of correct answers?
-
-- 3.75
-- 5
-- 7.5
-- 11.25
-
-<details>
-<summary>Answer</summary>
-$\mu = np = 15 \times 0.25 = 3.75$. The first option is correct.
-</details>
-
 ## Source Notes
 
 - [Binomial distribution — Wikipedia](https://en.wikipedia.org/wiki/Binomial_distribution)

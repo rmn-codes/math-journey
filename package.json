@@ -1,0 +1,14 @@
+{
+  "name": "math-journey",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:quizzes": "python3 scripts/check_quizzes.py",
+    "qa:quizzes": "python3 scripts/check_quizzes.py",
+    "generate:illustrations": "node scripts/generate_illustrations.mjs --manifest data/illustrations/ch-001.json",
+    "generate:illustrations:hero": "node scripts/generate_illustrations.mjs --manifest data/illustrations/ch-001.json --only hero"
+  },
+  "dependencies": {
+    "openai": "^4.104.0"
+  }
+}

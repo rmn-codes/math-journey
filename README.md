@@ -36,3 +36,52 @@ To preview it locally:
 ```bash
 python3 -m http.server 8000 --directory dist
 ```
+
+## Quiz QA
+Run:
+
+```bash
+npm run check:quizzes
+```
+
+This validates every chapter under `content/` for the unlock quiz structure the site expects:
+- a `## Unlock Quiz` section
+- numbered questions with answer options
+- a `<details>` answer key with matching answers
+
+If you also want to verify the generated `dist/` pages contain quiz markup after a build, run:
+
+```bash
+python3 scripts/check_quizzes.py --check-dist
+```
+
+## Generate Chapter Illustrations
+This repo includes a minimal OpenAI Responses API script for generating Chapter 1 illustration assets with the hosted `image_generation` tool.
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Create an env file:
+
+```bash
+cp .env.example .env
+```
+
+3. Set `OPENAI_API_KEY` in `.env`.
+
+4. Generate all Chapter 1 raster illustrations:
+
+```bash
+npm run generate:illustrations
+```
+
+5. Generate only the hero image:
+
+```bash
+npm run generate:illustrations:hero
+```
+
+The generator reads [ch-001.json](/Users/remonalberts/Documents/AI/math-journey/data/illustrations/ch-001.json), writes images into [public/illustrations/world-00-language-of-number](/Users/remonalberts/Documents/AI/math-journey/public/illustrations/world-00-language-of-number), and saves a sibling metadata JSON file next to each generated image with the original prompt and any revised prompt returned by the API.

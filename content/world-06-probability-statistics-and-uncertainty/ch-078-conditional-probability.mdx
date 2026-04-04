@@ -239,64 +239,39 @@ This is why the mammography example matters: it teaches us to be mathematically 
 
 ## Unlock Quiz
 
-**Question 1:** A card is drawn from a standard deck and is a heart. Without replacing it, a second card is drawn. What is the probability the second is also a heart?
+1. A card is drawn from a standard deck and is a heart. Without replacing it, a second card is drawn. What is the probability the second is also a heart?
+   - $\frac{13}{52}$
+   - $\frac{12}{51}$
+   - $\frac{13}{51}$
+   - $\frac{12}{52}$
 
-- $\frac{13}{52}$
-- $\frac{12}{51}$
-- $\frac{13}{51}$
-- $\frac{12}{52}$
+2. Events $A$ and $B$ are independent. $P(A) = 0.4$ and $P(B) = 0.3$. What is $P(A \cap B)$?
+   - $0.12$
+   - $0.7$
+   - $0.7$
+   - $0.04$
 
-<details>
-<summary>Answer</summary>
-$\frac{12}{51}$
+3. A test has 90% sensitivity and 95% specificity. A condition affects 10% of the population. Someone tests positive. Approximately what is the probability they have the condition?
+   - $90\%$
+   - $95\%$
+   - $67\%$
+   - $10\%$
 
-Given that the first card is a heart, 12 hearts remain in a deck of 51 cards. So $P(\text{second heart} | \text{first heart}) = \frac{12}{51}$.
-</details>
-
-**Question 2:** Events $A$ and $B$ are independent. $P(A) = 0.4$ and $P(B) = 0.3$. What is $P(A \cap B)$?
-
-- $0.12$
-- $0.7$
-- $0.7$
-- $0.04$
-
-<details>
-<summary>Answer</summary>
-$0.12$
-
-If independent, $P(A \cap B) = P(A) \cdot P(B) = 0.4 \times 0.3 = 0.12$.
-</details>
-
-**Question 3:** A test has 90% sensitivity and 95% specificity. A condition affects 10% of the population. Someone tests positive. Approximately what is the probability they have the condition?
-
-- $90\%$
-- $95\%$
-- $67\%$
-- $10\%$
+4. Two fair dice are rolled. Given that the first die shows 5, what is the probability that the sum is 10?
+   - $\frac{1}{6}$
+   - $\frac{1}{3}$
+   - $\frac{1}{5}$
+   - $\frac{5}{6}$
 
 <details>
-<summary>Answer</summary>
-$67\%$
+<summary>Unlock Quiz Answers</summary>
 
-Using Bayes' theorem with $P(\text{disease}) = 0.1$, $P(+|\text{disease}) = 0.9$, $P(+|\text{no disease}) = 0.05$:
-$P(+) = 0.9(0.1) + 0.05(0.9) = 0.09 + 0.045 = 0.135$
-$P(\text{disease}|+) = \frac{0.9 \times 0.1}{0.135} = \frac{0.09}{0.135} \approx 0.67$.
+1. $\frac{12}{51}$
+2. $0.12$
+3. $67\%$
+4. $\frac{1}{6}$
+
 </details>
-
-**Question 4:** Two fair dice are rolled. Given that the first die shows 5, what is the probability that the sum is 10?
-
-- $\frac{1}{6}$
-- $\frac{1}{3}$
-- $\frac{1}{5}$
-- $\frac{5}{6}$
-
-<details>
-<summary>Answer</summary>
-$\frac{1}{6}$
-
-If the first die shows 5, the second must show 5 to sum to 10. There are 6 equally likely outcomes for the second die, so $P(\text{sum} = 10 | \text{first} = 5) = \frac{1}{6}$.
-</details>
-
 ## Source Notes
 
 - Thomas Bayes and Bayes' Theorem: https://en.wikipedia.org/wiki/Bayes%27_theorem
