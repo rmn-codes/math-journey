@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/site.css" />
+    <link rel="stylesheet" href="/assets/site.css" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -21,12 +21,12 @@
     
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+        <a class="site-logo" href="/" aria-label="Math Journey home">
           <span class="site-logo-mark">∑</span>
           <span class="site-logo-text">Math Journey</span>
         </a>
         <nav class="site-nav" aria-label="Site navigation">
-          <a href="../../index.html">Chapters</a>
+          <a href="/">Chapters</a>
         </nav>
       </div>
     </header>
@@ -36,17 +36,20 @@
     </div>
 
     <main class="page-shell chapter-shell">
-      <a class="back-link" href="../../index.html">← All chapters</a>
+      <a class="back-link" href="/">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
-        <p class="eyebrow">World 5 · Chapter 73</p>
-        <h1>ch-073-integration-techniques</h1>
-        <p class="hero-copy">The art of antidifferentiation — strategies for integrals that resist direct rules</p>
-        <div class="hero-meta">
-          <span>40 min</span>
-          <span>core</span>
-          
-          <span>1700s–1800s</span>
+        
+        <div class="chapter-hero-copy">
+          <p class="eyebrow">World 5 · Chapter 73</p>
+          <h1>ch-073-integration-techniques</h1>
+          <p class="hero-copy">The art of antidifferentiation — strategies for integrals that resist direct rules</p>
+          <div class="hero-meta">
+            <span>40 min</span>
+            <span>core</span>
+            
+            <span>1700s–1800s</span>
+          </div>
         </div>
       </section>
 
@@ -150,42 +153,26 @@
 </section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
 <ul><li><strong>u-substitution</strong> reverses the chain rule: identify the &quot;inside function,&quot; set it as $u$, and transform the integral. This works when the integrand contains a composite function along with the derivative of its inner function.</li><li><strong>Integration by parts</strong> reverses the product rule: useful when one part is easy to integrate and the other easy to differentiate. It trades one integral for (hopefully) a simpler one.</li><li><strong>LIATE</strong> tells you which part should be $u$ in integration by parts: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential (in order of priority).</li><li><strong>Trigonometric integrals</strong> often reduce to standard forms via identities. Power reduction formulas turn high powers into integrableforms.</li><li><strong>Completing the square</strong> transforms awkward quadratics into recognizable arctangent or logarithm forms. This is especially useful for integrands involving $\frac{1}{x^2 + bx + c}$.</li><li><strong>Partial fractions</strong> decompose rational functions into integrable pieces, usually yielding logarithms.</li><li><strong>Strategy:</strong> Try substitution first. If that fails, try parts. Recognize standard forms. Know when to stop—some integrals don&#x27;t have elementary antiderivatives.</li></ul>
 </section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
-<p><strong>Question 1:</strong> Which of the following is the correct formula for integration by parts?</p>
+<ol><li>Which of the following is the correct formula for integration by parts?</li></ol>
 <ul><li>$\int u \, dv = uv + \int v \, du$</li><li>$\int u \, dv = uv - \int v \, du$</li><li>$\int u \, dv = \int u \, \int v$</li><li>$\int u \, dv = \frac{u}{v} - \int \frac{v}{u} \, dx$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$\int u \, dv = uv - \int v \, du$</p>
-</details>
-<p><strong>Question 2:</strong> In the LIATE rule, which function type takes priority when choosing $u$?</p>
+<ol><li>In the LIATE rule, which function type takes priority when choosing $u$?</li></ol>
 <ul><li>Exponential</li><li>Trigonometric</li><li>Algebraic</li><li>Logarithmic</li></ul>
-<details>
-<summary>Answer</summary>
-<p>Logarithmic</p>
-</details>
-<p><strong>Question 3:</strong> What is $\int \sec^2 x \, dx$?</p>
+<ol><li>What is $\int \sec^2 x \, dx$?</li></ol>
 <ul><li>$\sec x + C$</li><li>$\tan x + C$</li><li>$\ln|\sec x| + C$</li><li>$-\cos x + C$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$\tan x + C$</p>
-</details>
-<p><strong>Question 4:</strong> To integrate $\int 2x \cos(x^2) \, dx$, which substitution is most helpful?</p>
+<ol><li>To integrate $\int 2x \cos(x^2) \, dx$, which substitution is most helpful?</li></ol>
 <ul><li>$u = 2x$</li><li>$u = \cos(x^2)$</li><li>$u = x^2$</li><li>$u = \cos x$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$u = x^2$</p>
-</details>
-<p><strong>Question 5:</strong> What does completing the square help you recognize in $\int \frac{1}{x^2 + 6x + 10} \, dx$?</p>
+<ol><li>What does completing the square help you recognize in $\int \frac{1}{x^2 + 6x + 10} \, dx$?</li></ol>
 <ul><li>A logarithmic form</li><li>An arctangent form</li><li>A secant form</li><li>A sine form</li></ul>
 <details>
-<summary>Answer</summary>
-<p>An arctangent form</p>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>$\int u \, dv = uv - \int v \, du$</li><li>Logarithmic</li><li>$\tan x + C$</li><li>$u = x^2$</li><li>An arctangent form</li></ol>
 </details>
 </section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
 <ul><li><strong>Integration by parts:</strong> Leibniz (1684). <a href="https://en.wikipedia.org/wiki/Integration_by_parts" target="_blank" rel="noopener">Wikipedia: Integration by parts</a></li><li><strong>Substitution rule:</strong> Foundations in chain rule, rigorous formulation in 18th century. <a href="https://en.wikipedia.org/wiki/Integration_by_substitution" target="_blank" rel="noopener">Wikipedia: Integration by substitution</a></li><li><strong>Partial fractions decomposition:</strong> <a href="https://en.wikipedia.org/wiki/Partial_fraction_decomposition" target="_blank" rel="noopener">Wikipedia: Partial fraction decomposition</a></li><li><strong>Trigonometric integrals and identities:</strong> <a href="https://en.wikipedia.org/wiki/Trigonometric_integral" target="_blank" rel="noopener">Wikipedia: Trigonometric integral</a></li></ul></section>
         </article>
       </div>
 
-      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-068-differentiation-rules/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Differentiation Rules</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-074-differential-equations/index.html"><span class="pager-dir">Next →</span><span class="pager-title">ch-074-differential-equations</span></a></nav>
+      <nav class="pager"><a class="pager-link pager-link--prev" href="/world-05-change-motion-and-calculus/ch-068-differentiation-rules/"><span class="pager-dir">← Previous</span><span class="pager-title">Differentiation Rules</span></a><a class="pager-link pager-link--next" href="/world-05-change-motion-and-calculus/ch-074-differential-equations/"><span class="pager-dir">Next →</span><span class="pager-title">ch-074-differential-equations</span></a></nav>
     </main>
     
     

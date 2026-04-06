@@ -37,6 +37,29 @@ This file records decisions that have been made for the project. It is a short o
 - Chapter source files should use the `.mdx` extension.
 - The repo should complete its canonical documentation and first sample chapter before major UI implementation begins.
 
+## 2026-04-03
+
+- The preferred baseline style for chapter world maps is the traced `mist` variant developed for Chapter 1:
+  - accurate traced coastline geometry
+  - thin deep-teal outline on warm cream background
+  - Antarctica omitted
+  - tiny islands heavily reduced
+  - subtle teal atmospheric wash behind the main landmass
+  - legible labels with small terracotta location dots
+- The canonical Chapter 1 world map asset path should resolve to that `mist` variant unless a later chapter explicitly needs a different map treatment.
+- Non-map chapter illustrations should target a polished painterly 2D animated-film still look:
+  - cinematic composition
+  - soft-focus or blurred backgrounds
+  - readable but simplified faces and hands
+  - muted historical palette
+  - tactile period props and clothing
+  - emotionally grounded scenes rather than rough sketch placeholders or textbook-flat diagrams
+- For non-map illustrations, a photo-first workflow is preferred:
+  - begin from a believable live-action or photographic reference scene
+  - preserve realistic pose, lighting, cloth, and prop structure
+  - then stylize into the approved painterly animation look
+  - finally remap colors into the illustration-guide palette rather than relying on arbitrary naturalistic color
+
 ## Rules for using this file
 
 - Add a new dated entry whenever a meaningful decision is made.

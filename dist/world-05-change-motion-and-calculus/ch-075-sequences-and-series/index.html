@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/site.css" />
+    <link rel="stylesheet" href="/assets/site.css" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -21,12 +21,12 @@
     
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+        <a class="site-logo" href="/" aria-label="Math Journey home">
           <span class="site-logo-mark">∑</span>
           <span class="site-logo-text">Math Journey</span>
         </a>
         <nav class="site-nav" aria-label="Site navigation">
-          <a href="../../index.html">Chapters</a>
+          <a href="/">Chapters</a>
         </nav>
       </div>
     </header>
@@ -36,17 +36,20 @@
     </div>
 
     <main class="page-shell chapter-shell">
-      <a class="back-link" href="../../index.html">← All chapters</a>
+      <a class="back-link" href="/">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
-        <p class="eyebrow">World 5 · Chapter 75</p>
-        <h1>ch-075-sequences-and-series</h1>
-        <p class="hero-copy">What happens when you add infinitely many terms? — sometimes a finite answer</p>
-        <div class="hero-meta">
-          <span>40 min</span>
-          <span>core</span>
-          
-          <span>Ancient–1800s</span>
+        
+        <div class="chapter-hero-copy">
+          <p class="eyebrow">World 5 · Chapter 75</p>
+          <h1>ch-075-sequences-and-series</h1>
+          <p class="hero-copy">What happens when you add infinitely many terms? — sometimes a finite answer</p>
+          <div class="hero-meta">
+            <span>40 min</span>
+            <span>core</span>
+            
+            <span>Ancient–1800s</span>
+          </div>
         </div>
       </section>
 
@@ -167,42 +170,26 @@
 </section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
 <ul><li>A <strong>series</strong> is an infinite sum. It <strong>converges</strong> if the partial sums approach a finite limit.</li><li><strong>Geometric series</strong> $\sum ar^n$ converge to $\frac{a}{1-r}$ if $|r| &lt; 1$.</li><li><strong>p-series</strong> $\sum \frac{1}{n^p}$ converge if $p &gt; 1$.</li><li>The <strong>divergence test</strong>: if $a_n \not\to 0$, the series diverges. (But $a_n \to 0$ doesn&#x27;t guarantee convergence.)</li><li><strong>Taylor series</strong> express functions as infinite power series, enabling precise numerical computation.</li><li><strong>Zeno&#x27;s paradox</strong> is resolved: $\sum_{n=1}^{\infty} \frac{1}{2^n} = 1$.</li><li>Series are everywhere in science, medicine, finance, and engineering. Understanding convergence is fundamental to modern mathematics.</li></ul>
 </section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
-<p><strong>Question 1:</strong> What is the sum of the geometric series $\sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^n$?</p>
+<ol><li>What is the sum of the geometric series $\sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^n$?</li></ol>
 <ul><li>$\frac{1}{2}$</li><li>$1$</li><li>$2$</li><li>Does not converge</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$2$</p>
-</details>
-<p><strong>Question 2:</strong> For a geometric series $\sum ar^n$ to converge, which condition must $r$ satisfy?</p>
+<ol><li>For a geometric series $\sum ar^n$ to converge, which condition must $r$ satisfy?</li></ol>
 <ul><li>$r &gt; 0$</li><li>$r &lt; 1$</li><li>$|r| &lt; 1$</li><li>$r \neq 0$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$|r| &lt; 1$</p>
-</details>
-<p><strong>Question 3:</strong> Does the harmonic series $\sum_{n=1}^{\infty} \frac{1}{n}$ converge or diverge?</p>
+<ol><li>Does the harmonic series $\sum_{n=1}^{\infty} \frac{1}{n}$ converge or diverge?</li></ol>
 <ul><li>Converges to 1</li><li>Converges to 0</li><li>Diverges</li><li>Converges to $\pi$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>Diverges</p>
-</details>
-<p><strong>Question 4:</strong> What is the first term of the Taylor series for $\sin x$ centered at $x = 0$?</p>
+<ol><li>What is the first term of the Taylor series for $\sin x$ centered at $x = 0$?</li></ol>
 <ul><li>$1$</li><li>$x$</li><li>$\frac{x^2}{2}$</li><li>$-\frac{x^3}{6}$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$x$</p>
-</details>
-<p><strong>Question 5:</strong> Which p-series converges?</p>
+<ol><li>Which p-series converges?</li></ol>
 <ul><li>$\sum \frac{1}{n}$</li><li>$\sum \frac{1}{\sqrt{n}}$</li><li>$\sum \frac{1}{n^2}$</li><li>All of the above</li></ul>
 <details>
-<summary>Answer</summary>
-<p>$\sum \frac{1}{n^2}$</p>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>$2$</li><li>$|r| &lt; 1$</li><li>Diverges</li><li>$x$</li><li>$\sum \frac{1}{n^2}$</li></ol>
 </details>
 </section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
 <ul><li><strong>Zeno&#x27;s paradoxes:</strong> Ancient Greek philosophy. <a href="https://en.wikipedia.org/wiki/Zeno%27s_paradoxes" target="_blank" rel="noopener">Wikipedia: Zeno&#x27;s paradoxes</a></li><li><strong>Geometric series:</strong> <a href="https://en.wikipedia.org/wiki/Geometric_series" target="_blank" rel="noopener">Wikipedia: Geometric series</a></li><li><strong>Harmonic series:</strong> <a href="https://en.wikipedia.org/wiki/Harmonic_series" target="_blank" rel="noopener">Wikipedia: Harmonic series</a></li><li><strong>p-series:</strong> <a href="https://en.wikipedia.org/wiki/Riemann_zeta_function" target="_blank" rel="noopener">Wikipedia: Riemann zeta function</a> (see p-series section)</li><li><strong>Taylor series:</strong> Brook Taylor (1715). <a href="https://en.wikipedia.org/wiki/Taylor_series" target="_blank" rel="noopener">Wikipedia: Taylor series</a></li><li><strong>Divergence test:</strong> <a href="https://en.wikipedia.org/wiki/Divergence_test" target="_blank" rel="noopener">Wikipedia: Divergence test</a></li></ul></section>
         </article>
       </div>
 
-      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-074-differential-equations/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">ch-074-differential-equations</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-076-what-calculus-opened-up/index.html"><span class="pager-dir">Next →</span><span class="pager-title">ch-076-what-calculus-opened-up</span></a></nav>
+      <nav class="pager"><a class="pager-link pager-link--prev" href="/world-05-change-motion-and-calculus/ch-074-differential-equations/"><span class="pager-dir">← Previous</span><span class="pager-title">ch-074-differential-equations</span></a><a class="pager-link pager-link--next" href="/world-05-change-motion-and-calculus/ch-076-what-calculus-opened-up/"><span class="pager-dir">Next →</span><span class="pager-title">ch-076-what-calculus-opened-up</span></a></nav>
     </main>
     
     

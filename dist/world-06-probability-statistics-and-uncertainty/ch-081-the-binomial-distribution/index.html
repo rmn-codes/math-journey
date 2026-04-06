@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/site.css" />
+    <link rel="stylesheet" href="/assets/site.css" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -21,12 +21,12 @@
     
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+        <a class="site-logo" href="/" aria-label="Math Journey home">
           <span class="site-logo-mark">∑</span>
           <span class="site-logo-text">Math Journey</span>
         </a>
         <nav class="site-nav" aria-label="Site navigation">
-          <a href="../../index.html">Chapters</a>
+          <a href="/">Chapters</a>
         </nav>
       </div>
     </header>
@@ -36,17 +36,20 @@
     </div>
 
     <main class="page-shell chapter-shell">
-      <a class="back-link" href="../../index.html">← All chapters</a>
+      <a class="back-link" href="/">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
-        <p class="eyebrow">World 6 · Chapter 81</p>
-        <h1>The Binomial Distribution</h1>
-        <p class="hero-copy">Counting successes in repeated trials — from coin flips to clinical trials</p>
-        <div class="hero-meta">
-          <span>40 min</span>
-          <span>core</span>
-          
-          <span>1700s</span>
+        
+        <div class="chapter-hero-copy">
+          <p class="eyebrow">World 6 · Chapter 81</p>
+          <h1>The Binomial Distribution</h1>
+          <p class="hero-copy">Counting successes in repeated trials — from coin flips to clinical trials</p>
+          <div class="hero-meta">
+            <span>40 min</span>
+            <span>core</span>
+            
+            <span>1700s</span>
+          </div>
         </div>
       </section>
 
@@ -175,42 +178,26 @@ Row 5:          1   5  10  10   5   1</code></pre>
 <ul><li>Formalised probability and counting in the 1700s–1800s</li><li>Enabled scientific drug testing and quality assurance</li><li>Led to hypothesis testing and statistical inference</li></ul>
 <p>The binomial distribution is your first powerful tool for answering: <em>&quot;If this experiment were repeated many times, what patterns would emerge?&quot;</em></p>
 </section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
-<p><strong>Question 1:</strong> A fair die is rolled 8 times. Let $X$ = number of times a 6 appears. Which of the following is true?</p>
-<ul><li>$X$ follows a binomial distribution with $n = 8$ and $p = 1/6$</li><li>$X$ follows a binomial distribution with $n = 8$ and $p = 1/2$</li><li>$X$ cannot be modeled with the binomial distribution because rolling a die has more than two outcomes</li><li>$\mu = 8 \times 1/6 \approx 1.33$ and $\sigma \approx 1.04$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>The first and fourth statements are correct. $X$ counts successes (rolling a 6) in 8 independent trials, each with probability 1/6. The die has six outcomes, but we&#x27;re counting one specific outcome (success = rolling a 6), so it fits the binomial model. Mean: $\mu = 8 \times (1/6) = 4/3 \approx 1.33$. Std Dev: $\sigma = \sqrt{8 \times (1/6) \times (5/6)} = \sqrt{40/36} \approx 1.05$.</p>
-</details>
-<p><strong>Question 2:</strong> Suppose $X \sim \text{Binomial}(100, 0.3)$. What are $\mu$ and $\sigma$?</p>
+<ol><li>A fair die is rolled 8 times. Let $X$ = number of times a 6 appears. Which of the following is true?</li></ol>
+<ul><li>The first and fourth statements are correct</li><li>Only the first statement is correct</li><li>Only the fourth statement is correct</li><li>The first and third statements are correct</li></ul>
+<ol><li>Suppose $X \sim \text{Binomial}(100, 0.3)$. What are $\mu$ and $\sigma$?</li></ol>
 <ul><li>$\mu = 30$, $\sigma = \sqrt{21} \approx 4.58$</li><li>$\mu = 30$, $\sigma \approx 4.35$</li><li>$\mu = 70$, $\sigma = \sqrt{21} \approx 4.58$</li><li>$\mu = 0.3$, $\sigma = 0.45$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$\mu = np = 100 \times 0.3 = 30$. $\sigma = \sqrt{np(1-p)} = \sqrt{100 \times 0.3 \times 0.7} = \sqrt{21} \approx 4.58$. The first option is correct.</p>
-</details>
-<p><strong>Question 3:</strong> A company manufactures USB drives with a 3% defect rate. A batch of 50 drives is produced. Let $X$ = number of defective drives. What is $P(X = 0)$ (no defects)?</p>
+<ol><li>A company manufactures USB drives with a 3% defect rate. A batch of 50 drives is produced. Let $X$ = number of defective drives. What is $P(X = 0)$ (no defects)?</li></ol>
 <ul><li>$(0.03)^{50}$</li><li>$(0.97)^{50}$</li><li>$\binom{50}{0} (0.03)^0 (0.97)^{50} = (0.97)^{50}$</li><li>$(0.03)^0 (0.97)^0 = 1$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$P(X = 0) = \binom{50}{0} (0.03)^0 (0.97)^{50} = 1 \times 1 \times (0.97)^{50} = (0.97)^{50}$. This is the third option.</p>
-</details>
-<p><strong>Question 4:</strong> Which scenario is <em>not</em> a binomial experiment?</p>
+<ol><li>Which scenario is <em>not</em> a binomial experiment?</li></ol>
 <ul><li>Rolling a standard die 20 times and counting how many times you roll exactly a 3</li><li>Drawing cards from a deck (with replacement) 15 times and counting how many are red</li><li>Measuring the heights of 100 people and noting how many are above 180 cm</li><li>Flipping a weighted coin 50 times where the probability of heads is 0.6, counting the number of heads</li></ul>
-<details>
-<summary>Answer</summary>
-<p>The third option is not a binomial experiment because we are not performing &quot;repeated trials&quot; in the binomial sense — we&#x27;re measuring a population characteristic (height) once per person. In the other three, we repeat the same trial multiple times and count successes.</p>
-</details>
-<p><strong>Question 5:</strong> You take a quiz with 15 multiple-choice questions (4 options each) and guess on all questions. Your success probability is $p = 0.25$ per question. What&#x27;s the expected number of correct answers?</p>
+<ol><li>You take a quiz with 15 multiple-choice questions (4 options each) and guess on all questions. Your success probability is $p = 0.25$ per question. What&#x27;s the expected number of correct answers?</li></ol>
 <ul><li>3.75</li><li>5</li><li>7.5</li><li>11.25</li></ul>
 <details>
-<summary>Answer</summary>
-<p>$\mu = np = 15 \times 0.25 = 3.75$. The first option is correct.</p>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>The first and fourth statements are correct</li><li>$\mu = 30$, $\sigma = \sqrt{21} \approx 4.58$</li><li>$\binom{50}{0} (0.03)^0 (0.97)^{50} = (0.97)^{50}$</li><li>Measuring the heights of 100 people and noting how many are above 180 cm</li><li>3.75</li></ol>
 </details>
 </section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
 <ul><li><a href="https://en.wikipedia.org/wiki/Binomial_distribution" target="_blank" rel="noopener">Binomial distribution — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Bernoulli_trial" target="_blank" rel="noopener">Bernoulli trial — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Blaise_Pascal" target="_blank" rel="noopener">Blaise Pascal — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Probability" target="_blank" rel="noopener">Probability — Wikipedia</a></li></ul></section>
         </article>
       </div>
 
-      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-070-the-integral/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Integral — Measuring Accumulation</span></a><a class="pager-link pager-link--next" href="../../world-06-probability-statistics-and-uncertainty/ch-082-the-normal-distribution/index.html"><span class="pager-dir">Next →</span><span class="pager-title">The Normal Distribution</span></a></nav>
+      <nav class="pager"><a class="pager-link pager-link--prev" href="/world-05-change-motion-and-calculus/ch-070-the-integral/"><span class="pager-dir">← Previous</span><span class="pager-title">The Integral — Measuring Accumulation</span></a><a class="pager-link pager-link--next" href="/world-06-probability-statistics-and-uncertainty/ch-082-the-normal-distribution/"><span class="pager-dir">Next →</span><span class="pager-title">The Normal Distribution</span></a></nav>
     </main>
     
     

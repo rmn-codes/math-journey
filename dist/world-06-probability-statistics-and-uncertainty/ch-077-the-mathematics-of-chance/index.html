@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/site.css" />
+    <link rel="stylesheet" href="/assets/site.css" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -21,12 +21,12 @@
     
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+        <a class="site-logo" href="/" aria-label="Math Journey home">
           <span class="site-logo-mark">∑</span>
           <span class="site-logo-text">Math Journey</span>
         </a>
         <nav class="site-nav" aria-label="Site navigation">
-          <a href="../../index.html">Chapters</a>
+          <a href="/">Chapters</a>
         </nav>
       </div>
     </header>
@@ -36,17 +36,20 @@
     </div>
 
     <main class="page-shell chapter-shell">
-      <a class="back-link" href="../../index.html">← All chapters</a>
+      <a class="back-link" href="/">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
-        <p class="eyebrow">World 6 · Chapter ?</p>
-        <h1>The Mathematics of Chance</h1>
-        <p class="hero-copy">How gambling dens gave birth to one of mathematics&#x27; most important branches</p>
-        <div class="hero-meta">
-          <span>35 min</span>
-          <span>core</span>
-          
-          <span>1654 CE, France</span>
+        
+        <div class="chapter-hero-copy">
+          <p class="eyebrow">World 6 · Chapter ?</p>
+          <h1>The Mathematics of Chance</h1>
+          <p class="hero-copy">How gambling dens gave birth to one of mathematics&#x27; most important branches</p>
+          <div class="hero-meta">
+            <span>35 min</span>
+            <span>core</span>
+            
+            <span>1654 CE, France</span>
+          </div>
         </div>
       </section>
 
@@ -149,40 +152,24 @@
 <p><strong>Theoretical probability</strong> is what the math predicts. <strong>Experimental probability</strong> comes from doing the experiment. The <strong>law of large numbers</strong> says they converge as we repeat more trials.</p>
 <p>These ideas, born from a gambler&#x27;s complaint in 1654, have become essential to modern life: medicine, engineering, finance, science, and policy all rest on probability. When a doctor interprets a test result, an engineer designs a bridge, or a government sets policy for rare events, they are using the mathematics the Chevalier&#x27;s problem inspired.</p>
 </section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
-<p><strong>Question 1:</strong> You roll a fair six-sided die. What is the probability of rolling a number greater than 2?</p>
+<ol><li>You roll a fair six-sided die. What is the probability of rolling a number greater than 2?</li></ol>
 <ul><li>$\frac{1}{6}$</li><li>$\frac{2}{6}$</li><li>$\frac{3}{6}$</li><li>$\frac{4}{6}$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$\frac{4}{6}$</p>
-<p>Favorable outcomes: {3, 4, 5, 6} = 4 outcomes. Total outcomes: 6. $P(\text{greater than 2}) = \frac{4}{6} = \frac{2}{3}$.</p>
-</details>
-<p><strong>Question 2:</strong> What is the probability of the complement of rolling a 4 on a single fair die?</p>
+<ol><li>What is the probability of the complement of rolling a 4 on a single fair die?</li></ol>
 <ul><li>$\frac{1}{6}$</li><li>$\frac{2}{6}$</li><li>$\frac{4}{6}$</li><li>$\frac{5}{6}$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$\frac{5}{6}$</p>
-<p>$P(4) = \frac{1}{6}$, so $P(\text{not a 4}) = 1 - \frac{1}{6} = \frac{5}{6}$.</p>
-</details>
-<p><strong>Question 3:</strong> A coin is flipped twice. What is the probability of getting at least one heads?</p>
+<ol><li>A coin is flipped twice. What is the probability of getting at least one heads?</li></ol>
 <ul><li>$\frac{1}{4}$</li><li>$\frac{1}{2}$</li><li>$\frac{3}{4}$</li><li>$\frac{1}{8}$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$\frac{3}{4}$</p>
-<p>Using complement: $P(\text{at least one H}) = 1 - P(\text{no H}) = 1 - P(\text{TT}) = 1 - \frac{1}{4} = \frac{3}{4}$.</p>
-</details>
-<p><strong>Question 4:</strong> Two events $A$ and $B$ are mutually exclusive. $P(A) = 0.3$ and $P(B) = 0.2$. What is $P(A \cup B)$?</p>
+<ol><li>Two events $A$ and $B$ are mutually exclusive. $P(A) = 0.3$ and $P(B) = 0.2$. What is $P(A \cup B)$?</li></ol>
 <ul><li>$0.5$</li><li>$0.06$</li><li>$0.44$</li><li>$0.6$</li></ul>
 <details>
-<summary>Answer</summary>
-<p>$0.5$</p>
-<p>When events are mutually exclusive, $P(A \cup B) = P(A) + P(B) = 0.3 + 0.2 = 0.5$.</p>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>$\frac{4}{6}$</li><li>$\frac{5}{6}$</li><li>$\frac{3}{4}$</li><li>$0.5$</li></ol>
 </details>
 </section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
 <ul><li>Blaise Pascal and Pierre de Fermat&#x27;s letters on probability (1654): https://en.wikipedia.org/wiki/Blaise_Pascal</li><li>&quot;Probability&quot; entry, historical development: https://en.wikipedia.org/wiki/Probability</li><li>Chevalier de Méré and the problem of points: https://en.wikipedia.org/wiki/Problem_of_points</li><li>Law of large numbers: https://en.wikipedia.org/wiki/Law_of_large_numbers</li></ul></section>
         </article>
       </div>
 
-      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-080-random-variables-and-expected-value/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Random Variables and Expected Value</span></a><a class="pager-link pager-link--next" href="../../world-07-fields-waves-space-time-and-the-modern-view/ch-089-complex-numbers/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Complex Numbers — The Imaginary Made Real</span></a></nav>
+      <nav class="pager"><a class="pager-link pager-link--prev" href="/world-06-probability-statistics-and-uncertainty/ch-080-random-variables-and-expected-value/"><span class="pager-dir">← Previous</span><span class="pager-title">Random Variables and Expected Value</span></a><a class="pager-link pager-link--next" href="/world-07-fields-waves-space-time-and-the-modern-view/ch-089-complex-numbers/"><span class="pager-dir">Next →</span><span class="pager-title">Complex Numbers — The Imaginary Made Real</span></a></nav>
     </main>
     
     

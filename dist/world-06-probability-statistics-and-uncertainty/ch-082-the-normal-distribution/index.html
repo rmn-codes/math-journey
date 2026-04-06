@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/site.css" />
+    <link rel="stylesheet" href="/assets/site.css" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -21,12 +21,12 @@
     
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+        <a class="site-logo" href="/" aria-label="Math Journey home">
           <span class="site-logo-mark">∑</span>
           <span class="site-logo-text">Math Journey</span>
         </a>
         <nav class="site-nav" aria-label="Site navigation">
-          <a href="../../index.html">Chapters</a>
+          <a href="/">Chapters</a>
         </nav>
       </div>
     </header>
@@ -36,17 +36,20 @@
     </div>
 
     <main class="page-shell chapter-shell">
-      <a class="back-link" href="../../index.html">← All chapters</a>
+      <a class="back-link" href="/">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
-        <p class="eyebrow">World 6 · Chapter 82</p>
-        <h1>The Normal Distribution</h1>
-        <p class="hero-copy">The bell curve — why so many things in nature cluster around the middle</p>
-        <div class="hero-meta">
-          <span>40 min</span>
-          <span>core</span>
-          
-          <span>1730s–1800s</span>
+        
+        <div class="chapter-hero-copy">
+          <p class="eyebrow">World 6 · Chapter 82</p>
+          <h1>The Normal Distribution</h1>
+          <p class="hero-copy">The bell curve — why so many things in nature cluster around the middle</p>
+          <div class="hero-meta">
+            <span>40 min</span>
+            <span>core</span>
+            
+            <span>1730s–1800s</span>
+          </div>
         </div>
       </section>
 
@@ -190,42 +193,26 @@
 <ul><li>Central Limit Theorem: averaging many things produces a normal distribution</li><li>Appears in nature: heights, weights, test scores, errors, measurements</li><li>Enables statistical inference, hypothesis testing, quality control</li></ul>
 <p><strong>Historical Insight:</strong> The normal distribution was discovered almost by accident (de Moivre, Gauss). Over two centuries, it became central to science, medicine, engineering, and economics. Today, understanding it is essential.</p>
 </section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
-<p><strong>Question 1:</strong> If $X \sim N(50, 10^2)$ (mean 50, std dev 10), what is $P(30 &lt; X &lt; 70)$?</p>
+<ol><li>If $X \sim N(50, 10^2)$ (mean 50, std dev 10), what is $P(30 &lt; X &lt; 70)$?</li></ol>
 <ul><li>Approximately 68%</li><li>Approximately 95%</li><li>Approximately 99.7%</li><li>Approximately 99%</li></ul>
-<details>
-<summary>Answer</summary>
-<p>30 is 2 standard deviations below 50 (z = -2), and 70 is 2 standard deviations above 50 (z = 2). By the 68-95-99.7 rule, approximately 95% of data falls within 2 standard deviations of the mean. The answer is &quot;Approximately 95%&quot;.</p>
-</details>
-<p><strong>Question 2:</strong> A student scores 85 on a test where $\mu = 75$ and $\sigma = 5$. What is the student&#x27;s z-score?</p>
+<ol><li>A student scores 85 on a test where $\mu = 75$ and $\sigma = 5$. What is the student&#x27;s z-score?</li></ol>
 <ul><li>1</li><li>2</li><li>10</li><li>0.5</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$z = \frac{85 - 75}{5} = \frac{10}{5} = 2$. The answer is 2.</p>
-</details>
-<p><strong>Question 3:</strong> For the standard normal distribution, what is $P(Z &gt; 0)$?</p>
+<ol><li>For the standard normal distribution, what is $P(Z &gt; 0)$?</li></ol>
 <ul><li>0.5</li><li>0.6827</li><li>0.9545</li><li>0.3173</li></ul>
-<details>
-<summary>Answer</summary>
-<p>The standard normal distribution has mean 0 and is symmetric. Exactly half the distribution is above 0 and half below 0. So $P(Z &gt; 0) = 0.5$.</p>
-</details>
-<p><strong>Question 4:</strong> A manufacturing process produces parts with diameter $N(10.0, 0.1^2)$ cm. A part is acceptable if its diameter is between 9.85 and 10.15 cm. Which range does this span?</p>
+<ol><li>A manufacturing process produces parts with diameter $N(10.0, 0.1^2)$ cm. A part is acceptable if its diameter is between 9.85 and 10.15 cm. Which range does this span?</li></ol>
 <ul><li>Within 1 standard deviation</li><li>Within 1.5 standard deviations</li><li>Within 2 standard deviations</li><li>Within 3 standard deviations</li></ul>
-<details>
-<summary>Answer</summary>
-<p>The range 9.85 to 10.15 cm is exactly 10.0 ± 0.15 cm. Since $\sigma = 0.1$, this is $\pm 1.5 \times 0.1 = \pm 1.5\sigma$. The answer is &quot;Within 1.5 standard deviations&quot;.</p>
-</details>
-<p><strong>Question 5:</strong> A height distribution is $N(170, 8^2)$ cm (mean 170, std dev 8). What height corresponds to the 75th percentile?</p>
+<ol><li>A height distribution is $N(170, 8^2)$ cm (mean 170, std dev 8). What height corresponds to the 75th percentile?</li></ol>
 <ul><li>175.4 cm</li><li>178.4 cm</li><li>165.6 cm</li><li>174.6 cm</li></ul>
 <details>
-<summary>Answer</summary>
-<p>At the 75th percentile, $P(Z \leq z) = 0.75$. From z-table, $z \approx 0.674$. Then $x = \mu + z\sigma = 170 + 0.674 \times 8 = 170 + 5.39 = 175.39 \approx 175.4$ cm. The answer is 175.4 cm.</p>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>Approximately 95%</li><li>2</li><li>0.5</li><li>Within 1.5 standard deviations</li><li>175.4 cm</li></ol>
 </details>
 </section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
 <ul><li><a href="https://en.wikipedia.org/wiki/Normal_distribution" target="_blank" rel="noopener">Normal distribution — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Central_limit_theorem" target="_blank" rel="noopener">Central Limit Theorem — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss" target="_blank" rel="noopener">Carl Friedrich Gauss — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Abraham_de_Moivre" target="_blank" rel="noopener">Abraham de Moivre — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Standard_score" target="_blank" rel="noopener">Standard score — Wikipedia</a></li></ul></section>
         </article>
       </div>
 
-      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-081-the-binomial-distribution/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Binomial Distribution</span></a><a class="pager-link pager-link--next" href="../../world-06-probability-statistics-and-uncertainty/ch-083-describing-data/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Describing Data — Centre, Spread, and Shape</span></a></nav>
+      <nav class="pager"><a class="pager-link pager-link--prev" href="/world-06-probability-statistics-and-uncertainty/ch-081-the-binomial-distribution/"><span class="pager-dir">← Previous</span><span class="pager-title">The Binomial Distribution</span></a><a class="pager-link pager-link--next" href="/world-06-probability-statistics-and-uncertainty/ch-083-describing-data/"><span class="pager-dir">Next →</span><span class="pager-title">Describing Data — Centre, Spread, and Shape</span></a></nav>
     </main>
     
     

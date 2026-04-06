@@ -6,7 +6,11 @@
     "check:quizzes": "python3 scripts/check_quizzes.py",
     "qa:quizzes": "python3 scripts/check_quizzes.py",
     "generate:illustrations": "node scripts/generate_illustrations.mjs --manifest data/illustrations/ch-001.json",
-    "generate:illustrations:hero": "node scripts/generate_illustrations.mjs --manifest data/illustrations/ch-001.json --only hero"
+    "generate:illustrations:hero": "node scripts/generate_illustrations.mjs --manifest data/illustrations/ch-001.json --only hero",
+    "generate:illustrations:ch2": "node scripts/generate_illustrations.mjs --manifest data/illustrations/ch-002.json",
+    "generate:illustrations:ch2:hero": "node scripts/generate_illustrations.mjs --manifest data/illustrations/ch-002.json --only hero",
+    "generate:illustrations:ch4": "node scripts/generate_illustrations.mjs --manifest data/illustrations/ch-004.json",
+    "generate:illustrations:ch4:hero": "node scripts/generate_illustrations.mjs --manifest data/illustrations/ch-004.json --only hero"
   },
   "dependencies": {
     "openai": "^4.104.0"

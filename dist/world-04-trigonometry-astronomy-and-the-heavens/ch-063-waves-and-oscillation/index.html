@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/site.css" />
+    <link rel="stylesheet" href="/assets/site.css" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -21,12 +21,12 @@
     
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+        <a class="site-logo" href="/" aria-label="Math Journey home">
           <span class="site-logo-mark">∑</span>
           <span class="site-logo-text">Math Journey</span>
         </a>
         <nav class="site-nav" aria-label="Site navigation">
-          <a href="../../index.html">Chapters</a>
+          <a href="/">Chapters</a>
         </nav>
       </div>
     </header>
@@ -36,17 +36,20 @@
     </div>
 
     <main class="page-shell chapter-shell">
-      <a class="back-link" href="../../index.html">← All chapters</a>
+      <a class="back-link" href="/">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
-        <p class="eyebrow">World 4 · Chapter 63</p>
-        <h1>Waves, Oscillation, and the Music of Mathematics</h1>
-        <p class="hero-copy">How sine and cosine describe every wave in the universe</p>
-        <div class="hero-meta">
-          <span>40 min</span>
-          <span>core</span>
-          
-          <span>1700s–1800s</span>
+        
+        <div class="chapter-hero-copy">
+          <p class="eyebrow">World 4 · Chapter 63</p>
+          <h1>Waves, Oscillation, and the Music of Mathematics</h1>
+          <p class="hero-copy">How sine and cosine describe every wave in the universe</p>
+          <div class="hero-meta">
+            <span>40 min</span>
+            <span>core</span>
+            
+            <span>1700s–1800s</span>
+          </div>
         </div>
       </section>
 
@@ -155,31 +158,26 @@
 <p>Waves and oscillations are everywhere — in light, sound, vibrations, and atomic behavior. The mathematics of sines and cosines is the universal language of these phenomena. Understanding periodic motion is understanding a huge swath of the physical world.</p>
 <p>---</p>
 </section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
-<p><strong>Question 1:</strong> What is the period of $y = 3 \sin(2\pi t)$?</p>
+<ol><li>What is the period of $y = 3 \sin(2\pi t)$?</li></ol>
 <ul><li>1 second</li><li>2 seconds</li><li>3 seconds</li><li>$\pi$ seconds</li></ul>
-<p><strong>Question 2:</strong> A wave has frequency 5 Hz. How many complete cycles occur in 2 seconds?</p>
+<ol><li>A wave has frequency 5 Hz. How many complete cycles occur in 2 seconds?</li></ol>
 <ul><li>5 cycles</li><li>10 cycles</li><li>2.5 cycles</li><li>0.4 cycles</li></ul>
-<p><strong>Question 3:</strong> If two sine waves of the same frequency and equal amplitude are 180° out of phase, what happens when they interfere?</p>
+<ol><li>If two sine waves of the same frequency and equal amplitude are 180° out of phase, what happens when they interfere?</li></ol>
 <ul><li>They add to a wave with twice the amplitude</li><li>They cancel completely</li><li>They produce a cosine wave</li><li>They produce beats</li></ul>
-<p><strong>Question 4:</strong> For a mass on a spring, $\omega = \sqrt{k/m}$. If the spring constant doubles, what happens to the frequency?</p>
+<ol><li>For a mass on a spring, $\omega = \sqrt{k/m}$. If the spring constant doubles, what happens to the frequency?</li></ol>
 <ul><li>It doubles</li><li>It increases by a factor of $\sqrt{2}$</li><li>It halves</li><li>It stays the same</li></ul>
-<p><strong>Question 5:</strong> In a Fourier series, what do the integer multiples of the fundamental frequency represent?</p>
+<ol><li>In a Fourier series, what do the integer multiples of the fundamental frequency represent?</li></ol>
 <ul><li>Harmonics or overtones</li><li>The amplitude of oscillation</li><li>The speed of the wave</li><li>Phase shifts</li></ul>
 <details>
-<summary>Answers</summary>
-<ol><li><strong>1 second</strong> — For $y = 3\sin(2\pi t)$, we have $2\pi f = 2\pi$, so $f = 1$ Hz. Thus $T = 1/f = 1$ second.</li></ol>
-<ol><li><strong>10 cycles</strong> — If $f = 5$ Hz, then in 2 seconds, the number of cycles is $f \times \text{time} = 5 \times 2 = 10$.</li></ol>
-<ol><li><strong>They cancel completely</strong> — If two waves have the same amplitude and are 180° out of phase, destructive interference cancels them: $A\sin(t) + A\sin(t+\pi) = A\sin(t) - A\sin(t) = 0$.</li></ol>
-<ol><li><strong>It increases by a factor of $\sqrt{2}$</strong> — $\omega \propto \sqrt{k}$, so doubling $k$ increases $\omega$ by a factor of $\sqrt{2}$. Since $f = \omega/(2\pi)$, the frequency also increases by $\sqrt{2}$.</li></ol>
-<ol><li><strong>Harmonics or overtones</strong> — In a Fourier series, the fundamental frequency is the first term; multiples ($2f_0, 3f_0, \ldots$) are the 2nd, 3rd, etc. harmonics (overtones).</li></ol>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>1 second</li><li>10 cycles</li><li>They cancel completely</li><li>It increases by a factor of $\sqrt{2}$</li><li>Harmonics or overtones</li></ol>
 </details>
-<p>---</p>
 </section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
 <ul><li><a href="https://en.wikipedia.org/wiki/Fourier_series" target="_blank" rel="noopener">Fourier series</a> — Wikipedia</li><li><a href="https://en.wikipedia.org/wiki/Joseph_Fourier" target="_blank" rel="noopener">Joseph Fourier</a> — Wikipedia</li><li><a href="https://en.wikipedia.org/wiki/Simple_harmonic_motion" target="_blank" rel="noopener">Simple harmonic motion</a> — Wikipedia</li><li><a href="https://en.wikipedia.org/wiki/Wave" target="_blank" rel="noopener">Wave</a> — Wikipedia</li><li><a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform" target="_blank" rel="noopener">Fast Fourier transform</a> — Wikipedia</li></ul></section>
         </article>
       </div>
 
-      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-062-vectors/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Vectors — Magnitude and Direction</span></a><a class="pager-link pager-link--next" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-064-what-trig-opened-up/index.html"><span class="pager-dir">Next →</span><span class="pager-title">What Trigonometry Opened Up</span></a></nav>
+      <nav class="pager"><a class="pager-link pager-link--prev" href="/world-04-trigonometry-astronomy-and-the-heavens/ch-062-vectors/"><span class="pager-dir">← Previous</span><span class="pager-title">Vectors — Magnitude and Direction</span></a><a class="pager-link pager-link--next" href="/world-04-trigonometry-astronomy-and-the-heavens/ch-064-what-trig-opened-up/"><span class="pager-dir">Next →</span><span class="pager-title">What Trigonometry Opened Up</span></a></nav>
     </main>
     
     

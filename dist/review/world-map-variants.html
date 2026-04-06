@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>World Map Variants</title>
+    <style>
+      :root {
+        --bg: #f7f5f1;
+        --panel: #fffdfa;
+        --ink: #1a1a1a;
+        --soft: #4a4540;
+        --faint: #8e8680;
+        --teal: #1a7a84;
+        --rule: rgba(26, 26, 26, 0.1);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #f7f5f1 0%, #efe9df 100%);
+        color: var(--ink);
+        font-family: Georgia, serif;
+      }
+      main {
+        max-width: 1480px;
+        margin: 0 auto;
+        padding: 32px 20px 56px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 2.4rem;
+      }
+      .lede {
+        margin: 0 0 24px;
+        color: var(--soft);
+        max-width: 70ch;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+        gap: 18px;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: 0 20px 40px rgba(26, 26, 26, 0.05);
+      }
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 1.3rem;
+      }
+      .card p {
+        margin: 0 0 14px;
+        color: var(--soft);
+      }
+      .frame {
+        display: block;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid var(--rule);
+        background: #fff;
+      }
+      .frame img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      code {
+        display: inline-block;
+        margin-top: 10px;
+        color: var(--teal);
+        background: rgba(26, 122, 132, 0.08);
+        padding: 4px 8px;
+        border-radius: 999px;
+        font-size: 0.86rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>World Map Variants</h1>
+      <p class="lede">All six maps use the same traced world coastline data. The differences here are proportional tuning, island filtering, line weight, and background mood.</p>
+      <section class="grid">
+        
+            <article class="card">
+              <h2>01 Clean</h2>
+              <p>Plain warm-cream background. Closest to a traced reference map.</p>
+              <a class="frame" href="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-clean.svg" target="_blank" rel="noopener">
+                <img src="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-clean.svg" alt="01 Clean" />
+              </a>
+              <code>w00-ch001-map-early-civilization-cradles-clean.svg</code>
+            </article>
+            
+            <article class="card">
+              <h2>02 Paper</h2>
+              <p>Clean map with subtle aged-paper grain.</p>
+              <a class="frame" href="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-paper.svg" target="_blank" rel="noopener">
+                <img src="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-paper.svg" alt="02 Paper" />
+              </a>
+              <code>w00-ch001-map-early-civilization-cradles-paper.svg</code>
+            </article>
+            
+            <article class="card">
+              <h2>03 Sea Mist</h2>
+              <p>Pale teal atmosphere behind the Eurasia-Africa belt.</p>
+              <a class="frame" href="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-mist.svg" target="_blank" rel="noopener">
+                <img src="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-mist.svg" alt="03 Sea Mist" />
+              </a>
+              <code>w00-ch001-map-early-civilization-cradles-mist.svg</code>
+            </article>
+            
+            <article class="card">
+              <h2>04 Dawn Wash</h2>
+              <p>Soft terracotta warmth from the lower-left edge.</p>
+              <a class="frame" href="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-dawn.svg" target="_blank" rel="noopener">
+                <img src="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-dawn.svg" alt="04 Dawn Wash" />
+              </a>
+              <code>w00-ch001-map-early-civilization-cradles-dawn.svg</code>
+            </article>
+            
+            <article class="card">
+              <h2>05 Atlas Plate</h2>
+              <p>Slight vignette and paper texture, still restrained.</p>
+              <a class="frame" href="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-atlas.svg" target="_blank" rel="noopener">
+                <img src="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-atlas.svg" alt="05 Atlas Plate" />
+              </a>
+              <code>w00-ch001-map-early-civilization-cradles-atlas.svg</code>
+            </article>
+            
+            <article class="card">
+              <h2>06 Romantic</h2>
+              <p>Most illustrative: paper grain, teal mist, and a warm dawn glow.</p>
+              <a class="frame" href="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-romantic.svg" target="_blank" rel="noopener">
+                <img src="/illustrations/world-00-language-of-number/w00-ch001-map-early-civilization-cradles-romantic.svg" alt="06 Romantic" />
+              </a>
+              <code>w00-ch001-map-early-civilization-cradles-romantic.svg</code>
+            </article>
+            
+      </section>
+    </main>
+  </body>
+</html>

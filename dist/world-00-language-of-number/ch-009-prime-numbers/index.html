@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/site.css" />
+    <link rel="stylesheet" href="/assets/site.css" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -21,12 +21,12 @@
     
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+        <a class="site-logo" href="/" aria-label="Math Journey home">
           <span class="site-logo-mark">∑</span>
           <span class="site-logo-text">Math Journey</span>
         </a>
         <nav class="site-nav" aria-label="Site navigation">
-          <a href="../../index.html">Chapters</a>
+          <a href="/">Chapters</a>
         </nav>
       </div>
     </header>
@@ -36,17 +36,20 @@
     </div>
 
     <main class="page-shell chapter-shell">
-      <a class="back-link" href="../../index.html">← All chapters</a>
+      <a class="back-link" href="/">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
-        <p class="eyebrow">World 0 · Chapter 9</p>
-        <h1>Prime Numbers — The Atoms of Arithmetic</h1>
-        <p class="hero-copy">The building blocks of every number — and one of mathematics&#x27; deepest mysteries</p>
-        <div class="hero-meta">
-          <span>40 min</span>
-          <span>foundational</span>
-          <span>Greece, global</span>
-          <span>300 BCE – present</span>
+        
+        <div class="chapter-hero-copy">
+          <p class="eyebrow">World 0 · Chapter 9</p>
+          <h1>Prime Numbers — The Atoms of Arithmetic</h1>
+          <p class="hero-copy">The building blocks of every number — and one of mathematics&#x27; deepest mysteries</p>
+          <div class="hero-meta">
+            <span>40 min</span>
+            <span>foundational</span>
+            <span>Greece, global</span>
+            <span>300 BCE – present</span>
+          </div>
         </div>
       </section>
 
@@ -146,19 +149,15 @@
 <ol><li>In the Sieve of Eratosthenes, after crossing out all multiples of 2, 3, and 5, which numbers from 1 to 30 remain as primes?</li></ol>
 <ul><li>2, 3, 5, 7, 11, 13, 17, 19, 23, 29</li><li>7, 11, 13, 17, 19, 23, 29</li><li>1, 7, 11, 13, 17, 19, 23, 29</li><li>7, 11, 13, 17, 19, 23, 29, 31</li></ul>
 <details>
-<summary>Answers</summary>
-<ol><li><strong>17</strong> — 17 has no divisors except 1 and 17. (12 = 2² × 3, 21 = 3 × 7, 35 = 5 × 7 are all composite.)</li></ol>
-<ol><li><strong>$2^2 \times 5$</strong> — Prime factorization: 20 = 4 × 5 = 2 × 2 × 5 = $2^2 \times 5$.</li></ol>
-<ol><li><strong>16</strong> — $48 = 2^4 \times 3$ and $80 = 2^4 \times 5$. Common prime factors: $2^4 = 16$.</li></ol>
-<ol><li><strong>36</strong> — $12 = 2^2 \times 3$ and $18 = 2 \times 3^2$. LCM uses highest powers: $2^2 \times 3^2 = 4 \times 9 = 36$.</li></ol>
-<ol><li><strong>7, 11, 13, 17, 19, 23, 29</strong> — After removing multiples of 2, 3, 5, the remaining numbers from 2 to 30 are the seven primes listed. (Note: 1 is not prime.)</li></ol>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>17</li><li>$2^2 \times 5$</li><li>16</li><li>36</li><li>7, 11, 13, 17, 19, 23, 29</li></ol>
 </details>
 </section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
 <ul><li>Euclid, <em>Elements</em>, Book IX, Proposition 20 (circa 300 BCE). Proof that infinitely many primes exist.</li><li><a href="https://en.wikipedia.org/wiki/Prime_number" target="_blank" rel="noopener">Prime Number — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic" target="_blank" rel="noopener">Fundamental Theorem of Arithmetic — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="noopener">Sieve of Eratosthenes — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Mersenne_prime" target="_blank" rel="noopener">Mersenne Prime — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Twin_prime" target="_blank" rel="noopener">Twin Prime — Wikipedia</a></li></ul></section>
         </article>
       </div>
 
-      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-00-language-of-number/ch-008-factors-multiples-divisibility/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Factors, Multiples, and Divisibility</span></a><a class="pager-link pager-link--next" href="../../world-00-language-of-number/ch-010-fractions/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Fractions — Parts of a Whole</span></a></nav>
+      <nav class="pager"><a class="pager-link pager-link--prev" href="/world-00-language-of-number/ch-008-factors-multiples-divisibility/"><span class="pager-dir">← Previous</span><span class="pager-title">Factors, Multiples, and Divisibility</span></a><a class="pager-link pager-link--next" href="/world-00-language-of-number/ch-010-fractions/"><span class="pager-dir">Next →</span><span class="pager-title">Fractions — Parts of a Whole</span></a></nav>
     </main>
     
     

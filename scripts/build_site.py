@@ -12,6 +12,7 @@ import shutil
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT_DIR = ROOT / "content"
 DIST_DIR = ROOT / "dist"
+PUBLIC_DIR = ROOT / "public"
 STYLE_SOURCE = ROOT / "src" / "styles" / "site.css"
 STYLE_OUT = DIST_DIR / "assets" / "site.css"
 
@@ -31,6 +32,8 @@ SECTION_CLASS_MAP: dict[str, str] = {
     "unlock quiz": "quiz",
     "source notes": "sources",
 }
+
+HIDDEN_SECTION_TITLES = {"illustration brief"}
 
 
 @dataclass
@@ -71,7 +74,8 @@ def load_chapters() -> list[Chapter]:
     for path in sorted(CONTENT_DIR.rglob("ch-*.mdx")):
         metadata, body = parse_document(path.read_text(encoding="utf-8"))
         sanitized_body = drop_duplicate_title(body, metadata.get("title"))
-        toc = extract_toc(sanitized_body)
+        publishable_body = strip_hidden_sections(sanitized_body)
+        toc = extract_toc(publishable_body)
         route = path.relative_to(CONTENT_DIR).with_suffix("")
         chapters.append(
             Chapter(
@@ -79,7 +83,7 @@ def load_chapters() -> list[Chapter]:
                 route_path=route,
                 metadata=metadata,
                 toc=toc,
-                rendered_body=render_markdown(sanitized_body),
+                rendered_body=render_markdown(publishable_body),
             )
         )
 
@@ -200,6 +204,25 @@ def drop_duplicate_title(body: str, title: object) -> str:
         while lines and not lines[0].strip():
             lines.pop(0)
     return "\n".join(lines)
+
+
+def strip_hidden_sections(markdown: str) -> str:
+    lines = markdown.splitlines()
+    kept: list[str] = []
+    skip = False
+
+    for line in lines:
+        heading_match = re.match(r"^(#{2})\s+(.+)$", line.strip())
+        if heading_match:
+            heading = heading_match.group(2).strip().lower()
+            skip = heading in HIDDEN_SECTION_TITLES
+            if skip:
+                continue
+
+        if not skip:
+            kept.append(line)
+
+    return "\n".join(kept).strip() + "\n"
 
 
 def extract_toc(body: str) -> list[tuple[int, str, str]]:
@@ -382,6 +405,7 @@ def build_site(chapters: list[Chapter]) -> None:
 
     (DIST_DIR / "assets").mkdir(parents=True, exist_ok=True)
     shutil.copy2(STYLE_SOURCE, STYLE_OUT)
+    copy_public_assets()
 
     index_html = render_index(chapters)
     (DIST_DIR / "index.html").write_text(index_html, encoding="utf-8")
@@ -392,6 +416,26 @@ def build_site(chapters: list[Chapter]) -> None:
         output_dir.joinpath("index.html").write_text(
             render_chapter(chapter, chapters), encoding="utf-8"
         )
+
+
+def copy_public_assets() -> None:
+    if not PUBLIC_DIR.exists():
+        return
+
+    for item in PUBLIC_DIR.iterdir():
+        if item.name.startswith("."):
+            continue
+
+        destination = DIST_DIR / item.name
+        if item.is_dir():
+            shutil.copytree(
+                item,
+                destination,
+                dirs_exist_ok=True,
+                ignore=shutil.ignore_patterns(".DS_Store"),
+            )
+        else:
+            shutil.copy2(item, destination)
 
 
 def render_site_header(current_path: str = "/") -> str:
@@ -520,8 +564,21 @@ def render_chapter(chapter: Chapter, chapters: list[Chapter]) -> str:
     regions = ", ".join(str(item) for item in chapter.metadata.get("historicalRegions", []))
     period = escape(str(chapter.metadata.get("historicalPeriod", "")))
 
-    # Wrap rendered body in typed sections
+    assets = chapter.metadata.get("assets", {})
+    hero_image = assets.get("heroImage") if isinstance(assets, dict) else None
+    diagram_paths = assets.get("diagrams", []) if isinstance(assets, dict) else []
+    if not isinstance(diagram_paths, list):
+        diagram_paths = []
+
+    # Wrap rendered body in typed sections, then inject illustration figures.
     sectioned_body = wrap_sections(chapter.rendered_body)
+    sectioned_body = inject_chapter_illustrations(sectioned_body, chapter.title, diagram_paths)
+    hero_figure = render_image_figure(
+        hero_image,
+        f"{chapter.title} hero illustration",
+        variant="hero",
+        eager=True,
+    )
 
     body = f"""
     {render_site_header(f"/{chapter.route_path.as_posix()}/")}
@@ -533,14 +590,17 @@ def render_chapter(chapter: Chapter, chapters: list[Chapter]) -> str:
       <a class="back-link" href="/">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
-        <p class="eyebrow">World {escape(str(chapter.metadata.get('worldNumber', '?')))} · Chapter {escape(str(chapter.metadata.get('chapterNumber', '?')))}</p>
-        <h1>{escape(chapter.title)}</h1>
-        <p class="hero-copy">{escape(chapter.description)}</p>
-        <div class="hero-meta">
-          <span>{escape(str(chapter.metadata.get('estimatedTimeMinutes', '?')))} min</span>
-          <span>{escape(str(chapter.metadata.get('level', 'core')))}</span>
-          {f'<span>{escape(regions)}</span>' if regions else ''}
-          {f'<span>{period}</span>' if period else ''}
+        {hero_figure}
+        <div class="chapter-hero-copy">
+          <p class="eyebrow">World {escape(str(chapter.metadata.get('worldNumber', '?')))} · Chapter {escape(str(chapter.metadata.get('chapterNumber', '?')))}</p>
+          <h1>{escape(chapter.title)}</h1>
+          <p class="hero-copy">{escape(chapter.description)}</p>
+          <div class="hero-meta">
+            <span>{escape(str(chapter.metadata.get('estimatedTimeMinutes', '?')))} min</span>
+            <span>{escape(str(chapter.metadata.get('level', 'core')))}</span>
+            {f'<span>{escape(regions)}</span>' if regions else ''}
+            {f'<span>{period}</span>' if period else ''}
+          </div>
         </div>
       </section>
 
@@ -574,6 +634,68 @@ def chapter_neighbors(
     previous_chapter = chapters[index - 1] if index > 0 else None
     next_chapter = chapters[index + 1] if index + 1 < len(chapters) else None
     return previous_chapter, next_chapter
+
+
+def asset_url(path_value: object) -> str | None:
+    if not path_value:
+        return None
+    path = str(path_value).strip()
+    if not path:
+        return None
+    asset_file = PUBLIC_DIR / path.lstrip("/")
+    if not asset_file.exists():
+        return None
+    return "/" + path.lstrip("/")
+
+
+def render_image_figure(
+    path_value: object,
+    alt: str,
+    *,
+    variant: str = "inline",
+    eager: bool = False,
+) -> str:
+    image_url = asset_url(path_value)
+    if not image_url:
+        return ""
+
+    loading = "eager" if eager else "lazy"
+    decoding = "sync" if eager else "async"
+    return (
+        f'<figure class="chapter-figure chapter-figure--{variant}">'
+        f'<img src="{escape(image_url)}" alt="{escape(alt)}" loading="{loading}" decoding="{decoding}" />'
+        f"</figure>"
+    )
+
+
+def inject_chapter_illustrations(html: str, chapter_title: str, diagram_paths: list[object]) -> str:
+    slots = [
+        ("story", 0, "Story illustration"),
+        ("concept", 1, "Concept illustration"),
+        ("definitions", 2, "Counting and measurement illustration"),
+        ("historical", 3, "Historical map"),
+        ("recap", 4, "Closing illustration"),
+    ]
+
+    for section_name, index, caption in slots:
+        if index >= len(diagram_paths):
+            continue
+
+        figure_html = render_image_figure(
+            diagram_paths[index],
+            f"{chapter_title} {caption.lower()}",
+            variant=section_name,
+        )
+        if not figure_html:
+            continue
+
+        pattern = (
+            rf'(<section class="lesson-section lesson-section--{section_name}">'
+            rf'<h2\b[^>]*>.*?</h2>)'
+        )
+        html = re.sub(pattern, rf"\1{figure_html}", html, count=1, flags=re.S)
+
+    return html
 
 
 def render_document(

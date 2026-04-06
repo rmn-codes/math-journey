@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/site.css" />
+    <link rel="stylesheet" href="/assets/site.css" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -21,12 +21,12 @@
     
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+        <a class="site-logo" href="/" aria-label="Math Journey home">
           <span class="site-logo-mark">∑</span>
           <span class="site-logo-text">Math Journey</span>
         </a>
         <nav class="site-nav" aria-label="Site navigation">
-          <a href="../../index.html">Chapters</a>
+          <a href="/">Chapters</a>
         </nav>
       </div>
     </header>
@@ -36,17 +36,20 @@
     </div>
 
     <main class="page-shell chapter-shell">
-      <a class="back-link" href="../../index.html">← All chapters</a>
+      <a class="back-link" href="/">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
-        <p class="eyebrow">World 5 · Chapter 74</p>
-        <h1>ch-074-differential-equations</h1>
-        <p class="hero-copy">Equations that describe how things change — and the laws they reveal</p>
-        <div class="hero-meta">
-          <span>40 min</span>
-          <span>core</span>
-          
-          <span>1680s–1800s</span>
+        
+        <div class="chapter-hero-copy">
+          <p class="eyebrow">World 5 · Chapter 74</p>
+          <h1>ch-074-differential-equations</h1>
+          <p class="hero-copy">Equations that describe how things change — and the laws they reveal</p>
+          <div class="hero-meta">
+            <span>40 min</span>
+            <span>core</span>
+            
+            <span>1680s–1800s</span>
+          </div>
         </div>
       </section>
 
@@ -159,42 +162,26 @@
 </section><section class="lesson-section lesson-section--recap"><h2 id="recap">Recap</h2>
 <ul><li><strong>Differential equations</strong> describe how quantities change. They relate a function to its derivatives.</li><li><strong>Separable equations</strong> can be solved by rearranging so all $y$ terms are on one side, all $x$ terms on the other, then integrating both sides.</li><li><strong>Exponential growth/decay</strong> follows $y = Ae^{kt}$ and models radioactive decay, population growth, cooling, and more.</li><li><strong>Newton&#x27;s Law of Cooling</strong> is $\frac{dT}{dt} = k(T - T_s)$, solved using separation of variables and integration.</li><li><strong>Initial conditions</strong> pin down a particular solution from the infinite family of general solutions.</li><li><strong>Slope fields</strong> visualize solutions when closed forms are hard to find.</li><li>Differential equations are the language of science and engineering. Learning to solve them is learning to understand the world.</li></ul>
 </section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
-<p><strong>Question 1:</strong> What is the order of the differential equation $\frac{d^2y}{dx^2} + 2\frac{dy}{dx} = 0$?</p>
+<ol><li>What is the order of the differential equation $\frac{d^2y}{dx^2} + 2\frac{dy}{dx} = 0$?</li></ol>
 <ul><li>First-order</li><li>Second-order</li><li>Zeroth-order</li><li>Third-order</li></ul>
-<details>
-<summary>Answer</summary>
-<p>Second-order</p>
-</details>
-<p><strong>Question 2:</strong> For the separable equation $\frac{dy}{dx} = g(x)h(y)$, what is the first step in solving?</p>
+<ol><li>For the separable equation $\frac{dy}{dx} = g(x)h(y)$, what is the first step in solving?</li></ol>
 <ul><li>Integrate both sides</li><li>Separate variables: $\frac{dy}{h(y)} = g(x) dx$</li><li>Differentiate both sides</li><li>Substitute $u = xy$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>Separate variables: $\frac{dy}{h(y)} = g(x) dx$</p>
-</details>
-<p><strong>Question 3:</strong> What is the general solution to $\frac{dy}{dt} = 5y$?</p>
+<ol><li>What is the general solution to $\frac{dy}{dt} = 5y$?</li></ol>
 <ul><li>$y = t^5 + C$</li><li>$y = 5t + C$</li><li>$y = Ae^{5t}$</li><li>$y = A\sin(5t) + B\cos(5t)$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>$y = Ae^{5t}$</p>
-</details>
-<p><strong>Question 4:</strong> In Newton&#x27;s Law of Cooling, $\frac{dT}{dt} = k(T - T_s)$, what does $T_s$ represent?</p>
+<ol><li>In Newton&#x27;s Law of Cooling, $\frac{dT}{dt} = k(T - T_s)$, what does $T_s$ represent?</li></ol>
 <ul><li>The initial temperature</li><li>The surrounding (ambient) temperature</li><li>The final temperature</li><li>The temperature of the heat source</li></ul>
-<details>
-<summary>Answer</summary>
-<p>The surrounding (ambient) temperature</p>
-</details>
-<p><strong>Question 5:</strong> A bacteria culture has population $P$ that satisfies $\frac{dP}{dt} = 0.2P$ with $P(0) = 100$. What is $P(t)$?</p>
+<ol><li>A bacteria culture has population $P$ that satisfies $\frac{dP}{dt} = 0.2P$ with $P(0) = 100$. What is $P(t)$?</li></ol>
 <ul><li>$P(t) = 100 + 0.2t$</li><li>$P(t) = 100e^{0.2t}$</li><li>$P(t) = 100 \sin(0.2t)$</li><li>$P(t) = 0.2t^2 + 100$</li></ul>
 <details>
-<summary>Answer</summary>
-<p>$P(t) = 100e^{0.2t}$</p>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>Second-order</li><li>Separate variables: $\frac{dy}{h(y)} = g(x) dx$</li><li>$y = Ae^{5t}$</li><li>The surrounding (ambient) temperature</li><li>$P(t) = 100e^{0.2t}$</li></ol>
 </details>
 </section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
 <ul><li><strong>Differential equations overview:</strong> <a href="https://en.wikipedia.org/wiki/Differential_equation" target="_blank" rel="noopener">Wikipedia: Differential equation</a></li><li><strong>Separable equations:</strong> <a href="https://en.wikipedia.org/wiki/Separation_of_variables" target="_blank" rel="noopener">Wikipedia: Separation of variables</a></li><li><strong>Newton&#x27;s Law of Cooling:</strong> Newton (1701). <a href="https://en.wikipedia.org/wiki/Newton%27s_law_of_cooling" target="_blank" rel="noopener">Wikipedia: Newton&#x27;s law of cooling</a></li><li><strong>Exponential growth and decay:</strong> <a href="https://en.wikipedia.org/wiki/Exponential_decay" target="_blank" rel="noopener">Wikipedia: Exponential decay</a></li><li><strong>Logistic growth model:</strong> <a href="https://en.wikipedia.org/wiki/Logistic_function" target="_blank" rel="noopener">Wikipedia: Logistic function</a></li><li><strong>Slope fields:</strong> <a href="https://en.wikipedia.org/wiki/Slope_field" target="_blank" rel="noopener">Wikipedia: Slope field</a></li></ul></section>
         </article>
       </div>
 
-      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-05-change-motion-and-calculus/ch-073-integration-techniques/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">ch-073-integration-techniques</span></a><a class="pager-link pager-link--next" href="../../world-05-change-motion-and-calculus/ch-075-sequences-and-series/index.html"><span class="pager-dir">Next →</span><span class="pager-title">ch-075-sequences-and-series</span></a></nav>
+      <nav class="pager"><a class="pager-link pager-link--prev" href="/world-05-change-motion-and-calculus/ch-073-integration-techniques/"><span class="pager-dir">← Previous</span><span class="pager-title">ch-073-integration-techniques</span></a><a class="pager-link pager-link--next" href="/world-05-change-motion-and-calculus/ch-075-sequences-and-series/"><span class="pager-dir">Next →</span><span class="pager-title">ch-075-sequences-and-series</span></a></nav>
     </main>
     
     

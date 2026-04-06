@@ -1,228 +1,641 @@
 # Math Journey — Illustration Style Guide
 
-> This document defines the visual language for all illustrations accompanying the Math Journey book. It is written for use with ChatGPT / DALL·E image generation.
+> This document defines the visual language and production rules for all illustrations accompanying the Math Journey book. It is written for use with ChatGPT, DALL·E, Codex, and related image-generation workflows.
 
 ---
 
-## 1. Vision
+## 1. Purpose
 
-Math Journey illustrations feel like pages torn from the notebook of a brilliant, slightly whimsical scientist-explorer. They are hand-sketched in spirit — loose, warm, alive — but never sloppy. The closest reference is the animated sequences in *Cosmos* with Neil deGrasse Tyson: ideas rendered as dreamscapes, where abstract concepts become tangible landscapes you could almost walk into.
+Math Journey illustrations must do more than look beautiful. They must:
 
-The world in these images is **imaginary but internally consistent**. It is not our world, but it obeys its own logic. Numbers have weight. Geometry has texture. Every illustration feels like it was drawn moments before you opened the book.
+1. communicate the mathematical idea clearly at first glance  
+2. feel emotionally aligned with the book: curious, humane, intelligent, slightly whimsical  
+3. sit naturally within the app and website design system  
+4. remain visually consistent across tools, prompts, chapters, and worlds
+
+This is not a loose inspiration document. It is a production guide.
 
 ---
 
-## 2. Color Palette
+## 2. Core Vision
 
-The illustration palette is drawn directly from the website's "Clear Morning" palette. Every image should feel at home next to the page it illustrates.
+Math Journey illustrations should feel like pages torn from the notebook of a brilliant, slightly whimsical scientist-explorer. They are hand-sketched in spirit — warm, alive, tactile, and thoughtful — but never messy, muddy, or vague.
+
+The nearest tonal reference is the animated explanatory sequences in *Cosmos* with Neil deGrasse Tyson: educational dreamscapes where abstract ideas become walkable places, symbolic systems become physical objects, and history feels gently illuminated rather than theatrically dramatized.
+
+The world of Math Journey is imaginary but internally consistent. It is not our world, but it obeys its own logic. Numbers have weight. Geometry has texture. Motion leaves traces. Maps feel drawn by careful scholars. Every illustration should feel as though it was made by a human hand moments before the reader opened the page.
+
+---
+
+## 3. Style Priority Order
+
+When generating any Math Journey illustration, preserve these qualities in this order:
+
+### 1. Immediate narrative readability
+The mathematical story must be understandable at first glance.
+
+### 2. Floating-on-paper or page-integrated composition
+Images should feel like illustrations resting on warm cream paper, not dense full-bleed cinematic scenes, unless explicitly specified otherwise.
+
+### 3. Palette fidelity
+Warm cream, teal, terracotta, ink, and soft neutrals only. Low saturation. No bright or alien colors.
+
+### 4. Light, intelligent, humane mood
+Curious and slightly whimsical. Never heavy, solemn, melodramatic, grim, or fantasy-epic.
+
+### 5. Hand-drawn character
+Ink line variation, watercolor softness, cross-hatching, and slight imperfection are essential.
+
+### 6. Historical or environmental context
+Architecture, landscape, and atmosphere should support the scene but never overpower the mathematical act.
+
+If a tool must trade off between atmosphere and clarity, choose clarity.  
+If it must trade off between cinematic drama and page integration, choose page integration.  
+If it must trade off between detail and coherence, choose coherence.
+
+---
+
+## 4. Color Palette
+
+The illustration palette is drawn from the website's **Clear Morning** palette. Every image should feel at home beside the page it illustrates.
 
 | Role | Hex | Usage |
 |---|---|---|
-| **Warm cream** | `#f7f5f1` | Backgrounds, paper tone, sky, empty space |
-| **Deep teal** | `#1a7a84` | Water, shadow, cool accents, geometric lines |
-| **Terracotta** | `#c06030` | Warmth, fire, sun, emphasis, energy |
-| **Near-black ink** | `#1a1a1a` | Outlines, shadows, text in image, strong lines |
-| **Soft ink** | `#4a4540` | Mid-tones, secondary lines, soft shadow |
-| **Faint ink** | `#8e8680` | Background detail, subtle texture, aged paper marks |
-| **White** | `#ffffff` | Highlights, paper sheen, light source |
+| **Warm cream** | `#f7f5f1` | Paper tone, sky, open space, background field |
+| **Deep teal** | `#1a7a84` | Cool shadows, water, geometry, night, clothing accents |
+| **Terracotta** | `#c06030` | Clay, firelight, sun warmth, emphasis, energy |
+| **Near-black ink** | `#1a1a1a` | Primary outlines, text, strong shadows, marks |
+| **Soft ink** | `#4a4540` | Secondary lines, mid-tones, soft shadow |
+| **Faint ink** | `#8e8680` | Background texture, recessive detail, aged-paper marks |
+| **White** | `#ffffff` | Small highlights only |
 
-**Rules:**
-- Never use pure saturated primaries (no pure red, blue, or yellow). Keep everything in the warm-cream world.
-- Teal and terracotta are the two "hero" colors. In any image, one should dominate and the other accent.
-- Backgrounds should always feel like aged, warm paper — never stark white, never gray.
-- The overall feel should be **low saturation with selective warmth**, not rainbow-bright.
-
----
-
-## 3. Line Style
-
-- **Hand-drawn, slightly imperfect lines.** Lines should look like they were drawn with a fine ink pen — confident strokes, but with the natural wobble of a human hand.
-- **Varying line weight.** Foreground objects have thicker, darker outlines. Background elements are lighter and thinner. This creates depth without shading.
-- **No perfect digital precision.** Circles are not perfectly round. Straight lines have character. This is intentional.
-- **Cross-hatching for shadow.** Use ink-style cross-hatching rather than gradient fills for shading. This reinforces the hand-made quality.
-- **Sparse color washes.** Flat color fills applied loosely, like watercolor that doesn't quite reach the edges. Color sits inside lines rather than precisely meeting them.
+### Palette rules
+- Never use pure saturated primaries.
+- Teal and terracotta are the two hero colors. In any image, one should dominate and the other should accent.
+- Backgrounds should feel like warm aged paper, never cold gray or blank digital white.
+- Overall saturation should remain low, with selective warmth and controlled contrast.
+- Dark scenes should use very dark teal and warm shadow, not pure black voids.
+- If a generated image feels too brown, too orange, too gray, or too glossy, regenerate.
 
 ---
 
-## 4. World & Setting Logic
+## 5. Rendering Character
 
-The imaginary world of Math Journey has its own geography and atmosphere. Each World (chapter group) has a distinct setting, but all share the same visual DNA.
+### Line style
+- Hand-drawn, slightly imperfect lines
+- Fine ink pen character with natural wobble
+- Confident strokes, not shaky doodles
+- Foreground lines thicker and darker than background lines
+- No sterile vector precision
+
+### Shading
+- Use cross-hatching, contour hatching, or lightly textured ink shadow
+- Prefer line-based shadow language over digital gradients
+- Watercolor wash may support shadow, but should not replace drawing
+
+### Color application
+- Loose watercolor or gouache-like fills
+- Color can fade before reaching every edge
+- Slight irregularity is welcome
+- Avoid plastic smoothness or airbrushed polish
+
+### Surface feeling
+The image should suggest tactile materials:
+- clay
+- paper
+- wood
+- stone
+- cloth
+- dust
+- water
+- light
+
+These surfaces should feel touched by hand, not digitally fabricated.
+
+---
+
+## 6. Emotional Tone
+
+Math Journey illustrations should feel:
+
+- curious
+- intelligent
+- humane
+- warm
+- slightly whimsical
+- educational
+- dreamlike
+- clear
+
+They should **not** feel:
+
+- grim
+- solemn
+- melodramatic
+- epic
+- mythic
+- fantasy-medieval
+- archaeologically oppressive
+- emotionally heavy
+- hyper-cute
+- glossy or commercial-cartoonish
+
+A useful test: the image should invite the reader into thought, not overwhelm them with mood.
+
+---
+
+## 7. Composition Logic
+
+### General composition rules
+- Leave breathing room
+- Preserve negative space where possible
+- Keep focal objects large enough to read immediately
+- Avoid clutter
+- Background elements must recede
+- Narrative objects must not be hidden, decorative, or ambiguous
+
+### Page integration
+Whenever possible, images should feel like they belong on a warm cream page rather than occupying a sealed rectangular frame.
+
+That means:
+- edges may fade softly into paper
+- environmental context may dissolve gradually
+- the image may “float” rather than fill every inch
+- backgrounds should not fight the surrounding UI or page
+
+### Title-safe logic for hero images
+Hero images should leave enough calm visual space for chapter title placement, whether explicitly overlaid or simply implied.
+
+---
+
+## 8. Rendering Modes
+
+Every image prompt must specify a rendering mode.
+
+### Mode A — Floating Vignette
+Used for:
+- concept moments
+- spot illustrations
+- close narrative moments
+- some hero images when clarity matters more than environment
+
+Characteristics:
+- large areas of visible warm cream paper
+- soft watercolor fade at the edges
+- image does not fill the entire frame
+- background is minimal and recessive
+- objects are isolated and legible
+- emotional tone is lighter
+- ideal for app integration
+
+### Mode B — Hero Scene
+Used for:
+- chapter openers
+- scenes that need more atmosphere
+- larger historical or environmental moments
+
+Characteristics:
+- wide environment with clear depth
+- still retains breathing room
+- focal figure and mathematical objects dominate
+- background architecture is soft and secondary
+- palette remains restrained
+- should feel page-integrated, not like a dense movie still
+
+### Mode C — Concept Diagram
+Used for:
+- definitions
+- systems
+- mathematical relationships
+- mechanisms
+- visual explanations
+
+Characteristics:
+- the math idea is the hero
+- labels can be handwritten
+- arrows, markers, groupings, and correspondence should be explicit
+- still hand-drawn and warm, never textbook-flat
+
+### Mode D — Historical Map
+Used for:
+- historical context sections
+- chapters anchored in place, trade, travel, or transmission of ideas
+
+Characteristics:
+- recognisable geography
+- quill-drawn cartographic feeling
+- educational but dreamlike
+- same ink-and-wash language as the rest of the system
+
+---
+
+## 9. Narrative Object Clarity
+
+This is one of the most important rules in the system.
+
+In every illustration, the mathematical story must be visible through concrete objects, not implied vaguely or symbolically.
+
+### Rules
+- If quantity matters, the count must be exact and visually verifiable.
+- If one-to-one correspondence matters, the objects must visibly correspond.
+- If the scene represents measurement, balancing, comparison, mapping, angle, flow, accumulation, proof, or transformation, the related objects must communicate that clearly.
+- Objects that carry meaning must not be decorative or obscured.
+- A viewer should be able to explain the mathematical act in one sentence.
+
+### Examples
+- Four jars -> four stones -> a tablet recording that quantity
+- Five stones -> five tally marks
+- A place value system -> distinct columns or towers with grouped tokens
+- A derivative -> visible changing curve and a local tangent moment
+- A map of transmission -> clear dots and dashed path of movement
+
+If the image is beautiful but the math act is unclear, the image has failed.
+
+---
+
+## 10. World & Setting Logic
+
+Each World has a distinct setting and atmosphere, but all worlds share the same visual DNA.
 
 | World | Setting | Atmosphere |
 |---|---|---|
-| **World 00 — Language of Number** | Ancient marketplace, clay tablets, counting stones, tally-marked cave walls | Earthy, warm terracotta, dust and candlelight |
-| **World 01 — Shape & Measure** | A vast open landscape being surveyed and measured, columns, ropes stretched across fields | Sunlit, teal sky, long shadows, geometric precision |
-| **World 02 — Algebra** | A desert scholar's study, oil lamps, papyrus, balance scales floating mid-air | Amber light, mysterious, balances and scales as central objects |
-| **World 03 — Coordination & Functions** | A city seen from above, with a great grid etched into the landscape | Cool teal tones, aerial perspective, crisp lines |
-| **World 04 — Trigonometry & Astronomy** | Night sky, ancient observatories, stars drawn as geometric points | Deep teal night, terracotta torchlight, star maps |
-| **World 05 — Calculus** | A world in motion — rivers flowing, arrows, rolling hills that curve and change | Kinetic, dynamic lines suggesting movement, wind-swept |
-| **World 06 — Probability & Statistics** | A great bazaar or carnival where chance is sold at stalls | Lively, warm, slightly chaotic but orderly underneath |
-| **World 07 — Modern Mathematics** | Abstract dreamscape — impossible geometries, folded space, glowing fields | Most surreal world, teal-dominant, dreamlike |
+| **World 00 — Language of Number** | clay tablets, cave marks, counting stones, storehouses, early marketplaces, record-keepers | earthy, warm, tactile, lightly dusty, early human intelligence becoming visible |
+| **World 01 — Shape & Measure** | surveyed fields, columns, ropes, surveying tools, measured land, open stone landscapes | sunlit, precise, spacious, geometric |
+| **World 02 — Algebra** | scholar’s room, papyrus, balances, written transformations, tables, oil lamps | amber-lit, thoughtful, balanced, mysterious but clear |
+| **World 03 — Coordination & Functions** | aerial cities, grids, axes embedded in terrain, roads, plotted structures | cool, ordered, elevated, spatially intelligible |
+| **World 04 — Trigonometry & Astronomy** | observatories, stars, instruments, angular sightlines, domes, night terraces | deep teal night, terracotta light, celestial precision |
+| **World 05 — Calculus** | flowing rivers, slopes, changing hills, arrows, motion lines, accumulation landscapes | kinetic, windy, dynamic, continuous |
+| **World 06 — Probability & Statistics** | market stalls, games of chance, tokens, cards, counting boards, crowd patterns | lively but orderly, warm, patterned beneath apparent chaos |
+| **World 07 — Modern Mathematics** | folded spaces, impossible geometries, abstract fields, dimensional transitions | most surreal world, teal-dominant, dreamlike but coherent |
 
 ---
 
-## 5. Illustration Types Per Chapter
+## 11. Illustration Types Per Chapter
 
-Each chapter receives **4–6 illustrations** placed at specific moments in the text. Each type has a defined purpose and composition.
+Each chapter typically receives **4–6 illustrations**.
 
-### Type 1 — Hero Image (1 per chapter)
-**Placement:** Top of chapter, before the text begins.
-**Size:** Wide, landscape format (16:9 or 3:2).
-**Purpose:** Establishes the emotional world of the chapter. Should feel like a scene from a story, not an explanation.
-**Composition:** One strong focal point. Negative space is generous — the image breathes. Text could sit in the empty areas if needed.
-**Example:** For "Why Numbers Exist" — a prehistoric hand pressing tally marks into wet clay, firelight glowing on cave walls, a pile of stones being counted in the foreground.
+### Type 1 — Hero Image
+**Placement:** top of chapter  
+**Typical mode:** Hero Scene or Floating Vignette  
+**Size:** 16:9 or 3:2  
+**Purpose:** establishes the emotional and conceptual world of the chapter  
+**Requirement:** should feel like a scene from a story, but still make the core idea readable
 
-### Type 2 — Story Spot (1 per chapter)
-**Placement:** Alongside the "Story Hook" section.
-**Size:** Square or portrait (1:1 or 2:3).
-**Purpose:** Illustrates the narrative moment that opens the chapter. A scene, a person, an action — not abstract.
-**Composition:** Intimate and close. The subject is near, the background is implied rather than detailed.
+### Type 2 — Story Spot
+**Placement:** alongside the story hook  
+**Typical mode:** Floating Vignette  
+**Size:** square or portrait  
+**Purpose:** intimate narrative moment; scene, person, gesture, or event  
+**Requirement:** close and emotionally readable without dense background
 
-### Type 3 — Concept Diagram (1–2 per chapter)
-**Placement:** Within the "Core Concept" or "Definitions" sections.
-**Size:** Landscape or square.
-**Purpose:** Makes an abstract idea visible. This is the most "educational" illustration but should still feel hand-drawn, not like a textbook diagram.
-**Composition:** The mathematical idea is the hero. Use arrows, labels in handwritten style, and the teal/terracotta palette to distinguish elements. Surround the diagram with light environmental context so it doesn't feel sterile.
-**Example:** For "Place Value" — a sketch of columns, each column a different height tower, the numbers written in hand-lettered ink alongside them.
+### Type 3 — Concept Diagram
+**Placement:** core concept / definitions  
+**Typical mode:** Concept Diagram  
+**Size:** square or landscape  
+**Purpose:** make an abstract idea visible  
+**Requirement:** explicit mathematical clarity with hand-drawn warmth
 
-### Type 4 — Historical Vignette (0–1 per chapter)
-**Placement:** Within the "Historical Context" section.
-**Size:** Portrait or square.
-**Purpose:** Depicts a moment in history — a person, a place, a discovery. Not a portrait, but a scene.
-**Composition:** Use the world's setting atmosphere for this era. No photo-realism. The figure (if present) is impressionistic — gesture and posture over facial detail.
+### Type 4 — Historical Vignette
+**Placement:** historical context  
+**Typical mode:** Floating Vignette or Hero Scene  
+**Size:** portrait or square  
+**Purpose:** depict a moment in history  
+**Requirement:** not a portrait; a scene
 
-### Type 4b — Chapter World Map (1 per chapter)
-**Placement:** Within the "Historical Context" section, alongside or just below the Historical Vignette.
-**Size:** Landscape (3:2 or 16:9).
-**Purpose:** Grounds the chapter's ideas in physical geography. Shows the reader *where in the world* this mathematics happened — trade routes, cities, civilisations. Every chapter gets exactly one map, even if the story is mostly conceptual (in that case, the map shows the relevant region of the era).
-**Style:** Same hand-drawn ink-wash aesthetic as all other illustrations, but with cartographic precision. Think of a map drawn by a careful scholar with a fine quill — outlines of continents and coastlines are recognisable and accurate, but rendered in confident ink strokes rather than clean vector lines.
+### Type 4b — Chapter World Map
+**Placement:** historical context  
+**Typical mode:** Historical Map  
+**Size:** 3:2 or 16:9  
+**Purpose:** show where this mathematics happened  
+**Requirement:** geographic clarity plus hand-drawn atmosphere
 
-**Map rules:**
-- **Base layer:** Outline of the relevant portion of the world (or the full world map for chapters with global reach). Coastlines in near-black ink (`#1a1a1a`), fine-line cross-hatching for mountain ranges, small hatched marks for deserts.
-- **Highlighted locations:** Every city, region, or place mentioned in the chapter is marked with a hand-drawn dot (terracotta `#c06030`) and a handwritten label in ink. The dot should be slightly larger than a pin-prick — visible but not dominant.
-- **Focus region:** The area most relevant to the chapter gets a subtle teal wash (`#1a7a84` at low opacity) as a highlight region, so the reader's eye is drawn there first.
-- **Sea and ocean:** Filled with a very light teal wash, with small hand-drawn wave marks suggesting water. Not blank — textured but quiet.
-- **Land:** Warm cream (`#f7f5f1`) base, with subtle hatching texture to suggest terrain. No political borders unless historically relevant.
-- **Trade routes or journeys:** Where a person or idea travelled, draw a dashed terracotta line connecting the locations, with a small arrowhead at the destination.
-- **No legend box.** Labels are written directly on the map in a handwritten ink style. Keep labels short — city names only, no long annotations.
-- **Compass rose:** A small, simple hand-drawn compass rose in the corner (ink only, no colour fill).
-- **Scale is impressionistic, not precise.** The map should feel accurate enough to be educational but never clinical.
-
-**Example maps by chapter:**
-- *Ch. 29 — Al-Khwārizmī and the Birth of Algebra:* Middle East and Central Asia focus. Baghdad highlighted with teal wash. Dots for Khwarezm, Merv, Cairo, Córdoba. Dashed terracotta line showing the spread of algebra westward.
-- *Ch. 15 — The Greek Turn Toward Proof:* Eastern Mediterranean focus. Teal wash over Greece and the Aegean. Dots for Athens, Alexandria, Miletus, Syracuse.
-- *Ch. 67 — The Derivative:* Europe focus. Dots for Cambridge, Paris, Hanover. Dashed line connecting Newton's Cambridge to Leibniz's Hanover.
-- *Ch. 1 — Why Numbers Exist:* Full world map showing early civilisation cradles — Mesopotamia, Nile Valley, Indus Valley, Yellow River — each with a terracotta dot and label.
-
-**DALL·E prompt addition for maps:**
-```
-A hand-drawn cartographic map of [REGION], ink sketch style on aged warm cream paper
-(#f7f5f1). Coastlines and landmasses in confident near-black ink strokes (#1a1a1a) with
-natural line variation. Ocean filled with a pale teal wash (#1a7a84 at low opacity) and
-small hand-drawn wave marks. The region of [FOCUS AREA] highlighted with a soft teal
-wash. Cities marked: [LIST LOCATIONS] — each with a terracotta dot (#c06030) and
-handwritten ink label. [If applicable: Dashed terracotta line connecting X to Y showing
-the spread of ideas.] Small hand-drawn compass rose in one corner. Cross-hatching for
-mountain ranges. No political borders. Warm, scholarly, aged-paper aesthetic. Same style
-as Cosmos animated sequences — educational but dreamlike. Landscape format (3:2).
-```
-
-### Type 5 — Closing Image (1 per chapter)
-**Placement:** After the recap, before the quiz.
-**Size:** Wide, landscape.
-**Purpose:** A quiet, reflective image. The idea has landed — this image lets it settle. Can be more abstract than the Hero.
-**Composition:** Often a wide view, small details in a large world. The "zoomed out" feeling. A sense that the journey continues beyond the page.
+### Type 5 — Closing Image
+**Placement:** after recap, before quiz  
+**Typical mode:** Floating Vignette or light Hero Scene  
+**Size:** wide landscape  
+**Purpose:** reflective settling image  
+**Requirement:** quieter and more spacious than the hero image
 
 ---
 
-## 6. What to Avoid
+## 12. Maps
 
-- **No human faces in detail.** Figures are impressionistic — silhouettes, gestures, backs of heads. This keeps the focus on ideas, not identity, and is more inclusive.
-- **No modern objects.** No laptops, phones, or contemporary references unless the World explicitly requires them (World 07 may include some).
-- **No photographic realism.** These are sketches, not renders.
-- **No pure black backgrounds.** Dark scenes use very dark teal (`#0d3d42`) not pure black.
-- **No clip-art or vector flatness.** Every image should have texture and imperfection.
-- **No mixed styles.** All images in the book share the same hand-sketch ink-wash style, regardless of topic.
+Maps should follow the same visual language as the other illustrations, but with stronger cartographic discipline.
 
----
+### Map rules
+- Coastlines and landmasses in near-black ink
+- Slight natural line variation, not vector-clean
+- Pale teal ocean wash with small hand-drawn wave marks
+- Warm cream land with subtle hatching texture
+- Terracotta dots for key cities and regions
+- Handwritten labels directly on the map
+- Teal wash highlighting the focus region
+- Dashed terracotta route lines where relevant
+- Small ink compass rose
+- No legend box unless absolutely necessary
+- No modern infographic styling
+- No political borders unless historically essential
 
-## 7. DALL·E Prompt Template
-
-Use this base prompt template for every image, then add the specific scene description:
-
-```
-[SCENE DESCRIPTION]. Illustration style: hand-drawn ink sketch with loose watercolor wash,
-reminiscent of Carl Sagan's Cosmos animated sequences. Warm aged-paper background (#f7f5f1),
-ink outlines with natural line variation, cross-hatching for shadows. Color palette restricted
-to deep teal (#1a7a84), terracotta (#c06030), near-black ink (#1a1a1a), and warm cream.
-Low saturation, selective warmth. No photorealism. No modern objects. Wide landscape composition
-with generous negative space. Educational but dreamlike.
-```
-
-### Example Prompts by Type
-
-**Hero — "Why Numbers Exist"**
-```
-A prehistoric human hand pressing tally marks into wet clay beside a small fire,
-a pile of rounded stones arranged carefully in the foreground, cave walls visible
-in warm shadow behind. Illustration style: hand-drawn ink sketch with loose watercolor
-wash, reminiscent of Carl Sagan's Cosmos animated sequences. Warm aged-paper background
-(#f7f5f1), ink outlines with natural line variation, cross-hatching for shadows. Color
-palette restricted to deep teal (#1a7a84), terracotta (#c06030), near-black ink (#1a1a1a),
-and warm cream. Low saturation, selective warmth. No photorealism. Wide landscape composition
-with generous negative space. Educational but dreamlike.
-```
-
-**Concept Diagram — "Place Value"**
-```
-A whimsical hand-drawn diagram showing three tall stone towers side by side, each a
-different height, with ink-lettered numbers written on them — hundreds, tens, ones —
-and small stones or tokens stacked at the base of each. Arrows point from tokens to
-towers. Handwritten-style annotation labels. Illustration style: hand-drawn ink sketch
-with loose watercolor wash, aged-paper background (#f7f5f1), deep teal (#1a7a84) and
-terracotta (#c06030) as accent colors, ink cross-hatching for depth. No photorealism.
-Educational diagram with environmental warmth, square composition.
-```
-
-**Hero — "The Derivative" (Calculus)**
-```
-A winding river viewed from just above, with ink arrows drawn along its surface showing
-direction of flow, one section of the river frozen in a single moment with a tangent
-line drawn across it in terracotta ink — the rest of the river continues in motion,
-suggested by loose flowing lines. Rolling hills in the background. Illustration style:
-hand-drawn ink sketch with loose watercolor wash, warm aged-paper background, deep teal
-dominant, terracotta accent. Cross-hatching for shadow. Kinetic, wind-swept quality.
-Wide landscape, generous negative space.
-```
+### Map tone
+A map should feel like it was drawn by a careful scholar with a fine quill: accurate enough to teach, warm enough to belong in the same visual world as the rest of the book.
 
 ---
 
-## 8. Consistency Checklist
+## 13. Success Criteria
 
-Before finalising any image, verify:
+A successful Math Journey image should feel:
 
-- [ ] Background feels like warm aged paper (cream, not white or gray)
-- [ ] Lines look hand-drawn, not digitally perfect
-- [ ] Only teal, terracotta, ink, and cream in the palette
-- [ ] No detailed human faces
-- [ ] No modern objects (unless World 07)
-- [ ] Cross-hatching used for shadow (not gradients)
-- [ ] Teal and terracotta don't compete — one dominates, one accents
-- [ ] Image has breathing room / negative space
-- [ ] Style matches the other illustrations in the chapter
-- [ ] **Maps only:** Coastlines are recognisably accurate, teal ocean wash present, all chapter locations marked with terracotta dots and handwritten labels, compass rose in corner
+- lighter rather than heavier
+- whimsical rather than solemn
+- page-integrated rather than boxed-in
+- hand-drawn rather than digitally polished
+- narratively obvious rather than symbolically vague
+- atmospheric but not muddy
+- historically grounded but not grim
+- emotionally calm but not lifeless
+- educational but not textbook-flat
+
+If a generated image satisfies the prompt but misses this feeling, regenerate.
 
 ---
 
-## 9. Naming Convention
+## 14. Failure Modes to Avoid
+
+Reject or regenerate images showing any of the following:
+
+- full-bleed cinematic background with little breathing room
+- muddy brown-orange or gray-brown rendering
+- overly solemn, grave, or mythic mood
+- generic fantasy robes or fantasy-medieval styling
+- polished digital cartoon character design with clean synthetic outlines
+- heavy emotional staging
+- decorative rather than functional counting objects
+- marks on tablets that do not match visible counts
+- cluttered marketplace scenes
+- background architecture sharper or stronger than the main action
+- ambiguous props that do not clearly communicate the math act
+- modern objects, modern props, or contemporary clothing
+- clip-art flatness
+- infographic slickness
+- photorealism
+- faces rendered so specifically that they dominate the concept
+- unreadable hands
+- overly cute proportions
+- muddy lighting
+- “ancient vibe” without a visible mathematical action
+
+---
+
+## 15. Human Figures
+
+### Allowed
+- readable posture
+- readable gesture
+- believable anatomy
+- visible engagement with the mathematical act
+- expressive but restrained faces
+- one or two figures when necessary
+
+### Preferred
+- figure integrated into environment
+- face readable but not dominant
+- gesture more important than identity
+- clothing historically grounded and simple
+
+### Avoid
+- glamour posing
+- theatrical expressions
+- fantasy robes
+- overly specific identity rendering
+- modern character design language
+- hyper-detailed facial realism
+
+A figure should help the reader understand what is happening, not become the sole subject of the image.
+
+---
+
+## 16. Environment Rules
+
+The setting should support the idea, not consume it.
+
+### Good environment behavior
+- softly suggested architecture
+- depth without clutter
+- tactile materials
+- enough context to place the scene historically or conceptually
+- background figures only if they help scale and do not compete
+
+### Bad environment behavior
+- over-rendered colonnades
+- too many props
+- background markets competing with the main action
+- atmospheric haze that muddies the scene
+- too much empty architectural spectacle without narrative purpose
+
+---
+
+## 17. Prompt Construction Rules
+
+Every image prompt should specify:
+
+1. **scene description**  
+2. **rendering mode**  
+3. **primary narrative objects**  
+4. **exact object quantities when relevant**  
+5. **composition priorities**  
+6. **mood**  
+7. **palette restriction**  
+8. **background restraint**  
+9. **things to avoid**
+
+### Prompt principle
+Do not rely on broad style language alone. Be explicit.
+
+Bad:
+> “A cinematic ancient scene of counting.”
+
+Better:
+> “A light, page-integrated hero scene in an ancient Near Eastern courtyard at dusk. Four clay jars, four stones lined up one-to-one beneath them, and a clay tablet with fresh marks. The record-keeper’s hand is visibly engaged in recording the quantity. Background architecture remains soft and secondary. Warm cream, teal, terracotta, and soft ink neutrals only.”
+
+---
+
+## 18. House Prompt Formula — Floating Vignette
+
+```text
+[SCENE DESCRIPTION].
+
+Mode: floating vignette on warm cream paper.
+The image should feel like a refined hand-drawn book illustration with soft watercolor edges fading into empty paper, not a full-bleed cinematic scene.
+The main narrative objects must be immediately readable at first glance.
+
+Mood: light, intelligent, humane, slightly whimsical.
+
+Style: hand-drawn ink lines with natural variation, delicate cross-hatching, loose watercolor wash, low saturation, restrained palette, tactile materials, page-integrated composition.
+
+Palette restricted to warm cream (#f7f5f1), deep teal (#1a7a84), terracotta (#c06030), near-black ink (#1a1a1a), soft ink (#4a4540), and faint ink neutrals (#8e8680).
+
+Background should be minimal and recessive.
+
+Avoid: heavy drama, muddy shadows, dense rendering, full-scene fill, fantasy styling, ambiguous objects, photorealism, or polished digital cartoon rendering.
+```
+
+---
+
+## 19. House Prompt Formula — Hero Image
+
+```text
+[SCENE DESCRIPTION].
+
+Mode: hero scene with breathing room for a chapter title.
+A wide 16:9 illustrated historical or conceptual scene with softly suggested environmental depth and strong narrative clarity.
+The focal figure and mathematical objects must dominate the composition, while the architecture and background remain soft and secondary.
+
+Mood: warm, curious, humane, slightly whimsical, never solemn.
+
+Style: polished hand-drawn ink-and-wash illustration, reminiscent in spirit of educational animated historical sequences, with page-integrated edges rather than a dense film-still finish.
+
+Palette restricted to warm cream (#f7f5f1), deep teal (#1a7a84), terracotta (#c06030), near-black ink (#1a1a1a), soft ink (#4a4540), and faint ink neutrals (#8e8680).
+
+Avoid: generic fantasy robes, muddy dusk, over-rendered realism, crowded marketplaces, unclear object relationships, dramatic theatrical emotion, or glossy digital character design.
+```
+
+---
+
+## 20. House Prompt Formula — Concept Diagram
+
+```text
+[SCENE DESCRIPTION].
+
+Mode: concept diagram.
+The mathematical relationship must be explicit, readable, and visually teachable.
+Use hand-drawn labels, arrows, groupings, and clear object correspondence where needed.
+The diagram should feel warm and illustrated, not clinical.
+
+Mood: clear, intelligent, inviting.
+
+Style: hand-drawn ink sketch with watercolor washes on warm cream paper, subtle environmental context, delicate cross-hatching, restrained palette.
+
+Palette restricted to warm cream (#f7f5f1), deep teal (#1a7a84), terracotta (#c06030), near-black ink (#1a1a1a), and soft neutrals.
+
+Avoid: sterile textbook diagram styling, flat vector graphics, clutter, or symbolic vagueness.
+```
+
+---
+
+## 21. House Prompt Formula — Historical Map
+
+```text
+A hand-drawn cartographic map of [REGION].
+
+Mode: historical map.
+Ink sketch style on warm aged cream paper (#f7f5f1).
+Coastlines and landmasses drawn in confident near-black ink strokes (#1a1a1a) with natural line variation.
+Ocean filled with a pale teal wash (#1a7a84 at low opacity) and small hand-drawn wave marks.
+The region of [FOCUS AREA] highlighted with a soft teal wash.
+Cities marked: [LIST LOCATIONS], each with a terracotta dot (#c06030) and handwritten ink label.
+[If relevant: dashed terracotta line connecting locations to show movement of people or ideas.]
+Small hand-drawn compass rose in one corner.
+Cross-hatching for mountain ranges.
+No political borders unless historically necessary.
+Warm, scholarly, page-integrated, educational but dreamlike.
+
+Avoid: modern infographic styling, digital vector cleanliness, legend boxes, bright colors, or clinical flatness.
+```
+
+---
+
+## 22. Gold Standard Example — World 00 Floating Vignette
+
+```text
+A prehistoric hand recording quantity on a small rough clay tablet on the cave floor. Exactly five rounded stones lie nearby in a loose readable group. On the tablet, exactly five fresh tally marks are visible and easy to count at a glance. The finger is near the fifth mark, but the hand should not overpower the composition. A tiny distant fire and very faint cave-animal sketches may be softly suggested, but remain minimal and secondary.
+
+Mode: floating vignette on warm cream paper.
+The image should feel light, airy, and slightly whimsical, like a high-quality illustrated book vignette. Fine near-black ink lines with natural variation, delicate cross-hatching, and loose watercolor edges fading into paper. Low saturation, gentle contrast, clear narrative relationship between five stones and five marks.
+
+Avoid: more than five tally marks, stacked stones, oversized hand, dramatic cave depth, heavy shadows, or emotionally heavy mood.
+```
+
+---
+
+## 23. Gold Standard Example — World 00 Hero Scene
+
+```text
+An early record-keeper in an ancient Near Eastern courtyard at dusk, standing or leaning beside a low counting table. On the table are four large clay storage jars, four small counting stones lined up one-to-one beneath them, and a clay tablet with fresh counting marks. One hand is visibly engaged in record-keeping near the tablet, so the scene immediately communicates: someone is tracking quantity.
+
+Mode: hero scene with breathing room for a chapter header.
+The image should feel lighter, more whimsical, and more page-integrated than a dramatic historical painting. Keep the palette warm cream, teal, terracotta, and soft ink neutrals. The architecture should suggest a colonnaded storehouse courtyard, but remain soft and recessive. The jars, stones, and tablet must all be clearly visible and readable at first glance.
+
+Avoid: muddy lighting, heavy solemn mood, generic fantasy clothing, crowded marketplace detail, glossy digital animation styling, or unclear one-to-one object relationships.
+```
+
+---
+
+## 24. Tool Variance Note
+
+Different image systems interpret the same prompt differently. Therefore, do not assume a good prompt is sufficient on its own.
+
+Every prompt should specify:
+- rendering mode
+- exact narrative objects
+- object quantities where relevant
+- emotional tone
+- palette restriction
+- compositional priority
+- background restraint
+- failure modes to avoid
+
+If the first generation is too heavy, too generic, too cinematic, too muddy, or too ambiguous, revise toward:
+- more paper breathing room
+- lighter tonal balance
+- clearer object relationships
+- softer background
+- more hand-drawn texture
+- less dramatic staging
+
+---
+
+## 25. Consistency Checklist
+
+Before finalizing any image, verify:
+
+- [ ] The mathematical act is understandable at first glance
+- [ ] Narrative objects are visible and unambiguous
+- [ ] Any count or one-to-one relationship is exact and visually verifiable
+- [ ] Background feels like warm aged paper or is harmonized with it
+- [ ] Linework feels hand-drawn, not digitally perfect
+- [ ] Palette stays within cream, teal, terracotta, ink, and soft neutrals
+- [ ] Mood is light, intelligent, humane, and slightly whimsical
+- [ ] Image has breathing room and does not feel crowded
+- [ ] Background supports rather than competes with the main action
+- [ ] No modern objects appear unless explicitly allowed in World 07
+- [ ] No fantasy-medieval drift
+- [ ] No muddy lighting or heavy theatrical tone
+- [ ] Cross-hatching or line-based shadow is present where appropriate
+- [ ] Image feels consistent with the rest of the chapter
+
+### Maps only
+- [ ] Coastlines are recognisably accurate
+- [ ] Ocean has subtle teal wash
+- [ ] Key chapter locations are marked clearly
+- [ ] Labels are handwritten and legible
+- [ ] Compass rose is present
+- [ ] Any route lines are visible and restrained
+
+---
+
+## 26. Naming Convention
 
 Save illustration files using this format:
 
-```
+```text
 w[world]-ch[chapter]-[type]-[short-description].png
+```
 
 Examples:
+
+```text
 w00-ch001-hero-clay-tally-marks.png
+w00-ch001-story-record-keeper-table.png
 w00-ch001-concept-place-value-towers.png
 w00-ch001-map-mesopotamia-nile-indus.png
 w05-ch067-hero-river-derivative.png
@@ -230,6 +643,17 @@ w05-ch067-map-cambridge-paris-hanover.png
 ```
 
 Place finished images in:
-```
+
+```text
 /public/illustrations/world-[XX]-[name]/
 ```
+
+---
+
+## 27. Final Principle
+
+The goal is not “pretty historical images.”  
+The goal is a coherent visual language in which mathematics becomes visible, memorable, and emotionally inviting.
+
+Every illustration should make the reader feel:
+**I can see the idea. I can enter this world. I want to keep going.**

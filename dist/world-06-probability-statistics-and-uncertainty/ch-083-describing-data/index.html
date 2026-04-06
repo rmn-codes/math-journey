@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/site.css" />
+    <link rel="stylesheet" href="/assets/site.css" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -21,12 +21,12 @@
     
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+        <a class="site-logo" href="/" aria-label="Math Journey home">
           <span class="site-logo-mark">∑</span>
           <span class="site-logo-text">Math Journey</span>
         </a>
         <nav class="site-nav" aria-label="Site navigation">
-          <a href="../../index.html">Chapters</a>
+          <a href="/">Chapters</a>
         </nav>
       </div>
     </header>
@@ -36,17 +36,20 @@
     </div>
 
     <main class="page-shell chapter-shell">
-      <a class="back-link" href="../../index.html">← All chapters</a>
+      <a class="back-link" href="/">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
-        <p class="eyebrow">World 6 · Chapter 83</p>
-        <h1>Describing Data — Centre, Spread, and Shape</h1>
-        <p class="hero-copy">How to summarise a thousand numbers in five — the art of statistics</p>
-        <div class="hero-meta">
-          <span>35 min</span>
-          <span>core</span>
-          
-          <span>1800s–1900s</span>
+        
+        <div class="chapter-hero-copy">
+          <p class="eyebrow">World 6 · Chapter 83</p>
+          <h1>Describing Data — Centre, Spread, and Shape</h1>
+          <p class="hero-copy">How to summarise a thousand numbers in five — the art of statistics</p>
+          <div class="hero-meta">
+            <span>35 min</span>
+            <span>core</span>
+            
+            <span>1800s–1900s</span>
+          </div>
         </div>
       </section>
 
@@ -187,42 +190,26 @@
 <ul><li>Describes large datasets in simple, meaningful terms</li><li>Identifies outliers and unusual patterns</li><li>Enables comparison between groups</li><li>Reveals truth that raw data hides</li></ul>
 <p>Florence Nightingale proved that good data descriptions compel action and save lives. Today, statistics underpin medicine, engineering, business, public policy, and science. Master these tools, and you can understand the world.</p>
 </section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
-<p><strong>Question 1:</strong> For the dataset 5, 7, 9, 11, 13, what is the mean?</p>
+<ol><li>For the dataset 5, 7, 9, 11, 13, what is the mean?</li></ol>
 <ul><li>8</li><li>9</li><li>10</li><li>11</li></ul>
-<details>
-<summary>Answer</summary>
-<p>Mean = $\frac{5 + 7 + 9 + 11 + 13}{5} = \frac{45}{5} = 9$. The answer is 9.</p>
-</details>
-<p><strong>Question 2:</strong> For the dataset 10, 20, 30, 40, 50, 60, what is the median?</p>
+<ol><li>For the dataset 10, 20, 30, 40, 50, 60, what is the median?</li></ol>
 <ul><li>35</li><li>40</li><li>45</li><li>30</li></ul>
-<details>
-<summary>Answer</summary>
-<p>With 6 values (even), the median is the average of the 3rd and 4th values: $\frac{30 + 40}{2} = 35$. The answer is 35.</p>
-</details>
-<p><strong>Question 3:</strong> A dataset has Q1 = 20 and Q3 = 40. What is the IQR?</p>
+<ol><li>A dataset has Q1 = 20 and Q3 = 40. What is the IQR?</li></ol>
 <ul><li>20</li><li>30</li><li>40</li><li>60</li></ul>
-<details>
-<summary>Answer</summary>
-<p>IQR = Q3 − Q1 = 40 − 20 = 20. The answer is 20.</p>
-</details>
-<p><strong>Question 4:</strong> A value is considered an outlier if it falls outside which range?</p>
+<ol><li>A value is considered an outlier if it falls outside which range?</li></ol>
 <ul><li>$Q1 - \text{IQR}$ to $Q3 + \text{IQR}$</li><li>$Q1 - 1.5 \times \text{IQR}$ to $Q3 + 1.5 \times \text{IQR}$</li><li>$\text{Min}$ to $\text{Max}$</li><li>$\mu - 3\sigma$ to $\mu + 3\sigma$</li></ul>
-<details>
-<summary>Answer</summary>
-<p>Values below $Q1 - 1.5 \times \text{IQR}$ or above $Q3 + 1.5 \times \text{IQR}$ are considered outliers. The answer is the second option.</p>
-</details>
-<p><strong>Question 5:</strong> A test score distribution has mean 70 and median 75. Is the distribution skewed left or right?</p>
+<ol><li>A test score distribution has mean 70 and median 75. Is the distribution skewed left or right?</li></ol>
 <ul><li>Skewed left (mean &lt; median)</li><li>Skewed right (mean &gt; median)</li><li>Symmetric (mean ≈ median)</li><li>Cannot determine</li></ul>
 <details>
-<summary>Answer</summary>
-<p>When mean &lt; median, the distribution is skewed left (a long tail pulls the mean down). The answer is &quot;Skewed left (mean &lt; median)&quot;.</p>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>9</li><li>35</li><li>20</li><li>$Q1 - 1.5 \times \text{IQR}$ to $Q3 + 1.5 \times \text{IQR}$</li><li>Skewed left (mean &lt; median)</li></ol>
 </details>
 </section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
 <ul><li><a href="https://en.wikipedia.org/wiki/Descriptive_statistics" target="_blank" rel="noopener">Descriptive statistics — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Florence_Nightingale" target="_blank" rel="noopener">Florence Nightingale — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Box_plot" target="_blank" rel="noopener">Box plot — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Standard_deviation" target="_blank" rel="noopener">Standard deviation — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Quartile" target="_blank" rel="noopener">Quartile — Wikipedia</a></li></ul></section>
         </article>
       </div>
 
-      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-06-probability-statistics-and-uncertainty/ch-082-the-normal-distribution/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">The Normal Distribution</span></a><a class="pager-link pager-link--next" href="../../world-06-probability-statistics-and-uncertainty/ch-084-correlation-and-regression/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Correlation and Linear Regression</span></a></nav>
+      <nav class="pager"><a class="pager-link pager-link--prev" href="/world-06-probability-statistics-and-uncertainty/ch-082-the-normal-distribution/"><span class="pager-dir">← Previous</span><span class="pager-title">The Normal Distribution</span></a><a class="pager-link pager-link--next" href="/world-06-probability-statistics-and-uncertainty/ch-084-correlation-and-regression/"><span class="pager-dir">Next →</span><span class="pager-title">Correlation and Linear Regression</span></a></nav>
     </main>
     
     

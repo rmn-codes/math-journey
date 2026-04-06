@@ -84,4 +84,24 @@ npm run generate:illustrations
 npm run generate:illustrations:hero
 ```
 
-The generator reads [ch-001.json](/Users/remonalberts/Documents/AI/math-journey/data/illustrations/ch-001.json), writes images into [public/illustrations/world-00-language-of-number](/Users/remonalberts/Documents/AI/math-journey/public/illustrations/world-00-language-of-number), and saves a sibling metadata JSON file next to each generated image with the original prompt and any revised prompt returned by the API.
+Chapter 2 uses the same workflow:
+
+```bash
+npm run generate:illustrations:ch2
+```
+
+```bash
+npm run generate:illustrations:ch2:hero
+```
+
+Chapter 4 uses the same workflow:
+
+```bash
+npm run generate:illustrations:ch4
+```
+
+```bash
+npm run generate:illustrations:ch4:hero
+```
+
+The generator reads chapter manifests such as [ch-001.json](/Users/remonalberts/Documents/AI/math-journey/data/illustrations/ch-001.json), [ch-002.json](/Users/remonalberts/Documents/AI/math-journey/data/illustrations/ch-002.json), and [ch-004.json](/Users/remonalberts/Documents/AI/math-journey/data/illustrations/ch-004.json), writes images into [public/illustrations/world-00-language-of-number](/Users/remonalberts/Documents/AI/math-journey/public/illustrations/world-00-language-of-number), and saves a sibling metadata JSON file next to each generated image with the original prompt and any revised prompt returned by the API.

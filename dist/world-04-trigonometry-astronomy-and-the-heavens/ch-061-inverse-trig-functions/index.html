@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/site.css" />
+    <link rel="stylesheet" href="/assets/site.css" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -21,12 +21,12 @@
     
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-logo" href="../../index.html" aria-label="Math Journey home">
+        <a class="site-logo" href="/" aria-label="Math Journey home">
           <span class="site-logo-mark">∑</span>
           <span class="site-logo-text">Math Journey</span>
         </a>
         <nav class="site-nav" aria-label="Site navigation">
-          <a href="../../index.html">Chapters</a>
+          <a href="/">Chapters</a>
         </nav>
       </div>
     </header>
@@ -36,17 +36,20 @@
     </div>
 
     <main class="page-shell chapter-shell">
-      <a class="back-link" href="../../index.html">← All chapters</a>
+      <a class="back-link" href="/">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
-        <p class="eyebrow">World 4 · Chapter 61</p>
-        <h1>Inverse Trigonometric Functions</h1>
-        <p class="hero-copy">Working backwards from a ratio to an angle — the tool every engineer uses</p>
-        <div class="hero-meta">
-          <span>35 min</span>
-          <span>core</span>
-          
-          <span>1700s–1800s</span>
+        
+        <div class="chapter-hero-copy">
+          <p class="eyebrow">World 4 · Chapter 61</p>
+          <h1>Inverse Trigonometric Functions</h1>
+          <p class="hero-copy">Working backwards from a ratio to an angle — the tool every engineer uses</p>
+          <div class="hero-meta">
+            <span>35 min</span>
+            <span>core</span>
+            
+            <span>1700s–1800s</span>
+          </div>
         </div>
       </section>
 
@@ -137,31 +140,26 @@
 <p>The inverse trig functions are the bridge from observation (a measured slope, a known ratio) to understanding (the angle that ratio represents). They&#x27;re indispensable in any field where we know the relationship and need to find the angle.</p>
 <p>---</p>
 </section><section class="lesson-section lesson-section--quiz"><h2 id="unlock-quiz">Unlock Quiz</h2>
-<p><strong>Question 1:</strong> What is $\arcsin(1/2)$?</p>
+<ol><li>What is $\arcsin(1/2)$?</li></ol>
 <ul><li>30°</li><li>45°</li><li>60°</li><li>90°</li></ul>
-<p><strong>Question 2:</strong> The range of the arccos function is:</p>
+<ol><li>The range of the arccos function is:</li></ol>
 <ul><li>$[-90°, 90°]$</li><li>$[0°, 180°]$</li><li>$(-90°, 90°)$</li><li>$[0°, 360°]$</li></ul>
-<p><strong>Question 3:</strong> If $\tan(\theta) = 2$, what is $\theta$ (approximately)?</p>
+<ol><li>If $\tan(\theta) = 2$, what is $\theta$ (approximately)?</li></ol>
 <ul><li>$26.6°$</li><li>$45°$</li><li>$63.4°$</li><li>$90°$</li></ul>
-<p><strong>Question 4:</strong> A building&#x27;s shadow is 30 meters long, and the sun is 45° above the horizon. How tall is the building?</p>
+<ol><li>A building&#x27;s shadow is 30 meters long, and the sun is 45° above the horizon. How tall is the building?</li></ol>
 <ul><li>15 meters</li><li>21 meters</li><li>30 meters</li><li>60 meters</li></ul>
-<p><strong>Question 5:</strong> Why do we restrict the domain of sine to $[-90°, 90°]$ for the arcsin function?</p>
+<ol><li>Why do we restrict the domain of sine to $[-90°, 90°]$ for the arcsin function?</li></ol>
 <ul><li>To make the calculations faster</li><li>To ensure arcsin is a function (one-to-one): each input maps to exactly one output</li><li>To match the domain of cosine</li><li>Because negative angles don&#x27;t exist</li></ul>
 <details>
-<summary>Answers</summary>
-<ol><li><strong>30°</strong> — $\sin(30°) = 1/2$, and $30° \in [-90°, 90°]$.</li></ol>
-<ol><li><strong>$[0°, 180°]$</strong> — The range of arccos covers angles from 0° to 180° (the upper half-plane).</li></ol>
-<ol><li><strong>$63.4°$</strong> — $\arctan(2) \approx 63.4°$.</li></ol>
-<ol><li><strong>30 meters</strong> — If the sun is 45° above the horizon and the shadow is 30 m, then $\tan(45°) = \text{height}/30$, so height = $30 \tan(45°) = 30(1) = 30$ m.</li></ol>
-<ol><li><strong>To ensure arcsin is a function (one-to-one): each input maps to exactly one output</strong> — Without restricting the domain, many angles would map to the same sine value, so arcsin wouldn&#x27;t be well-defined.</li></ol>
+<summary>Unlock Quiz Answers</summary>
+<ol><li>30°</li><li>$[0°, 180°]$</li><li>$63.4°$</li><li>30 meters</li><li>To ensure arcsin is a function (one-to-one): each input maps to exactly one output</li></ol>
 </details>
-<p>---</p>
 </section><section class="lesson-section lesson-section--sources"><h2 id="source-notes">Source Notes</h2>
 <ul><li><a href="https://en.wikipedia.org/wiki/Inverse_trigonometric_functions" target="_blank" rel="noopener">Inverse Trigonometric Functions</a> — Wikipedia</li><li><a href="https://en.wikipedia.org/wiki/History_of_trigonometry" target="_blank" rel="noopener">History of Trigonometry</a> — Wikipedia</li><li><a href="https://en.wikipedia.org/wiki/Leonhard_Euler" target="_blank" rel="noopener">Leonhard Euler</a> — Wikipedia</li></ul></section>
         </article>
       </div>
 
-      <nav class="pager"><a class="pager-link pager-link--prev" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-056-graphs-of-sine-and-cosine/index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Graphs of Sine and Cosine</span></a><a class="pager-link pager-link--next" href="../../world-04-trigonometry-astronomy-and-the-heavens/ch-062-vectors/index.html"><span class="pager-dir">Next →</span><span class="pager-title">Vectors — Magnitude and Direction</span></a></nav>
+      <nav class="pager"><a class="pager-link pager-link--prev" href="/world-04-trigonometry-astronomy-and-the-heavens/ch-056-graphs-of-sine-and-cosine/"><span class="pager-dir">← Previous</span><span class="pager-title">Graphs of Sine and Cosine</span></a><a class="pager-link pager-link--next" href="/world-04-trigonometry-astronomy-and-the-heavens/ch-062-vectors/"><span class="pager-dir">Next →</span><span class="pager-title">Vectors — Magnitude and Direction</span></a></nav>
     </main>
     
     
