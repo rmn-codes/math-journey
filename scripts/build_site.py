@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from html import escape
 from pathlib import Path
+import os
 import re
 import shutil
 
@@ -15,6 +16,9 @@ DIST_DIR = ROOT / "dist"
 PUBLIC_DIR = ROOT / "public"
 STYLE_SOURCE = ROOT / "src" / "styles" / "site.css"
 STYLE_OUT = DIST_DIR / "assets" / "site.css"
+SITE_BASE_PATH = "/" + os.environ.get("SITE_BASE_PATH", "").strip("/")
+if SITE_BASE_PATH == "/":
+    SITE_BASE_PATH = ""
 
 
 # Maps H2 heading text (lowercase) to a CSS modifier class
@@ -437,18 +441,30 @@ def copy_public_assets() -> None:
         else:
             shutil.copy2(item, destination)
 
+    (DIST_DIR / ".nojekyll").write_text("", encoding="utf-8")
+
+
+def site_url(path: str = "/") -> str:
+    if not path:
+        path = "/"
+    if not path.startswith("/"):
+        path = "/" + path
+    if SITE_BASE_PATH:
+        return SITE_BASE_PATH + path
+    return path
+
 
 def render_site_header(current_path: str = "/") -> str:
     home_active = ' aria-current="page"' if current_path == "/" else ""
     return f"""
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-logo" href="/" aria-label="Math Journey home">
+        <a class="site-logo" href="{site_url('/')}" aria-label="Math Journey home">
           <span class="site-logo-mark">∑</span>
           <span class="site-logo-text">Math Journey</span>
         </a>
         <nav class="site-nav" aria-label="Site navigation">
-          <a href="/"{ home_active}>Chapters</a>
+          <a href="{site_url('/')}"{ home_active}>Chapters</a>
         </nav>
       </div>
     </header>
@@ -492,7 +508,7 @@ def render_index(chapters: list[Chapter]) -> str:
                 f"""
                 <article class="chapter-card">
                   <p class="eyebrow">Ch. {chapter.metadata.get('chapterNumber', '?')}</p>
-                  <h2><a href="/{chapter.route_path.as_posix()}/">{escape(chapter.title)}</a></h2>
+                  <h2><a href="{site_url('/' + chapter.route_path.as_posix() + '/')}">{escape(chapter.title)}</a></h2>
                   <p class="lede">{escape(chapter.description)}</p>
                   <ul class="mini-list">{objective_html}</ul>
                   <div class="card-meta">
@@ -548,14 +564,14 @@ def render_chapter(chapter: Chapter, chapters: list[Chapter]) -> str:
     navigation: list[str] = []
     if previous_chapter:
         navigation.append(
-            f'<a class="pager-link pager-link--prev" href="/{previous_chapter.route_path.as_posix()}/">'
+            f'<a class="pager-link pager-link--prev" href="{site_url("/" + previous_chapter.route_path.as_posix() + "/")}">'
             f'<span class="pager-dir">← Previous</span>'
             f'<span class="pager-title">{escape(previous_chapter.title)}</span>'
             f"</a>"
         )
     if next_chapter:
         navigation.append(
-            f'<a class="pager-link pager-link--next" href="/{next_chapter.route_path.as_posix()}/">'
+            f'<a class="pager-link pager-link--next" href="{site_url("/" + next_chapter.route_path.as_posix() + "/")}">'
             f'<span class="pager-dir">Next →</span>'
             f'<span class="pager-title">{escape(next_chapter.title)}</span>'
             f"</a>"
@@ -587,7 +603,7 @@ def render_chapter(chapter: Chapter, chapters: list[Chapter]) -> str:
     </div>
 
     <main class="page-shell chapter-shell">
-      <a class="back-link" href="/">← All chapters</a>
+      <a class="back-link" href="{site_url('/')}">← All chapters</a>
 
       <section class="hero-panel chapter-hero">
         {hero_figure}
@@ -645,7 +661,7 @@ def asset_url(path_value: object) -> str | None:
     asset_file = PUBLIC_DIR / path.lstrip("/")
     if not asset_file.exists():
         return None
-    return "/" + path.lstrip("/")
+    return site_url("/" + path.lstrip("/"))
 
 
 def render_image_figure(
@@ -913,7 +929,7 @@ def render_document(
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/site.css" />
+    <link rel="stylesheet" href="{site_url('/assets/site.css')}" />
     {katex_cdn}
   </head>
   <body>
